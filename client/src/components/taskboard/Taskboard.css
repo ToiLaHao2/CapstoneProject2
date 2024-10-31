@@ -1,0 +1,10 @@
+.task-board {
+    padding: 20px;
+    flex-grow: 1;
+  }
+  
+  .task-columns {
+    display: flex;
+    gap: 20px;
+  }
+  
