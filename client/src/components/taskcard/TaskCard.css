@@ -1,0 +1,27 @@
+.task-card {
+    display: flex;
+    align-items: center;
+    background: #f9fafb;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .task-card .profile-img {
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .task-card p {
+    flex-grow: 1;
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .task-actions svg {
+    margin-left: 10px;
+    cursor: pointer;
+    color: #666;
+  }
+  

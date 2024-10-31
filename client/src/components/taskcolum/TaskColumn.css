@@ -1,0 +1,15 @@
+.task-column {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+  }
+  
+  .task-column.blue { border-left: 5px solid #3b82f6; }
+  .task-column.orange { border-left: 5px solid #fb923c; }
+  .task-column.red { border-left: 5px solid #f87171; }
+  
+  .task-column h2 {
+    margin-bottom: 15px;
+  }
+  
