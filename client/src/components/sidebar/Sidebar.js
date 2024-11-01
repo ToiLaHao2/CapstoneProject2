@@ -1,18 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Sidebar.css';
 import { FaHome, FaFolder, FaTasks, FaCalendarAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
-const Sidebar = () => (
-  <div className="sidebar">
-    <h2>TaskMinder.</h2>
-    <nav>
-    <a href="#"><FaHome style={{ marginRight: '10px' }} /> Dashboard</a>
-    <a href="#"><FaFolder style={{ marginRight: '10px' }} /> Projects</a>
-      <a href="#" className="active"><FaTasks style={{ marginRight: '10px' }} /> Tasks</a>
-      <a href="#"><FaCalendarAlt style={{ marginRight: '10px' }} /> Calendar</a>
-    </nav>
-    <button className="logout">Log out</button>
-  </div>
-);
+const Sidebar = () => {
+  const [active, setActive] = useState('Tasks');
+
+  const handleClick = (option) => {
+    setActive(option);
+  };
+
+  return (
+    <div className="sidebar">
+      <h2>TaskMinder.</h2>
+      <nav>
+        <Link
+          to="/dashboard"
+          className={active === 'Dashboard' ? 'active' : ''}
+          onClick={() => handleClick('Dashboard')}
+        >
+          <FaHome style={{ marginRight: '10px' }} /> Dashboard
+        </Link>
+        <Link
+          to="/projects"
+          className={active === 'Projects' ? 'active' : ''}
+          onClick={() => handleClick('Projects')}
+        >
+          <FaFolder style={{ marginRight: '10px' }} /> Projects
+        </Link>
+        <Link
+          to="/tasks"
+          className={active === 'Tasks' ? 'active' : ''}
+          onClick={() => handleClick('Tasks')}
+        >
+          <FaTasks style={{ marginRight: '10px' }} /> Tasks
+        </Link>
+        <Link
+          to="/calendar"
+          className={active === 'Calendar' ? 'active' : ''}
+          onClick={() => handleClick('Calendar')}
+        >
+          <FaCalendarAlt style={{ marginRight: '10px' }} /> Calendar
+        </Link>
+      </nav>
+      <button className="logout">Log out</button>
+    </div>
+  );
+};
 
 export default Sidebar;

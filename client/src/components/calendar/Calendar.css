@@ -1,0 +1,70 @@
+/* General Calendar Styling */
+.react-calendar {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    margin-left: 400px;
+  }
+  
+  /* Month and Year Navigation */
+  .react-calendar__navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .react-calendar__navigation button {
+    color: #333;
+    min-width: 44px;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  .react-calendar__navigation button:hover {
+    color: #4caf50;
+  }
+  
+  /* Days of the Week Styling */
+  .react-calendar__month-view__weekdays {
+    font-weight: bold;
+    text-align: center;
+    color: #4caf50;
+    margin-bottom: 10px;
+  }
+  
+  /* Date Cells */
+  .react-calendar__tile {
+    max-width: 100%;
+    padding: 10px 6px;
+    background: none;
+    text-align: center;
+    line-height: 1.4;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .react-calendar__tile:enabled:hover,
+  .react-calendar__tile:enabled:focus {
+    background-color: #f0f0f0;
+  }
+  
+  /* Highlight today's date */
+  .react-calendar__tile--now {
+    background: #e0f7fa;
+    font-weight: bold;
+    color: #00796b;
+    border-radius: 6px;
+  }
+  
+  /* Selected date styling */
+  .react-calendar__tile--active {
+    background: #4caf50;
+    color: white;
+    border-radius: 6px;
+  }
+  
