@@ -1,4 +1,3 @@
-// Topbar.js
 import React from 'react';
 import { FaBell, FaUser } from 'react-icons/fa';
 import './Topbar.css';
