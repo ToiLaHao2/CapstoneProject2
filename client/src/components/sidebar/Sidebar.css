@@ -2,68 +2,74 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px; 
-    height: 100vh; 
-    background-color: #f8f9fa; 
+    width: 220px;
+    height: 100vh;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    justify-content: flex-start;  
+    padding: 15px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-}
-
-.sidebar h2 {
-    font-size: 24px;
+  }
+  
+  .sidebar h2 {
+    font-size: 22px;
     font-weight: bold;
     color: #333;
     text-align: center;
-    margin-bottom: 30px;
-}
-
-.sidebar nav {
-    flex: 1; 
+    margin-bottom: 20px;
+  }
+  
+  .sidebar nav {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-}
-
-.sidebar a {
+    gap: 15px; 
+  }
+  
+  .sidebar a {
     display: flex;
     align-items: center;
-    padding: 10px 15px;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 15px;
     color: #333;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.sidebar a:hover {
-    background-color: #e0e0e0;
-}
-
-.sidebar a.active {
-    background-color: #e7f3ff;
-    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .sidebar a:hover {
+    background-color: #f0f4ff;
     color: #0056b3;
-}
-
-.logout {
-    padding: 10px 15px;
-    font-size: 16px;
-    color: #d9534f;
+  }
+  
+  .sidebar a.active {
+    background-color: #e7f3ff;
+    color: #0056b3;
+    font-weight: 600;
+  }
+  
+  .logout {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 15px;
+    color: #d9534f; 
     background: none;
     border: none;
     cursor: pointer;
     text-align: left;
-    display: flex;
-    align-items: center;
-    margin: 30px;
-    margin-left: 10px;
-}
-
-.logout:hover {
-    background-color: #fdecea;
-    border-radius: 5px;
-}
+    margin-top: 300px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s; 
+  }
+  
+  .logout:hover {
+    background-color: #fdecea; 
+    color: #d9534f;
+  }
+  
+  .logout svg {
+    margin-right: 10px;
+  }
+  
