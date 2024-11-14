@@ -1,20 +1,25 @@
 import React from 'react';
-import { FaBell, FaUser } from 'react-icons/fa';
 import './Topbar.css';
+import { FaBell } from 'react-icons/fa';
+import { FaUserCircle } from 'react-icons/fa';
 
 const Topbar = () => {
-  return (
-    <div className="topbar">
-      <div className="search-container">
-        <input type="text" placeholder="Search" className="search-input" />
-        <button className="search-icon">&#128269;</button>
-      </div>
-      <div className="topbar-icons">
-        <FaBell className="notification-icon" />
-        <FaUser className="user-icon" />
-      </div>
-    </div>
-  );
+    return (
+        <div className="topbar">
+            <div className="search-container">
+                <input
+                    type="text"
+                    className="search-box"
+                    placeholder="Search Task"
+                />
+            </div>
+            <div className="right-icons">
+                <button className="add-task-btn">+ Create New Task</button>
+                <FaBell className="icon" />
+                <FaUserCircle className="icon" />
+            </div>
+        </div>
+    );
 };
 
 export default Topbar;
