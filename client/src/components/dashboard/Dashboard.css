@@ -1,0 +1,245 @@
+/* Container styling */
+.dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Section Containers */
+.tasks, .urgently-task, .recently-visited, .workspace, .new-chat {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+/* Task Section */
+.tasks {
+    display: flex;
+    justify-content: space-between;
+    width: 48%;
+}
+
+.urgently-task, .recently-visited, .workspace, .new-chat {
+    width: 48%;
+}
+
+/* My Tasks */
+.my-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Individual Task */
+.task {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.task h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.task p {
+    margin: 0;
+    color: #888;
+}
+
+.task:hover {
+    background-color: #e1e1e1;
+}
+
+/* Task Variations */
+.priority-task {
+    border-left: 4px solid #e74c3c;
+    background-color: #fde2e1; /* Light red */
+}
+
+.upcoming-task {
+    border-left: 4px solid #f39c12;
+    background-color: #fef4e4; /* Light yellow */
+}
+
+.overdue-task {
+    border-left: 4px solid #3498db;
+    background-color: #d5e9f6; /* Light blue */
+}
+
+.pending-task {
+    border-left: 4px solid #2ecc71;
+    background-color: #e2f9e1; /* Light green */
+}
+
+/* Urgently Task Progress */
+.urgently-task h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.progress {
+    margin-bottom: 10px;
+}
+
+progress {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #ecf0f1;
+}
+
+progress[value] {
+    background-color: #3498db;
+}
+
+/* Recently Visited Section */
+.recently-visited {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.visited-project {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.visited-project img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.visited-project p {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+}
+
+.visited-project span {
+    font-size: 12px;
+    color: #777;
+}
+
+.visited-project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Add Background Color Variations for Recently Visited Projects */
+.visited-project:nth-child(1) {
+    background-color: #e1f5fe; /* Light Blue */
+}
+
+.visited-project:nth-child(2) {
+    background-color: #f9fbe7; /* Light Yellow */
+}
+
+.visited-project:nth-child(3) {
+    background-color: #f1f8e9; /* Light Green */
+}
+
+/*ttt*/
+
+/* Calendar and Details Section Container */
+.calendar-container {
+    display: flex;
+    justify-content: space-between; /* Spread the sections out */
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+/* Calendar Section */
+.calendar-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 45%; /* Adjust width */
+    box-sizing: border-box;
+    text-align: left; /* Ensure text inside the section aligns to the left */
+}
+
+/* Make sure react-calendar is aligned to the left */
+.react-calendar {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-left: 0; /* Remove auto centering */
+    margin-right: 0; /* Remove any margin to the right */
+}
+
+/* Tile Styles for React Calendar */
+.react-calendar__tile {
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.react-calendar__tile:active,
+.react-calendar__tile:focus {
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.react-calendar__tile--now {
+    background-color: #f39c12;
+    color: #fff;
+}
+
+.react-calendar__tile--active {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+/* Details Section */
+.details-calendar-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 45%;
+    box-sizing: border-box;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .calendar-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calendar-section, .details-calendar-section {
+        max-width: 100%;
+    }
+}
