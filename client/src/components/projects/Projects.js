@@ -1,3 +1,6 @@
+import React from "react";
+import "../general/MainContentContainer.css"
+
 const Projects = () => {
     return(
         <div>
