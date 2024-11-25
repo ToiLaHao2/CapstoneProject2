@@ -1,13 +1,13 @@
 import React from "react";
 import "../general/MainContentContainer.css"
 
-const Tasks = () => {
+const Chat = () => {
     return(
         <div>
-            <h1>Tasks</h1>
-            {/* Add your tasks components here */}
+            <h1>Chat</h1>
+            {/* Add your dashboard components here */}
         </div>
     )
 }
 
-export default Tasks;
+export default Chat;
