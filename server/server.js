@@ -4,6 +4,7 @@ const bodyparser = require("body-parser");
 const dotenv = require("dotenv");
 
 const errorHandler = require("./middleware/errorHandler");
+const { connectDb } = require("./configs/dbConfig");
 
 dotenv.config();
 
@@ -17,7 +18,10 @@ app.use(bodyparser.json());
 app.use(errorHandler);
 
 // Connect database
-
+connectDb();
 // Routes
 
 // Listen
+app.listen(port, function () {
+  console.log("Your app running on port " + port);
+});
