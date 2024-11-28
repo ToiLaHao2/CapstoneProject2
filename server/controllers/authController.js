@@ -10,19 +10,18 @@ const {
 async function Register(req, res) {
   const userRegist = req.body;
   try {
-    let user = User.findOne({ user_name: userRegist.user_name });
-    if (!user) {
-      return res.status(400).json({ message: "User already exist" });
+    let userBaseOnEmail = User.findOne({user_email: userRegist})
+    if (!userBaseOnEmail) {
+      return res.status(400).json({ message: "User email already exist" });
     }
     const hashedPassword = (
       await HashPassword(userRegist.user_password)
     ).toString();
     user = new User({
-      user_name: userRegist.user_name,
+      user_full_name: userRegist.user_name,
       user_email: userRegist.user_email,
-      user_phone: userRegist.user_phone,
-      user_dOb: userRegist.dOb,
       user_password: hashedPassword,
+      user_avatar_url: userRegist.user_avatar_url,
       created_At: Date.now(),
     });
     const newUser = await user.save();
