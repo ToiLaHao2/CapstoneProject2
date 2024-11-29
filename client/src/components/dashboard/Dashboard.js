@@ -80,7 +80,7 @@ const Dashboard = () => {
             <div className="calendar-container">
                 {/* Calendar Section */}
                 <div className="calendar-section">
-                    <h3>Calendar</h3>
+                <h3>Calendar</h3>
                     <CalendarComponent
                         onChange={handleDateChange}
                         value={selectedDate}
