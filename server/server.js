@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 
 const errorHandler = require("./middleware/errorHandler");
 const { connectDb } = require("./configs/dbConfig");
+const authRouter = require("./routes/authRoutes");
 
 dotenv.config();
 
@@ -20,8 +21,8 @@ app.use(errorHandler);
 // Connect database
 connectDb();
 // Routes
-
+app.use("/api/auth", authRouter);
 // Listen
-app.listen(port, function () {
-  console.log("Your app running on port " + port);
+app.listen(port, function() {
+    console.log("Your app running on port " + port);
 });

@@ -1,2 +1,122 @@
 [2024-11-28 10:10:26] INFO: Database connected
 [2024-11-28 10:26:05] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-11-29 09:24:42] ERROR: Attempt 1: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2024-11-29 09:25:17] ERROR: Attempt 2: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2024-11-29 09:25:52] ERROR: Attempt 3: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2024-11-29 09:26:18] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-11-29 09:28:02] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-11-29 09:29:22] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-11-29 09:30:25] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-11-29 09:34:34] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-11-29 09:34:57] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-11-29 09:35:01] INFO: Successfull checking data register new user
+[2024-11-29 09:35:01] INFO: Hash password complete
+[2024-11-29 09:35:01] ERROR: Error with register: ValidationError: user_hashed_password: Path `user_hashed_password` is required.
+[2024-11-29 09:38:01] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-11-29 09:38:03] INFO: Successfull checking data register new user
+[2024-11-29 09:38:03] INFO: Hash password complete
+[2024-11-29 09:38:03] INFO: Complete create token
+[2024-11-29 09:38:21] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-11-29 09:38:26] INFO: Successfull checking data register new user
+[2024-11-29 09:38:26] INFO: Hash password complete
+[2024-11-29 09:38:26] INFO: Complete create token
+[2024-11-29 09:39:05] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-11-29 09:39:06] INFO: Successfull checking data register new user
+[2024-11-29 09:41:19] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-11-29 09:43:50] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-11-29 09:44:29] INFO: Error checking data user for login: Wrong message from wrong app
+[2024-11-29 09:44:51] INFO: Successfull checking data user for login
+[2024-11-29 09:44:51] INFO: Compare hash complete
+[2024-11-29 09:44:51] ERROR: Error : Error: data and hash arguments required
+[2024-11-29 09:45:08] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-11-29 09:45:09] INFO: Successfull checking data user for login
+[2024-11-29 09:45:09] INFO: Compare hash complete
+[2024-11-29 09:45:09] INFO: Complete create token
+[2024-11-29 09:45:58] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-11-29 09:47:03] INFO: Error checking data user for changing password: user_name is required.
+[2024-11-29 09:47:15] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-11-29 09:47:21] INFO: Error checking data user for changing password: last_password is required.
+[2024-11-29 09:47:35] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-11-29 09:47:36] INFO: Successfull checking data user for changing password
+[2024-11-29 09:47:36] INFO: Compare hash complete
+[2024-11-29 09:50:15] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-11-29 09:50:20] INFO: Successfull checking data user for changing password
+[2024-11-29 09:50:20] INFO: Compare hash complete
+[2024-11-29 09:50:20] ERROR: Error : Error: data and hash arguments required
+[2024-11-29 09:51:02] INFO: Successfull checking data user for changing password
+[2024-11-29 09:51:02] INFO: Compare hash complete
+[2024-11-29 09:51:02] ERROR: Error : Error: data and hash arguments required
+[2024-11-29 09:52:32] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-11-29 09:52:34] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-11-29 09:52:45] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-11-29 09:52:46] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-11-29 09:52:50] INFO: Successfull checking data user for changing password
+[2024-11-29 09:52:50] INFO: Compare hash complete
+[2024-11-29 09:52:50] ERROR: Error : Error: data and hash arguments required
+[2024-11-29 09:53:10] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-11-29 09:53:37] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-11-29 09:53:39] INFO: Successfull checking data user for changing password
+[2024-11-29 09:53:39] INFO: Compare hash complete
+[2024-11-29 09:53:39] ERROR: Error : Error: data and hash arguments required
+[2024-11-29 09:53:52] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-11-29 09:53:53] INFO: Successfull checking data user for changing password
+[2024-11-29 09:53:53] INFO: Compare hash complete
+[2024-11-29 09:53:53] ERROR: Error : Error: data and hash arguments required
+[2024-11-29 09:54:23] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-11-29 09:54:27] INFO: Successfull checking data user for changing password
+[2024-11-29 09:54:27] INFO: Compare hash complete
+[2024-11-29 09:54:40] INFO: Successfull checking data user for changing password
+[2024-11-29 09:54:40] INFO: Compare hash complete
+[2024-11-29 09:54:40] INFO: Hash password complete
+[2024-11-29 09:55:19] INFO: Successfull checking data user for login
+[2024-11-29 09:55:19] INFO: Compare hash complete
+[2024-11-29 09:55:44] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-11-29 09:55:48] INFO: Successfull checking data user for login
+[2024-11-29 09:55:48] INFO: Compare hash complete
+[2024-11-29 09:56:38] INFO: Successfull checking data user for login
+[2024-11-29 09:56:38] INFO: Compare hash complete
+[2024-11-29 09:56:45] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-11-29 09:56:46] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-11-29 09:56:49] INFO: Successfull checking data user for login
+[2024-11-29 09:56:49] INFO: Compare hash complete
+[2024-11-29 09:59:33] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-11-29 10:00:31] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-11-29 10:00:47] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-11-29 10:01:22] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-11-29 10:02:36] INFO: Successfull checking data register new user
+[2024-11-29 10:03:19] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-11-29 10:03:22] INFO: Successfull checking data register new user
+[2024-11-29 10:06:24] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-11-29 10:06:33] INFO: Successfull checking data register new user
+[2024-11-29 10:07:00] INFO: Successfull checking data register new user
+[2024-11-29 10:09:45] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-11-29 10:09:47] INFO: Successfull checking data register new user
+[2024-11-29 10:10:49] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-11-29 10:10:53] INFO: Successfull checking data register new user
+[2024-11-29 10:10:53] INFO: Hash password complete
+[2024-11-29 10:10:53] INFO: Complete create token
+[2024-11-29 10:12:19] INFO: Successfull checking data user for login
+[2024-11-29 10:12:20] INFO: Compare hash complete
+[2024-11-29 10:12:20] INFO: Complete create token
+[2024-11-29 10:13:44] INFO: Successfull checking data user for changing password
+[2024-11-29 10:13:44] INFO: Compare hash complete
+[2024-11-29 10:13:44] INFO: Hash password complete
+[2024-11-29 10:14:12] INFO: Successfull checking data user for login
+[2024-11-29 10:14:12] INFO: Compare hash complete
+[2024-11-29 10:14:30] INFO: Successfull checking data user for login
+[2024-11-29 10:14:30] INFO: Compare hash complete
+[2024-11-29 10:14:35] INFO: Successfull checking data user for login
+[2024-11-29 10:14:35] INFO: Compare hash complete
+[2024-11-29 10:14:35] INFO: Complete create token
+[2024-11-29 10:15:29] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-11-29 10:16:02] INFO: Successfull checking data user for login
+[2024-11-29 10:16:02] INFO: Compare hash complete
+[2024-11-29 10:16:08] INFO: Successfull checking data user for login
+[2024-11-29 10:16:08] INFO: Compare hash complete
+[2024-11-29 10:16:38] INFO: Error checking data user for changing password: Wrong message from wrong app
+[2024-11-29 10:16:47] INFO: Successfull checking data user for changing password
+[2024-11-29 10:16:47] INFO: Compare hash complete
+[2024-11-29 10:16:47] INFO: Hash password complete
+[2024-11-29 10:17:16] INFO: Successfull checking data user for login
+[2024-11-29 10:17:16] INFO: Compare hash complete
+[2024-11-29 10:17:16] INFO: Complete create token
