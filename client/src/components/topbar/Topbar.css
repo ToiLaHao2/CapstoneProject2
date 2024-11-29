@@ -64,3 +64,52 @@
 .topbar .icon:hover {
   color: #0056b3;
 }
+
+/*t*/
+.user-icon-container {
+  position: relative;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Tăng border radius cho bo góc mượt */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Tăng độ bóng */
+  padding: 15px; /* Tăng padding để menu rộng rãi hơn */
+  z-index: 1000;
+  min-width: 180px; /* Đặt chiều rộng tối thiểu lớn hơn */
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  padding: 10px 15px; /* Tăng padding giữa các mục */
+  font-size: 15px; /* Tăng kích thước font */
+  font-weight: 500; /* Tăng độ đậm cho chữ */
+  color: #333; /* Giữ màu chữ trung tính */
+  text-decoration: none; /* Bỏ gạch chân */
+  border-radius: 5px; /* Bo góc nhẹ từng mục */
+  display: block; /* Giúp các mục chiếm toàn bộ chiều rộng */
+  transition: all 0.3s ease; /* Thêm hiệu ứng mượt khi hover */
+}
+
+/* Hover effect */
+.dropdown-item:hover {
+  background-color: #f5faff; /* Màu nền xanh nhạt khi hover */
+  color: #0056b3; /* Đổi màu chữ khi hover */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    min-width: 150px; /* Điều chỉnh kích thước nhỏ hơn trên màn hình nhỏ */
+  }
+
+  .dropdown-item {
+    font-size: 14px; /* Giảm kích thước chữ cho thiết bị nhỏ */
+    padding: 8px 10px;
+  }
+}
