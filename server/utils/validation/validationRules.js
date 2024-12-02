@@ -78,6 +78,7 @@ const validationRules = {
     maxLength: {
       board_description: 500,
     },
+<<<<<<< Updated upstream
   },
   getBoard: {
     checkMessage: "Get board",
@@ -109,6 +110,38 @@ const validationRules = {
 // updateBoardSetting
 // assignLabelsToBoard
 
+=======
+    getInviteByUser:{
+
+    },
+    // Board middleware validate
+    createBoard: {
+        checkMessage: "Create new board",
+        requiredFields: [
+            "board_title",
+            "board_description",
+            "board_is_public",
+            "board_collaborators",
+            "board_list",
+            "checkMessage"
+        ],
+        maxLength: {
+            board_description: 500
+        }
+    },
+    getBoard: {
+        checkMessage: "Get board",
+        requiredFields: ["board_id", "checkMessage"]
+    },
+    updateBoard: {
+        checkMessage: "Update board",
+        requiredFields: ["board_id"]
+    },
+    deleteBoard: {
+        checkMessage: "Delete board",
+        requiredFields: ["board_id"]
+    }
+>>>>>>> Stashed changes
 };
 
 module.exports = { validationRules };
