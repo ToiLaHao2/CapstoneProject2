@@ -44,21 +44,21 @@ const validationRules = {
   updateUser: {
     checkMessage: "Update user info",
   },
-//   getUserProfile
-// updateUser
-// uploadProfilePicture
-// getAllUserInBoard
-// addUserToBoard
-// removeUserFromBoard
-// updateUserRoleInBoard
-// assignUserToCard
-// removeUserToCard
-// getUserCards
-// searchUsers
-// suggestUsersToAdd
-// updateNotificationsSettings
-// getUserNotifications
-// creatWorkGroup(đang xem xét)
+  //   getUserProfile
+  // updateUser
+  // uploadProfilePicture
+  // getAllUserInBoard
+  // addUserToBoard
+  // removeUserFromBoard
+  // updateUserRoleInBoard
+  // assignUserToCard
+  // removeUserToCard
+  // getUserCards
+  // searchUsers
+  // suggestUsersToAdd
+  // updateNotificationsSettings
+  // getUserNotifications
+  // creatWorkGroup(đang xem xét)
 
   inviteUserToBoardByEmail: {
     checkMessage: "Invite user to board by email",
@@ -78,7 +78,6 @@ const validationRules = {
     maxLength: {
       board_description: 500,
     },
-<<<<<<< Updated upstream
   },
   getBoard: {
     checkMessage: "Get board",
@@ -92,56 +91,23 @@ const validationRules = {
     checkMessage: "Delete board",
     requiredFields: ["board_id"],
   },
-//   createBoard
-// getBoard
-// updateBoard
-// deleteBoard
-// addMemberToBoard
-// removeMemberFromBoard
-// updateMemberRole
-// getAllMembers
-// updatePrivacy
-// checkUserAccess
-// getListsInBoard
-// addListToBoard
-// moveList
-// getCardsInBoard
-// archiveCard
-// updateBoardSetting
-// assignLabelsToBoard
-
-=======
-    getInviteByUser:{
-
-    },
-    // Board middleware validate
-    createBoard: {
-        checkMessage: "Create new board",
-        requiredFields: [
-            "board_title",
-            "board_description",
-            "board_is_public",
-            "board_collaborators",
-            "board_list",
-            "checkMessage"
-        ],
-        maxLength: {
-            board_description: 500
-        }
-    },
-    getBoard: {
-        checkMessage: "Get board",
-        requiredFields: ["board_id", "checkMessage"]
-    },
-    updateBoard: {
-        checkMessage: "Update board",
-        requiredFields: ["board_id"]
-    },
-    deleteBoard: {
-        checkMessage: "Delete board",
-        requiredFields: ["board_id"]
-    }
->>>>>>> Stashed changes
+  //   createBoard
+  // getBoard
+  // updateBoard
+  // deleteBoard
+  // addMemberToBoard
+  // removeMemberFromBoard
+  // updateMemberRole
+  // getAllMembers
+  // updatePrivacy
+  // checkUserAccess
+  // getListsInBoard
+  // addListToBoard
+  // moveList
+  // getCardsInBoard
+  // archiveCard
+  // updateBoardSetting
+  // assignLabelsToBoard
 };
 
 module.exports = { validationRules };

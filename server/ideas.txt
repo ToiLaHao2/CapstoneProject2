@@ -1,0 +1,27 @@
+Ý tưởng làm phần update:
+    - Client: Khi bấm update, client sẽ thực hiện 3 việc :
+        + Kiểm tra thông tin sau thay đổi xem có khác biệt
+        (Vd: dùng equal so sánh detailState(hiện tại) và
+        user.infor trong object xem có giống nhau không)
+        + Nếu có mục khác biệt, thì cho nó vào 1 object mới
+        (Vd: object user ban đầu có 4 fields: name, address
+        age, phone_num. Các fields có data thay đoi, name
+        address thì các field này được thêm vào object mới
+        userUpdateDetail:
+            {
+                name: 'Nguyễn Văn A',
+                address: 'Hà Nội'
+            }
+        )
+        + Chuyển object userUpdateDetail tới server
+    - Server : Nhận và xử lý thông tin update:
+        * Middleware(kiểm tra)
+            + kiểm tra token
+            + Kiểm tra requireField
+            + kiểm tra checkMessage
+            + kiểm tra object có null không
+                Nếu có báo lỗi 
+                không thì next
+            
+        * Controller
+
