@@ -38,14 +38,32 @@ async function GetBoard(req, res) {
     sendError(res, 401, "Unauthorized", { details: "User is not registed" });
   }
 
-  const existBoard = U
+  const existBoard = user.boards.some(
+    (board) => board.board_id === boardReqGet.board_id
+  );
+
+  if (!existBoard) {
+    sendError(res, 404, "Undefined board", {
+      details: "User is not a member or admin of board",
+    });
+  }
 
   const board = await Board.findById(boardReqGet.board_id);
   if (!board) {
     sendError(res, 404, "Board not found", { details: "Board is not existed" });
   }
 
-  
+  const userExist = board.board_collaborators.some(
+    (user) => user.board_collaborator_id === boardReqGet.user_id
+  );
+
+  if (!userExist) {
+    sendError(res, 404, "Undefined user", {
+      details: "User is not a member or admin of board",
+    });
+  }
+
+  sendSuccess(res, "Successfull get board data", board);
 }
 
 module.exports = { CreateBoard, GetBoard };
