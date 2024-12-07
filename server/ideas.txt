@@ -20,10 +20,14 @@
             + Kiểm tra requireField
             + kiểm tra checkMessage
             + kiểm tra object có null không
-                Nếu có báo lỗi 
+                Nếu có báo object null
+            + kiểm tra, làm sạch dữ liệu trong object (không có ký tự đặc biệt)
+                Nếu có thì báo dữ liệu ko hợp liệu
                 không thì next
-            
         * Controller
+            + Lấy id để tìm và update model
+            + loop lấy từng dữ liệu ra và add vào db 
+            + trả về thông tin update thành công
 
 
 Tạo board : 
