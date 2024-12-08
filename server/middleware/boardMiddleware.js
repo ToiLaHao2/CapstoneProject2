@@ -57,7 +57,7 @@ async function validateUpdateBoard(req, res, next) {
     const result = await validateFields(boardUpdateData, rules);
     if (result.valid == true) {
         req.body.user_id = checkToken.id;
-        logger.info("Successfull checking data to create board");
+        logger.info("Successfull checking data to update board");
         next();
     } else {
         logger.info(`Error checking data ${result.error}`);
@@ -77,7 +77,7 @@ async function validateDeleteBoard(req, res, next) {
     const result = await validateFields(boardDeleteData, rules);
     if (result.valid == true) {
         req.body.user_id = checkToken.id;
-        logger.info("Successfull checking data to create board");
+        logger.info("Successfull checking data to delete board");
         next();
     } else {
         logger.info(`Error checking data ${result.error}`);

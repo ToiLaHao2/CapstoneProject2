@@ -120,3 +120,32 @@
 [2024-11-29 10:17:16] INFO: Successfull checking data user for login
 [2024-11-29 10:17:16] INFO: Compare hash complete
 [2024-11-29 10:17:16] INFO: Complete create token
+[2024-12-08 10:50:29] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-12-08 10:53:40] INFO: Successfull checking data register new user
+[2024-12-08 10:53:40] INFO: Hash password complete
+[2024-12-08 10:53:40] INFO: Complete create token
+[2024-12-08 10:57:52] INFO: Successfull checking data to create board
+[2024-12-08 10:57:52] ERROR: Error with create board : ValidationError: created_at: Cast to date failed for value "[Function: now]" (type function) at path "created_at"
+[2024-12-08 10:58:34] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-12-08 10:58:38] INFO: Successfull checking data to create board
+[2024-12-08 10:59:50] INFO: Successfull checking data to create board
+[2024-12-08 10:59:50] ERROR: Error with GetBoard: MissingSchemaError: Schema hasn't been registered for model "List".
+Use mongoose.model(name, schema)
+[2024-12-08 11:01:09] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-12-08 11:01:12] INFO: Successfull checking data to create board
+[2024-12-08 11:03:49] INFO: Successfull checking data to create board
+[2024-12-08 11:04:43] INFO: Successfull checking data to create board
+[2024-12-08 11:05:30] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-12-08 11:05:32] INFO: Successfull checking data to update board
+[2024-12-08 11:08:02] INFO: Successfull checking data to update board
+[2024-12-08 11:08:02] ERROR: Error with UpdateBoard: TypeError: updatedBoard.populate(...).populate is not a function
+[2024-12-08 11:10:49] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-12-08 11:10:52] INFO: Successfull checking data to update board
+[2024-12-08 11:11:18] INFO: Successfull checking data to update board
+[2024-12-08 11:11:18] ERROR: Error with UpdateBoard: TypeError: updatedBoard.populate(...).populate is not a function
+[2024-12-08 11:11:37] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-12-08 11:11:48] INFO: Successfull checking data to update board
+[2024-12-08 11:11:49] ERROR: Error with UpdateBoard: TypeError: updatedBoard.populate(...).populate is not a function
+[2024-12-08 11:12:11] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-12-08 11:12:23] INFO: Successfull checking data to update board
+[2024-12-08 11:13:45] INFO: Successfull checking data to delete board

@@ -8,3 +8,9 @@
 [2024-11-29 09:52:50] ERROR: Error : Error: data and hash arguments required
 [2024-11-29 09:53:39] ERROR: Error : Error: data and hash arguments required
 [2024-11-29 09:53:53] ERROR: Error : Error: data and hash arguments required
+[2024-12-08 10:57:52] ERROR: Error with create board : ValidationError: created_at: Cast to date failed for value "[Function: now]" (type function) at path "created_at"
+[2024-12-08 10:59:50] ERROR: Error with GetBoard: MissingSchemaError: Schema hasn't been registered for model "List".
+Use mongoose.model(name, schema)
+[2024-12-08 11:08:02] ERROR: Error with UpdateBoard: TypeError: updatedBoard.populate(...).populate is not a function
+[2024-12-08 11:11:18] ERROR: Error with UpdateBoard: TypeError: updatedBoard.populate(...).populate is not a function
+[2024-12-08 11:11:49] ERROR: Error with UpdateBoard: TypeError: updatedBoard.populate(...).populate is not a function

@@ -19,7 +19,7 @@ async function CreateBoard(req, res) {
             board_lists: boardReqCreate.board_lists,
             board_collaborators: boardReqCreate.board_collaborators,
             created_by: boardReqCreate.user_id,
-            created_at: Date.now
+            created_at: Date.now()
         });
 
         const newBoard = await board.save();
@@ -53,8 +53,8 @@ async function GetBoard(req, res) {
                 "board_collaborators.board_collaborator_id",
                 "user_full_name user_email"
             )
-            .populate("created_by", "user_full_name user_email")
-            .populate("board_lists.list_id");
+            .populate("created_by", "user_full_name user_email");
+        // .populate("board_lists.list_id");
 
         // Kiểm tra nếu không tìm thấy bảng
         if (!board) {
@@ -154,16 +154,14 @@ async function UpdateBoard(req, res) {
 
         // Lưu thay đổi vào CSDL
         const updatedBoard = await board.save();
-
-        // Populate các trường cần thiết
-        await updatedBoard
-            .populate("created_by", "user_full_name user_email")
-            .populate(
-                "board_collaborators.board_collaborator_id",
-                "user_full_name user_email"
-            )
-            .populate("board_lists.list_id")
-            .execPopulate();
+        // await updatedBoard
+        //     .populate("created_by", "user_full_name user_email")
+        //     .populate(
+        //         "board_collaborators.board_collaborator_id",
+        //         "user_full_name user_email"
+        //     )
+        //     .populate("board_lists.list_id")
+        //     .execPopulate();
 
         // Trả về thành công
         return sendSuccess(res, "Board updated successfully", updatedBoard);
