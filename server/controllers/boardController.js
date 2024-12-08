@@ -152,6 +152,8 @@ async function UpdateBoard(req, res) {
             });
         }
 
+        board.updated_at = Date.now();
+
         // Lưu thay đổi vào CSDL
         const updatedBoard = await board.save();
         // await updatedBoard

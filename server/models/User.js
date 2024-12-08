@@ -19,7 +19,7 @@ const UserSchema = new Schema({
     type: String,
     require: true,
   },
-  boards: [
+  user_boards: [
     {
       board_id: {
         type: Schema.Types.ObjectId,
