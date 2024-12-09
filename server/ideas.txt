@@ -31,3 +31,10 @@
 
 
 Tạo board : 
+
+
+Về changePassword: trường hợp hiện tại đang có searh tài khoản bằng email, trông giống như quên password hơn là change sau đăng nhập,
+=> Nên chỉnh lại tìm bằng id
+        + Tính năng thêm: change password và gửi thông tin đổi pass về gmail
+
+=> nên có thêm setup smtp
