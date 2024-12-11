@@ -19,3 +19,4 @@ Use mongoose.model(name, schema)
 [2024-12-11 14:33:01] ERROR: Error with create board : TypeError: Cannot read properties of undefined (reading 'push')
 [2024-12-11 14:34:31] ERROR: Error with create board : TypeError: Cannot read properties of undefined (reading 'push')
 [2024-12-11 14:35:33] ERROR: Error with create board : TypeError: Cannot read properties of undefined (reading 'push')
+[2024-12-11 16:05:50] ERROR: Error verified token:  jwt expired

@@ -196,3 +196,17 @@ Use mongoose.model(name, schema)
 [2024-12-11 15:22:05] INFO: Successfull checking data user for update profile
 [2024-12-11 15:22:12] INFO: Successfull checking data user for update profile
 [2024-12-11 15:25:14] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-12-11 16:05:37] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-12-11 16:05:50] ERROR: Error verified token:  jwt expired
+[2024-12-11 16:06:23] INFO: Successfull checking data user for login
+[2024-12-11 16:06:39] INFO: Successfull checking data register new user
+[2024-12-11 16:06:39] INFO: Hash password complete
+[2024-12-11 16:06:39] INFO: Complete create token
+[2024-12-11 16:07:25] INFO: Successfull checking data register new user
+[2024-12-11 16:07:25] INFO: Hash password complete
+[2024-12-11 16:07:26] INFO: Complete create token
+[2024-12-11 16:07:51] INFO: Successfull checking data to create board
+[2024-12-11 16:07:51] INFO: Successfull create board
+[2024-12-11 16:07:59] INFO: Successfull checking data to create board
+[2024-12-11 16:07:59] INFO: Successfull create board
+[2024-12-11 16:08:20] INFO: Successfull checking data to get board by user id

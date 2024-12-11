@@ -41,7 +41,10 @@ Về changePassword: trường hợp hiện tại đang có searh tài khoản b
 
 
 
-cần trước : listBoardsByUserId,
-            editUserProfile,
+cần trước : 
 
 
+
+ca6n2 update them : delete
+
+//
