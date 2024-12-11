@@ -209,6 +209,7 @@ async function DeleteBoard(req, res) {
 async function GetAllBoardByUserId(req, res) {
   try {
     const { user_id } = req.body;
+    
   } catch (error) {}
 }
 

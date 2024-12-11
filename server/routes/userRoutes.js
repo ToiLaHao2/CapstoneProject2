@@ -4,7 +4,7 @@ const {} = require("../controllers/userController");
 
 const authRouter = express.Router();
 
-authRouter.post("/getProfile", validateGetUserProfile);
+authRouter.post("/getProfile", validateGetUserProfile,);
 // authRouter.post("/login", validateLogin, Login);
 // authRouter.post("/logout");
 // authRouter.post("/profile");

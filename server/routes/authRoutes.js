@@ -15,7 +15,7 @@ const authRouter = express.Router();
 authRouter.post("/register", validateRegister, Register);
 authRouter.post("/login", validateLogin, Login);
 // authRouter.post("/logout");
-// authRouter.post("/profile");
+// authRouter.post("/forgotPassword");
 authRouter.post("/changePassword", validationChangePassword, ChangePassword);
 
 module.exports = authRouter;
