@@ -45,6 +45,26 @@ async function validateGetBoard(req, res, next) {
     }
 }
 
+// Get boards by user id
+async function validateGetBoardsByUserId(req, res, next) {
+    const token = await getTokenFromHeaders(req);
+    const checkToken = await VerifiedToken(token);
+    if (!checkToken) {
+        return sendError(res, 401, "Invalid token", "");
+    }
+    req.body.user_id = checkToken.id;
+    const boardsGetByUserId = req.body;
+    const rule = validationRules["getBoardsByUserId"];
+    const result = await validateFields(boardsGetByUserId, rule);
+    if (result.valid == true) {
+        logger.info("Successfull checking data to get board by user id");
+        next();
+    } else {
+        logger.info(`Error checking data ${result.error}`);
+        return sendError(res, 400, `Error checking data ${result.error}`);
+    }
+}
+
 // Update board
 async function validateUpdateBoard(req, res, next) {
     const token = await getTokenFromHeaders(req);
