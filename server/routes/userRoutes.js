@@ -1,13 +1,16 @@
 const express = require("express");
-const { validateGetUserProfile } = require("../middleware/userMiddleware");
-const {} = require("../controllers/userController");
+const {
+  validateGetUserProfile,
+  validateUpdateUserProfile,
+} = require("../middleware/userMiddleware");
+const {
+  GetUserProfile,
+  UpdateUserProfile,
+} = require("../controllers/userController");
 
-const authRouter = express.Router();
+const userRouter = express.Router();
 
-authRouter.post("/getProfile", validateGetUserProfile,);
-// authRouter.post("/login", validateLogin, Login);
-// authRouter.post("/logout");
-// authRouter.post("/profile");
-// authRouter.post("/changePassword", validationChangePassword, ChangePassword);
+userRouter.post("/getProfile", validateGetUserProfile, GetUserProfile);
+userRouter.post("/updateProfile", validateUpdateUserProfile, UpdateUserProfile);
 
-module.exports = authRouter;
+module.exports = userRouter;

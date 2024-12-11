@@ -23,10 +23,37 @@ async function validateGetUserProfile(req, res, next) {
     logger.info(
       `Error checking data user for changing password: ${resultCheckingData.error}`
     );
-    sendError(res, 400, "Error checking data", {
+    return sendError(res, 400, "Error checking data", {
       Error: resultCheckingData.error,
     });
   }
 }
 
-module.exports = { validateGetUserProfile };
+// update user profile
+async function validateUpdateUserProfile(req, res, next) {
+  const token = await getTokenFromHeaders(req);
+  const checkToken = await VerifiedToken(token);
+  if (!checkToken) {
+    return res.status(401).json({ error: "Invalid token" });
+  }
+  req.body.user_id = checkToken.id;
+  const userRequestUpdateProfile = req.body;
+  const rules = validationRules["updateUserProfile"];
+  const resultCheckingData = await validateFields(
+    userRequestUpdateProfile,
+    rules
+  );
+  if (resultCheckingData.valid == true) {
+    logger.info("Successfull checking data user for update profile");
+    next();
+  } else {
+    logger.info(
+      `Error checking data user for updating: ${resultCheckingData.error}`
+    );
+    return sendError(res, 400, "Error checking data", {
+      Error: resultCheckingData.error,
+    });
+  }
+}
+
+module.exports = { validateGetUserProfile, validateUpdateUserProfile };

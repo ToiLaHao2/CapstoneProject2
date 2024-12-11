@@ -23,14 +23,14 @@ async function CreateBoard(req, res) {
     });
 
     const newBoard = await board.save();
-    user.boards.push({ board_id: newBoard._id, role: "ADMIN" });
+    user.user_boards.push({ board_id: newBoard._id, role: "ADMIN" });
     await user.save();
-
+    logger.info("Successfull create board");
     return sendSuccess(res, "Create board success", newBoard._id);
   } catch (error) {
     logger.error(`Error with create board : ${error}`);
     return sendError(res, 500, `Error while create board`, {
-      details: error,
+      details: error.message,
     });
   }
 }
@@ -201,7 +201,7 @@ async function DeleteBoard(req, res) {
   } catch (error) {
     logger.error(`Error with DeleteBoard: ${error}`);
     return sendError(res, 500, "Internal Server Error", {
-      details: error.message,
+      details: error,
     });
   }
 }
@@ -209,8 +209,17 @@ async function DeleteBoard(req, res) {
 async function GetAllBoardByUserId(req, res) {
   try {
     const { user_id } = req.body;
-    
-  } catch (error) {}
+    const boards = await Board.find({ created_by: user_id });
+    return sendSuccess(res, "Get all boards by user id success", boards);
+  } catch (error) {
+    return sendError(res, 500, "Internal Server Error", { details: error });
+  }
 }
 
-module.exports = { CreateBoard, GetBoard, UpdateBoard, DeleteBoard };
+module.exports = {
+  CreateBoard,
+  GetBoard,
+  UpdateBoard,
+  DeleteBoard,
+  GetAllBoardByUserId,
+};

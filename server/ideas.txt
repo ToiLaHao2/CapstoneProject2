@@ -38,3 +38,10 @@ Về changePassword: trường hợp hiện tại đang có searh tài khoản b
         + Tính năng thêm: change password và gửi thông tin đổi pass về gmail
 
 => nên có thêm setup smtp
+
+
+
+cần trước : listBoardsByUserId,
+            editUserProfile,
+
+

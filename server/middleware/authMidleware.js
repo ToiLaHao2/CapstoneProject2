@@ -16,7 +16,7 @@ async function validateRegister(req, res, next) {
     logger.info(
       `Error checking data register new user: ${resultCheckingData.error}`
     );
-    sendError(res, 400, "Error checking data", {
+    return sendError(res, 400, "Error checking data", {
       Error: resultCheckingData.error,
     });
   }
@@ -33,7 +33,7 @@ async function validateLogin(req, res, next) {
     logger.info(
       `Error checking data user for login: ${resultCheckingData.error}`
     );
-    sendError(res, 400, "Error checking data", {
+    return sendError(res, 400, "Error checking data", {
       Error: resultCheckingData.error,
     });
   }
@@ -58,7 +58,7 @@ async function validationChangePassword(req, res, next) {
     logger.info(
       `Error checking data user for changing password: ${resultCheckingData.error}`
     );
-    sendError(res, 400, "Error checking data", {
+    return sendError(res, 400, "Error checking data", {
       Error: resultCheckingData.error,
     });
   }
