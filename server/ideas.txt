@@ -1,0 +1,54 @@
+Ý tưởng làm phần update:
+    - Client: Khi bấm update, client sẽ thực hiện 3 việc :
+        + Kiểm tra thông tin sau thay đổi xem có khác biệt
+        (Vd: dùng equal so sánh detailState(hiện tại) và
+        user.infor trong object xem có giống nhau không)
+        + Nếu có mục khác biệt, thì cho nó vào 1 object mới
+        (Vd: object user ban đầu có 4 fields: name, address
+        age, phone_num. Các fields có data thay đoi, name
+        address thì các field này được thêm vào object mới
+        userUpdateDetail:
+            {
+                name: 'Nguyễn Văn A',
+                address: 'Hà Nội'
+            }
+        )
+        + Chuyển object userUpdateDetail tới server
+    - Server : Nhận và xử lý thông tin update:
+        * Middleware(kiểm tra)
+            + kiểm tra token
+            + Kiểm tra requireField
+            + kiểm tra checkMessage
+            + kiểm tra object có null không
+                Nếu có báo object null
+            + kiểm tra, làm sạch dữ liệu trong object (không có ký tự đặc biệt)
+                Nếu có thì báo dữ liệu ko hợp liệu
+                không thì next
+        * Controller
+            + Lấy id để tìm và update model
+            + loop lấy từng dữ liệu ra và add vào db 
+            + trả về thông tin update thành công
+
+
+Tạo board : 
+
+
+Về changePassword: trường hợp hiện tại đang có searh tài khoản bằng email, trông giống như quên password hơn là change sau đăng nhập,
+=> Nên chỉnh lại tìm bằng id
+        + Tính năng thêm: change password và gửi thông tin đổi pass về gmail
+
+=> nên có thêm setup smtp
+
+
+
+cần trước : 
+
+
+
+can update them : delete
+
+// can lam them
+
+
+
+Tìm hiểu về HTTPOnly Cookie và áp dụng

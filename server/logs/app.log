@@ -120,3 +120,93 @@
 [2024-11-29 10:17:16] INFO: Successfull checking data user for login
 [2024-11-29 10:17:16] INFO: Compare hash complete
 [2024-11-29 10:17:16] INFO: Complete create token
+[2024-12-08 10:50:29] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-12-08 10:53:40] INFO: Successfull checking data register new user
+[2024-12-08 10:53:40] INFO: Hash password complete
+[2024-12-08 10:53:40] INFO: Complete create token
+[2024-12-08 10:57:52] INFO: Successfull checking data to create board
+[2024-12-08 10:57:52] ERROR: Error with create board : ValidationError: created_at: Cast to date failed for value "[Function: now]" (type function) at path "created_at"
+[2024-12-08 10:58:34] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-12-08 10:58:38] INFO: Successfull checking data to create board
+[2024-12-08 10:59:50] INFO: Successfull checking data to create board
+[2024-12-08 10:59:50] ERROR: Error with GetBoard: MissingSchemaError: Schema hasn't been registered for model "List".
+Use mongoose.model(name, schema)
+[2024-12-08 11:01:09] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-12-08 11:01:12] INFO: Successfull checking data to create board
+[2024-12-08 11:03:49] INFO: Successfull checking data to create board
+[2024-12-08 11:04:43] INFO: Successfull checking data to create board
+[2024-12-08 11:05:30] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-12-08 11:05:32] INFO: Successfull checking data to update board
+[2024-12-08 11:08:02] INFO: Successfull checking data to update board
+[2024-12-08 11:08:02] ERROR: Error with UpdateBoard: TypeError: updatedBoard.populate(...).populate is not a function
+[2024-12-08 11:10:49] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-12-08 11:10:52] INFO: Successfull checking data to update board
+[2024-12-08 11:11:18] INFO: Successfull checking data to update board
+[2024-12-08 11:11:18] ERROR: Error with UpdateBoard: TypeError: updatedBoard.populate(...).populate is not a function
+[2024-12-08 11:11:37] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-12-08 11:11:48] INFO: Successfull checking data to update board
+[2024-12-08 11:11:49] ERROR: Error with UpdateBoard: TypeError: updatedBoard.populate(...).populate is not a function
+[2024-12-08 11:12:11] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-12-08 11:12:23] INFO: Successfull checking data to update board
+[2024-12-08 11:13:45] INFO: Successfull checking data to delete board
+[2024-12-09 10:34:04] ERROR: Attempt 1: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2024-12-09 10:34:39] ERROR: Attempt 2: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2024-12-09 10:34:45] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-12-09 10:38:33] INFO: Error checking data register new user: user_full_name is required.
+[2024-12-11 14:16:39] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-12-11 14:21:08] INFO: Error checking data user for login: user_email is required.
+[2024-12-11 14:21:15] INFO: Successfull checking data user for login
+[2024-12-11 14:22:59] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-12-11 14:25:01] INFO: Error checking data user for login: Wrong message from wrong app
+[2024-12-11 14:25:07] INFO: Error checking data register new user: user_full_name is required.
+[2024-12-11 14:25:20] INFO: Successfull checking data register new user
+[2024-12-11 14:25:20] INFO: Hash password complete
+[2024-12-11 14:25:20] INFO: Complete create token
+[2024-12-11 14:33:01] INFO: Successfull checking data to create board
+[2024-12-11 14:33:01] ERROR: Error with create board : TypeError: Cannot read properties of undefined (reading 'push')
+[2024-12-11 14:34:29] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-12-11 14:34:31] INFO: Successfull checking data to create board
+[2024-12-11 14:34:31] ERROR: Error with create board : TypeError: Cannot read properties of undefined (reading 'push')
+[2024-12-11 14:35:30] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-12-11 14:35:33] INFO: Successfull checking data to create board
+[2024-12-11 14:35:33] ERROR: Error with create board : TypeError: Cannot read properties of undefined (reading 'push')
+[2024-12-11 14:37:21] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-12-11 14:37:24] INFO: Successfull checking data to create board
+[2024-12-11 14:37:24] INFO: Successfull create board
+[2024-12-11 14:37:38] INFO: Successfull checking data to create board
+[2024-12-11 14:37:38] INFO: Successfull create board
+[2024-12-11 14:38:33] INFO: Successfull checking data to get board by user id
+[2024-12-11 14:58:00] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-12-11 14:59:04] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-12-11 15:01:05] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-12-11 15:03:24] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-12-11 15:07:39] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-12-11 15:08:28] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-12-11 15:08:41] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-12-11 15:09:37] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-12-11 15:11:13] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-12-11 15:11:57] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-12-11 15:14:53] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-12-11 15:16:09] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-12-11 15:16:45] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-12-11 15:18:19] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-12-11 15:18:22] INFO: Successfull checking data user for changing password
+[2024-12-11 15:21:25] INFO: Successfull checking data user for update profile
+[2024-12-11 15:21:46] INFO: Successfull checking data user for update profile
+[2024-12-11 15:22:05] INFO: Successfull checking data user for update profile
+[2024-12-11 15:22:12] INFO: Successfull checking data user for update profile
+[2024-12-11 15:25:14] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-12-11 16:05:37] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-12-11 16:05:50] ERROR: Error verified token:  jwt expired
+[2024-12-11 16:06:23] INFO: Successfull checking data user for login
+[2024-12-11 16:06:39] INFO: Successfull checking data register new user
+[2024-12-11 16:06:39] INFO: Hash password complete
+[2024-12-11 16:06:39] INFO: Complete create token
+[2024-12-11 16:07:25] INFO: Successfull checking data register new user
+[2024-12-11 16:07:25] INFO: Hash password complete
+[2024-12-11 16:07:26] INFO: Complete create token
+[2024-12-11 16:07:51] INFO: Successfull checking data to create board
+[2024-12-11 16:07:51] INFO: Successfull create board
+[2024-12-11 16:07:59] INFO: Successfull checking data to create board
+[2024-12-11 16:07:59] INFO: Successfull create board
+[2024-12-11 16:08:20] INFO: Successfull checking data to get board by user id

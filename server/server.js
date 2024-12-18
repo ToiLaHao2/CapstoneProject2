@@ -6,6 +6,8 @@ const dotenv = require("dotenv");
 const errorHandler = require("./middleware/errorHandler");
 const { connectDb } = require("./configs/dbConfig");
 const authRouter = require("./routes/authRoutes");
+const boardRouter = require("./routes/boardRoutes");
+const userRouter = require("./routes/userRoutes");
 
 dotenv.config();
 
@@ -16,13 +18,17 @@ const port = process.env.PORT;
 app.use(cors());
 app.use(bodyparser.json());
 
-app.use(errorHandler);
+// app.use(errorHandler);
 
 // Connect database
 connectDb();
+
 // Routes
 app.use("/api/auth", authRouter);
+app.use("/api/board", boardRouter);
+app.use("/api/user", userRouter);
+
 // Listen
-app.listen(port, function() {
-    console.log("Your app running on port " + port);
+app.listen(port, function () {
+  console.log("Your app running on port " + port);
 });

@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const CheckListItemSchema = new Schema({
-  cl_item_id: {
+  cl_itemcl_id: {
     type: Schema.Types.ObjectId,
     ref: "CheckList",
   },
