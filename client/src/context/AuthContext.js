@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
             // Cập nhật token và trạng thái xác thực
             setToken(data.token);
             setIsAuthenticated(true);
-            localStorage.setItem("token", data.token);
+            saveToken(data.token);
 
             // Gọi API để lấy dữ liệu người dùng từ UserContext
             await getUserData(data.token);
@@ -72,7 +72,7 @@ export const AuthProvider = ({ children }) => {
             // Cập nhật token và trạng thái xác thực
             setToken(data.token);
             setIsAuthenticated(true);
-            localStorage.setItem("token", data.token);
+            saveToken(data.token);
 
             // Gọi API để lấy dữ liệu người dùng từ UserContext
             await getUserData(data.token);
