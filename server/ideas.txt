@@ -45,6 +45,6 @@ cần trước :
 
 
 
-ca6n2 update them : delete
+can update them : delete
 
-//
+// can lam them

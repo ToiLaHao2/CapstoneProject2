@@ -191,6 +191,7 @@ async function DeleteBoard(req, res) {
       });
     }
 
+    
     // Nếu cần xóa các dữ liệu liên quan, bạn có thể thêm vào đây
     // Ví dụ: await List.deleteMany({ board_id });
 
