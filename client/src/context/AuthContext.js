@@ -43,17 +43,44 @@ export const AuthProvider = ({ children }) => {
 
             // Gọi API để lấy dữ liệu người dùng từ UserContext
             await getUserData(data.token);
-            
+
             console.log("Registration successful!");
         } catch (error) {
             console.error("Registration error:", error.message);
         }
     };
 
-    const login = token => {
-        setToken(token);
-        setIsAuthenticated(true);
-        saveToken(token);
+    const login = async (userEmail, userPassword, getUserData) => {
+        try {
+            const response = await publicAxios.post(
+                "/auth/login",
+                JSON.stringify({
+                    user_email: userEmail,
+                    user_password: userPassword,
+                    user_avatar_url: "",
+                    checkMessage: "Login to account"
+                })
+            );
+
+            if (!response.ok) {
+                throw new Error("Login failed!");
+            }
+
+            const data = await response.json();
+            console.log(data);
+
+            // Cập nhật token và trạng thái xác thực
+            setToken(data.token);
+            setIsAuthenticated(true);
+            localStorage.setItem("token", data.token);
+
+            // Gọi API để lấy dữ liệu người dùng từ UserContext
+            await getUserData(data.token);
+
+            console.log("Registration successful!");
+        } catch (error) {
+            console.error("Registration error:", error.message);
+        }
     };
 
     const logout = () => {
