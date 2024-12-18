@@ -48,3 +48,7 @@ cần trước :
 can update them : delete
 
 // can lam them
+
+
+
+Tìm hiểu về HTTPOnly Cookie và áp dụng
