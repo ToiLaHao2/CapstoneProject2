@@ -18,22 +18,19 @@ export const AuthProvider = ({ children }) => {
 
     const register = async (fullName, email, password, getUserData) => {
         try {
-            const response = await publicAxios.post(
-                "/auth/register",
-                JSON.stringify({
-                    user_full_name: fullName,
-                    user_email: email,
-                    user_password: password,
-                    user_avatar_url: "",
-                    checkMessage: "Register new account"
-                })
-            );
+            const response = await publicAxios.post("/auth/register", {
+                user_full_name: fullName,
+                user_email: email,
+                user_password: password,
+                user_avatar_url: "empty",
+                checkMessage: "Register new account"
+            });
 
-            if (!response.ok) {
+            if (response.status !== 200) {
                 throw new Error("Registration failed!");
             }
 
-            const data = await response.json();
+            const data = await response.data;
             console.log(data);
 
             // Cập nhật token và trạng thái xác thực
@@ -46,7 +43,7 @@ export const AuthProvider = ({ children }) => {
 
             console.log("Registration successful!");
         } catch (error) {
-            console.error("Registration error:", error.message);
+            console.error("Registration error:", error);
         }
     };
 
