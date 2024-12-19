@@ -357,3 +357,68 @@ Use mongoose.model(name, schema)
 [2024-12-19 12:56:56] INFO: Successfull checking data user for get user profile
 [2024-12-19 12:57:05] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
 [2024-12-19 12:57:08] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-12-19 13:09:25] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-12-19 13:10:05] INFO: Successfull checking data register new user
+[2024-12-19 13:10:48] INFO: Successfull checking data register new user
+[2024-12-19 13:10:58] INFO: Hash password complete
+[2024-12-19 13:10:58] INFO: Complete create token
+[2024-12-19 13:11:49] INFO: Successfull checking data register new user
+[2024-12-19 13:11:49] INFO: Hash password complete
+[2024-12-19 13:11:49] INFO: Complete create token
+[2024-12-19 13:11:49] INFO: Successfull checking data user for get user profile
+[2024-12-19 13:12:29] INFO: Successfull checking data register new user
+[2024-12-19 13:12:29] INFO: Hash password complete
+[2024-12-19 13:12:29] INFO: Complete create token
+[2024-12-19 13:12:29] INFO: Successfull checking data user for get user profile
+[2024-12-19 14:03:48] INFO: Successfull checking data user for login
+[2024-12-19 14:03:48] INFO: Compare hash complete
+[2024-12-19 14:03:48] INFO: Complete create token
+[2024-12-19 14:03:48] INFO: Successfull checking data user for get user profile
+[2024-12-19 14:04:34] INFO: Successfull checking data user for login
+[2024-12-19 14:04:34] INFO: Compare hash complete
+[2024-12-19 14:04:42] INFO: Successfull checking data user for login
+[2024-12-19 14:04:42] INFO: Compare hash complete
+[2024-12-19 14:04:42] INFO: Complete create token
+[2024-12-19 14:04:42] INFO: Successfull checking data user for get user profile
+[2024-12-19 14:05:20] INFO: Successfull checking data user for login
+[2024-12-19 14:05:20] INFO: Compare hash complete
+[2024-12-19 14:05:20] INFO: Complete create token
+[2024-12-19 14:05:20] INFO: Successfull checking data user for get user profile
+[2024-12-19 14:05:38] INFO: Successfull checking data user for login
+[2024-12-19 14:05:39] INFO: Compare hash complete
+[2024-12-19 14:05:39] INFO: Complete create token
+[2024-12-19 14:05:39] INFO: Successfull checking data user for get user profile
+[2024-12-19 14:06:08] INFO: Successfull checking data user for login
+[2024-12-19 14:06:09] INFO: Compare hash complete
+[2024-12-19 14:06:09] INFO: Complete create token
+[2024-12-19 14:06:09] INFO: Successfull checking data user for get user profile
+[2024-12-19 14:06:51] INFO: Successfull checking data user for login
+[2024-12-19 14:06:51] INFO: Compare hash complete
+[2024-12-19 14:06:51] INFO: Complete create token
+[2024-12-19 14:06:51] INFO: Successfull checking data user for get user profile
+[2024-12-19 14:07:36] INFO: Successfull checking data user for login
+[2024-12-19 14:07:36] INFO: Compare hash complete
+[2024-12-19 14:07:36] INFO: Complete create token
+[2024-12-19 14:07:36] INFO: Successfull checking data user for get user profile
+[2024-12-19 14:08:51] INFO: Successfull checking data user for login
+[2024-12-19 14:08:51] INFO: Compare hash complete
+[2024-12-19 14:08:51] INFO: Complete create token
+[2024-12-19 14:08:51] INFO: Successfull checking data user for get user profile
+[2024-12-19 14:09:41] INFO: Successfull checking data user for login
+[2024-12-19 14:09:41] INFO: Compare hash complete
+[2024-12-19 14:09:41] INFO: Complete create token
+[2024-12-19 14:09:41] INFO: Successfull checking data user for get user profile
+[2024-12-19 14:11:17] INFO: Successfull checking data user for login
+[2024-12-19 14:11:17] INFO: Compare hash complete
+[2024-12-19 14:11:17] INFO: Complete create token
+[2024-12-19 14:11:17] INFO: Successfull checking data user for get user profile
+[2024-12-19 14:33:57] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-12-19 14:37:31] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-12-19 14:38:10] INFO: Successfull checking data user for login
+[2024-12-19 14:38:11] INFO: Compare hash complete
+[2024-12-19 14:38:11] INFO: Complete create token
+[2024-12-19 14:38:11] INFO: Successfull checking data user for get user profile
+[2024-12-19 14:43:09] INFO: Successfull checking data user for login
+[2024-12-19 14:43:09] INFO: Compare hash complete
+[2024-12-19 14:43:09] INFO: Complete create token
+[2024-12-19 14:43:09] INFO: Successfull checking data user for get user profile

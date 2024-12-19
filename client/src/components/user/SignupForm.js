@@ -50,8 +50,7 @@ const SignupForm = () => {
             if (result !== "Success") {
                 setAlertMessage(result);
             } else {
-                setAlertMessage("Registration successful!");
-                alert(alert);
+                alert("Registration successful!");
                 navigate("/dashboard");
             }
         } catch (error) {
