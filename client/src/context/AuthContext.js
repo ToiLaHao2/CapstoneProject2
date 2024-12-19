@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     const saveToken = token => {
-        localStorage.setItem("token", JSON.stringify(token));
+        localStorage.setItem("token",token);
     };
 
     const removeToken = () => {
@@ -30,20 +30,19 @@ export const AuthProvider = ({ children }) => {
                 throw new Error("Registration failed!");
             }
 
-            const data = await response.data;
-            console.log(data);
+            const data = response.data;
 
             // Cập nhật token và trạng thái xác thực
-            setToken(data.token);
+            setToken(data.data.token);
             setIsAuthenticated(true);
-            saveToken(data.token);
+            saveToken(data.data.token);
 
             // Gọi API để lấy dữ liệu người dùng từ UserContext
-            await getUserData(data.token);
+            await getUserData();
 
-            console.log("Registration successful!");
+            return("Registration successful!");
         } catch (error) {
-            console.error("Registration error:", error);
+            return("Registration error:", error);
         }
     };
 
@@ -89,7 +88,7 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         const storedToken = localStorage.getItem("token");
         if (storedToken) {
-            setToken(JSON.parse(storedToken));
+            setToken(storedToken);
             setIsAuthenticated(true);
         }
         setLoading(false);

@@ -17,11 +17,11 @@ async function validateGetUserProfile(req, res, next) {
   const rules = validationRules["getUserProfile"];
   const resultCheckingData = await validateFields(userRequestGetProfile, rules);
   if (resultCheckingData.valid == true) {
-    logger.info("Successfull checking data user for changing password");
+    logger.info("Successfull checking data user for get user profile");
     next();
   } else {
     logger.info(
-      `Error checking data user for changing password: ${resultCheckingData.error}`
+      `Error checking data user for get user profile: ${resultCheckingData.error}`
     );
     return sendError(res, 400, "Error checking data", {
       Error: resultCheckingData.error,

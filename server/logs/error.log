@@ -20,3 +20,16 @@ Use mongoose.model(name, schema)
 [2024-12-11 14:34:31] ERROR: Error with create board : TypeError: Cannot read properties of undefined (reading 'push')
 [2024-12-11 14:35:33] ERROR: Error with create board : TypeError: Cannot read properties of undefined (reading 'push')
 [2024-12-11 16:05:50] ERROR: Error verified token:  jwt expired
+[2024-12-19 12:08:57] ERROR: Error verified token:  jwt malformed
+[2024-12-19 12:14:00] ERROR: Error verified token:  jwt malformed
+[2024-12-19 12:14:43] ERROR: Error verified token:  jwt malformed
+[2024-12-19 12:15:48] ERROR: Error verified token:  jwt malformed
+[2024-12-19 12:18:10] ERROR: Error verified token:  jwt malformed
+[2024-12-19 12:18:50] ERROR: Error verified token:  jwt malformed
+[2024-12-19 12:20:10] ERROR: Error verified token:  jwt malformed
+[2024-12-19 12:21:10] ERROR: Error verified token:  jwt malformed
+[2024-12-19 12:22:05] ERROR: Error verified token:  jwt malformed
+[2024-12-19 12:48:16] ERROR: Error verified token:  invalid token
+[2024-12-19 12:50:44] ERROR: Error verified token:  invalid token
+[2024-12-19 12:51:23] ERROR: Error verified token:  invalid token
+[2024-12-19 12:54:26] ERROR: Error verified token:  invalid token

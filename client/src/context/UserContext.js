@@ -9,22 +9,19 @@ export const UserProvider = ({ children }) => {
     // Lấy thông tin người dùng từ API
     const getUserData = async () => {
         try {
-            const response = await privateAxios.post(
-                "/user/getProfile",
-                JSON.stringify({
-                    checkMessage: "Get user profile"
-                })
-            );
+            const response = await privateAxios.post("/user/getProfile", {
+                checkMessage: "Get user profile"
+            });
 
-            if (!response.ok) {
+            if (response.status !== 200) {
                 throw new Error("Failed to fetch user data");
             }
 
-            const data = await response.json();
-            console.log(data);
-            setUser(data); // Cập nhật trạng thái người dùng
+            const data = await response.data;
+            console.log(data.data);
+            setUser(data.data); // Cập nhật trạng thái người dùng
         } catch (error) {
-            console.error("Fetch user error:", error.message);
+            console.error("Fetch user error:", error);
         }
     };
 
