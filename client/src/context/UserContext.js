@@ -18,10 +18,10 @@ export const UserProvider = ({ children }) => {
             }
 
             const data = await response.data;
-            console.log(data.data);
-            setUser(data.data); // Cập nhật trạng thái người dùng
+            setUser(data.data);
+            return "Success"; // Cập nhật trạng thái người dùng
         } catch (error) {
-            console.error("Fetch user error:", error);
+            return `Fetch user error: ${error}`;
         }
     };
 
