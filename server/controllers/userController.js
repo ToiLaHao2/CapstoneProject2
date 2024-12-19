@@ -14,6 +14,7 @@ async function GetUserProfile(req, res) {
       return sendSuccess(res, "Get user data success", user);
     }
   } catch (error) {
+    logger.error(error);
     return sendError(res, 500, "Error getting user profile", error);
   }
 }

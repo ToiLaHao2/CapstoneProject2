@@ -10,10 +10,10 @@ const logger = require("../utils/logger");
 async function Register(req, res) {
     const userRegist = req.body;
     try {
-        let userBaseOnEmail = User.findOne({
+        let userBaseOnEmail = await User.findOne({
             user_email: userRegist.user_email
         });
-        if (!userBaseOnEmail) {
+        if (userBaseOnEmail !== null) {
             return sendError(res, 400, "Email is already in use");
         }
         const hashedPassword = (await HashPassword(

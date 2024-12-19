@@ -40,7 +40,12 @@
 // export default App;
 
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Navigate
+} from "react-router-dom";
 import Sidebar from "./components/sidebar/Sidebar";
 import Topbar from "./components/topbar/Topbar";
 import Dashboard from "./components/dashboard/Dashboard";
@@ -55,6 +60,12 @@ import ChangePasswordForm from "./components/user/ChangePasswordForm";
 import "./App.css";
 import ViewProfile from "./components/user/viewProfile/ViewProfile";
 import ContextProvider from "./context/ContextProvider";
+import { useAuth } from "./context/AuthContext";
+
+const ProtectedRoute = ({ children }) => {
+    const { isAuthenticated } = useAuth();
+    return isAuthenticated ? children : <Navigate to="/login" />;
+};
 
 function App() {
     return (
@@ -65,86 +76,100 @@ function App() {
                     <Route
                         path="/"
                         element={
-                            <div className="app">
-                                <Topbar />
-                                <div className="main-content">
-                                    <Sidebar />
-                                    <Dashboard /> {/* Trang mặc định */}
+                            <ProtectedRoute>
+                                <div className="app">
+                                    <Topbar />
+                                    <div className="main-content">
+                                        <Sidebar />
+                                        <Dashboard /> {/* Trang mặc định */}
+                                    </div>
                                 </div>
-                            </div>
+                            </ProtectedRoute>
                         }
                     />
                     <Route
                         path="/dashboard"
                         element={
-                            <div className="app">
-                                <Topbar />
-                                <div className="main-content">
-                                    <Sidebar />
-                                    <Dashboard />
+                            <ProtectedRoute>
+                                <div className="app">
+                                    <Topbar />
+                                    <div className="main-content">
+                                        <Sidebar />
+                                        <Dashboard /> {/* Trang mặc định */}
+                                    </div>
                                 </div>
-                            </div>
+                            </ProtectedRoute>
                         }
                     />
                     <Route
                         path="/projects"
                         element={
-                            <div className="app">
-                                <Topbar />
-                                <div className="main-content">
-                                    <Sidebar />
-                                    <Projects />
+                            <ProtectedRoute>
+                                <div className="app">
+                                    <Topbar />
+                                    <div className="main-content">
+                                        <Sidebar />
+                                        <Projects />
+                                    </div>
                                 </div>
-                            </div>
+                            </ProtectedRoute>
                         }
                     />
                     <Route
                         path="/tasks"
                         element={
-                            <div className="app">
-                                <Topbar />
-                                <div className="main-content">
-                                    <Sidebar />
-                                    <Tasks />
+                            <ProtectedRoute>
+                                <div className="app">
+                                    <Topbar />
+                                    <div className="main-content">
+                                        <Sidebar />
+                                        <Tasks />
+                                    </div>
                                 </div>
-                            </div>
+                            </ProtectedRoute>
                         }
                     />
                     <Route
                         path="/calendar"
                         element={
-                            <div className="app">
-                                <Topbar />
-                                <div className="main-content">
-                                    <Sidebar />
-                                    <Calendar />
+                            <ProtectedRoute>
+                                <div className="app">
+                                    <Topbar />
+                                    <div className="main-content">
+                                        <Sidebar />
+                                        <Calendar />
+                                    </div>
                                 </div>
-                            </div>
+                            </ProtectedRoute>
                         }
                     />
                     <Route
                         path="/chat"
                         element={
-                            <div className="app">
-                                <Topbar />
-                                <div className="main-content">
-                                    <Sidebar />
-                                    <Chat />
+                            <ProtectedRoute>
+                                <div className="app">
+                                    <Topbar />
+                                    <div className="main-content">
+                                        <Sidebar />
+                                        <Chat />
+                                    </div>
                                 </div>
-                            </div>
+                            </ProtectedRoute>
                         }
                     />
 
                     <Route
                         path="/view-profile"
                         element={
-                            <div className="app">
-                                <Topbar />
-                                <div className="main-content">
-                                    <Sidebar />
-                                    <ViewProfile />
+                            <ProtectedRoute>
+                                <div className="app">
+                                    <Topbar />
+                                    <div className="main-content">
+                                        <Sidebar />
+                                        <ViewProfile />
+                                    </div>
                                 </div>
-                            </div>
+                            </ProtectedRoute>
                         }
                     />
 

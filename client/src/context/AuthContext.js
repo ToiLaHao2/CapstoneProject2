@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     const saveToken = token => {
-        localStorage.setItem("token", JSON.stringify(token));
+        localStorage.setItem("token", token);
     };
 
     const removeToken = () => {
@@ -30,20 +30,18 @@ export const AuthProvider = ({ children }) => {
                 throw new Error("Registration failed!");
             }
 
-            const data = await response.data;
-            console.log(data);
+            const data = response.data;
 
             // Cập nhật token và trạng thái xác thực
-            setToken(data.token);
+            setToken(data.data.token);
             setIsAuthenticated(true);
-            saveToken(data.token);
+            saveToken(data.data.token);
 
             // Gọi API để lấy dữ liệu người dùng từ UserContext
-            await getUserData(data.token);
-
-            console.log("Registration successful!");
+            const result = await getUserData();
+            return result;
         } catch (error) {
-            console.error("Registration error:", error);
+            return `Registration error: ${error}`;
         }
     };
 
@@ -54,29 +52,26 @@ export const AuthProvider = ({ children }) => {
                 JSON.stringify({
                     user_email: userEmail,
                     user_password: userPassword,
-                    user_avatar_url: "",
                     checkMessage: "Login to account"
                 })
             );
 
-            if (!response.ok) {
+            if (response.status !== 200) {
                 throw new Error("Login failed!");
             }
 
-            const data = await response.json();
-            console.log(data);
+            const data = response.data;
 
             // Cập nhật token và trạng thái xác thực
-            setToken(data.token);
+            setToken(data.data.token);
             setIsAuthenticated(true);
-            saveToken(data.token);
+            saveToken(data.data.token);
 
             // Gọi API để lấy dữ liệu người dùng từ UserContext
-            await getUserData(data.token);
-
-            console.log("Registration successful!");
+            const result = await getUserData();
+            return result;
         } catch (error) {
-            console.error("Registration error:", error.message);
+            return `Login error: ${error}`;
         }
     };
 
@@ -89,7 +84,7 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         const storedToken = localStorage.getItem("token");
         if (storedToken) {
-            setToken(JSON.parse(storedToken));
+            setToken(storedToken);
             setIsAuthenticated(true);
         }
         setLoading(false);

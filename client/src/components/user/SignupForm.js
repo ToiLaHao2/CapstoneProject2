@@ -2,6 +2,7 @@ import React, { useReducer, useState } from "react";
 import "./Forms.css";
 import { useAuth } from "../../context/AuthContext";
 import { useUser } from "../../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 // Khởi tạo state ban đầu
 const initialState = {
@@ -24,6 +25,7 @@ const SignupForm = () => {
     const [alertMessage, setAlertMessage] = useState("");
     const { register } = useAuth();
     const { getUserData } = useUser();
+    const navigate = useNavigate();
 
     const { fullName, email, password, confirmPassword } = state;
 
@@ -39,8 +41,18 @@ const SignupForm = () => {
 
         try {
             // Gọi hàm register từ AuthContext
-            await register(fullName, email, password, getUserData);
-            setAlertMessage("Registration successful!");
+            const result = await register(
+                fullName,
+                email,
+                password,
+                getUserData
+            );
+            if (result !== "Success") {
+                setAlertMessage(result);
+            } else {
+                alert("Registration successful!");
+                navigate("/dashboard");
+            }
         } catch (error) {
             setAlertMessage("Registration failed! Please try again.");
         }
