@@ -47,9 +47,9 @@ const LoginForm = () => {
             <h2>Login</h2>
             {/* Hiển thị thông báo lỗi */}
             {alertMessage &&
-                <p className="alert">
+                <div className="alert">
                     {alertMessage}
-                </p>}
+                </div>}
 
             <form onSubmit={handleLogin}>
                 <input

@@ -86,9 +86,12 @@
 
 /* Dropdown Items */
 .dropdown-item {
+  width: 100%;
+  border: none;
+  margin: 5px;
   padding: 10px 15px; /* Tăng padding giữa các mục */
   font-size: 15px; /* Tăng kích thước font */
-  font-weight: 500; /* Tăng độ đậm cho chữ */
+  font-weight: 600; /* Tăng độ đậm cho chữ */
   color: #333; /* Giữ màu chữ trung tính */
   text-decoration: none; /* Bỏ gạch chân */
   border-radius: 5px; /* Bo góc nhẹ từng mục */
