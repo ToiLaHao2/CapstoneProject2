@@ -25,8 +25,6 @@ export const UserProvider = ({ children }) => {
         }
     };
 
-    // update user
-
     return (
         <UserContext.Provider value={{ user, getUserData }}>
             {children}

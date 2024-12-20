@@ -1,5 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 import publicAxios from "../api/publicAxios";
+import privateAxios from "../api/privateAxios";
 
 const AuthContext = createContext();
 
@@ -47,17 +48,14 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (userEmail, userPassword, getUserData) => {
         try {
-            const response = await publicAxios.post(
-                "/auth/login",
-                JSON.stringify({
-                    user_email: userEmail,
-                    user_password: userPassword,
-                    checkMessage: "Login to account"
-                })
-            );
+            const response = await publicAxios.post("/auth/login", {
+                user_email: userEmail,
+                user_password: userPassword,
+                checkMessage: "Login to account"
+            });
 
             if (response.status !== 200) {
-                throw new Error("Login failed!");
+                return "Login failed!";
             }
 
             const data = response.data;
@@ -81,18 +79,51 @@ export const AuthProvider = ({ children }) => {
         removeToken();
     };
 
+    const changePassword = async (
+        user_email,
+        current_password,
+        new_password
+    ) => {
+        try {
+            const response = await privateAxios.post("/auth/changePassword", {
+                user_email: user_email,
+                user_password: new_password, // Sửa lỗi đánh máy "usaer_password"
+                user_last_password: current_password,
+                checkMessage: "Change password"
+            });
+
+            if (response.status === 200) {
+                return "Success";
+            } else {
+                return "Failed to change password";
+            }
+        } catch (error) {
+            return error;
+        }
+    };
+
     useEffect(() => {
         const storedToken = localStorage.getItem("token");
         if (storedToken) {
             setToken(storedToken);
             setIsAuthenticated(true);
+        } else {
+            setIsAuthenticated(false);
         }
-        setLoading(false);
+        setLoading(false); // Ngừng tải
     }, []);
 
     return (
         <AuthContext.Provider
-            value={{ isAuthenticated, token, loading, login, logout, register }}
+            value={{
+                isAuthenticated,
+                token,
+                loading,
+                login,
+                logout,
+                register,
+                changePassword
+            }}
         >
             {children}
         </AuthContext.Provider>
