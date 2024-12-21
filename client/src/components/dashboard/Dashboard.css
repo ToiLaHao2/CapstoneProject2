@@ -166,7 +166,7 @@ progress[value] {
 /* Calendar and Details Section Container */
 .calendar-container {
     display: flex;
-    justify-content: space-between; /* Spread the sections out */
+    justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
     padding: 20px;
@@ -197,18 +197,16 @@ progress[value] {
 }
 
 
-/* Make sure react-calendar is aligned to the left */
 .react-calendar {
     width: 100%;
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-left: 0; /* Remove auto centering */
-    margin-right: 0; /* Remove any margin to the right */
+    margin-left: 0; 
+    margin-right: 0; 
 }
 
-/* Tile Styles for React Calendar */
 .react-calendar__tile {
     border-radius: 8px;
     transition: background-color 0.3s ease;
@@ -240,6 +238,7 @@ progress[value] {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 200px;
 }
 
 .task-details {
