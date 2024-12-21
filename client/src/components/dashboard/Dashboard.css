@@ -9,7 +9,7 @@
 }
 
 /* Section Containers */
-.tasks, .urgently-task, .recently-visited, .workspace, .new-chat {
+.tasks, .urgently-task, .recently-dashboard, .workspace, .new-chat {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -26,7 +26,7 @@
     width: 48%;
 }
 
-.urgently-task, .recently-visited, .workspace, .new-chat {
+.urgently-task, .recently-dashboard, .workspace, .new-chat {
     width: 48%;
 }
 
@@ -108,14 +108,14 @@ progress[value] {
 }
 
 /* Recently Visited Section */
-.recently-visited {
+.recently-dashboard {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-.visited-project {
+.dashboard-project {
     background-color: #f9f9f9;
     padding: 15px;
     border-radius: 8px;
@@ -125,39 +125,39 @@ progress[value] {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.visited-project img {
+.dashboard-project img {
     max-width: 100%;
     border-radius: 8px;
     margin-bottom: 10px;
 }
 
-.visited-project p {
+.dashboard-project p {
     font-size: 14px;
     font-weight: 600;
     margin: 0;
     color: #333;
 }
 
-.visited-project span {
+.dashboard-project span {
     font-size: 12px;
     color: #777;
 }
 
-.visited-project:hover {
+.dashboard-project:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Add Background Color Variations for Recently Visited Projects */
-.visited-project:nth-child(1) {
+.dashboard-project:nth-child(1) {
     background-color: #e1f5fe; /* Light Blue */
 }
 
-.visited-project:nth-child(2) {
+.dashboard-project:nth-child(2) {
     background-color: #f9fbe7; /* Light Yellow */
 }
 
-.visited-project:nth-child(3) {
+.dashboard-project:nth-child(3) {
     background-color: #f1f8e9; /* Light Green */
 }
 
@@ -175,15 +175,27 @@ progress[value] {
 
 /* Calendar Section */
 .calendar-section {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     flex: 1;
-    /* max-width: 45%; Adjust width */
-    box-sizing: border-box;
-    text-align: left; /* Ensure text inside the section aligns to the left */
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.calendar-title {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    color: #4caf50;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid #4caf50;
+    padding-bottom: 5px;
+    width: 80%;
+}
+
 
 /* Make sure react-calendar is aligned to the left */
 .react-calendar {
@@ -223,14 +235,45 @@ progress[value] {
 
 /* Details Section */
 .details-calendar-section {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     flex: 1;
-    max-width: 45%;
-    box-sizing: border-box;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.task-details {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.task-details h4 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.task-details p {
+    margin: 8px 0;
+    font-size: 1rem;
+}
+
+.task-details p strong {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.highlight-task {
+    width: 80%;
+    height: 80%;
+    background-color: red; /* Màu xanh lá */
+    border-radius: 50%; /* Hình tròn */
+    margin: auto; /* Canh giữa */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
