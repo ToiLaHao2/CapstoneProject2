@@ -1,15 +1,35 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useReducer } from "react";
 import "./Topbar.css";
 import { FaBell } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+import { useBoard } from "../../context/BoardContext";
+
+const initialState = {
+    boardTitle: "",
+    boardDescription: "",
+    boardType: ""
+};
+
+function formReducer(state, action) {
+    return {
+        ...state,
+        [action.name]: action.value
+    };
+}
 
 const Topbar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [isFormOpen, setIsFormOpen] = useState(false); 
+    const [isFormOpen, setIsFormOpen] = useState(false);
     const dropdownRef = useRef(null);
-    const formRef = useRef(null);  
+    const formRef = useRef(null);
     const navigate = useNavigate();
+    const { logout } = useAuth();
+    const { createBoard } = useBoard();
+    const [state, dispatch] = useReducer(formReducer, initialState);
+
+    const { boardTitle, boardDescription, boardType } = state;
 
     const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
@@ -35,11 +55,11 @@ const Topbar = () => {
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }); 
+    });
 
     const handleNavigation = path => {
         navigate(path); // Navigate to the desired page
-        setIsDropdownOpen(false); 
+        setIsDropdownOpen(false);
     };
 
     const handleCreateBoard = () => {
@@ -48,6 +68,38 @@ const Topbar = () => {
 
     const handleCloseForm = () => {
         setIsFormOpen(false);
+    };
+
+    const handleLogout = async () => {
+        await logout();
+        alert("Logout successful!");
+        navigate("/login");
+    };
+
+    const handleSubmitCreateBoard = async e => {
+        e.preventDefault();
+        console.log(boardType);
+        if (!boardTitle || !boardDescription || boardType === "") {
+            alert("Please fill all the fields!");
+            return;
+        }
+
+        // Tạo board với giá trị boolean
+        const res = await createBoard({
+            boardTitle,
+            boardDescription,
+            boardType // Giá trị boolean
+        });
+
+        if (res === "Success") {
+            alert("Create board successful");
+
+            // Đóng form sau khi gửi thành công
+            setIsFormOpen(false);
+            navigate("/projects");
+        } else {
+            alert("Failed to create board");
+        }
     };
 
     return (
@@ -60,7 +112,9 @@ const Topbar = () => {
                 />
             </div>
             <div className="right-icons">
-                <button className="add-board-btn" onClick={handleCreateBoard}>+ Create New Board</button>
+                <button className="add-board-btn" onClick={handleCreateBoard}>
+                    + Create New Board
+                </button>
                 <FaBell className="icon" />
                 <div
                     className="user-icon-container"
@@ -85,7 +139,7 @@ const Topbar = () => {
                             </button>
                             <button
                                 className="dropdown-item"
-                                onClick={() => handleNavigation("/logout")}
+                                onClick={() => handleLogout()}
                             >
                                 Logout
                             </button>
@@ -94,30 +148,71 @@ const Topbar = () => {
             </div>
 
             {/* Overlay and form for creating new board */}
-            {isFormOpen && (
+            {isFormOpen &&
                 <div className="overlay">
                     <div className="form-container" ref={formRef}>
                         <h2>Create New Board</h2>
-                        <form>
+                        <form onSubmit={handleSubmitCreateBoard}>
                             <div className="input-group">
-                                <label htmlFor="boardName">Board Name:</label>
-                                <input type="text" id="boardName" name="boardName" />
+                                <label htmlFor="boardTitle">Title:</label>
+                                <input
+                                    type="text"
+                                    id="boardTitle"
+                                    name="boardTitle"
+                                    value={boardTitle}
+                                    onChange={e => dispatch(e.target)}
+                                />
                             </div>
                             <div className="input-group">
-                                <label htmlFor="boardType">Type of Board:</label>
-                                <select id="boardType" name="boardType">
-                                    <option value="public">Public</option>
-                                    <option value="private">Private</option>
+                                <label htmlFor="boardDescription">
+                                    Short Description:
+                                </label>
+                                <input
+                                    type="text"
+                                    id="boardDescription"
+                                    name="boardDescription"
+                                    value={boardDescription}
+                                    onChange={e => dispatch(e.target)}
+                                />
+                            </div>
+                            <div className="input-group">
+                                <label htmlFor="boardType">
+                                    Type of Board:
+                                </label>
+                                <select
+                                    id="boardType"
+                                    name="boardType"
+                                    value={boardType} // Giá trị hiện tại từ state (dưới dạng boolean)
+                                    onChange={e =>
+                                        dispatch({
+                                            name: "boardType",
+                                            value:
+                                                e.target.value === "true"
+                                                    ? true
+                                                    : false // Chuyển đổi thành boolean
+                                        })}
+                                >
+                                    <option value="">Select Board Type</option>
+                                    <option value="true">Public</option>
+                                    <option value="false">Private</option>
                                 </select>
                             </div>
+
                             <div className="form-actions">
-                                <button type="submit" className="submit-btn">Create</button>
-                                <button type="button" className="cancel-btn" onClick={handleCloseForm}>Cancel</button>
+                                <button type="submit" className="submit-btn">
+                                    Create
+                                </button>
+                                <button
+                                    type="button"
+                                    className="cancel-btn"
+                                    onClick={handleCloseForm}
+                                >
+                                    Cancel
+                                </button>
                             </div>
                         </form>
                     </div>
-                </div>
-            )}
+                </div>}
         </div>
     );
 };

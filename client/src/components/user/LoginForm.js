@@ -3,6 +3,7 @@ import "./Forms.css";
 import { useAuth } from "../../context/AuthContext";
 import { useUser } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
+import { useBoard } from "../../context/BoardContext";
 
 const initialState = {
     email: "",
@@ -21,6 +22,7 @@ const LoginForm = () => {
     const [alertMessage, setAlertMessage] = useState("");
     const { login } = useAuth();
     const { getUserData } = useUser();
+    const { getAllBoardsByUserId } = useBoard();
     const navigate = useNavigate();
     const { email, password } = state;
 
@@ -29,11 +31,16 @@ const LoginForm = () => {
 
         try {
             // Gọi hàm register từ AuthContext
-            const result = await login(email, password, getUserData);
+            const result = await login(
+                email,
+                password,
+                getUserData,
+            );
             console.log(result);
             if (result !== "Success") {
                 setAlertMessage(result);
             } else {
+                await getAllBoardsByUserId();
                 alert("Login successful!");
                 navigate("/dashboard");
             }

@@ -25,12 +25,12 @@ export const UserProvider = ({ children }) => {
         }
     };
 
-    return (
+    return ( 
         <UserContext.Provider value={{ user, getUserData }}>
             {children}
         </UserContext.Provider>
     );
-};
+}; 
 
 export const useUser = () => {
     return useContext(UserContext);
