@@ -1,15 +1,35 @@
 import React, { useState } from 'react';
 import './Dashboard.css';
-import CalendarComponent from 'react-calendar'; 
+import CalendarComponent from 'react-calendar';
 const Dashboard = () => {
-    const [selectedDate, setSelectedDate] = useState(null);
+    const today = new Date();
+    const [selectedDate, setSelectedDate] = useState(today);
 
-    const taskDetails = {
-        project: 'Website Design',
-        task: 'Create Homepage Layout',
-        deadline: '2024-11-30',
-        timeLeft: '5 days, 2 hours, 30 minutes',
-    };
+    const tasks = [
+        {
+            date: new Date(today.getFullYear(), today.getMonth(), today.getDate()), // Hôm nay
+            details: {
+                project: 'Daily Standup Meeting',
+                task: 'Attend Scrum meeting',
+                deadline: today.toLocaleDateString(),
+                timeLeft: '0 days, 3 hours',
+            },
+        },
+        {
+            date: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2), // Ngày kế tiếp
+            details: {
+                project: 'Website Design',
+                task: 'Submit wireframe designs',
+                deadline: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2).toLocaleDateString(),
+                timeLeft: '2 days, 5 hours',
+            },
+        },
+    ];
+
+    // Lấy task dựa trên ngày chọn
+    const selectedTask = tasks.find(task =>
+        task.date.toDateString() === selectedDate.toDateString()
+    );
 
     const handleDateChange = (date) => {
         setSelectedDate(date);
@@ -61,17 +81,17 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            {/* Recently Visited Section */}
-            <div className="recently-visited">
-                <div className="visited-project">
+            {/*  dashboard Section */}
+            <div className="recently-dashboard">
+                <div className="dashboard-project">
                     <p>Website Design</p>
                     <span>Design Project</span>
                 </div>
-                <div className="visited-project">
+                <div className="dashboard-project">
                     <p>SEO Project 2024</p>
                     <span>Business Project</span>
                 </div>
-                <div className="visited-project">
+                <div className="dashboard-project">
                     <p>Plan in 2024</p>
                     <span>Personal Project</span>
                 </div>
@@ -79,25 +99,46 @@ const Dashboard = () => {
 
             <div className="calendar-container">
                 {/* Calendar Section */}
-                <div className="calendar-section">
-                <h3>Calendar</h3>
+                {/* <div className="calendar-section">
+                    <h3>Calendar</h3>
                     <CalendarComponent
                         onChange={handleDateChange}
                         value={selectedDate}
                     />
+                </div> */}
+
+                <div className="calendar-section">
+                    <h3 className="calendar-title">Calendar</h3>
+                    <CalendarComponent
+                        onChange={handleDateChange}
+                        value={selectedDate}
+                        tileContent={({ date, view }) =>
+                            view === "month" &&
+                                tasks.some(task =>
+                                    task.date.toDateString() === date.toDateString()
+                                ) ? (
+                                <div className="highlight-task"></div>
+                            ) : null
+                        }
+                    />
                 </div>
+
 
                 {/* Details Calendar Section */}
                 <div className="details-calendar-section">
-                    {selectedDate && (
-                        <div className="task-details">
-                            <h4>Task Details for {selectedDate.toLocaleDateString()}</h4>
-                            <p><strong>Project:</strong> {taskDetails.project}</p>
-                            <p><strong>Task:</strong> {taskDetails.task}</p>
-                            <p><strong>Deadline:</strong> {taskDetails.deadline}</p>
-                            <p><strong>Time Left:</strong> {taskDetails.timeLeft}</p>
-                        </div>
-                    )}
+                    <div className="task-details">
+                        <h4>Task Details</h4>
+                        {selectedTask ? (
+                            <>
+                                <p><strong>Project:</strong> {selectedTask.details.project}</p>
+                                <p><strong>Task:</strong> {selectedTask.details.task}</p>
+                                <p><strong>Deadline:</strong> {selectedTask.details.deadline}</p>
+                                <p><strong>Time Left:</strong> {selectedTask.details.timeLeft}</p>
+                            </>
+                        ) : (
+                            <p>No task for this date.</p>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>

@@ -6,7 +6,9 @@ import { useNavigate } from "react-router-dom";
 
 const Topbar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isFormOpen, setIsFormOpen] = useState(false); 
     const dropdownRef = useRef(null);
+    const formRef = useRef(null);  
     const navigate = useNavigate();
 
     const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
@@ -18,6 +20,14 @@ const Topbar = () => {
         ) {
             setIsDropdownOpen(false);
         }
+
+        if (
+            formRef.current &&
+            !formRef.current.contains(event.target) &&
+            isFormOpen
+        ) {
+            setIsFormOpen(false);
+        }
     };
 
     useEffect(() => {
@@ -25,11 +35,19 @@ const Topbar = () => {
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, []);
+    }); 
 
     const handleNavigation = path => {
-        navigate(path); // Điều hướng đến trang mong muốn
-        setIsDropdownOpen(false); // Đóng dropdown sau khi điều hướng
+        navigate(path); // Navigate to the desired page
+        setIsDropdownOpen(false); 
+    };
+
+    const handleCreateBoard = () => {
+        setIsFormOpen(true);
+    };
+
+    const handleCloseForm = () => {
+        setIsFormOpen(false);
     };
 
     return (
@@ -42,7 +60,7 @@ const Topbar = () => {
                 />
             </div>
             <div className="right-icons">
-                <button className="add-task-btn">+ Create New Task</button>
+                <button className="add-board-btn" onClick={handleCreateBoard}>+ Create New Board</button>
                 <FaBell className="icon" />
                 <div
                     className="user-icon-container"
@@ -74,6 +92,32 @@ const Topbar = () => {
                         </div>}
                 </div>
             </div>
+
+            {/* Overlay and form for creating new board */}
+            {isFormOpen && (
+                <div className="overlay">
+                    <div className="form-container" ref={formRef}>
+                        <h2>Create New Board</h2>
+                        <form>
+                            <div className="input-group">
+                                <label htmlFor="boardName">Board Name:</label>
+                                <input type="text" id="boardName" name="boardName" />
+                            </div>
+                            <div className="input-group">
+                                <label htmlFor="boardType">Type of Board:</label>
+                                <select id="boardType" name="boardType">
+                                    <option value="public">Public</option>
+                                    <option value="private">Private</option>
+                                </select>
+                            </div>
+                            <div className="form-actions">
+                                <button type="submit" className="submit-btn">Create</button>
+                                <button type="button" className="cancel-btn" onClick={handleCloseForm}>Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
