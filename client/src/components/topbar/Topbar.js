@@ -3,13 +3,15 @@ import "./Topbar.css";
 import { FaBell } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 const Topbar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [isFormOpen, setIsFormOpen] = useState(false); 
+    const [isFormOpen, setIsFormOpen] = useState(false);
     const dropdownRef = useRef(null);
-    const formRef = useRef(null);  
+    const formRef = useRef(null);
     const navigate = useNavigate();
+    const { logout } = useAuth();
 
     const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
@@ -35,11 +37,11 @@ const Topbar = () => {
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }); 
+    });
 
     const handleNavigation = path => {
         navigate(path); // Navigate to the desired page
-        setIsDropdownOpen(false); 
+        setIsDropdownOpen(false);
     };
 
     const handleCreateBoard = () => {
@@ -48,6 +50,12 @@ const Topbar = () => {
 
     const handleCloseForm = () => {
         setIsFormOpen(false);
+    };
+
+    const handleLogout = async () => {
+        await logout();
+        alert("Logout successful!");
+        navigate("/login");
     };
 
     return (
@@ -60,7 +68,9 @@ const Topbar = () => {
                 />
             </div>
             <div className="right-icons">
-                <button className="add-board-btn" onClick={handleCreateBoard}>+ Create New Board</button>
+                <button className="add-board-btn" onClick={handleCreateBoard}>
+                    + Create New Board
+                </button>
                 <FaBell className="icon" />
                 <div
                     className="user-icon-container"
@@ -85,7 +95,7 @@ const Topbar = () => {
                             </button>
                             <button
                                 className="dropdown-item"
-                                onClick={() => handleNavigation("/logout")}
+                                onClick={() => handleLogout()}
                             >
                                 Logout
                             </button>
@@ -94,30 +104,53 @@ const Topbar = () => {
             </div>
 
             {/* Overlay and form for creating new board */}
-            {isFormOpen && (
+            {isFormOpen &&
                 <div className="overlay">
                     <div className="form-container" ref={formRef}>
                         <h2>Create New Board</h2>
                         <form>
                             <div className="input-group">
-                                <label htmlFor="boardName">Board Name:</label>
-                                <input type="text" id="boardName" name="boardName" />
+                                <label htmlFor="boardTitle">Title:</label>
+                                <input
+                                    type="text"
+                                    id="boardTitle"
+                                    name="boardTitle"
+                                />
                             </div>
                             <div className="input-group">
-                                <label htmlFor="boardType">Type of Board:</label>
+                                <label htmlFor="boardDescription">
+                                    Short Description:
+                                </label>
+                                <input
+                                    type="text"
+                                    id="boardDescription"
+                                    name="boardDescription"
+                                />
+                            </div>
+                            <div className="input-group">
+                                <label htmlFor="boardType">
+                                    Type of Board:
+                                </label>
                                 <select id="boardType" name="boardType">
                                     <option value="public">Public</option>
                                     <option value="private">Private</option>
                                 </select>
                             </div>
                             <div className="form-actions">
-                                <button type="submit" className="submit-btn">Create</button>
-                                <button type="button" className="cancel-btn" onClick={handleCloseForm}>Cancel</button>
+                                <button type="submit" className="submit-btn">
+                                    Create
+                                </button>
+                                <button
+                                    type="button"
+                                    className="cancel-btn"
+                                    onClick={handleCloseForm}
+                                >
+                                    Cancel
+                                </button>
                             </div>
                         </form>
                     </div>
-                </div>
-            )}
+                </div>}
         </div>
     );
 };
