@@ -1,9 +1,23 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useReducer } from "react";
 import "./Topbar.css";
 import { FaBell } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import { useBoard } from "../../context/BoardContext";
+
+const initialState = {
+    boardTitle: "",
+    boardDescription: "",
+    boardType: ""
+};
+
+function formReducer(state, action) {
+    return {
+        ...state,
+        [action.name]: action.value
+    };
+}
 
 const Topbar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -12,6 +26,10 @@ const Topbar = () => {
     const formRef = useRef(null);
     const navigate = useNavigate();
     const { logout } = useAuth();
+    const { createBoard } = useBoard();
+    const [state, dispatch] = useReducer(formReducer, initialState);
+
+    const { boardTitle, boardDescription, boardType } = state;
 
     const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
@@ -56,6 +74,32 @@ const Topbar = () => {
         await logout();
         alert("Logout successful!");
         navigate("/login");
+    };
+
+    const handleSubmitCreateBoard = async e => {
+        e.preventDefault();
+        console.log(boardType);
+        if (!boardTitle || !boardDescription || boardType === "") {
+            alert("Please fill all the fields!");
+            return;
+        }
+
+        // Tạo board với giá trị boolean
+        const res = await createBoard({
+            boardTitle,
+            boardDescription,
+            boardType // Giá trị boolean
+        });
+
+        if (res === "Success") {
+            alert("Create board successful");
+
+            // Đóng form sau khi gửi thành công
+            setIsFormOpen(false);
+            navigate("/projects");
+        } else {
+            alert("Failed to create board");
+        }
     };
 
     return (
@@ -108,13 +152,15 @@ const Topbar = () => {
                 <div className="overlay">
                     <div className="form-container" ref={formRef}>
                         <h2>Create New Board</h2>
-                        <form>
+                        <form onSubmit={handleSubmitCreateBoard}>
                             <div className="input-group">
                                 <label htmlFor="boardTitle">Title:</label>
                                 <input
                                     type="text"
                                     id="boardTitle"
                                     name="boardTitle"
+                                    value={boardTitle}
+                                    onChange={e => dispatch(e.target)}
                                 />
                             </div>
                             <div className="input-group">
@@ -125,17 +171,33 @@ const Topbar = () => {
                                     type="text"
                                     id="boardDescription"
                                     name="boardDescription"
+                                    value={boardDescription}
+                                    onChange={e => dispatch(e.target)}
                                 />
                             </div>
                             <div className="input-group">
                                 <label htmlFor="boardType">
                                     Type of Board:
                                 </label>
-                                <select id="boardType" name="boardType">
-                                    <option value="public">Public</option>
-                                    <option value="private">Private</option>
+                                <select
+                                    id="boardType"
+                                    name="boardType"
+                                    value={boardType} // Giá trị hiện tại từ state (dưới dạng boolean)
+                                    onChange={e =>
+                                        dispatch({
+                                            name: "boardType",
+                                            value:
+                                                e.target.value === "true"
+                                                    ? true
+                                                    : false // Chuyển đổi thành boolean
+                                        })}
+                                >
+                                    <option value="">Select Board Type</option>
+                                    <option value="true">Public</option>
+                                    <option value="false">Private</option>
                                 </select>
                             </div>
+
                             <div className="form-actions">
                                 <button type="submit" className="submit-btn">
                                     Create

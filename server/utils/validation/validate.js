@@ -1,6 +1,6 @@
 async function validateFields(data, rules) {
     for (const field of rules.requiredFields) {
-        if (!data[field]) {
+        if (data[field] === undefined || data[field] === null) {
             return { valid: false, error: `${field} is required.` };
         }
     }

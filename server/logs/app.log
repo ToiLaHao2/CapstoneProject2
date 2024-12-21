@@ -557,3 +557,84 @@ Use mongoose.model(name, schema)
 [2024-12-21 22:02:01] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
 [2024-12-21 22:49:12] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
 [2024-12-21 22:55:37] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-12-21 23:38:15] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-12-21 23:38:46] INFO: Successfull checking data user for login
+[2024-12-21 23:38:46] INFO: Compare hash complete
+[2024-12-21 23:38:46] INFO: Complete create token
+[2024-12-21 23:38:46] INFO: Successfull checking data user for get user profile
+[2024-12-21 23:38:56] INFO: Error checking data board_title is required.
+[2024-12-21 23:41:04] INFO: Error checking data board_description is required.
+[2024-12-21 23:41:29] INFO: Error checking data board_description is required.
+[2024-12-21 23:42:04] INFO: Error checking data board_description is required.
+[2024-12-21 23:44:11] INFO: Error checking data board_description is required.
+[2024-12-21 23:45:28] INFO: Error checking data board_description is required.
+[2024-12-21 23:47:00] INFO: Successfull checking data to create board
+[2024-12-21 23:47:01] INFO: Successfull create board
+[2024-12-21 23:52:35] INFO: Successfull checking data to create board
+[2024-12-21 23:52:36] INFO: Successfull create board
+[2024-12-21 23:53:51] INFO: Successfull checking data user for login
+[2024-12-21 23:53:51] INFO: Compare hash complete
+[2024-12-21 23:53:55] INFO: Successfull checking data user for login
+[2024-12-21 23:53:55] INFO: Compare hash complete
+[2024-12-21 23:53:55] INFO: Complete create token
+[2024-12-21 23:53:55] INFO: Successfull checking data user for get user profile
+[2024-12-21 23:55:55] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-12-21 23:56:04] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-12-21 23:57:37] INFO: Successfull checking data user for login
+[2024-12-21 23:57:37] INFO: Compare hash complete
+[2024-12-21 23:57:37] INFO: Complete create token
+[2024-12-21 23:57:37] INFO: Successfull checking data user for get user profile
+[2024-12-21 23:57:37] INFO: Successfull checking data to get board by user id
+[2024-12-21 23:58:05] INFO: Error checking data board_is_public is required.
+[2024-12-21 23:59:17] INFO: Error checking data board_is_public is required.
+[2024-12-21 23:59:43] INFO: Error checking data board_is_public is required.
+[2024-12-22 00:00:29] INFO: Error checking data board_is_public is required.
+[2024-12-22 00:00:42] INFO: Successfull checking data to create board
+[2024-12-22 00:00:42] INFO: Successfull create board
+[2024-12-22 00:01:05] INFO: Successfull checking data to create board
+[2024-12-22 00:01:05] INFO: Successfull create board
+[2024-12-22 00:02:08] INFO: Successfull checking data user for login
+[2024-12-22 00:02:08] INFO: Compare hash complete
+[2024-12-22 00:02:08] INFO: Complete create token
+[2024-12-22 00:02:08] INFO: Successfull checking data user for get user profile
+[2024-12-22 00:02:08] INFO: Successfull checking data to get board by user id
+[2024-12-22 00:03:13] INFO: Successfull checking data to create board
+[2024-12-22 00:03:14] INFO: Successfull create board
+[2024-12-22 00:06:48] INFO: Successfull checking data to create board
+[2024-12-22 00:06:49] INFO: Successfull create board
+[2024-12-22 00:08:15] INFO: Successfull checking data user for login
+[2024-12-22 00:08:15] INFO: Compare hash complete
+[2024-12-22 00:08:15] INFO: Complete create token
+[2024-12-22 00:08:15] INFO: Successfull checking data user for get user profile
+[2024-12-22 00:08:15] INFO: Successfull checking data to get board by user id
+[2024-12-22 00:09:56] INFO: Error checking data board_is_public is required.
+[2024-12-22 00:11:28] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-12-22 00:11:32] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2024-12-22 00:11:35] INFO: Error checking data board_is_public is required.
+[2024-12-22 00:16:42] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-12-22 00:16:45] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-12-22 00:16:51] INFO: Successfull checking data to create board
+[2024-12-22 00:16:51] INFO: Successfull create board
+[2024-12-22 00:17:10] INFO: Successfull checking data to create board
+[2024-12-22 00:17:10] INFO: Successfull create board
+[2024-12-22 00:20:48] INFO: Successfull checking data user for login
+[2024-12-22 00:20:48] INFO: Compare hash complete
+[2024-12-22 00:20:48] INFO: Complete create token
+[2024-12-22 00:20:48] INFO: Successfull checking data user for get user profile
+[2024-12-22 00:20:48] INFO: Successfull checking data to get board by user id
+[2024-12-22 00:23:02] INFO: Successfull checking data user for login
+[2024-12-22 00:23:02] INFO: Compare hash complete
+[2024-12-22 00:23:18] INFO: Successfull checking data user for login
+[2024-12-22 00:23:18] INFO: Compare hash complete
+[2024-12-22 00:23:18] INFO: Complete create token
+[2024-12-22 00:23:18] INFO: Successfull checking data user for get user profile
+[2024-12-22 00:23:18] INFO: Successfull checking data to get board by user id
+[2024-12-22 00:23:53] INFO: Successfull checking data to create board
+[2024-12-22 00:23:53] INFO: Successfull create board
+[2024-12-22 00:24:13] INFO: Successfull checking data user for login
+[2024-12-22 00:24:13] INFO: Compare hash complete
+[2024-12-22 00:24:13] INFO: Complete create token
+[2024-12-22 00:24:13] INFO: Successfull checking data user for get user profile
+[2024-12-22 00:24:14] INFO: Successfull checking data to get board by user id
+[2024-12-22 00:25:43] INFO: Successfull checking data to create board
+[2024-12-22 00:25:43] INFO: Successfull create board
