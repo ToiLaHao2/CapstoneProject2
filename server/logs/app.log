@@ -540,3 +540,4 @@ Use mongoose.model(name, schema)
 [2024-12-20 23:14:57] INFO: Compare hash complete
 [2024-12-20 23:14:57] INFO: Complete create token
 [2024-12-20 23:14:57] INFO: Successfull checking data user for get user profile
+[2024-12-21 13:18:23] INFO: MongoDB connected: cluster0-shard-00-02.bdrg1.mongodb.net
