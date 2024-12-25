@@ -8,7 +8,7 @@ import { IoLogOut } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
-  const [active, setActive] = useState('Tasks');
+  const [active, setActive] = useState('Dashboard');
 
   const handleClick = (option) => {
     setActive(option);
