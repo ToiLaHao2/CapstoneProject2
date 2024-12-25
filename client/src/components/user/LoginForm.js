@@ -77,6 +77,13 @@ const LoginForm = () => {
                 />
                 <button type="submit">Login</button>
             </form>
+
+            <p className="redirect-message">
+                You don't have an account?{" "}
+                <a href="/signup" className="redirect-link">
+                    Sign up
+                </a>
+            </p>
         </div>
     );
 };

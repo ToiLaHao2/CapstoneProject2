@@ -9,7 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
 const Sidebar = () => {
-    const [active, setActive] = useState("Tasks");
+    const [active, setActive] = useState('Dashboard');
     const { logout } = useAuth();
     const navigate = useNavigate();
 
