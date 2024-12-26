@@ -696,3 +696,23 @@ Use mongoose.model(name, schema)
 [2024-12-22 21:49:09] INFO: Successfull checking data to get board by user id
 [2024-12-22 21:56:01] INFO: Successfull checking data to create board
 [2024-12-22 21:56:01] INFO: Successfull create board
+[2024-12-25 19:44:45] INFO: MongoDB connected: cluster0-shard-00-01.bdrg1.mongodb.net
+[2024-12-25 20:05:03] INFO: Successfull checking data user for login
+[2024-12-25 20:05:03] INFO: Compare hash complete
+[2024-12-25 20:05:03] INFO: Complete create token
+[2024-12-25 20:05:03] INFO: Successfull checking data user for get user profile
+[2024-12-25 20:05:03] INFO: Successfull checking data to get board by user id
+[2024-12-25 20:05:40] INFO: Successfull checking data user for login
+[2024-12-25 20:05:40] INFO: Compare hash complete
+[2024-12-25 20:05:40] INFO: Complete create token
+[2024-12-25 20:05:40] INFO: Successfull checking data user for get user profile
+[2024-12-25 20:05:40] INFO: Successfull checking data to get board by user id
+[2024-12-25 20:08:21] INFO: Successfull checking data user for login
+[2024-12-25 20:08:21] INFO: Compare hash complete
+[2024-12-25 20:08:21] INFO: Complete create token
+[2024-12-25 20:08:21] INFO: Successfull checking data user for get user profile
+[2024-12-25 20:08:21] INFO: Successfull checking data to get board by user id
+[2024-12-25 20:09:56] INFO: Successfull checking data to create board
+[2024-12-25 20:09:56] INFO: Successfull create board
+[2024-12-25 20:11:58] INFO: Successfull checking data to create board
+[2024-12-25 20:11:58] INFO: Successfull create board

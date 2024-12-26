@@ -148,20 +148,17 @@ progress[value] {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Add Background Color Variations for Recently Visited Projects */
 .dashboard-project:nth-child(1) {
-    background-color: #e1f5fe; /* Light Blue */
+    background-color: #e1f5fe; 
 }
 
 .dashboard-project:nth-child(2) {
-    background-color: #f9fbe7; /* Light Yellow */
+    background-color: #f9fbe7; 
 }
 
 .dashboard-project:nth-child(3) {
-    background-color: #f1f8e9; /* Light Green */
+    background-color: #f1f8e9;
 }
-
-/*ttt*/
 
 /* Calendar and Details Section Container */
 .calendar-container {
