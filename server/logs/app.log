@@ -716,3 +716,4 @@ Use mongoose.model(name, schema)
 [2024-12-25 20:09:56] INFO: Successfull create board
 [2024-12-25 20:11:58] INFO: Successfull checking data to create board
 [2024-12-25 20:11:58] INFO: Successfull create board
+[2024-12-26 10:46:43] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
