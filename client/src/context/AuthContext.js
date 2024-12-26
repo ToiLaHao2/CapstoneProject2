@@ -10,11 +10,11 @@ export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     const saveToken = token => {
-        localStorage.setItem("token", token);
+        sessionStorage.setItem("token", token);
     };
 
     const removeToken = () => {
-        localStorage.removeItem("token");
+        sessionStorage.removeItem("token");
     };
 
     const register = async (fullName, email, password, getUserData) => {
@@ -103,7 +103,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     useEffect(() => {
-        const storedToken = localStorage.getItem("token");
+        const storedToken = sessionStorage.getItem("token");
         if (storedToken) {
             setToken(storedToken);
             setIsAuthenticated(true);
