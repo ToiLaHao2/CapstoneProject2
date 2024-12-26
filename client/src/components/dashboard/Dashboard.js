@@ -7,7 +7,7 @@ const Dashboard = () => {
 
     const tasks = [
         {
-            date: new Date(today.getFullYear(), today.getMonth(), today.getDate()), // Hôm nay
+            date: new Date(today.getFullYear(), today.getMonth(), today.getDate()), 
             details: {
                 project: 'Daily Standup Meeting',
                 task: 'Attend Scrum meeting',
@@ -16,7 +16,7 @@ const Dashboard = () => {
             },
         },
         {
-            date: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2), // Ngày kế tiếp
+            date: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2), 
             details: {
                 project: 'Website Design',
                 task: 'Submit wireframe designs',

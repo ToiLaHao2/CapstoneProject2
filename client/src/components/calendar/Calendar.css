@@ -1,64 +1,94 @@
-.react-calendar {
-    width: 100%;
-    max-width: 400px;
-    background-color: #fff;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    font-family: Arial, sans-serif;
-    padding: 10px;
-    /* margin-left: 400px; */
-  }
-  
-  .react-calendar__navigation {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-  .react-calendar__navigation button {
-    color: #333;
-    min-width: 44px;
-    background: none;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: color 0.2s ease;
-  }
-  .react-calendar__navigation button:hover {
-    color: #4caf50;
-  }
-  
-  .react-calendar__month-view__weekdays {
-    font-weight: bold;
-    text-align: center;
-    color: #4caf50;
-    margin-bottom: 10px;
-  }
-  
-  .react-calendar__tile {
-    max-width: 100%;
-    padding: 10px 6px;
-    background: none;
-    text-align: center;
-    line-height: 1.4;
-    border-radius: 6px;
-    transition: background-color 0.2s ease;
-  }
-  
-  .react-calendar__tile:enabled:hover,
-  .react-calendar__tile:enabled:focus {
-    background-color: #f0f0f0;
-  }
-  
-  .react-calendar__tile--now {
-    background: #e0f7fa;
-    font-weight: bold;
-    color: #00796b;
-    border-radius: 6px;
-  }
-  
-  .react-calendar__tile--active {
-    background: #4caf50;
-    color: white;
-    border-radius: 6px;
-  }
-  
+/* Container chung */
+.calendar-container {
+  display: flex;
+  gap: 20px;
+}
+
+.calendar-left {
+  flex: 1;
+  max-width: 400px;
+}
+
+.calendar-right {
+  flex: 2;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow-y: auto;
+}
+
+.week-details h2 {
+  margin-bottom: 20px;
+}
+
+.day-details {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.day-details h3 {
+  color: #00796b;
+  margin-bottom: 10px;
+}
+
+.day-details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.day-details li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+/* Ngày được active */
+.active-day {
+  background-color: #4caf50;
+  border-color: #4caf50;
+  color: white;
+}
+
+.active-day h3 {
+  color: white;
+}
+
+.active-day ul li {
+  color: white;
+}
+
+.day-details:hover {
+  background-color: #ead6d6;
+}
+
+.event-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #4caf50;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 5px;
+}
+
+.calendar-right {
+  flex: 2;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow-y: auto;
+  scroll-behavior: smooth; /* Cuộn mượt */
+}
+
+.day-details {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
