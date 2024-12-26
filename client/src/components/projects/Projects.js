@@ -42,18 +42,20 @@ const Projects = () => {
                                   </span>
                               </div>
                               <div className="project-details">
-                                  <button
-                                      className="chat-now-button"
-                                      onClick={e => {
-                                          e.stopPropagation();
-                                          handleChatClick();
-                                      }}
-                                  >
-                                      Chat Now
-                                  </button>
+                                  {project.board_is_public && (
+                                      <button
+                                          className="chat-now-button"
+                                          onClick={e => {
+                                              e.stopPropagation();
+                                              handleChatClick();
+                                          }}
+                                      >
+                                          Chat Now
+                                      </button>
+                                  )}
 
                                   <div>
-                                      <strong>Created At:</strong>{" "}
+                                      <strong>Created At:</strong>{"  "}
                                       {moment(project.created_at).format(
                                           "DD/MM/YYYY HH:mm:ss"
                                       )}
