@@ -717,3 +717,44 @@ Use mongoose.model(name, schema)
 [2024-12-25 20:11:58] INFO: Successfull checking data to create board
 [2024-12-25 20:11:58] INFO: Successfull create board
 [2024-12-26 10:46:43] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2024-12-26 10:59:53] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2024-12-26 13:42:27] INFO: Successfull checking data register new user
+[2024-12-26 13:42:28] INFO: Hash password complete
+[2024-12-26 13:42:28] INFO: Complete create token
+[2024-12-26 13:42:28] INFO: Successfull checking data user for get user profile
+[2024-12-26 13:43:00] INFO: Successfull checking data to create board
+[2024-12-26 13:43:00] INFO: Successfull create board
+[2024-12-26 13:44:14] INFO: Successfull checking data user for login
+[2024-12-26 13:44:14] INFO: Compare hash complete
+[2024-12-26 13:44:14] INFO: Complete create token
+[2024-12-26 13:44:14] INFO: Successfull checking data user for get user profile
+[2024-12-26 13:44:14] INFO: Successfull checking data to get board by user id
+[2024-12-26 13:44:44] INFO: Successfull checking data to create board
+[2024-12-26 13:44:44] INFO: Successfull create board
+[2024-12-26 13:45:26] INFO: Successfull checking data user for login
+[2024-12-26 13:45:26] INFO: Compare hash complete
+[2024-12-26 13:45:26] INFO: Complete create token
+[2024-12-26 13:45:26] INFO: Successfull checking data user for get user profile
+[2024-12-26 13:45:26] INFO: Successfull checking data to get board by user id
+[2024-12-26 13:46:15] INFO: Successfull checking data user for login
+[2024-12-26 13:46:15] INFO: Compare hash complete
+[2024-12-26 13:46:15] INFO: Complete create token
+[2024-12-26 13:46:15] INFO: Successfull checking data user for get user profile
+[2024-12-26 13:46:15] INFO: Successfull checking data to get board by user id
+[2024-12-26 13:49:29] INFO: Successfull checking data user for login
+[2024-12-26 13:49:29] INFO: Compare hash complete
+[2024-12-26 13:49:29] INFO: Complete create token
+[2024-12-26 13:49:29] INFO: Successfull checking data user for get user profile
+[2024-12-26 13:49:29] INFO: Successfull checking data to get board by user id
+[2024-12-26 13:50:23] INFO: Successfull checking data user for login
+[2024-12-26 13:50:23] INFO: Compare hash complete
+[2024-12-26 13:50:23] INFO: Complete create token
+[2024-12-26 13:50:23] INFO: Successfull checking data user for get user profile
+[2024-12-26 13:50:23] INFO: Successfull checking data to get board by user id
+[2024-12-26 14:05:04] INFO: Successfull checking data to create board
+[2024-12-26 14:05:04] INFO: Successfull create board
+[2024-12-26 14:08:31] INFO: Successfull checking data user for login
+[2024-12-26 14:08:32] INFO: Compare hash complete
+[2024-12-26 14:08:32] INFO: Complete create token
+[2024-12-26 14:08:32] INFO: Successfull checking data user for get user profile
+[2024-12-26 14:08:32] INFO: Successfull checking data to get board by user id
