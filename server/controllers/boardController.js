@@ -207,6 +207,52 @@ async function DeleteBoard(req, res) {
   }
 }
 
+async function AddMemberToBoard(params) {
+  
+}
+
+async function RemoveMemberFromBoard(params) {
+  
+}
+
+async function UpdateMemberRole(params) {
+  
+}
+
+async function GetAllMembers(params) {
+  
+}
+
+// Thay đổi trạng thái công khai của bảng
+async function UpdatePrivacy(params) {
+  
+}
+
+async function CheckUserAccess(params) {
+  
+}
+
+async function GetListsInBoard(params) {
+  
+}
+
+async function AddListToBoard(params) {
+  
+}
+
+async function MoveList(params) {
+  
+}
+
+async function AssignLabelsToBoard(params) {
+  
+}
+
+// tùy chọn : lưu
+async function ArchiveBoard(params) {
+  
+}
+
 async function GetAllBoardByUserId(req, res) {
   try {
     const { user_id } = req.body;
