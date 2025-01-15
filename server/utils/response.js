@@ -7,11 +7,11 @@
  * @param {Object} data - Dữ liệu trả về
  */
 const sendSuccess = (res, message, data = {}) => {
-  res.status(200).json({
-    success: true,
-    message,
-    data,
-  });
+    res.status(200).json({
+        success: true,
+        message,
+        data
+    });
 };
 
 /**
@@ -22,14 +22,14 @@ const sendSuccess = (res, message, data = {}) => {
  * @param {Object} error - Thông tin lỗi chi tiết (nếu cần)
  */
 const sendError = (res, statusCode, message, error = {}) => {
-  res.status(statusCode).json({
-    success: false,
-    message,
-    error,
-  });
+    res.status(statusCode).json({
+        success: false,
+        message,
+        error
+    });
 };
 
 module.exports = {
-  sendSuccess,
-  sendError,
+    sendSuccess,
+    sendError
 };
