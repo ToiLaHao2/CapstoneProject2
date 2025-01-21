@@ -6,7 +6,9 @@ const { sendSuccess, sendError } = require("../utils/response");
 async function GetUserProfile(req, res) {
     const { user_id } = req.body;
     try {
-        let user = await User.findById(user_id);
+        const user = await findByIdOrThrow(User, user_id, {
+            errorMessage: "User not found"
+        });
         if (!user) {
             return sendError(res, 401, "Unauthorized", {
                 details: "User is not registered"
@@ -35,7 +37,9 @@ async function UpdateUserProfile(req, res) {
         }
 
         // Tìm user
-        const user = await User.findById(user_id);
+        const user = await findByIdOrThrow(User, user_id, {
+            errorMessage: "User not found"
+        });
 
         if (!user) {
             return sendError(res, 404, "User not found", {
@@ -96,20 +100,27 @@ async function UploadProfilePicture(req, res) {}
 async function GetAllUserInBoard(req, res) {
     const { user_id, board_id } = req.body;
     try {
-        let board = await Board.findById(board_id);
+        // tìm bảng xem có tồn tại không
+        let board = await findByIdOrThrow(Board, board_id, {
+            errorMessage: "Board not found"
+        });
         if (!board) {
+            // nếu không trả về lỗi
             return sendError(res, 404, "Undefinded", {
                 details: "Board is not found"
             });
         } else {
+            // nếu có tìm xem user có thuộc bảng không
             let user = board.board_collaborators.find(
                 user => user.board_collaborator_id === user_id
             );
+            // nếu không trả về lỗi
             if (!user) {
                 return sendError(res, 401, "Unauthorized", {
                     details: "User is not in this board"
                 });
             }
+            // nếu có thì trả về danh sách user trong bảng theo user_full_name
             const colaborators = await User.find({
                 _id: {
                     $in: board.board_collaborators.map(
@@ -131,46 +142,53 @@ async function GetAllUserInBoard(req, res) {
 async function AddUserToBoard(req, res) {
     const { user_id, new_user_id, board_id } = req.body;
     try {
-        let user = await User.findById(user_id);
+        // tìm xem board có tồn tại không
+        let board = await findByIdOrThrow(Board, board_id, {
+            errorMessage: "Board not found"
+        });
+        if (!board) {
+            return sendError(res, 404, "Undefinded", {
+                details: "Board is not found"
+            });
+        }
+        // xét xem creator có phải là user_id không
+        if (board.created_by !== user_id) {
+            return sendError(res, 401, "Unauthorized", {
+                details: "User is not creator of this board"
+            });
+        }
+        // tìm xem new_user_id có tồn tại không
+        let user = await findByIdOrThrow(User, new_user_id, {
+            errorMessage: "User not found"
+        });
         if (!user) {
             return sendError(res, 404, "Undefinded", {
                 details: "User is not found"
             });
         }
-        let board = user.user_boards.find(board => board.board_id === board_id);
-        if (!board) {
-            return sendError(res, 404, "Undefinded", {
-                details: "User is not in this board"
-            });
-        }
-        if (board.role !== "ADMIN") {
-            return sendError(res, 401, "Unauthorized", {
-                details: "User is not admin of this board"
-            });
-        }
-        let boardGet = await Board.findById(board.board_id);
-        if (!boardGet) {
-            return sendError(res, 404, "Undefinded", {
-                details: "Board is not found"
-            });
-        }
-        let userAddCheck = await User.findById(new_user_id);
-        if (!userAddCheck) {
-            return sendError(res, 404, "Undefinded", {
-                details: "User is not found"
-            });
-        }
-        let isAlreadyMember = boardGet.board_collaborators.some(
-            collab => collab.board_collaborator_id === new_user_id
+        // kiểm tra xem new_user_id đã có trong board chưa
+        let userInBoard = board.board_collaborators.find(
+            user => user.board_collaborator_id === new_user_id
         );
-        if (isAlreadyMember) {
-            return sendError(res, 400, "User already exists in board");
+        if (userInBoard) {
+            return sendError(res, 400, "User already in board", {
+                details: "User is already in this board"
+            });
         }
-        boardGet.board_collaborators.push({
+        // thêm new_user_id vào board
+        board.board_collaborators.push({
             board_collaborator_id: new_user_id,
             board_collaborator_role: "VIEWER"
         });
-        await boardGet.save();
+        await board.save();
+        // thêm board_id vào user
+        user.user_boards.push({
+            board_id: board_id,
+            role: "VIEWER"
+        });
+        // lưu thay đổi
+        await user.save();
+        // thông báo success
         return sendSuccess(res, {
             message: "User has been added to board",
             data: "User has been added to board"
