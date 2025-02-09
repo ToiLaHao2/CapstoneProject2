@@ -234,7 +234,7 @@ async function RemoveUserFromBoard(req, res) {
             removed_user_id: remove_user_id
         });
     } catch (error) {
-        logger.error(error); 
+        logger.error(error);
         return sendError(
             res,
             error.statusCode || 500,
