@@ -52,3 +52,34 @@ can update them : delete
 
 
 Tìm hiểu về HTTPOnly Cookie và áp dụng
+
+User controller:
+
+1.them user mới vào bảng trong use case user
+
+user_id
+board_id
+new_user_id
+
+tìm board có tồn tại không, 
+xét xem creator của board có phải là user_id không, 
+tìm xem new_user_id có tồn tại không
+nếu không báo lỗi 
+kiểm tra new_user_id có trong board chưa
+nếu không thì thêm vào với role là VIEWER
+thêm bảng đó vào array board của new_user_id với role member
+
+2.GetAllUserInBoard
+
+user_id, board_id
+
+
+
+tìm xem 
+
+
+
+=> việc tìm kiếm xem id của 1 đối tượng không khá nhiều
+có nên dùng 1 hàm riêng để kiểm tra và trả vê thông tin
+
+

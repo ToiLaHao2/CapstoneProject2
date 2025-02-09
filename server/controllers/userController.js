@@ -76,7 +76,39 @@ async function UpdateUserProfile(req, res) {
     }
 }
 
-async function UploadProfilePicture(req, res) {}
+async function UploadProfilePicture(req, res) {
+    try {
+        // kiểm tra nếu có file được tải lên
+        if (!req.file) {
+            return sendError(res, 400, "No file uploaded", {
+                details: "No file was uploaded"
+            });
+        }
+
+        // lấy url của ảnh từ cloudinary
+        const imageUrl = req.file.path;
+
+        // cập nhật url ảnh đại diện vào db của người dùng
+        const { user_id } = req.body;
+        const user = await findByIdOrThrow(User, user_id, {
+            errorMessage: "User not found"
+        });
+
+        user.user_avatar_url = imageUrl;
+        await user.save();
+        return sendSuccess(res, "Profile picture uploaded successfully", user);
+    } catch (error) {
+        logger.error(error);
+        return sendError(
+            res,
+            error.statusCode || 500,
+            "Error uploading profile picture",
+            {
+                details: error.details || "Unexpected error"
+            }
+        );
+    }
+}
 
 // trường hợp lấy tất cả các user trong board với use case của user
 // req : user_id, board_id
@@ -193,9 +225,9 @@ async function RemoveUserFromBoard(req, res) {
             return sendError(res, 400, "Cannot remove yourself from board");
         }
 
-        const user = await findByIdOrThrow(User, user_id, {
-            errorMessage: "User not found"
-        });
+        // const user = await findByIdOrThrow(User, user_id, {
+        //     errorMessage: "User not found"
+        // });
 
         const board = await findByIdOrThrow(Board, board_id, {
             errorMessage: "Board not found"
