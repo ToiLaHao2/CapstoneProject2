@@ -1,5 +1,6 @@
 const Board = require("../models/Board");
 const User = require("../models/User");
+const { findByIdOrThrow } = require("../utils/dbHelper");
 const logger = require("../utils/logger");
 const { sendSuccess, sendError } = require("../utils/response");
 
@@ -9,16 +10,12 @@ async function GetUserProfile(req, res) {
         const user = await findByIdOrThrow(User, user_id, {
             errorMessage: "User not found"
         });
-        if (!user) {
-            return sendError(res, 401, "Unauthorized", {
-                details: "User is not registered"
-            });
-        } else {
-            return sendSuccess(res, "Get user data success", user);
-        }
+        return sendSuccess(res, "Get user data success", user);
     } catch (error) {
         logger.error(error);
-        return sendError(res, 500, "Error getting user profile", error);
+        return sendError(res, error.statusCode || 500, error.message, {
+            details: error.details || "Error getting user profile"
+        });
     }
 }
 
@@ -26,7 +23,6 @@ async function UpdateUserProfile(req, res) {
     try {
         const { user_update_details, user_id } = req.body;
 
-        // Kiểm tra object user_update_details có rỗng không
         if (
             !user_update_details ||
             Object.keys(user_update_details).length === 0
@@ -36,25 +32,15 @@ async function UpdateUserProfile(req, res) {
             });
         }
 
-        // Tìm user
         const user = await findByIdOrThrow(User, user_id, {
             errorMessage: "User not found"
         });
 
-        if (!user) {
-            return sendError(res, 404, "User not found", {
-                details: "User not registered yet"
-            });
-        }
-
-        // Chỉ cập nhật các trường hợp lệ
         const allowedFields = [
             "user_full_name",
             "user_avatar_url",
             "user_email"
         ];
-
-        // Cập nhật các trường hợp lệ
         let hasUpdated = false;
 
         for (const key in user_update_details) {
@@ -67,7 +53,6 @@ async function UpdateUserProfile(req, res) {
             }
         }
 
-        // Nếu không có thay đổi, trả về lỗi
         if (!hasUpdated) {
             return sendError(res, 400, "No fields were updated", {
                 details: "Nothing to update, values are the same"
@@ -75,17 +60,19 @@ async function UpdateUserProfile(req, res) {
         }
 
         user.updated_at = Date.now();
-
-        // Lưu thay đổi vào CSDL
         const updatedUser = await user.save();
 
-        // Trả về thành công
         return sendSuccess(res, "User updated successfully", updatedUser);
     } catch (error) {
-        logger.error(`Error with UpdateUser: ${error}`);
-        return sendError(res, 500, "Internal Server Error", {
-            details: error.message
-        });
+        logger.error(error);
+        return sendError(
+            res,
+            error.statusCode || 500,
+            "Internal Server Error",
+            {
+                details: error.message
+            }
+        );
     }
 }
 
@@ -100,39 +87,39 @@ async function UploadProfilePicture(req, res) {}
 async function GetAllUserInBoard(req, res) {
     const { user_id, board_id } = req.body;
     try {
-        // tìm bảng xem có tồn tại không
-        let board = await findByIdOrThrow(Board, board_id, {
+        const board = await findByIdOrThrow(Board, board_id, {
             errorMessage: "Board not found"
         });
-        if (!board) {
-            // nếu không trả về lỗi
-            return sendError(res, 404, "Undefinded", {
-                details: "Board is not found"
+
+        const isUserInBoard = board.board_collaborators.some(
+            user => user.board_collaborator_id === user_id
+        );
+
+        if (!isUserInBoard) {
+            return sendError(res, 401, "Unauthorized", {
+                details: "User is not in this board"
             });
-        } else {
-            // nếu có tìm xem user có thuộc bảng không
-            let user = board.board_collaborators.find(
-                user => user.board_collaborator_id === user_id
-            );
-            // nếu không trả về lỗi
-            if (!user) {
-                return sendError(res, 401, "Unauthorized", {
-                    details: "User is not in this board"
-                });
-            }
-            // nếu có thì trả về danh sách user trong bảng theo user_full_name
-            const colaborators = await User.find({
-                _id: {
-                    $in: board.board_collaborators.map(
-                        user => user.board_collaborator_id
-                    )
-                }
-            }).select("user_full_name");
-            return sendSuccess(res, "Get user data success", colaborators);
         }
+
+        const collaborators = await User.find({
+            _id: {
+                $in: board.board_collaborators.map(
+                    user => user.board_collaborator_id
+                )
+            }
+        }).select("user_full_name");
+
+        return sendSuccess(res, "Get user data success", collaborators);
     } catch (error) {
         logger.error(error);
-        return sendError(res, 500, "Error getting user profile", error);
+        return sendError(
+            res,
+            error.statusCode || 500,
+            "Error getting users in board",
+            {
+                details: error.details || "Unexpected error"
+            }
+        );
     }
 }
 
@@ -142,60 +129,58 @@ async function GetAllUserInBoard(req, res) {
 async function AddUserToBoard(req, res) {
     const { user_id, new_user_id, board_id } = req.body;
     try {
-        // tìm xem board có tồn tại không
-        let board = await findByIdOrThrow(Board, board_id, {
+        const board = await findByIdOrThrow(Board, board_id, {
             errorMessage: "Board not found"
         });
-        if (!board) {
-            return sendError(res, 404, "Undefinded", {
-                details: "Board is not found"
-            });
-        }
-        // xét xem creator có phải là user_id không
+
         if (board.created_by !== user_id) {
             return sendError(res, 401, "Unauthorized", {
                 details: "User is not creator of this board"
             });
         }
-        // tìm xem new_user_id có tồn tại không
-        let user = await findByIdOrThrow(User, new_user_id, {
+
+        const user = await findByIdOrThrow(User, new_user_id, {
             errorMessage: "User not found"
         });
-        if (!user) {
-            return sendError(res, 404, "Undefinded", {
-                details: "User is not found"
-            });
-        }
-        // kiểm tra xem new_user_id đã có trong board chưa
-        let userInBoard = board.board_collaborators.find(
+
+        const isUserInBoard = board.board_collaborators.some(
             user => user.board_collaborator_id === new_user_id
         );
-        if (userInBoard) {
+
+        if (isUserInBoard) {
             return sendError(res, 400, "User already in board", {
                 details: "User is already in this board"
             });
         }
-        // thêm new_user_id vào board
+
         board.board_collaborators.push({
             board_collaborator_id: new_user_id,
             board_collaborator_role: "VIEWER"
         });
+
         await board.save();
-        // thêm board_id vào user
+
         user.user_boards.push({
             board_id: board_id,
             role: "VIEWER"
         });
-        // lưu thay đổi
+
         await user.save();
-        // thông báo success
-        return sendSuccess(res, {
-            message: "User has been added to board",
-            data: "User has been added to board"
+
+        return sendSuccess(res, "User has been added to board", {
+            board_id,
+            user_id: new_user_id
         });
     } catch (error) {
         logger.error(error);
-        return sendError(res, 500, "Error getting user profile", error);
+        return sendError(
+            res,
+            error.statusCode || 500,
+            "Error adding user to board",
+            {
+                details: error.details || "Unexpected error"
+            }
+        );
     }
 }
 // trường hợp xóa user khỏi board với use case của user
@@ -207,48 +192,57 @@ async function RemoveUserFromBoard(req, res) {
         if (remove_user_id === user_id) {
             return sendError(res, 400, "Cannot remove yourself from board");
         }
-        let user = await User.findById(user_id);
-        if (!user) {
-            return sendError(res, 404, "Undefinded", {
-                details: "User is not found"
-            });
-        }
-        let board = user.user_boards.find(board => board.board_id === board_id);
-        if (!board) {
-            return sendError(res, 404, "Undefinded", {
-                details: "User is not in this board"
-            });
-        }
-        if (board.role !== "ADMIN") {
+
+        const user = await findByIdOrThrow(User, user_id, {
+            errorMessage: "User not found"
+        });
+
+        const board = await findByIdOrThrow(Board, board_id, {
+            errorMessage: "Board not found"
+        });
+
+        const isUserAdmin = board.board_collaborators.some(
+            collab =>
+                collab.board_collaborator_id === user_id &&
+                collab.board_collaborator_role === "ADMIN"
+        );
+
+        if (!isUserAdmin) {
             return sendError(res, 401, "Unauthorized", {
                 details: "User is not admin of this board"
             });
         }
-        let boardGet = await Board.findById(board.board_id);
-        if (!boardGet) {
-            return sendError(res, 404, "Undefinded", {
-                details: "Board is not found"
-            });
-        }
-        let userRemove = boardGet.board_collaborators.find(
-            user => user.board_collaborator_id === remove_user_id
+
+        const userToRemove = board.board_collaborators.find(
+            collab => collab.board_collaborator_id === remove_user_id
         );
-        if (!userRemove) {
+
+        if (!userToRemove) {
             return sendError(res, 404, "User not found in board", {
                 details: `User with ID ${remove_user_id} is not a member of this board.`
             });
         }
-        boardGet.board_collaborators = boardGet.board_collaborators.filter(
-            user => user.board_collaborator_id !== remove_user_id
+
+        board.board_collaborators = board.board_collaborators.filter(
+            collab => collab.board_collaborator_id !== remove_user_id
         );
-        await boardGet.save();
-        return sendSuccess(res, {
-            message: "User has been removed from board",
-            data: "User has been removed from board"
+
+        await board.save();
+
+        return sendSuccess(res, "User has been removed from board", {
+            board_id,
+            removed_user_id: remove_user_id
         });
     } catch (error) {
-        logger.error(error);
-        return sendError(res, 500, "Error getting user profile", error);
+        logger.error(error); 
+        return sendError(
+            res,
+            error.statusCode || 500,
+            "Error removing user from board",
+            {
+                details: error.details || "Unexpected error"
+            }
+        );
     }
 }
 

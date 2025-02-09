@@ -33,3 +33,5 @@ async function findOneOrThrow(Model, condition, options = {}) {
         throw new Error(error.message || "Error finding document");
     }
 }
+
+module.exports = { findByIdOrThrow, findOneOrThrow };
