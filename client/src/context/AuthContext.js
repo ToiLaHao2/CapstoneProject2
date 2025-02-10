@@ -27,10 +27,6 @@ export const AuthProvider = ({ children }) => {
                 checkMessage: "Register new account"
             });
 
-            if (response.status !== 200) {
-                throw new Error("Registration failed!");
-            }
-
             const data = response.data;
 
             // Cập nhật token và trạng thái xác thực
@@ -53,10 +49,6 @@ export const AuthProvider = ({ children }) => {
                 user_password: userPassword,
                 checkMessage: "Login to account"
             });
-
-            if (response.status !== 200) {
-                return "Login failed!";
-            }
 
             const data = response.data;
 
@@ -92,11 +84,11 @@ export const AuthProvider = ({ children }) => {
                 checkMessage: "Change password"
             });
 
-            if (response.status === 200) {
-                return "Success";
-            } else {
-                return "Failed to change password";
-            }
+            // if (response.status === 200) {
+            //     return "Success";
+            // } else {
+            //     return "Failed to change password";
+            // }
         } catch (error) {
             return error;
         }

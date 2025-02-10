@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const Projects = () => {
     const { boards } = useBoard();
+    console.log(boards);
     const navigate = useNavigate();
 
     const handleProjectClick = () => {
@@ -42,7 +43,7 @@ const Projects = () => {
                                   </span>
                               </div>
                               <div className="project-details">
-                                  {project.board_is_public && (
+                                  {project.board_is_public &&
                                       <button
                                           className="chat-now-button"
                                           onClick={e => {
@@ -51,11 +52,11 @@ const Projects = () => {
                                           }}
                                       >
                                           Chat Now
-                                      </button>
-                                  )}
+                                      </button>}
 
                                   <div>
-                                      <strong>Created At:</strong>{"  "}
+                                      <strong>Created At:</strong>
+                                      {"  "}
                                       {moment(project.created_at).format(
                                           "DD/MM/YYYY HH:mm:ss"
                                       )}

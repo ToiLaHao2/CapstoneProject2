@@ -758,3 +758,20 @@ Use mongoose.model(name, schema)
 [2024-12-26 14:08:32] INFO: Complete create token
 [2024-12-26 14:08:32] INFO: Successfull checking data user for get user profile
 [2024-12-26 14:08:32] INFO: Successfull checking data to get board by user id
+[2025-02-10 22:20:55] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-02-10 22:37:21] INFO: Successfull checking data register new user
+[2025-02-10 22:37:21] INFO: Hash password complete
+[2025-02-10 22:37:21] INFO: Complete create token
+[2025-02-10 22:37:21] INFO: Successfull checking data user for get user profile
+[2025-02-10 22:43:15] INFO: Successfull checking data user for login
+[2025-02-10 22:43:15] INFO: Compare hash complete
+[2025-02-10 22:43:15] INFO: Complete create token
+[2025-02-10 22:43:15] INFO: Successfull checking data user for get user profile
+[2025-02-10 22:43:15] INFO: Successfull checking data to get board by user id
+[2025-02-10 22:55:21] INFO: Successfull checking data user for login
+[2025-02-10 22:55:22] INFO: Compare hash complete
+[2025-02-10 22:55:22] INFO: Complete create token
+[2025-02-10 22:55:22] INFO: Successfull checking data user for get user profile
+[2025-02-10 22:55:22] INFO: Successfull checking data to get board by user id
+[2025-02-10 22:56:13] INFO: Successfull checking data user for changing password
+[2025-02-10 22:56:13] INFO: Compare hash complete

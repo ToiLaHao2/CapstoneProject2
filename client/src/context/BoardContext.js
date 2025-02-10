@@ -4,7 +4,7 @@ import privateAxios from "../api/privateAxios";
 const BoardContext = createContext();
 
 export const BoardProvider = ({ children }) => {
-    const [boards, setBoards] = useState([{}]);
+    const [boards, setBoards] = useState([]);
 
     // Gọi API để lấy danh sách bảng ngay sau khi đăng nhập
     const getAllBoardsByUserId = async () => {

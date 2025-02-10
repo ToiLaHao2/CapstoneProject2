@@ -22,6 +22,7 @@ const ChangePasswordForm = () => {
     const [alertMessage, setAlertMessage] = useState("");
     const { changePassword, logout } = useAuth();
     const { user } = useUser();
+    console.log(user);
     const navigate = useNavigate();
 
     const { current_password, new_password, confirm_new_password } = state;
@@ -31,7 +32,7 @@ const ChangePasswordForm = () => {
         e.preventDefault();
 
         // Kiểm tra mật khẩu khớp
-        if (new_password !== confirm_new_password) {
+        if (new_password.trim() !== confirm_new_password.trim()) {
             setAlertMessage("Passwords do not match!");
             return;
         }
@@ -65,39 +66,41 @@ const ChangePasswordForm = () => {
     };
 
     return (
-        <div className="form-container">
-            <h2>Change Password</h2>
-            {alertMessage &&
-                <p className="alert">
-                    {alertMessage}
-                </p>}
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="password"
-                    placeholder="Current Password"
-                    name="current_password" // Sửa tên cho khớp state
-                    value={current_password}
-                    onChange={handleInputChange}
-                    required
-                />
-                <input
-                    type="password"
-                    placeholder="New Password"
-                    name="new_password" // Sửa tên cho khớp state
-                    value={new_password}
-                    onChange={handleInputChange}
-                    required
-                />
-                <input
-                    type="password"
-                    placeholder="Confirm New Password"
-                    name="confirm_new_password" // Sửa tên cho khớp state
-                    value={confirm_new_password}
-                    onChange={handleInputChange}
-                    required
-                />
-                <button type="submit">Change Password</button>
-            </form>
+        <div className="l1-container">
+            <div className="form-container">
+                <h2>Change Password</h2>
+                {alertMessage &&
+                    <p className="alert">
+                        {alertMessage}
+                    </p>}
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="password"
+                        placeholder="Current Password"
+                        name="current_password" // Sửa tên cho khớp state
+                        value={current_password}
+                        onChange={handleInputChange}
+                        required
+                    />
+                    <input
+                        type="password"
+                        placeholder="New Password"
+                        name="new_password" // Sửa tên cho khớp state
+                        value={new_password}
+                        onChange={handleInputChange}
+                        required
+                    />
+                    <input
+                        type="password"
+                        placeholder="Confirm New Password"
+                        name="confirm_new_password" // Sửa tên cho khớp state
+                        value={confirm_new_password}
+                        onChange={handleInputChange}
+                        required
+                    />
+                    <button type="submit">Change Password</button>
+                </form>
+            </div>
         </div>
     );
 };

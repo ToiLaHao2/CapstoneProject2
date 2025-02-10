@@ -13,9 +13,9 @@ export const UserProvider = ({ children }) => {
                 checkMessage: "Get user profile"
             });
 
-            if (response.status !== 200) {
-                throw new Error("Failed to fetch user data");
-            }
+            // if (response.status !== 200) {
+            //     throw new Error("Failed to fetch user data");
+            // }
 
             const data = await response.data;
             setUser(data.data);
