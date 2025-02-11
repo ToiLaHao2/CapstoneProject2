@@ -775,3 +775,26 @@ Use mongoose.model(name, schema)
 [2025-02-10 22:55:22] INFO: Successfull checking data to get board by user id
 [2025-02-10 22:56:13] INFO: Successfull checking data user for changing password
 [2025-02-10 22:56:13] INFO: Compare hash complete
+[2025-02-11 23:21:55] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-02-11 23:21:56] INFO: Error checking data register new user: user_full_name is required.
+[2025-02-11 23:24:43] INFO: Successfull checking data register new user
+[2025-02-11 23:24:43] INFO: Hash password complete
+[2025-02-11 23:24:43] INFO: Complete create token
+[2025-02-11 23:27:04] INFO: Successfull checking data user for login
+[2025-02-11 23:27:04] INFO: Compare hash complete
+[2025-02-11 23:27:04] INFO: Complete create token
+[2025-02-11 23:27:09] INFO: Successfull checking data user for login
+[2025-02-11 23:27:09] INFO: Compare hash complete
+[2025-02-11 23:28:25] WARN: No token provided
+[2025-02-11 23:29:18] INFO: Successfull checking data user for changing password
+[2025-02-11 23:29:18] INFO: Compare hash complete
+[2025-02-11 23:35:07] INFO: Successfull checking data user for get user profile
+[2025-02-11 23:36:51] INFO: Error checking data user for get user profile: Wrong message from wrong app
+[2025-02-11 23:38:20] INFO: Successfull checking data user for get user profile
+[2025-02-11 23:38:26] ERROR: Error verified token:  invalid token
+[2025-02-11 23:38:41] INFO: Successfull checking data user for get user profile
+[2025-02-11 23:40:45] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-02-11 23:40:48] INFO: Successfull checking data user for get user profile
+[2025-02-11 23:44:46] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-02-11 23:46:37] INFO: Successfull checking data user for get user profile
+[2025-02-11 23:46:57] INFO: Successfull checking data user for update profile

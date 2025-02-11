@@ -42,8 +42,8 @@ const validationRules = {
         requiredFields: ["user_id", "checkMessage"]
     },
     updateUserProfile: {
-        checkMessage: "Update user info",
-        requiredFields: ["user_id", "user_update_details"]
+        checkMessage: "Update user profile",
+        requiredFields: ["user_id", "user_update_details", "checkMessage"]
     },
     // getUserProfile
     // updateUser

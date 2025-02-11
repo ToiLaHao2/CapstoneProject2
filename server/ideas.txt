@@ -83,3 +83,50 @@ tìm xem
 có nên dùng 1 hàm riêng để kiểm tra và trả vê thông tin
 
 
+
+API: 
+    - Auth :
+        + /api/auth/register : đăng ký người dùng mới
+            request cần :
+                {
+                    "user_full_name" : "",
+                    "user_email" : "",
+                    "user_password" : "",
+                    "user_avatar_url" : "",
+                    "checkMessage" : "Register new account"
+                }
+        + /api/auth/login : đăng nhập người dùng
+            request cần :
+                {
+                    "user_email" : "", 
+                    "user_password" : "", 
+                    "checkMessage" : "Login to account"
+                }
+        + /api/auth/changePassword : đổi mật khẩu
+            request cần :
+                {
+                    "user_email" : "",
+                    "user_password" : "",
+                    "user_last_password" : "",
+                    "checkMessage" : "Change password"
+                }
+    - User
+        + /api/user/getProfile : lấy thông tin người dùng
+            request cần :
+                {
+                    "checkMessage" : "Get user profile"
+                }
+        + /api/user/updateProfile : cập nhật thông tin người dùng
+            request cần :
+                {
+                    "user_update_details" : {}, 
+                    (nạp vào 1 object)
+                    "checkMessage" : "Update user profile"
+                }
+    - Board
+        + /api/board/createBoard : tạo bảng(Project) mới
+        + /api/board/getBoard : lấy thông tin bảng nhất định
+        + /api/board/getBoardsByUserId : lấy tất cả các bảng theo user id
+        + /api/board/updateBoard : cập nhật thông tin bảng
+        + /api/board/deleteBoard : xóa bảng
+

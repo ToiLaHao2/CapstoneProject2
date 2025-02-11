@@ -89,6 +89,8 @@ export const AuthProvider = ({ children }) => {
             // } else {
             //     return "Failed to change password";
             // }
+
+            
         } catch (error) {
             return error;
         }
