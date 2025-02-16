@@ -10,7 +10,7 @@ const {
 
 const userRouter = express.Router();
 
-userRouter.get("/getProfile", validateGetUserProfile, GetUserProfile);
+userRouter.post("/getProfile", validateGetUserProfile, GetUserProfile);
 userRouter.patch("/updateProfile", validateUpdateUserProfile, UpdateUserProfile);
 
 module.exports = userRouter;

@@ -103,7 +103,8 @@ API:
                     "checkMessage" : "Login to account"
                 }
         + /api/auth/changePassword : đổi mật khẩu
-            request cần :
+            request cần : 
+            token cho header
                 {
                     "user_email" : "",
                     "user_password" : "",
@@ -125,8 +126,37 @@ API:
                 }
     - Board
         + /api/board/createBoard : tạo bảng(Project) mới
+            request cần :
+                {
+                    "board_title" : "",
+                    "board_description" : "",
+                    "board_is_public" : "",
+                    "board_collaborators" : [],
+                    "board_list" : [],
+                    "checkMessage" : "Create new board"
+                }
         + /api/board/getBoard : lấy thông tin bảng nhất định
+            request cần :
+                {
+                    "board_id", 
+                    "checkMessage" : "Get board"
+                }
         + /api/board/getBoardsByUserId : lấy tất cả các bảng theo user id
+            request cần :
+                {
+                    "checkMessage" : "Get boards by user id"
+                }
         + /api/board/updateBoard : cập nhật thông tin bảng
+            request cần :
+                {
+                    "board_id", 
+                    "board_update_details"
+                    "checkMessage" : "Update board"
+                }
         + /api/board/deleteBoard : xóa bảng
+            request cần :
+                {
+                    "board_id" , 
+                    "checkMessage" : "Delete board"
+                }
 

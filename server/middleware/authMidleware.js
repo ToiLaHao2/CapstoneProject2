@@ -9,7 +9,7 @@ async function validateRegister(req, res, next) {
   const userRegist = req.body;
   const rules = validationRules["register"];
   const resultCheckingData = await validateFields(userRegist, rules);
-  if (resultCheckingData.valid == true) {
+  if (resultCheckingData.valid === true) {
     logger.info("Successfull checking data register new user");
     next();
   } else {
@@ -26,7 +26,7 @@ async function validateLogin(req, res, next) {
   const userLogin = req.body;
   const rules = validationRules["login"];
   const resultCheckingData = await validateFields(userLogin, rules);
-  if (resultCheckingData.valid == true) {
+  if (resultCheckingData.valid === true) {
     logger.info("Successfull checking data user for login");
     next();
   } else {
@@ -51,7 +51,7 @@ async function validationChangePassword(req, res, next) {
     userRequestChangePassword,
     rules
   );
-  if (resultCheckingData.valid == true) {
+  if (resultCheckingData.valid === true) {
     logger.info("Successfull checking data user for changing password");
     next();
   } else {

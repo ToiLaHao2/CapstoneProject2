@@ -94,12 +94,12 @@ const validationRules = {
     // updateBoard
     updateBoard: {
         checkMessage: "Update board",
-        requiredFields: ["board_id", "board_update_details"]
+        requiredFields: ["board_id", "board_update_details", "checkMessage"]
     },
     // deleteBoard
     deleteBoard: {
         checkMessage: "Delete board",
-        requiredFields: ["board_id"]
+        requiredFields: ["board_id" , "checkMessage"]
     }
 
     // addMemberToBoard

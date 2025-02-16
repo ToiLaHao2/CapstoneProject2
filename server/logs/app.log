@@ -1,800 +1,117 @@
-[2024-11-28 10:10:26] INFO: Database connected
-[2024-11-28 10:26:05] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-11-29 09:24:42] ERROR: Attempt 1: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-[2024-11-29 09:25:17] ERROR: Attempt 2: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-[2024-11-29 09:25:52] ERROR: Attempt 3: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-[2024-11-29 09:26:18] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-11-29 09:28:02] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-11-29 09:29:22] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-11-29 09:30:25] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-11-29 09:34:34] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-11-29 09:34:57] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-11-29 09:35:01] INFO: Successfull checking data register new user
-[2024-11-29 09:35:01] INFO: Hash password complete
-[2024-11-29 09:35:01] ERROR: Error with register: ValidationError: user_hashed_password: Path `user_hashed_password` is required.
-[2024-11-29 09:38:01] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-11-29 09:38:03] INFO: Successfull checking data register new user
-[2024-11-29 09:38:03] INFO: Hash password complete
-[2024-11-29 09:38:03] INFO: Complete create token
-[2024-11-29 09:38:21] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-11-29 09:38:26] INFO: Successfull checking data register new user
-[2024-11-29 09:38:26] INFO: Hash password complete
-[2024-11-29 09:38:26] INFO: Complete create token
-[2024-11-29 09:39:05] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-11-29 09:39:06] INFO: Successfull checking data register new user
-[2024-11-29 09:41:19] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-11-29 09:43:50] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-11-29 09:44:29] INFO: Error checking data user for login: Wrong message from wrong app
-[2024-11-29 09:44:51] INFO: Successfull checking data user for login
-[2024-11-29 09:44:51] INFO: Compare hash complete
-[2024-11-29 09:44:51] ERROR: Error : Error: data and hash arguments required
-[2024-11-29 09:45:08] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-11-29 09:45:09] INFO: Successfull checking data user for login
-[2024-11-29 09:45:09] INFO: Compare hash complete
-[2024-11-29 09:45:09] INFO: Complete create token
-[2024-11-29 09:45:58] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-11-29 09:47:03] INFO: Error checking data user for changing password: user_name is required.
-[2024-11-29 09:47:15] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-11-29 09:47:21] INFO: Error checking data user for changing password: last_password is required.
-[2024-11-29 09:47:35] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-11-29 09:47:36] INFO: Successfull checking data user for changing password
-[2024-11-29 09:47:36] INFO: Compare hash complete
-[2024-11-29 09:50:15] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-11-29 09:50:20] INFO: Successfull checking data user for changing password
-[2024-11-29 09:50:20] INFO: Compare hash complete
-[2024-11-29 09:50:20] ERROR: Error : Error: data and hash arguments required
-[2024-11-29 09:51:02] INFO: Successfull checking data user for changing password
-[2024-11-29 09:51:02] INFO: Compare hash complete
-[2024-11-29 09:51:02] ERROR: Error : Error: data and hash arguments required
-[2024-11-29 09:52:32] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-11-29 09:52:34] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-11-29 09:52:45] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-11-29 09:52:46] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-11-29 09:52:50] INFO: Successfull checking data user for changing password
-[2024-11-29 09:52:50] INFO: Compare hash complete
-[2024-11-29 09:52:50] ERROR: Error : Error: data and hash arguments required
-[2024-11-29 09:53:10] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-11-29 09:53:37] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-11-29 09:53:39] INFO: Successfull checking data user for changing password
-[2024-11-29 09:53:39] INFO: Compare hash complete
-[2024-11-29 09:53:39] ERROR: Error : Error: data and hash arguments required
-[2024-11-29 09:53:52] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-11-29 09:53:53] INFO: Successfull checking data user for changing password
-[2024-11-29 09:53:53] INFO: Compare hash complete
-[2024-11-29 09:53:53] ERROR: Error : Error: data and hash arguments required
-[2024-11-29 09:54:23] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-11-29 09:54:27] INFO: Successfull checking data user for changing password
-[2024-11-29 09:54:27] INFO: Compare hash complete
-[2024-11-29 09:54:40] INFO: Successfull checking data user for changing password
-[2024-11-29 09:54:40] INFO: Compare hash complete
-[2024-11-29 09:54:40] INFO: Hash password complete
-[2024-11-29 09:55:19] INFO: Successfull checking data user for login
-[2024-11-29 09:55:19] INFO: Compare hash complete
-[2024-11-29 09:55:44] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-11-29 09:55:48] INFO: Successfull checking data user for login
-[2024-11-29 09:55:48] INFO: Compare hash complete
-[2024-11-29 09:56:38] INFO: Successfull checking data user for login
-[2024-11-29 09:56:38] INFO: Compare hash complete
-[2024-11-29 09:56:45] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-11-29 09:56:46] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-11-29 09:56:49] INFO: Successfull checking data user for login
-[2024-11-29 09:56:49] INFO: Compare hash complete
-[2024-11-29 09:59:33] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-11-29 10:00:31] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-11-29 10:00:47] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-11-29 10:01:22] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-11-29 10:02:36] INFO: Successfull checking data register new user
-[2024-11-29 10:03:19] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-11-29 10:03:22] INFO: Successfull checking data register new user
-[2024-11-29 10:06:24] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-11-29 10:06:33] INFO: Successfull checking data register new user
-[2024-11-29 10:07:00] INFO: Successfull checking data register new user
-[2024-11-29 10:09:45] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-11-29 10:09:47] INFO: Successfull checking data register new user
-[2024-11-29 10:10:49] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-11-29 10:10:53] INFO: Successfull checking data register new user
-[2024-11-29 10:10:53] INFO: Hash password complete
-[2024-11-29 10:10:53] INFO: Complete create token
-[2024-11-29 10:12:19] INFO: Successfull checking data user for login
-[2024-11-29 10:12:20] INFO: Compare hash complete
-[2024-11-29 10:12:20] INFO: Complete create token
-[2024-11-29 10:13:44] INFO: Successfull checking data user for changing password
-[2024-11-29 10:13:44] INFO: Compare hash complete
-[2024-11-29 10:13:44] INFO: Hash password complete
-[2024-11-29 10:14:12] INFO: Successfull checking data user for login
-[2024-11-29 10:14:12] INFO: Compare hash complete
-[2024-11-29 10:14:30] INFO: Successfull checking data user for login
-[2024-11-29 10:14:30] INFO: Compare hash complete
-[2024-11-29 10:14:35] INFO: Successfull checking data user for login
-[2024-11-29 10:14:35] INFO: Compare hash complete
-[2024-11-29 10:14:35] INFO: Complete create token
-[2024-11-29 10:15:29] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-11-29 10:16:02] INFO: Successfull checking data user for login
-[2024-11-29 10:16:02] INFO: Compare hash complete
-[2024-11-29 10:16:08] INFO: Successfull checking data user for login
-[2024-11-29 10:16:08] INFO: Compare hash complete
-[2024-11-29 10:16:38] INFO: Error checking data user for changing password: Wrong message from wrong app
-[2024-11-29 10:16:47] INFO: Successfull checking data user for changing password
-[2024-11-29 10:16:47] INFO: Compare hash complete
-[2024-11-29 10:16:47] INFO: Hash password complete
-[2024-11-29 10:17:16] INFO: Successfull checking data user for login
-[2024-11-29 10:17:16] INFO: Compare hash complete
-[2024-11-29 10:17:16] INFO: Complete create token
-[2024-12-08 10:50:29] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-12-08 10:53:40] INFO: Successfull checking data register new user
-[2024-12-08 10:53:40] INFO: Hash password complete
-[2024-12-08 10:53:40] INFO: Complete create token
-[2024-12-08 10:57:52] INFO: Successfull checking data to create board
-[2024-12-08 10:57:52] ERROR: Error with create board : ValidationError: created_at: Cast to date failed for value "[Function: now]" (type function) at path "created_at"
-[2024-12-08 10:58:34] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-12-08 10:58:38] INFO: Successfull checking data to create board
-[2024-12-08 10:59:50] INFO: Successfull checking data to create board
-[2024-12-08 10:59:50] ERROR: Error with GetBoard: MissingSchemaError: Schema hasn't been registered for model "List".
-Use mongoose.model(name, schema)
-[2024-12-08 11:01:09] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-12-08 11:01:12] INFO: Successfull checking data to create board
-[2024-12-08 11:03:49] INFO: Successfull checking data to create board
-[2024-12-08 11:04:43] INFO: Successfull checking data to create board
-[2024-12-08 11:05:30] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-08 11:05:32] INFO: Successfull checking data to update board
-[2024-12-08 11:08:02] INFO: Successfull checking data to update board
-[2024-12-08 11:08:02] ERROR: Error with UpdateBoard: TypeError: updatedBoard.populate(...).populate is not a function
-[2024-12-08 11:10:49] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-12-08 11:10:52] INFO: Successfull checking data to update board
-[2024-12-08 11:11:18] INFO: Successfull checking data to update board
-[2024-12-08 11:11:18] ERROR: Error with UpdateBoard: TypeError: updatedBoard.populate(...).populate is not a function
-[2024-12-08 11:11:37] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-12-08 11:11:48] INFO: Successfull checking data to update board
-[2024-12-08 11:11:49] ERROR: Error with UpdateBoard: TypeError: updatedBoard.populate(...).populate is not a function
-[2024-12-08 11:12:11] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-08 11:12:23] INFO: Successfull checking data to update board
-[2024-12-08 11:13:45] INFO: Successfull checking data to delete board
-[2024-12-09 10:34:04] ERROR: Attempt 1: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-[2024-12-09 10:34:39] ERROR: Attempt 2: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-[2024-12-09 10:34:45] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-12-09 10:38:33] INFO: Error checking data register new user: user_full_name is required.
-[2024-12-11 14:16:39] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-11 14:21:08] INFO: Error checking data user for login: user_email is required.
-[2024-12-11 14:21:15] INFO: Successfull checking data user for login
-[2024-12-11 14:22:59] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-12-11 14:25:01] INFO: Error checking data user for login: Wrong message from wrong app
-[2024-12-11 14:25:07] INFO: Error checking data register new user: user_full_name is required.
-[2024-12-11 14:25:20] INFO: Successfull checking data register new user
-[2024-12-11 14:25:20] INFO: Hash password complete
-[2024-12-11 14:25:20] INFO: Complete create token
-[2024-12-11 14:33:01] INFO: Successfull checking data to create board
-[2024-12-11 14:33:01] ERROR: Error with create board : TypeError: Cannot read properties of undefined (reading 'push')
-[2024-12-11 14:34:29] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-11 14:34:31] INFO: Successfull checking data to create board
-[2024-12-11 14:34:31] ERROR: Error with create board : TypeError: Cannot read properties of undefined (reading 'push')
-[2024-12-11 14:35:30] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-12-11 14:35:33] INFO: Successfull checking data to create board
-[2024-12-11 14:35:33] ERROR: Error with create board : TypeError: Cannot read properties of undefined (reading 'push')
-[2024-12-11 14:37:21] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-11 14:37:24] INFO: Successfull checking data to create board
-[2024-12-11 14:37:24] INFO: Successfull create board
-[2024-12-11 14:37:38] INFO: Successfull checking data to create board
-[2024-12-11 14:37:38] INFO: Successfull create board
-[2024-12-11 14:38:33] INFO: Successfull checking data to get board by user id
-[2024-12-11 14:58:00] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-12-11 14:59:04] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-11 15:01:05] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-12-11 15:03:24] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-12-11 15:07:39] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-11 15:08:28] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-12-11 15:08:41] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-11 15:09:37] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-12-11 15:11:13] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-12-11 15:11:57] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-12-11 15:14:53] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-12-11 15:16:09] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-11 15:16:45] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-12-11 15:18:19] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-12-11 15:18:22] INFO: Successfull checking data user for changing password
-[2024-12-11 15:21:25] INFO: Successfull checking data user for update profile
-[2024-12-11 15:21:46] INFO: Successfull checking data user for update profile
-[2024-12-11 15:22:05] INFO: Successfull checking data user for update profile
-[2024-12-11 15:22:12] INFO: Successfull checking data user for update profile
-[2024-12-11 15:25:14] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-12-11 16:05:37] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-11 16:05:50] ERROR: Error verified token:  jwt expired
-[2024-12-11 16:06:23] INFO: Successfull checking data user for login
-[2024-12-11 16:06:39] INFO: Successfull checking data register new user
-[2024-12-11 16:06:39] INFO: Hash password complete
-[2024-12-11 16:06:39] INFO: Complete create token
-[2024-12-11 16:07:25] INFO: Successfull checking data register new user
-[2024-12-11 16:07:25] INFO: Hash password complete
-[2024-12-11 16:07:26] INFO: Complete create token
-[2024-12-11 16:07:51] INFO: Successfull checking data to create board
-[2024-12-11 16:07:51] INFO: Successfull create board
-[2024-12-11 16:07:59] INFO: Successfull checking data to create board
-[2024-12-11 16:07:59] INFO: Successfull create board
-[2024-12-11 16:08:20] INFO: Successfull checking data to get board by user id
-[2024-12-19 11:51:37] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-19 12:08:57] INFO: Successfull checking data register new user
-[2024-12-19 12:08:57] INFO: Hash password complete
-[2024-12-19 12:08:57] INFO: Complete create token
-[2024-12-19 12:08:57] ERROR: Error verified token:  jwt malformed
-[2024-12-19 12:14:00] INFO: Successfull checking data register new user
-[2024-12-19 12:14:00] INFO: Hash password complete
-[2024-12-19 12:14:00] INFO: Complete create token
-[2024-12-19 12:14:00] ERROR: Error verified token:  jwt malformed
-[2024-12-19 12:14:29] INFO: Successfull checking data register new user
-[2024-12-19 12:14:29] INFO: Hash password complete
-[2024-12-19 12:14:29] INFO: Complete create token
-[2024-12-19 12:14:43] ERROR: Error verified token:  jwt malformed
-[2024-12-19 12:14:56] INFO: Successfull checking data register new user
-[2024-12-19 12:14:56] INFO: Hash password complete
-[2024-12-19 12:14:56] INFO: Complete create token
-[2024-12-19 12:15:48] ERROR: Error verified token:  jwt malformed
-[2024-12-19 12:16:23] INFO: Successfull checking data register new user
-[2024-12-19 12:16:23] INFO: Hash password complete
-[2024-12-19 12:16:23] INFO: Complete create token
-[2024-12-19 12:18:08] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-19 12:18:10] ERROR: Error verified token:  jwt malformed
-[2024-12-19 12:18:23] INFO: Successfull checking data register new user
-[2024-12-19 12:18:24] INFO: Hash password complete
-[2024-12-19 12:18:24] INFO: Complete create token
-[2024-12-19 12:18:47] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-19 12:18:50] ERROR: Error verified token:  jwt malformed
-[2024-12-19 12:19:06] INFO: Successfull checking data register new user
-[2024-12-19 12:19:06] INFO: Hash password complete
-[2024-12-19 12:19:06] INFO: Complete create token
-[2024-12-19 12:20:10] ERROR: Error verified token:  jwt malformed
-[2024-12-19 12:20:33] INFO: Successfull checking data register new user
-[2024-12-19 12:20:33] INFO: Hash password complete
-[2024-12-19 12:20:33] INFO: Complete create token
-[2024-12-19 12:21:10] ERROR: Error verified token:  jwt malformed
-[2024-12-19 12:21:21] INFO: Successfull checking data register new user
-[2024-12-19 12:21:22] INFO: Hash password complete
-[2024-12-19 12:21:22] INFO: Complete create token
-[2024-12-19 12:21:33] INFO: Successfull checking data register new user
-[2024-12-19 12:21:33] INFO: Hash password complete
-[2024-12-19 12:21:33] INFO: Complete create token
-[2024-12-19 12:21:58] INFO: Successfull checking data register new user
-[2024-12-19 12:21:58] INFO: Hash password complete
-[2024-12-19 12:21:58] INFO: Complete create token
-[2024-12-19 12:22:05] ERROR: Error verified token:  jwt malformed
-[2024-12-19 12:22:52] INFO: Successfull checking data register new user
-[2024-12-19 12:22:52] INFO: Hash password complete
-[2024-12-19 12:22:52] INFO: Complete create token
-[2024-12-19 12:22:52] INFO: Successfull checking data user for changing password
-[2024-12-19 12:23:02] INFO: Successfull checking data register new user
-[2024-12-19 12:23:03] INFO: Hash password complete
-[2024-12-19 12:23:03] INFO: Complete create token
-[2024-12-19 12:23:03] INFO: Successfull checking data user for changing password
-[2024-12-19 12:23:18] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-12-19 12:23:20] INFO: Successfull checking data register new user
-[2024-12-19 12:23:20] INFO: Hash password complete
-[2024-12-19 12:23:20] INFO: Complete create token
-[2024-12-19 12:23:20] INFO: Successfull checking data user for changing password
-[2024-12-19 12:25:00] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-12-19 12:25:02] INFO: Successfull checking data register new user
-[2024-12-19 12:25:02] INFO: Hash password complete
-[2024-12-19 12:25:02] INFO: Complete create token
-[2024-12-19 12:25:02] INFO: Successfull checking data user for get user profile
-[2024-12-19 12:26:15] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-12-19 12:26:16] INFO: Successfull checking data register new user
-[2024-12-19 12:26:16] INFO: Hash password complete
-[2024-12-19 12:26:16] INFO: Complete create token
-[2024-12-19 12:26:16] INFO: Successfull checking data user for get user profile
-[2024-12-19 12:26:20] INFO: Successfull checking data register new user
-[2024-12-19 12:26:20] INFO: Hash password complete
-[2024-12-19 12:26:20] INFO: Complete create token
-[2024-12-19 12:26:20] INFO: Successfull checking data user for get user profile
-[2024-12-19 12:26:56] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-19 12:26:56] INFO: Successfull checking data register new user
-[2024-12-19 12:26:56] INFO: Hash password complete
-[2024-12-19 12:26:56] INFO: Complete create token
-[2024-12-19 12:26:57] INFO: Successfull checking data user for get user profile
-[2024-12-19 12:26:58] INFO: Successfull checking data register new user
-[2024-12-19 12:26:59] INFO: Hash password complete
-[2024-12-19 12:26:59] INFO: Complete create token
-[2024-12-19 12:26:59] INFO: Successfull checking data user for get user profile
-[2024-12-19 12:27:07] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-12-19 12:28:02] INFO: Successfull checking data register new user
-[2024-12-19 12:28:02] INFO: Hash password complete
-[2024-12-19 12:28:02] INFO: Complete create token
-[2024-12-19 12:28:02] INFO: Successfull checking data user for get user profile
-[2024-12-19 12:29:14] INFO: Successfull checking data register new user
-[2024-12-19 12:29:15] INFO: Hash password complete
-[2024-12-19 12:29:15] INFO: Complete create token
-[2024-12-19 12:29:15] INFO: Successfull checking data user for get user profile
-[2024-12-19 12:30:49] INFO: Successfull checking data register new user
-[2024-12-19 12:30:49] INFO: Hash password complete
-[2024-12-19 12:30:49] INFO: Complete create token
-[2024-12-19 12:30:49] INFO: Successfull checking data user for get user profile
-[2024-12-19 12:31:06] INFO: Successfull checking data register new user
-[2024-12-19 12:31:06] INFO: Hash password complete
-[2024-12-19 12:31:06] INFO: Complete create token
-[2024-12-19 12:31:06] INFO: Successfull checking data user for get user profile
-[2024-12-19 12:38:06] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-19 12:38:23] INFO: Successfull checking data register new user
-[2024-12-19 12:38:23] INFO: Hash password complete
-[2024-12-19 12:38:23] INFO: Complete create token
-[2024-12-19 12:38:23] INFO: Successfull checking data user for get user profile
-[2024-12-19 12:38:30] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-19 12:38:33] INFO: Successfull checking data register new user
-[2024-12-19 12:38:33] INFO: Hash password complete
-[2024-12-19 12:38:34] INFO: Complete create token
-[2024-12-19 12:38:34] INFO: Successfull checking data user for get user profile
-[2024-12-19 12:38:43] INFO: Successfull checking data register new user
-[2024-12-19 12:38:43] INFO: Hash password complete
-[2024-12-19 12:38:43] INFO: Complete create token
-[2024-12-19 12:38:43] INFO: Successfull checking data user for get user profile
-[2024-12-19 12:39:04] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-19 12:39:07] INFO: Successfull checking data register new user
-[2024-12-19 12:39:07] INFO: Hash password complete
-[2024-12-19 12:39:07] INFO: Complete create token
-[2024-12-19 12:39:07] INFO: Successfull checking data user for get user profile
-[2024-12-19 12:39:39] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-12-19 12:39:40] INFO: Successfull checking data register new user
-[2024-12-19 12:39:48] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-19 12:48:15] INFO: Successfull checking data register new user
-[2024-12-19 12:48:16] INFO: Hash password complete
-[2024-12-19 12:48:16] INFO: Complete create token
-[2024-12-19 12:48:16] ERROR: Error verified token:  invalid token
-[2024-12-19 12:49:38] INFO: Successfull checking data register new user
-[2024-12-19 12:49:38] INFO: Hash password complete
-[2024-12-19 12:49:38] INFO: Complete create token
-[2024-12-19 12:50:44] ERROR: Error verified token:  invalid token
-[2024-12-19 12:51:06] INFO: Successfull checking data register new user
-[2024-12-19 12:51:11] INFO: Hash password complete
-[2024-12-19 12:51:11] INFO: Complete create token
-[2024-12-19 12:51:23] ERROR: Error verified token:  invalid token
-[2024-12-19 12:54:23] INFO: Successfull checking data register new user
-[2024-12-19 12:54:24] INFO: Hash password complete
-[2024-12-19 12:54:24] INFO: Complete create token
-[2024-12-19 12:54:26] ERROR: Error verified token:  invalid token
-[2024-12-19 12:55:44] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-12-19 12:56:14] INFO: Successfull checking data register new user
-[2024-12-19 12:56:14] INFO: Hash password complete
-[2024-12-19 12:56:14] INFO: Complete create token
-[2024-12-19 12:56:14] INFO: Successfull checking data user for get user profile
-[2024-12-19 12:56:55] INFO: Successfull checking data register new user
-[2024-12-19 12:56:56] INFO: Hash password complete
-[2024-12-19 12:56:56] INFO: Complete create token
-[2024-12-19 12:56:56] INFO: Successfull checking data user for get user profile
-[2024-12-19 12:57:05] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-19 12:57:08] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-12-19 13:09:25] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-12-19 13:10:05] INFO: Successfull checking data register new user
-[2024-12-19 13:10:48] INFO: Successfull checking data register new user
-[2024-12-19 13:10:58] INFO: Hash password complete
-[2024-12-19 13:10:58] INFO: Complete create token
-[2024-12-19 13:11:49] INFO: Successfull checking data register new user
-[2024-12-19 13:11:49] INFO: Hash password complete
-[2024-12-19 13:11:49] INFO: Complete create token
-[2024-12-19 13:11:49] INFO: Successfull checking data user for get user profile
-[2024-12-19 13:12:29] INFO: Successfull checking data register new user
-[2024-12-19 13:12:29] INFO: Hash password complete
-[2024-12-19 13:12:29] INFO: Complete create token
-[2024-12-19 13:12:29] INFO: Successfull checking data user for get user profile
-[2024-12-19 14:03:48] INFO: Successfull checking data user for login
-[2024-12-19 14:03:48] INFO: Compare hash complete
-[2024-12-19 14:03:48] INFO: Complete create token
-[2024-12-19 14:03:48] INFO: Successfull checking data user for get user profile
-[2024-12-19 14:04:34] INFO: Successfull checking data user for login
-[2024-12-19 14:04:34] INFO: Compare hash complete
-[2024-12-19 14:04:42] INFO: Successfull checking data user for login
-[2024-12-19 14:04:42] INFO: Compare hash complete
-[2024-12-19 14:04:42] INFO: Complete create token
-[2024-12-19 14:04:42] INFO: Successfull checking data user for get user profile
-[2024-12-19 14:05:20] INFO: Successfull checking data user for login
-[2024-12-19 14:05:20] INFO: Compare hash complete
-[2024-12-19 14:05:20] INFO: Complete create token
-[2024-12-19 14:05:20] INFO: Successfull checking data user for get user profile
-[2024-12-19 14:05:38] INFO: Successfull checking data user for login
-[2024-12-19 14:05:39] INFO: Compare hash complete
-[2024-12-19 14:05:39] INFO: Complete create token
-[2024-12-19 14:05:39] INFO: Successfull checking data user for get user profile
-[2024-12-19 14:06:08] INFO: Successfull checking data user for login
-[2024-12-19 14:06:09] INFO: Compare hash complete
-[2024-12-19 14:06:09] INFO: Complete create token
-[2024-12-19 14:06:09] INFO: Successfull checking data user for get user profile
-[2024-12-19 14:06:51] INFO: Successfull checking data user for login
-[2024-12-19 14:06:51] INFO: Compare hash complete
-[2024-12-19 14:06:51] INFO: Complete create token
-[2024-12-19 14:06:51] INFO: Successfull checking data user for get user profile
-[2024-12-19 14:07:36] INFO: Successfull checking data user for login
-[2024-12-19 14:07:36] INFO: Compare hash complete
-[2024-12-19 14:07:36] INFO: Complete create token
-[2024-12-19 14:07:36] INFO: Successfull checking data user for get user profile
-[2024-12-19 14:08:51] INFO: Successfull checking data user for login
-[2024-12-19 14:08:51] INFO: Compare hash complete
-[2024-12-19 14:08:51] INFO: Complete create token
-[2024-12-19 14:08:51] INFO: Successfull checking data user for get user profile
-[2024-12-19 14:09:41] INFO: Successfull checking data user for login
-[2024-12-19 14:09:41] INFO: Compare hash complete
-[2024-12-19 14:09:41] INFO: Complete create token
-[2024-12-19 14:09:41] INFO: Successfull checking data user for get user profile
-[2024-12-19 14:11:17] INFO: Successfull checking data user for login
-[2024-12-19 14:11:17] INFO: Compare hash complete
-[2024-12-19 14:11:17] INFO: Complete create token
-[2024-12-19 14:11:17] INFO: Successfull checking data user for get user profile
-[2024-12-19 14:33:57] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-12-19 14:37:31] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-12-19 14:38:10] INFO: Successfull checking data user for login
-[2024-12-19 14:38:11] INFO: Compare hash complete
-[2024-12-19 14:38:11] INFO: Complete create token
-[2024-12-19 14:38:11] INFO: Successfull checking data user for get user profile
-[2024-12-19 14:43:09] INFO: Successfull checking data user for login
-[2024-12-19 14:43:09] INFO: Compare hash complete
-[2024-12-19 14:43:09] INFO: Complete create token
-[2024-12-19 14:43:09] INFO: Successfull checking data user for get user profile
-[2024-12-20 20:31:31] ERROR: Attempt 1: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-[2024-12-20 20:32:06] ERROR: Attempt 2: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-[2024-12-20 20:32:19] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-20 20:32:25] INFO: Successfull checking data user for login
-[2024-12-20 20:32:25] INFO: Compare hash complete
-[2024-12-20 20:32:34] INFO: Successfull checking data user for login
-[2024-12-20 20:32:34] INFO: Compare hash complete
-[2024-12-20 20:32:51] INFO: Successfull checking data user for login
-[2024-12-20 20:32:51] INFO: Compare hash complete
-[2024-12-20 20:33:45] INFO: Successfull checking data user for login
-[2024-12-20 20:33:45] INFO: Compare hash complete
-[2024-12-20 20:35:37] INFO: Successfull checking data register new user
-[2024-12-20 20:35:37] INFO: Hash password complete
-[2024-12-20 20:35:38] INFO: Complete create token
-[2024-12-20 20:35:38] INFO: Successfull checking data user for get user profile
-[2024-12-20 20:38:04] INFO: Successfull checking data user for login
-[2024-12-20 20:38:04] INFO: Compare hash complete
-[2024-12-20 20:38:04] INFO: Complete create token
-[2024-12-20 20:38:04] INFO: Successfull checking data user for get user profile
-[2024-12-20 20:39:06] INFO: Successfull checking data user for login
-[2024-12-20 20:39:06] INFO: Compare hash complete
-[2024-12-20 20:39:07] INFO: Complete create token
-[2024-12-20 20:39:07] INFO: Successfull checking data user for get user profile
-[2024-12-20 20:56:23] INFO: Successfull checking data user for login
-[2024-12-20 20:56:25] INFO: Successfull checking data user for login
-[2024-12-20 20:56:26] INFO: Successfull checking data user for login
-[2024-12-20 20:56:26] INFO: Successfull checking data user for login
-[2024-12-20 20:56:26] INFO: Successfull checking data user for login
-[2024-12-20 20:56:26] INFO: Compare hash complete
-[2024-12-20 20:56:26] INFO: Complete create token
-[2024-12-20 20:56:26] INFO: Compare hash complete
-[2024-12-20 20:56:26] INFO: Successfull checking data user for get user profile
-[2024-12-20 20:56:26] INFO: Successfull checking data user for login
-[2024-12-20 20:56:26] INFO: Compare hash complete
-[2024-12-20 20:56:26] INFO: Complete create token
-[2024-12-20 20:56:26] INFO: Successfull checking data user for get user profile
-[2024-12-20 20:56:27] INFO: Complete create token
-[2024-12-20 20:56:27] INFO: Successfull checking data user for get user profile
-[2024-12-20 20:56:27] INFO: Compare hash complete
-[2024-12-20 20:56:27] INFO: Complete create token
-[2024-12-20 20:56:27] INFO: Compare hash complete
-[2024-12-20 20:56:27] INFO: Compare hash complete
-[2024-12-20 20:56:27] INFO: Complete create token
-[2024-12-20 20:56:27] INFO: Complete create token
-[2024-12-20 20:56:29] INFO: Successfull checking data user for get user profile
-[2024-12-20 20:56:32] INFO: Successfull checking data user for get user profile
-[2024-12-20 20:56:32] INFO: Successfull checking data user for get user profile
-[2024-12-20 20:58:21] INFO: Successfull checking data user for login
-[2024-12-20 20:58:21] INFO: Compare hash complete
-[2024-12-20 20:58:21] INFO: Complete create token
-[2024-12-20 20:58:21] INFO: Successfull checking data user for get user profile
-[2024-12-20 21:02:54] INFO: Successfull checking data user for login
-[2024-12-20 21:02:58] INFO: Compare hash complete
-[2024-12-20 21:02:58] INFO: Complete create token
-[2024-12-20 21:02:58] INFO: Successfull checking data user for get user profile
-[2024-12-20 21:05:31] INFO: Successfull checking data user for login
-[2024-12-20 21:05:31] INFO: Compare hash complete
-[2024-12-20 21:05:31] INFO: Complete create token
-[2024-12-20 21:05:31] INFO: Successfull checking data user for get user profile
-[2024-12-20 22:47:14] INFO: Successfull checking data user for login
-[2024-12-20 22:47:17] ERROR: Error : MongoNetworkError: 74460000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1605:SSL alert number 80
-
-[2024-12-20 22:47:23] INFO: Successfull checking data user for login
-[2024-12-20 22:47:25] ERROR: Error : MongoNetworkError: 74460000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1605:SSL alert number 80
-
-[2024-12-20 22:48:13] INFO: Successfull checking data user for login
-[2024-12-20 22:48:14] INFO: Compare hash complete
-[2024-12-20 22:48:14] INFO: Complete create token
-[2024-12-20 22:48:14] INFO: Successfull checking data user for get user profile
-[2024-12-20 22:51:03] INFO: Successfull checking data user for login
-[2024-12-20 22:51:03] INFO: Compare hash complete
-[2024-12-20 22:51:03] INFO: Complete create token
-[2024-12-20 22:51:03] INFO: Successfull checking data user for get user profile
-[2024-12-20 22:52:14] INFO: Successfull checking data user for changing password
-[2024-12-20 22:52:14] INFO: Compare hash complete
-[2024-12-20 22:52:14] INFO: Hash password complete
-[2024-12-20 22:52:36] INFO: Successfull checking data user for changing password
-[2024-12-20 22:52:36] INFO: Compare hash complete
-[2024-12-20 22:57:48] INFO: Successfull checking data user for login
-[2024-12-20 22:57:49] INFO: Compare hash complete
-[2024-12-20 22:57:49] INFO: Complete create token
-[2024-12-20 22:57:49] INFO: Successfull checking data user for get user profile
-[2024-12-20 23:00:34] INFO: Successfull checking data user for changing password
-[2024-12-20 23:00:34] INFO: Compare hash complete
-[2024-12-20 23:00:34] INFO: Hash password complete
-[2024-12-20 23:00:47] INFO: Successfull checking data user for login
-[2024-12-20 23:00:47] INFO: Compare hash complete
-[2024-12-20 23:00:47] INFO: Complete create token
-[2024-12-20 23:00:47] INFO: Successfull checking data user for get user profile
-[2024-12-20 23:09:48] INFO: Successfull checking data user for login
-[2024-12-20 23:09:53] ERROR: Error : MongoNetworkError: 74460000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1605:SSL alert number 80
-
-[2024-12-20 23:10:08] ERROR: Attempt 1: Failed to connect to MongoDB - 0C2D0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1605:SSL alert number 80
-
-[2024-12-20 23:10:14] ERROR: Attempt 2: Failed to connect to MongoDB - 0C2D0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1605:SSL alert number 80
-
-[2024-12-20 23:10:27] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-20 23:10:46] INFO: Successfull checking data user for login
-[2024-12-20 23:10:46] INFO: Compare hash complete
-[2024-12-20 23:10:46] INFO: Complete create token
-[2024-12-20 23:10:46] INFO: Successfull checking data user for get user profile
-[2024-12-20 23:11:31] INFO: Successfull checking data user for login
-[2024-12-20 23:11:31] INFO: Compare hash complete
-[2024-12-20 23:11:31] INFO: Complete create token
-[2024-12-20 23:11:31] INFO: Successfull checking data user for get user profile
-[2024-12-20 23:11:52] INFO: Successfull checking data user for changing password
-[2024-12-20 23:11:52] INFO: Compare hash complete
-[2024-12-20 23:11:52] INFO: Hash password complete
-[2024-12-20 23:12:01] INFO: Successfull checking data user for login
-[2024-12-20 23:12:01] INFO: Compare hash complete
-[2024-12-20 23:12:01] INFO: Complete create token
-[2024-12-20 23:12:01] INFO: Successfull checking data user for get user profile
-[2024-12-20 23:14:48] INFO: Successfull checking data user for login
-[2024-12-20 23:14:49] INFO: Compare hash complete
-[2024-12-20 23:14:57] INFO: Successfull checking data user for login
-[2024-12-20 23:14:57] INFO: Compare hash complete
-[2024-12-20 23:14:57] INFO: Complete create token
-[2024-12-20 23:14:57] INFO: Successfull checking data user for get user profile
-[2024-12-21 13:18:23] INFO: MongoDB connected: cluster0-shard-00-02.bdrg1.mongodb.net
-[2024-12-21 20:29:38] ERROR: Attempt 1: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-[2024-12-21 20:30:13] ERROR: Attempt 2: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-[2024-12-21 20:30:48] ERROR: Attempt 3: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-[2024-12-21 20:31:23] ERROR: Attempt 4: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-[2024-12-21 20:31:58] ERROR: Attempt 5: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-[2024-12-21 20:32:44] ERROR: Attempt 1: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-[2024-12-21 20:33:19] ERROR: Attempt 2: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-[2024-12-21 20:33:54] ERROR: Attempt 3: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-[2024-12-21 20:34:31] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-21 20:40:23] INFO: Successfull checking data user for login
-[2024-12-21 20:40:24] INFO: Compare hash complete
-[2024-12-21 20:40:24] INFO: Complete create token
-[2024-12-21 20:40:24] INFO: Successfull checking data user for get user profile
-[2024-12-21 22:02:01] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-12-21 22:49:12] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-21 22:55:37] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-12-21 23:38:15] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-21 23:38:46] INFO: Successfull checking data user for login
-[2024-12-21 23:38:46] INFO: Compare hash complete
-[2024-12-21 23:38:46] INFO: Complete create token
-[2024-12-21 23:38:46] INFO: Successfull checking data user for get user profile
-[2024-12-21 23:38:56] INFO: Error checking data board_title is required.
-[2024-12-21 23:41:04] INFO: Error checking data board_description is required.
-[2024-12-21 23:41:29] INFO: Error checking data board_description is required.
-[2024-12-21 23:42:04] INFO: Error checking data board_description is required.
-[2024-12-21 23:44:11] INFO: Error checking data board_description is required.
-[2024-12-21 23:45:28] INFO: Error checking data board_description is required.
-[2024-12-21 23:47:00] INFO: Successfull checking data to create board
-[2024-12-21 23:47:01] INFO: Successfull create board
-[2024-12-21 23:52:35] INFO: Successfull checking data to create board
-[2024-12-21 23:52:36] INFO: Successfull create board
-[2024-12-21 23:53:51] INFO: Successfull checking data user for login
-[2024-12-21 23:53:51] INFO: Compare hash complete
-[2024-12-21 23:53:55] INFO: Successfull checking data user for login
-[2024-12-21 23:53:55] INFO: Compare hash complete
-[2024-12-21 23:53:55] INFO: Complete create token
-[2024-12-21 23:53:55] INFO: Successfull checking data user for get user profile
-[2024-12-21 23:55:55] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-21 23:56:04] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-12-21 23:57:37] INFO: Successfull checking data user for login
-[2024-12-21 23:57:37] INFO: Compare hash complete
-[2024-12-21 23:57:37] INFO: Complete create token
-[2024-12-21 23:57:37] INFO: Successfull checking data user for get user profile
-[2024-12-21 23:57:37] INFO: Successfull checking data to get board by user id
-[2024-12-21 23:58:05] INFO: Error checking data board_is_public is required.
-[2024-12-21 23:59:17] INFO: Error checking data board_is_public is required.
-[2024-12-21 23:59:43] INFO: Error checking data board_is_public is required.
-[2024-12-22 00:00:29] INFO: Error checking data board_is_public is required.
-[2024-12-22 00:00:42] INFO: Successfull checking data to create board
-[2024-12-22 00:00:42] INFO: Successfull create board
-[2024-12-22 00:01:05] INFO: Successfull checking data to create board
-[2024-12-22 00:01:05] INFO: Successfull create board
-[2024-12-22 00:02:08] INFO: Successfull checking data user for login
-[2024-12-22 00:02:08] INFO: Compare hash complete
-[2024-12-22 00:02:08] INFO: Complete create token
-[2024-12-22 00:02:08] INFO: Successfull checking data user for get user profile
-[2024-12-22 00:02:08] INFO: Successfull checking data to get board by user id
-[2024-12-22 00:03:13] INFO: Successfull checking data to create board
-[2024-12-22 00:03:14] INFO: Successfull create board
-[2024-12-22 00:06:48] INFO: Successfull checking data to create board
-[2024-12-22 00:06:49] INFO: Successfull create board
-[2024-12-22 00:08:15] INFO: Successfull checking data user for login
-[2024-12-22 00:08:15] INFO: Compare hash complete
-[2024-12-22 00:08:15] INFO: Complete create token
-[2024-12-22 00:08:15] INFO: Successfull checking data user for get user profile
-[2024-12-22 00:08:15] INFO: Successfull checking data to get board by user id
-[2024-12-22 00:09:56] INFO: Error checking data board_is_public is required.
-[2024-12-22 00:11:28] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-12-22 00:11:32] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2024-12-22 00:11:35] INFO: Error checking data board_is_public is required.
-[2024-12-22 00:16:42] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-22 00:16:45] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-22 00:16:51] INFO: Successfull checking data to create board
-[2024-12-22 00:16:51] INFO: Successfull create board
-[2024-12-22 00:17:10] INFO: Successfull checking data to create board
-[2024-12-22 00:17:10] INFO: Successfull create board
-[2024-12-22 00:20:48] INFO: Successfull checking data user for login
-[2024-12-22 00:20:48] INFO: Compare hash complete
-[2024-12-22 00:20:48] INFO: Complete create token
-[2024-12-22 00:20:48] INFO: Successfull checking data user for get user profile
-[2024-12-22 00:20:48] INFO: Successfull checking data to get board by user id
-[2024-12-22 00:23:02] INFO: Successfull checking data user for login
-[2024-12-22 00:23:02] INFO: Compare hash complete
-[2024-12-22 00:23:18] INFO: Successfull checking data user for login
-[2024-12-22 00:23:18] INFO: Compare hash complete
-[2024-12-22 00:23:18] INFO: Complete create token
-[2024-12-22 00:23:18] INFO: Successfull checking data user for get user profile
-[2024-12-22 00:23:18] INFO: Successfull checking data to get board by user id
-[2024-12-22 00:23:53] INFO: Successfull checking data to create board
-[2024-12-22 00:23:53] INFO: Successfull create board
-[2024-12-22 00:24:13] INFO: Successfull checking data user for login
-[2024-12-22 00:24:13] INFO: Compare hash complete
-[2024-12-22 00:24:13] INFO: Complete create token
-[2024-12-22 00:24:13] INFO: Successfull checking data user for get user profile
-[2024-12-22 00:24:14] INFO: Successfull checking data to get board by user id
-[2024-12-22 00:25:43] INFO: Successfull checking data to create board
-[2024-12-22 00:25:43] INFO: Successfull create board
-[2024-12-22 19:07:09] INFO: MongoDB connected: cluster0-shard-00-02.bdrg1.mongodb.net
-[2024-12-22 19:10:10] INFO: Successfull checking data user for login
-[2024-12-22 19:15:26] INFO: Successfull checking data register new user
-[2024-12-22 19:15:26] INFO: Hash password complete
-[2024-12-22 19:15:26] INFO: Complete create token
-[2024-12-22 19:15:26] INFO: Successfull checking data user for get user profile
-[2024-12-22 19:16:27] INFO: Successfull checking data to create board
-[2024-12-22 19:16:28] INFO: Successfull create board
-[2024-12-22 19:17:38] INFO: Successfull checking data to create board
-[2024-12-22 19:17:38] INFO: Successfull create board
-[2024-12-22 19:30:27] INFO: Successfull checking data user for login
-[2024-12-22 19:30:28] INFO: Compare hash complete
-[2024-12-22 19:30:28] INFO: Complete create token
-[2024-12-22 19:30:28] INFO: Successfull checking data user for get user profile
-[2024-12-22 19:30:28] INFO: Successfull checking data to get board by user id
-[2024-12-22 19:32:14] INFO: Successfull checking data user for login
-[2024-12-22 19:32:14] INFO: Compare hash complete
-[2024-12-22 19:32:14] INFO: Complete create token
-[2024-12-22 19:32:14] INFO: Successfull checking data user for get user profile
-[2024-12-22 19:32:14] INFO: Successfull checking data to get board by user id
-[2024-12-22 19:37:10] INFO: Successfull checking data user for login
-[2024-12-22 19:37:11] INFO: Compare hash complete
-[2024-12-22 19:37:11] INFO: Complete create token
-[2024-12-22 19:37:11] INFO: Successfull checking data user for get user profile
-[2024-12-22 19:37:11] INFO: Successfull checking data to get board by user id
-[2024-12-22 19:37:11] INFO: Successfull checking data user for login
-[2024-12-22 19:37:11] INFO: Compare hash complete
-[2024-12-22 19:37:11] INFO: Complete create token
-[2024-12-22 19:37:13] INFO: Successfull checking data user for get user profile
-[2024-12-22 19:37:13] INFO: Successfull checking data to get board by user id
-[2024-12-22 19:42:09] INFO: Successfull checking data user for login
-[2024-12-22 19:42:09] INFO: Compare hash complete
-[2024-12-22 19:42:09] INFO: Complete create token
-[2024-12-22 19:42:09] INFO: Successfull checking data user for get user profile
-[2024-12-22 19:42:09] INFO: Successfull checking data to get board by user id
-[2024-12-22 19:44:45] INFO: Successfull checking data user for login
-[2024-12-22 19:44:45] INFO: Compare hash complete
-[2024-12-22 19:44:45] INFO: Complete create token
-[2024-12-22 19:44:45] INFO: Successfull checking data user for get user profile
-[2024-12-22 19:44:45] INFO: Successfull checking data to get board by user id
-[2024-12-22 20:07:41] INFO: Successfull checking data to create board
-[2024-12-22 20:07:42] INFO: Successfull create board
-[2024-12-22 20:08:33] INFO: Successfull checking data register new user
-[2024-12-22 20:08:33] INFO: Hash password complete
-[2024-12-22 20:08:33] INFO: Complete create token
-[2024-12-22 20:08:33] INFO: Successfull checking data user for get user profile
-[2024-12-22 21:42:53] INFO: Successfull checking data user for login
-[2024-12-22 21:42:54] INFO: Compare hash complete
-[2024-12-22 21:42:54] INFO: Complete create token
-[2024-12-22 21:42:54] INFO: Successfull checking data user for get user profile
-[2024-12-22 21:42:54] INFO: Successfull checking data to get board by user id
-[2024-12-22 21:49:09] INFO: Successfull checking data user for login
-[2024-12-22 21:49:09] INFO: Compare hash complete
-[2024-12-22 21:49:09] INFO: Complete create token
-[2024-12-22 21:49:09] INFO: Successfull checking data user for get user profile
-[2024-12-22 21:49:09] INFO: Successfull checking data to get board by user id
-[2024-12-22 21:56:01] INFO: Successfull checking data to create board
-[2024-12-22 21:56:01] INFO: Successfull create board
-[2024-12-25 19:44:45] INFO: MongoDB connected: cluster0-shard-00-01.bdrg1.mongodb.net
-[2024-12-25 20:05:03] INFO: Successfull checking data user for login
-[2024-12-25 20:05:03] INFO: Compare hash complete
-[2024-12-25 20:05:03] INFO: Complete create token
-[2024-12-25 20:05:03] INFO: Successfull checking data user for get user profile
-[2024-12-25 20:05:03] INFO: Successfull checking data to get board by user id
-[2024-12-25 20:05:40] INFO: Successfull checking data user for login
-[2024-12-25 20:05:40] INFO: Compare hash complete
-[2024-12-25 20:05:40] INFO: Complete create token
-[2024-12-25 20:05:40] INFO: Successfull checking data user for get user profile
-[2024-12-25 20:05:40] INFO: Successfull checking data to get board by user id
-[2024-12-25 20:08:21] INFO: Successfull checking data user for login
-[2024-12-25 20:08:21] INFO: Compare hash complete
-[2024-12-25 20:08:21] INFO: Complete create token
-[2024-12-25 20:08:21] INFO: Successfull checking data user for get user profile
-[2024-12-25 20:08:21] INFO: Successfull checking data to get board by user id
-[2024-12-25 20:09:56] INFO: Successfull checking data to create board
-[2024-12-25 20:09:56] INFO: Successfull create board
-[2024-12-25 20:11:58] INFO: Successfull checking data to create board
-[2024-12-25 20:11:58] INFO: Successfull create board
-[2024-12-26 10:46:43] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2024-12-26 10:59:53] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2024-12-26 13:42:27] INFO: Successfull checking data register new user
-[2024-12-26 13:42:28] INFO: Hash password complete
-[2024-12-26 13:42:28] INFO: Complete create token
-[2024-12-26 13:42:28] INFO: Successfull checking data user for get user profile
-[2024-12-26 13:43:00] INFO: Successfull checking data to create board
-[2024-12-26 13:43:00] INFO: Successfull create board
-[2024-12-26 13:44:14] INFO: Successfull checking data user for login
-[2024-12-26 13:44:14] INFO: Compare hash complete
-[2024-12-26 13:44:14] INFO: Complete create token
-[2024-12-26 13:44:14] INFO: Successfull checking data user for get user profile
-[2024-12-26 13:44:14] INFO: Successfull checking data to get board by user id
-[2024-12-26 13:44:44] INFO: Successfull checking data to create board
-[2024-12-26 13:44:44] INFO: Successfull create board
-[2024-12-26 13:45:26] INFO: Successfull checking data user for login
-[2024-12-26 13:45:26] INFO: Compare hash complete
-[2024-12-26 13:45:26] INFO: Complete create token
-[2024-12-26 13:45:26] INFO: Successfull checking data user for get user profile
-[2024-12-26 13:45:26] INFO: Successfull checking data to get board by user id
-[2024-12-26 13:46:15] INFO: Successfull checking data user for login
-[2024-12-26 13:46:15] INFO: Compare hash complete
-[2024-12-26 13:46:15] INFO: Complete create token
-[2024-12-26 13:46:15] INFO: Successfull checking data user for get user profile
-[2024-12-26 13:46:15] INFO: Successfull checking data to get board by user id
-[2024-12-26 13:49:29] INFO: Successfull checking data user for login
-[2024-12-26 13:49:29] INFO: Compare hash complete
-[2024-12-26 13:49:29] INFO: Complete create token
-[2024-12-26 13:49:29] INFO: Successfull checking data user for get user profile
-[2024-12-26 13:49:29] INFO: Successfull checking data to get board by user id
-[2024-12-26 13:50:23] INFO: Successfull checking data user for login
-[2024-12-26 13:50:23] INFO: Compare hash complete
-[2024-12-26 13:50:23] INFO: Complete create token
-[2024-12-26 13:50:23] INFO: Successfull checking data user for get user profile
-[2024-12-26 13:50:23] INFO: Successfull checking data to get board by user id
-[2024-12-26 14:05:04] INFO: Successfull checking data to create board
-[2024-12-26 14:05:04] INFO: Successfull create board
-[2024-12-26 14:08:31] INFO: Successfull checking data user for login
-[2024-12-26 14:08:32] INFO: Compare hash complete
-[2024-12-26 14:08:32] INFO: Complete create token
-[2024-12-26 14:08:32] INFO: Successfull checking data user for get user profile
-[2024-12-26 14:08:32] INFO: Successfull checking data to get board by user id
-[2025-02-10 22:20:55] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2025-02-10 22:37:21] INFO: Successfull checking data register new user
-[2025-02-10 22:37:21] INFO: Hash password complete
-[2025-02-10 22:37:21] INFO: Complete create token
-[2025-02-10 22:37:21] INFO: Successfull checking data user for get user profile
-[2025-02-10 22:43:15] INFO: Successfull checking data user for login
-[2025-02-10 22:43:15] INFO: Compare hash complete
-[2025-02-10 22:43:15] INFO: Complete create token
-[2025-02-10 22:43:15] INFO: Successfull checking data user for get user profile
-[2025-02-10 22:43:15] INFO: Successfull checking data to get board by user id
-[2025-02-10 22:55:21] INFO: Successfull checking data user for login
-[2025-02-10 22:55:22] INFO: Compare hash complete
-[2025-02-10 22:55:22] INFO: Complete create token
-[2025-02-10 22:55:22] INFO: Successfull checking data user for get user profile
-[2025-02-10 22:55:22] INFO: Successfull checking data to get board by user id
-[2025-02-10 22:56:13] INFO: Successfull checking data user for changing password
-[2025-02-10 22:56:13] INFO: Compare hash complete
-[2025-02-11 23:21:55] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2025-02-11 23:21:56] INFO: Error checking data register new user: user_full_name is required.
-[2025-02-11 23:24:43] INFO: Successfull checking data register new user
-[2025-02-11 23:24:43] INFO: Hash password complete
-[2025-02-11 23:24:43] INFO: Complete create token
-[2025-02-11 23:27:04] INFO: Successfull checking data user for login
-[2025-02-11 23:27:04] INFO: Compare hash complete
-[2025-02-11 23:27:04] INFO: Complete create token
-[2025-02-11 23:27:09] INFO: Successfull checking data user for login
-[2025-02-11 23:27:09] INFO: Compare hash complete
-[2025-02-11 23:28:25] WARN: No token provided
-[2025-02-11 23:29:18] INFO: Successfull checking data user for changing password
-[2025-02-11 23:29:18] INFO: Compare hash complete
-[2025-02-11 23:35:07] INFO: Successfull checking data user for get user profile
-[2025-02-11 23:36:51] INFO: Error checking data user for get user profile: Wrong message from wrong app
-[2025-02-11 23:38:20] INFO: Successfull checking data user for get user profile
-[2025-02-11 23:38:26] ERROR: Error verified token:  invalid token
-[2025-02-11 23:38:41] INFO: Successfull checking data user for get user profile
-[2025-02-11 23:40:45] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2025-02-11 23:40:48] INFO: Successfull checking data user for get user profile
-[2025-02-11 23:44:46] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2025-02-11 23:46:37] INFO: Successfull checking data user for get user profile
-[2025-02-11 23:46:57] INFO: Successfull checking data user for update profile
+[2025-02-16 22:38:14] INFO: Successfull checking data user for login
+[2025-02-16 22:38:14] INFO: Compare hash complete
+[2025-02-16 22:38:14] INFO: Complete create token
+[2025-02-16 22:38:52] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-02-16 22:38:54] INFO: Successfull checking data user for login
+[2025-02-16 22:38:54] INFO: Compare hash complete
+[2025-02-16 22:38:55] INFO: Complete create token
+[2025-02-16 22:39:10] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-02-16 22:39:17] INFO: Successfull checking data user for login
+[2025-02-16 22:39:17] INFO: Compare hash complete
+[2025-02-16 22:39:17] INFO: Complete create token
+[2025-02-16 22:39:17] INFO: Error checking data user for get user profile: checkMessage is required.
+[2025-02-16 22:41:35] INFO: Successfull checking data user for login
+[2025-02-16 22:41:35] INFO: Compare hash complete
+[2025-02-16 22:41:35] INFO: Complete create token
+[2025-02-16 22:41:35] INFO: Error checking data user for get user profile: checkMessage is required.
+[2025-02-16 22:43:39] INFO: Successfull checking data user for login
+[2025-02-16 22:43:39] INFO: Compare hash complete
+[2025-02-16 22:43:39] INFO: Complete create token
+[2025-02-16 22:43:39] INFO: Error checking data user for get user profile: checkMessage is required.
+[2025-02-16 22:45:02] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-02-16 22:45:03] INFO: Successfull checking data user for login
+[2025-02-16 22:45:03] INFO: Compare hash complete
+[2025-02-16 22:45:03] INFO: Complete create token
+[2025-02-16 22:45:03] INFO: Error checking data user for get user profile: checkMessage is required.
+[2025-02-16 22:46:35] INFO: Successfull checking data user for login
+[2025-02-16 22:46:35] INFO: Compare hash complete
+[2025-02-16 22:46:35] INFO: Complete create token
+[2025-02-16 22:46:35] INFO: Error checking data user for get user profile: checkMessage is required.
+[2025-02-16 22:49:16] INFO: Successfull checking data user for login
+[2025-02-16 22:49:16] INFO: Compare hash complete
+[2025-02-16 22:49:16] INFO: Complete create token
+[2025-02-16 22:49:25] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-02-16 22:49:27] INFO: Successfull checking data user for login
+[2025-02-16 22:49:27] INFO: Compare hash complete
+[2025-02-16 22:49:27] INFO: Complete create token
+[2025-02-16 22:49:46] INFO: Error checking data user for get user profile: checkMessage is required.
+[2025-02-16 22:50:22] INFO: Error checking data user for get user profile: checkMessage is required.
+[2025-02-16 22:51:43] INFO: Successfull checking data user for login
+[2025-02-16 22:51:43] INFO: Compare hash complete
+[2025-02-16 22:52:22] INFO: Successfull checking data user for login
+[2025-02-16 22:52:22] INFO: Compare hash complete
+[2025-02-16 22:52:22] INFO: Complete create token
+[2025-02-16 22:52:22] INFO: Error checking data user for get user profile: checkMessage is required.
+[2025-02-16 22:52:58] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-02-16 22:53:07] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-02-16 22:53:20] INFO: Successfull checking data user for get user profile
+[2025-02-16 22:53:37] INFO: Successfull checking data user for login
+[2025-02-16 22:53:37] INFO: Compare hash complete
+[2025-02-16 22:53:37] INFO: Complete create token
+[2025-02-16 22:54:13] INFO: Successfull checking data user for login
+[2025-02-16 22:54:13] INFO: Compare hash complete
+[2025-02-16 22:54:13] INFO: Complete create token
+[2025-02-16 22:54:13] INFO: Successfull checking data user for get user profile
+[2025-02-16 22:54:13] INFO: Successfull checking data to get board by user id
+[2025-02-16 22:54:40] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-02-16 22:57:07] INFO: Successfull checking data user for login
+[2025-02-16 22:57:07] INFO: Compare hash complete
+[2025-02-16 22:57:07] INFO: Complete create token
+[2025-02-16 22:57:07] INFO: Successfull checking data user for get user profile
+[2025-02-16 22:57:07] INFO: Successfull checking data to get board by user id
+[2025-02-16 22:57:18] INFO: Successfull checking data user for login
+[2025-02-16 22:57:18] INFO: Compare hash complete
+[2025-02-16 23:00:02] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-02-16 23:00:04] INFO: Successfull checking data user for login
+[2025-02-16 23:00:04] INFO: Compare hash complete
+[2025-02-16 23:01:16] INFO: Successfull checking data user for login
+[2025-02-16 23:01:16] INFO: Compare hash complete
+[2025-02-16 23:02:14] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-02-16 23:02:16] INFO: Successfull checking data user for login
+[2025-02-16 23:02:16] INFO: Compare hash complete
+[2025-02-16 23:02:25] INFO: Successfull checking data user for login
+[2025-02-16 23:02:25] INFO: Compare hash complete
+[2025-02-16 23:02:42] INFO: Successfull checking data user for login
+[2025-02-16 23:02:42] INFO: Compare hash complete
+[2025-02-16 23:08:20] INFO: Successfull checking data user for login
+[2025-02-16 23:08:20] INFO: Compare hash complete
+[2025-02-16 23:10:19] INFO: Successfull checking data user for login
+[2025-02-16 23:10:19] INFO: Compare hash complete
+[2025-02-16 23:11:46] INFO: Successfull checking data user for login
+[2025-02-16 23:11:46] INFO: Compare hash complete
+[2025-02-16 23:14:38] INFO: Successfull checking data user for login
+[2025-02-16 23:14:38] INFO: Compare hash complete
+[2025-02-16 23:16:57] INFO: Successfull checking data user for login
+[2025-02-16 23:16:57] INFO: Compare hash complete
+[2025-02-16 23:17:46] INFO: Successfull checking data user for login
+[2025-02-16 23:17:46] INFO: Compare hash complete
+[2025-02-16 23:19:01] INFO: Successfull checking data user for login
+[2025-02-16 23:19:01] INFO: Compare hash complete
+[2025-02-16 23:21:06] INFO: Successfull checking data user for login
+[2025-02-16 23:21:06] INFO: Compare hash complete
+[2025-02-16 23:23:34] INFO: Successfull checking data register new user
+[2025-02-16 23:23:54] INFO: Successfull checking data register new user
+[2025-02-16 23:26:55] INFO: Successfull checking data register new user
+[2025-02-16 23:27:03] INFO: Successfull checking data user for login
+[2025-02-16 23:27:03] INFO: Compare hash complete
+[2025-02-16 23:27:29] INFO: Successfull checking data user for login
+[2025-02-16 23:27:29] INFO: Compare hash complete
+[2025-02-16 23:27:44] INFO: Successfull checking data user for login
+[2025-02-16 23:27:44] INFO: Compare hash complete
+[2025-02-16 23:27:44] INFO: Complete create token
+[2025-02-16 23:27:44] INFO: Successfull checking data user for get user profile
+[2025-02-16 23:27:44] INFO: Successfull checking data to get board by user id
+[2025-02-16 23:31:12] ERROR: Error verified token:  jwt expired
+[2025-02-16 23:32:09] INFO: Successfull checking data user for changing password
+[2025-02-16 23:32:09] INFO: Compare hash complete
+[2025-02-16 23:32:09] INFO: Hash password complete
+[2025-02-16 23:34:39] INFO: Successfull checking data user for login
+[2025-02-16 23:34:39] INFO: Compare hash complete
+[2025-02-16 23:34:54] INFO: Successfull checking data user for login
+[2025-02-16 23:34:54] INFO: Compare hash complete
+[2025-02-16 23:34:54] INFO: Complete create token
+[2025-02-16 23:34:54] INFO: Successfull checking data user for get user profile
+[2025-02-16 23:34:54] INFO: Successfull checking data to get board by user id
+[2025-02-16 23:35:28] INFO: Successfull checking data user for changing password
+[2025-02-16 23:35:28] INFO: Compare hash complete
+[2025-02-16 23:35:29] INFO: Hash password complete

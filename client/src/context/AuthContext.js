@@ -38,7 +38,8 @@ export const AuthProvider = ({ children }) => {
             const result = await getUserData();
             return result;
         } catch (error) {
-            return `Registration error: ${error}`;
+            console.log(error);
+            return error.response.data.message;
         }
     };
 
@@ -47,7 +48,7 @@ export const AuthProvider = ({ children }) => {
             const response = await publicAxios.post("/auth/login", {
                 user_email: userEmail,
                 user_password: userPassword,
-                checkMessage: "Login to account"
+                checkMessage: "Login to account",
             });
 
             const data = response.data;
@@ -61,7 +62,8 @@ export const AuthProvider = ({ children }) => {
             const result = await getUserData();
             return result;
         } catch (error) {
-            return `Login error: ${error}`;
+            console.log(error);
+            return error.response.data.message;
         }
     };
 
@@ -84,15 +86,10 @@ export const AuthProvider = ({ children }) => {
                 checkMessage: "Change password"
             });
 
-            // if (response.status === 200) {
-            //     return "Success";
-            // } else {
-            //     return "Failed to change password";
-            // }
-
-            
+            const result = response.data.success;
+            return result;
         } catch (error) {
-            return error;
+            return error.response.data.message;
         }
     };
 

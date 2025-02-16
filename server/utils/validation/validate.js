@@ -1,16 +1,44 @@
 async function validateFields(data, rules) {
-    for (const field of rules.requiredFields) {
+    const requiredFieldError = validateRequiredFields(
+        data,
+        rules.requiredFields
+    );
+    if (requiredFieldError) return requiredFieldError;
+
+    const checkMessageError = validateCheckMessage(data, rules.checkMessage);
+    if (checkMessageError) return checkMessageError;
+
+    const minLengthError = validateMinLength(data, rules.minLength);
+    if (minLengthError) return minLengthError;
+
+    const maxLengthError = validateMaxLength(data, rules.maxLength);
+    if (maxLengthError) return maxLengthError;
+
+    const regexError = validateRegex(data, rules.regex);
+    if (regexError) return regexError;
+
+    return { valid: true };
+}
+
+function validateRequiredFields(data, requiredFields) {
+    for (const field of requiredFields) {
         if (data[field] === undefined || data[field] === null) {
             return { valid: false, error: `${field} is required.` };
         }
     }
+    return null;
+}
 
-    if (data.checkMessage !== rules.checkMessage) {
+function validateCheckMessage(data, checkMessage) {
+    if (data.checkMessage !== checkMessage) {
         return { valid: false, error: `Wrong message from wrong app` };
     }
+    return null;
+}
 
-    if (rules.minLength) {
-        for (const [field, minLen] of Object.entries(rules.minLength)) {
+function validateMinLength(data, minLengthRules) {
+    if (minLengthRules) {
+        for (const [field, minLen] of Object.entries(minLengthRules)) {
             if (data[field] && data[field].length < minLen) {
                 return {
                     valid: false,
@@ -19,9 +47,12 @@ async function validateFields(data, rules) {
             }
         }
     }
+    return null;
+}
 
-    if (rules.maxLength) {
-        for (const [field, maxLen] of Object.entries(rules.maxLength)) {
+function validateMaxLength(data, maxLengthRules) {
+    if (maxLengthRules) {
+        for (const [field, maxLen] of Object.entries(maxLengthRules)) {
             if (data[field] && data[field].length > maxLen) {
                 return {
                     valid: false,
@@ -30,18 +61,18 @@ async function validateFields(data, rules) {
             }
         }
     }
+    return null;
+}
 
-    // Kiểm tra regex
-    if (rules.regex) {
-        for (const [field, pattern] of Object.entries(rules.regex)) {
+function validateRegex(data, regexRules) {
+    if (regexRules) {
+        for (const [field, pattern] of Object.entries(regexRules)) {
             if (data[field] && !pattern.test(data[field])) {
                 return { valid: false, error: `${field} is invalid` };
             }
         }
     }
-
-    // Tất cả hợp lệ
-    return { valid: true };
+    return null;
 }
 
 module.exports = { validateFields };

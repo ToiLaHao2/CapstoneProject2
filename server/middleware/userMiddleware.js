@@ -16,7 +16,7 @@ async function validateGetUserProfile(req, res, next) {
   const userRequestGetProfile = req.body;
   const rules = validationRules["getUserProfile"];
   const resultCheckingData = await validateFields(userRequestGetProfile, rules);
-  if (resultCheckingData.valid == true) {
+  if (resultCheckingData.valid === true) {
     logger.info("Successfull checking data user for get user profile");
     next();
   } else {

@@ -54,6 +54,7 @@ const SignupForm = () => {
                 navigate("/dashboard");
             }
         } catch (error) {
+            console.log(error);
             setAlertMessage("Registration failed! Please try again.");
         }
     };
