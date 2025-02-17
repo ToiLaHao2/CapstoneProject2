@@ -7,7 +7,6 @@ ngày 10/2/2025 -> 16/2/2025
         + Xử lý các lỗi response xử lý dữ liệu và CSS nếu cần
         + Thêm tính năng upload hình
 
-
 note : 
     - axios : xử lý lỗi từ phía API dễ hơn, không cần check status code nhiều
               các code 200 được thông qua nhanh hơn, các code 4xx 5xx được đưa

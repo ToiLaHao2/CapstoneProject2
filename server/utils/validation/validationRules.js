@@ -7,22 +7,22 @@ const validationRules = {
             "user_email",
             "user_password",
             "user_avatar_url",
-            "checkMessage"
+            "checkMessage",
         ],
         minLength: {
             user_name: 3,
-            user_password: 6
+            user_password: 6,
         },
         maxLength: {
-            user_phone: 10
+            user_phone: 10,
         },
         regex: {
-            user_email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-        }
+            user_email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        },
     },
     login: {
         checkMessage: "Login to account",
-        requiredFields: ["user_email", "user_password", "checkMessage"]
+        requiredFields: ["user_email", "user_password", "checkMessage"],
     },
     changePassword: {
         checkMessage: "Change password",
@@ -30,20 +30,20 @@ const validationRules = {
             "user_email",
             "user_password",
             "user_last_password",
-            "checkMessage"
+            "checkMessage",
         ],
         minLength: {
-            user_password: 6
-        }
+            user_password: 6,
+        },
     },
     // User middle validate
     getUserProfile: {
         checkMessage: "Get user profile",
-        requiredFields: ["user_id", "checkMessage"]
+        requiredFields: ["user_id", "checkMessage"],
     },
     updateUserProfile: {
         checkMessage: "Update user profile",
-        requiredFields: ["user_id", "user_update_details", "checkMessage"]
+        requiredFields: ["user_id", "user_update_details", "checkMessage"],
     },
     // getUserProfile
     // updateUser
@@ -63,7 +63,7 @@ const validationRules = {
 
     inviteUserToBoardByEmail: {
         checkMessage: "Invite user to board by email",
-        requiredFields: ["board_id", "user_email", "checkMessage"]
+        requiredFields: ["board_id", "user_email", "checkMessage"],
     },
     // Board middleware validate
     // createBoard
@@ -75,41 +75,89 @@ const validationRules = {
             "board_is_public",
             "board_collaborators",
             "board_list",
-            "checkMessage"
+            "checkMessage",
         ],
         maxLength: {
-            board_description: 500
-        }
+            board_description: 500,
+        },
     },
     // getBoard
     getBoard: {
         checkMessage: "Get board",
-        requiredFields: ["board_id", "checkMessage"]
+        requiredFields: ["board_id", "checkMessage"],
     },
     // getBoardsByUserId
     getBoardsByUserId: {
         checkMessage: "Get boards by user id",
-        requiredFields: ["user_id", "checkMessage"]
+        requiredFields: ["user_id", "checkMessage"],
     },
     // updateBoard
     updateBoard: {
         checkMessage: "Update board",
-        requiredFields: ["board_id", "board_update_details", "checkMessage"]
+        requiredFields: ["board_id", "board_update_details", "checkMessage"],
     },
     // deleteBoard
     deleteBoard: {
         checkMessage: "Delete board",
-        requiredFields: ["board_id" , "checkMessage"]
-    }
-
+        requiredFields: ["board_id", "checkMessage"],
+    },
     // addMemberToBoard
+    addMemberToBoard: {
+        checkMessage: "Add member to board",
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "member_id",
+            "member_role",
+            "checkMessage",
+        ],
+    },
     // removeMemberFromBoard
+    removeMemberFromBoard: {
+        checkMessage: "Remove member from board",
+        requiredFields: ["user_id", "board_id", "member_id", "checkMessage"],
+    },
     // updateMemberRole
+    updateMemberRole: {
+        checkMessage: "Update member role",
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "member_id",
+            "new_member_role",
+            "checkMessage",
+        ],
+    },
     // getAllMembers
+    getAllMembers: {
+        checkMessage: "Get all members",
+        requiredFields: ["board_id", "checkMessage"],
+    },
     // updatePrivacy
+    updatePrivacy: {
+        checkMessage: "Update privacy",
+        requiredFields: ["board_id", "new_privacy", "checkMessage"],
+    },
     // checkUserAccess
+    checkUserAccess: {
+        checkMessage: "Check user access",
+        requiredFields: ["user_id", "board_id", "checkMessage"],
+    },
     // getListsInBoard
+    getListsInBoard: {
+        checkMessage: "Get lists in board",
+        requiredFields: ["board_id", "checkMessage"],
+    },
     // addListToBoard
+    addListToBoard: {
+        checkMessage: "Add list to board",
+        requiredFields: [
+            "board_id",
+            "list_numerical_order",
+            "list_id",
+            "checkMessage",
+        ],
+    },
     // moveList
     // getCardsInBoard
     // archiveCard

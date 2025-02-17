@@ -1,4 +1,6 @@
-async function CreateList(params) {}
+async function CreateList(req,res) {
+    
+}
 
 async function GetList(params) {}
 
