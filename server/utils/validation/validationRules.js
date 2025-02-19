@@ -176,13 +176,61 @@ const validationRules = {
     // archiveCard
     // updateBoardSetting
     // assignLabelsToBoard
+
     // List middleware validate
+
     // createList
+    createList: {
+        checkMessage: "Create new list",
+        requiredFields: ["user_id", "board_id", "list_title", "checkMessage"],
+    },
     // getList
+    getList: {
+        checkMessage: "Get list",
+        requiredFields: ["user_id", "board_id", "list_id", "checkMessage"],
+    },
     // updateList
+    updateList: {
+        checkMessage: "Update list",
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "list_id",
+            "list_update_details",
+            "checkMessage",
+        ],
+    },
     // deleteList
+    deleteList: {
+        checkMessage: "Delete list",
+        requiredFields: ["user_id", "board_id", "list_id", "checkMessage"],
+    },
     // addCardToList
+    addCardToList: {
+        checkMessage: "Add card to list",
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "list_id",
+            "card_id",
+            "card_numerical_order",
+            "checkMessage",
+        ],
+    },
     // moveCard
+    moveCard: {
+        checkMessage: "Move card",
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "list_id",
+            "card_id1",
+            "card_id2",
+            "new_numerical_order1",
+            "new_numerical_order2",
+            "checkMessage",
+        ],
+    },
     // getCardsInList
 };
 
