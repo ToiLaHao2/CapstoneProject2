@@ -1,4 +1,5 @@
 const Board = require("../models/Board");
+const List = require("../models/List");
 const User = require("../models/User");
 const logger = require("../utils/logger");
 const { sendSuccess, sendError } = require("../utils/response");
@@ -326,6 +327,12 @@ async function UpdateMemberRole(req, res) {
                 details: "The requested board does not exist",
             });
         }
+        // Kiểm tra quyền của người dùng
+        if (board.created_by !== user_id) {
+            return sendError(res, 403, "Access Denied", {
+                details: "User is not the creator of this board",
+            });
+        }
         // Lấy thông tin thành viên
         const member = await User.findById(member_id);
         if (!member) {
@@ -333,7 +340,32 @@ async function UpdateMemberRole(req, res) {
                 details: "The requested member does not exist",
             });
         }
-        // Kiểm tra quyền của người dùng
+        // Kiểm tra thành viên có tồn tại trong danh sách cộng tác viên chưa
+        const isMember = board.board_collaborators.some(
+            (collab) =>
+                String(collab.board_collaborator_id) === String(member_id)
+        );
+        if (!isMember) {
+            return sendError(res, 403, "Access Denied", {
+                details:
+                    "The requested member is not a collaborator of this board",
+            });
+        }
+        // Cập nhật vai trò của thành viên
+        board.board_collaborators = board.board_collaborators.map((collab) => {
+            if (String(collab.board_collaborator_id) === String(member_id)) {
+                collab.board_collaborator_role = new_member_role;
+            }
+            return collab;
+        });
+        // Lưu thay đổi vào CSDL
+        const updatedBoard = await board.save();
+        // Trả về phản hồi thành công
+        return sendSuccess(
+            res,
+            "Member role updated successfully",
+            updatedBoard
+        );
     } catch (error) {
         // Kiểm tra quyền của người dùng
         logger.error(`Error with UpdateMemberRole: ${error}`);
@@ -343,18 +375,208 @@ async function UpdateMemberRole(req, res) {
     }
 }
 
-async function GetAllMembers(params) {}
+async function GetAllMembers(req, res) {
+    try {
+        const { board_id, user_id } = req.body;
+        const board = await Board.findById(board_id);
+        if (!board) {
+            return sendError(res, 404, "Board not found", {
+                details: "The requested board does not exist",
+            });
+        }
+        if (String(board.created_by) !== String(user_id)) {
+            return sendError(res, 403, "Access Denied", {
+                details: "User is not the creator of this board",
+            });
+        }
+        const isMember = board.board_collaborators.some(
+            (collab) => String(collab.board_collaborator_id) === String(user_id)
+        );
+        if (!isMember) {
+            return sendError(res, 403, "Access Denied", {
+                details: "User is not a collaborator of this board",
+            });
+        }
+        const members = await User.find({
+            _id: { $in: board.board_collaborators },
+        });
+        return sendSuccess(res, "Get all members success", members);
+    } catch (error) {
+        logger.error(`Error with GetAllMembers: ${error}`);
+        return sendError(res, 500, "Internal Server Error", {
+            details: error.message,
+        });
+    }
+}
 
 // Thay đổi trạng thái công khai của bảng
-async function UpdatePrivacy(params) {}
+async function UpdatePrivacy(req, res) {
+    const { board_id, user_id, new_privacy } = req.body;
+    try {
+        // Lấy thông tin board
+        const board = await Board.findById(board_id);
+        if (!board) {
+            return sendError(res, 404, "Board not found", {
+                details: "The requested board does not exist",
+            });
+        }
+        // Kiểm tra quyền của người dùng
+        if (board.created_by !== user_id) {
+            return sendError(res, 403, "Access Denied", {
+                details: "User is not the creator of this board",
+            });
+        }
+        // Cập nhật trạng thái công khai
+        board.board_is_public = new_privacy;
+        // Lưu thay đổi vào CSDL
+        const updatedBoard = await board.save();
+        // Trả về phản hồi thành công
+        return sendSuccess(res, "Privacy updated successfully", updatedBoard);
+    } catch (error) {
+        logger.error(`Error with UpdatePrivacy: ${error}`);
+        return sendError(res, 500, "Internal Server Error", {
+            details: error.message,
+        });
+        [x];
+    }
+}
 
 async function CheckUserAccess(params) {}
 
-async function GetListsInBoard(params) {}
+async function GetListsInBoard(req, res) {
+    try {
+        const { board_id, user_id } = req.body;
+        const board = await Board.findById(board_id);
+        if (!board) {
+            return sendError(res, 404, "Board not found", {
+                details: "The requested board does not exist",
+            });
+        }
+        const isMember = board.board_collaborators.some(
+            (collab) => String(collab.board_collaborator_id) === String(user_id)
+        );
+        if (!isMember || String(board.created_by) !== String(user_id)) {
+            return sendError(res, 403, "Access Denied", {
+                details: "User is not a collaborator of this board",
+            });
+        }
 
-async function AddListToBoard(params) {}
+        let lists = [];
 
-async function MoveList(params) {}
+        for (const boardList of board.board_lists) {
+            const list = await List.findById(boardList.list_id);
+            if (list) {
+                lists.push(list);
+            }
+        }
+
+        return sendSuccess(res, "Get all lists success", lists);
+    } catch (error) {
+        logger.error(`Error with GetListsInBoard: ${error}`);
+        return sendError(res, 500, "Internal Server Error", {
+            details: error.message,
+        });
+    }
+}
+
+async function AddListToBoard(req, res) {
+    const { user_id, board_id, list_id, list_numerical_order } = req.body;
+    try {
+        const board = await Board.findById(board_id);
+        if (!board) {
+            return sendError(res, 404, "Board not found", {
+                details: "The requested board does not exist",
+            });
+        }
+        if (String(board.created_by) !== String(user_id)) {
+            return sendError(res, 403, "Access Denied", {
+                details: "User is not the creator of this board",
+            });
+        }
+        const list = await List.findById(list_id);
+        if (!list) {
+            return sendError(res, 404, "List not found", {
+                details: "The requested list does not exist",
+            });
+        }
+        const isList = board.board_lists.some(
+            (boardList) => String(boardList.list_id) === String(list_id)
+        );
+        if (isList) {
+            return sendError(res, 400, "List already exists", {
+                details: "The list is already in this board",
+            });
+        }
+        board.board_lists.push({
+            list_numerical_order,
+            list_id,
+        });
+        const updatedBoard = await board.save();
+        return sendSuccess(res, "List added successfully", updatedBoard);
+    } catch (error) {
+        logger.error(`Error with AddListToBoard: ${error}`);
+        return sendError(res, 500, "Internal Server Error", {
+            details: error.message,
+        });
+    }
+}
+
+async function MoveList(req, res) {
+    const {
+        user_id,
+        board_id,
+        list_id1,
+        list_id2,
+        new_numerical_order1,
+        new_numerical_order2,
+    } = req.body;
+    try {
+        const board = await Board.findById(board_id);
+        if (!board) {
+            return sendError(res, 404, "Board not found", {
+                details: "The requested board does not exist",
+            });
+        }
+        if (String(board.created_by) !== String(user_id)) {
+            return sendError(res, 403, "Access Denied", {
+                details: "User is not the creator of this board",
+            });
+        }
+        const list1 = await List.findById(list_id1);
+        const list2 = await List.findById(list_id2);
+        if (!list1 || !list2) {
+            return sendError(res, 404, "List not found", {
+                details: "The requested list does not exist",
+            });
+        }
+        const isList1 = board.board_lists.some(
+            (boardList) => String(boardList.list_id) === String(list_id1)
+        );
+        const isList2 = board.board_lists.some(
+            (boardList) => String(boardList.list_id) === String(list_id2)
+        );
+        if (!isList1 || !isList2) {
+            return sendError(res, 404, "List not found", {
+                details: "The requested list is not in this board",
+            });
+        }
+        const boardList1 = board.board_lists.find(
+            (boardList) => String(boardList.list_id) === String(list_id1)
+        );
+        const boardList2 = board.board_lists.find(
+            (boardList) => String(boardList.list_id) === String(list_id2)
+        );
+        boardList1.list_numerical_order = new_numerical_order1;
+        boardList2.list_numerical_order = new_numerical_order2;
+        const updatedBoard = await board.save();
+        return sendSuccess(res, "List moved successfully", updatedBoard);
+    } catch (error) {
+        logger.error(`Error with MoveList: ${error}`);
+        return sendError(res, 500, "Internal Server Error", {
+            details: error.message,
+        });
+    }
+}
 
 async function AssignLabelsToBoard(params) {}
 

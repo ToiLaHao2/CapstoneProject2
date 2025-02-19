@@ -131,12 +131,12 @@ const validationRules = {
     // getAllMembers
     getAllMembers: {
         checkMessage: "Get all members",
-        requiredFields: ["board_id", "checkMessage"],
+        requiredFields: ["user_id", "board_id", "checkMessage"],
     },
     // updatePrivacy
     updatePrivacy: {
         checkMessage: "Update privacy",
-        requiredFields: ["board_id", "new_privacy", "checkMessage"],
+        requiredFields: ["user_id", "board_id", "new_privacy", "checkMessage"],
     },
     // checkUserAccess
     checkUserAccess: {
@@ -146,12 +146,13 @@ const validationRules = {
     // getListsInBoard
     getListsInBoard: {
         checkMessage: "Get lists in board",
-        requiredFields: ["board_id", "checkMessage"],
+        requiredFields: ["user_id", "board_id", "checkMessage"],
     },
     // addListToBoard
     addListToBoard: {
         checkMessage: "Add list to board",
         requiredFields: [
+            "user_id",
             "board_id",
             "list_numerical_order",
             "list_id",
@@ -162,9 +163,12 @@ const validationRules = {
     moveList: {
         checkMessage: "Move list",
         requiredFields: [
+            "user_id",
             "board_id",
-            "list_id",
-            "new_numerical_order",
+            "list_id1",
+            "list_id2",
+            "new_numerical_order1",
+            "new_numerical_order2",
             "checkMessage",
         ],
     },
