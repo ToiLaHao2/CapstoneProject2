@@ -159,10 +159,27 @@ const validationRules = {
         ],
     },
     // moveList
+    moveList: {
+        checkMessage: "Move list",
+        requiredFields: [
+            "board_id",
+            "list_id",
+            "new_numerical_order",
+            "checkMessage",
+        ],
+    },
     // getCardsInBoard
     // archiveCard
     // updateBoardSetting
     // assignLabelsToBoard
+    // List middleware validate
+    // createList
+    // getList
+    // updateList
+    // deleteList
+    // addCardToList
+    // moveCard
+    // getCardsInList
 };
 
 module.exports = { validationRules };
