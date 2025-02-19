@@ -82,6 +82,11 @@ tìm xem
 => việc tìm kiếm xem id của 1 đối tượng không khá nhiều
 có nên dùng 1 hàm riêng để kiểm tra và trả vê thông tin
 
+Board controller:
+Về tính năng moveList :
+về cơ bản thì là thay đổi vị trí của các list trong board
+
+
 
 
 API: 

@@ -8,7 +8,7 @@ async function CreateBoard(req, res) {
     const user = await User.findById(boardReqCreate.user_id);
     if (!user) {
         return sendError(res, 401, "Unauthorized", {
-            details: "User is not registed"
+            details: "User is not registed",
         });
     }
     try {
@@ -19,7 +19,7 @@ async function CreateBoard(req, res) {
             board_lists: boardReqCreate.board_lists,
             board_collaborators: boardReqCreate.board_collaborators,
             created_by: boardReqCreate.user_id,
-            created_at: Date.now()
+            created_at: Date.now(),
         });
 
         const newBoard = await board.save();
@@ -30,7 +30,7 @@ async function CreateBoard(req, res) {
     } catch (error) {
         logger.error(`Error with create board : ${error}`);
         return sendError(res, 500, `Error while create board`, {
-            details: error.message
+            details: error.message,
         });
     }
 }
@@ -43,7 +43,7 @@ async function GetBoard(req, res) {
         const user = await User.findById(user_id);
         if (!user) {
             return sendError(res, 401, "Unauthorized", {
-                details: "User is not registered"
+                details: "User is not registered",
             });
         }
 
@@ -59,7 +59,7 @@ async function GetBoard(req, res) {
         // Kiểm tra nếu không tìm thấy bảng
         if (!board) {
             return sendError(res, 404, "Board not found", {
-                details: "The requested board does not exist"
+                details: "The requested board does not exist",
             });
         }
 
@@ -70,13 +70,13 @@ async function GetBoard(req, res) {
 
         // Kiểm tra nếu user là cộng tác viên
         const isCollaborator = board.board_collaborators.some(
-            collab =>
+            (collab) =>
                 String(collab.board_collaborator_id._id) === String(user_id)
         );
 
         if (!isCollaborator) {
             return sendError(res, 403, "Access Denied", {
-                details: "User is not a member or admin of the board"
+                details: "User is not a member or admin of the board",
             });
         }
 
@@ -86,7 +86,7 @@ async function GetBoard(req, res) {
         // Xử lý lỗi hệ thống
         logger.error(`Error with GetBoard: ${error}`);
         sendError(res, 500, "Internal Server Error", {
-            details: error.message
+            details: error.message,
         });
     }
 }
@@ -101,7 +101,7 @@ async function UpdateBoard(req, res) {
             Object.keys(board_update_details).length === 0
         ) {
             return sendError(res, 400, "No data to update", {
-                details: "No valid fields provided"
+                details: "No valid fields provided",
             });
         }
 
@@ -112,14 +112,14 @@ async function UpdateBoard(req, res) {
                 { created_by: user_id }, // Người tạo
                 {
                     "board_collaborators.board_collaborator_id": user_id, // Cộng tác viên
-                    "board_collaborators.board_collaborator_role": "EDITOR" // Chỉ "EDITOR" mới có quyền chỉnh sửa
-                }
-            ]
+                    "board_collaborators.board_collaborator_role": "EDITOR", // Chỉ "EDITOR" mới có quyền chỉnh sửa
+                },
+            ],
         });
 
         if (!board) {
             return sendError(res, 404, "Board not found or unauthorized", {
-                details: "User does not have access to this board"
+                details: "User does not have access to this board",
             });
         }
 
@@ -129,7 +129,7 @@ async function UpdateBoard(req, res) {
             "board_description",
             "board_is_public",
             "board_collaborators",
-            "board_lists"
+            "board_lists",
         ];
 
         // Cập nhật các trường hợp lệ
@@ -148,7 +148,7 @@ async function UpdateBoard(req, res) {
         // Nếu không có thay đổi, trả về lỗi
         if (!hasUpdated) {
             return sendError(res, 400, "No fields were updated", {
-                details: "Nothing to update, values are the same"
+                details: "Nothing to update, values are the same",
             });
         }
 
@@ -170,7 +170,7 @@ async function UpdateBoard(req, res) {
     } catch (error) {
         logger.error(`Error with UpdateBoard: ${error}`);
         return sendError(res, 500, "Internal Server Error", {
-            details: error.message
+            details: error.message,
         });
     }
 }
@@ -182,13 +182,13 @@ async function DeleteBoard(req, res) {
         // Tìm và xóa bảng chỉ trong một bước
         const deletedBoard = await Board.findOneAndDelete({
             _id: board_id,
-            created_by: user_id // Kiểm tra người tạo
+            created_by: user_id, // Kiểm tra người tạo
         });
 
         // Nếu không tìm thấy bảng, trả về lỗi
         if (!deletedBoard) {
             return sendError(res, 404, "Board not found or unauthorized", {
-                details: "User does not have permission to delete this board"
+                details: "User does not have permission to delete this board",
             });
         }
 
@@ -197,21 +197,151 @@ async function DeleteBoard(req, res) {
 
         // Trả về phản hồi thành công
         return sendSuccess(res, "Board deleted successfully", {
-            board_id: board_id
+            board_id: board_id,
         });
     } catch (error) {
         logger.error(`Error with DeleteBoard: ${error}`);
         return sendError(res, 500, "Internal Server Error", {
-            details: error
+            details: error,
         });
     }
 }
 
-async function AddMemberToBoard(params) {}
+async function AddMemberToBoard(req, res) {
+    try {
+        const { board_id, user_id, member_id, member_role } = req.body;
 
-async function RemoveMemberFromBoard(params) {}
+        // Tìm bảng và kiểm tra quyền sở hữu hoặc quyền chỉnh sửa
+        const board = await Board.findOne({
+            _id: board_id,
+            created_by: user_id, // Chỉ người tạo mới có thể thêm thành viên
+        });
 
-async function UpdateMemberRole(params) {}
+        if (!board) {
+            return sendError(res, 404, "Board not found or unauthorized", {
+                details: "User does not have access to this board",
+            });
+        }
+
+        const member = await User.findById(member_id);
+
+        if (!member) {
+            return sendError(res, 404, "Member not found", {
+                details: "The user you are trying to add does not exist",
+            });
+        }
+
+        // Kiểm tra thành viên đã tồn tại trong danh sách cộng tác viên chưa
+        const isMember = board.board_collaborators.some(
+            (collab) =>
+                String(collab.board_collaborator_id) === String(member_id)
+        );
+
+        if (isMember) {
+            return sendError(res, 400, "Member already exists", {
+                details: "The user is already a member of this board",
+            });
+        }
+
+        // Thêm thành viên vào danh sách cộng tác viên
+        board.board_collaborators.push({
+            board_collaborator_id: member_id,
+            board_collaborator_role: member_role,
+        });
+
+        member.user_boards.push({ board_id: board_id, role: "MEMBER" });
+
+        // Lưu thay đổi vào CSDL
+        const updatedBoard = await board.save();
+        await member.save();
+        // Trả về phản hồi thành công
+        return sendSuccess(res, "Member added successfully", updatedBoard);
+    } catch (error) {
+        logger.error(`Error with AddMemberToBoard: ${error}`);
+        return sendError(res, 500, "Internal Server Error", {
+            details: error.message,
+        });
+    }
+}
+
+async function RemoveMemberFromBoard(req, res) {
+    try {
+        const { board_id, user_id, member_id } = req.body;
+        const board = await Board.findById(board_id);
+        if (!board) {
+            return sendError(res, 404, "Board not found", {
+                details: "The requested board does not exist",
+            });
+        }
+        if (String(board.created_by) !== String(user_id)) {
+            return sendError(res, 403, "Access Denied", {
+                details: "User is not the creator of this board",
+            });
+        }
+        const member = await User.findById(member_id);
+        if (!member) {
+            return sendError(res, 404, "Member not found", {
+                details: "The requested member does not exist",
+            });
+        }
+        // Kiểm tra thành viên có tồn tại trong danh sách cộng tác viên chưa
+        const isMember = board.board_collaborators.some(
+            (collab) =>
+                String(collab.board_collaborator_id) === String(member_id)
+        );
+        if (!isMember) {
+            return sendError(res, 404, "Member not found", {
+                details: "The requested member does not exist in this board",
+            });
+        }
+
+        // Xóa thành viên khỏi danh sách cộng tác viên
+        board.board_collaborators = board.board_collaborators.filter(
+            (collab) =>
+                String(collab.board_collaborator_id) !== String(member_id)
+        );
+        // Lưu thay đổi vào CSDL
+        member.user_boards = member.user_boards.filter(
+            (board) => String(board.board_id) !== String(board_id)
+        );
+        const updatedBoard = await board.save();
+        await member.save();
+        // Trả về phản hồi thành công
+        return sendSuccess(res, "Member removed successfully", updatedBoard);
+    } catch (error) {
+        logger.error(`Error with RemoveMemberFromBoard: ${error}`);
+        return sendError(res, 500, "Internal Server Error", {
+            details: error.message,
+        });
+    }
+}
+
+async function UpdateMemberRole(req, res) {
+    const { user_id, board_id, member_id, new_member_role } = req.body;
+    try {
+        // Lấy thông tin board
+        const board = await Board.findById(board_id);
+        if (!board) {
+            return sendError(res, 404, "Board not found", {
+                details: "The requested board does not exist",
+            });
+        }
+        // Lấy thông tin thành viên
+        const member = await User.findById(member_id);
+        if (!member) {
+            return sendError(res, 404, "Member not found", {
+                details: "The requested member does not exist",
+            });
+        }
+        // Kiểm tra quyền của người dùng
+    } catch (error) {
+        // Kiểm tra quyền của người dùng
+        logger.error(`Error with UpdateMemberRole: ${error}`);
+        return sendError(res, 500, "Internal Server Error", {
+            details: error.message,
+        });
+    }
+}
 
 async function GetAllMembers(params) {}
 
@@ -248,5 +378,5 @@ module.exports = {
     GetBoard,
     UpdateBoard,
     DeleteBoard,
-    GetAllBoardByUserId
+    GetAllBoardByUserId,
 };
