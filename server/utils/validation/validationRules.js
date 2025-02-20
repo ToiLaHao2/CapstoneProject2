@@ -182,7 +182,13 @@ const validationRules = {
     // createList
     createList: {
         checkMessage: "Create new list",
-        requiredFields: ["user_id", "board_id", "list_title", "checkMessage"],
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "list_title",
+            "list_numerical_order",
+            "checkMessage",
+        ],
     },
     // getList
     getList: {
@@ -196,7 +202,7 @@ const validationRules = {
             "user_id",
             "board_id",
             "list_id",
-            "list_update_details",
+            "list_title",
             "checkMessage",
         ],
     },
