@@ -145,10 +145,10 @@ async function GetCardsInList(req,res) {
             cards.push(card);
         }
         sendSuccess(res, 200, cards, "GetCardsInList");
-        } catch (error) {
-            logger.error(error);
-            sendError(res, 500, "Internal server error", error);
-        }
+    } catch (error) {
+        logger.error(error);
+        sendError(res, 500, "Internal server error", error);
+    }
 
 }
 
