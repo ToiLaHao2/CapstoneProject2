@@ -1,4 +1,5 @@
 const Board = require("../models/Board");
+const Card = require("../models/Card");
 const List = require("../models/List");
 const User = require("../models/User");
 const { sendError, sendSuccess } = require("../utils/response");
@@ -115,13 +116,47 @@ async function DeleteList(req, res) {
     }
 }
 
-async function GetCardsInList(params) {}
+async function GetCardsInList(req,res) {
+    const { user_id, board_id,list_id } = req.body;
+    try {
+        const board = await Board.findById(board_id);
+        if (!board) {
+            return sendError(res, 404, "Board not found", "GetCardsInList");
+        }
+        const isUserExist = board.board_collaborators.find(
+            (collaborator) => collaborator.board_collaborator_id == user_id
+        );
+        if (!isUserExist) {
+            return sendError(res, 401, "User not authorized", "GetCardsInList");
+        }
+        const isListInBoard = board.board_lists.find(
+            (list) => list.list_id == list_id
+        );
+        if (!isListInBoard) {
+            return sendError(res, 404, "List not found", "GetCardsInList");
+        }
+        const list = await List.findById(list_id);
+        if (!list) {
+            return sendError(res, 404, "List not found", "GetCardsInList");
+        }
+        const cards = [];
+        for (const cardEntry of list.list_cards) {
+            const card = await Card.findById(cardEntry.card_id);
+            cards.push(card);
+        }
+        sendSuccess(res, 200, cards, "GetCardsInList");
+        } catch (error) {
+            logger.error(error);
+            sendError(res, 500, "Internal server error", error);
+        }
+
+}
 
 module.exports = {
     CreateList,
     GetList,
     UpdateList,
     DeleteList,
-    MoveList,
+    // MoveList,
     GetCardsInList,
 };

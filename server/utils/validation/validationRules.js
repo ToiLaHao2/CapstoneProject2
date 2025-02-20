@@ -238,6 +238,10 @@ const validationRules = {
         ],
     },
     // getCardsInList
+    getCardsInList: {
+        checkMessage: "Get cards in list",
+        requiredFields: ["user_id", "board_id", "list_id", "checkMessage"],
+    },
 };
 
 module.exports = { validationRules };

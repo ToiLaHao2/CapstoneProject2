@@ -438,7 +438,7 @@ async function UpdatePrivacy(req, res) {
             details: error.message,
         });
     }
-}
+} 
 
 async function CheckUserAccess(params) {}
 
