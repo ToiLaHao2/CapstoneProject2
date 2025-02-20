@@ -437,7 +437,6 @@ async function UpdatePrivacy(req, res) {
         return sendError(res, 500, "Internal Server Error", {
             details: error.message,
         });
-        [x];
     }
 }
 
