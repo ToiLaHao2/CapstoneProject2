@@ -440,8 +440,6 @@ async function UpdatePrivacy(req, res) {
     }
 } 
 
-async function CheckUserAccess(params) {}
-
 async function GetListsInBoard(req, res) {
     try {
         const { board_id, user_id } = req.body;
@@ -600,4 +598,12 @@ module.exports = {
     UpdateBoard,
     DeleteBoard,
     GetAllBoardByUserId,
+    AddMemberToBoard,
+    RemoveMemberFromBoard,
+    UpdateMemberRole,
+    GetAllMembers,
+    UpdatePrivacy,
+    GetListsInBoard,
+    AddListToBoard,
+    MoveList
 };

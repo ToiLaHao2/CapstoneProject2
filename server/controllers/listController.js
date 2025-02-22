@@ -152,11 +152,12 @@ async function GetCardsInList(req,res) {
 
 }
 
+// async function MoveCardInList(req, res) {}
+
 module.exports = {
     CreateList,
     GetList,
     UpdateList,
     DeleteList,
-    // MoveList,
     GetCardsInList,
 };

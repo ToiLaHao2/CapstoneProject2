@@ -1,4 +1,4 @@
-async function CreateCard(params) {}
+async function CreateCard(req,res) {}
 
 async function GetCard(params) {}
 

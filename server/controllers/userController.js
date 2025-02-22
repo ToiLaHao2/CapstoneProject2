@@ -225,10 +225,6 @@ async function RemoveUserFromBoard(req, res) {
             return sendError(res, 400, "Cannot remove yourself from board");
         }
 
-        // const user = await findByIdOrThrow(User, user_id, {
-        //     errorMessage: "User not found"
-        // });
-
         const board = await findByIdOrThrow(Board, board_id, {
             errorMessage: "Board not found"
         });
@@ -296,4 +292,4 @@ async function GetUserNotifications(params) {}
 // Tạo nhóm làm việc chung
 async function CreateWorkGroup(params) {}
 
-module.exports = { GetUserProfile, UpdateUserProfile };
+module.exports = { GetUserProfile, UpdateUserProfile, GetAllUserInBoard, AddUserToBoard, RemoveUserFromBoard };

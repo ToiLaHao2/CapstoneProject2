@@ -43,7 +43,7 @@ async function validateUpdateUserProfile(req, res, next) {
     userRequestUpdateProfile,
     rules
   );
-  if (resultCheckingData.valid == true) {
+  if (resultCheckingData.valid === true) {
     logger.info("Successfull checking data user for update profile");
     next();
   } else {
