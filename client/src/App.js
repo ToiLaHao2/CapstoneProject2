@@ -61,6 +61,8 @@ import "./App.css";
 import ViewProfile from "./components/user/viewProfile/ViewProfile";
 import ContextProvider from "./context/ContextProvider";
 import { useAuth } from "./context/AuthContext";
+import MyTasks from "./components/dashboard/my_tasks_components/MyTasks";
+import Notifications from "./components/notifications/Notifications";
 
 const ProtectedRoute = ({ children }) => {
     const { isAuthenticated, loading } = useAuth();
@@ -77,7 +79,6 @@ function App() {
         <ContextProvider>
             <Router>
                 <Routes>
-                    {/* Layout đầy đủ: Topbar và Sidebar */}
                     <Route
                         path="/"
                         element={
@@ -86,7 +87,7 @@ function App() {
                                     <Topbar />
                                     <div className="main-content">
                                         <Sidebar />
-                                        <Dashboard /> {/* Trang mặc định */}
+                                        <Dashboard />
                                     </div>
                                 </div>
                             </ProtectedRoute>
@@ -100,7 +101,7 @@ function App() {
                                     <Topbar />
                                     <div className="main-content">
                                         <Sidebar />
-                                        <Dashboard /> {/* Trang mặc định */}
+                                        <Dashboard />
                                     </div>
                                 </div>
                             </ProtectedRoute>
@@ -164,6 +165,21 @@ function App() {
                     />
 
                     <Route
+                        path="/notifications"
+                        element={
+                            <ProtectedRoute>
+                                <div className="app">
+                                    <Topbar />
+                                    <div className="main-content">
+                                        <Sidebar />
+                                        <Notifications />
+                                    </div>
+                                </div>
+                            </ProtectedRoute>
+                        }
+                    />
+
+                    <Route
                         path="/view-profile"
                         element={
                             <ProtectedRoute>
@@ -172,6 +188,21 @@ function App() {
                                     <div className="main-content">
                                         <Sidebar />
                                         <ViewProfile />
+                                    </div>
+                                </div>
+                            </ProtectedRoute>
+                        }
+                    />
+
+                    <Route
+                        path="/my-tasks"
+                        element={
+                            <ProtectedRoute>
+                                <div className="app">
+                                    <Topbar />
+                                    <div className="main-content">
+                                        <Sidebar />
+                                        <MyTasks />
                                     </div>
                                 </div>
                             </ProtectedRoute>

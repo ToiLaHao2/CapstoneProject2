@@ -89,3 +89,10 @@
     gap: 5px;
   }
   
+  .project-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
