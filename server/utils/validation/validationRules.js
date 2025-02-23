@@ -37,20 +37,32 @@ const validationRules = {
         },
     },
     // User middle validate
+    // getUserProfile
     getUserProfile: {
         checkMessage: "Get user profile",
         requiredFields: ["user_id", "checkMessage"],
     },
+    // updateUser
     updateUserProfile: {
         checkMessage: "Update user profile",
         requiredFields: ["user_id", "user_update_details", "checkMessage"],
     },
-    // getUserProfile
-    // updateUser
     // uploadProfilePicture
     // getAllUserInBoard
+    getAllUserInBoard: {
+        checkMessage: "Get all user in board",
+        requiredFields: ["board_id", "user_id", "checkMessage"],
+    },
     // addUserToBoard
+    addUserToBoard: {
+        checkMessage: "Add user to board",
+        requiredFields: ["board_id", "user_id", "new_user_id","checkMessage"],
+    },
     // removeUserFromBoard
+    removeUserFromBoard: {
+        checkMessage: "Remove user from board",
+        requiredFields: ["board_id", "user_id", "remove_user_id","checkMessage"],
+    },
     // updateUserRoleInBoard
     // assignUserToCard
     // removeUserToCard
@@ -178,7 +190,6 @@ const validationRules = {
     // assignLabelsToBoard
 
     // List middleware validate
-
     // createList
     createList: {
         checkMessage: "Create new list",
@@ -242,6 +253,22 @@ const validationRules = {
         checkMessage: "Get cards in list",
         requiredFields: ["user_id", "board_id", "list_id", "checkMessage"],
     },
+    // moveCardsInList
+
+    // Card middleware validate
+    // createCard
+    // getCard
+    // updateCard
+    // deleteCard
+    // moveCard
+    // assignUserToCard
+    // removeUserFromCard
+    // addAttachmentToCard
+    // addCommentToCard
+    // getCommentsInCard
+    // assignLabelToCard
+    // archiveCard
+    // updateCheckListsInCard
 };
 
 module.exports = { validationRules };
