@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import './Dashboard.css';
 import CalendarComponent from 'react-calendar';
+import { useNavigate } from 'react-router-dom';
+
 const Dashboard = () => {
     const today = new Date();
+    const navigate = useNavigate();
     const [selectedDate, setSelectedDate] = useState(today);
 
     const tasks = [
         {
-            date: new Date(today.getFullYear(), today.getMonth(), today.getDate()), 
+            date: new Date(today.getFullYear(), today.getMonth(), today.getDate()),
             details: {
                 project: 'Daily Standup Meeting',
                 task: 'Attend Scrum meeting',
@@ -16,7 +19,7 @@ const Dashboard = () => {
             },
         },
         {
-            date: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2), 
+            date: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2),
             details: {
                 project: 'Website Design',
                 task: 'Submit wireframe designs',
@@ -39,7 +42,7 @@ const Dashboard = () => {
         <div className="dashboard-container">
             {/* My Task Section */}
             <div className="tasks">
-                <div className="my-tasks">
+                <div className="my-tasks" onClick={() => navigate('/my-tasks')}>
                     <h3>My Task</h3>
                     <div className="task priority-task">
                         <h4>Priority Task</h4>
@@ -61,7 +64,7 @@ const Dashboard = () => {
 
                 {/* Urgently Task Section */}
                 <div className="urgently-task">
-                    <h3>Urgently Task</h3>
+                    <h3>Progress Chart</h3>
                     <div className="progress">
                         <h4>Project 1</h4>
                         <progress value="70" max="100"></progress>

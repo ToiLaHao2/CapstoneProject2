@@ -73,3 +73,24 @@
     margin-right: 10px;
   }
   
+  .notification-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.notification-badge {
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+}
