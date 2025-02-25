@@ -165,3 +165,14 @@ API:
                     "checkMessage" : "Delete board"
                 }
 
+
+
+
+
+Nên tạo thêm chức năng để kiểm tra xác thực của user đối
+với hành động liên quan tới bảng board:
+
+    - user là admin của board thì có thể làm gì
+    - user là thành viên của board thì có thể làm gì
+    
+

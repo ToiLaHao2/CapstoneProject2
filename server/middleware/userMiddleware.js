@@ -10,7 +10,7 @@ async function validateGetUserProfile(req, res, next) {
   const token = await getTokenFromHeaders(req);
   const checkToken = await VerifiedToken(token);
   if (!checkToken) {
-    return res.status(401).json({ error: "Invalid token" });
+    return sendError(res, 401, "Invalid token", "");
   }
   req.body.user_id = checkToken.id;
   const userRequestGetProfile = req.body;
@@ -34,7 +34,7 @@ async function validateUpdateUserProfile(req, res, next) {
   const token = await getTokenFromHeaders(req);
   const checkToken = await VerifiedToken(token);
   if (!checkToken) {
-    return res.status(401).json({ error: "Invalid token" });
+    return sendError(res, 401, "Invalid token", "");
   }
   req.body.user_id = checkToken.id;
   const userRequestUpdateProfile = req.body;
@@ -61,7 +61,7 @@ async function validateGetAllUserInBoard(req, res, next) {
   const token = await getTokenFromHeaders(req);
   const checkToken = await VerifiedToken(token);
   if (!checkToken) {
-    return res.status(401).json({ error: "Invalid token" });
+    return sendError(res, 401, "Invalid token", "");
   }
   req.body.user_id = checkToken.id;
   const userRequestGetAllUserInBoard = req.body;
@@ -85,7 +85,7 @@ async function validateAddUserToBoard(req, res, next) {
   const token = await getTokenFromHeaders(req);
   const checkToken = await VerifiedToken(token);
   if (!checkToken) {
-    return res.status(401).json({ error: "Invalid token" });
+    return sendError(res, 401, "Invalid token", "");
   }
   req.body.user_id = checkToken.id;
   const userRequestAddUserToBoard = req.body;
@@ -109,7 +109,7 @@ async function validateRemoveUserFromBoard(req, res, next) {
   const token = await getTokenFromHeaders(req);
   const checkToken = await VerifiedToken(token);
   if (!checkToken) {
-    return res.status(401).json({ error: "Invalid token" });
+    return sendError(res, 401, "Invalid token", "");
   }
   req.body.user_id = checkToken.id;
   const userRequestRemoveUserFromBoard = req.body;
@@ -127,5 +127,27 @@ async function validateRemoveUserFromBoard(req, res, next) {
     });
   }
 }
+
+// update user role in board
+async function validateUpdateUserRoleInBoard(req, res, next) {
+  const token = await getTokenFromHeaders(req);
+  const checkToken = await VerifiedToken(token);
+  if (!checkToken) {
+    return sendError(res, 401, "Invalid token", "");
+  }
+  req.body.user_id = checkToken.id;
+  const userRequestUpdateUserRoleInBoard = req.body;
+  const rules = validationRules["updateMemberRoleInBoard"];
+  const resultCheckingData = await validateFields(userRequestUpdateUserRoleInBoard, rules);
+  if (resultCheckingData.valid === true) {
+    logger.info("Successfull checking data user for get user profile");
+    next();
+  } else {
+    logger.info(`Error checking data user for get user profile: ${resultCheckingData.error}`);
+      return sendError(res, 400, "Error checking data", {Error: resultCheckingData.error,});
+  }
+}
+
+// update
 
 module.exports = { validateGetUserProfile, validateUpdateUserProfile };

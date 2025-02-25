@@ -92,6 +92,16 @@ async function GetBoard(req, res) {
     }
 }
 
+async function GetAllBoardByUserId(req, res) {
+    try {
+        const { user_id } = req.body;
+        const boards = await Board.find({ created_by: user_id });
+        return sendSuccess(res, "Get all boards by user id success", boards);
+    } catch (error) {
+        return sendError(res, 500, "Internal Server Error", { details: error });
+    }
+}
+
 async function UpdateBoard(req, res) {
     try {
         const { board_id, board_update_details, user_id } = req.body;
@@ -157,14 +167,6 @@ async function UpdateBoard(req, res) {
 
         // Lưu thay đổi vào CSDL
         const updatedBoard = await board.save();
-        // await updatedBoard
-        //     .populate("created_by", "user_full_name user_email")
-        //     .populate(
-        //         "board_collaborators.board_collaborator_id",
-        //         "user_full_name user_email"
-        //     )
-        //     .populate("board_lists.list_id")
-        //     .execPopulate();
 
         // Trả về thành công
         return sendSuccess(res, "Board updated successfully", updatedBoard);
@@ -581,16 +583,6 @@ async function AssignLabelsToBoard(params) {}
 async function ArchiveBoard(params) {}
 
 async function CreateConversation(params) {}
-
-async function GetAllBoardByUserId(req, res) {
-    try {
-        const { user_id } = req.body;
-        const boards = await Board.find({ created_by: user_id });
-        return sendSuccess(res, "Get all boards by user id success", boards);
-    } catch (error) {
-        return sendError(res, 500, "Internal Server Error", { details: error });
-    }
-}
 
 module.exports = {
     CreateBoard,

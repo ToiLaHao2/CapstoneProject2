@@ -148,6 +148,48 @@ async function validateRemoveMember(req, res, next) {
     }
 }
 
+// Update member role
+async function validateUpdateMemberRole(req, res, next) {
+    const token = await getTokenFromHeaders(req);
+    const checkToken = await VerifiedToken(token);
+    if (!checkToken) {
+        return sendError(res, 401, "Invalid token", "");
+    }
+    req.body.user_id = checkToken.id;
+    const updateMemberRoleData = req.body;
+    const rules = validationRules["updateMemberRole"];
+    const result = await validateFields(updateMemberRoleData, rules);
+    if (result.valid === true) {
+        req.body.user_id = checkToken.id;
+        logger.info("Successfull checking data to update member role");
+        next();
+    } else {
+        logger.info(`Error checking data ${result.error}`);
+        return sendError(res, 400, `Error checking data ${result.error}`);
+    }
+}
+
+// Get all members
+async function validateGetAllMembers(req, res, next) {
+    const token = await getTokenFromHeaders(req);
+    const checkToken = await VerifiedToken(token);
+    if (!checkToken) {
+        return sendError(res, 401, "Invalid token", "");
+    }
+    req.body.user_id = checkToken.id;
+    const getAllMembersData = req.body;
+    const rules = validationRules["getAllMembers"];
+    const result = await validateFields(getAllMembersData, rules);
+    if (result.valid === true) {
+        req.body.user_id = checkToken.id;
+        logger.info("Successfull checking data to get all members");
+        next();
+    } else {
+        logger.info(`Error checking data ${result.error}`);
+        return sendError(res, 400, `Error checking data ${result.error}`);
+    }
+}
+
 module.exports = {
     validateCreateBoard,
     validateGetBoard,

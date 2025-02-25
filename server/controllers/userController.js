@@ -76,6 +76,7 @@ async function UpdateUserProfile(req, res) {
     }
 }
 
+// viet kiem tra o upload middleware
 async function UploadProfilePicture(req, res) {
     try {
         // kiểm tra nếu có file được tải lên
