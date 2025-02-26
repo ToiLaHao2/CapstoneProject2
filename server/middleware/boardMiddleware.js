@@ -139,7 +139,6 @@ async function validateRemoveMember(req, res, next) {
     const rules = validationRules["removeMemberFromBoard"];
     const result = await validateFields(removeMemberData, rules);
     if (result.valid === true) {
-        req.body.user_id = checkToken.id;
         logger.info("Successfull checking data to remove member from board");
         next();
     } else {
@@ -160,7 +159,6 @@ async function validateUpdateMemberRole(req, res, next) {
     const rules = validationRules["updateMemberRole"];
     const result = await validateFields(updateMemberRoleData, rules);
     if (result.valid === true) {
-        req.body.user_id = checkToken.id;
         logger.info("Successfull checking data to update member role");
         next();
     } else {
@@ -181,13 +179,25 @@ async function validateGetAllMembers(req, res, next) {
     const rules = validationRules["getAllMembers"];
     const result = await validateFields(getAllMembersData, rules);
     if (result.valid === true) {
-        req.body.user_id = checkToken.id;
         logger.info("Successfull checking data to get all members");
         next();
     } else {
         logger.info(`Error checking data ${result.error}`);
         return sendError(res, 400, `Error checking data ${result.error}`);
     }
+}
+
+// update privacy
+async function validateUpdatePrivacy(req, res, next) {
+    const token = await getTokenFromHeaders(req);
+    const checkToken = await VerifiedToken(token);
+    if (!checkToken) {
+        return sendError(res, 401, "Invalid token", "");
+    }
+    req.body.user_id = checkToken.id;
+    const updatePrivacyData = req.body;
+    const rules = validationRules["updatePrivacy"];
+    const result = await validateFields(updatePrivacyData, rules);
 }
 
 module.exports = {
