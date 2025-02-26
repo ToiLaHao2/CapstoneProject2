@@ -118,7 +118,6 @@ async function validateAddMember(req, res, next) {
     const rules = validationRules["addMemberToBoard"];
     const result = await validateFields(addMemberData, rules);
     if (result.valid === true) {
-        req.body.user_id = checkToken.id;
         logger.info("Successfull checking data to add member to board");
         next();
     } else {
@@ -198,6 +197,76 @@ async function validateUpdatePrivacy(req, res, next) {
     const updatePrivacyData = req.body;
     const rules = validationRules["updatePrivacy"];
     const result = await validateFields(updatePrivacyData, rules);
+    if (result.valid === true) {
+        logger.info("Successfull checking data to update privacy");
+        next();
+    } else {
+        logger.info(`Error checking data ${result.error}`);
+        return sendError(res, 400, `Error checking data ${result.error}`);
+    }
+}
+
+// get lists in board
+async function validateGetListsInBoard(req, res, next) {
+    const token = await getTokenFromHeaders(req);
+    const checkToken = await VerifiedToken(token);
+    if (!checkToken) {
+        return sendError(res, 401, "Invalid token", "");
+    }
+    req.body.user_id = checkToken.id;
+    const getListsInBoardData = req.body;
+    const rules = validationRules["getListsInBoard"];
+    const result = await validateFields(getListsInBoardData, rules);
+    if (result.valid === true) {
+        logger.info("Successfull checking data to get lists in board");
+        next();
+    }
+    else {
+        logger.info(`Error checking data ${result.error}`);
+        return sendError(res, 400, `Error checking data ${result.error}`);
+    }
+}
+
+// add list to board
+async function validateAddListToBoard(req, res, next) {
+    const token = await getTokenFromHeaders(req);
+    const checkToken = await VerifiedToken(token);
+    if (!checkToken) {
+        return sendError(res, 401, "Invalid token", "");
+    }
+    req.body.user_id = checkToken.id;
+    const addListToBoardData = req.body;
+    const rules = validationRules["addListToBoard"];
+    const result = await validateFields(addListToBoardData, rules);
+    if (result.valid === true) {
+        logger.info("Successfull checking data to add list to board");
+        next();
+    }
+    else {
+        logger.info(`Error checking data ${result.error}`);
+        return sendError(res, 400, `Error checking data ${result.error}`);
+    }
+}
+
+// move list
+async function validateMoveList(req, res, next) {
+    const token = await getTokenFromHeaders(req);
+    const checkToken = await VerifiedToken(token);
+    if (!checkToken) {
+        return sendError(res, 401, "Invalid token", "");
+    }
+    req.body.user_id = checkToken.id;
+    const moveListData = req.body;
+    const rules = validationRules["moveList"];
+    const result = await validateFields(moveListData, rules);
+    if (result.valid === true) {
+        logger.info("Successfull checking data to move list");
+        next();
+    }
+    else {
+        logger.info(`Error checking data ${result.error}`);
+        return sendError(res, 400, `Error checking data ${result.error}`);
+    }
 }
 
 module.exports = {
