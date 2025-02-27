@@ -274,5 +274,13 @@ module.exports = {
     validateGetBoard,
     validateUpdateBoard,
     validateDeleteBoard,
-    validateGetBoardsByUserId
+    validateGetBoardsByUserId,
+    validateAddMember,
+    validateRemoveMember,
+    validateUpdateMemberRole,
+    validateGetAllMembers,
+    validateUpdatePrivacy,
+    validateGetListsInBoard,
+    validateAddListToBoard,
+    validateMoveList
 };

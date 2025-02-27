@@ -150,4 +150,4 @@ async function validateUpdateUserRoleInBoard(req, res, next) {
 
 // update
 
-module.exports = { validateGetUserProfile, validateUpdateUserProfile };
+module.exports = { validateGetUserProfile, validateUpdateUserProfile, validateGetAllUserInBoard, validateAddUserToBoard, validateRemoveUserFromBoard, validateUpdateUserRoleInBoard };

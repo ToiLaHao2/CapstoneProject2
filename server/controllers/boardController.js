@@ -197,6 +197,7 @@ async function DeleteBoard(req, res) {
 
         // Nếu cần xóa các dữ liệu liên quan, bạn có thể thêm vào đây
         // xóa thêm các lists , cards, comments và các mục liên quan
+        // nên tạo hàm deleteManyData để xóa tất cả các dữ liệu liên quan
         // Ví dụ: 
         await List.deleteMany({ board_id : board_id });
 

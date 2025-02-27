@@ -85,6 +85,8 @@ async function UpdateList(req, res) {
     }
 }
 
+// delete list se xoa list va cac card trong list
+// xoa list trong board
 async function DeleteList(req, res) {
     const { user_id, board_id, list_id } = req.body;
     try {
