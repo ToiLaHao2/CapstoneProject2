@@ -1,3 +1,5 @@
+import logger from "./logger";
+
 async function findByIdOrThrow(Model, id, options = {}) {
     const { selectFields, errorMessage, errorStatusCode } = options;
 
@@ -64,4 +66,20 @@ async function findOneOrThrow(Model, condition, options = {}) {
     }
 }
 
-module.exports = { findByIdOrThrow, findOneOrThrow };
+const deleteMultipleDocuments = async (Model, ids) => {
+    try {
+        if (!ids || !Array.isArray(ids) || ids.length === 0) {
+            throw new Error("Invalid ID array");
+        }
+
+        // Xóa tất cả các documents có ID trong danh sách
+        const result = await Model.deleteMany({ _id: { $in: ids } });
+
+        return { success: true, deletedCount: result.deletedCount };
+    } catch (error) {
+        logger.error("Error deleting documents:", error);
+        return { success: false, message: error.message };
+    }
+};
+
+module.exports = { findByIdOrThrow, findOneOrThrow , deleteMultipleDocuments};
