@@ -1,4 +1,4 @@
-import logger from "./logger";
+const logger = require("./logger");
 
 async function findByIdOrThrow(Model, id, options = {}) {
     const { selectFields, errorMessage, errorStatusCode } = options;

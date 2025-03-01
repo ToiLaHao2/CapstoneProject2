@@ -35,4 +35,4 @@ const logger = createLogger({
     transports: loggerTransports
 });
 
-module.exports = { logger };
+module.exports = logger;
