@@ -1,12 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ViewProfile.css";
 import { useUser } from "../../../context/UserContext";
 import { useNavigate } from "react-router-dom";
+import { useBoard } from "../../../context/BoardContext";
 
 const ViewProfile = () => {
     const [activeTab, setActiveTab] = useState("Activity");
+    const [showAllProjects, setShowAllProjects] = useState(false);
+    const { boards, getAllBoardsByUserId } = useBoard();
     const { user } = useUser();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        getAllBoardsByUserId();
+    }, []);
+
+    const handleProjectClick = (boardTitle, board_id) => {
+        navigate("/Tasks", { state: { boardTitle, board_id } });
+    };
 
     const renderContent = () => {
         switch (activeTab) {
@@ -76,19 +87,39 @@ const ViewProfile = () => {
             </div>
 
             {/* Projects Section */}
+            {/* <div className="projects-section">
+                <h3>Projects</h3>
+                <div className="projects">
+                    {projects.slice(0, showAllProjects ? projects.length : 2).map((project, index) => (
+                        <div key={index} className={`project-card ${project.status}`}>
+                            <h4>{project.name}</h4>
+                            <p>Upcoming: {project.time}</p>
+                        </div>
+                    ))}
+                </div>
+                <button className="view-more-btn" onClick={() => setShowAllProjects(!showAllProjects)}>
+                    {showAllProjects ? "View Less" : "View More"}
+                </button>
+            </div> */}
             <div className="projects-section">
                 <h3>Projects</h3>
                 <div className="projects">
-                    <div className="project-card active">
-                        <h4>Little Tigers Karate</h4>
-                        <p>Upcoming: Monday, 4:00 PM - 5:00 PM</p>
-                    </div>
-                    <div className="project-card cancelled">
-                        <h4>Swimming Dolphin</h4>
-                        <p>Upcoming: Monday, 4:00 PM - 5:00 PM</p>
-                    </div>
+                    {boards.length > 0 ? (
+                        boards.slice(0, showAllProjects ? boards.length : 2).map((project, index) => (
+                            <div key={index} className="project-card active" onClick={() => handleProjectClick(project.board_title, project._id)}>
+                                <h4>{project.board_title}</h4>
+                                <p>{project.board_description || "No description"}</p>
+                            </div>
+                        ))
+                    ) : (
+                        <p>No projects available</p>
+                    )}
                 </div>
-                <button className="view-more-btn">View More</button>
+                {boards.length > 2 && (
+                    <button className="view-more-btn" onClick={() => setShowAllProjects(!showAllProjects)}>
+                        {showAllProjects ? "View Less" : "View More"}
+                    </button>
+                )}
             </div>
 
             {/* Tabs Section */}

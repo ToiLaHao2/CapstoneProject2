@@ -63,6 +63,7 @@ import ContextProvider from "./context/ContextProvider";
 import { useAuth } from "./context/AuthContext";
 import MyTasks from "./components/dashboard/my_tasks_components/MyTasks";
 import Notifications from "./components/notifications/Notifications";
+import TaskDetail from "./components/tasks/task_detail/TaskDetail";
 
 const ProtectedRoute = ({ children }) => {
     const { isAuthenticated, loading } = useAuth();
@@ -203,6 +204,21 @@ function App() {
                                     <div className="main-content">
                                         <Sidebar />
                                         <MyTasks />
+                                    </div>
+                                </div>
+                            </ProtectedRoute>
+                        }
+                    />
+
+                    <Route
+                        path="/task/:taskId"
+                        element={
+                            <ProtectedRoute>
+                                <div className="app">
+                                    <Topbar />
+                                    <div className="main-content">
+                                        <Sidebar />
+                                        <TaskDetail />
                                     </div>
                                 </div>
                             </ProtectedRoute>
