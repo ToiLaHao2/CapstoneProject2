@@ -176,3 +176,9 @@ với hành động liên quan tới bảng board:
     - user là thành viên của board thì có thể làm gì
     
 
+thêm chức năng lưu trữ board:
+    + thêm 1 mục vào model : isClosed
+    + nếu có thì các thành viên không phải là creator thì
+    ko còn được tác động lên board
+    hoặc khi bấm nút closed thì các role thành viên chuyển thành VIEWER
+    

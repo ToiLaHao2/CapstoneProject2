@@ -124,11 +124,7 @@ async function GetAllUserInBoard(req, res) {
             errorMessage: "Board not found"
         });
 
-        const isUserInBoard = board.board_collaborators.some(
-            user => user.board_collaborator_id === user_id
-        );
-
-        if (!isUserInBoard) {
+        if (String.toString(board.created_by) !== String.toString(user_id)) {
             return sendError(res, 401, "Unauthorized", {
                 details: "User is not in this board"
             });

@@ -17,7 +17,7 @@ const {
 const userRouter = express.Router();
 
 userRouter.post("/getProfile", validateGetUserProfile, GetUserProfile);
-userRouter.patch("/updateProfile", validateUpdateUserProfile, UpdateUserProfile);
+userRouter.post("/updateProfile", validateUpdateUserProfile, UpdateUserProfile);
 // 
 userRouter.post("/getAllUserInBoard", validateGetAllUserInBoard, GetAllUserInBoard);
 userRouter.post("/addUserToBoard", validateAddUserToBoard, AddUserToBoard);

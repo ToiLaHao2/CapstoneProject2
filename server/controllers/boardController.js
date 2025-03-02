@@ -334,7 +334,7 @@ async function UpdateMemberRole(req, res) {
             });
         }
         // Kiểm tra quyền của người dùng
-        if (board.created_by !== user_id) {
+        if (String(board.created_by) !== String(user_id)) {
             return sendError(res, 403, "Access Denied", {
                 details: "User is not the creator of this board",
             });
@@ -390,21 +390,17 @@ async function GetAllMembers(req, res) {
                 details: "The requested board does not exist",
             });
         }
-        if (String(board.created_by) !== String(user_id)) {
-            return sendError(res, 403, "Access Denied", {
-                details: "User is not the creator of this board",
-            });
-        }
         const isMember = board.board_collaborators.some(
             (collab) => String(collab.board_collaborator_id) === String(user_id)
         );
-        if (!isMember) {
+        console.log(isMember);
+        if (isMember === false) {
             return sendError(res, 403, "Access Denied", {
                 details: "User is not a collaborator of this board",
             });
         }
         const members = await User.find({
-            _id: { $in: board.board_collaborators },
+            _id: { $in: board.board_collaborators.map((collab) => collab.board_collaborator_id) },
         });
         return sendSuccess(res, "Get all members success", members);
     } catch (error) {
@@ -427,7 +423,7 @@ async function UpdatePrivacy(req, res) {
             });
         }
         // Kiểm tra quyền của người dùng
-        if (board.created_by !== user_id) {
+        if (String(board.created_by) !== String(user_id)) {
             return sendError(res, 403, "Access Denied", {
                 details: "User is not the creator of this board",
             });
@@ -458,10 +454,12 @@ async function GetListsInBoard(req, res) {
         const isMember = board.board_collaborators.some(
             (collab) => String(collab.board_collaborator_id) === String(user_id)
         );
-        if (!isMember || String(board.created_by) !== String(user_id)) {
-            return sendError(res, 403, "Access Denied", {
+        if (String(board.created_by) !== String(user_id)) {
+            if (!isMember) { 
+                return sendError(res, 403, "Access Denied", {
                 details: "User is not a collaborator of this board",
             });
+        }
         }
 
         let lists = [];

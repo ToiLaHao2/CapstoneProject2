@@ -7,3 +7,61 @@
 [2025-02-23 19:58:42] INFO: Successfull checking data user for get user profile
 [2025-02-23 20:10:39] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
 [2025-03-01 22:47:15] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-02 19:21:08] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-02 19:21:37] INFO: Successfull checking data register new user
+[2025-03-02 19:21:38] INFO: Hash password complete
+[2025-03-02 19:21:38] INFO: Complete create token
+[2025-03-02 19:24:17] INFO: Successfull checking data to create board
+[2025-03-02 19:24:18] INFO: Successfull create board
+[2025-03-02 19:27:04] WARN: No token provided
+[2025-03-02 19:27:10] INFO: Successfull checking data to create board
+[2025-03-02 19:28:37] INFO: Successfull checking data to get board by user id
+[2025-03-02 19:30:57] INFO: Successfull checking data to update board
+[2025-03-02 19:34:44] INFO: Successfull checking data to add member to board
+[2025-03-02 19:36:48] INFO: Successfull checking data to remove member from board
+[2025-03-02 19:39:20] INFO: Successfull checking data to add member to board
+[2025-03-02 19:41:31] INFO: Successfull checking data to update member role
+[2025-03-02 19:42:13] INFO: Successfull checking data user for login
+[2025-03-02 19:42:13] INFO: Compare hash complete
+[2025-03-02 19:42:13] INFO: Complete create token
+[2025-03-02 19:42:27] INFO: Successfull checking data to update member role
+[2025-03-02 19:44:31] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-02 19:44:34] INFO: Successfull checking data to update member role
+[2025-03-02 19:44:53] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-02 19:45:20] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-02 19:45:25] INFO: Successfull checking data to update member role
+[2025-03-02 19:46:09] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-03-02 19:46:10] INFO: Successfull checking data to update member role
+[2025-03-02 19:47:26] INFO: Successfull checking data to get all members
+[2025-03-02 19:48:15] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-02 19:48:15] INFO: Successfull checking data to get all members
+[2025-03-02 19:48:30] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-02 19:48:30] INFO: Successfull checking data to get all members
+[2025-03-02 19:48:36] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-02 19:48:38] INFO: Successfull checking data to get all members
+[2025-03-02 19:49:22] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-02 19:49:25] INFO: Successfull checking data to get all members
+[2025-03-02 19:51:01] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-02 19:51:02] INFO: Successfull checking data to get all members
+[2025-03-02 19:52:52] INFO: Successfull checking data to update privacy
+[2025-03-02 19:53:16] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-02 19:53:17] INFO: Successfull checking data to update privacy
+[2025-03-02 19:54:27] INFO: Successfull checking data to get lists in board
+[2025-03-02 19:54:35] INFO: Successfull checking data to get lists in board
+[2025-03-02 19:55:27] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-03-02 19:55:30] INFO: Successfull checking data to get lists in board
+[2025-03-02 19:57:48] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-03-02 19:57:52] INFO: Successfull checking data to get lists in board
+[2025-03-02 20:03:58] INFO: Successfull checking data to create list
+[2025-03-02 20:05:23] INFO: Successfull checking data to get list
+[2025-03-02 20:06:33] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-02 20:06:35] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-02 20:06:37] INFO: Successfull checking data to get list
+[2025-03-02 20:07:55] INFO: Successfull checking data to update list
+[2025-03-02 20:08:26] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-03-02 20:08:27] INFO: Successfull checking data to update list
+[2025-03-02 20:20:15] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-03-02 20:22:03] INFO: Successfull checking data user for get user profile
+[2025-03-02 20:23:21] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-03-02 20:23:22] INFO: Successfull checking data user for get user profile
+[2025-03-02 20:23:50] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net

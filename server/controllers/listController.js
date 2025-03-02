@@ -43,8 +43,10 @@ async function GetList(req, res) {
             (collaborator) => collaborator.board_collaborator_id == user_id
         );
         if (!isUserExist) {
+            if (String(board.created_by) !== user_id) {
             return sendError(res, 401, "User not authorized", "GetList");
         }
+    }
         const list = await List.findById(list_id);
         if (!list) {
             return sendError(res, 404, "List not found", "GetList");
@@ -67,7 +69,9 @@ async function UpdateList(req, res) {
             (collaborator) => collaborator.board_collaborator_id == user_id
         );
         if (!isUserExist) {
-            return sendError(res, 401, "User not authorized", "UpdateList");
+            if (String(board.created_by) !== user_id) {
+                return sendError(res, 401, "User not authorized", "GetList");
+            }
         }
         const isListInBoard = board.board_lists.find(
             (list) => list.list_id == list_id
