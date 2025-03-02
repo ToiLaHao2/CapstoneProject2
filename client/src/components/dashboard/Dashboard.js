@@ -1,12 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Dashboard.css';
 import CalendarComponent from 'react-calendar';
 import { useNavigate } from 'react-router-dom';
+import { useBoard } from '../../context/BoardContext';
 
 const Dashboard = () => {
     const today = new Date();
     const navigate = useNavigate();
     const [selectedDate, setSelectedDate] = useState(today);
+    const { boards, getAllBoardsByUserId } = useBoard();
+
+    const handleProjectClick = (boardTitle, board_id) => {
+        navigate("/Tasks", { state: { boardTitle, board_id } });
+    };
+
+    useEffect(() => {
+        getAllBoardsByUserId();
+    }, [])
+
+    // Lọc ra 3 board mới nhất theo create_at
+    const latestBoards = [...boards]
+        .filter(board => board.created_at)
+        .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+        .slice(0, 3);
+    console.log("Latest Boards:", latestBoards);
 
     const tasks = [
         {
@@ -85,20 +102,36 @@ const Dashboard = () => {
             </div>
 
             {/*  dashboard Section */}
-            <div className="recently-dashboard">
-                <div className="dashboard-project">
-                    <p>Website Design</p>
-                    <span>Design Project</span>
-                </div>
-                <div className="dashboard-project">
-                    <p>SEO Project 2024</p>
-                    <span>Business Project</span>
-                </div>
-                <div className="dashboard-project">
-                    <p>Plan in 2024</p>
-                    <span>Personal Project</span>
-                </div>
+            {/* <div className="recently-dashboard">
+                {latestBoards.length > 0 ? (
+                    latestBoards.map((board) => (
+                        <div key={board._id} className="dashboard-project">
+                            <p>{board.board_title}</p>
+                            <span>{board.board_description}</span>
+                        </div>
+                    ))
+                ) : (
+                    <p>No recent boards available.</p>
+                )}
+            </div> */}
+
+<div className="recently-dashboard">
+    {latestBoards.length > 0 ? (
+        latestBoards.map((board) => (
+            <div 
+                key={board._id} 
+                className="dashboard-project"
+                onClick={() => handleProjectClick(board.board_title, board._id)}
+                style={{ cursor: "pointer" }} // Để hiển thị con trỏ khi hover
+            >
+                <p>{board.board_title}</p>
+                <span>{board.board_description}</span>
             </div>
+        ))
+    ) : (
+        <p>No recent boards available.</p>
+    )}
+</div>
 
             <div className="calendar-container">
                 {/* Calendar Section */}
