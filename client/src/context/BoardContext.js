@@ -55,12 +55,67 @@ export const BoardProvider = ({ children }) => {
         }
     };
 
+
+    //mei
+    //update board
+    const updateBoard = async (boardId, newTitle) => {
+        try {
+            const response = await privateAxios.post("/board/updateBoard", {
+                checkMessage: "Update board",
+                board_id: boardId,
+                board_update_details: { board_title: newTitle },
+            });
+
+            const data = await response.data;
+
+            if (data.success) {
+                setBoards((prevBoards) =>
+                    prevBoards.map((board) =>
+                        board._id === boardId ? { ...board, board_title: newTitle } : board
+                    )
+                );
+                return "Success";
+            } else {
+                console.log("Update failed:", data.message);
+                return "Failed";
+            }
+        } catch (error) {
+            console.log("Error updating board:", error);
+            return "Error";
+        }
+    };
+
+    //delete board
+    const deleteBoard = async (boardId) => {
+        try {
+            const response = await privateAxios.post("/board/deleteBoard", {
+                checkMessage: "Delete board",
+                board_id: boardId,
+            });
+
+            const data = await response.data;
+
+            if (data.success) {
+                setBoards((prevBoards) => prevBoards.filter(board => board._id !== boardId));
+                return "Success";
+            } else {
+                console.log("Delete failed:", data.message);
+                return "Failed";
+            }
+        } catch (error) {
+            console.log("Error deleting board:", error);
+            return "Error";
+        }
+    };
+
+    //end-mei
+
     return (
-        <BoardContext.Provider
-            value={{ boards, getAllBoardsByUserId, createBoard }}
-        >
+        <BoardContext.Provider value={{ boards, getAllBoardsByUserId, createBoard, updateBoard, deleteBoard }}>
+
             {children}
         </BoardContext.Provider>
+
     );
 };
 

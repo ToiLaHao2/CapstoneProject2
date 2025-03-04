@@ -1,145 +1,145 @@
-/* General Styles */
 .profile-container {
-    font-family: "Arial", sans-serif;
-    color: #333;
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-  }
-  
-  /* Header Section */
-  .profile-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .profile-info {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .avatar {
-    width: 60px;
-    height: 60px;
-    background-color: #ffcc00;
-    color: white;
-    font-weight: bold;
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-  }
-  
-  .status {
-    font-size: 14px;
-    color: green;
-    font-weight: bold;
-  }
-  
-  .contact-info {
-    text-align: right;
-    font-size: 14px;
-  }
-  
-  .contact-item {
-    margin-bottom: 5px;
-  }
-  
-  /* Projects Section */
-  .projects-section {
-    margin-bottom: 20px;
-  }
-  
-  .projects {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .project-card {
-    flex: 1;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .project-card.active {
-    border-left: 4px solid green;
-  }
-  
-  .project-card.cancelled {
-    border-left: 4px solid red;
-  }
-  
-  .view-more-btn {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  .view-more-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Tabs Section */
+  font-family: "Arial", sans-serif;
+  color: #333;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header Section */
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  background-color: #ffcc00;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.status {
+  font-size: 14px;
+  color: green;
+  font-weight: bold;
+}
+
+.contact-info {
+  text-align: right;
+  font-size: 14px;
+}
+
+.contact-item {
+  margin-bottom: 5px;
+}
+
+/* Projects Section */
+.projects-section {
+  margin-bottom: 20px;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.project-card.active {
+  border-left: 4px solid green;
+}
+
+.project-card.cancelled {
+  border-left: 4px solid red;
+}
+
+.view-more-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.view-more-btn:hover {
+  background-color: #0056b3;
+}
+
 /* Tabs Section */
 .tabs {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #ddd;
-  }
-  
-  .tab {
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    color: #555;
-    transition: color 0.2s ease, border-bottom 0.2s ease;
-  }
-  
-  .tab.active {
-    border-bottom: 2px solid #007bff;
-    color: #007bff;
-  }
-  
-  .tab:hover {
-    color: #0056b3;
-  }
-  
-  /* Content Section */
-  .content {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  
-  /* Content Section */
-  .content {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+}
+
+.tab.active {
+  border-bottom: 2px solid #007bff;
+  color: #007bff;
+}
+
+.tab:hover {
+  color: #0056b3;
+}
+
+/* Content Section */
+.content {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Content Section */
+.content {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 /* Edit Profile and Change Password Buttons */
 .edit-profile-btn,
 .change-password-btn {
@@ -151,7 +151,7 @@
   border-radius: 10px;
   cursor: pointer;
   margin-top: 10px;
-  margin-right: 10px; 
+  margin-right: 10px;
   transition: background-color 0.3s, transform 0.2s;
 }
 
@@ -159,14 +159,13 @@
 .edit-profile-btn:hover,
 .change-password-btn:hover {
   background-color: #0056b3;
-  color: white; 
-  transform: scale(1.05); 
+  color: white;
+  transform: scale(1.05);
 }
 
 /* Focus state */
 .edit-profile-btn:focus,
 .change-password-btn:focus {
   outline: none;
-  box-shadow: 0 0 5px rgba(0, 86, 179, 0.7); 
+  box-shadow: 0 0 5px rgba(0, 86, 179, 0.7);
 }
-
