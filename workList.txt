@@ -1,0 +1,14 @@
+ngày 10/2/2025 -> 16/2/2025
+    - BE :
+        + Hoàn thiện phần response xử lý thành công và báo lỗi
+        + Hoàn thiện các API thực hiện chức năng cho user 
+    - FE :
+        + Xử lý lại context (làm việc với api, xử lý lỗi)
+        + Xử lý các lỗi response xử lý dữ liệu và CSS nếu cần
+        + Thêm tính năng upload hình
+
+note : 
+    - axios : xử lý lỗi từ phía API dễ hơn, không cần check status code nhiều
+              các code 200 được thông qua nhanh hơn, các code 4xx 5xx được đưa
+              vào catch error của try catch
+              

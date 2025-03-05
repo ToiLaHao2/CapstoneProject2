@@ -8,6 +8,7 @@ const { connectDb } = require("./configs/dbConfig");
 const authRouter = require("./routes/authRoutes");
 const boardRouter = require("./routes/boardRoutes");
 const userRouter = require("./routes/userRoutes");
+const listRouter = require("./routes/listRoutes");
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ connectDb();
 app.use("/api/auth", authRouter);
 app.use("/api/board", boardRouter);
 app.use("/api/user", userRouter);
+app.use("/api/list", listRouter);
 
 // Listen
 app.listen(port, function () {

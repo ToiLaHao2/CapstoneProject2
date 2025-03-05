@@ -50,7 +50,7 @@ async function Login(req, res) {
             const token = await CreateToken(user._id);
             return sendSuccess(res, "Login succesfull", { token: token });
         } else {
-            return sendError(res, 400, "Wrong password");
+            return sendError(res, 401, "Wrong password");
         }
     } catch (error) {
         logger.error(`Error : ${error}`);
@@ -69,7 +69,7 @@ async function ChangePassword(req, res) {
             userRequest.user_last_password,
             user.user_hashed_password
         );
-        if (compareHashPassword == true) {
+        if (compareHashPassword === true) {
             const newHashPassword = (await HashPassword(
                 userRequest.user_password
             )).toString();

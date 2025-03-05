@@ -13,24 +13,21 @@ export const UserProvider = ({ children }) => {
                 checkMessage: "Get user profile"
             });
 
-            if (response.status !== 200) {
-                throw new Error("Failed to fetch user data");
-            }
-
             const data = await response.data;
             setUser(data.data);
             return "Success"; // Cập nhật trạng thái người dùng
         } catch (error) {
-            return `Fetch user error: ${error}`;
+            console.log(error.error.Error);
+            return `Fetch user error: ${error.message}`;
         }
     };
 
-    return ( 
+    return (
         <UserContext.Provider value={{ user, getUserData }}>
             {children}
         </UserContext.Provider>
     );
-}; 
+};
 
 export const useUser = () => {
     return useContext(UserContext);
