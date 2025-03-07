@@ -235,7 +235,7 @@ const validationRules = {
         ],
     },
     // moveCard
-    moveCard: {
+    moveCardListUseCase: {
         checkMessage: "Move card",
         requiredFields: [
             "user_id",
@@ -270,10 +270,40 @@ const validationRules = {
         ],
     },
     // getCard
+    getCard: {
+        checkMessage: "Get card",
+        requiredFields: ["user_id", "board_id", "list_id", "card_id", "checkMessage"],
+    },
     // updateCard
+    updateCard: {
+        checkMessage: "Update card",
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "list_id",
+            "card_id",
+            "card_update_details",
+            "checkMessage",
+        ],
+    },
     // deleteCard
     // moveCard
+    moveCardBetweenListCardUseCase: {
+        checkMessage: "Move card",
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "list_id",
+            "card_id",
+            "new_numerical_order",
+            "checkMessage",
+        ],
+    },
     // assignUserToCard
+    assignUserToCard: {
+        checkMessage: "Assign user to card",
+        requiredFields: ["user_id", "board_id", "list_id", "card_id", "assign_user_id", "checkMessage"],
+    },
     // removeUserFromCard
     // addAttachmentToCard
     // addCommentToCard
