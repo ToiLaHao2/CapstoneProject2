@@ -235,8 +235,27 @@ async function AssignUserToCard(req,res) {
                 return sendError(res,403, "User is not in this board")
             }
         }
-        // check if list is exist
-        
+        // check if list exists
+        const list = await List.findById(list_id);
+        if (!list) {
+            return sendError(res, 404, "List not found");
+        }
+        // check if list in board
+        if (list.board_id !== board_id) {
+            return sendError(res, 403, "List does not belong to the board");
+        }
+        // check if card exists
+        const card = await Card.findById(card_id);
+        if (!card) {
+            return sendError(res, 404, "Card not found");
+        }
+        // check if card in list
+        const cardInList = list.list_cards.find((card) => card.card_id === card_id);
+        if (!cardInList) {
+            return sendError(res, 403, "Card does not belong to the list");
+        }
+        // add assignees
+        card.card_assignees.push =
     } catch (error) {
         logger.error(error.message);
         return sendError(res, 500, "Internal server error");
