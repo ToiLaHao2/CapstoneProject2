@@ -254,9 +254,21 @@ const validationRules = {
         requiredFields: ["user_id", "board_id", "list_id", "checkMessage"],
     },
     // moveCardsInList
+    // moveCardToOtherList
 
     // Card middleware validate
     // createCard
+    createCard: {
+        checkMessage: "Create new card",
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "list_id",
+            "card_title",
+            "card_numerical_order",
+            "checkMessage",
+        ],
+    },
     // getCard
     // updateCard
     // deleteCard
