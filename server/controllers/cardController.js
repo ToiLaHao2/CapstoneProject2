@@ -196,10 +196,10 @@ async function MoveCard(req,res) {
             return sendError(res, 404, "Card not found");
         }
         // check if card in list
-        const cardInList = list.list_cards.find((card) => card.card_id === card_id);
-        if (!cardInList) {
-            return sendError(res, 403, "Card does not belong to the list");
-        }
+        // const cardInList = oldList.list_cards.find((card) => card.card_id === card_id);
+        // if (!cardInList) {
+        //     return sendError(res, 403, "Card does not belong to the list");
+        // }
         // move card
         oldList.list_cards = oldList.list_cards.filter((card) => card.card_id !== card_id);
         newList.list_cards.push({
@@ -208,7 +208,7 @@ async function MoveCard(req,res) {
         });
         await oldList.save();
         await newList.save();
-        return sendSuccess(res, 200, "Card moved successfully");
+        return sendSuccess(res,"Card moved successfully");
     } catch (error) {
         logger.error(error.message);
         return sendError(res, 500, "Internal server error");
@@ -255,7 +255,9 @@ async function AssignUserToCard(req,res) {
             return sendError(res, 403, "Card does not belong to the list");
         }
         // add assignees
-        card.card_assignees.push =
+        card.card_assignees.push(assigned_user_id);
+        await card.save();
+        sendSuccess(res,"Succesfull assign user to card");
     } catch (error) {
         logger.error(error.message);
         return sendError(res, 500, "Internal server error");
