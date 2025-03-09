@@ -305,6 +305,10 @@ const validationRules = {
         requiredFields: ["user_id", "board_id", "list_id", "card_id", "assign_user_id", "checkMessage"],
     },
     // removeUserFromCard
+    removeUserFromCard:{
+        checkMessage: "Remove user from card",
+        requiredFields: ["user_id", "board_id", "list_id", "card_id", "remove_user_id", "checkMessage"],
+    },
     // addAttachmentToCard
     // addCommentToCard
     // getCommentsInCard

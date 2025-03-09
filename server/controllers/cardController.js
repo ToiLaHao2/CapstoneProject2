@@ -264,9 +264,66 @@ async function AssignUserToCard(req,res) {
     }
 }
 
-async function RemoveUserFromCard(req,res) {}
+async function RemoveUserFromCard(req,res) {
+    try {
+        const {user_id,board_id,list_id,card_id,remove_user_id} = req.body;
+        // check if user is a member of the board (member with role editor or admin)
+        const board = await Board.findById(board_id);
+        if (!board) {
+            return sendError(res, 404, "Board not found");
+        }
+        if (String.toString(board.created_by) !== String.toString(user_id)) {
+            if (!board.members.includes(user_id)) {
+                let isUserEditor = board.members.find(
+                    (member) => member.user_id === user_id && member.role === "EDITOR"
+                );
+                if (!isUserEditor) {
+                    return sendError(res, 403, "User is not an editor of the board");
+                }
+            } else {
+                return sendError(res,403, "User is not in this board")
+            }
+        }
+        // check if list exists
+        const list = await List.findById(list_id);
+        if (!list) {
+            return sendError(res, 404, "List not found");
+        }
+        // check if list in board
+        if (list.board_id !== board_id) {
+            return sendError(res, 403, "List does not belong to the board");
+        }
+        // check if card exists
+        const card = await Card.findById(card_id);
+        if (!card) {
+            return sendError(res, 404, "Card not found");
+        }
+        // check if card in list
+        const cardInList = list.list_cards.find((card) => card.card_id === card_id);
+        if (!cardInList) {
+            return sendError(res, 403, "Card does not belong to the list");
+        }
+        // remove assignee
+        const index = card.card_assignees.indexOf(remove_user_id);
+        if (index > -1) {
+            card.card_assignees.splice(index, 1);
+        }
+        card.save();
+        return sendSuccess(res,"Success remove user from card");
+    } catch (error) {
+        logger.error(error);
+        return sendError(res, 500, "Internal server error");
+    }
+}
 
-async function AddAttachmentToCard(req,res) {}
+async function AddAttachmentToCard(req,res) {
+    try {
+        
+    } catch (error) {
+        logger.error(error);
+        return sendError(res, 500, "Internal server error");
+    }
+}
 
 async function AddCommentToCard(req,res) {}
 
