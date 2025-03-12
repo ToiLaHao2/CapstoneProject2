@@ -10,6 +10,7 @@ async function validateGetUserProfile(req, res, next) {
   const token = await getTokenFromHeaders(req);
   const checkToken = await VerifiedToken(token);
   if (!checkToken) {
+    logger.info("Invalid token in get user profile");
     return sendError(res, 401, "Invalid token", "");
   }
   req.body.user_id = checkToken.id;
@@ -34,6 +35,7 @@ async function validateUpdateUserProfile(req, res, next) {
   const token = await getTokenFromHeaders(req);
   const checkToken = await VerifiedToken(token);
   if (!checkToken) {
+    logger.info("Invalid token in update user profile");
     return sendError(res, 401, "Invalid token", "");
   }
   req.body.user_id = checkToken.id;
@@ -61,6 +63,7 @@ async function validateGetAllUserInBoard(req, res, next) {
   const token = await getTokenFromHeaders(req);
   const checkToken = await VerifiedToken(token);
   if (!checkToken) {
+    logger.info("Invalid token in get all user in board");
     return sendError(res, 401, "Invalid token", "");
   }
   req.body.user_id = checkToken.id;
@@ -85,6 +88,7 @@ async function validateAddUserToBoard(req, res, next) {
   const token = await getTokenFromHeaders(req);
   const checkToken = await VerifiedToken(token);
   if (!checkToken) {
+    logger.info("Invalid token in add user to board");
     return sendError(res, 401, "Invalid token", "");
   }
   req.body.user_id = checkToken.id;
@@ -109,6 +113,7 @@ async function validateRemoveUserFromBoard(req, res, next) {
   const token = await getTokenFromHeaders(req);
   const checkToken = await VerifiedToken(token);
   if (!checkToken) {
+    logger.info("Invalid token in remove user from board");
     return sendError(res, 401, "Invalid token", "");
   }
   req.body.user_id = checkToken.id;
@@ -133,6 +138,7 @@ async function validateUpdateUserRoleInBoard(req, res, next) {
   const token = await getTokenFromHeaders(req);
   const checkToken = await VerifiedToken(token);
   if (!checkToken) {
+    logger.info("Invalid token in update user role in board");
     return sendError(res, 401, "Invalid token", "");
   }
   req.body.user_id = checkToken.id;

@@ -9,10 +9,6 @@ const ListSchema = new Schema({
   },
   list_cards: [
     {
-      card_numerical_order: {
-        type: Number,
-        required: true,
-      },
       card_id: {
         type: Schema.Types.ObjectId,
         ref: "Card",

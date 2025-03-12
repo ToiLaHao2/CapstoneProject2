@@ -528,8 +528,6 @@ async function MoveList(req, res) {
         board_id,
         list_id1,
         list_id2,
-        new_numerical_order1,
-        new_numerical_order2,
     } = req.body;
     try {
         const board = await Board.findById(board_id);
@@ -561,14 +559,14 @@ async function MoveList(req, res) {
                 details: "The requested list is not in this board",
             });
         }
-        const boardList1 = board.board_lists.find(
+        const index1 = board.board_lists.findIndex(
             (boardList) => String(boardList.list_id) === String(list_id1)
         );
-        const boardList2 = board.board_lists.find(
+        const index2 = board.board_lists.findIndex(
             (boardList) => String(boardList.list_id) === String(list_id2)
         );
-        boardList1.list_numerical_order = new_numerical_order1;
-        boardList2.list_numerical_order = new_numerical_order2;
+        board.board_lists[index1].list_id = list_id2;
+        board.board_lists[index2].list_id = list_id1;
         const updatedBoard = await board.save();
         return sendSuccess(res, "List moved successfully", updatedBoard);
     } catch (error) {

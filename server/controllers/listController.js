@@ -7,13 +7,17 @@ const { sendError, sendSuccess } = require("../utils/response");
 async function CreateList(req, res) {
     const { user_id, board_id, list_title, list_numerical_order } = req.body;
     try {
-        const user = await User.findById(user_id);
-        if (!user) {
-            return sendError(res, 404, "User not found", "CreateList");
-        }
         const board = await Board.findById(board_id);
         if (!board) {
             return sendError(res, 404, "Board not found", "CreateList");
+        }
+        const isUserExist = board.board_collaborators.find(
+            (collaborator) => collaborator.board_collaborator_id == user_id
+        );
+        if (!isUserExist) {
+            if (String(board.created_by) !== user_id) {
+                return sendError(res, 401, "User not authorized", "GetList");
+            }
         }
         const list = new List({
             list_title: list_title,
@@ -102,7 +106,9 @@ async function DeleteList(req, res) {
             (collaborator) => collaborator.board_collaborator_id == user_id
         );
         if (!isUserExist) {
-            return sendError(res, 401, "User not authorized", "DeleteList");
+            if (String(board.created_by) !== user_id) {
+                return sendError(res, 401, "User not authorized", "GetList");
+            }
         }
         const isListInBoard = board.board_lists.find(
             (list) => list.list_id == list_id
@@ -133,7 +139,9 @@ async function GetCardsInList(req,res) {
             (collaborator) => collaborator.board_collaborator_id == user_id
         );
         if (!isUserExist) {
-            return sendError(res, 401, "User not authorized", "GetCardsInList");
+            if (String(board.created_by) !== user_id) {
+                return sendError(res, 401, "User not authorized", "GetList");
+            }
         }
         const isListInBoard = board.board_lists.find(
             (list) => list.list_id == list_id

@@ -9,10 +9,6 @@ const CheckListSchema = new Schema({
   },
   checklist_items: [
     {
-      item_numerical_order: {
-        type: Number,
-        required: true,
-      },
       item_id: {
         type: Schema.Types.ObjectId,
         ref: "CheckListItem",

@@ -31,10 +31,6 @@ const BoardSchema = new Schema({
   ],
   board_lists: [
     {
-      list_numerical_order: {
-        type: Number,
-        required: true,
-      },
       list_id: {
         type: Schema.Types.ObjectId,
         ref: "List",

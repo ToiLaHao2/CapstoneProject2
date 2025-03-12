@@ -10,6 +10,7 @@ async function validateCreateList(req, res, next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
+        logger.info("Invalid token in create list");
         return sendError(res, 401, "Invalid token", "");
     }
     req.body.user_id = checkToken.id;
@@ -29,6 +30,7 @@ async function validateGetList(req,res,next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
+        logger.info("Invalid token in get list");
         return sendError(res, 401, "Invalid token", "");
     }
     req.body.user_id = checkToken.id;
@@ -48,6 +50,7 @@ async function validateUpdateList(req,res,next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
+        logger.info("Invalid token in update list");
         return sendError(res, 401, "Invalid token", "");
     }
     req.body.user_id = checkToken.id;
@@ -67,6 +70,7 @@ async function validateDeleteList(req,res,next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
+        logger.info("Invalid token in delete list");
         return sendError(res, 401, "Invalid token", "");
     }
     req.body.user_id = checkToken.id;
@@ -86,6 +90,7 @@ async function validateGetCardsInList(req,res,next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
+        logger.info("Invalid token in get cards in list");
         return sendError(res, 401, "Invalid token", "");
     }
     req.body.user_id = checkToken.id;

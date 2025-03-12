@@ -13,9 +13,12 @@ async function CreateCard(req,res) {
         if (!board) {
             return sendError(res, 404, "Board not found");
         }
-        if (!board.members.includes(user_id)) {
-            if (board.created_by !== user_id) {
-                return sendError(res, 403, "User is not a member of the board");
+        const isUserExist = board.board_collaborators.find(
+            (collaborator) => collaborator.board_collaborator_id == user_id
+        );
+        if (!isUserExist) {
+            if (String(board.created_by) !== user_id) {
+                return sendError(res, 401, "User not authorized", "GetList");
             }
         }
         // check if list exists
@@ -59,9 +62,12 @@ async function GetCard(req,res) {
         if (!board) {
             return sendError(res, 404, "Board not found");
         }
-        if (!board.members.includes(user_id)) {
-            if (board.created_by !== user_id) {
-                return sendError(res, 403, "User is not a member of the board");
+        const isUserExist = board.board_collaborators.find(
+            (collaborator) => collaborator.board_collaborator_id == user_id
+        );
+        if (!isUserExist) {
+            if (String(board.created_by) !== user_id) {
+                return sendError(res, 401, "User not authorized", "GetList");
             }
         }
         // check if list exists
@@ -98,9 +104,12 @@ async function UpdateCard(req,res) {
         if (!board) {
             return sendError(res, 404, "Board not found");
         }
-        if (!board.members.includes(user_id)) {
-            if (board.created_by !== user_id) {
-                return sendError(res, 403, "User is not a member of the board");
+        const isUserExist = board.board_collaborators.find(
+            (collaborator) => collaborator.board_collaborator_id == user_id
+        );
+        if (!isUserExist) {
+            if (String(board.created_by) !== user_id) {
+                return sendError(res, 401, "User not authorized", "GetList");
             }
         }
         // check if list exists
@@ -160,7 +169,7 @@ async function UpdateCard(req,res) {
 
 async function DeleteCard(req,res) {}
 
-// trong trường hợp người dùng đang mở card ra và muốn di chuyển nó sang một list khác
+// trong trường hợp người dùng đang mở card ra và muốn di chuyển nó sang một list khác trong cùng board
 async function MoveCard(req,res) {
     try {
         const {user_id,board_id,old_list_id,new_list_id,card_id} = req.body;
@@ -169,9 +178,12 @@ async function MoveCard(req,res) {
         if (!board) {
             return sendError(res, 404, "Board not found");
         }
-        if (!board.members.includes(user_id)) {
-            if (board.created_by !== user_id) {
-                return sendError(res, 403, "User is not a member of the board");
+        const isUserExist = board.board_collaborators.find(
+            (collaborator) => collaborator.board_collaborator_id == user_id
+        );
+        if (!isUserExist) {
+            if (String(board.created_by) !== user_id) {
+                return sendError(res, 401, "User not authorized", "GetList");
             }
         }
         // check if list exists
@@ -195,17 +207,19 @@ async function MoveCard(req,res) {
         if (!card) {
             return sendError(res, 404, "Card not found");
         }
-        // check if card in list
-        // const cardInList = oldList.list_cards.find((card) => card.card_id === card_id);
-        // if (!cardInList) {
-        //     return sendError(res, 403, "Card does not belong to the list");
-        // }
+        // check if card in old list
+        const cardInOldList = oldList.list_cards.find((card) => card.card_id === card_id);
+        if (!cardInOldList) {
+            return sendError(res, 403, "Card does not belong to the list");
+        }
+        // check if card in new list
+        const cardInNewList = newList.list_cards.find((card) => card.card_id === card_id);
+        if (cardInNewList) {
+            return sendError(res, 403, "Card already in the new list");
+        }
         // move card
         oldList.list_cards = oldList.list_cards.filter((card) => card.card_id !== card_id);
-        newList.list_cards.push({
-            card_numerical_order: newList.list_cards.length - 1,
-            card_id: card_id,
-        });
+        newList.list_cards.push({card_id: card_id});
         await oldList.save();
         await newList.save();
         return sendSuccess(res,"Card moved successfully");
@@ -223,16 +237,12 @@ async function AssignUserToCard(req,res) {
         if (!board) {
             return sendError(res, 404, "Board not found");
         }
-        if (String.toString(board.created_by) !== String.toString(user_id)) {
-            if (!board.members.includes(user_id)) {
-                let isUserEditor = board.members.find(
-                    (member) => member.user_id === user_id && member.role === "EDITOR"
-                );
-                if (!isUserEditor) {
-                    return sendError(res, 403, "User is not an editor of the board");
-                }
-            } else {
-                return sendError(res,403, "User is not in this board")
+        const isUserExist = board.board_collaborators.find(
+            (collaborator) => collaborator.board_collaborator_id == user_id
+        );
+        if (!isUserExist) {
+            if (String(board.created_by) !== user_id) {
+                return sendError(res, 401, "User not authorized", "GetList");
             }
         }
         // check if list exists
@@ -272,16 +282,12 @@ async function RemoveUserFromCard(req,res) {
         if (!board) {
             return sendError(res, 404, "Board not found");
         }
-        if (String.toString(board.created_by) !== String.toString(user_id)) {
-            if (!board.members.includes(user_id)) {
-                let isUserEditor = board.members.find(
-                    (member) => member.user_id === user_id && member.role === "EDITOR"
-                );
-                if (!isUserEditor) {
-                    return sendError(res, 403, "User is not an editor of the board");
-                }
-            } else {
-                return sendError(res,403, "User is not in this board")
+        const isUserExist = board.board_collaborators.find(
+            (collaborator) => collaborator.board_collaborator_id == user_id
+        );
+        if (!isUserExist) {
+            if (String(board.created_by) !== user_id) {
+                return sendError(res, 401, "User not authorized", "GetList");
             }
         }
         // check if list exists
@@ -318,7 +324,6 @@ async function RemoveUserFromCard(req,res) {
 
 async function AddAttachmentToCard(req,res) {
     try {
-        
     } catch (error) {
         logger.error(error);
         return sendError(res, 500, "Internal server error");
@@ -335,3 +340,12 @@ async function AssignLabelToCard(req,res) {}
 async function ArchiveCard(params) {}
 
 async function UpdateCheckListsInCard(req,res) {}
+
+module.exports = {
+    CreateCard,
+    GetCard,
+    UpdateCard,
+    MoveCard,
+    AssignUserToCard,
+    RemoveUserFromCard
+};

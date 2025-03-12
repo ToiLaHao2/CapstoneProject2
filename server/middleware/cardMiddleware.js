@@ -88,8 +88,50 @@ async function validateMoveCard(req,res,next) {
 }
 // assign user to card
 async function validateAssignUserToCard(req,res,next) {
-    
+    const token = await getTokenFromHeaders(req);
+    const checkToken = await VerifiedToken(token);
+    if (!checkToken) {
+        logger.error("Invalid token");
+        return sendError(res,401,"Invalid token","");
+    }
+    req.body.user_id = checkToken.id;
+    const cardAssignUserData = req.body;
+    const rules = validationRules["assignUserToCard"];
+    const result = await validateFields(cardAssignUserData,rules);
+    if (!result.valid) {
+        logger.error(`Error checking data ${result.error}`);
+        return sendError(res,400,"Invalid data", result.error);
+    } else {
+        logger.info("Successfull checking data to assign user to card");
+        next();
+    }
 }
 // remove user from card
+async function validateRemoveUserFromCard(req,res,next) {
+    const token = await getTokenFromHeaders(req);
+    const checkToken = await VerifiedToken(token);
+    if (!checkToken) {
+        logger.error("Invalid token");
+        return sendError(res,401,"Invalid token","");
+    }
+    req.body.user_id = checkToken.id;
+    const cardRemoveUserData = req.body;
+    const rules = validationRules["removeUserFromCard"];
+    const result = await validateFields(cardRemoveUserData,rules);
+    if (!result.valid) {
+        logger.error(`Error checking data ${result.error}`);
+        return sendError(res,400,"Invalid data", result.error);
+    } else {
+        logger.info("Successfull checking data to remove user from card");
+        next();
+    }
+}
 
-module.exports = {};
+module.exports = {
+    validateCreateCard,
+    validateGetCard,
+    validateUpdateCard,
+    validateMoveCard,
+    validateAssignUserToCard,
+    validateRemoveUserFromCard
+};

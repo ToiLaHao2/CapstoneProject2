@@ -10,6 +10,7 @@ async function validateCreateBoard(req, res, next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
+        logger.info("Invalid token in create board");
         return sendError(res, 401, "Invalid token", "");
     }
     const boardCreateData = req.body;
@@ -20,7 +21,7 @@ async function validateCreateBoard(req, res, next) {
         logger.info("Successfull checking data to create board");
         next();
     } else {
-        logger.info(`Error checking data ${result.error}`);
+        logger.error(`Error checking data ${result.error}`);
         return sendError(res, 400, `Error checking data ${result.error}`);
     }
 }
@@ -30,6 +31,7 @@ async function validateGetBoard(req, res, next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
+        logger.info("Invalid token in get board");
         return sendError(res, 401, "Invalid token", "");
     }
     const boardGetData = req.body;
@@ -50,6 +52,7 @@ async function validateGetBoardsByUserId(req, res, next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
+        logger.info("Invalid token in get boards by user id");
         return sendError(res, 401, "Invalid token", "");
     }
     req.body.user_id = checkToken.id;
@@ -70,6 +73,7 @@ async function validateUpdateBoard(req, res, next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
+        logger.info("Invalid token in update board");
         sendError(res, 401, "Invalid token", "");
     }
     const boardUpdateData = req.body;
@@ -90,6 +94,7 @@ async function validateDeleteBoard(req, res, next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
+        logger.info("Invalid token in delete board");
         return sendError(res, 401, "Invalid token", "");
     }
     const boardDeleteData = req.body;
@@ -110,6 +115,7 @@ async function validateAddMember(req, res, next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
+        logger.info("Invalid token in add member to board");
         return sendError(res, 401, "Invalid token", "");
     }
     req.body.user_id = checkToken.id;
@@ -130,6 +136,7 @@ async function validateRemoveMember(req, res, next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
+        logger.info("Invalid token in remove member from board");
         return sendError(res, 401, "Invalid token", "");
     }
     req.body.user_id = checkToken.id;
@@ -150,6 +157,7 @@ async function validateUpdateMemberRole(req, res, next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
+        logger.info("Invalid token in update member role");
         return sendError(res, 401, "Invalid token", "");
     }
     req.body.user_id = checkToken.id;
@@ -170,6 +178,7 @@ async function validateGetAllMembers(req, res, next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
+        logger.info("Invalid token in validate get all members");
         return sendError(res, 401, "Invalid token", "");
     }
     req.body.user_id = checkToken.id;
@@ -190,6 +199,7 @@ async function validateUpdatePrivacy(req, res, next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
+        logger.info("Invalid token in update privacy");
         return sendError(res, 401, "Invalid token", "");
     }
     req.body.user_id = checkToken.id;
@@ -210,6 +220,7 @@ async function validateGetListsInBoard(req, res, next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
+        logger.info("Invalid token in get lists in board");
         return sendError(res, 401, "Invalid token", "");
     }
     req.body.user_id = checkToken.id;
@@ -231,6 +242,7 @@ async function validateAddListToBoard(req, res, next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
+        logger.info("Invalid token in validate add list to board");
         return sendError(res, 401, "Invalid token", "");
     }
     req.body.user_id = checkToken.id;
@@ -242,7 +254,7 @@ async function validateAddListToBoard(req, res, next) {
         next();
     }
     else {
-        logger.info(`Error checking data ${result.error}`);
+        logger.error(`Error checking data ${result.error}`);
         return sendError(res, 400, `Error checking data ${result.error}`);
     }
 }
@@ -252,6 +264,7 @@ async function validateMoveList(req, res, next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
+        logger.info("Invalid token in move list");
         return sendError(res, 401, "Invalid token", "");
     }
     req.body.user_id = checkToken.id;
