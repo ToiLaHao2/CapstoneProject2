@@ -13,7 +13,6 @@ async function validateCreateBoard(req, res, next) {
         return sendError(res, 401, "Invalid token", "");
     }
     const boardCreateData = req.body;
-    console.log(boardCreateData);
     const rules = validationRules["createBoard"];
     const result = await validateFields(boardCreateData, rules);
     if (result.valid === true) {
