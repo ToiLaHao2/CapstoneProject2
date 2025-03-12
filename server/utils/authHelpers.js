@@ -28,7 +28,7 @@ async function CompareHashPassword(password, hashedPassword) {
 async function CreateToken(id) {
     try {
         const token = await jwt.sign({ id: id }, process.env.SECRET_TOKEN_KEY, {
-            expiresIn: "1h"
+            expiresIn: "1h",
         });
         logger.info("Complete create token");
         return token;
@@ -56,5 +56,5 @@ module.exports = {
     HashPassword,
     CompareHashPassword,
     CreateToken,
-    VerifiedToken
+    VerifiedToken,
 };

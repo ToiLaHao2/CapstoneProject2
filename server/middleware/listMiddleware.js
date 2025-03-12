@@ -26,7 +26,7 @@ async function validateCreateList(req, res, next) {
     }
 }
 // get list
-async function validateGetList(req,res,next) {
+async function validateGetList(req, res, next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
@@ -46,7 +46,7 @@ async function validateGetList(req,res,next) {
     }
 }
 // update list
-async function validateUpdateList(req,res,next) {
+async function validateUpdateList(req, res, next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
@@ -66,7 +66,7 @@ async function validateUpdateList(req,res,next) {
     }
 }
 // delete list
-async function validateDeleteList(req,res,next) {
+async function validateDeleteList(req, res, next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
@@ -86,7 +86,7 @@ async function validateDeleteList(req,res,next) {
     }
 }
 // get cards in list
-async function validateGetCardsInList(req,res,next) {
+async function validateGetCardsInList(req, res, next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
@@ -106,4 +106,10 @@ async function validateGetCardsInList(req,res,next) {
     }
 }
 
-module.exports = { validateCreateList, validateGetList, validateUpdateList, validateDeleteList, validateGetCardsInList };
+module.exports = {
+    validateCreateList,
+    validateGetList,
+    validateUpdateList,
+    validateDeleteList,
+    validateGetCardsInList,
+};

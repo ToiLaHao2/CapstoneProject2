@@ -56,12 +56,17 @@ const validationRules = {
     // addUserToBoard
     addUserToBoard: {
         checkMessage: "Add user to board",
-        requiredFields: ["board_id", "user_id", "new_user_id","checkMessage"],
+        requiredFields: ["board_id", "user_id", "new_user_id", "checkMessage"],
     },
     // removeUserFromBoard
     removeUserFromBoard: {
         checkMessage: "Remove user from board",
-        requiredFields: ["board_id", "user_id", "remove_user_id","checkMessage"],
+        requiredFields: [
+            "board_id",
+            "user_id",
+            "remove_user_id",
+            "checkMessage",
+        ],
     },
     // updateUserRoleInBoard
     // assignUserToCard
@@ -163,12 +168,7 @@ const validationRules = {
     // addListToBoard
     addListToBoard: {
         checkMessage: "Add list to board",
-        requiredFields: [
-            "user_id",
-            "board_id",
-            "list_id",
-            "checkMessage",
-        ],
+        requiredFields: ["user_id", "board_id", "list_id", "checkMessage"],
     },
     // moveList
     moveList: {
@@ -190,12 +190,7 @@ const validationRules = {
     // createList
     createList: {
         checkMessage: "Create new list",
-        requiredFields: [
-            "user_id",
-            "board_id",
-            "list_title",
-            "checkMessage",
-        ],
+        requiredFields: ["user_id", "board_id", "list_title", "checkMessage"],
     },
     // getList
     getList: {
@@ -264,7 +259,13 @@ const validationRules = {
     // getCard
     getCard: {
         checkMessage: "Get card",
-        requiredFields: ["user_id", "board_id", "list_id", "card_id", "checkMessage"],
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "list_id",
+            "card_id",
+            "checkMessage",
+        ],
     },
     // updateCard
     updateCard: {
@@ -293,12 +294,26 @@ const validationRules = {
     // assignUserToCard
     assignUserToCard: {
         checkMessage: "Assign user to card",
-        requiredFields: ["user_id", "board_id", "list_id", "card_id", "assign_user_id", "checkMessage"],
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "list_id",
+            "card_id",
+            "assign_user_id",
+            "checkMessage",
+        ],
     },
     // removeUserFromCard
-    removeUserFromCard:{
+    removeUserFromCard: {
         checkMessage: "Remove user from card",
-        requiredFields: ["user_id", "board_id", "list_id", "card_id", "remove_user_id", "checkMessage"],
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "list_id",
+            "card_id",
+            "remove_user_id",
+            "checkMessage",
+        ],
     },
     // addAttachmentToCard
     // addCommentToCard

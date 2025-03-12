@@ -230,8 +230,7 @@ async function validateGetListsInBoard(req, res, next) {
     if (result.valid === true) {
         logger.info("Successfull checking data to get lists in board");
         next();
-    }
-    else {
+    } else {
         logger.info(`Error checking data ${result.error}`);
         return sendError(res, 400, `Error checking data ${result.error}`);
     }
@@ -252,8 +251,7 @@ async function validateAddListToBoard(req, res, next) {
     if (result.valid === true) {
         logger.info("Successfull checking data to add list to board");
         next();
-    }
-    else {
+    } else {
         logger.error(`Error checking data ${result.error}`);
         return sendError(res, 400, `Error checking data ${result.error}`);
     }
@@ -274,8 +272,7 @@ async function validateMoveList(req, res, next) {
     if (result.valid === true) {
         logger.info("Successfull checking data to move list");
         next();
-    }
-    else {
+    } else {
         logger.info(`Error checking data ${result.error}`);
         return sendError(res, 400, `Error checking data ${result.error}`);
     }
@@ -294,5 +291,5 @@ module.exports = {
     validateUpdatePrivacy,
     validateGetListsInBoard,
     validateAddListToBoard,
-    validateMoveList
+    validateMoveList,
 };

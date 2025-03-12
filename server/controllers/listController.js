@@ -48,9 +48,9 @@ async function GetList(req, res) {
         );
         if (!isUserExist) {
             if (String(board.created_by) !== user_id) {
-            return sendError(res, 401, "User not authorized", "GetList");
+                return sendError(res, 401, "User not authorized", "GetList");
+            }
         }
-    }
         const list = await List.findById(list_id);
         if (!list) {
             return sendError(res, 404, "List not found", "GetList");
@@ -128,8 +128,8 @@ async function DeleteList(req, res) {
     }
 }
 
-async function GetCardsInList(req,res) {
-    const { user_id, board_id,list_id } = req.body;
+async function GetCardsInList(req, res) {
+    const { user_id, board_id, list_id } = req.body;
     try {
         const board = await Board.findById(board_id);
         if (!board) {
@@ -163,19 +163,14 @@ async function GetCardsInList(req,res) {
         logger.error(error);
         sendError(res, 500, "Internal server error", error);
     }
-
 }
 
 // di chuyen card trong 1 list
 // di chuyen card tu 1 list sang 1 list khac
-async function MoveCardInList(req, res) {
-
-}
+async function MoveCardInList(req, res) {}
 
 // di chuyen card tu 1 list sang 1 list khac
-async function MoveCardToOtherList(req, res) {
-
-}
+async function MoveCardToOtherList(req, res) {}
 
 module.exports = {
     CreateList,

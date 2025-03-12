@@ -5,33 +5,33 @@ const Schema = mongoose.Schema;
 const CardSchema = new Schema({
     card_title: {
         type: String,
-        required: true
+        required: true,
     },
     card_description: {
         type: String,
-        required: true
+        required: true,
     },
     card_duration: {
         type: Date,
-        required: true
+        required: true,
     },
     card_assignees: [
         {
             card_assignee_id: {
                 type: Schema.Types.ObjectId,
-                ref:"User",
-                required: true
-            }
-        }
+                ref: "User",
+                required: true,
+            },
+        },
     ],
     card_labels: [
         {
             card_label_id: {
                 type: Schema.Types.ObjectId,
-                ref:"Label",
-                required: true
-            }
-        }
+                ref: "Label",
+                required: true,
+            },
+        },
     ],
     card_checklist_id: {
         type: Schema.Types.ObjectId,
@@ -42,34 +42,34 @@ const CardSchema = new Schema({
             card_attachment_id: {
                 type: Schema.Types.ObjectId,
                 ref: "Attachment",
-                required: true
-            }
-        }
+                required: true,
+            },
+        },
     ],
     card_comments: [
         {
             card_comment_id: {
                 type: Schema.Types.ObjectId,
                 ref: "Comment",
-                required: true
-            }
-        }
+                required: true,
+            },
+        },
     ],
     created_by: {
         type: Schema.Types.ObjectId,
-        ref: "User"
+        ref: "User",
     },
     created_at: {
         type: Date,
-        default: Date.now
+        default: Date.now,
     },
     updated_at: {
-        type: Date
+        type: Date,
     },
     updated_by: {
         type: Schema.Types.ObjectId,
-        ref: "User"
-    }
+        ref: "User",
+    },
 });
 
 module.exports = mongoose.model("Card", CardSchema);

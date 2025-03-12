@@ -198,9 +198,8 @@ async function DeleteBoard(req, res) {
         // Nếu cần xóa các dữ liệu liên quan, bạn có thể thêm vào đây
         // xóa thêm các lists , cards, comments và các mục liên quan
         // nên tạo hàm deleteManyData để xóa tất cả các dữ liệu liên quan
-        // Ví dụ: 
-        await List.deleteMany({ board_id : board_id });
-
+        // Ví dụ:
+        await List.deleteMany({ board_id: board_id });
 
         // Trả về phản hồi thành công
         return sendSuccess(res, "Board deleted successfully", {
@@ -400,7 +399,11 @@ async function GetAllMembers(req, res) {
             });
         }
         const members = await User.find({
-            _id: { $in: board.board_collaborators.map((collab) => collab.board_collaborator_id) },
+            _id: {
+                $in: board.board_collaborators.map(
+                    (collab) => collab.board_collaborator_id
+                ),
+            },
         });
         return sendSuccess(res, "Get all members success", members);
     } catch (error) {
@@ -440,7 +443,7 @@ async function UpdatePrivacy(req, res) {
             details: error.message,
         });
     }
-} 
+}
 
 async function GetListsInBoard(req, res) {
     try {
@@ -455,11 +458,11 @@ async function GetListsInBoard(req, res) {
             (collab) => String(collab.board_collaborator_id) === String(user_id)
         );
         if (String(board.created_by) !== String(user_id)) {
-            if (!isMember) { 
+            if (!isMember) {
                 return sendError(res, 403, "Access Denied", {
-                details: "User is not a collaborator of this board",
-            });
-        }
+                    details: "User is not a collaborator of this board",
+                });
+            }
         }
 
         let lists = [];
@@ -523,12 +526,7 @@ async function AddListToBoard(req, res) {
 }
 
 async function MoveList(req, res) {
-    const {
-        user_id,
-        board_id,
-        list_id1,
-        list_id2,
-    } = req.body;
+    const { user_id, board_id, list_id1, list_id2 } = req.body;
     try {
         const board = await Board.findById(board_id);
         if (!board) {
@@ -597,5 +595,5 @@ module.exports = {
     UpdatePrivacy,
     GetListsInBoard,
     AddListToBoard,
-    MoveList
+    MoveList,
 };
