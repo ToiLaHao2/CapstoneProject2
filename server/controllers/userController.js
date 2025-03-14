@@ -278,7 +278,16 @@ async function AssignUserToBoard(params) {}
 // Lấy tất cả các card của user tham gia
 async function GetUserCards(params) {}
 
-async function SearchUsers(params) {}
+// Tìm kiếm user theo user_full_name
+async function SearchUsers(req, res) {
+    try {
+    } catch (error) {
+        logger.error(`Error searching users: ${error}`);
+        return sendError(res, 500, "Internal Server Error", {
+            details: error.message,
+        });
+    }
+}
 
 async function SuggestUsersToAdd(params) {}
 

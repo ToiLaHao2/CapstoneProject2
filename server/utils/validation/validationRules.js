@@ -73,6 +73,10 @@ const validationRules = {
     // removeUserToCard
     // getUserCards
     // searchUsers
+    searchUsers: {
+        checkMessage: "Search users",
+        requiredFields: ["user_id", "search_string", "checkMessage"],
+    },
     // suggestUsersToAdd
     // updateNotificationsSettings
     // getUserNotifications
