@@ -271,12 +271,15 @@ async function RemoveUserFromBoard(req, res) {
     }
 }
 
-async function UpdateUserRoleInBoard(params) {}
+async function UpdateUserRoleInBoard(req, res) {}
 
-async function AssignUserToBoard(params) {}
+async function AssignUserToBoard(req, res) {}
 
 // Lấy tất cả các card của user tham gia
-async function GetUserCards(params) {}
+// tìm trong tất cả các bảng mà user tham gia
+// lấy tất cả các card mà user tham gia
+// thông tin chủ yếu lấy là id, title, description, due_date, labels
+async function GetUserCards(req, res) {}
 
 // Tìm kiếm user theo user_full_name
 async function SearchUsers(req, res) {
@@ -289,14 +292,18 @@ async function SearchUsers(req, res) {
     }
 }
 
-async function SuggestUsersToAdd(params) {}
+// idea: gợi ý user để thêm vào board
+// dựa trên các bảng mà user đã tham gia
+// và các user khác đã tham gia bảng đó trong vai trò editor
+// count số lượt tham gia của các user , sắp xếp theo thứ tự giảm dần và gửi về cho client
+async function SuggestUsersToAdd(req, res) {}
 
-async function UpdateNotificationsSettings(params) {}
+async function UpdateNotificationsSettings(req, res) {}
 
-async function GetUserNotifications(params) {}
+async function GetUserNotifications(req, res) {}
 
 // Tạo nhóm làm việc chung
-async function CreateWorkGroup(params) {}
+async function CreateWorkGroup(req, res) {}
 
 module.exports = {
     GetUserProfile,
