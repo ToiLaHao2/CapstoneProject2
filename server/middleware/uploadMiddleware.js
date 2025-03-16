@@ -8,8 +8,8 @@ const storage = new CloudinaryStorage({
     params: {
         folder: "uploads", // Thư mục trên Cloudinary
         format: async (req, file) => "png", // Định dạng file mặc định là PNG
-        public_id: (req, file) => file.originalname // Giữ nguyên tên file gốc
-    }
+        public_id: (req, file) => file.originalname, // Giữ nguyên tên file gốc
+    },
 });
 
 // Middleware upload

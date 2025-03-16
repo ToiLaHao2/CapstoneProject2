@@ -8,13 +8,13 @@ async function GetUserProfile(req, res) {
     const { user_id } = req.body;
     try {
         const user = await findByIdOrThrow(User, user_id, {
-            errorMessage: "User not found"
+            errorMessage: "User not found",
         });
         return sendSuccess(res, "Get user data success", user);
     } catch (error) {
         logger.error(error);
         return sendError(res, error.statusCode || 500, error.message, {
-            details: error.details || "Error getting user profile"
+            details: error.details || "Error getting user profile",
         });
     }
 }
@@ -28,18 +28,18 @@ async function UpdateUserProfile(req, res) {
             Object.keys(user_update_details).length === 0
         ) {
             return sendError(res, 400, "No data to update", {
-                details: "No valid fields provided"
+                details: "No valid fields provided",
             });
         }
 
         const user = await findByIdOrThrow(User, user_id, {
-            errorMessage: "User not found"
+            errorMessage: "User not found",
         });
 
         const allowedFields = [
             "user_full_name",
             "user_avatar_url",
-            "user_email"
+            "user_email",
         ];
         let hasUpdated = false;
 
@@ -55,7 +55,7 @@ async function UpdateUserProfile(req, res) {
 
         if (!hasUpdated) {
             return sendError(res, 400, "No fields were updated", {
-                details: "Nothing to update, values are the same"
+                details: "Nothing to update, values are the same",
             });
         }
 
@@ -70,7 +70,7 @@ async function UpdateUserProfile(req, res) {
             error.statusCode || 500,
             "Internal Server Error",
             {
-                details: error.message
+                details: error.message,
             }
         );
     }
@@ -82,7 +82,7 @@ async function UploadProfilePicture(req, res) {
         // kiểm tra nếu có file được tải lên
         if (!req.file) {
             return sendError(res, 400, "No file uploaded", {
-                details: "No file was uploaded"
+                details: "No file was uploaded",
             });
         }
 
@@ -92,7 +92,7 @@ async function UploadProfilePicture(req, res) {
         // cập nhật url ảnh đại diện vào db của người dùng
         const { user_id } = req.body;
         const user = await findByIdOrThrow(User, user_id, {
-            errorMessage: "User not found"
+            errorMessage: "User not found",
         });
 
         user.user_avatar_url = imageUrl;
@@ -105,7 +105,7 @@ async function UploadProfilePicture(req, res) {
             error.statusCode || 500,
             "Error uploading profile picture",
             {
-                details: error.details || "Unexpected error"
+                details: error.details || "Unexpected error",
             }
         );
     }
@@ -121,21 +121,21 @@ async function GetAllUserInBoard(req, res) {
     const { user_id, board_id } = req.body;
     try {
         const board = await findByIdOrThrow(Board, board_id, {
-            errorMessage: "Board not found"
+            errorMessage: "Board not found",
         });
 
         if (String.toString(board.created_by) !== String.toString(user_id)) {
             return sendError(res, 401, "Unauthorized", {
-                details: "User is not in this board"
+                details: "User is not in this board",
             });
         }
 
         const collaborators = await User.find({
             _id: {
                 $in: board.board_collaborators.map(
-                    user => user.board_collaborator_id
-                )
-            }
+                    (user) => user.board_collaborator_id
+                ),
+            },
         }).select("user_full_name");
 
         return sendSuccess(res, "Get user data success", collaborators);
@@ -146,7 +146,7 @@ async function GetAllUserInBoard(req, res) {
             error.statusCode || 500,
             "Error getting users in board",
             {
-                details: error.details || "Unexpected error"
+                details: error.details || "Unexpected error",
             }
         );
     }
@@ -159,46 +159,46 @@ async function AddUserToBoard(req, res) {
     const { user_id, new_user_id, board_id } = req.body;
     try {
         const board = await findByIdOrThrow(Board, board_id, {
-            errorMessage: "Board not found"
+            errorMessage: "Board not found",
         });
 
         if (board.created_by !== user_id) {
             return sendError(res, 401, "Unauthorized", {
-                details: "User is not creator of this board"
+                details: "User is not creator of this board",
             });
         }
 
         const user = await findByIdOrThrow(User, new_user_id, {
-            errorMessage: "User not found"
+            errorMessage: "User not found",
         });
 
         const isUserInBoard = board.board_collaborators.some(
-            user => user.board_collaborator_id === new_user_id
+            (user) => user.board_collaborator_id === new_user_id
         );
 
         if (isUserInBoard) {
             return sendError(res, 400, "User already in board", {
-                details: "User is already in this board"
+                details: "User is already in this board",
             });
         }
 
         board.board_collaborators.push({
             board_collaborator_id: new_user_id,
-            board_collaborator_role: "VIEWER"
+            board_collaborator_role: "VIEWER",
         });
 
         await board.save();
 
         user.user_boards.push({
             board_id: board_id,
-            role: "VIEWER"
+            role: "VIEWER",
         });
 
         await user.save();
 
         return sendSuccess(res, "User has been added to board", {
             board_id,
-            user_id: new_user_id
+            user_id: new_user_id,
         });
     } catch (error) {
         logger.error(error);
@@ -207,7 +207,7 @@ async function AddUserToBoard(req, res) {
             error.statusCode || 500,
             "Error adding user to board",
             {
-                details: error.details || "Unexpected error"
+                details: error.details || "Unexpected error",
             }
         );
     }
@@ -223,40 +223,40 @@ async function RemoveUserFromBoard(req, res) {
         }
 
         const board = await findByIdOrThrow(Board, board_id, {
-            errorMessage: "Board not found"
+            errorMessage: "Board not found",
         });
 
         const isUserAdmin = board.board_collaborators.some(
-            collab =>
+            (collab) =>
                 collab.board_collaborator_id === user_id &&
                 collab.board_collaborator_role === "ADMIN"
         );
 
         if (!isUserAdmin) {
             return sendError(res, 401, "Unauthorized", {
-                details: "User is not admin of this board"
+                details: "User is not admin of this board",
             });
         }
 
         const userToRemove = board.board_collaborators.find(
-            collab => collab.board_collaborator_id === remove_user_id
+            (collab) => collab.board_collaborator_id === remove_user_id
         );
 
         if (!userToRemove) {
             return sendError(res, 404, "User not found in board", {
-                details: `User with ID ${remove_user_id} is not a member of this board.`
+                details: `User with ID ${remove_user_id} is not a member of this board.`,
             });
         }
 
         board.board_collaborators = board.board_collaborators.filter(
-            collab => collab.board_collaborator_id !== remove_user_id
+            (collab) => collab.board_collaborator_id !== remove_user_id
         );
 
         await board.save();
 
         return sendSuccess(res, "User has been removed from board", {
             board_id,
-            removed_user_id: remove_user_id
+            removed_user_id: remove_user_id,
         });
     } catch (error) {
         logger.error(error);
@@ -265,28 +265,50 @@ async function RemoveUserFromBoard(req, res) {
             error.statusCode || 500,
             "Error removing user from board",
             {
-                details: error.details || "Unexpected error"
+                details: error.details || "Unexpected error",
             }
         );
     }
 }
 
-async function UpdateUserRoleInBoard(params) {}
+async function UpdateUserRoleInBoard(req, res) {}
 
-async function AssignUserToBoard(params) {}
+async function AssignUserToBoard(req, res) {}
 
 // Lấy tất cả các card của user tham gia
-async function GetUserCards(params) {}
+// tìm trong tất cả các bảng mà user tham gia
+// lấy tất cả các card mà user tham gia
+// thông tin chủ yếu lấy là id, title, description, due_date, labels
+async function GetUserCards(req, res) {}
 
-async function SearchUsers(params) {}
+// Tìm kiếm user theo user_full_name
+async function SearchUsers(req, res) {
+    try {
+    } catch (error) {
+        logger.error(`Error searching users: ${error}`);
+        return sendError(res, 500, "Internal Server Error", {
+            details: error.message,
+        });
+    }
+}
 
-async function SuggestUsersToAdd(params) {}
+// idea: gợi ý user để thêm vào board
+// dựa trên các bảng mà user đã tham gia
+// và các user khác đã tham gia bảng đó trong vai trò editor
+// count số lượt tham gia của các user , sắp xếp theo thứ tự giảm dần và gửi về cho client
+async function SuggestUsersToAdd(req, res) {}
 
-async function UpdateNotificationsSettings(params) {}
+async function UpdateNotificationsSettings(req, res) {}
 
-async function GetUserNotifications(params) {}
+async function GetUserNotifications(req, res) {}
 
 // Tạo nhóm làm việc chung
-async function CreateWorkGroup(params) {}
+async function CreateWorkGroup(req, res) {}
 
-module.exports = { GetUserProfile, UpdateUserProfile, GetAllUserInBoard, AddUserToBoard, RemoveUserFromBoard };
+module.exports = {
+    GetUserProfile,
+    UpdateUserProfile,
+    GetAllUserInBoard,
+    AddUserToBoard,
+    RemoveUserFromBoard,
+};

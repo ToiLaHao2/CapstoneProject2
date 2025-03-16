@@ -6,62 +6,62 @@ const logger = require("../utils/logger");
 const { sendError } = require("../utils/response");
 
 async function validateRegister(req, res, next) {
-  const userRegist = req.body;
-  const rules = validationRules["register"];
-  const resultCheckingData = await validateFields(userRegist, rules);
-  if (resultCheckingData.valid === true) {
-    logger.info("Successfull checking data register new user");
-    next();
-  } else {
-    logger.info(
-      `Error checking data register new user: ${resultCheckingData.error}`
-    );
-    return sendError(res, 400, "Error checking data", {
-      Error: resultCheckingData.error,
-    });
-  }
+    const userRegist = req.body;
+    const rules = validationRules["register"];
+    const resultCheckingData = await validateFields(userRegist, rules);
+    if (resultCheckingData.valid === true) {
+        logger.info("Successfull checking data register new user");
+        next();
+    } else {
+        logger.info(
+            `Error checking data register new user: ${resultCheckingData.error}`
+        );
+        return sendError(res, 400, "Error checking data", {
+            Error: resultCheckingData.error,
+        });
+    }
 }
 
 async function validateLogin(req, res, next) {
-  const userLogin = req.body;
-  const rules = validationRules["login"];
-  const resultCheckingData = await validateFields(userLogin, rules);
-  if (resultCheckingData.valid === true) {
-    logger.info("Successfull checking data user for login");
-    next();
-  } else {
-    logger.info(
-      `Error checking data user for login: ${resultCheckingData.error}`
-    );
-    return sendError(res, 400, "Error checking data", {
-      Error: resultCheckingData.error,
-    });
-  }
+    const userLogin = req.body;
+    const rules = validationRules["login"];
+    const resultCheckingData = await validateFields(userLogin, rules);
+    if (resultCheckingData.valid === true) {
+        logger.info("Successfull checking data user for login");
+        next();
+    } else {
+        logger.info(
+            `Error checking data user for login: ${resultCheckingData.error}`
+        );
+        return sendError(res, 400, "Error checking data", {
+            Error: resultCheckingData.error,
+        });
+    }
 }
 
 async function validationChangePassword(req, res, next) {
-  const token = await getTokenFromHeaders(req);
-  const checkToken = await VerifiedToken(token);
-  if (!checkToken) {
-    return res.status(401).json({ error: "Invalid token" });
-  }
-  const userRequestChangePassword = req.body;
-  const rules = validationRules["changePassword"];
-  const resultCheckingData = await validateFields(
-    userRequestChangePassword,
-    rules
-  );
-  if (resultCheckingData.valid === true) {
-    logger.info("Successfull checking data user for changing password");
-    next();
-  } else {
-    logger.info(
-      `Error checking data user for changing password: ${resultCheckingData.error}`
+    const token = await getTokenFromHeaders(req);
+    const checkToken = await VerifiedToken(token);
+    if (!checkToken) {
+        return res.status(401).json({ error: "Invalid token" });
+    }
+    const userRequestChangePassword = req.body;
+    const rules = validationRules["changePassword"];
+    const resultCheckingData = await validateFields(
+        userRequestChangePassword,
+        rules
     );
-    return sendError(res, 400, "Error checking data", {
-      Error: resultCheckingData.error,
-    });
-  }
+    if (resultCheckingData.valid === true) {
+        logger.info("Successfull checking data user for changing password");
+        next();
+    } else {
+        logger.info(
+            `Error checking data user for changing password: ${resultCheckingData.error}`
+        );
+        return sendError(res, 400, "Error checking data", {
+            Error: resultCheckingData.error,
+        });
+    }
 }
 
 module.exports = { validateRegister, validateLogin, validationChangePassword };

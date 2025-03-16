@@ -10,7 +10,7 @@ const sendSuccess = (res, message, data = {}) => {
     res.status(200).json({
         success: true,
         message,
-        data
+        data,
     });
 };
 
@@ -25,11 +25,11 @@ const sendError = (res, statusCode, message, error = {}) => {
     res.status(statusCode).json({
         success: false,
         message,
-        error
+        error,
     });
 };
 
 module.exports = {
     sendSuccess,
-    sendError
+    sendError,
 };

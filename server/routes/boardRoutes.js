@@ -12,7 +12,7 @@ const {
     validateUpdatePrivacy,
     validateGetListsInBoard,
     validateAddListToBoard,
-    validateMoveList
+    validateMoveList,
 } = require("../middleware/boardMiddleware");
 const {
     CreateBoard,
@@ -27,23 +27,35 @@ const {
     UpdatePrivacy,
     GetListsInBoard,
     AddListToBoard,
-    MoveList
+    MoveList,
 } = require("../controllers/boardController");
 
 const boardRouter = express.Router();
 
 boardRouter.post("/createBoard", validateCreateBoard, CreateBoard);
 boardRouter.post("/getBoard", validateGetBoard, GetBoard);
-boardRouter.post("/getBoardsByUserId", validateGetBoardsByUserId, GetAllBoardByUserId);
+boardRouter.post(
+    "/getBoardsByUserId",
+    validateGetBoardsByUserId,
+    GetAllBoardByUserId
+);
 boardRouter.post("/updateBoard", validateUpdateBoard, UpdateBoard);
 boardRouter.post("/deleteBoard", validateDeleteBoard, DeleteBoard);
-boardRouter.post("/addMemberToBoard", validateAddMember,AddMemberToBoard);
-boardRouter.post("/removeMemberFromBoard", validateRemoveMember,RemoveMemberFromBoard);
-boardRouter.post("/updateMemberRole", validateUpdateMemberRole,UpdateMemberRole);
-boardRouter.post("/getAllMembers", validateGetAllMembers,GetAllMembers);
-boardRouter.post("/updatePrivacy", validateUpdatePrivacy,UpdatePrivacy);
-boardRouter.post("/getListsInBoard", validateGetListsInBoard,GetListsInBoard);
-boardRouter.post("/addListToBoard", validateAddListToBoard,AddListToBoard);
-boardRouter.post("/moveList",validateMoveList,MoveList);
+boardRouter.post("/addMemberToBoard", validateAddMember, AddMemberToBoard);
+boardRouter.post(
+    "/removeMemberFromBoard",
+    validateRemoveMember,
+    RemoveMemberFromBoard
+);
+boardRouter.post(
+    "/updateMemberRole",
+    validateUpdateMemberRole,
+    UpdateMemberRole
+);
+boardRouter.post("/getAllMembers", validateGetAllMembers, GetAllMembers);
+boardRouter.post("/updatePrivacy", validateUpdatePrivacy, UpdatePrivacy);
+boardRouter.post("/getListsInBoard", validateGetListsInBoard, GetListsInBoard);
+boardRouter.post("/addListToBoard", validateAddListToBoard, AddListToBoard);
+boardRouter.post("/moveList", validateMoveList, MoveList);
 
 module.exports = boardRouter;

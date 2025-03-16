@@ -6,16 +6,16 @@ const MessageSchema = new Schema({
     message_sender_id: {
         type: Schema.Types.ObjectId,
         ref: "User",
-        required: true
+        required: true,
     },
     message_content: {
         type: String,
-        required: true
+        required: true,
     },
     created_at: {
         type: Date,
-        default: Date.now
-    }
+        default: Date.now,
+    },
 });
 
 module.exports = mongoose.model("Message", MessageSchema);

@@ -42,7 +42,7 @@ function validateMinLength(data, minLengthRules) {
             if (data[field] && data[field].length < minLen) {
                 return {
                     valid: false,
-                    error: `${field} must be at least ${minLen} characters`
+                    error: `${field} must be at least ${minLen} characters`,
                 };
             }
         }
@@ -56,7 +56,7 @@ function validateMaxLength(data, maxLengthRules) {
             if (data[field] && data[field].length > maxLen) {
                 return {
                     valid: false,
-                    error: `${field} must be no more than ${maxLen} characters`
+                    error: `${field} must be no more than ${maxLen} characters`,
                 };
             }
         }

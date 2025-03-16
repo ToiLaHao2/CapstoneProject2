@@ -2,12 +2,12 @@ const express = require("express");
 const {
     validateLogin,
     validateRegister,
-    validationChangePassword
+    validationChangePassword,
 } = require("../middleware/authMidleware");
 const {
     Register,
     Login,
-    ChangePassword
+    ChangePassword,
 } = require("../controllers/authController");
 
 const authRouter = express.Router();

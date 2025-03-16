@@ -1,5 +1,11 @@
 const express = require("express");
-const { validateCreateList, validateGetList, validateUpdateList, validateDeleteList, validateGetCardsInList } = require("../middleware/listMiddleware");
+const {
+    validateCreateList,
+    validateGetList,
+    validateUpdateList,
+    validateDeleteList,
+    validateGetCardsInList,
+} = require("../middleware/listMiddleware");
 const {
     CreateList,
     GetList,
@@ -10,10 +16,10 @@ const {
 
 const listRouter = express.Router();
 
-listRouter.post("/createList", validateCreateList,CreateList);
-listRouter.post("/getList",validateGetList,GetList);
-listRouter.post("/updateList",validateUpdateList,UpdateList);
-listRouter.post("/deleteList",validateDeleteList,DeleteList);
-listRouter.post("/getCardsInList",validateGetCardsInList,GetCardsInList);
+listRouter.post("/createList", validateCreateList, CreateList);
+listRouter.post("/getList", validateGetList, GetList);
+listRouter.post("/updateList", validateUpdateList, UpdateList);
+listRouter.post("/deleteList", validateDeleteList, DeleteList);
+listRouter.post("/getCardsInList", validateGetCardsInList, GetCardsInList);
 
 module.exports = listRouter;

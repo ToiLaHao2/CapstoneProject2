@@ -28,7 +28,7 @@ async function findByIdOrThrow(Model, id, options = {}) {
             : {
                   message: "Error finding document",
                   statusCode: 500,
-                  details: error.message
+                  details: error.message,
               };
     }
 }
@@ -46,7 +46,8 @@ async function findOneOrThrow(Model, condition, options = {}) {
         // Ném lỗi nếu không tìm thấy tài liệu
         if (!document) {
             const error = new Error(
-                errorMessage || `${Model.modelName} not found for the given condition`
+                errorMessage ||
+                    `${Model.modelName} not found for the given condition`
             );
             error.statusCode = errorStatusCode || 404;
             throw error;
@@ -61,7 +62,7 @@ async function findOneOrThrow(Model, condition, options = {}) {
             : {
                   message: "Error finding document",
                   statusCode: 500,
-                  details: error.message
+                  details: error.message,
               };
     }
 }
@@ -82,4 +83,4 @@ const deleteMultipleDocuments = async (Model, ids) => {
     }
 };
 
-module.exports = { findByIdOrThrow, findOneOrThrow , deleteMultipleDocuments};
+module.exports = { findByIdOrThrow, findOneOrThrow, deleteMultipleDocuments };

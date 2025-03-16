@@ -182,3 +182,9 @@ thêm chức năng lưu trữ board:
     ko còn được tác động lên board
     hoặc khi bấm nút closed thì các role thành viên chuyển thành VIEWER
     
+
+Xem xét về thành phần numercial number trong model list mục list_cards liệu có cần thiết không
+    - problem xuất hiện do khi muốn dời card từ list cũ sang 1 list mới
+    - tức là sẽ xóa đi thông tin đó trên list cũ và thêm nó vào list mới
+    - mặc định theo usecase thì sẽ phải thêm card đó vào cuối list_cards mới 
+    - nhưng khi đó xóa ở list_cards cũ thì sẽ cần cập nhật lại numercial number cho các id card đc lưu phía sau
