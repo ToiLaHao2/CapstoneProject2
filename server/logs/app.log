@@ -110,3 +110,75 @@
 [2025-03-13 13:49:20] INFO: Successfull checking data to get board by user id
 [2025-03-13 13:49:21] INFO: Successfull checking data to get board by user id
 [2025-03-13 13:49:21] INFO: Successfull checking data to get board by user id
+[2025-03-16 22:57:43] ERROR: Attempt 1: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-03-16 22:57:55] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-16 22:58:38] INFO: Successfull checking data user for login
+[2025-03-16 22:59:30] INFO: Successfull checking data register new user
+[2025-03-16 22:59:30] INFO: Hash password complete
+[2025-03-16 22:59:30] INFO: Complete create token
+[2025-03-16 22:59:55] INFO: Successfull checking data to create board
+[2025-03-16 22:59:55] INFO: Successfull create board
+[2025-03-16 23:00:17] ERROR: Error verified token:  jwt expired
+[2025-03-16 23:00:17] INFO: Invalid token in get board
+[2025-03-16 23:00:42] INFO: Successfull checking data to create board
+[2025-03-16 23:00:58] INFO: Successfull checking data to get board by user id
+[2025-03-16 23:01:11] INFO: Successfull checking data to update board
+[2025-03-16 23:01:29] INFO: Successfull checking data to update board
+[2025-03-16 23:02:12] INFO: Successfull checking data to create list
+[2025-03-16 23:03:04] INFO: Successfull checking data to get list
+[2025-03-16 23:03:43] INFO: Successfull checking data to create card
+[2025-03-16 23:05:33] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-16 23:05:36] INFO: Successfull checking data to create card
+[2025-03-16 23:05:40] INFO: Successfull checking data to create card
+[2025-03-16 23:05:56] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-03-16 23:05:58] INFO: Successfull checking data to create card
+[2025-03-16 23:06:13] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-16 23:06:18] INFO: Successfull checking data to create card
+[2025-03-16 23:06:36] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-16 23:06:41] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-16 23:06:43] INFO: Successfull checking data to create card
+[2025-03-16 23:06:43] ERROR: card_numerical_order is not defined
+[2025-03-16 23:07:40] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-16 23:07:42] INFO: Successfull checking data to create card
+[2025-03-16 23:07:42] ERROR: Card validation failed: card_duration: Path `card_duration` is required., card_description: Path `card_description` is required.
+[2025-03-16 23:09:16] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-03-16 23:09:20] INFO: Successfull checking data to create card
+[2025-03-16 23:10:06] INFO: Successfull checking data to get cardd
+[2025-03-16 23:11:17] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-03-16 23:11:20] INFO: Successfull checking data to get cardd
+[2025-03-16 23:11:23] INFO: Successfull checking data to get cardd
+[2025-03-16 23:11:54] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-03-16 23:11:56] INFO: Successfull checking data to get cardd
+[2025-03-16 23:12:59] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-03-16 23:16:15] INFO: Successfull checking data to update card
+[2025-03-16 23:17:01] INFO: Successfull checking data to create list
+[2025-03-16 23:17:40] ERROR: Error verified token:  jwt expired
+[2025-03-16 23:17:40] ERROR: Invalid token
+[2025-03-16 23:18:02] INFO: Successfull checking data to move card in list
+[2025-03-16 23:21:10] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-16 23:21:15] INFO: Successfull checking data to move card in list
+[2025-03-16 23:21:38] INFO: Successfull checking data to create list
+[2025-03-16 23:21:57] INFO: Successfull checking data to move card in list
+[2025-03-16 23:22:44] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-16 23:22:58] INFO: Successfull checking data to create list
+[2025-03-16 23:23:16] INFO: Successfull checking data to move card in list
+[2025-03-16 23:24:03] INFO: Successfull checking data register new user
+[2025-03-16 23:24:03] INFO: Hash password complete
+[2025-03-16 23:24:03] INFO: Complete create token
+[2025-03-16 23:24:27] INFO: Successfull checking data user for get user profile
+[2025-03-16 23:25:40] INFO: Successfull checking data to add member to board
+[2025-03-16 23:28:23] INFO: Successfull checking data to assign user to card
+[2025-03-16 23:29:29] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-16 23:29:31] INFO: Successfull checking data to assign user to card
+[2025-03-16 23:29:32] ERROR: Card validation failed: card_assignees.1.card_assignee_id: Path `card_assignee_id` is required.
+[2025-03-16 23:31:27] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-16 23:31:29] INFO: Successfull checking data to assign user to card
+[2025-03-16 23:31:29] ERROR: Card validation failed: card_assignees.1.card_assignee_id: Path `card_assignee_id` is required.
+[2025-03-16 23:32:14] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-16 23:32:16] INFO: Successfull checking data to assign user to card
+[2025-03-16 23:34:13] INFO: Successfull checking data to remove user from card
+[2025-03-16 23:35:01] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-16 23:35:03] INFO: Successfull checking data to remove user from card
+[2025-03-16 23:35:04] ERROR: Cannot read properties of null (reading 'card_assignee_id')
+[2025-03-16 23:36:05] INFO: Successfull checking data to remove user from card
+[2025-03-16 23:36:11] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net

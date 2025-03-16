@@ -9,11 +9,9 @@ const CardSchema = new Schema({
     },
     card_description: {
         type: String,
-        required: true,
     },
     card_duration: {
         type: Date,
-        required: true,
     },
     card_assignees: [
         {
