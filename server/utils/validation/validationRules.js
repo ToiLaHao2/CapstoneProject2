@@ -290,7 +290,8 @@ const validationRules = {
         requiredFields: [
             "user_id",
             "board_id",
-            "list_id",
+            "old_list_id",
+            "new_list_id",
             "card_id",
             "checkMessage",
         ],
