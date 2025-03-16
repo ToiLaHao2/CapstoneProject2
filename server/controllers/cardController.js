@@ -1,9 +1,8 @@
-import Card from "../models/cardModel.js";
-import List from "../models/listModel.js";
-import Board from "../models/boardModel.js";
-import User from "../models/userModel.js";
-import logger from "../config/logger.js";
-import { sendError, sendSuccess } from "../utils/response.js";
+const Card = require("../models/Card");
+const List = require("../models/List.js");
+const Board = require("../models/Board.js");
+const logger = require("../utils/logger.js");
+const { sendError, sendSuccess } = require("../utils/response.js");
 
 async function CreateCard(req, res) {
     try {
@@ -27,15 +26,8 @@ async function CreateCard(req, res) {
             return sendError(res, 404, "List not found");
         }
         // check if list in board
-        if (list.board_id !== board_id) {
+        if (String(list.board_id) !== board_id) {
             return sendError(res, 403, "List does not belong to the board");
-        }
-        // check if card_numerical_order is valid
-        if (
-            card_numerical_order < 0 ||
-            card_numerical_order > list.list_cards.length
-        ) {
-            return sendError(res, 400, "Invalid card_numerical_order");
         }
         // create new card
         const newCard = new Card({
@@ -78,7 +70,7 @@ async function GetCard(req, res) {
             return sendError(res, 404, "List not found");
         }
         // check if list in board
-        if (list.board_id !== board_id) {
+        if (String(list.board_id) !== board_id) {
             return sendError(res, 403, "List does not belong to the board");
         }
         // check if card exists
@@ -88,7 +80,7 @@ async function GetCard(req, res) {
         }
         // check if card in list
         const cardInList = list.list_cards.find(
-            (card) => card.card_id === card_id
+            (card) => String(card.card_id) === card_id
         );
         if (!cardInList) {
             return sendError(res, 403, "Card does not belong to the list");
@@ -123,7 +115,7 @@ async function UpdateCard(req, res) {
             return sendError(res, 404, "List not found");
         }
         // check if list in board
-        if (list.board_id !== board_id) {
+        if (String(list.board_id) !== board_id) {
             return sendError(res, 403, "List does not belong to the board");
         }
         // check if card exists
@@ -133,7 +125,7 @@ async function UpdateCard(req, res) {
         }
         // check if card in list
         const cardInList = list.list_cards.find(
-            (card) => card.card_id === card_id
+            (card) => String(card.card_id) === card_id
         );
         if (!cardInList) {
             return sendError(res, 403, "Card does not belong to the list");
@@ -204,10 +196,10 @@ async function MoveCard(req, res) {
             return sendError(res, 404, "New list not found");
         }
         // check if list in board
-        if (oldList.board_id !== board_id) {
+        if (String(oldList.board_id) !== board_id) {
             return sendError(res, 403, "Old list does not belong to the board");
         }
-        if (newList.board_id !== board_id) {
+        if (String(newList.board_id) !== board_id) {
             return sendError(res, 403, "New list does not belong to the board");
         }
         // check if card exists
@@ -217,21 +209,21 @@ async function MoveCard(req, res) {
         }
         // check if card in old list
         const cardInOldList = oldList.list_cards.find(
-            (card) => card.card_id === card_id
+            (card) => String(card.card_id) === card_id
         );
         if (!cardInOldList) {
             return sendError(res, 403, "Card does not belong to the list");
         }
         // check if card in new list
         const cardInNewList = newList.list_cards.find(
-            (card) => card.card_id === card_id
+            (card) => String(card.card_id) === card_id
         );
         if (cardInNewList) {
             return sendError(res, 403, "Card already in the new list");
         }
         // move card
         oldList.list_cards = oldList.list_cards.filter(
-            (card) => card.card_id !== card_id
+            (card) => String(card.card_id) !== card_id
         );
         newList.list_cards.push({ card_id: card_id });
         await oldList.save();
@@ -245,7 +237,7 @@ async function MoveCard(req, res) {
 
 async function AssignUserToCard(req, res) {
     try {
-        const { user_id, board_id, list_id, card_id, assigned_user_id } =
+        const { user_id, board_id, list_id, card_id, assign_user_id } =
             req.body;
         // check if user is a member of the board (member with role editor or admin)
         const board = await Board.findById(board_id);
@@ -266,7 +258,7 @@ async function AssignUserToCard(req, res) {
             return sendError(res, 404, "List not found");
         }
         // check if list in board
-        if (list.board_id !== board_id) {
+        if (String(list.board_id) !== board_id) {
             return sendError(res, 403, "List does not belong to the board");
         }
         // check if card exists
@@ -276,13 +268,13 @@ async function AssignUserToCard(req, res) {
         }
         // check if card in list
         const cardInList = list.list_cards.find(
-            (card) => card.card_id === card_id
+            (card) => String(card.card_id) === card_id
         );
         if (!cardInList) {
             return sendError(res, 403, "Card does not belong to the list");
         }
         // add assignees
-        card.card_assignees.push(assigned_user_id);
+        card.card_assignees.push({ card_assignee_id: assign_user_id });
         await card.save();
         sendSuccess(res, "Succesfull assign user to card");
     } catch (error) {
@@ -314,7 +306,7 @@ async function RemoveUserFromCard(req, res) {
             return sendError(res, 404, "List not found");
         }
         // check if list in board
-        if (list.board_id !== board_id) {
+        if (String(list.board_id) !== board_id) {
             return sendError(res, 403, "List does not belong to the board");
         }
         // check if card exists
@@ -324,16 +316,15 @@ async function RemoveUserFromCard(req, res) {
         }
         // check if card in list
         const cardInList = list.list_cards.find(
-            (card) => card.card_id === card_id
+            (card) => String(card.card_id) === card_id
         );
         if (!cardInList) {
             return sendError(res, 403, "Card does not belong to the list");
         }
         // remove assignee
-        const index = card.card_assignees.indexOf(remove_user_id);
-        if (index > -1) {
-            card.card_assignees.splice(index, 1);
-        }
+        card.card_assignees = card.card_assignees.filter(
+            (assignee) => String(assignee.card_assignee_id) !== remove_user_id
+        );
         card.save();
         return sendSuccess(res, "Success remove user from card");
     } catch (error) {

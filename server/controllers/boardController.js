@@ -593,6 +593,8 @@ async function ArchiveBoard(params) {}
 
 async function CreateConversation(params) {}
 
+async function ChangeBackgroundPicture() {}
+
 module.exports = {
     CreateBoard,
     GetBoard,
