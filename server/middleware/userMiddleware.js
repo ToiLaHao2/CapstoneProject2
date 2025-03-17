@@ -174,6 +174,36 @@ async function validateUpdateUserRoleInBoard(req, res, next) {
 }
 
 // update
+// get all user cards
+async function validateGetAllUserCards(req, res, next) {
+    const token = await getTokenFromHeaders(req);
+    const checkToken = await VerifiedToken(token);
+    if (!checkToken) {
+        logger.info("Invalid token in get all user cards");
+        return sendError(res, 401, "Invalid token", "");
+    }
+    req.body.user_id = checkToken.id;
+    const userRequestGetAllUserCards = req.body;
+    const rules = validationRules["getAllUserCards"];
+    const resultCheckingData = await validateFields(
+        userRequestGetAllUserCards,
+        rules
+    );
+    if (resultCheckingData.valid === true) {
+        logger.info("Successfull checking data user for get user profile");
+        next();
+    } else {
+        logger.info(
+            `Error checking data user for get user profile: ${resultCheckingData.error}`
+        );
+        return sendError(res, 400, "Error checking data", {
+            Error: resultCheckingData.error,
+        });
+    }
+}
+// get user cards incoming
+// search users
+// suggest users to add
 
 module.exports = {
     validateGetUserProfile,
