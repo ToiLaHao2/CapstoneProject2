@@ -173,14 +173,20 @@ async function validateUpdateUserRoleInBoard(req, res, next) {
     }
 }
 
-// update
+// assignUserToCard
+// removeUserToCard
 // get all user cards
 async function validateGetAllUserCards(req, res, next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
         logger.info("Invalid token in get all user cards");
-        return sendError(res, 401, "Invalid token", "");
+        return sendError(
+            res,
+            401,
+            "Invalid token in validate gert all user cards",
+            ""
+        );
     }
     req.body.user_id = checkToken.id;
     const userRequestGetAllUserCards = req.body;
@@ -202,8 +208,88 @@ async function validateGetAllUserCards(req, res, next) {
     }
 }
 // get user cards incoming
+async function validateGetUserCardsIncoming(req, res, next) {
+    const token = await getTokenFromHeaders(req);
+    const checkToken = await VerifiedToken(token);
+    if (!checkToken) {
+        logger.info("Invalid token in get user cards incoming");
+        return sendError(res, 401, "Invalid token in get user cards incoming");
+    }
+    req.body.user_id = checkToken.id;
+    const userRequestGetUserCardsIncoming = req.body;
+    const rules = validationRules["getUserCardsIncoming"];
+    const resultCheckingData = await validateFields(
+        userRequestGetUserCardsIncoming,
+        rules
+    );
+    if (resultCheckingData.valid === true) {
+        logger.info("Successfull checking data user for get user profile");
+        next();
+    } else {
+        logger.info(
+            `Error checking data user for get user profile: ${resultCheckingData.error}`
+        );
+        return sendError(res, 400, "Error checking data", {
+            Error: resultCheckingData.error,
+        });
+    }
+}
 // search users
+async function validateSearchUsers(req, res, next) {
+    const token = await getTokenFromHeaders(req);
+    const checkToken = await VerifiedToken(token);
+    if (!checkToken) {
+        logger.info("Invalid token in search users");
+        return sendError(res, 401, "Invalid token in search users");
+    }
+    req.body.user_id = checkToken.id;
+    const userRequestSearchUsers = req.body;
+    const rules = validationRules["searchUsers"];
+    const resultCheckingData = await validateFields(
+        userRequestSearchUsers,
+        rules
+    );
+    if (resultCheckingData.valid === true) {
+        logger.info("Successfull checking data user for search user profile");
+        next();
+    } else {
+        logger.info(
+            `Error checking data user for get user profile: ${resultCheckingData.error}`
+        );
+        return sendError(res, 400, "Error checking data", {
+            Error: resultCheckingData.error,
+        });
+    }
+}
 // suggest users to add
+async function validateSuggestUsersToAdd(req, res, next) {
+    const token = await getTokenFromHeaders(req);
+    const checkToken = await VerifiedToken(token);
+    if (!checkToken) {
+        logger.info("Invalid token in suggest users to add");
+        return sendError(res, 401, "Invalid token in suggest users to add");
+    }
+    req.body.user_id = checkToken.id;
+    const userRequestSuggestUsersToAdd = req.body;
+    const rules = validationRules["suggestUsersToAdd"];
+    const resultCheckingData = await validateFields(
+        userRequestSuggestUsersToAdd,
+        rules
+    );
+    if (resultCheckingData.valid === true) {
+        logger.info(
+            "Successfull checking data user for get suggest user to add"
+        );
+        next();
+    } else {
+        logger.info(
+            `Error checking data user for get user profile: ${resultCheckingData.error}`
+        );
+        return sendError(res, 400, "Error checking data", {
+            Error: resultCheckingData.error,
+        });
+    }
+}
 
 module.exports = {
     validateGetUserProfile,
@@ -212,4 +298,8 @@ module.exports = {
     validateAddUserToBoard,
     validateRemoveUserFromBoard,
     validateUpdateUserRoleInBoard,
+    validateGetAllUserCards,
+    validateSearchUsers,
+    validateSuggestUsersToAdd,
+    validateGetUserCardsIncoming,
 };

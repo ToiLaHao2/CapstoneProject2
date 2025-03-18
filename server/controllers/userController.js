@@ -273,8 +273,10 @@ async function RemoveUserFromBoard(req, res) {
 }
 
 async function UpdateUserRoleInBoard(req, res) {}
+// assignUserToCard
+async function AssignUserToCard(req, res) {}
 
-async function AssignUserToBoard(req, res) {}
+// removeUserToCard
 
 // Lấy tất cả các card của user tham gia
 // tìm trong tất cả các bảng mà user tham gia
@@ -430,8 +432,12 @@ async function GetUserCardsIncoming(req, res) {
 async function SearchUsers(req, res) {
     try {
         const { search_string } = req.body;
+        // lấy tất cả các thông tin user theo search_string nhưng không có user có id là user_id
         const users = await User.find({
-            user_full_name: { $regex: search_string, $options: "i" },
+            $and: [
+                { user_full_name: { $regex: search_string, $options: "i" } },
+                { _id: { $ne: req.body.user_id } },
+            ],
         }).select("user_full_name user_email user_avatar_url");
         return sendSuccess(res, "Users found", { users });
     } catch (error) {
@@ -479,17 +485,6 @@ async function SuggestUsersToAdd(req, res) {
                     user_email: { $first: "$user_email" },
                     user_avatar_url: { $first: "$user_avatar_url" },
                     count: { $sum: 1 },
-                },
-            },
-            {
-                $sort: { count: -1 },
-            },
-            {
-                $project: {
-                    _id: 1,
-                    user_full_name: 1,
-                    user_email: 1,
-                    user_avatar_url: 1,
                 },
             },
         ]);

@@ -26,6 +26,20 @@ async function CreateBoard(req, res) {
         const newBoard = await board.save();
         user.user_boards.push({ board_id: newBoard._id, role: "ADMIN" });
         await user.save();
+        if (boardReqCreate.board_collaborators.length > 0) {
+            for (let collaborator of boardReqCreate.board_collaborators) {
+                const collaboratorUser = await User.findById(
+                    collaborator.board_collaborator_id
+                );
+                if (collaboratorUser) {
+                    collaboratorUser.user_boards.push({
+                        board_id: newBoard._id,
+                        role: "MEMBER",
+                    });
+                    await collaboratorUser.save();
+                }
+            }
+        }
         logger.info("Successfull create board");
         return sendSuccess(res, "Create board success", newBoard._id);
     } catch (error) {
