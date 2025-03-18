@@ -254,3 +254,12 @@
 [2025-03-18 12:04:10] INFO: Successfull checking data user for get suggest user to add
 [2025-03-18 12:05:02] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
 [2025-03-18 12:05:02] INFO: Successfull checking data user for get suggest user to add
+[2025-03-18 12:18:10] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-18 12:18:19] ERROR: Error verified token:  jwt expired
+[2025-03-18 12:18:19] INFO: Invalid token in suggest users to add
+[2025-03-18 12:18:44] INFO: Successfull checking data user for login
+[2025-03-18 12:18:44] INFO: Compare hash complete
+[2025-03-18 12:18:49] INFO: Successfull checking data user for login
+[2025-03-18 12:18:49] INFO: Compare hash complete
+[2025-03-18 12:18:50] INFO: Complete create token
+[2025-03-18 12:18:59] INFO: Successfull checking data user for get suggest user to add
