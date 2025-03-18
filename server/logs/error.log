@@ -10,3 +10,4 @@
 [2025-03-16 23:29:32] ERROR: Card validation failed: card_assignees.1.card_assignee_id: Path `card_assignee_id` is required.
 [2025-03-16 23:31:29] ERROR: Card validation failed: card_assignees.1.card_assignee_id: Path `card_assignee_id` is required.
 [2025-03-16 23:35:04] ERROR: Cannot read properties of null (reading 'card_assignee_id')
+[2025-03-18 11:27:15] ERROR: Error with create board : ValidationError: board_collaborators.1.board_collaborator_role: `Viewer` is not a valid enum value for path `board_collaborator_role`.

@@ -71,13 +71,26 @@ const validationRules = {
     // updateUserRoleInBoard
     // assignUserToCard
     // removeUserToCard
-    // getUserCards
+    // getAllUserCards
+    getAllUserCards: {
+        checkMessage: "Get user cards",
+        requiredFields: ["user_id", "checkMessage"],
+    },
+    // getUserCardsIncoming
+    getUserCardsIncoming: {
+        checkMessage: "Get user cards incoming",
+        requiredFields: ["user_id", "checkMessage"],
+    },
     // searchUsers
     searchUsers: {
         checkMessage: "Search users",
         requiredFields: ["user_id", "search_string", "checkMessage"],
     },
     // suggestUsersToAdd
+    suggestUsersToAdd: {
+        checkMessage: "Suggest users to add",
+        requiredFields: ["user_id", "checkMessage"],
+    },
     // updateNotificationsSettings
     // getUserNotifications
     // creatWorkGroup(đang xem xét)

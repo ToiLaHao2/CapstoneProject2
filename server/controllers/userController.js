@@ -1,4 +1,5 @@
 const Board = require("../models/Board");
+const Card = require("../models/Card");
 const User = require("../models/User");
 const { findByIdOrThrow } = require("../utils/dbHelper");
 const logger = require("../utils/logger");
@@ -272,18 +273,173 @@ async function RemoveUserFromBoard(req, res) {
 }
 
 async function UpdateUserRoleInBoard(req, res) {}
+// assignUserToCard
+async function AssignUserToCard(req, res) {}
 
-async function AssignUserToBoard(req, res) {}
+// removeUserToCard
 
 // Lấy tất cả các card của user tham gia
 // tìm trong tất cả các bảng mà user tham gia
 // lấy tất cả các card mà user tham gia
 // thông tin chủ yếu lấy là id, title, description, due_date, labels
-async function GetUserCards(req, res) {}
+async function GetAllUserCards(req, res) {
+    try {
+        const { user_id } = req.body;
+
+        const userCards = await Board.aggregate([
+            // 1️⃣ Lọc các Board mà user tham gia
+            {
+                $match: {
+                    "board_collaborators.board_collaborator_id": user_id,
+                    create_by: user_id,
+                },
+            },
+            // 2️⃣ Tách các lists từ board
+            { $unwind: "$board_lists" },
+
+            // 3️⃣ Lấy thông tin List tương ứng
+            {
+                $lookup: {
+                    from: "lists",
+                    localField: "board_lists.list_id",
+                    foreignField: "_id",
+                    as: "listData",
+                },
+            },
+
+            // 4️⃣ Tách từng listData để xử lý từng list riêng lẻ
+            { $unwind: "$listData" },
+
+            // 5️⃣ Tách các cards từ List
+            { $unwind: "$listData.list_cards" },
+
+            // 6️⃣ Lấy thông tin Card tương ứng
+            {
+                $lookup: {
+                    from: "cards",
+                    localField: "listData.list_cards.card_id",
+                    foreignField: "_id",
+                    as: "cardData",
+                },
+            },
+
+            // 7️⃣ Tách từng cardData để xử lý từng card riêng lẻ
+            { $unwind: "$cardData" },
+
+            // 8️⃣ Chỉ giữ lại card mà user_id nằm trong danh sách assignees
+            {
+                $match: { "cardData.card_assignees.card_assignee_id": user_id },
+            },
+
+            // 9️⃣ Chỉ lấy các trường cần thiết
+            {
+                $project: {
+                    _id: "$cardData._id",
+                    card_title: "$cardData.card_title",
+                    card_description: "$cardData.card_description",
+                    due_date: "$cardData.card_duration",
+                    list_id: "$listData._id",
+                    board_id: "$_id",
+                    created_at: "$cardData.created_at",
+                    updated_at: "$cardData.updated_at",
+                },
+            },
+        ]);
+        return sendSuccess(res, "User cards retrieved successfully", {
+            userCards,
+        });
+    } catch (error) {
+        logger.error(`Error getting user cards: ${error}`);
+        return sendError(res, 500, "Internal Server Error", {
+            details: error.message,
+        });
+    }
+}
+// tìm các cards sắp hết hạn của user
+async function GetUserCardsIncoming(req, res) {
+    try {
+        const { user_id } = req.body;
+        const userCards = await Board.aggregate([
+            // 1️⃣ lọc các board mà user tham gia
+            {
+                $match: {
+                    "board_collaborators.board_collaborator_id": user_id,
+                    create_by: user_id,
+                },
+            },
+            // 2️⃣ tách các list từ board
+            { $unwind: "$board_lists" },
+            // 3️⃣ lấy thông tin list tương ứng
+            {
+                $lookup: {
+                    from: "lists",
+                    localField: "board_lists.list_id",
+                    foreignField: "_id",
+                    as: "listData",
+                },
+            },
+            // 4️⃣ tách các card từ list
+            { $unwind: "$listData.cards" },
+            // 5️⃣ lấy thông tin card tương ứng
+            {
+                $lookup: {
+                    from: "cards",
+                    localField: "listData.cards.card_id",
+                    foreignField: "_id",
+                    as: "cardData",
+                },
+            },
+            // 6️⃣ tách từng cardData để xử lý từng card riêng lẻ
+            { $unwind: "$cardData" },
+            // 7️⃣ lọc các card mà user id nằm trong danh sách assignees
+            {
+                $match: {
+                    "cardData.card_assignees.card_assignee_id": user_id,
+                },
+            },
+            // 8️⃣ lọc các card có due_date lớn hơn ngày hiện tại
+            {
+                $match: {
+                    "cardData.card_duration": { $gte: new Date() },
+                },
+            },
+            // 9️⃣ chỉ lấy các trường cần thiết
+            {
+                $project: {
+                    _id: "$cardData._id",
+                    card_title: "$cardData.card_title",
+                    card_description: "$cardData.card_description",
+                    due_date: "$cardData.card_duration",
+                    list_id: "$listData._id",
+                    board_id: "$_id",
+                    created_at: "$cardData.created_at",
+                    updated_at: "$cardData.updated_at",
+                },
+            },
+        ]);
+        sendSuccess(res, "User cards incoming retrieved successfully", {
+            userCards,
+        });
+    } catch (error) {
+        logger.error(`Error getting user cards incoming: ${error}`);
+        return sendError(res, 500, "Internal Server Error", {
+            error: error.message,
+        });
+    }
+}
 
 // Tìm kiếm user theo user_full_name
 async function SearchUsers(req, res) {
     try {
+        const { search_string } = req.body;
+        // lấy tất cả các thông tin user theo search_string nhưng không có user có id là user_id
+        const users = await User.find({
+            $and: [
+                { user_full_name: { $regex: search_string, $options: "i" } },
+                { _id: { $ne: req.body.user_id } },
+            ],
+        }).select("user_full_name user_email user_avatar_url");
+        return sendSuccess(res, "Users found", { users });
     } catch (error) {
         logger.error(`Error searching users: ${error}`);
         return sendError(res, 500, "Internal Server Error", {
@@ -296,7 +452,50 @@ async function SearchUsers(req, res) {
 // dựa trên các bảng mà user đã tham gia
 // và các user khác đã tham gia bảng đó trong vai trò editor
 // count số lượt tham gia của các user , sắp xếp theo thứ tự giảm dần và gửi về cho client
-async function SuggestUsersToAdd(req, res) {}
+async function SuggestUsersToAdd(req, res) {
+    try {
+        const { user_id } = req.body;
+        const user = await findByIdOrThrow(User, user_id, {
+            errorMessage: "User not found",
+        });
+
+        const userBoards = user.user_boards.map((board) => board.board_id);
+
+        const users = await User.aggregate([
+            {
+                $match: {
+                    _id: { $ne: user_id },
+                    "user_boards.board_id": { $in: userBoards },
+                    "user_boards.role": "EDITOR",
+                },
+            },
+            {
+                $unwind: "$user_boards",
+            },
+            {
+                $match: {
+                    "user_boards.board_id": { $in: userBoards },
+                    "user_boards.role": "EDITOR",
+                },
+            },
+            {
+                $group: {
+                    _id: "$_id",
+                    user_full_name: { $first: "$user_full_name" },
+                    user_email: { $first: "$user_email" },
+                    user_avatar_url: { $first: "$user_avatar_url" },
+                    count: { $sum: 1 },
+                },
+            },
+        ]);
+        return sendSuccess(res, "Users suggested", { users });
+    } catch (error) {
+        logger.error(`Error suggesting users: ${error}`);
+        return sendError(res, 500, "Internal Server Error", {
+            details: error.message,
+        });
+    }
+}
 
 async function UpdateNotificationsSettings(req, res) {}
 
@@ -311,4 +510,8 @@ module.exports = {
     GetAllUserInBoard,
     AddUserToBoard,
     RemoveUserFromBoard,
+    GetAllUserCards,
+    GetUserCardsIncoming,
+    SearchUsers,
+    SuggestUsersToAdd,
 };
