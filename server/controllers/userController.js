@@ -450,8 +450,7 @@ async function SearchUsers(req, res) {
 
 // idea: gợi ý user để thêm vào board
 // dựa trên các bảng mà user đã tham gia
-// và các user khác đã tham gia bảng đó trong vai trò editor
-// count số lượt tham gia của các user , sắp xếp theo thứ tự giảm dần và gửi về cho client
+// lấy thông tin tất cả các user đã tham gia các bảng mà user đã tham gia
 async function SuggestUsersToAdd(req, res) {
     try {
         const { user_id } = req.body;
@@ -461,33 +460,10 @@ async function SuggestUsersToAdd(req, res) {
 
         const userBoards = user.user_boards.map((board) => board.board_id);
 
-        const users = await User.aggregate([
-            {
-                $match: {
-                    _id: { $ne: user_id },
-                    "user_boards.board_id": { $in: userBoards },
-                    "user_boards.role": "EDITOR",
-                },
-            },
-            {
-                $unwind: "$user_boards",
-            },
-            {
-                $match: {
-                    "user_boards.board_id": { $in: userBoards },
-                    "user_boards.role": "EDITOR",
-                },
-            },
-            {
-                $group: {
-                    _id: "$_id",
-                    user_full_name: { $first: "$user_full_name" },
-                    user_email: { $first: "$user_email" },
-                    user_avatar_url: { $first: "$user_avatar_url" },
-                    count: { $sum: 1 },
-                },
-            },
-        ]);
+        const users = await User.find({
+            _id: { $ne: user_id },
+            user_boards: { $elemMatch: { board_id: { $in: userBoards } } },
+        }).select("user_full_name user_email user_avatar_url");
         return sendSuccess(res, "Users suggested", { users });
     } catch (error) {
         logger.error(`Error suggesting users: ${error}`);
