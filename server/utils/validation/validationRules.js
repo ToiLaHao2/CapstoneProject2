@@ -56,19 +56,41 @@ const validationRules = {
     // addUserToBoard
     addUserToBoard: {
         checkMessage: "Add user to board",
-        requiredFields: ["board_id", "user_id", "new_user_id","checkMessage"],
+        requiredFields: ["board_id", "user_id", "new_user_id", "checkMessage"],
     },
     // removeUserFromBoard
     removeUserFromBoard: {
         checkMessage: "Remove user from board",
-        requiredFields: ["board_id", "user_id", "remove_user_id","checkMessage"],
+        requiredFields: [
+            "board_id",
+            "user_id",
+            "remove_user_id",
+            "checkMessage",
+        ],
     },
     // updateUserRoleInBoard
     // assignUserToCard
     // removeUserToCard
-    // getUserCards
+    // getAllUserCards
+    getAllUserCards: {
+        checkMessage: "Get user cards",
+        requiredFields: ["user_id", "checkMessage"],
+    },
+    // getUserCardsIncoming
+    getUserCardsIncoming: {
+        checkMessage: "Get user cards incoming",
+        requiredFields: ["user_id", "checkMessage"],
+    },
     // searchUsers
+    searchUsers: {
+        checkMessage: "Search users",
+        requiredFields: ["user_id", "search_string", "checkMessage"],
+    },
     // suggestUsersToAdd
+    suggestUsersToAdd: {
+        checkMessage: "Suggest users to add",
+        requiredFields: ["user_id", "checkMessage"],
+    },
     // updateNotificationsSettings
     // getUserNotifications
     // creatWorkGroup(đang xem xét)
@@ -163,13 +185,7 @@ const validationRules = {
     // addListToBoard
     addListToBoard: {
         checkMessage: "Add list to board",
-        requiredFields: [
-            "user_id",
-            "board_id",
-            "list_numerical_order",
-            "list_id",
-            "checkMessage",
-        ],
+        requiredFields: ["user_id", "board_id", "list_id", "checkMessage"],
     },
     // moveList
     moveList: {
@@ -179,8 +195,6 @@ const validationRules = {
             "board_id",
             "list_id1",
             "list_id2",
-            "new_numerical_order1",
-            "new_numerical_order2",
             "checkMessage",
         ],
     },
@@ -193,13 +207,7 @@ const validationRules = {
     // createList
     createList: {
         checkMessage: "Create new list",
-        requiredFields: [
-            "user_id",
-            "board_id",
-            "list_title",
-            "list_numerical_order",
-            "checkMessage",
-        ],
+        requiredFields: ["user_id", "board_id", "list_title", "checkMessage"],
     },
     // getList
     getList: {
@@ -230,12 +238,11 @@ const validationRules = {
             "board_id",
             "list_id",
             "card_id",
-            "card_numerical_order",
             "checkMessage",
         ],
     },
     // moveCard
-    moveCard: {
+    moveCardListUseCase: {
         checkMessage: "Move card",
         requiredFields: [
             "user_id",
@@ -243,8 +250,6 @@ const validationRules = {
             "list_id",
             "card_id1",
             "card_id2",
-            "new_numerical_order1",
-            "new_numerical_order2",
             "checkMessage",
         ],
     },
@@ -254,15 +259,80 @@ const validationRules = {
         requiredFields: ["user_id", "board_id", "list_id", "checkMessage"],
     },
     // moveCardsInList
+    // moveCardToOtherList
 
     // Card middleware validate
     // createCard
+    createCard: {
+        checkMessage: "Create new card",
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "list_id",
+            "card_title",
+            "checkMessage",
+        ],
+    },
     // getCard
+    getCard: {
+        checkMessage: "Get card",
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "list_id",
+            "card_id",
+            "checkMessage",
+        ],
+    },
     // updateCard
+    updateCard: {
+        checkMessage: "Update card",
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "list_id",
+            "card_id",
+            "card_update_details",
+            "checkMessage",
+        ],
+    },
     // deleteCard
     // moveCard
+    moveCardBetweenListCardUseCase: {
+        checkMessage: "Move card",
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "old_list_id",
+            "new_list_id",
+            "card_id",
+            "checkMessage",
+        ],
+    },
     // assignUserToCard
+    assignUserToCard: {
+        checkMessage: "Assign user to card",
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "list_id",
+            "card_id",
+            "assign_user_id",
+            "checkMessage",
+        ],
+    },
     // removeUserFromCard
+    removeUserFromCard: {
+        checkMessage: "Remove user from card",
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "list_id",
+            "card_id",
+            "remove_user_id",
+            "checkMessage",
+        ],
+    },
     // addAttachmentToCard
     // addCommentToCard
     // getCommentsInCard

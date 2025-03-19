@@ -9,6 +9,7 @@ const authRouter = require("./routes/authRoutes");
 const boardRouter = require("./routes/boardRoutes");
 const userRouter = require("./routes/userRoutes");
 const listRouter = require("./routes/listRoutes");
+const cardRouter = require("./routes/cardRoutes");
 
 dotenv.config();
 
@@ -29,8 +30,9 @@ app.use("/api/auth", authRouter);
 app.use("/api/board", boardRouter);
 app.use("/api/user", userRouter);
 app.use("/api/list", listRouter);
+app.use("/api/card", cardRouter);
 
 // Listen
 app.listen(port, function () {
-  console.log("Your app running on port " + port);
+    console.log("Your app running on port " + port);
 });

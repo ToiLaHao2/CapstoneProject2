@@ -1,4 +1,5 @@
 const Board = require("../models/Board");
+const Card = require("../models/Card");
 const User = require("../models/User");
 const { findByIdOrThrow } = require("../utils/dbHelper");
 const logger = require("../utils/logger");
@@ -8,13 +9,13 @@ async function GetUserProfile(req, res) {
     const { user_id } = req.body;
     try {
         const user = await findByIdOrThrow(User, user_id, {
-            errorMessage: "User not found"
+            errorMessage: "User not found",
         });
         return sendSuccess(res, "Get user data success", user);
     } catch (error) {
         logger.error(error);
         return sendError(res, error.statusCode || 500, error.message, {
-            details: error.details || "Error getting user profile"
+            details: error.details || "Error getting user profile",
         });
     }
 }
@@ -28,18 +29,18 @@ async function UpdateUserProfile(req, res) {
             Object.keys(user_update_details).length === 0
         ) {
             return sendError(res, 400, "No data to update", {
-                details: "No valid fields provided"
+                details: "No valid fields provided",
             });
         }
 
         const user = await findByIdOrThrow(User, user_id, {
-            errorMessage: "User not found"
+            errorMessage: "User not found",
         });
 
         const allowedFields = [
             "user_full_name",
             "user_avatar_url",
-            "user_email"
+            "user_email",
         ];
         let hasUpdated = false;
 
@@ -55,7 +56,7 @@ async function UpdateUserProfile(req, res) {
 
         if (!hasUpdated) {
             return sendError(res, 400, "No fields were updated", {
-                details: "Nothing to update, values are the same"
+                details: "Nothing to update, values are the same",
             });
         }
 
@@ -70,7 +71,7 @@ async function UpdateUserProfile(req, res) {
             error.statusCode || 500,
             "Internal Server Error",
             {
-                details: error.message
+                details: error.message,
             }
         );
     }
@@ -82,7 +83,7 @@ async function UploadProfilePicture(req, res) {
         // kiểm tra nếu có file được tải lên
         if (!req.file) {
             return sendError(res, 400, "No file uploaded", {
-                details: "No file was uploaded"
+                details: "No file was uploaded",
             });
         }
 
@@ -92,7 +93,7 @@ async function UploadProfilePicture(req, res) {
         // cập nhật url ảnh đại diện vào db của người dùng
         const { user_id } = req.body;
         const user = await findByIdOrThrow(User, user_id, {
-            errorMessage: "User not found"
+            errorMessage: "User not found",
         });
 
         user.user_avatar_url = imageUrl;
@@ -105,7 +106,7 @@ async function UploadProfilePicture(req, res) {
             error.statusCode || 500,
             "Error uploading profile picture",
             {
-                details: error.details || "Unexpected error"
+                details: error.details || "Unexpected error",
             }
         );
     }
@@ -121,21 +122,21 @@ async function GetAllUserInBoard(req, res) {
     const { user_id, board_id } = req.body;
     try {
         const board = await findByIdOrThrow(Board, board_id, {
-            errorMessage: "Board not found"
+            errorMessage: "Board not found",
         });
 
         if (String.toString(board.created_by) !== String.toString(user_id)) {
             return sendError(res, 401, "Unauthorized", {
-                details: "User is not in this board"
+                details: "User is not in this board",
             });
         }
 
         const collaborators = await User.find({
             _id: {
                 $in: board.board_collaborators.map(
-                    user => user.board_collaborator_id
-                )
-            }
+                    (user) => user.board_collaborator_id
+                ),
+            },
         }).select("user_full_name");
 
         return sendSuccess(res, "Get user data success", collaborators);
@@ -146,7 +147,7 @@ async function GetAllUserInBoard(req, res) {
             error.statusCode || 500,
             "Error getting users in board",
             {
-                details: error.details || "Unexpected error"
+                details: error.details || "Unexpected error",
             }
         );
     }
@@ -159,46 +160,46 @@ async function AddUserToBoard(req, res) {
     const { user_id, new_user_id, board_id } = req.body;
     try {
         const board = await findByIdOrThrow(Board, board_id, {
-            errorMessage: "Board not found"
+            errorMessage: "Board not found",
         });
 
         if (board.created_by !== user_id) {
             return sendError(res, 401, "Unauthorized", {
-                details: "User is not creator of this board"
+                details: "User is not creator of this board",
             });
         }
 
         const user = await findByIdOrThrow(User, new_user_id, {
-            errorMessage: "User not found"
+            errorMessage: "User not found",
         });
 
         const isUserInBoard = board.board_collaborators.some(
-            user => user.board_collaborator_id === new_user_id
+            (user) => user.board_collaborator_id === new_user_id
         );
 
         if (isUserInBoard) {
             return sendError(res, 400, "User already in board", {
-                details: "User is already in this board"
+                details: "User is already in this board",
             });
         }
 
         board.board_collaborators.push({
             board_collaborator_id: new_user_id,
-            board_collaborator_role: "VIEWER"
+            board_collaborator_role: "VIEWER",
         });
 
         await board.save();
 
         user.user_boards.push({
             board_id: board_id,
-            role: "VIEWER"
+            role: "VIEWER",
         });
 
         await user.save();
 
         return sendSuccess(res, "User has been added to board", {
             board_id,
-            user_id: new_user_id
+            user_id: new_user_id,
         });
     } catch (error) {
         logger.error(error);
@@ -207,7 +208,7 @@ async function AddUserToBoard(req, res) {
             error.statusCode || 500,
             "Error adding user to board",
             {
-                details: error.details || "Unexpected error"
+                details: error.details || "Unexpected error",
             }
         );
     }
@@ -223,40 +224,40 @@ async function RemoveUserFromBoard(req, res) {
         }
 
         const board = await findByIdOrThrow(Board, board_id, {
-            errorMessage: "Board not found"
+            errorMessage: "Board not found",
         });
 
         const isUserAdmin = board.board_collaborators.some(
-            collab =>
+            (collab) =>
                 collab.board_collaborator_id === user_id &&
                 collab.board_collaborator_role === "ADMIN"
         );
 
         if (!isUserAdmin) {
             return sendError(res, 401, "Unauthorized", {
-                details: "User is not admin of this board"
+                details: "User is not admin of this board",
             });
         }
 
         const userToRemove = board.board_collaborators.find(
-            collab => collab.board_collaborator_id === remove_user_id
+            (collab) => collab.board_collaborator_id === remove_user_id
         );
 
         if (!userToRemove) {
             return sendError(res, 404, "User not found in board", {
-                details: `User with ID ${remove_user_id} is not a member of this board.`
+                details: `User with ID ${remove_user_id} is not a member of this board.`,
             });
         }
 
         board.board_collaborators = board.board_collaborators.filter(
-            collab => collab.board_collaborator_id !== remove_user_id
+            (collab) => collab.board_collaborator_id !== remove_user_id
         );
 
         await board.save();
 
         return sendSuccess(res, "User has been removed from board", {
             board_id,
-            removed_user_id: remove_user_id
+            removed_user_id: remove_user_id,
         });
     } catch (error) {
         logger.error(error);
@@ -265,28 +266,228 @@ async function RemoveUserFromBoard(req, res) {
             error.statusCode || 500,
             "Error removing user from board",
             {
-                details: error.details || "Unexpected error"
+                details: error.details || "Unexpected error",
             }
         );
     }
 }
 
-async function UpdateUserRoleInBoard(params) {}
+async function UpdateUserRoleInBoard(req, res) {}
+// assignUserToCard
+async function AssignUserToCard(req, res) {}
 
-async function AssignUserToBoard(params) {}
+// removeUserToCard
 
 // Lấy tất cả các card của user tham gia
-async function GetUserCards(params) {}
+// tìm trong tất cả các bảng mà user tham gia
+// lấy tất cả các card mà user tham gia
+// thông tin chủ yếu lấy là id, title, description, due_date, labels
+async function GetAllUserCards(req, res) {
+    try {
+        const { user_id } = req.body;
 
-async function SearchUsers(params) {}
+        const userCards = await Board.aggregate([
+            // 1️⃣ Lọc các Board mà user tham gia
+            {
+                $match: {
+                    "board_collaborators.board_collaborator_id": user_id,
+                    create_by: user_id,
+                },
+            },
+            // 2️⃣ Tách các lists từ board
+            { $unwind: "$board_lists" },
 
-async function SuggestUsersToAdd(params) {}
+            // 3️⃣ Lấy thông tin List tương ứng
+            {
+                $lookup: {
+                    from: "lists",
+                    localField: "board_lists.list_id",
+                    foreignField: "_id",
+                    as: "listData",
+                },
+            },
 
-async function UpdateNotificationsSettings(params) {}
+            // 4️⃣ Tách từng listData để xử lý từng list riêng lẻ
+            { $unwind: "$listData" },
 
-async function GetUserNotifications(params) {}
+            // 5️⃣ Tách các cards từ List
+            { $unwind: "$listData.list_cards" },
+
+            // 6️⃣ Lấy thông tin Card tương ứng
+            {
+                $lookup: {
+                    from: "cards",
+                    localField: "listData.list_cards.card_id",
+                    foreignField: "_id",
+                    as: "cardData",
+                },
+            },
+
+            // 7️⃣ Tách từng cardData để xử lý từng card riêng lẻ
+            { $unwind: "$cardData" },
+
+            // 8️⃣ Chỉ giữ lại card mà user_id nằm trong danh sách assignees
+            {
+                $match: { "cardData.card_assignees.card_assignee_id": user_id },
+            },
+
+            // 9️⃣ Chỉ lấy các trường cần thiết
+            {
+                $project: {
+                    _id: "$cardData._id",
+                    card_title: "$cardData.card_title",
+                    card_description: "$cardData.card_description",
+                    due_date: "$cardData.card_duration",
+                    list_id: "$listData._id",
+                    board_id: "$_id",
+                    created_at: "$cardData.created_at",
+                    updated_at: "$cardData.updated_at",
+                },
+            },
+        ]);
+        return sendSuccess(res, "User cards retrieved successfully", {
+            userCards,
+        });
+    } catch (error) {
+        logger.error(`Error getting user cards: ${error}`);
+        return sendError(res, 500, "Internal Server Error", {
+            details: error.message,
+        });
+    }
+}
+// tìm các cards sắp hết hạn của user
+async function GetUserCardsIncoming(req, res) {
+    try {
+        const { user_id } = req.body;
+        const userCards = await Board.aggregate([
+            // 1️⃣ lọc các board mà user tham gia
+            {
+                $match: {
+                    "board_collaborators.board_collaborator_id": user_id,
+                    create_by: user_id,
+                },
+            },
+            // 2️⃣ tách các list từ board
+            { $unwind: "$board_lists" },
+            // 3️⃣ lấy thông tin list tương ứng
+            {
+                $lookup: {
+                    from: "lists",
+                    localField: "board_lists.list_id",
+                    foreignField: "_id",
+                    as: "listData",
+                },
+            },
+            // 4️⃣ tách các card từ list
+            { $unwind: "$listData.cards" },
+            // 5️⃣ lấy thông tin card tương ứng
+            {
+                $lookup: {
+                    from: "cards",
+                    localField: "listData.cards.card_id",
+                    foreignField: "_id",
+                    as: "cardData",
+                },
+            },
+            // 6️⃣ tách từng cardData để xử lý từng card riêng lẻ
+            { $unwind: "$cardData" },
+            // 7️⃣ lọc các card mà user id nằm trong danh sách assignees
+            {
+                $match: {
+                    "cardData.card_assignees.card_assignee_id": user_id,
+                },
+            },
+            // 8️⃣ lọc các card có due_date lớn hơn ngày hiện tại
+            {
+                $match: {
+                    "cardData.card_duration": { $gte: new Date() },
+                },
+            },
+            // 9️⃣ chỉ lấy các trường cần thiết
+            {
+                $project: {
+                    _id: "$cardData._id",
+                    card_title: "$cardData.card_title",
+                    card_description: "$cardData.card_description",
+                    due_date: "$cardData.card_duration",
+                    list_id: "$listData._id",
+                    board_id: "$_id",
+                    created_at: "$cardData.created_at",
+                    updated_at: "$cardData.updated_at",
+                },
+            },
+        ]);
+        sendSuccess(res, "User cards incoming retrieved successfully", {
+            userCards,
+        });
+    } catch (error) {
+        logger.error(`Error getting user cards incoming: ${error}`);
+        return sendError(res, 500, "Internal Server Error", {
+            error: error.message,
+        });
+    }
+}
+
+// Tìm kiếm user theo user_full_name
+async function SearchUsers(req, res) {
+    try {
+        const { search_string } = req.body;
+        // lấy tất cả các thông tin user theo search_string nhưng không có user có id là user_id
+        const users = await User.find({
+            $and: [
+                { user_full_name: { $regex: search_string, $options: "i" } },
+                { _id: { $ne: req.body.user_id } },
+            ],
+        }).select("user_full_name user_email user_avatar_url");
+        return sendSuccess(res, "Users found", { users });
+    } catch (error) {
+        logger.error(`Error searching users: ${error}`);
+        return sendError(res, 500, "Internal Server Error", {
+            details: error.message,
+        });
+    }
+}
+
+// idea: gợi ý user để thêm vào board
+// dựa trên các bảng mà user đã tham gia
+// lấy thông tin tất cả các user đã tham gia các bảng mà user đã tham gia
+async function SuggestUsersToAdd(req, res) {
+    try {
+        const { user_id } = req.body;
+        const user = await findByIdOrThrow(User, user_id, {
+            errorMessage: "User not found",
+        });
+
+        const userBoards = user.user_boards.map((board) => board.board_id);
+
+        const users = await User.find({
+            _id: { $ne: user_id },
+            user_boards: { $elemMatch: { board_id: { $in: userBoards } } },
+        }).select("user_full_name user_email user_avatar_url");
+        return sendSuccess(res, "Users suggested", { users });
+    } catch (error) {
+        logger.error(`Error suggesting users: ${error}`);
+        return sendError(res, 500, "Internal Server Error", {
+            details: error.message,
+        });
+    }
+}
+
+async function UpdateNotificationsSettings(req, res) {}
+
+async function GetUserNotifications(req, res) {}
 
 // Tạo nhóm làm việc chung
-async function CreateWorkGroup(params) {}
+async function CreateWorkGroup(req, res) {}
 
-module.exports = { GetUserProfile, UpdateUserProfile, GetAllUserInBoard, AddUserToBoard, RemoveUserFromBoard };
+module.exports = {
+    GetUserProfile,
+    UpdateUserProfile,
+    GetAllUserInBoard,
+    AddUserToBoard,
+    RemoveUserFromBoard,
+    GetAllUserCards,
+    GetUserCardsIncoming,
+    SearchUsers,
+    SuggestUsersToAdd,
+};

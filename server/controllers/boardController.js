@@ -26,6 +26,20 @@ async function CreateBoard(req, res) {
         const newBoard = await board.save();
         user.user_boards.push({ board_id: newBoard._id, role: "ADMIN" });
         await user.save();
+        if (boardReqCreate.board_collaborators.length > 0) {
+            for (let collaborator of boardReqCreate.board_collaborators) {
+                const collaboratorUser = await User.findById(
+                    collaborator.board_collaborator_id
+                );
+                if (collaboratorUser) {
+                    collaboratorUser.user_boards.push({
+                        board_id: newBoard._id,
+                        role: "MEMBER",
+                    });
+                    await collaboratorUser.save();
+                }
+            }
+        }
         logger.info("Successfull create board");
         return sendSuccess(res, "Create board success", newBoard._id);
     } catch (error) {
@@ -95,7 +109,18 @@ async function GetBoard(req, res) {
 async function GetAllBoardByUserId(req, res) {
     try {
         const { user_id } = req.body;
-        const boards = await Board.find({ created_by: user_id });
+        let boards = [];
+        const user = await User.findById(user_id);
+        for (const boardinfo of user.user_boards) {
+            const board = await Board.findById(boardinfo.board_id);
+            if (board) {
+                boards.push(board);
+            } else {
+                return sendError(res, 404, "Board not found", {
+                    details: "The requested board does not exist",
+                });
+            }
+        }
         return sendSuccess(res, "Get all boards by user id success", boards);
     } catch (error) {
         return sendError(res, 500, "Internal Server Error", { details: error });
@@ -198,9 +223,8 @@ async function DeleteBoard(req, res) {
         // Nếu cần xóa các dữ liệu liên quan, bạn có thể thêm vào đây
         // xóa thêm các lists , cards, comments và các mục liên quan
         // nên tạo hàm deleteManyData để xóa tất cả các dữ liệu liên quan
-        // Ví dụ: 
-        await List.deleteMany({ board_id : board_id });
-
+        // Ví dụ:
+        await List.deleteMany({ board_id: board_id });
 
         // Trả về phản hồi thành công
         return sendSuccess(res, "Board deleted successfully", {
@@ -400,7 +424,11 @@ async function GetAllMembers(req, res) {
             });
         }
         const members = await User.find({
-            _id: { $in: board.board_collaborators.map((collab) => collab.board_collaborator_id) },
+            _id: {
+                $in: board.board_collaborators.map(
+                    (collab) => collab.board_collaborator_id
+                ),
+            },
         });
         return sendSuccess(res, "Get all members success", members);
     } catch (error) {
@@ -440,7 +468,7 @@ async function UpdatePrivacy(req, res) {
             details: error.message,
         });
     }
-} 
+}
 
 async function GetListsInBoard(req, res) {
     try {
@@ -455,11 +483,11 @@ async function GetListsInBoard(req, res) {
             (collab) => String(collab.board_collaborator_id) === String(user_id)
         );
         if (String(board.created_by) !== String(user_id)) {
-            if (!isMember) { 
+            if (!isMember) {
                 return sendError(res, 403, "Access Denied", {
-                details: "User is not a collaborator of this board",
-            });
-        }
+                    details: "User is not a collaborator of this board",
+                });
+            }
         }
 
         let lists = [];
@@ -523,14 +551,7 @@ async function AddListToBoard(req, res) {
 }
 
 async function MoveList(req, res) {
-    const {
-        user_id,
-        board_id,
-        list_id1,
-        list_id2,
-        new_numerical_order1,
-        new_numerical_order2,
-    } = req.body;
+    const { user_id, board_id, list_id1, list_id2 } = req.body;
     try {
         const board = await Board.findById(board_id);
         if (!board) {
@@ -561,14 +582,14 @@ async function MoveList(req, res) {
                 details: "The requested list is not in this board",
             });
         }
-        const boardList1 = board.board_lists.find(
+        const index1 = board.board_lists.findIndex(
             (boardList) => String(boardList.list_id) === String(list_id1)
         );
-        const boardList2 = board.board_lists.find(
+        const index2 = board.board_lists.findIndex(
             (boardList) => String(boardList.list_id) === String(list_id2)
         );
-        boardList1.list_numerical_order = new_numerical_order1;
-        boardList2.list_numerical_order = new_numerical_order2;
+        board.board_lists[index1].list_id = list_id2;
+        board.board_lists[index2].list_id = list_id1;
         const updatedBoard = await board.save();
         return sendSuccess(res, "List moved successfully", updatedBoard);
     } catch (error) {
@@ -586,6 +607,8 @@ async function ArchiveBoard(params) {}
 
 async function CreateConversation(params) {}
 
+async function ChangeBackgroundPicture() {}
+
 module.exports = {
     CreateBoard,
     GetBoard,
@@ -599,5 +622,5 @@ module.exports = {
     UpdatePrivacy,
     GetListsInBoard,
     AddListToBoard,
-    MoveList
+    MoveList,
 };

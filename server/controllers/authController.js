@@ -2,7 +2,7 @@ const User = require("../models/User");
 const {
     HashPassword,
     CompareHashPassword,
-    CreateToken
+    CreateToken,
 } = require("../utils/authHelpers");
 const { sendSuccess, sendError } = require("../utils/response");
 const logger = require("../utils/logger");
@@ -11,20 +11,20 @@ async function Register(req, res) {
     const userRegist = req.body;
     try {
         let userBaseOnEmail = await User.findOne({
-            user_email: userRegist.user_email
+            user_email: userRegist.user_email,
         });
         if (userBaseOnEmail !== null) {
             return sendError(res, 400, "Email is already in use");
         }
-        const hashedPassword = (await HashPassword(
-            userRegist.user_password
-        )).toString();
+        const hashedPassword = (
+            await HashPassword(userRegist.user_password)
+        ).toString();
         let user = new User({
             user_full_name: userRegist.user_full_name,
             user_email: userRegist.user_email,
             user_hashed_password: hashedPassword,
             user_avatar_url: userRegist.user_avatar_url,
-            created_At: Date.now()
+            created_At: Date.now(),
         });
         const newUser = await user.save();
         const token = await CreateToken(newUser._id);
@@ -70,11 +70,11 @@ async function ChangePassword(req, res) {
             user.user_hashed_password
         );
         if (compareHashPassword === true) {
-            const newHashPassword = (await HashPassword(
-                userRequest.user_password
-            )).toString();
+            const newHashPassword = (
+                await HashPassword(userRequest.user_password)
+            ).toString();
             await user.updateOne({
-                $set: { user_hashed_password: newHashPassword }
+                $set: { user_hashed_password: newHashPassword },
             });
             return sendSuccess(res, "Successfull change password");
         } else {

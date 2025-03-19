@@ -3,7 +3,7 @@ const loggerConfig = require("../configs/loggerConfig");
 
 const logFormat = format.combine(
     format.timestamp({
-        format: loggerConfig.format.timestampFormat || "YYYY-MM-DD HH:mm:ss"
+        format: loggerConfig.format.timestampFormat || "YYYY-MM-DD HH:mm:ss",
     }),
     loggerConfig.format.json
         ? format.json() // Nếu log dạng JSON
@@ -24,7 +24,7 @@ if (loggerConfig.transports.file.enabled) {
     loggerTransports.push(
         new transports.File({
             filename: loggerConfig.transports.file.errorPath,
-            level: "error"
+            level: "error",
         })
     );
 }
@@ -32,7 +32,7 @@ if (loggerConfig.transports.file.enabled) {
 const logger = createLogger({
     level: loggerConfig.level,
     format: logFormat,
-    transports: loggerTransports
+    transports: loggerTransports,
 });
 
 module.exports = logger;
