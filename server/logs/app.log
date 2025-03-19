@@ -1,0 +1,30 @@
+[2025-03-19 21:50:21] INFO: MongoDB connected: cluster0-shard-00-02.bdrg1.mongodb.net
+[2025-03-19 21:51:45] INFO: MongoDB connected: cluster0-shard-00-01.bdrg1.mongodb.net
+[2025-03-19 22:00:11] INFO: MongoDB connected: cluster0-shard-00-01.bdrg1.mongodb.net
+[2025-03-19 22:01:39] INFO: Successfull checking data register new user
+[2025-03-19 22:01:39] INFO: Hash password complete
+[2025-03-19 22:01:39] INFO: Complete create token
+[2025-03-19 22:01:39] INFO: Successfull checking data user for get user profile
+[2025-03-19 22:01:41] INFO: Successfull checking data to get board by user id
+[2025-03-19 22:01:41] INFO: Successfull checking data to get board by user id
+[2025-03-19 22:06:32] INFO: Successfull checking data to create board
+[2025-03-19 22:06:32] INFO: Successfull create board
+[2025-03-19 22:06:38] INFO: Successfull checking data to update privacy
+[2025-03-19 22:06:39] INFO: Successfull checking data to update privacy
+[2025-03-19 22:06:40] INFO: Successfull checking data to update privacy
+[2025-03-19 22:06:41] INFO: Successfull checking data to update privacy
+[2025-03-19 22:06:41] INFO: Successfull checking data to update privacy
+[2025-03-19 22:06:42] INFO: Successfull checking data to update privacy
+[2025-03-19 22:06:44] INFO: Successfull checking data to get lists in board
+[2025-03-19 22:06:44] INFO: Successfull checking data to get lists in board
+[2025-03-19 22:06:52] INFO: Successfull checking data to update board
+[2025-03-19 22:06:57] INFO: Successfull checking data to get lists in board
+[2025-03-19 22:06:57] INFO: Successfull checking data to get lists in board
+[2025-03-19 22:07:02] INFO: Successfull checking data to create list
+[2025-03-19 22:07:03] INFO: Successfull checking data to get lists in board
+[2025-03-19 22:07:11] INFO: Successfull checking data to update list
+[2025-03-19 22:07:11] INFO: Successfull checking data to get lists in board
+[2025-03-19 22:10:57] INFO: Successfull checking data to get lists in board
+[2025-03-19 22:10:57] INFO: Successfull checking data to get lists in board
+[2025-03-19 22:11:04] INFO: Successfull checking data to get board by user id
+[2025-03-19 22:11:04] INFO: Successfull checking data to get board by user id
