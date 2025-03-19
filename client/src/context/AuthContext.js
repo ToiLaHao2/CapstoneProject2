@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
     const [token, setToken] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const saveToken = token => {
+    const saveToken = (token) => {
         sessionStorage.setItem("token", token);
     };
 
@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }) => {
                 user_email: email,
                 user_password: password,
                 user_avatar_url: "empty",
-                checkMessage: "Register new account"
+                checkMessage: "Register new account",
             });
 
             const data = response.data;
@@ -83,7 +83,7 @@ export const AuthProvider = ({ children }) => {
                 user_email: user_email,
                 user_password: new_password, // Sửa lỗi đánh máy "usaer_password"
                 user_last_password: current_password,
-                checkMessage: "Change password"
+                checkMessage: "Change password",
             });
 
             const result = response.data.success;
@@ -113,7 +113,7 @@ export const AuthProvider = ({ children }) => {
                 login,
                 logout,
                 register,
-                changePassword
+                changePassword,
             }}
         >
             {children}
