@@ -17,6 +17,24 @@ async function validateFields(data, rules) {
     const regexError = validateRegex(data, rules.regex);
     if (regexError) return regexError;
 
+    // Kiểm tra file upload nếu có
+    if (data.file) {
+        const fileSizeError = validateFileSize(data.file, rules.fileSize);
+        if (fileSizeError) return fileSizeError;
+
+        const mimeTypeError = validateMimeType(
+            data.file,
+            rules.allowedMimeTypes
+        );
+        if (mimeTypeError) return mimeTypeError;
+
+        const fileCategoryError = validateFileCategory(
+            data.file,
+            rules.fileCategory
+        );
+        if (fileCategoryError) return fileCategoryError;
+    }
+
     return { valid: true };
 }
 
@@ -71,6 +89,49 @@ function validateRegex(data, regexRules) {
                 return { valid: false, error: `${field} is invalid` };
             }
         }
+    }
+    return null;
+}
+
+/** 📌 Kiểm tra kích thước file */
+function validateFileSize(file, maxSize) {
+    if (file.size > maxSize) {
+        return {
+            valid: false,
+            error: `File size exceeds the maximum limit of ${
+                maxSize / (1024 * 1024)
+            }MB`,
+        };
+    }
+    return null;
+}
+
+/** 📌 Kiểm tra loại file */
+function validateMimeType(file, allowedMimeTypes) {
+    if (!allowedMimeTypes.includes(file.mimetype)) {
+        return {
+            valid: false,
+            error: `Invalid file type: ${
+                file.mimetype
+            }. Allowed types: ${allowedMimeTypes.join(", ")}`,
+        };
+    }
+    return null;
+}
+
+/** 📌 Kiểm tra danh mục file (Ảnh, File nén) */
+function validateFileCategory(file, fileCategory) {
+    if (fileCategory) {
+        if (fileCategory.avatar.includes(file.mimetype)) {
+            return { valid: true, category: "avatar" };
+        }
+        if (fileCategory.compressed.includes(file.mimetype)) {
+            return { valid: true, category: "compressed" };
+        }
+        return {
+            valid: false,
+            error: `File type ${file.mimetype} does not match any allowed category`,
+        };
     }
     return null;
 }
