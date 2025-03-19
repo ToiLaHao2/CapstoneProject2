@@ -26,7 +26,7 @@
 
 .search-box:focus {
   outline: none;
-  border-color: #3b82f6; /* Blue color for focus */
+  border-color: #3b82f6;
   box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
 }
 

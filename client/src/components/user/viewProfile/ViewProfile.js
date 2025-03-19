@@ -59,7 +59,9 @@ const ViewProfile = () => {
             {/* Header Section */}
             <div className="profile-header">
                 <div className="profile-info">
-                    <div className="avatar">C</div>
+                    <div className="avatar">
+                        {user.user_full_name ? user.user_full_name.charAt(0).toUpperCase() : "?"}
+                    </div>
                     <div>
                         <h2>
                             {user.user_full_name}
