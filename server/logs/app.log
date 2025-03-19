@@ -1,265 +1,30 @@
-[2025-03-13 13:24:29] ERROR: Attempt 1: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-[2025-03-13 13:24:56] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2025-03-13 13:25:43] INFO: Successfull checking data register new user
-[2025-03-13 13:25:43] INFO: Hash password complete
-[2025-03-13 13:25:43] INFO: Complete create token
-[2025-03-13 13:25:43] INFO: Successfull checking data user for get user profile
-[2025-03-13 13:25:45] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:25:45] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:25:50] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:25:50] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:25:55] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:25:55] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:26:02] INFO: Successfull checking data to create board
-[2025-03-13 13:26:02] INFO: Successfull create board
-[2025-03-13 13:26:49] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:26:49] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:27:03] INFO: Successfull checking data user for login
-[2025-03-13 13:27:03] INFO: Compare hash complete
-[2025-03-13 13:27:03] INFO: Complete create token
-[2025-03-13 13:27:03] INFO: Successfull checking data user for get user profile
-[2025-03-13 13:27:03] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:27:04] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:27:04] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:31:11] INFO: Successfull checking data to update board
-[2025-03-13 13:34:25] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2025-03-13 13:34:55] INFO: Successfull checking data register new user
-[2025-03-13 13:34:56] INFO: Hash password complete
-[2025-03-13 13:34:56] INFO: Complete create token
-[2025-03-13 13:34:56] INFO: Successfull checking data user for get user profile
-[2025-03-13 13:34:57] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:34:57] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:35:12] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:35:12] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:35:15] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:35:15] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:36:01] INFO: Successfull checking data to create board
-[2025-03-13 13:36:01] INFO: Successfull create board
-[2025-03-13 13:37:15] INFO: Successfull checking data register new user
-[2025-03-13 13:37:15] INFO: Hash password complete
-[2025-03-13 13:37:15] INFO: Complete create token
-[2025-03-13 13:37:15] INFO: Successfull checking data user for get user profile
-[2025-03-13 13:37:17] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:37:17] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:37:22] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:37:22] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:40:18] INFO: Successfull checking data to add member to board
-[2025-03-13 13:40:29] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:40:29] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:40:30] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:40:30] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:40:45] INFO: Successfull checking data user for login
-[2025-03-13 13:40:45] INFO: Compare hash complete
-[2025-03-13 13:40:45] INFO: Complete create token
-[2025-03-13 13:40:45] INFO: Successfull checking data user for get user profile
-[2025-03-13 13:40:45] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:40:46] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:40:46] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:41:30] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:41:30] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:41:51] INFO: Successfull checking data user for login
-[2025-03-13 13:41:51] INFO: Compare hash complete
-[2025-03-13 13:41:51] INFO: Complete create token
-[2025-03-13 13:41:51] INFO: Successfull checking data user for get user profile
-[2025-03-13 13:41:51] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:41:52] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:41:52] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:46:28] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2025-03-13 13:46:35] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2025-03-13 13:46:49] INFO: Successfull checking data user for login
-[2025-03-13 13:46:49] INFO: Compare hash complete
-[2025-03-13 13:46:49] INFO: Complete create token
-[2025-03-13 13:46:49] INFO: Successfull checking data user for get user profile
-[2025-03-13 13:46:49] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:46:51] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:46:51] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:47:13] INFO: Successfull checking data user for login
-[2025-03-13 13:47:13] INFO: Compare hash complete
-[2025-03-13 13:47:13] INFO: Complete create token
-[2025-03-13 13:47:13] INFO: Successfull checking data user for get user profile
-[2025-03-13 13:47:13] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:47:14] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:47:14] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:47:35] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2025-03-13 13:47:51] INFO: Successfull checking data user for login
-[2025-03-13 13:47:51] INFO: Compare hash complete
-[2025-03-13 13:47:51] INFO: Complete create token
-[2025-03-13 13:47:51] INFO: Successfull checking data user for get user profile
-[2025-03-13 13:47:51] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:47:53] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:47:53] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:47:58] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:47:58] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:48:28] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2025-03-13 13:48:53] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2025-03-13 13:48:54] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:48:54] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:48:55] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:48:56] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:49:05] INFO: Successfull checking data user for login
-[2025-03-13 13:49:05] INFO: Compare hash complete
-[2025-03-13 13:49:05] INFO: Complete create token
-[2025-03-13 13:49:05] INFO: Successfull checking data user for get user profile
-[2025-03-13 13:49:05] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:49:06] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:49:06] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:49:19] INFO: Successfull checking data user for login
-[2025-03-13 13:49:19] INFO: Compare hash complete
-[2025-03-13 13:49:20] INFO: Complete create token
-[2025-03-13 13:49:20] INFO: Successfull checking data user for get user profile
-[2025-03-13 13:49:20] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:49:21] INFO: Successfull checking data to get board by user id
-[2025-03-13 13:49:21] INFO: Successfull checking data to get board by user id
-[2025-03-16 22:57:43] ERROR: Attempt 1: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
-[2025-03-16 22:57:55] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2025-03-16 22:58:38] INFO: Successfull checking data user for login
-[2025-03-16 22:59:30] INFO: Successfull checking data register new user
-[2025-03-16 22:59:30] INFO: Hash password complete
-[2025-03-16 22:59:30] INFO: Complete create token
-[2025-03-16 22:59:55] INFO: Successfull checking data to create board
-[2025-03-16 22:59:55] INFO: Successfull create board
-[2025-03-16 23:00:17] ERROR: Error verified token:  jwt expired
-[2025-03-16 23:00:17] INFO: Invalid token in get board
-[2025-03-16 23:00:42] INFO: Successfull checking data to create board
-[2025-03-16 23:00:58] INFO: Successfull checking data to get board by user id
-[2025-03-16 23:01:11] INFO: Successfull checking data to update board
-[2025-03-16 23:01:29] INFO: Successfull checking data to update board
-[2025-03-16 23:02:12] INFO: Successfull checking data to create list
-[2025-03-16 23:03:04] INFO: Successfull checking data to get list
-[2025-03-16 23:03:43] INFO: Successfull checking data to create card
-[2025-03-16 23:05:33] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2025-03-16 23:05:36] INFO: Successfull checking data to create card
-[2025-03-16 23:05:40] INFO: Successfull checking data to create card
-[2025-03-16 23:05:56] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2025-03-16 23:05:58] INFO: Successfull checking data to create card
-[2025-03-16 23:06:13] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2025-03-16 23:06:18] INFO: Successfull checking data to create card
-[2025-03-16 23:06:36] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2025-03-16 23:06:41] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2025-03-16 23:06:43] INFO: Successfull checking data to create card
-[2025-03-16 23:06:43] ERROR: card_numerical_order is not defined
-[2025-03-16 23:07:40] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2025-03-16 23:07:42] INFO: Successfull checking data to create card
-[2025-03-16 23:07:42] ERROR: Card validation failed: card_duration: Path `card_duration` is required., card_description: Path `card_description` is required.
-[2025-03-16 23:09:16] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2025-03-16 23:09:20] INFO: Successfull checking data to create card
-[2025-03-16 23:10:06] INFO: Successfull checking data to get cardd
-[2025-03-16 23:11:17] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2025-03-16 23:11:20] INFO: Successfull checking data to get cardd
-[2025-03-16 23:11:23] INFO: Successfull checking data to get cardd
-[2025-03-16 23:11:54] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2025-03-16 23:11:56] INFO: Successfull checking data to get cardd
-[2025-03-16 23:12:59] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2025-03-16 23:16:15] INFO: Successfull checking data to update card
-[2025-03-16 23:17:01] INFO: Successfull checking data to create list
-[2025-03-16 23:17:40] ERROR: Error verified token:  jwt expired
-[2025-03-16 23:17:40] ERROR: Invalid token
-[2025-03-16 23:18:02] INFO: Successfull checking data to move card in list
-[2025-03-16 23:21:10] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2025-03-16 23:21:15] INFO: Successfull checking data to move card in list
-[2025-03-16 23:21:38] INFO: Successfull checking data to create list
-[2025-03-16 23:21:57] INFO: Successfull checking data to move card in list
-[2025-03-16 23:22:44] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2025-03-16 23:22:58] INFO: Successfull checking data to create list
-[2025-03-16 23:23:16] INFO: Successfull checking data to move card in list
-[2025-03-16 23:24:03] INFO: Successfull checking data register new user
-[2025-03-16 23:24:03] INFO: Hash password complete
-[2025-03-16 23:24:03] INFO: Complete create token
-[2025-03-16 23:24:27] INFO: Successfull checking data user for get user profile
-[2025-03-16 23:25:40] INFO: Successfull checking data to add member to board
-[2025-03-16 23:28:23] INFO: Successfull checking data to assign user to card
-[2025-03-16 23:29:29] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2025-03-16 23:29:31] INFO: Successfull checking data to assign user to card
-[2025-03-16 23:29:32] ERROR: Card validation failed: card_assignees.1.card_assignee_id: Path `card_assignee_id` is required.
-[2025-03-16 23:31:27] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2025-03-16 23:31:29] INFO: Successfull checking data to assign user to card
-[2025-03-16 23:31:29] ERROR: Card validation failed: card_assignees.1.card_assignee_id: Path `card_assignee_id` is required.
-[2025-03-16 23:32:14] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2025-03-16 23:32:16] INFO: Successfull checking data to assign user to card
-[2025-03-16 23:34:13] INFO: Successfull checking data to remove user from card
-[2025-03-16 23:35:01] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2025-03-16 23:35:03] INFO: Successfull checking data to remove user from card
-[2025-03-16 23:35:04] ERROR: Cannot read properties of null (reading 'card_assignee_id')
-[2025-03-16 23:36:05] INFO: Successfull checking data to remove user from card
-[2025-03-16 23:36:11] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2025-03-18 11:08:45] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2025-03-18 11:08:51] INFO: Successfull checking data register new user
-[2025-03-18 11:08:51] INFO: Hash password complete
-[2025-03-18 11:08:51] INFO: Complete create token
-[2025-03-18 11:09:44] INFO: Successfull checking data register new user
-[2025-03-18 11:09:44] INFO: Hash password complete
-[2025-03-18 11:09:45] INFO: Complete create token
-[2025-03-18 11:10:13] INFO: Successfull checking data register new user
-[2025-03-18 11:10:14] INFO: Hash password complete
-[2025-03-18 11:10:14] INFO: Complete create token
-[2025-03-18 11:10:41] INFO: Successfull checking data register new user
-[2025-03-18 11:10:41] INFO: Hash password complete
-[2025-03-18 11:10:41] INFO: Complete create token
-[2025-03-18 11:11:29] INFO: Successfull checking data register new user
-[2025-03-18 11:11:29] INFO: Hash password complete
-[2025-03-18 11:11:29] INFO: Complete create token
-[2025-03-18 11:12:00] INFO: Successfull checking data user for login
-[2025-03-18 11:12:17] INFO: Successfull checking data user for login
-[2025-03-18 11:12:17] INFO: Compare hash complete
-[2025-03-18 11:12:17] INFO: Complete create token
-[2025-03-18 11:14:34] INFO: Successfull checking data user for changing password
-[2025-03-18 11:14:35] INFO: Compare hash complete
-[2025-03-18 11:14:35] INFO: Hash password complete
-[2025-03-18 11:15:34] INFO: Successfull checking data to create board
-[2025-03-18 11:15:34] INFO: Successfull create board
-[2025-03-18 11:16:33] INFO: Successfull checking data to create board
-[2025-03-18 11:16:34] INFO: Successfull create board
-[2025-03-18 11:17:11] INFO: Successfull checking data to create board
-[2025-03-18 11:17:11] INFO: Successfull create board
-[2025-03-18 11:17:32] INFO: Successfull checking data to create board
-[2025-03-18 11:17:33] INFO: Successfull create board
-[2025-03-18 11:18:15] INFO: Successfull checking data to create board
-[2025-03-18 11:21:04] INFO: Successfull checking data to add member to board
-[2025-03-18 11:21:29] INFO: Successfull checking data to add member to board
-[2025-03-18 11:22:13] INFO: Successfull checking data to create board
-[2025-03-18 11:22:14] INFO: Successfull create board
-[2025-03-18 11:27:15] INFO: Successfull checking data to create board
-[2025-03-18 11:27:15] ERROR: Error with create board : ValidationError: board_collaborators.1.board_collaborator_role: `Viewer` is not a valid enum value for path `board_collaborator_role`.
-[2025-03-18 11:27:36] INFO: Successfull checking data to create board
-[2025-03-18 11:27:37] INFO: Successfull create board
-[2025-03-18 11:29:47] INFO: Successfull checking data to create board
-[2025-03-18 11:29:48] INFO: Successfull create board
-[2025-03-18 11:30:14] INFO: Successfull checking data to create board
-[2025-03-18 11:30:15] INFO: Successfull create board
-[2025-03-18 11:30:47] INFO: Successfull checking data to get board by user id
-[2025-03-18 11:31:19] INFO: Successfull checking data to get board by user id
-[2025-03-18 11:33:44] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2025-03-18 11:36:47] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2025-03-18 11:38:27] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2025-03-18 11:38:36] INFO: Successfull checking data to create board
-[2025-03-18 11:38:36] INFO: Successfull create board
-[2025-03-18 11:42:57] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2025-03-18 11:43:19] INFO: Successfull checking data to create board
-[2025-03-18 11:43:19] INFO: Successfull create board
-[2025-03-18 11:44:46] INFO: Successfull checking data to create board
-[2025-03-18 11:44:47] INFO: Successfull create board
-[2025-03-18 11:55:59] INFO: Successfull checking data user for get user profile
-[2025-03-18 11:56:39] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2025-03-18 11:56:45] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2025-03-18 11:56:47] INFO: Successfull checking data user for get user profile
-[2025-03-18 11:59:51] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2025-03-18 11:59:54] INFO: Successfull checking data user for get user profile
-[2025-03-18 12:00:08] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
-[2025-03-18 12:00:14] INFO: Successfull checking data user for get user profile
-[2025-03-18 12:00:18] INFO: Successfull checking data user for get user profile
-[2025-03-18 12:00:25] INFO: Successfull checking data user for get user profile
-[2025-03-18 12:00:57] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2025-03-18 12:01:31] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2025-03-18 12:03:37] INFO: Successfull checking data user for get suggest user to add
-[2025-03-18 12:04:10] INFO: Successfull checking data user for get suggest user to add
-[2025-03-18 12:05:02] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
-[2025-03-18 12:05:02] INFO: Successfull checking data user for get suggest user to add
-[2025-03-18 12:18:10] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
-[2025-03-18 12:18:19] ERROR: Error verified token:  jwt expired
-[2025-03-18 12:18:19] INFO: Invalid token in suggest users to add
-[2025-03-18 12:18:44] INFO: Successfull checking data user for login
-[2025-03-18 12:18:44] INFO: Compare hash complete
-[2025-03-18 12:18:49] INFO: Successfull checking data user for login
-[2025-03-18 12:18:49] INFO: Compare hash complete
-[2025-03-18 12:18:50] INFO: Complete create token
-[2025-03-18 12:18:59] INFO: Successfull checking data user for get suggest user to add
+[2025-03-19 21:50:21] INFO: MongoDB connected: cluster0-shard-00-02.bdrg1.mongodb.net
+[2025-03-19 21:51:45] INFO: MongoDB connected: cluster0-shard-00-01.bdrg1.mongodb.net
+[2025-03-19 22:00:11] INFO: MongoDB connected: cluster0-shard-00-01.bdrg1.mongodb.net
+[2025-03-19 22:01:39] INFO: Successfull checking data register new user
+[2025-03-19 22:01:39] INFO: Hash password complete
+[2025-03-19 22:01:39] INFO: Complete create token
+[2025-03-19 22:01:39] INFO: Successfull checking data user for get user profile
+[2025-03-19 22:01:41] INFO: Successfull checking data to get board by user id
+[2025-03-19 22:01:41] INFO: Successfull checking data to get board by user id
+[2025-03-19 22:06:32] INFO: Successfull checking data to create board
+[2025-03-19 22:06:32] INFO: Successfull create board
+[2025-03-19 22:06:38] INFO: Successfull checking data to update privacy
+[2025-03-19 22:06:39] INFO: Successfull checking data to update privacy
+[2025-03-19 22:06:40] INFO: Successfull checking data to update privacy
+[2025-03-19 22:06:41] INFO: Successfull checking data to update privacy
+[2025-03-19 22:06:41] INFO: Successfull checking data to update privacy
+[2025-03-19 22:06:42] INFO: Successfull checking data to update privacy
+[2025-03-19 22:06:44] INFO: Successfull checking data to get lists in board
+[2025-03-19 22:06:44] INFO: Successfull checking data to get lists in board
+[2025-03-19 22:06:52] INFO: Successfull checking data to update board
+[2025-03-19 22:06:57] INFO: Successfull checking data to get lists in board
+[2025-03-19 22:06:57] INFO: Successfull checking data to get lists in board
+[2025-03-19 22:07:02] INFO: Successfull checking data to create list
+[2025-03-19 22:07:03] INFO: Successfull checking data to get lists in board
+[2025-03-19 22:07:11] INFO: Successfull checking data to update list
+[2025-03-19 22:07:11] INFO: Successfull checking data to get lists in board
+[2025-03-19 22:10:57] INFO: Successfull checking data to get lists in board
+[2025-03-19 22:10:57] INFO: Successfull checking data to get lists in board
+[2025-03-19 22:11:04] INFO: Successfull checking data to get board by user id
+[2025-03-19 22:11:04] INFO: Successfull checking data to get board by user id
