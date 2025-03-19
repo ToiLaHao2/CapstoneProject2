@@ -108,11 +108,66 @@ export const BoardProvider = ({ children }) => {
         }
     };
 
+    const getListsInBoard = async (boardId) => {
+        try {
+            console.log("Fetching lists for board ID:", boardId);
+
+            const response = await privateAxios.post("/board/getListsInBoard", {
+                checkMessage: "Get lists in board",
+                board_id: boardId,
+            });
+
+            const data = await response.data;
+            console.log("Response data:", data);
+
+            if (data.success) {
+                return data.data;
+            } else {
+                console.error("Failed to fetch lists:", data.message);
+                return [];
+            }
+        } catch (error) {
+            console.error("Error fetching lists:", error);
+            return [];
+        }
+    };
+
+    // update privacy
+    const updatePrivacy = async (boardId, newPrivacy) => {
+        try {
+            const response = await privateAxios.post("/board/updatePrivacy", {
+                checkMessage: "Update privacy",
+                board_id: boardId,
+                new_privacy: newPrivacy,
+            });
+
+            const data = await response.data;
+
+            if (data.success) {
+                setBoards((prevBoards) =>
+                    prevBoards.map((board) =>
+                        board._id === boardId ? { ...board, board_is_public: newPrivacy } : board
+                    )
+                );
+                return "Success";
+            } else {
+                console.log("Update privacy failed:", data.message);
+                return "Failed";
+            }
+        } catch (error) {
+            console.log("Error updating privacy:", error);
+            return "Error";
+        }
+    };
+
+
+    //add list to board
+
+
     //end-mei
 
     return (
-        <BoardContext.Provider value={{ boards, getAllBoardsByUserId, createBoard, updateBoard, deleteBoard }}>
-
+        <BoardContext.Provider value={{ boards, getAllBoardsByUserId, createBoard, updateBoard, deleteBoard, getListsInBoard, updatePrivacy }}>
             {children}
         </BoardContext.Provider>
 
