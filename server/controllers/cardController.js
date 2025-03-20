@@ -6,7 +6,14 @@ const { sendError, sendSuccess } = require("../utils/response.js");
 
 async function CreateCard(req, res) {
     try {
-        const { user_id, board_id, list_id, card_title } = req.body;
+        const {
+            user_id,
+            board_id,
+            list_id,
+            card_title,
+            card_duration,
+            card_description,
+        } = req.body;
         // check if user is a member of the board
         const board = await Board.findById(board_id);
         if (!board) {
@@ -32,7 +39,8 @@ async function CreateCard(req, res) {
         // create new card
         const newCard = new Card({
             card_title: card_title,
-            card_description: "",
+            card_description: card_description,
+            card_duration: card_duration,
             created_by: user_id,
         });
         const card = await newCard.save();
