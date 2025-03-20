@@ -99,7 +99,7 @@ export const AuthProvider = ({ children }) => {
             setToken(storedToken);
             setIsAuthenticated(true);
         } else {
-            setIsAuthenticated(false);
+            logout();
         }
         setLoading(false); // Ngừng tải
     }, []);
