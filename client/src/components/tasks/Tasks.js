@@ -277,12 +277,35 @@ const Tasks = () => {
   const [columns, setColumns] = useState([]);
   const [columnOrder, setColumnOrder] = useState([]);
   const { createCard } = useCard();
+<<<<<<< Updated upstream
+=======
 
   // const fetchLists = async () => {
   //   try {
   //     const lists = await getListsInBoard(boardId);
   //     if (!Array.isArray(lists)) return;
 
+  //     setColumns(lists.map(list => ({
+  //       id: list._id,
+  //       title: list.list_title || "Unnamed Column",
+  //       tasks: Array.isArray(list.tasks)
+  //         ? list.tasks.map(task => ({ ...task, id: task._id }))
+  //         : []
+  //     })));
+
+  //     setColumnOrder(lists.map(list => list._id));
+  //   } catch (error) {
+  //     console.error("Error fetching lists:", error);
+  //   }
+  // };
+>>>>>>> Stashed changes
+
+  // const fetchLists = async () => {
+  //   try {
+  //     const lists = await getListsInBoard(boardId);
+  //     if (!Array.isArray(lists)) return;
+
+<<<<<<< Updated upstream
   //     setColumns(lists.map(list => ({
   //       id: list._id,
   //       title: list.list_title || "Unnamed Column",
@@ -325,6 +348,13 @@ const Tasks = () => {
         console.log(`Cards in list ${list._id}:`, cards);
         // console.log(`Cards in list ${list._id}:`, JSON.stringify(cards, null, 2));
 
+=======
+      const columnsWithTasks = await Promise.all(lists.map(async (list) => {
+        const cards = await getCardsInList(boardId, list._id);
+        console.log(`Cards in list ${list._id}:`, cards);
+        // console.log(`Cards in list ${list._id}:`, JSON.stringify(cards, null, 2));
+
+>>>>>>> Stashed changes
         return {
           id: list._id,
           title: list.list_title || "Unnamed Column",
@@ -488,6 +518,7 @@ const Tasks = () => {
             }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             return prev;
         });
     };
@@ -509,6 +540,8 @@ const Tasks = () => {
         }
     };
 =======
+=======
+>>>>>>> Stashed changes
   const handleDeleteColumn = async (columnId) => {
     if (window.confirm("Are you sure you want to delete this column?")) {
       try {
