@@ -286,6 +286,8 @@ const validationRules = {
             "board_id",
             "list_id",
             "card_title",
+            "card_duration",
+            "card_description",
             "checkMessage",
         ],
     },

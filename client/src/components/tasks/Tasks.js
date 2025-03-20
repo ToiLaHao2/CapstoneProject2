@@ -409,7 +409,6 @@ const Tasks = () => {
                 <div>
                     <h1 className="project-title">{boardTitle}</h1>
                 </div>
-                <div>hello</div>
             </div>
             <DndContext
                 collisionDetection={closestCenter}
