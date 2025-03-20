@@ -463,3 +463,39 @@
 [2025-03-20 14:14:59] INFO: Successfull checking data to create card
 [2025-03-20 14:15:23] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
 [2025-03-20 14:15:39] INFO: Successfull checking data to create card
+[2025-03-20 14:21:22] INFO: Successfull checking data to get lists in board
+[2025-03-20 14:21:22] INFO: Successfull checking data to get lists in board
+[2025-03-20 14:21:32] ERROR: Error with GetListsInBoard: MongooseError: Operation `boards.findOne()` buffering timed out after 10000ms
+[2025-03-20 14:21:32] ERROR: Error with GetListsInBoard: MongooseError: Operation `boards.findOne()` buffering timed out after 10000ms
+[2025-03-20 14:22:06] ERROR: Attempt 1: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-03-20 14:22:08] INFO: Successfull checking data to get board by user id
+[2025-03-20 14:22:08] INFO: Successfull checking data to get board by user id
+[2025-03-20 14:22:11] INFO: Successfull checking data to get board by user id
+[2025-03-20 14:22:11] INFO: Successfull checking data to get board by user id
+[2025-03-20 14:22:17] INFO: Successfull checking data user for login
+[2025-03-20 14:22:19] INFO: Successfull checking data user for login
+[2025-03-20 14:22:20] INFO: Successfull checking data user for login
+[2025-03-20 14:22:20] INFO: Successfull checking data user for login
+[2025-03-20 14:22:21] INFO: Successfull checking data user for login
+[2025-03-20 14:22:27] ERROR: Error : MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+[2025-03-20 14:22:29] ERROR: Error : MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+[2025-03-20 14:22:30] ERROR: Error : MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+[2025-03-20 14:22:30] ERROR: Error : MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+[2025-03-20 14:22:31] ERROR: Error : MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+[2025-03-20 14:22:41] ERROR: Attempt 2: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-03-20 14:25:34] INFO: MongoDB connected: cluster0-shard-00-00.bdrg1.mongodb.net
+[2025-03-20 14:25:56] INFO: Successfull checking data user for login
+[2025-03-20 14:25:56] INFO: Compare hash complete
+[2025-03-20 14:25:56] INFO: Complete create token
+[2025-03-20 14:25:57] INFO: Successfull checking data user for get user profile
+[2025-03-20 14:25:57] INFO: Successfull checking data to get board by user id
+[2025-03-20 14:25:57] INFO: Successfull checking data to get all members
+[2025-03-20 14:25:58] INFO: Successfull checking data to get board by user id
+[2025-03-20 14:25:58] INFO: Successfull checking data to get board by user id
+[2025-03-20 14:25:58] INFO: Successfull checking data to get all members
+[2025-03-20 14:25:58] INFO: Successfull checking data to get all members
+[2025-03-20 14:26:00] INFO: Successfull checking data to get lists in board
+[2025-03-20 14:26:00] INFO: Successfull checking data to get lists in board
+[2025-03-20 14:26:42] INFO: Successfull checking data to get lists in board
+[2025-03-20 14:27:17] INFO: Successfull checking data to get lists in board
+[2025-03-20 14:27:17] INFO: Successfull checking data to get lists in board
