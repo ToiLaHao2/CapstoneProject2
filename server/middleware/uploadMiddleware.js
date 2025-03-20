@@ -1,18 +1,45 @@
 const multer = require("multer");
-const { CloudinaryStorage } = require("multer-storage-cloudinary");
-const cloudinary = require("../utils/cloudinaryConfig");
+const { validationRules } = require("../utils/validation/validationRules");
+const { validateFields } = require("../utils/validation/validate");
+const { VerifiedToken } = require("../utils/authHelpers");
+const { getTokenFromHeaders } = require("../utils/jwt/getToken");
+const logger = require("../utils/logger");
+const { sendError } = require("../utils/response");
 
-// Cấu hình storage để lưu trữ ảnh trên Cloudinary
-const storage = new CloudinaryStorage({
-    cloudinary: cloudinary,
-    params: {
-        folder: "uploads", // Thư mục trên Cloudinary
-        format: async (req, file) => "png", // Định dạng file mặc định là PNG
-        public_id: (req, file) => file.originalname, // Giữ nguyên tên file gốc
-    },
-});
+// Cấu hình Multer để lưu file tạm thời trên bộ nhớ
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 
-// Middleware upload
-const upload = multer({ storage });
+/**
+ * Middleware kiểm tra request upload
+ */
+async function validateUpload(req, res, next) {
+    try {
+        const token = await getTokenFromHeaders(req);
+        const checkToken = await VerifiedToken(token);
+        if (!checkToken) {
+            logger.error("Invalid token");
+            return sendError(res, 401, "Invalid token", "");
+        }
 
-module.exports = upload;
+        req.body.user_id = checkToken.id;
+        const uploadData = req.body;
+        uploadData.file = req.file; // Thêm file vào dữ liệu kiểm tra
+
+        const rules = validationRules["validateUpload"];
+        const result = await validateFields(uploadData, rules);
+
+        if (!result.valid) {
+            logger.error(`Error validating upload data: ${result.error}`);
+            return sendError(res, 400, "Invalid upload data", result.error);
+        } else {
+            logger.info("Successful file upload validation");
+            next();
+        }
+    } catch (error) {
+        logger.error(`Error validating upload: ${error.message}`);
+        return sendError(res, 500, "Internal Server Error", error.message);
+    }
+}
+
+module.exports = { upload, validateUpload };

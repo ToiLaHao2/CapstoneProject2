@@ -32,6 +32,7 @@ async function CreateCard(req, res) {
         // create new card
         const newCard = new Card({
             card_title: card_title,
+            card_description: "",
             created_by: user_id,
         });
         const card = await newCard.save();

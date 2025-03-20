@@ -5,22 +5,47 @@ import { useBoard } from "../../context/BoardContext";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit, faBars, faLock, faLockOpen, faUserPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
-
+import {
+    faEdit,
+    faBars,
+    faLock,
+    faLockOpen,
+    faUserPlus,
+    faTrash,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Projects = () => {
-    const { boards, deleteBoard, updateBoard, addMemberToBoard, updatePrivacy } = useBoard();
+    const {
+        boards,
+        deleteBoard,
+        updateBoard,
+        addMemberToBoard,
+        updatePrivacy,
+        colorHashMap,
+    } = useBoard();
     const navigate = useNavigate();
     const [editingProjectId, setEditingProjectId] = useState(null);
     const [editedTitle, setEditedTitle] = useState("");
     const [menuVisibleProjectId, setMenuVisibleProjectId] = useState(null);
     const menuRef = useRef(null);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [suggestedUsers, setSuggestedUsers] = useState([
+        { _id: "1", user_full_name: "Alice" },
+        { _id: "2", user_full_name: "Bob" },
+        { _id: "3", user_full_name: "Charlie" },
+    ]);
 
+    const openPopup = () => setIsPopupOpen(true);
+    const closePopup = () => setIsPopupOpen(false);
+
+    const handleAddMembers = (selectedUsers) => {
+        console.log("Added Users:", selectedUsers);
+        closePopup();
+    };
 
     const handleProjectClick = (boardTitle, board_id) => {
         navigate("/Tasks", { state: { boardTitle, board_id } });
     };
-
 
     const handleChatClick = () => {
         navigate("/chat");
@@ -48,7 +73,12 @@ const Projects = () => {
     const handlePrivacyClick = async (e, boardId, currentPrivacy) => {
         console.log("work");
         e.stopPropagation();
-        console.log("Clicked Privacy:", boardId, "Current Privacy:", currentPrivacy);
+        console.log(
+            "Clicked Privacy:",
+            boardId,
+            "Current Privacy:",
+            currentPrivacy
+        );
 
         const newPrivacy = !currentPrivacy;
         const result = await updatePrivacy(boardId, newPrivacy);
@@ -59,14 +89,13 @@ const Projects = () => {
         }
     };
 
-
-
-    const handleAddMembersClick = async (e, boardId) => {
-    };
+    const handleAddMembersClick = async (e, boardId) => {};
 
     const handleDeleteClick = async (e, boardId) => {
         e.stopPropagation();
-        const confirmDelete = window.confirm("Are you sure you want to delete this board?");
+        const confirmDelete = window.confirm(
+            "Are you sure you want to delete this board?"
+        );
         if (confirmDelete) {
             const result = await deleteBoard(boardId);
             if (result === "Success") {
@@ -85,7 +114,9 @@ const Projects = () => {
     const toggleMenu = (e, boardId) => {
         e.stopPropagation();
         console.log("Toggling menu for:", boardId);
-        setMenuVisibleProjectId(menuVisibleProjectId === boardId ? null : boardId);
+        setMenuVisibleProjectId(
+            menuVisibleProjectId === boardId ? null : boardId
+        );
     };
 
     const closeMenu = () => {
@@ -106,7 +137,6 @@ const Projects = () => {
         };
     }, [menuRef]);
 
-
     return (
         <div className="projects-container">
             <div className="projects-list">
@@ -115,7 +145,12 @@ const Projects = () => {
                         <div
                             className="project-card"
                             key={index}
-                            onClick={() => handleProjectClick(project.board_title, project._id)}
+                            onClick={() =>
+                                handleProjectClick(
+                                    project.board_title,
+                                    project._id
+                                )
+                            }
                         >
                             <div className="project-card-top">
                                 <div className="project-header">
@@ -124,42 +159,83 @@ const Projects = () => {
                                             type="text"
                                             className="project-title-input"
                                             value={editedTitle}
-                                            onChange={(e) => setEditedTitle(e.target.value)}
-                                            onBlur={() => handleSaveTitle(project._id)}
+                                            onChange={(e) =>
+                                                setEditedTitle(e.target.value)
+                                            }
+                                            onBlur={() =>
+                                                handleSaveTitle(project._id)
+                                            }
                                             onKeyDown={(e) => {
-                                                if (e.key === 'Enter') {
-                                                    handleSaveTitle(project._id);
-                                                } else if (e.key === 'Escape') {
-                                                    handleCancelEdit(e, project._id);
+                                                if (e.key === "Enter") {
+                                                    handleSaveTitle(
+                                                        project._id
+                                                    );
+                                                } else if (e.key === "Escape") {
+                                                    handleCancelEdit(
+                                                        e,
+                                                        project._id
+                                                    );
                                                 }
                                             }}
                                             onClick={handleInputClick}
                                         />
                                     ) : (
-                                        <h2 className="project-title">{project.board_title}</h2>
+                                        <h2 className="project-title">
+                                            {project.board_title}
+                                        </h2>
                                     )}
                                     <FontAwesomeIcon
                                         icon={faEdit}
                                         className="edit-icon"
-                                        onClick={(e) => handleEditClick(e, project._id, project.board_title)}
+                                        onClick={(e) =>
+                                            handleEditClick(
+                                                e,
+                                                project._id,
+                                                project.board_title
+                                            )
+                                        }
                                     />
                                 </div>
                                 <div className="project-status-and-users">
-                                    {/* <span
-                                        className={`project-status ${project.board_is_public ? "public" : "private"}`}
-                                    >
-                                        {project.board_is_public ? "Public" : "Private"}
-                                    </span> */}
                                     <span
-                                        className={`project-status ${project.board_is_public ? "public" : "private"}`}
+                                        className={`project-status ${
+                                            project.board_is_public
+                                                ? "public"
+                                                : "private"
+                                        }`}
                                     >
-                                        {project.board_is_public ? "Public" : "Private"}
+                                        {project.board_is_public
+                                            ? "Public"
+                                            : "Private"}
                                     </span>
                                     {/* Conditionally render user icons - for now always showing static icons */}
                                     <div className="project-users-icons">
-                                        <div className="user-icon-circle" style={{ backgroundColor: '#a8a196', color: 'white' }}>K</div>
-                                        <div className="user-icon-circle" style={{ backgroundColor: '#e0ca3c', color: 'white' }}>H</div>
-                                        <div className="user-icon-circle" style={{ backgroundColor: '#9c9aff', color: 'white' }}>M</div>
+                                        {project.board_collaborators.length >
+                                            0 &&
+                                            project.board_collaborators.map(
+                                                (collaborator, index) => (
+                                                    <div
+                                                        key={index}
+                                                        className="user-icon-circle"
+                                                        style={{
+                                                            backgroundColor: `${
+                                                                colorHashMap[
+                                                                    collaborator.user_full_name
+                                                                        .charAt(
+                                                                            0
+                                                                        )
+                                                                        .toUpperCase()
+                                                                ]
+                                                            }`,
+                                                            color: "white",
+                                                        }}
+                                                    >
+                                                        {collaborator.user_full_name
+                                                            .charAt(0)
+                                                            .toUpperCase()}
+                                                    </div>
+                                                )
+                                            )}
                                     </div>
                                 </div>
 
@@ -167,20 +243,60 @@ const Projects = () => {
                                     <FontAwesomeIcon
                                         icon={faBars}
                                         className="menu-bar-icon"
-                                        onClick={(e) => toggleMenu(e, project._id)}
+                                        onClick={(e) =>
+                                            toggleMenu(e, project._id)
+                                        }
                                     />
                                     {menuVisibleProjectId === project._id && (
-                                        <div className="dropdown-menu" ref={menuRef}>
-                                            <div className="dropdown-item" onClick={(e) => handlePrivacyClick(e, project._id, project.board_is_public)}>
-                                                <FontAwesomeIcon icon={project.board_is_public ? faLockOpen : faLock} className="dropdown-icon" />
-                                                {project.board_is_public ? "Change to Private" : "Change to Public"}
+                                        <div
+                                            className="dropdown-menu"
+                                            ref={menuRef}
+                                        >
+                                            <div
+                                                className="dropdown-item"
+                                                onClick={(e) =>
+                                                    handlePrivacyClick(
+                                                        e,
+                                                        project._id,
+                                                        project.board_is_public
+                                                    )
+                                                }
+                                            >
+                                                <FontAwesomeIcon
+                                                    icon={
+                                                        project.board_is_public
+                                                            ? faLockOpen
+                                                            : faLock
+                                                    }
+                                                    className="dropdown-icon"
+                                                />
+                                                {project.board_is_public
+                                                    ? "Change to Private"
+                                                    : "Change to Public"}
                                             </div>
-                                            <div className="dropdown-item" onClick={(e) => handleAddMembersClick(e, project._id)}>
-                                                <FontAwesomeIcon icon={faUserPlus} className="dropdown-icon" />
+                                            <div
+                                                className="dropdown-item"
+                                                onClick={(e) => openPopup()}
+                                            >
+                                                <FontAwesomeIcon
+                                                    icon={faUserPlus}
+                                                    className="dropdown-icon"
+                                                />
                                                 Add Members
                                             </div>
-                                            <div className="dropdown-item delete" onClick={(e) => handleDeleteClick(e, project._id)}>
-                                                <FontAwesomeIcon icon={faTrash} className="dropdown-icon" />
+                                            <div
+                                                className="dropdown-item delete"
+                                                onClick={(e) =>
+                                                    handleDeleteClick(
+                                                        e,
+                                                        project._id
+                                                    )
+                                                }
+                                            >
+                                                <FontAwesomeIcon
+                                                    icon={faTrash}
+                                                    className="dropdown-icon"
+                                                />
                                                 Delete Project
                                             </div>
                                         </div>
@@ -211,7 +327,9 @@ const Projects = () => {
                                 )}
                                 <button
                                     className="delete-button"
-                                    onClick={(e) => handleDeleteClick(e, project._id)}
+                                    onClick={(e) =>
+                                        handleDeleteClick(e, project._id)
+                                    }
                                 >
                                     Delete
                                 </button>
