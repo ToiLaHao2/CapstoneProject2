@@ -251,9 +251,32 @@ export const ListProvider = ({ children }) => {
         }
     };
 
+    const getCardsInList = async (boardId, listId) => {
+        try {
+          const response = await privateAxios.post("/list/getCardsInList", {
+            board_id: boardId,
+            list_id: listId,
+            checkMessage: "Get cards in list",
+          });
+    
+          const data = response.data;
+          console.log("Fetched cards in list:", data);
+    
+          if (data.success) {
+            return data.data;
+          } else {
+            console.error("Failed to fetch cards in list:", data.message);
+            return [];
+          }
+        } catch (error) {
+          console.error("Error fetching cards in list:", error);
+          return [];
+        }
+      };
+
 
     return (
-        <ListContext.Provider value={{ lists, fetchLists, getList, createList, updateList, deleteList }}>
+        <ListContext.Provider value={{ lists, fetchLists, getList, createList, updateList, deleteList, getCardsInList }}>
             {children}
         </ListContext.Provider>
     );

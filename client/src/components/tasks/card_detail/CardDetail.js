@@ -1,13 +1,20 @@
 import React from 'react';
 import './CardDetail.css';
 import { FiCalendar, FiBold, FiUnderline, FiLink, FiImage } from 'react-icons/fi';
+import { useParams, useLocation } from 'react-router-dom';
+
 
 function CardDetail() {
+  const { id } = useParams();
+    const location = useLocation(); 
+    const task = location.state?.task; 
+    const cardTitle = task?.card_title || ''; 
+
   return (
     <div className="card-container">
       <div className="card-header">
         <div className="label label-highest">Highest</div>
-        <input type="text" className="input-field" placeholder="Card Title" />
+        <input type="text" className="input-field" placeholder="Card Title" value={cardTitle} />
       </div>
 
       <div className="card-section">
