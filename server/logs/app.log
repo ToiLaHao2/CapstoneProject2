@@ -463,3 +463,90 @@
 [2025-03-20 14:14:59] INFO: Successfull checking data to create card
 [2025-03-20 14:15:23] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
 [2025-03-20 14:15:39] INFO: Successfull checking data to create card
+[2025-03-21 23:44:34] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-21 23:45:52] INFO: Successfull checking data user for login
+[2025-03-21 23:45:52] INFO: Compare hash complete
+[2025-03-21 23:45:52] INFO: Complete create token
+[2025-03-21 23:46:03] INFO: Successfull checking data user for get user profile
+[2025-03-21 23:48:03] INFO: Successfull checking data user for login
+[2025-03-21 23:48:03] INFO: Compare hash complete
+[2025-03-21 23:48:04] INFO: Complete create token
+[2025-03-21 23:48:04] INFO: Successfull checking data user for get user profile
+[2025-03-21 23:48:04] INFO: Successfull checking data to get board by user id
+[2025-03-21 23:48:04] INFO: Successfull checking data to get all members
+[2025-03-21 23:48:04] INFO: Successfull checking data to get all members
+[2025-03-21 23:48:04] INFO: Successfull checking data to get all members
+[2025-03-21 23:48:04] INFO: Successfull checking data to get all members
+[2025-03-21 23:48:04] INFO: Successfull checking data to get all members
+[2025-03-21 23:48:06] INFO: Successfull checking data to get board by user id
+[2025-03-21 23:48:06] INFO: Successfull checking data to get board by user id
+[2025-03-21 23:48:06] INFO: Successfull checking data to get all members
+[2025-03-21 23:48:06] INFO: Successfull checking data to get all members
+[2025-03-21 23:48:06] INFO: Successfull checking data to get all members
+[2025-03-21 23:48:06] INFO: Successfull checking data to get all members
+[2025-03-21 23:48:06] INFO: Successfull checking data to get all members
+[2025-03-21 23:48:06] INFO: Successfull checking data to get all members
+[2025-03-21 23:48:06] INFO: Successfull checking data to get all members
+[2025-03-21 23:48:06] INFO: Successfull checking data to get all members
+[2025-03-21 23:48:06] INFO: Successfull checking data to get all members
+[2025-03-21 23:48:06] INFO: Successfull checking data to get all members
+[2025-03-21 23:48:08] INFO: Successfull checking data to get lists in board
+[2025-03-21 23:48:08] INFO: Successfull checking data to get lists in board
+[2025-03-21 23:51:12] ERROR: Error verified token:  jwt expired
+[2025-03-21 23:51:12] ERROR: Invalid token
+[2025-03-21 23:51:32] INFO: Successfull checking data to assign user to card
+[2025-03-21 23:52:20] INFO: Successfull checking data user for login
+[2025-03-21 23:52:20] INFO: Compare hash complete
+[2025-03-21 23:52:20] INFO: Complete create token
+[2025-03-21 23:52:31] INFO: Successfull checking data user for get user profile
+[2025-03-21 23:56:42] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-21 23:56:46] INFO: Successfull checking data user for get user profile
+[2025-03-21 23:58:33] INFO: Successfull checking data user for get user profile
+[2025-03-21 23:59:45] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-21 23:59:50] INFO: Successfull checking data user for get user profile
+[2025-03-22 00:00:08] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-22 00:03:08] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-22 00:03:13] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-22 00:03:20] INFO: Successfull checking data user for get user profile
+[2025-03-22 00:03:26] INFO: Successfull checking data user for get user profile
+[2025-03-22 00:03:45] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-22 00:03:46] INFO: Successfull checking data user for get user profile
+[2025-03-22 00:03:58] INFO: Successfull checking data user for get user profile
+[2025-03-22 00:03:59] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-03-22 00:04:02] INFO: Successfull checking data user for get user profile
+[2025-03-22 00:04:12] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-22 00:04:14] INFO: Successfull checking data user for get user profile
+[2025-03-22 00:04:25] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-22 00:04:41] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-03-22 00:04:43] INFO: Successfull checking data user for get user profile
+[2025-03-22 00:04:51] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-03-22 00:04:52] INFO: Successfull checking data user for get user profile
+[2025-03-22 00:05:50] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-22 00:05:51] INFO: Successfull checking data user for get user profile
+[2025-03-22 00:08:30] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-03-22 00:10:59] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-22 00:11:03] INFO: Successfull checking data user for get user profile
+[2025-03-22 00:11:03] ERROR: Error getting user cards: ReferenceError: mongoose is not defined
+[2025-03-22 00:11:18] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-03-22 00:11:20] INFO: Successfull checking data user for get user profile
+[2025-03-22 00:13:03] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-22 00:13:07] INFO: Successfull checking data user for get user profile
+[2025-03-22 00:13:43] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-22 00:13:59] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-22 00:14:08] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-22 00:14:32] INFO: Successfull checking data user for get user profile
+[2025-03-22 00:15:57] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-03-22 00:15:59] INFO: Successfull checking data user for get user profile
+[2025-03-22 00:18:35] INFO: Successfull checking data user for login
+[2025-03-22 00:18:35] INFO: Compare hash complete
+[2025-03-22 00:18:41] INFO: Successfull checking data user for login
+[2025-03-22 00:18:41] INFO: Compare hash complete
+[2025-03-22 00:18:41] INFO: Complete create token
+[2025-03-22 00:18:56] INFO: Successfull checking data to update card
+[2025-03-22 00:19:41] INFO: Successfull checking data user for get user profile
+[2025-03-22 00:20:42] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-22 00:20:53] INFO: Successfull checking data to update card
+[2025-03-22 00:20:57] ERROR: Error verified token:  jwt expired
+[2025-03-22 00:20:57] INFO: Invalid token in get all user in board
+[2025-03-22 00:21:03] INFO: Successfull checking data user for get user profile
+[2025-03-22 00:21:05] INFO: Successfull checking data user for get user profile

@@ -10,6 +10,7 @@ const boardRouter = require("./routes/boardRoutes");
 const userRouter = require("./routes/userRoutes");
 const listRouter = require("./routes/listRoutes");
 const cardRouter = require("./routes/cardRoutes");
+const upLoadrouter = require("./routes/uploadRoutes");
 
 dotenv.config();
 
@@ -31,6 +32,7 @@ app.use("/api/board", boardRouter);
 app.use("/api/user", userRouter);
 app.use("/api/list", listRouter);
 app.use("/api/card", cardRouter);
+app.use("/api/upload", upLoadrouter);
 
 // Listen
 app.listen(port, function () {

@@ -10,7 +10,7 @@ export const UserProvider = ({ children }) => {
     const getUserData = async () => {
         try {
             const response = await privateAxios.post("/user/getProfile", {
-                checkMessage: "Get user profile"
+                checkMessage: "Get user profile",
             });
 
             const data = await response.data;
@@ -22,8 +22,30 @@ export const UserProvider = ({ children }) => {
         }
     };
 
+    // upload avatar
+    const uploadAvatar = async (formData) => {
+        try {
+            const response = await privateAxios.post(
+                "/user/uploadAvatar",
+                formData,
+                {
+                    headers: {
+                        "Content-Type": "multipart/form-data",
+                    },
+                }
+            );
+
+            const data = await response.data;
+            setUser(data.data);
+            return "Success";
+        } catch (error) {
+            console.log(error.error.Error);
+            return `Upload avatar error: ${error.message}`;
+        }
+    };
+
     return (
-        <UserContext.Provider value={{ user, getUserData }}>
+        <UserContext.Provider value={{ user, getUserData, uploadAvatar }}>
             {children}
         </UserContext.Provider>
     );

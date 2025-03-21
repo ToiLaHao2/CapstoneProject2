@@ -143,7 +143,7 @@ async function UpdateCard(req, res) {
         const allowedFields = [
             "card_title",
             "card_description",
-            "card_due_date",
+            "card_duration",
             "card_completed",
         ];
         let hasUpdated = false;
