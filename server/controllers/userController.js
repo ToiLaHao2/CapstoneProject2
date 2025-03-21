@@ -1,3 +1,4 @@
+const { default: mongoose } = require("mongoose");
 const Board = require("../models/Board");
 const Card = require("../models/Card");
 const User = require("../models/User");
@@ -286,12 +287,20 @@ async function GetAllUserCards(req, res) {
     try {
         const { user_id } = req.body;
 
+        // Convert user_id sang ObjectId
+        const objectUserId = new mongoose.Types.ObjectId(user_id);
+
         const userCards = await Board.aggregate([
-            // 1️⃣ Lọc các Board mà user tham gia
+            // 1️⃣ Lọc các Board mà user là collaborator hoặc creator
             {
                 $match: {
-                    "board_collaborators.board_collaborator_id": user_id,
-                    create_by: user_id,
+                    $or: [
+                        {
+                            "board_collaborators.board_collaborator_id":
+                                objectUserId,
+                        },
+                        { created_by: objectUserId },
+                    ],
                 },
             },
             // 2️⃣ Tách các lists từ board
@@ -307,13 +316,13 @@ async function GetAllUserCards(req, res) {
                 },
             },
 
-            // 4️⃣ Tách từng listData để xử lý từng list riêng lẻ
+            // 4️⃣ Tách từng listData
             { $unwind: "$listData" },
 
-            // 5️⃣ Tách các cards từ List
+            // 5️⃣ Tách các cards từ list
             { $unwind: "$listData.list_cards" },
 
-            // 6️⃣ Lấy thông tin Card tương ứng
+            // 6️⃣ Lấy thông tin card tương ứng
             {
                 $lookup: {
                     from: "cards",
@@ -323,15 +332,17 @@ async function GetAllUserCards(req, res) {
                 },
             },
 
-            // 7️⃣ Tách từng cardData để xử lý từng card riêng lẻ
+            // 7️⃣ Tách cardData
             { $unwind: "$cardData" },
 
-            // 8️⃣ Chỉ giữ lại card mà user_id nằm trong danh sách assignees
+            // 8️⃣ Lọc những card được assign cho user
             {
-                $match: { "cardData.card_assignees.card_assignee_id": user_id },
+                $match: {
+                    "cardData.card_assignees.card_assignee_id": objectUserId,
+                },
             },
 
-            // 9️⃣ Chỉ lấy các trường cần thiết
+            // 9️⃣ Lấy các trường cần thiết
             {
                 $project: {
                     _id: "$cardData._id",
@@ -345,6 +356,7 @@ async function GetAllUserCards(req, res) {
                 },
             },
         ]);
+
         return sendSuccess(res, "User cards retrieved successfully", {
             userCards,
         });
@@ -359,17 +371,26 @@ async function GetAllUserCards(req, res) {
 async function GetUserCardsIncoming(req, res) {
     try {
         const { user_id } = req.body;
+        const objectUserId = new mongoose.Types.ObjectId(user_id);
+
         const userCards = await Board.aggregate([
-            // 1️⃣ lọc các board mà user tham gia
+            // 1️⃣ Lọc các board user tham gia hoặc tạo
             {
                 $match: {
-                    "board_collaborators.board_collaborator_id": user_id,
-                    create_by: user_id,
+                    $or: [
+                        {
+                            "board_collaborators.board_collaborator_id":
+                                objectUserId,
+                        },
+                        { created_by: objectUserId },
+                    ],
                 },
             },
-            // 2️⃣ tách các list từ board
+
+            // 2️⃣ Tách từng list trong board
             { $unwind: "$board_lists" },
-            // 3️⃣ lấy thông tin list tương ứng
+
+            // 3️⃣ Join bảng list để lấy listData
             {
                 $lookup: {
                     from: "lists",
@@ -378,32 +399,35 @@ async function GetUserCardsIncoming(req, res) {
                     as: "listData",
                 },
             },
-            // 4️⃣ tách các card từ list
-            { $unwind: "$listData.cards" },
-            // 5️⃣ lấy thông tin card tương ứng
+
+            // 4️⃣ Unwind listData
+            { $unwind: "$listData" },
+
+            // 5️⃣ Unwind từng card trong list
+            { $unwind: "$listData.list_cards" },
+
+            // 6️⃣ Join bảng cards để lấy chi tiết card
             {
                 $lookup: {
                     from: "cards",
-                    localField: "listData.cards.card_id",
+                    localField: "listData.list_cards.card_id",
                     foreignField: "_id",
                     as: "cardData",
                 },
             },
-            // 6️⃣ tách từng cardData để xử lý từng card riêng lẻ
+
+            // 7️⃣ Unwind cardData
             { $unwind: "$cardData" },
-            // 7️⃣ lọc các card mà user id nằm trong danh sách assignees
+
+            // 8️⃣ Lọc những card có assignee là user và due_date còn hạn
             {
                 $match: {
-                    "cardData.card_assignees.card_assignee_id": user_id,
-                },
-            },
-            // 8️⃣ lọc các card có due_date lớn hơn ngày hiện tại
-            {
-                $match: {
+                    "cardData.card_assignees.card_assignee_id": objectUserId,
                     "cardData.card_duration": { $gte: new Date() },
                 },
             },
-            // 9️⃣ chỉ lấy các trường cần thiết
+
+            // 9️⃣ Chọn các trường cần trả về
             {
                 $project: {
                     _id: "$cardData._id",
@@ -417,7 +441,8 @@ async function GetUserCardsIncoming(req, res) {
                 },
             },
         ]);
-        sendSuccess(res, "User cards incoming retrieved successfully", {
+
+        return sendSuccess(res, "User cards incoming retrieved successfully", {
             userCards,
         });
     } catch (error) {
