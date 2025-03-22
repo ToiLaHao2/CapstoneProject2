@@ -26,3 +26,17 @@
 [2025-03-20 12:51:41] ERROR: Error verified token:  jwt expired
 [2025-03-20 13:58:26] ERROR: Error verified token:  jwt expired
 >>>>>>> Stashed changes
+[2025-03-20 16:16:52] ERROR: Error checking data card_update_details is required.
+[2025-03-20 16:17:46] ERROR: Error checking data card_update_details is required.
+[2025-03-20 16:19:12] ERROR: Error checking data card_id is required.
+[2025-03-20 16:32:44] ERROR: Error checking data board_id is required.
+[2025-03-20 16:34:43] ERROR: Error checking data board_id is required.
+[2025-03-20 16:37:27] ERROR: Error checking data board_id is required.
+[2025-03-20 16:41:25] ERROR: Error checking data board_id is required.
+[2025-03-20 16:42:38] ERROR: Error checking data board_id is required.
+[2025-03-20 19:52:37] ERROR: Error verified token:  jwt expired
+[2025-03-20 19:52:37] ERROR: Invalid token
+[2025-03-20 19:55:56] ERROR: Error checking data board_id is required.
+[2025-03-20 19:56:25] ERROR: Error checking data board_id is required.
+[2025-03-20 19:57:52] ERROR: Error checking data board_id is required.
+[2025-03-20 20:11:05] ERROR: Error checking data board_id is required.

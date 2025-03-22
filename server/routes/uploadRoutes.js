@@ -1,5 +1,5 @@
 const express = require("express");
-const { upload, validateUpload } = require("../middlewares/validateUpload");
+const { upload, validateUpload } = require("../middleware/uploadMiddleware");
 const { UploadAvatar } = require("../controllers/uploadController");
 
 const upLoadrouter = express.Router();

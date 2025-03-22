@@ -1,10 +1,12 @@
 import React, { createContext, useState, useContext } from "react";
 import privateAxios from "../api/privateAxios";
+import { useUser } from "./UserContext";
 
 const BoardContext = createContext();
 
 export const BoardProvider = ({ children }) => {
     const [boards, setBoards] = useState([]);
+    const { user } = useUser();
     const colorHashMap = {
         A: "#8B0000", // Dark Red
         B: "#00008B", // Dark Blue
@@ -206,6 +208,47 @@ export const BoardProvider = ({ children }) => {
 
     //add list to board
     //get all users in board
+    const getAllMembers = async (boardId) => {
+        try {
+            const response = await privateAxios.post("/board/getAllMembers", {
+                checkMessage: "Get all members",
+                board_id: boardId,
+            });
+            const data = await response.data;
+            return data.data;
+
+        } catch (error) {
+            console.log("Error getting members", error);
+            return [];
+        }
+    }
+
+    //add member to board
+    const addMemberToBoard = async (boardId, memberId, memberRole) => {
+        try {
+            const response = await privateAxios.post("/board/addMemberToBoard", {
+                checkMessage: "Add member to board",
+                board_id: boardId,
+                member_id: memberId,
+                member_role: memberRole,
+            });
+
+            const data = await response.data;
+
+            if (data.success) {
+                getAllBoardsByUserId();
+                return "Success";
+            } else {
+                console.log("Add member failed:", data.message);
+                return "Failed";
+            }
+        } catch (error) {
+            console.log("Error adding member:", error);
+            return "Error";
+        }
+    };
+
+
     // const getAllUsers
 
     //end-mei
@@ -221,6 +264,8 @@ export const BoardProvider = ({ children }) => {
                 getListsInBoard,
                 updatePrivacy,
                 colorHashMap,
+                getAllMembers,
+                addMemberToBoard
             }}
         >
             {children}

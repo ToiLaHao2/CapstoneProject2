@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
 import privateAxios from "../api/privateAxios";
 
 const CardContext = createContext();
@@ -6,6 +6,8 @@ const CardContext = createContext();
 export const useCard = () => useContext(CardContext);
 
 export const CardProvider = ({ children }) => {
+    const [cards, setCards] = useState([]);
+
     // create card
     const createCard = async (boardId, listId, cardTitle) => {
         try {
@@ -56,8 +58,43 @@ export const CardProvider = ({ children }) => {
         }
     };
 
+    // update card
+    const updateCard = async (boardId, listId, cardId, cardUpdateDetails) => {
+        try {
+            const response = await privateAxios.post("/card/updateCard", {
+                board_id: boardId,
+                list_id: listId,
+                card_id: cardId,
+                card_update_details: cardUpdateDetails,
+                checkMessage: "Update card"
+            });
+
+            const data = response.data;
+
+            if (data.success) {
+                console.log("Received updated card data:", data.data);
+
+                setCards(prevCards => {
+                    return prevCards.map(card => {
+                        if (card._id === cardId) {
+                            return { ...card, ...cardUpdateDetails };
+                        }
+                        return card;
+                    });
+                });
+                return data.data;
+            } else {
+                console.error("Failed to update card:", data.message);
+                return null;
+            }
+        } catch (error) {
+            console.error("Error updating card:", error);
+            return null;
+        }
+    };
+
     return (
-        <CardContext.Provider value={{ createCard, getCard }}>
+        <CardContext.Provider value={{ createCard, getCard, updateCard }}>
             {children}
         </CardContext.Provider>
     );
