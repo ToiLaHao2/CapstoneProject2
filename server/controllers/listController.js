@@ -19,6 +19,9 @@ async function CreateList(req, res) {
                 return sendError(res, 401, "User not authorized", "GetList");
             }
         }
+        // } else if (isUserExist.board_collaborator_role !== "EDITOR") {
+        //     return sendError(res, 401, "User not authorized", "GetList");
+        // }
         const list = new List({
             list_title: list_title,
             board_id: board_id,
