@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./ViewProfile.css";
 import { useUser } from "../../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import { useBoard } from "../../../context/BoardContext";
+import { FaEdit } from "react-icons/fa";
 
 const ViewProfile = () => {
     const [activeTab, setActiveTab] = useState("Activity");
@@ -10,6 +11,7 @@ const ViewProfile = () => {
     const { boards, getAllBoardsByUserId } = useBoard();
     const { user } = useUser();
     const navigate = useNavigate();
+    const fileInputRef = useRef(null);
 
     useEffect(() => {
         getAllBoardsByUserId();
@@ -54,6 +56,19 @@ const ViewProfile = () => {
         }
     };
 
+    const handleAvatarClick = () => {
+        fileInputRef.current.click(); 
+    };
+
+    const handleFileChange = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            // Xử lý file (ví dụ: gửi lên server)
+            console.log("File được chọn:", file);
+            // Thêm logic gửi file lên server tại đây
+        }
+    };
+
     return (
         <div className="profile-container">
             {/* Header Section */}
@@ -62,6 +77,17 @@ const ViewProfile = () => {
                     <div className="avatar">
                         {user.user_full_name ? user.user_full_name.charAt(0).toUpperCase() : "?"}
                     </div>
+
+                    <div className="avatar-edit-icon" onClick={handleAvatarClick}>
+                            <FaEdit />
+                        </div>
+                        <input
+                            type="file"
+                            ref={fileInputRef}
+                            style={{ display: "none" }}
+                            onChange={handleFileChange}
+                        />
+
                     <div>
                         <h2>
                             {user.user_full_name}

@@ -169,3 +169,11 @@
   outline: none;
   box-shadow: 0 0 5px rgba(0, 86, 179, 0.7);
 }
+
+.avatar-edit-icon svg {
+  font-size: 16px;
+  color: rgb(6, 6, 96); 
+  margin-bottom: 40px;
+  margin-right: 30px;
+  margin-left: -20px;
+}

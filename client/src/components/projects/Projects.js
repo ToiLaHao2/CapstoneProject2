@@ -5,42 +5,85 @@ import { useBoard } from "../../context/BoardContext";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faEdit,
-    faBars,
-    faLock,
-    faLockOpen,
-    faUserPlus,
-    faTrash,
-} from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faBars, faLock, faLockOpen, faUserPlus, faTrash, } from "@fortawesome/free-solid-svg-icons";
+import { useUser } from "../../context/UserContext";
 
 const Projects = () => {
-    const {
-        boards,
-        deleteBoard,
-        updateBoard,
-        addMemberToBoard,
-        updatePrivacy,
-        colorHashMap,
-    } = useBoard();
+    const { boards, deleteBoard, updateBoard, addMemberToBoard, updatePrivacy, colorHashMap } = useBoard();
+    const { user, searchUsers } = useUser();
     const navigate = useNavigate();
+
     const [editingProjectId, setEditingProjectId] = useState(null);
     const [editedTitle, setEditedTitle] = useState("");
+
     const [menuVisibleProjectId, setMenuVisibleProjectId] = useState(null);
     const menuRef = useRef(null);
-    const [isPopupOpen, setIsPopupOpen] = useState(false);
-    const [suggestedUsers, setSuggestedUsers] = useState([
-        { _id: "1", user_full_name: "Alice" },
-        { _id: "2", user_full_name: "Bob" },
-        { _id: "3", user_full_name: "Charlie" },
-    ]);
 
-    const openPopup = () => setIsPopupOpen(true);
-    const closePopup = () => setIsPopupOpen(false);
+    const [isAddMembersPopupOpen, setIsAddMembersPopupOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
+    const [currentBoardId, setCurrentBoardId] = useState(null);
 
-    const handleAddMembers = (selectedUsers) => {
-        console.log("Added Users:", selectedUsers);
-        closePopup();
+    const openAddMembersPopup = () => setIsAddMembersPopupOpen(true);
+    const closeAddMembersPopup = () => setIsAddMembersPopupOpen(false);
+
+    // search user to add to 
+    const handleSearchChange = async (e) => {
+        const query = e.target.value;
+        setSearchQuery(query);
+
+        if (query.length > 0) {
+            try {
+                const results = await searchUsers(user._id, query);
+                setSearchResults(results);
+            } catch (error) {
+                console.error("Error searching users:", error);
+                setSearchResults([]);
+            }
+        } else {
+            setSearchResults([]);
+        }
+    };
+
+    // click suggest user then add to the input search
+    const handleSuggestionClick = (userEmail) => {
+        setSearchQuery(userEmail);
+        setSearchResults([]);
+    };
+
+    // add members
+    // const handleAddMember = async (memberId) => {
+    //     try {
+    //         console.log("currentBoardId:", currentBoardId);
+
+    //         const result = await addMemberToBoard(currentBoardId, memberId, "MEMBER");
+    //         if (result === "Success") {
+    //             console.log("Member added successfully");
+    //             closeAddMembersPopup();
+    //         } else {
+    //             console.error("Failed to add member");
+    //         }
+    //     } catch (error) {
+    //         console.error("Error adding member:", error);
+    //     }
+    // };
+
+    // add members
+    const handleAddMember = async (memberId) => {
+        try {
+            console.log("currentBoardId:", currentBoardId);
+            console.log("memberId:", memberId);
+
+            const result = await addMemberToBoard(currentBoardId, memberId, "MEMBER");
+            if (result === "Success") {
+                console.log("Member added successfully");
+                closeAddMembersPopup();
+            } else {
+                console.error("Failed to add member");
+            }
+        } catch (error) {
+            console.error("Error adding member:", error);
+        }
     };
 
     const handleProjectClick = (boardTitle, board_id) => {
@@ -51,6 +94,7 @@ const Projects = () => {
         navigate("/chat");
     };
 
+    //edit board title
     const handleEditClick = async (e, boardId) => {
         e.stopPropagation();
         const newTitle = prompt("Enter new board title:");
@@ -71,14 +115,7 @@ const Projects = () => {
     };
 
     const handlePrivacyClick = async (e, boardId, currentPrivacy) => {
-        console.log("work");
         e.stopPropagation();
-        console.log(
-            "Clicked Privacy:",
-            boardId,
-            "Current Privacy:",
-            currentPrivacy
-        );
 
         const newPrivacy = !currentPrivacy;
         const result = await updatePrivacy(boardId, newPrivacy);
@@ -89,7 +126,10 @@ const Projects = () => {
         }
     };
 
-    const handleAddMembersClick = async (e, boardId) => {};
+    const handleAddMembersClick = async (e, boardId) => {
+        setCurrentBoardId(boardId); // Thêm dòng này
+        openAddMembersPopup();
+    };
 
     const handleDeleteClick = async (e, boardId) => {
         e.stopPropagation();
@@ -198,11 +238,10 @@ const Projects = () => {
                                 </div>
                                 <div className="project-status-and-users">
                                     <span
-                                        className={`project-status ${
-                                            project.board_is_public
-                                                ? "public"
-                                                : "private"
-                                        }`}
+                                        className={`project-status ${project.board_is_public
+                                            ? "public"
+                                            : "private"
+                                            }`}
                                     >
                                         {project.board_is_public
                                             ? "Public"
@@ -218,15 +257,14 @@ const Projects = () => {
                                                         key={index}
                                                         className="user-icon-circle"
                                                         style={{
-                                                            backgroundColor: `${
-                                                                colorHashMap[
-                                                                    collaborator.user_full_name
-                                                                        .charAt(
-                                                                            0
-                                                                        )
-                                                                        .toUpperCase()
-                                                                ]
-                                                            }`,
+                                                            backgroundColor: `${colorHashMap[
+                                                                collaborator.user_full_name
+                                                                    .charAt(
+                                                                        0
+                                                                    )
+                                                                    .toUpperCase()
+                                                            ]
+                                                                }`,
                                                             color: "white",
                                                         }}
                                                     >
@@ -276,7 +314,11 @@ const Projects = () => {
                                             </div>
                                             <div
                                                 className="dropdown-item"
-                                                onClick={(e) => openPopup()}
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    setCurrentBoardId(project._id);
+                                                    openAddMembersPopup();
+                                                }}
                                             >
                                                 <FontAwesomeIcon
                                                     icon={faUserPlus}
@@ -342,6 +384,43 @@ const Projects = () => {
                     </div>
                 )}
             </div>
+
+            {/* Popup "Add Members" */}
+            {isAddMembersPopupOpen && (
+                <div className="add-members-popup-overlay">
+                    <div className="add-members-popup">
+                        <input
+                            type="text"
+                            placeholder="Search user email"
+                            value={searchQuery}
+                            onChange={handleSearchChange}
+                        />
+                        <ul className="search-results">
+                            {console.log('searchResults:', searchResults)}
+                            {searchResults.map((user) => (
+                                <li key={user._id} onClick={() => handleSuggestionClick(user.user_email)}>
+                                    {user.user_email}
+                                </li>
+                            ))}
+                        </ul>
+                        <button onClick={closeAddMembersPopup}>Close</button>
+                        {/* <button className="button-add" onClick={() => handleAddMember()}>Add</button> */}
+                        <button className="button-add" onClick={() => {
+                            console.log("Truy vấn tìm kiếm:", searchQuery);
+                            console.log("Kết quả tìm kiếm:", searchResults);
+                            const selectedUser = searchResults.find(user => user.user_email === searchQuery);
+                            if (selectedUser) {
+                                handleAddMember(selectedUser._id);
+                            } else {
+                                console.error("No user selected.");
+                            }
+                        }}>
+                            Add
+                        </button>
+                        </div>
+                </div>
+            )}
+
         </div>
     );
 };

@@ -168,6 +168,8 @@ async function UpdateCard(req, res) {
         card.updated_by = user_id;
         const updatedCard = await card.save();
 
+        console.log(card_update_details);
+
         return sendSuccess(res, "Card updated successfully", updatedCard);
     } catch (error) {
         logger.error(error.message);
