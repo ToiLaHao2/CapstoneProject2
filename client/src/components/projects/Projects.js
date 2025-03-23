@@ -5,11 +5,25 @@ import { useBoard } from "../../context/BoardContext";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit, faBars, faLock, faLockOpen, faUserPlus, faTrash, } from "@fortawesome/free-solid-svg-icons";
+import {
+    faEdit,
+    faBars,
+    faLock,
+    faLockOpen,
+    faUserPlus,
+    faTrash,
+} from "@fortawesome/free-solid-svg-icons";
 import { useUser } from "../../context/UserContext";
 
 const Projects = () => {
-    const { boards, deleteBoard, updateBoard, addMemberToBoard, updatePrivacy, colorHashMap } = useBoard();
+    const {
+        boards,
+        deleteBoard,
+        updateBoard,
+        addMemberToBoard,
+        updatePrivacy,
+        colorHashMap,
+    } = useBoard();
     const { user, searchUsers } = useUser();
     const navigate = useNavigate();
 
@@ -23,11 +37,12 @@ const Projects = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const [searchResults, setSearchResults] = useState([]);
     const [currentBoardId, setCurrentBoardId] = useState(null);
+    const [user_to_add, setUserToAdd] = useState(null);
 
     const openAddMembersPopup = () => setIsAddMembersPopupOpen(true);
     const closeAddMembersPopup = () => setIsAddMembersPopupOpen(false);
 
-    // search user to add to 
+    // search user to add to
     const handleSearchChange = async (e) => {
         const query = e.target.value;
         setSearchQuery(query);
@@ -46,8 +61,9 @@ const Projects = () => {
     };
 
     // click suggest user then add to the input search
-    const handleSuggestionClick = (userEmail) => {
-        setSearchQuery(userEmail);
+    const handleSuggestionClick = (user) => {
+        setSearchQuery(user.user_email);
+        setUserToAdd(user);
         setSearchResults([]);
     };
 
@@ -69,12 +85,16 @@ const Projects = () => {
     // };
 
     // add members
-    const handleAddMember = async (memberId) => {
+    const handleAddMember = async () => {
         try {
             console.log("currentBoardId:", currentBoardId);
-            console.log("memberId:", memberId);
+            console.log("memberId:", user_to_add._id);
 
-            const result = await addMemberToBoard(currentBoardId, memberId, "MEMBER");
+            const result = await addMemberToBoard(
+                currentBoardId,
+                user_to_add._id,
+                "VIEWER"
+            );
             if (result === "Success") {
                 console.log("Member added successfully");
                 closeAddMembersPopup();
@@ -238,10 +258,11 @@ const Projects = () => {
                                 </div>
                                 <div className="project-status-and-users">
                                     <span
-                                        className={`project-status ${project.board_is_public
-                                            ? "public"
-                                            : "private"
-                                            }`}
+                                        className={`project-status ${
+                                            project.board_is_public
+                                                ? "public"
+                                                : "private"
+                                        }`}
                                     >
                                         {project.board_is_public
                                             ? "Public"
@@ -257,14 +278,15 @@ const Projects = () => {
                                                         key={index}
                                                         className="user-icon-circle"
                                                         style={{
-                                                            backgroundColor: `${colorHashMap[
-                                                                collaborator.user_full_name
-                                                                    .charAt(
-                                                                        0
-                                                                    )
-                                                                    .toUpperCase()
-                                                            ]
-                                                                }`,
+                                                            backgroundColor: `${
+                                                                colorHashMap[
+                                                                    collaborator.user_full_name
+                                                                        .charAt(
+                                                                            0
+                                                                        )
+                                                                        .toUpperCase()
+                                                                ]
+                                                            }`,
                                                             color: "white",
                                                         }}
                                                     >
@@ -316,7 +338,9 @@ const Projects = () => {
                                                 className="dropdown-item"
                                                 onClick={(e) => {
                                                     e.stopPropagation();
-                                                    setCurrentBoardId(project._id);
+                                                    setCurrentBoardId(
+                                                        project._id
+                                                    );
                                                     openAddMembersPopup();
                                                 }}
                                             >
@@ -396,31 +420,38 @@ const Projects = () => {
                             onChange={handleSearchChange}
                         />
                         <ul className="search-results">
-                            {console.log('searchResults:', searchResults)}
+                            {console.log("searchResults:", searchResults)}
                             {searchResults.map((user) => (
-                                <li key={user._id} onClick={() => handleSuggestionClick(user.user_email)}>
+                                <li
+                                    key={user._id}
+                                    onClick={() => handleSuggestionClick(user)}
+                                >
                                     {user.user_email}
                                 </li>
                             ))}
                         </ul>
                         <button onClick={closeAddMembersPopup}>Close</button>
                         {/* <button className="button-add" onClick={() => handleAddMember()}>Add</button> */}
-                        <button className="button-add" onClick={() => {
-                            console.log("Truy vấn tìm kiếm:", searchQuery);
-                            console.log("Kết quả tìm kiếm:", searchResults);
-                            const selectedUser = searchResults.find(user => user.user_email === searchQuery);
-                            if (selectedUser) {
-                                handleAddMember(selectedUser._id);
-                            } else {
-                                console.error("No user selected.");
-                            }
-                        }}>
+                        <button
+                            className="button-add"
+                            onClick={() => {
+                                console.log("Truy vấn tìm kiếm:", searchQuery);
+                                console.log("Kết quả tìm kiếm:", searchResults);
+                                // const selectedUser = searchResults.find(
+                                //     (user) => user.user_email === searchQuery
+                                // );
+                                if (user_to_add !== null) {
+                                    handleAddMember();
+                                } else {
+                                    console.error("No user selected.");
+                                }
+                            }}
+                        >
                             Add
                         </button>
-                        </div>
+                    </div>
                 </div>
             )}
-
         </div>
     );
 };

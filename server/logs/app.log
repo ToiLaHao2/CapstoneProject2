@@ -1,0 +1,190 @@
+[2025-03-23 19:18:40] ERROR: Attempt 1: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-03-23 19:19:15] ERROR: Attempt 2: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-03-23 19:19:50] ERROR: Attempt 3: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-03-23 19:20:25] ERROR: Attempt 4: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-03-23 19:21:00] ERROR: Attempt 5: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-03-23 19:21:57] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-03-23 19:22:51] INFO: Successfull checking data user for login
+[2025-03-23 19:22:51] INFO: Compare hash complete
+[2025-03-23 19:22:51] INFO: Complete create token
+[2025-03-23 19:22:51] INFO: Successfull checking data user for get user profile
+[2025-03-23 19:22:51] INFO: Successfull checking data to get board by user id
+[2025-03-23 19:22:51] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:51] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:52] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:52] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:52] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:53] INFO: Successfull checking data to get board by user id
+[2025-03-23 19:22:53] INFO: Successfull checking data to get board by user id
+[2025-03-23 19:22:54] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:54] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:54] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:54] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:54] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:54] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:54] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:55] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:55] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:55] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:58] INFO: Successfull checking data to get board by user id
+[2025-03-23 19:22:58] INFO: Successfull checking data to get board by user id
+[2025-03-23 19:22:58] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:58] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:59] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:59] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:59] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:59] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:59] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:59] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:59] INFO: Successfull checking data to get all members
+[2025-03-23 19:22:59] INFO: Successfull checking data to get all members
+[2025-03-23 19:24:55] INFO: Successfull checking data to get lists in board
+[2025-03-23 19:24:55] INFO: Successfull checking data to get lists in board
+[2025-03-23 19:24:55] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:24:55] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:24:55] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:24:55] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:25:15] INFO: Successfull checking data to update card
+[2025-03-23 19:25:15] INFO: Successfull checking data to get lists in board
+[2025-03-23 19:25:15] INFO: Successfull checking data to get lists in board
+[2025-03-23 19:25:15] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:25:15] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:25:15] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:25:15] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:25:31] INFO: Successfull checking data to get board by user id
+[2025-03-23 19:25:31] INFO: Successfull checking data to get board by user id
+[2025-03-23 19:25:31] INFO: Successfull checking data to get all members
+[2025-03-23 19:25:31] INFO: Successfull checking data to get all members
+[2025-03-23 19:25:31] INFO: Successfull checking data to get all members
+[2025-03-23 19:25:31] INFO: Successfull checking data to get all members
+[2025-03-23 19:25:32] INFO: Successfull checking data to get all members
+[2025-03-23 19:25:32] INFO: Successfull checking data to get all members
+[2025-03-23 19:25:32] INFO: Successfull checking data to get all members
+[2025-03-23 19:25:32] INFO: Successfull checking data to get all members
+[2025-03-23 19:25:32] INFO: Successfull checking data to get all members
+[2025-03-23 19:25:32] INFO: Successfull checking data to get all members
+[2025-03-23 19:25:39] INFO: Successfull checking data to get board by user id
+[2025-03-23 19:25:39] INFO: Successfull checking data to get board by user id
+[2025-03-23 19:25:40] INFO: Successfull checking data to get all members
+[2025-03-23 19:25:40] INFO: Successfull checking data to get all members
+[2025-03-23 19:25:40] INFO: Successfull checking data to get all members
+[2025-03-23 19:25:40] INFO: Successfull checking data to get all members
+[2025-03-23 19:25:40] INFO: Successfull checking data to get all members
+[2025-03-23 19:25:40] INFO: Successfull checking data to get all members
+[2025-03-23 19:25:40] INFO: Successfull checking data to get all members
+[2025-03-23 19:25:40] INFO: Successfull checking data to get all members
+[2025-03-23 19:25:40] INFO: Successfull checking data to get all members
+[2025-03-23 19:25:41] INFO: Successfull checking data to get all members
+[2025-03-23 19:25:53] INFO: Successfull checking data user for get user profile
+[2025-03-23 19:25:53] INFO: Successfull checking data user for get user profile
+[2025-03-23 19:26:03] INFO: Successfull checking data to get lists in board
+[2025-03-23 19:26:03] INFO: Successfull checking data to get lists in board
+[2025-03-23 19:26:03] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:26:03] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:26:03] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:26:03] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:26:11] INFO: Successfull checking data to get board by user id
+[2025-03-23 19:26:11] INFO: Successfull checking data to get board by user id
+[2025-03-23 19:26:11] INFO: Successfull checking data to get all members
+[2025-03-23 19:26:11] INFO: Successfull checking data to get all members
+[2025-03-23 19:26:11] INFO: Successfull checking data to get all members
+[2025-03-23 19:26:11] INFO: Successfull checking data to get all members
+[2025-03-23 19:26:11] INFO: Successfull checking data to get all members
+[2025-03-23 19:26:11] INFO: Successfull checking data to get all members
+[2025-03-23 19:26:12] INFO: Successfull checking data to get all members
+[2025-03-23 19:26:12] INFO: Successfull checking data to get all members
+[2025-03-23 19:26:12] INFO: Successfull checking data to get all members
+[2025-03-23 19:26:12] INFO: Successfull checking data to get all members
+[2025-03-23 19:26:12] INFO: Successfull checking data user for get user profile
+[2025-03-23 19:26:12] INFO: Successfull checking data user for get user profile
+[2025-03-23 19:26:18] INFO: Successfull checking data to get lists in board
+[2025-03-23 19:26:18] INFO: Successfull checking data to get lists in board
+[2025-03-23 19:26:19] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:26:19] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:26:19] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:26:19] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:26:21] INFO: Successfull checking data to get lists in board
+[2025-03-23 19:26:21] INFO: Successfull checking data to get lists in board
+[2025-03-23 19:26:22] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:26:22] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:26:22] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:26:22] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:26:44] INFO: Successfull checking data user for search user profile
+[2025-03-23 19:26:54] INFO: Successfull checking data user for search user profile
+[2025-03-23 19:26:54] INFO: Successfull checking data user for search user profile
+[2025-03-23 19:26:55] INFO: Successfull checking data user for search user profile
+[2025-03-23 19:26:56] INFO: Successfull checking data user for search user profile
+[2025-03-23 19:27:56] INFO: Successfull checking data user for search user profile
+[2025-03-23 19:27:56] INFO: Successfull checking data user for search user profile
+[2025-03-23 19:27:58] INFO: Successfull checking data user for search user profile
+[2025-03-23 19:28:00] INFO: Successfull checking data user for search user profile
+[2025-03-23 19:28:03] INFO: Successfull checking data user for search user profile
+[2025-03-23 19:28:04] INFO: Successfull checking data user for search user profile
+[2025-03-23 19:28:04] INFO: Successfull checking data user for search user profile
+[2025-03-23 19:28:05] INFO: Successfull checking data user for search user profile
+[2025-03-23 19:28:12] INFO: Successfull checking data user for search user profile
+[2025-03-23 19:28:12] INFO: Successfull checking data user for search user profile
+[2025-03-23 19:28:12] INFO: Successfull checking data user for search user profile
+[2025-03-23 19:32:52] INFO: Successfull checking data user for search user profile
+[2025-03-23 19:32:53] INFO: Successfull checking data user for search user profile
+[2025-03-23 19:39:00] INFO: Successfull checking data user for login
+[2025-03-23 19:39:01] INFO: Compare hash complete
+[2025-03-23 19:39:01] INFO: Complete create token
+[2025-03-23 19:39:01] INFO: Successfull checking data user for get user profile
+[2025-03-23 19:39:01] INFO: Successfull checking data to get board by user id
+[2025-03-23 19:39:01] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:02] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:02] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:02] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:02] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:03] INFO: Successfull checking data to get board by user id
+[2025-03-23 19:39:03] INFO: Successfull checking data to get board by user id
+[2025-03-23 19:39:04] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:04] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:04] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:04] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:05] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:05] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:05] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:05] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:05] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:05] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:18] INFO: Successfull checking data user for login
+[2025-03-23 19:39:18] INFO: Compare hash complete
+[2025-03-23 19:39:18] INFO: Complete create token
+[2025-03-23 19:39:18] INFO: Successfull checking data user for get user profile
+[2025-03-23 19:39:18] INFO: Successfull checking data to get board by user id
+[2025-03-23 19:39:18] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:19] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:19] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:19] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:19] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:21] INFO: Successfull checking data to get board by user id
+[2025-03-23 19:39:21] INFO: Successfull checking data to get board by user id
+[2025-03-23 19:39:21] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:21] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:21] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:21] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:22] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:22] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:22] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:22] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:22] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:22] INFO: Successfull checking data to get all members
+[2025-03-23 19:39:51] INFO: Successfull checking data to get lists in board
+[2025-03-23 19:39:51] INFO: Successfull checking data to get lists in board
+[2025-03-23 19:39:51] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:39:51] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:39:51] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:39:51] INFO: Successfull checking data to get cards in list
+[2025-03-23 19:40:03] INFO: Successfull checking data user for search user profile
+[2025-03-23 19:40:03] INFO: Successfull checking data user for search user profile
+[2025-03-23 19:41:12] INFO: Successfull checking data to add member to board
+[2025-03-23 19:41:13] ERROR: Error with AddMemberToBoard: ValidationError: board_collaborators.2.board_collaborator_role: `MEMBER` is not a valid enum value for path `board_collaborator_role`.
+[2025-03-23 19:42:41] INFO: Successfull checking data to add member to board
+[2025-03-23 19:42:42] INFO: Successfull checking data to get board by user id
+[2025-03-23 19:42:42] INFO: Successfull checking data to get all members
+[2025-03-23 19:42:42] INFO: Successfull checking data to get all members
+[2025-03-23 19:42:43] INFO: Successfull checking data to get all members
+[2025-03-23 19:42:43] INFO: Successfull checking data to get all members
+[2025-03-23 19:42:43] INFO: Successfull checking data to get all members
