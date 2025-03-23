@@ -47,10 +47,13 @@ export const UserProvider = ({ children }) => {
     // Lấy các cards sắp hết hạn của user
     const getUserCardsIncoming = async (userId) => {
         try {
-            const response = await privateAxios.post("/user/getUserCardsIncoming", {
-                user_id: userId,
-                checkMessage: "Get user cards incoming",
-            });
+            const response = await privateAxios.post(
+                "/user/getUserCardsIncoming",
+                {
+                    user_id: userId,
+                    checkMessage: "Get user cards incoming",
+                }
+            );
 
             const data = await response.data;
             if (data.success) {
@@ -62,6 +65,8 @@ export const UserProvider = ({ children }) => {
         } catch (error) {
             console.error("Error getting user cards incoming:", error);
             return [];
+        }
+    };
 
     // upload avatar
     const uploadAvatar = async (formData) => {
@@ -82,13 +87,19 @@ export const UserProvider = ({ children }) => {
         } catch (error) {
             console.log(error.error.Error);
             return `Upload avatar error: ${error.message}`;
-
         }
     };
 
     return (
-
-        <UserContext.Provider value={{ user, getUserData, searchUsers, getUserCardsIncoming, uploadAvatar }}>
+        <UserContext.Provider
+            value={{
+                user,
+                getUserData,
+                searchUsers,
+                getUserCardsIncoming,
+                uploadAvatar,
+            }}
+        >
             {children}
         </UserContext.Provider>
     );
