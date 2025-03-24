@@ -273,28 +273,38 @@ const Projects = () => {
                                         {project.board_collaborators.length >
                                             0 &&
                                             project.board_collaborators.map(
-                                                (collaborator, index) => (
-                                                    <div
-                                                        key={index}
-                                                        className="user-icon-circle"
-                                                        style={{
-                                                            backgroundColor: `${
-                                                                colorHashMap[
-                                                                    collaborator.user_full_name
-                                                                        .charAt(
-                                                                            0
-                                                                        )
-                                                                        .toUpperCase()
-                                                                ]
-                                                            }`,
-                                                            color: "white",
-                                                        }}
-                                                    >
-                                                        {collaborator.user_full_name
-                                                            .charAt(0)
-                                                            .toUpperCase()}
-                                                    </div>
-                                                )
+                                                (collaborator, index) =>
+                                                    collaborator.user_avatar_url !==
+                                                    "empty" ? (
+                                                        <img
+                                                            className="user-icon-circle"
+                                                            src={
+                                                                collaborator.user_avatar_url
+                                                            }
+                                                            alt="small-avatar"
+                                                        />
+                                                    ) : (
+                                                        <div
+                                                            key={index}
+                                                            className="user-icon-circle"
+                                                            style={{
+                                                                backgroundColor: `${
+                                                                    colorHashMap[
+                                                                        collaborator.user_full_name
+                                                                            .charAt(
+                                                                                0
+                                                                            )
+                                                                            .toUpperCase()
+                                                                    ]
+                                                                }`,
+                                                                color: "white",
+                                                            }}
+                                                        >
+                                                            {collaborator.user_full_name
+                                                                .charAt(0)
+                                                                .toUpperCase()}
+                                                        </div>
+                                                    )
                                             )}
                                     </div>
                                 </div>
