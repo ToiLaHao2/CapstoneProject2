@@ -9,7 +9,7 @@ const ViewProfile = () => {
     const [activeTab, setActiveTab] = useState("Activity");
     const [showAllProjects, setShowAllProjects] = useState(false);
     const { boards, getAllBoardsByUserId } = useBoard();
-    const { user } = useUser();
+    const { user, uploadAvatar } = useUser();
     const navigate = useNavigate();
     const fileInputRef = useRef(null);
 
@@ -57,15 +57,19 @@ const ViewProfile = () => {
     };
 
     const handleAvatarClick = () => {
-        fileInputRef.current.click(); 
+        fileInputRef.current.click();
     };
 
-    const handleFileChange = (event) => {
+    const handleFileChange = async (event) => {
         const file = event.target.files[0];
         if (file) {
             // Xử lý file (ví dụ: gửi lên server)
             console.log("File được chọn:", file);
             // Thêm logic gửi file lên server tại đây
+            const formData = new FormData();
+            formData.append("file", file);
+            formData.append("checkMessage", "Upload avatar");
+            await uploadAvatar(formData);
         }
     };
 
@@ -75,31 +79,38 @@ const ViewProfile = () => {
             <div className="profile-header">
                 <div className="profile-info">
                     <div className="avatar">
-                        {user.user_full_name ? user.user_full_name.charAt(0).toUpperCase() : "?"}
+                        {user.user_avatar_url ? (
+                            <img
+                                className="small-avatar"
+                                src={user.user_avatar_url}
+                                alt="small-avatar"
+                            />
+                        ) : (
+                            user.user_full_name.charAt(0).toUpperCase()
+                        )}
                     </div>
 
-                    <div className="avatar-edit-icon" onClick={handleAvatarClick}>
-                            <FaEdit />
-                        </div>
-                        <input
-                            type="file"
-                            ref={fileInputRef}
-                            style={{ display: "none" }}
-                            onChange={handleFileChange}
-                        />
+                    <div
+                        className="avatar-edit-icon"
+                        onClick={handleAvatarClick}
+                    >
+                        <FaEdit />
+                    </div>
+                    <input
+                        type="file"
+                        ref={fileInputRef}
+                        style={{ display: "none" }}
+                        onChange={handleFileChange}
+                    />
 
                     <div>
-                        <h2>
-                            {user.user_full_name}
-                        </h2>
+                        <h2>{user.user_full_name}</h2>
                         <p className="status active">Active</p>
                         {/* <p>Age 6 • Student • Melbourne, Australia</p> */}
                     </div>
                 </div>
                 <div className="contact-info">
-                    <div className="contact-item">
-                        📧 {user.user_email}
-                    </div>
+                    <div className="contact-item">📧 {user.user_email}</div>
                     {/* <div className="contact-item">📞 +1 0987654321</div> */}
 
                     <button className="edit-profile-btn">Edit Profile</button>
@@ -133,18 +144,35 @@ const ViewProfile = () => {
                 <h3>Projects</h3>
                 <div className="projects">
                     {boards.length > 0 ? (
-                        boards.slice(0, showAllProjects ? boards.length : 2).map((project, index) => (
-                            <div key={index} className="project-card active" onClick={() => handleProjectClick(project.board_title, project._id)}>
-                                <h4>{project.board_title}</h4>
-                                <p>{project.board_description || "No description"}</p>
-                            </div>
-                        ))
+                        boards
+                            .slice(0, showAllProjects ? boards.length : 2)
+                            .map((project, index) => (
+                                <div
+                                    key={index}
+                                    className="project-card active"
+                                    onClick={() =>
+                                        handleProjectClick(
+                                            project.board_title,
+                                            project._id
+                                        )
+                                    }
+                                >
+                                    <h4>{project.board_title}</h4>
+                                    <p>
+                                        {project.board_description ||
+                                            "No description"}
+                                    </p>
+                                </div>
+                            ))
                     ) : (
                         <p>No projects available</p>
                     )}
                 </div>
                 {boards.length > 2 && (
-                    <button className="view-more-btn" onClick={() => setShowAllProjects(!showAllProjects)}>
+                    <button
+                        className="view-more-btn"
+                        onClick={() => setShowAllProjects(!showAllProjects)}
+                    >
                         {showAllProjects ? "View Less" : "View More"}
                     </button>
                 )}
@@ -153,17 +181,17 @@ const ViewProfile = () => {
             {/* Tabs Section */}
             <div className="tabs">
                 <div
-                    className={`tab ${activeTab === "Activity"
-                        ? "active"
-                        : ""}`}
+                    className={`tab ${
+                        activeTab === "Activity" ? "active" : ""
+                    }`}
                     onClick={() => setActiveTab("Activity")}
                 >
                     Activity
                 </div>
                 <div
-                    className={`tab ${activeTab === "Schedule"
-                        ? "active"
-                        : ""}`}
+                    className={`tab ${
+                        activeTab === "Schedule" ? "active" : ""
+                    }`}
                     onClick={() => setActiveTab("Schedule")}
                 >
                     Schedule

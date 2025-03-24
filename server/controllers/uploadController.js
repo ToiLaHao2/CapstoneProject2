@@ -41,7 +41,7 @@ async function UploadAvatar(req, res) {
                     sendSuccess(
                         res,
                         "Avatar uploaded successfully",
-                        { avatar_url: result.secure_url },
+                        user,
                         "UploadAvatar"
                     );
                 }

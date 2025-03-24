@@ -37,7 +37,7 @@ const validationRules = {
         },
     },
     validateUpload: {
-        checkMessage: "Validate file upload",
+        checkMessage: "Upload avatar",
         requiredFields: ["user_id", "file", "checkMessage"],
         fileSize: 5 * 1024 * 1024, // Giới hạn file tối đa 5MB
         allowedMimeTypes: [
