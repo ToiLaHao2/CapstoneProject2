@@ -399,6 +399,11 @@ async function GetAllMembers(req, res) {
                 ),
             },
         }).select("_id user_full_name user_email user_avatar_url");
+        members.push(
+            await User.findById(board.created_by).select(
+                "_id user_full_name user_email user_avatar_url"
+            )
+        );
         return sendSuccess(res, "Get all members success", members);
     } catch (error) {
         logger.error(`Error with GetAllMembers: ${error}`);
