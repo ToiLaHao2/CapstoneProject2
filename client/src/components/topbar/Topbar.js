@@ -5,17 +5,18 @@ import { FaUserCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { useBoard } from "../../context/BoardContext";
+import { useUser } from "../../context/UserContext";
 
 const initialState = {
     boardTitle: "",
     boardDescription: "",
-    boardType: ""
+    boardType: "",
 };
 
 function formReducer(state, action) {
     return {
         ...state,
-        [action.name]: action.value
+        [action.name]: action.value,
     };
 }
 
@@ -28,12 +29,13 @@ const Topbar = () => {
     const { logout } = useAuth();
     const { createBoard } = useBoard();
     const [state, dispatch] = useReducer(formReducer, initialState);
+    const { user } = useUser();
 
     const { boardTitle, boardDescription, boardType } = state;
 
     const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
-    const handleClickOutside = event => {
+    const handleClickOutside = (event) => {
         if (
             dropdownRef.current &&
             !dropdownRef.current.contains(event.target)
@@ -57,7 +59,7 @@ const Topbar = () => {
         };
     });
 
-    const handleNavigation = path => {
+    const handleNavigation = (path) => {
         navigate(path); // Navigate to the desired page
         setIsDropdownOpen(false);
     };
@@ -76,7 +78,7 @@ const Topbar = () => {
         navigate("/login");
     };
 
-    const handleSubmitCreateBoard = async e => {
+    const handleSubmitCreateBoard = async (e) => {
         e.preventDefault();
         console.log(boardType);
         if (!boardTitle || !boardDescription || boardType === "") {
@@ -88,7 +90,7 @@ const Topbar = () => {
         const res = await createBoard({
             boardTitle,
             boardDescription,
-            boardType // Giá trị boolean
+            boardType, // Giá trị boolean
         });
 
         if (res === "Success") {
@@ -121,13 +123,24 @@ const Topbar = () => {
                     onClick={toggleDropdown}
                     ref={dropdownRef}
                 >
-                    <FaUserCircle className="icon" />
-                    {isDropdownOpen &&
+                    {/* <div className="avatar"> */}
+                    {user.user_avatar_url ? (
+                        <img
+                            className="small-avatar"
+                            src={user.user_avatar_url}
+                            alt="small-avatar"
+                        />
+                    ) : (
+                        user.user_full_name.charAt(0).toUpperCase()
+                    )}
+                    {/* </div> */}
+                    {isDropdownOpen && (
                         <div className="dropdown-menu">
                             <button
                                 className="dropdown-item"
                                 onClick={() =>
-                                    handleNavigation("/view-profile")}
+                                    handleNavigation("/view-profile")
+                                }
                             >
                                 View Profile
                             </button>
@@ -143,12 +156,13 @@ const Topbar = () => {
                             >
                                 Logout
                             </button>
-                        </div>}
+                        </div>
+                    )}
                 </div>
             </div>
 
             {/* Overlay and form for creating new board */}
-            {isFormOpen &&
+            {isFormOpen && (
                 <div className="overlay">
                     <div className="form-container" ref={formRef}>
                         <h2>Create New Board</h2>
@@ -160,7 +174,7 @@ const Topbar = () => {
                                     id="boardTitle"
                                     name="boardTitle"
                                     value={boardTitle}
-                                    onChange={e => dispatch(e.target)}
+                                    onChange={(e) => dispatch(e.target)}
                                 />
                             </div>
                             <div className="input-group">
@@ -172,7 +186,7 @@ const Topbar = () => {
                                     id="boardDescription"
                                     name="boardDescription"
                                     value={boardDescription}
-                                    onChange={e => dispatch(e.target)}
+                                    onChange={(e) => dispatch(e.target)}
                                 />
                             </div>
                             <div className="input-group">
@@ -183,14 +197,15 @@ const Topbar = () => {
                                     id="boardType"
                                     name="boardType"
                                     value={boardType} // Giá trị hiện tại từ state (dưới dạng boolean)
-                                    onChange={e =>
+                                    onChange={(e) =>
                                         dispatch({
                                             name: "boardType",
                                             value:
                                                 e.target.value === "true"
                                                     ? true
-                                                    : false // Chuyển đổi thành boolean
-                                        })}
+                                                    : false, // Chuyển đổi thành boolean
+                                        })
+                                    }
                                 >
                                     <option value="">Select Board Type</option>
                                     <option value="true">Public</option>
@@ -212,7 +227,8 @@ const Topbar = () => {
                             </div>
                         </form>
                     </div>
-                </div>}
+                </div>
+            )}
         </div>
     );
 };
