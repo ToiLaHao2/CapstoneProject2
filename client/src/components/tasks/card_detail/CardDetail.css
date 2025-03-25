@@ -426,3 +426,78 @@
   font-size: 14px;
   margin-right: 10px;
 }
+
+.add-member-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; 
+}
+
+.add-member-form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px; 
+}
+
+.add-member-input {
+  width: 93%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* .add-member-list {
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  margin-bottom: 10px;
+} */
+
+.add-member-list {
+  max-height: 150px; 
+  overflow-y: auto; 
+  border: 1px solid #eee;
+  margin-bottom: 10px;
+}
+
+.add-member-item {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.add-member-item:hover {
+  background: #f0f0f0;
+}
+
+.add-member-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.add-member-cancel,
+.add-member-add {
+  padding: 8px 16px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-member-cancel {
+  background: #eee;
+}
+
+.add-member-add {
+  background: #007bff;
+  color: white;
+}

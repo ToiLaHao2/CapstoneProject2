@@ -126,7 +126,7 @@ const Topbar = () => {
                     {/* <div className="avatar"> */}
                     {user.user_avatar_url ? (
                         <img
-                            className="small-avatar"
+                            className="small-avatar-topbar"
                             src={user.user_avatar_url}
                             alt="small-avatar"
                         />

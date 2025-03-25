@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { DndContext, closestCenter } from "@dnd-kit/core";
-import {
-    SortableContext,
-    verticalListSortingStrategy,
-    arrayMove,
-} from "@dnd-kit/sortable";
+import { SortableContext, verticalListSortingStrategy, arrayMove, } from "@dnd-kit/sortable";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -56,14 +52,7 @@ const TaskCard = ({ task, boardId }) => {
     );
 };
 
-const Column = ({
-    column,
-    tasks = [],
-    onAddCard,
-    onEditColumnTitle,
-    onDeleteColumn,
-    boardId,
-}) => {
+const Column = ({ column, tasks = [], onAddCard, onEditColumnTitle, onDeleteColumn, boardId, }) => {
     return (
         <div className="column">
             <div className="column-container-title">
@@ -125,11 +114,11 @@ const Tasks = () => {
                         title: list.list_title || "Unnamed Column",
                         tasks: Array.isArray(cards)
                             ? cards.map((card) => ({
-                                  ...card,
-                                  id: card._id,
-                                  list_id: list._id,
-                                  board_id: boardId,
-                              }))
+                                ...card,
+                                id: card._id,
+                                list_id: list._id,
+                                board_id: boardId,
+                            }))
                             : [],
                     };
                 })
@@ -227,14 +216,14 @@ const Tasks = () => {
                 return prev.map((col) =>
                     col.id === sourceCol.id
                         ? {
-                              ...col,
-                              tasks: col.tasks.filter(
-                                  (task) => task.id !== active.id
-                              ),
-                          }
+                            ...col,
+                            tasks: col.tasks.filter(
+                                (task) => task.id !== active.id
+                            ),
+                        }
                         : col.id === targetCol.id
-                        ? { ...col, tasks: [...col.tasks, taskToMove] }
-                        : col
+                            ? { ...col, tasks: [...col.tasks, taskToMove] }
+                            : col
                 );
             }
 
