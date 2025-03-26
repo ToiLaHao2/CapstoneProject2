@@ -1,10 +1,18 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useContext, useEffect } from "react";
 import privateAxios from "../api/privateAxios";
 
 const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+
+    // Trong UserContext
+    useEffect(() => {
+        const storedUser = sessionStorage.getItem("user");
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, []);
 
     // Lấy thông tin người dùng từ API
     const getUserData = async () => {
@@ -15,6 +23,7 @@ export const UserProvider = ({ children }) => {
 
             const data = await response.data;
             setUser(data.data);
+            sessionStorage.setItem("user", JSON.stringify(data.data)); // Lưu user
             return "Success"; // Cập nhật trạng thái người dùng
         } catch (error) {
             console.log(error.error.Error);

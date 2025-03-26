@@ -1,6 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 import publicAxios from "../api/publicAxios";
 import privateAxios from "../api/privateAxios";
+import { useUser } from "./UserContext"; // ✅ Import từ UserContext
 
 const AuthContext = createContext();
 
@@ -8,6 +9,8 @@ export const AuthProvider = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [token, setToken] = useState(null);
     const [loading, setLoading] = useState(true);
+
+    const { getUserData } = useUser(); // ✅ Lấy hàm từ UserContext
 
     const saveToken = (token) => {
         sessionStorage.setItem("token", token);
@@ -17,7 +20,7 @@ export const AuthProvider = ({ children }) => {
         sessionStorage.removeItem("token");
     };
 
-    const register = async (fullName, email, password, getUserData) => {
+    const register = async (fullName, email, password) => {
         try {
             const response = await publicAxios.post("/auth/register", {
                 user_full_name: fullName,
@@ -29,12 +32,10 @@ export const AuthProvider = ({ children }) => {
 
             const data = response.data;
 
-            // Cập nhật token và trạng thái xác thực
             setToken(data.data.token);
             setIsAuthenticated(true);
             saveToken(data.data.token);
 
-            // Gọi API để lấy dữ liệu người dùng từ UserContext
             const result = await getUserData();
             return result;
         } catch (error) {
@@ -43,7 +44,7 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
-    const login = async (userEmail, userPassword, getUserData) => {
+    const login = async (userEmail, userPassword) => {
         try {
             const response = await publicAxios.post("/auth/login", {
                 user_email: userEmail,
@@ -53,12 +54,10 @@ export const AuthProvider = ({ children }) => {
 
             const data = response.data;
 
-            // Cập nhật token và trạng thái xác thực
             setToken(data.data.token);
             setIsAuthenticated(true);
             saveToken(data.data.token);
 
-            // Gọi API để lấy dữ liệu người dùng từ UserContext
             const result = await getUserData();
             return result;
         } catch (error) {
@@ -81,7 +80,7 @@ export const AuthProvider = ({ children }) => {
         try {
             const response = await privateAxios.post("/auth/changePassword", {
                 user_email: user_email,
-                user_password: new_password, // Sửa lỗi đánh máy "usaer_password"
+                user_password: new_password,
                 user_last_password: current_password,
                 checkMessage: "Change password",
             });
@@ -98,10 +97,11 @@ export const AuthProvider = ({ children }) => {
         if (storedToken) {
             setToken(storedToken);
             setIsAuthenticated(true);
+            getUserData(); // Gọi lại để đảm bảo load user khi refresh
         } else {
             logout();
         }
-        setLoading(false); // Ngừng tải
+        setLoading(false);
     }, []);
 
     return (

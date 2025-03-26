@@ -3,6 +3,7 @@ const List = require("../models/List.js");
 const Board = require("../models/Board.js");
 const logger = require("../utils/logger.js");
 const { sendError, sendSuccess } = require("../utils/response.js");
+const User = require("../models/User.js");
 
 async function CreateCard(req, res) {
     try {
@@ -46,7 +47,6 @@ async function CreateCard(req, res) {
         const card = await newCard.save();
         // add card to list
         list.list_cards.push({
-            card_numerical_order: list.list_cards.length - 1,
             card_id: card._id,
         });
         await list.save();
@@ -94,7 +94,17 @@ async function GetCard(req, res) {
         if (!cardInList) {
             return sendError(res, 403, "Card does not belong to the list");
         }
-        return sendSuccess(res, 200, card);
+        // add assignee info
+        const assignees = [];
+        for (const assignee of card.card_assignees) {
+            const user = await User.findById(assignee.card_assignee_id).select(
+                "user_name user_email user_avatar_url"
+            );
+            assignees.push(user);
+        }
+        let cardInfo = card.toObject();
+        cardInfo.card_assignees = assignees;
+        return sendSuccess(res, 200, cardInfo);
     } catch (error) {
         logger.error(error.message);
         return sendError(res, 500, "Internal server error");
