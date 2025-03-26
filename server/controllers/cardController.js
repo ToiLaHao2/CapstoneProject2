@@ -284,6 +284,18 @@ async function AssignUserToCard(req, res) {
         if (!cardInList) {
             return sendError(res, 403, "Card does not belong to the list");
         }
+        // check asssignees exist
+        const assignee = await User.findById(assign_user_id);
+        if (!assignee) {
+            return sendError(res, 404, "User not found to add not found");
+        }
+        // check if user is already assigned to the card
+        const assigneeExist = card.card_assignees.find(
+            (assignee) => String(assignee.card_assignee_id) === assign_user_id
+        );
+        if (assigneeExist) {
+            return sendError(res, 403, "User already assigned to the card");
+        }
         // add assignees
         card.card_assignees.push({ card_assignee_id: assign_user_id });
         await card.save();
