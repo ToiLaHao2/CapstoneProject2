@@ -11,4 +11,15 @@ note :
     - axios : xử lý lỗi từ phía API dễ hơn, không cần check status code nhiều
               các code 200 được thông qua nhanh hơn, các code 4xx 5xx được đưa
               vào catch error của try catch
-              
+            
+
+về việc upload Avatar:
+
+    - usecase 1 : sau khi đăng ký thành công, sẽ có giao diện thông báo hỏi người dùng có muốn upload ảnh đại diện hay không
+                        + nếu có : thì người dùng sẽ thực hiện upload ảnh
+                        + nếu không : thì người dùng sẽ được chọn nút cancle chuyển đến trang chủ
+    - usecase 2 : khi người dùng chọn vào view profile sẽ có nút upload ảnh đại diện
+
+về việc hiện ảnh đại diện:
+    - ảnh đại diện sẽ được hiện trong khu vực về thông tin người dùng. Thay vì mặc định là hình tròn với chữ cái thể hiện tên của người dùng thì sẽ 
+    dùng thẻ img để hiện ảnh đại diện. Nếu người dùng chưa upload ảnh đại diện thì sẽ hiện ảnh mặc định.

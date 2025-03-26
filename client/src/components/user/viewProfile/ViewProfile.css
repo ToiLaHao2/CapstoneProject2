@@ -177,13 +177,14 @@
 }
 
 .small-avatar {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%; /* bo tròn */
-    object-fit: cover; /* ảnh không bị méo */
-    /* border: 2px solid #4267b2; viền màu Facebook */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* bóng nhẹ */
-    transition: transform 0.2s ease-in-out;
+    width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #4267b2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+  margin-left: 50px;
 }
 
 .small-avatar:hover {

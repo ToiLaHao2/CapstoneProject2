@@ -93,8 +93,34 @@ export const CardProvider = ({ children }) => {
         }
     };
 
+     // assign user to card
+     const assignUserToCard = async (boardId, listId, cardId, assignUserId) => {
+        try {
+            const response = await privateAxios.post("/card/assignUserToCard", {
+                board_id: boardId,
+                list_id: listId,
+                card_id: cardId,
+                assign_user_id: assignUserId,
+                checkMessage: "Assign user to card",
+            });
+
+            const data = response.data;
+            console.log("Assigned user to card:", data);
+
+            if (data.success) {
+                return data.data;
+            } else {
+                console.error("Failed to assign user to card:", data.message);
+                return null;
+            }
+        } catch (error) {
+            console.error("Error assigning user to card:", error);
+            return null;
+        }
+    };
+
     return (
-        <CardContext.Provider value={{ createCard, getCard, updateCard }}>
+        <CardContext.Provider value={{ createCard, getCard, updateCard, assignUserToCard }}>
             {children}
         </CardContext.Provider>
     );
