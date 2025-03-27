@@ -1,14 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import './Dashboard.css';
-import CalendarComponent from 'react-calendar';
-import { useNavigate } from 'react-router-dom';
-import { useBoard } from '../../context/BoardContext';
+import React, { useEffect, useState } from "react";
+import "./Dashboard.css";
+import CalendarComponent from "react-calendar";
+import { useNavigate } from "react-router-dom";
+import { useBoard } from "../../context/BoardContext";
+import { useUser } from "../../context/UserContext";
+import moment from "moment";
 
 const Dashboard = () => {
-    const today = new Date();
+    const today = moment().toDate();
     const navigate = useNavigate();
     const [selectedDate, setSelectedDate] = useState(today);
     const { boards, getAllBoardsByUserId } = useBoard();
+    const { user, getUserCardsIncoming } = useUser();
+    const [cards, setCards] = useState([]);
+    const [tasks, setTasks] = useState([]);
 
     const handleProjectClick = (boardTitle, board_id) => {
         navigate("/Tasks", { state: { boardTitle, board_id } });
@@ -16,39 +21,53 @@ const Dashboard = () => {
 
     useEffect(() => {
         getAllBoardsByUserId();
-    }, [])
+    }, []);
 
-    // Lọc ra 3 board mới nhất theo create_at
     const latestBoards = [...boards]
-        .filter(board => board.created_at)
+        .filter((board) => board.created_at)
         .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
         .slice(0, 3);
-    console.log("Latest Boards:", latestBoards);
 
-    const tasks = [
-        {
-            date: new Date(today.getFullYear(), today.getMonth(), today.getDate()),
-            details: {
-                project: 'Daily Standup Meeting',
-                task: 'Attend Scrum meeting',
-                deadline: today.toLocaleDateString(),
-                timeLeft: '0 days, 3 hours',
-            },
-        },
-        {
-            date: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2),
-            details: {
-                project: 'Website Design',
-                task: 'Submit wireframe designs',
-                deadline: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2).toLocaleDateString(),
-                timeLeft: '2 days, 5 hours',
-            },
-        },
-    ];
+    useEffect(() => {
+        if (user && user._id) {
+            getUserCardsIncoming(user._id)
+                .then((cards) => {
+                    setCards(cards);
+                    const newTasks = cards.map((card) => {
+                        const deadline = moment(card.due_date);
 
-    // Lấy task dựa trên ngày chọn
-    const selectedTask = tasks.find(task =>
-        task.date.toDateString() === selectedDate.toDateString()
+                        return {
+                            date: deadline.toDate(),
+                            details: {
+                                project: card.card_title,
+                                task: card.card_description,
+                                deadline: deadline.format("DD/MM/YYYY"),
+                                timeLeft: countTimeLeft(deadline),
+                            },
+                        };
+                    });
+                    setTasks(newTasks);
+                })
+                .catch((error) => {
+                    console.error("Failed to fetch user cards:", error);
+                });
+        }
+    }, [user]);
+
+    const countTimeLeft = (deadlineMoment) => {
+        const now = moment();
+        const diff = moment.duration(deadlineMoment.diff(now));
+
+        const days = Math.floor(diff.asDays());
+        const hours = diff.hours();
+
+        return `${days} day(s), ${hours} hour(s)`;
+    };
+
+    const selectedTask = tasks.find(
+        (task) =>
+            moment(task.date).format("YYYY-MM-DD") ===
+            moment(selectedDate).format("YYYY-MM-DD")
     );
 
     const handleDateChange = (date) => {
@@ -57,9 +76,8 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard-container">
-            {/* My Task Section */}
             <div className="tasks">
-                <div className="my-tasks" onClick={() => navigate('/my-tasks')}>
+                <div className="my-tasks" onClick={() => navigate("/my-tasks")}>
                     <h3>My Task</h3>
                     <div className="task priority-task">
                         <h4>Priority Task</h4>
@@ -79,7 +97,6 @@ const Dashboard = () => {
                     </div>
                 </div>
 
-                {/* Urgently Task Section */}
                 <div className="urgently-task">
                     <h3>Progress Chart</h3>
                     <div className="progress">
@@ -101,11 +118,17 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            {/*  dashboard Section */}
-            {/* <div className="recently-dashboard">
+            <div className="recently-dashboard">
                 {latestBoards.length > 0 ? (
                     latestBoards.map((board) => (
-                        <div key={board._id} className="dashboard-project">
+                        <div
+                            key={board._id}
+                            className="dashboard-project"
+                            onClick={() =>
+                                handleProjectClick(board.board_title, board._id)
+                            }
+                            style={{ cursor: "pointer" }}
+                        >
                             <p>{board.board_title}</p>
                             <span>{board.board_description}</span>
                         </div>
@@ -113,36 +136,9 @@ const Dashboard = () => {
                 ) : (
                     <p>No recent boards available.</p>
                 )}
-            </div> */}
-
-<div className="recently-dashboard">
-    {latestBoards.length > 0 ? (
-        latestBoards.map((board) => (
-            <div 
-                key={board._id} 
-                className="dashboard-project"
-                onClick={() => handleProjectClick(board.board_title, board._id)}
-                style={{ cursor: "pointer" }} // Để hiển thị con trỏ khi hover
-            >
-                <p>{board.board_title}</p>
-                <span>{board.board_description}</span>
             </div>
-        ))
-    ) : (
-        <p>No recent boards available.</p>
-    )}
-</div>
 
             <div className="calendar-container">
-                {/* Calendar Section */}
-                {/* <div className="calendar-section">
-                    <h3>Calendar</h3>
-                    <CalendarComponent
-                        onChange={handleDateChange}
-                        value={selectedDate}
-                    />
-                </div> */}
-
                 <div className="calendar-section">
                     <h3 className="calendar-title">Calendar</h3>
                     <CalendarComponent
@@ -150,26 +146,38 @@ const Dashboard = () => {
                         value={selectedDate}
                         tileContent={({ date, view }) =>
                             view === "month" &&
-                                tasks.some(task =>
-                                    task.date.toDateString() === date.toDateString()
-                                ) ? (
+                            tasks.some(
+                                (task) =>
+                                    moment(task.date).format("YYYY-MM-DD") ===
+                                    moment(date).format("YYYY-MM-DD")
+                            ) ? (
                                 <div className="highlight-task"></div>
                             ) : null
                         }
                     />
                 </div>
 
-
-                {/* Details Calendar Section */}
                 <div className="details-calendar-section">
                     <div className="task-details">
                         <h4>Task Details</h4>
                         {selectedTask ? (
                             <>
-                                <p><strong>Project:</strong> {selectedTask.details.project}</p>
-                                <p><strong>Task:</strong> {selectedTask.details.task}</p>
-                                <p><strong>Deadline:</strong> {selectedTask.details.deadline}</p>
-                                <p><strong>Time Left:</strong> {selectedTask.details.timeLeft}</p>
+                                <p>
+                                    <strong>Project:</strong>{" "}
+                                    {selectedTask.details.project}
+                                </p>
+                                <p>
+                                    <strong>Task:</strong>{" "}
+                                    {selectedTask.details.task}
+                                </p>
+                                <p>
+                                    <strong>Deadline:</strong>{" "}
+                                    {selectedTask.details.deadline}
+                                </p>
+                                <p>
+                                    <strong>Time Left:</strong>{" "}
+                                    {selectedTask.details.timeLeft}
+                                </p>
                             </>
                         ) : (
                             <p>No task for this date.</p>

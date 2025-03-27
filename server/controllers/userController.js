@@ -273,9 +273,9 @@ async function RemoveUserFromBoard(req, res) {
     }
 }
 
-async function UpdateUserRoleInBoard(req, res) { }
+async function UpdateUserRoleInBoard(req, res) {}
 // assignUserToCard
-async function AssignUserToCard(req, res) { }
+async function AssignUserToCard(req, res) {}
 
 // removeUserToCard
 
@@ -373,8 +373,8 @@ async function GetUserCardsIncoming(req, res) {
         const { user_id } = req.body;
         const objectUserId = new mongoose.Types.ObjectId(user_id);
 
-        console.log("User ID:", user_id);
-        console.log("ObjectId User ID:", objectUserId);
+        // console.log("User ID:", user_id);
+        // console.log("ObjectId User ID:", objectUserId);
 
         const userCards = await Board.aggregate([
             // 1️⃣ Lọc các board user tham gia hoặc tạo
@@ -445,7 +445,7 @@ async function GetUserCardsIncoming(req, res) {
             },
         ]);
 
-        console.log("User Cards from DB:", userCards);
+        // console.log("User Cards from DB:", userCards);
 
         return sendSuccess(res, "User cards incoming retrieved successfully", {
             userCards,
@@ -503,12 +503,12 @@ async function SuggestUsersToAdd(req, res) {
     }
 }
 
-async function UpdateNotificationsSettings(req, res) { }
+async function UpdateNotificationsSettings(req, res) {}
 
-async function GetUserNotifications(req, res) { }
+async function GetUserNotifications(req, res) {}
 
 // Tạo nhóm làm việc chung
-async function CreateWorkGroup(req, res) { }
+async function CreateWorkGroup(req, res) {}
 
 module.exports = {
     GetUserProfile,

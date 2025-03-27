@@ -15,6 +15,8 @@ export const CardProvider = ({ children }) => {
                 board_id: boardId,
                 list_id: listId,
                 card_title: cardTitle,
+                card_duration: Date.now(),
+                card_description: "",
                 checkMessage: "Create new card",
             });
 
@@ -66,7 +68,7 @@ export const CardProvider = ({ children }) => {
                 list_id: listId,
                 card_id: cardId,
                 card_update_details: cardUpdateDetails,
-                checkMessage: "Update card"
+                checkMessage: "Update card",
             });
 
             const data = response.data;
@@ -74,8 +76,8 @@ export const CardProvider = ({ children }) => {
             if (data.success) {
                 console.log("Received updated card data:", data.data);
 
-                setCards(prevCards => {
-                    return prevCards.map(card => {
+                setCards((prevCards) => {
+                    return prevCards.map((card) => {
                         if (card._id === cardId) {
                             return { ...card, ...cardUpdateDetails };
                         }
@@ -93,8 +95,8 @@ export const CardProvider = ({ children }) => {
         }
     };
 
-     // assign user to card
-     const assignUserToCard = async (boardId, listId, cardId, assignUserId) => {
+    // assign user to card
+    const assignUserToCard = async (boardId, listId, cardId, assignUserId) => {
         try {
             const response = await privateAxios.post("/card/assignUserToCard", {
                 board_id: boardId,
@@ -120,7 +122,9 @@ export const CardProvider = ({ children }) => {
     };
 
     return (
-        <CardContext.Provider value={{ createCard, getCard, updateCard, assignUserToCard }}>
+        <CardContext.Provider
+            value={{ createCard, getCard, updateCard, assignUserToCard }}
+        >
             {children}
         </CardContext.Provider>
     );
