@@ -78,18 +78,15 @@ const ViewProfile = () => {
             {/* Header Section */}
             <div className="profile-header">
                 <div className="profile-info">
-                    <div className="avatar">
-                        {user.user_avatar_url !== "empty" ? (
-                            <img
-                                className="small-avatar"
-                                src={user.user_avatar_url}
-                                alt="small-avatar"
-                            />
-                        ) : (
-                            user.user_full_name.charAt(0).toUpperCase()
-                        )}
-                    </div>
-
+                    {user.user_avatar_url !== "empty" ? (
+                        <img
+                            className="small-avatar"
+                            src={user.user_avatar_url}
+                            alt="small-avatar"
+                        />
+                    ) : (
+                        user.user_full_name.charAt(0).toUpperCase()
+                    )}
                     <div
                         className="avatar-edit-icon"
                         onClick={handleAvatarClick}

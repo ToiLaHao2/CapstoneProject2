@@ -178,13 +178,14 @@
 
 .small-avatar {
     width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #4267b2;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease-in-out;
-  margin-left: 50px;
+
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #4267b2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+    margin-left: 50px;
 }
 
 .small-avatar:hover {
