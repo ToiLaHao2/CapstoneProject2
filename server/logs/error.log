@@ -5,3 +5,16 @@
 [2025-03-23 19:21:00] ERROR: Attempt 5: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
 [2025-03-23 19:41:13] ERROR: Error with AddMemberToBoard: ValidationError: board_collaborators.2.board_collaborator_role: `MEMBER` is not a valid enum value for path `board_collaborator_role`.
 [2025-03-26 23:31:20] ERROR: Attempt 1: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-03-27 15:46:11] ERROR: Error finding document
+[2025-03-27 15:46:11] ERROR: Error finding document
+[2025-03-27 15:46:22] ERROR: Error finding document
+[2025-03-27 15:46:22] ERROR: Error finding document
+[2025-03-27 15:46:25] ERROR: Error : MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+[2025-03-27 15:46:29] ERROR: Attempt 1: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-03-27 15:46:40] ERROR: Error finding document
+[2025-03-27 15:46:40] ERROR: Error finding document
+[2025-03-27 15:46:41] ERROR: Error finding document
+[2025-03-27 15:46:41] ERROR: Error finding document
+[2025-03-27 17:14:46] ERROR: Error verified token:  jwt expired
+[2025-03-27 18:45:45] ERROR: Error verified token:  jwt expired
+[2025-03-27 18:45:45] ERROR: Error verified token:  jwt expired
