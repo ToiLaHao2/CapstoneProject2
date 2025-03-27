@@ -16,7 +16,11 @@ async function UploadAvatar(req, res) {
         if (!user) {
             return sendError(res, 404, "User not found", "UploadAvatar");
         }
-
+        // kiểm tra xem đã có ảnh chưa
+        if (user.user_avatar_url) {
+            // Xóa ảnh cũ
+            await cloudinary.uploader.destroy(user.user_avatar_url);
+        }
         // Upload ảnh lên Cloudinary
         cloudinary.uploader
             .upload_stream(
