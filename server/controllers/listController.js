@@ -27,7 +27,6 @@ async function CreateList(req, res) {
             board_id: board_id,
         });
         board.board_lists.push({
-            list_numerical_order: list_numerical_order,
             list_id: list._id,
         });
         await list.save();

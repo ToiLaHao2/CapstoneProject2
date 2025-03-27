@@ -79,7 +79,7 @@ const ViewProfile = () => {
             <div className="profile-header">
                 <div className="profile-info">
                     <div className="avatar">
-                        {user.user_avatar_url ? (
+                        {user.user_avatar_url !== "empty" ? (
                             <img
                                 className="small-avatar"
                                 src={user.user_avatar_url}

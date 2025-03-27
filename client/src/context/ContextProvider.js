@@ -26,17 +26,15 @@ import { CardProvider } from "./CardContext";
 
 const ContextProvider = ({ children }) => {
     return (
-        <AuthProvider>
-            <UserProvider>
+        <UserProvider>
+            <AuthProvider>
                 <BoardProvider>
                     <ListProvider>
-                        <CardProvider>
-                            {children}
-                        </CardProvider>
+                        <CardProvider>{children}</CardProvider>
                     </ListProvider>
                 </BoardProvider>
-            </UserProvider>
-        </AuthProvider>
+            </AuthProvider>
+        </UserProvider>
     );
 };
 

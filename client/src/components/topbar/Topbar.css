@@ -33,6 +33,8 @@
 .right-icons {
     display: flex;
     align-items: center;
+    padding: 5px;
+    margin-left: 10px;
 }
 
 .icon {
@@ -224,15 +226,15 @@
     padding: 10px 20px;
     background-color: #fff;
     border-bottom: 1px solid #e0e0e0;
-    margin-left: 0; 
+    margin-left: 0;
 }
 
 .search-container {
     flex: 1;
     display: flex;
     justify-content: center;
-    margin-left: 0; 
-    margin-top: 10px; 
+    margin-left: 0;
+    margin-top: 10px;
 }
 
 .search-box {
@@ -243,8 +245,7 @@
     font-size: 16px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    margin-top: 8px; 
-
+    margin-top: 8px;
 }
 
 .search-box:focus {
@@ -256,12 +257,12 @@
 .right-icons {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap;
 }
 
 .add-board-btn {
     padding: 8px 16px;
-    margin-right: 10px; 
+    margin-right: 10px;
     margin-bottom: 8px;
     background-color: #3b82f6;
     color: #fff;
@@ -285,7 +286,7 @@
 
 .user-icon-container {
     position: relative;
-    display: flex; 
+    display: flex;
     align-items: center;
 }
 
@@ -335,8 +336,8 @@
     background-color: #ffffffd2;
     padding: 20px;
     border-radius: 8px;
-    width: 90%; 
-    max-width: 400px; 
+    width: 90%;
+    max-width: 400px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: fixed;
     margin: auto;
@@ -354,7 +355,7 @@
 }
 
 .input-group input {
-    width: 100%; 
+    width: 100%;
     padding: 10px;
     border-radius: 8px;
     border: 1px solid #ccc;
@@ -434,7 +435,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    object-fit: cover; 
+    object-fit: cover;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease-in-out;
     margin-right: 60px;
@@ -447,18 +448,18 @@
 /* Media query cho màn hình nhỏ (mobile) */
 @media (max-width: 768px) {
     .topbar {
-        flex-direction: column; 
-        text-align: center; 
+        flex-direction: column;
+        text-align: center;
         padding: 10px;
     }
 
     .search-container {
-        margin-left: 0; 
+        margin-left: 0;
         margin-bottom: 10px;
     }
 
     .right-icons {
-        flex-direction: row; 
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
@@ -475,7 +476,7 @@
     }
 
     .form-actions {
-        flex-direction: column; 
+        flex-direction: column;
     }
 
     .submit-btn,
@@ -484,7 +485,7 @@
         margin-top: 10px;
     }
 
-    .small-avatar{
+    .small-avatar {
         margin-right: 0;
     }
 }
@@ -492,13 +493,13 @@
 /* Media query cho màn hình lớn hơn (desktop) */
 @media (min-width: 769px) {
     .topbar {
-        flex-direction: row; 
-        margin-left: 220px; 
+        flex-direction: row;
+        margin-left: 220px;
         padding-left: 20px;
     }
 
     .search-container {
-        margin-left: 180px; 
+        margin-left: 180px;
         margin-top: 0;
     }
 
@@ -507,12 +508,12 @@
     }
 
     .add-board-btn {
-        margin-right: 20px; 
+        margin-right: 20px;
         margin-bottom: 0;
     }
 
     .icon {
-        margin-left: 15px; 
+        margin-left: 15px;
         margin-right: 10px;
     }
 
@@ -522,10 +523,10 @@
 
     .submit-btn,
     .cancel-btn {
-        width: 48%; 
+        width: 48%;
         margin-top: 0;
     }
-    .small-avatar{
+    .small-avatar {
         margin-right: 50px;
     }
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useReducer } from "react";
 import "./Topbar.css";
-import { FaBell } from "react-icons/fa";
-import { FaUserCircle } from "react-icons/fa";
+import { FaAlignJustify, FaBell } from "react-icons/fa";
+// import { FaUserCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { useBoard } from "../../context/BoardContext";
@@ -30,7 +30,7 @@ const Topbar = () => {
     const { createBoard } = useBoard();
     const [state, dispatch] = useReducer(formReducer, initialState);
     const { user } = useUser();
-
+    console.log(user);
     const { boardTitle, boardDescription, boardType } = state;
 
     const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
@@ -123,16 +123,7 @@ const Topbar = () => {
                     onClick={toggleDropdown}
                     ref={dropdownRef}
                 >
-                    {/* <div className="avatar"> */}
-                    {user.user_avatar_url ? (
-                        <img
-                            className="small-avatar-topbar"
-                            src={user.user_avatar_url}
-                            alt="small-avatar"
-                        />
-                    ) : (
-                        user.user_full_name.charAt(0).toUpperCase()
-                    )}
+                    <FaAlignJustify />
                     {/* </div> */}
                     {isDropdownOpen && (
                         <div className="dropdown-menu">

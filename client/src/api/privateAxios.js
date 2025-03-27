@@ -3,20 +3,20 @@ import { axiosInstance } from "./axiosConfig";
 
 // Thêm Interceptor cho Request có token
 axiosInstance.interceptors.request.use(
-    config => {
+    (config) => {
         const token = sessionStorage.getItem("token");
         if (token) {
             config.headers.Authorization = `Bearer ${token}`;
         }
         return config;
     },
-    error => Promise.reject(error)
+    (error) => Promise.reject(error)
 );
 
 // Xử lý lỗi Response (ví dụ: token hết hạn)
 axiosInstance.interceptors.response.use(
-    response => response,
-    error => {
+    (response) => response,
+    (error) => {
         if (error.response && error.response.status === 401) {
             const originalRequest = error.config;
 
