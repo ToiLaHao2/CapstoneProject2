@@ -250,7 +250,7 @@
 
 .search-box:focus {
     outline: none;
-    border-color: #3b82f6;
+    border-color: #205781;
     box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
 }
 
@@ -264,7 +264,7 @@
     padding: 8px 16px;
     margin-right: 10px;
     margin-bottom: 8px;
-    background-color: #3b82f6;
+    background-color: #205781;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -275,7 +275,7 @@
 }
 
 .add-board-btn:hover {
-    background-color: #2563eb;
+    background-color: #0C0950;
 }
 
 .icon {

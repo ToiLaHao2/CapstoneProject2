@@ -16,7 +16,7 @@
   .sidebar h2 {
     font-size: 22px;
     font-weight: bold;
-    color: #333;
+    color: #205781;
     text-align: center;
     margin-bottom: 20px;
   }
@@ -32,7 +32,7 @@
     align-items: center;
     padding: 10px;
     font-size: 15px;
-    color: #333;
+    color: #205781;
     text-decoration: none;
     border-radius: 8px;
     transition: background-color 0.3s, color 0.3s;
@@ -40,12 +40,12 @@
   
   .sidebar a:hover {
     background-color: #f0f4ff;
-    color: #0056b3;
+    color: #0C0950;
   }
   
   .sidebar a.active {
     background-color: #e7f3ff;
-    color: #0056b3;
+    color: #0C0950;
     font-weight: 600;
   }
   
