@@ -1,9 +1,10 @@
 .main-content {
   margin-left: 250px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   padding: 20px;
   height: calc(100vh - 60px);
   overflow-y: auto;
+  background-color: #D1E9F6;
 }
 
 .page {

@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
-    background-color: #f7f7f7;
+    background-color: #D1E9F6;
     font-family: 'Arial', sans-serif;
 }
 
@@ -59,14 +59,19 @@
     color: #888;
 }
 
-.task:hover {
+/* .task:hover {
     background-color: #e1e1e1;
-}
+} */
 
 /* Task Variations */
 .priority-task {
-    border-left: 4px solid #e74c3c;
-    background-color: #fde2e1; /* Light red */
+    border-left: 4px solid #006A71;
+    background-color: #E9EFEC;
+}
+
+.priority-task:hover {
+    background-color: #C4DAD2;
+
 }
 
 .upcoming-task {
@@ -89,22 +94,30 @@
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 15px;
-    color: #2c3e50;
+    color: #001A6E;
+}
+
+.urgently-task {
+    background-color: #E7F0DC;
 }
 
 .progress {
     margin-bottom: 10px;
 }
 
+.progress h4 {
+    color: #009990;
+}
+
 progress {
     width: 100%;
     height: 8px;
     border-radius: 4px;
-    background-color: #ecf0f1;
+    background-color: #DDEB9D;
 }
 
 progress[value] {
-    background-color: #3498db;
+    background-color: #7AB2D3;
 }
 
 /* Recently Visited Section */
@@ -113,6 +126,7 @@ progress[value] {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
+    /* background-color: #F7FFE5; */
 }
 
 .dashboard-project {
@@ -135,7 +149,7 @@ progress[value] {
     font-size: 14px;
     font-weight: 600;
     margin: 0;
-    color: #333;
+    /* color: #333; */
 }
 
 .dashboard-project span {
@@ -149,15 +163,18 @@ progress[value] {
 }
 
 .dashboard-project:nth-child(1) {
-    background-color: #e1f5fe; 
+    background-color: #E4EFE7; 
+    color: #41644A;
 }
 
 .dashboard-project:nth-child(2) {
-    background-color: #f9fbe7; 
+    background-color: #F5E8DD; 
+    color: #690B22;
 }
 
 .dashboard-project:nth-child(3) {
-    background-color: #f1f8e9;
+    background-color: #F7FFE5;
+    color: #854836;
 }
 
 /* Calendar and Details Section Container */
@@ -167,13 +184,13 @@ progress[value] {
     gap: 20px;
     flex-wrap: wrap;
     padding: 20px;
-    background-color: #f7f7f7;
+    background-color: #D1E9F6;
 }
 
 /* Calendar Section */
 .calendar-section {
     flex: 1;
-    background: #ffffff;
+    background: #F9F5F6;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -185,10 +202,10 @@ progress[value] {
 .calendar-title {
     margin-bottom: 15px;
     font-size: 1.8rem;
-    color: #4caf50;
+    color: #F31559;
     font-weight: bold;
     text-align: center;
-    border-bottom: 2px solid #4caf50;
+    border-bottom: 2px solid #F31559;
     padding-bottom: 5px;
     width: 80%;
 }
@@ -197,7 +214,7 @@ progress[value] {
 .react-calendar {
     width: 100%;
     background-color: #ffffff;
-    border: 1px solid #ddd;
+    border: 1px solid #F31559;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-left: 0; 
@@ -231,7 +248,7 @@ progress[value] {
 /* Details Section */
 .details-calendar-section {
     flex: 1;
-    background: #ffffff;
+    background: #F9F5F6;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -240,13 +257,13 @@ progress[value] {
 
 .task-details {
     font-size: 1rem;
-    color: #555;
+    color: #514f4f;
     line-height: 1.6;
 }
 
 .task-details h4 {
     margin-bottom: 10px;
-    color: #333;
+    color: #D61355;
     font-size: 1.5rem;
 }
 
@@ -256,14 +273,14 @@ progress[value] {
 }
 
 .task-details p strong {
-    color: #4caf50;
+    color: #36AE7C;
     font-weight: bold;
 }
 
 .highlight-task {
     width: 80%;
     height: 80%;
-    background-color: red; /* Màu xanh lá */
+    background-color: #F31559; /* Màu xanh lá */
     border-radius: 50%; /* Hình tròn */
     margin: auto; /* Canh giữa */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
