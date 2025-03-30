@@ -13,7 +13,7 @@ const Dashboard = () => {
     const { boards, getAllBoardsByUserId } = useBoard();
     const { user, getUserCardsIncoming } = useUser();
     const [cards, setCards] = useState([]);
-    const [tasks, setTasks] = useState([]);
+    const [tasksMap, setTasksMap] = useState(new Map());
 
     const handleProjectClick = (boardTitle, board_id) => {
         navigate("/Tasks", { state: { boardTitle, board_id } });
@@ -33,10 +33,13 @@ const Dashboard = () => {
             getUserCardsIncoming(user._id)
                 .then((cards) => {
                     setCards(cards);
-                    const newTasks = cards.map((card) => {
-                        const deadline = moment(card.due_date);
+                    const newMap = new Map();
 
-                        return {
+                    cards.forEach((card) => {
+                        const deadline = moment(card.due_date);
+                        const dateKey = deadline.format("YYYY-MM-DD");
+
+                        const task = {
                             date: deadline.toDate(),
                             details: {
                                 project: card.card_title,
@@ -45,8 +48,14 @@ const Dashboard = () => {
                                 timeLeft: countTimeLeft(deadline),
                             },
                         };
+
+                        if (!newMap.has(dateKey)) {
+                            newMap.set(dateKey, []);
+                        }
+                        newMap.get(dateKey).push(task);
                     });
-                    setTasks(newTasks);
+
+                    setTasksMap(newMap);
                 })
                 .catch((error) => {
                     console.error("Failed to fetch user cards:", error);
@@ -64,11 +73,8 @@ const Dashboard = () => {
         return `${days} day(s), ${hours} hour(s)`;
     };
 
-    const selectedTask = tasks.find(
-        (task) =>
-            moment(task.date).format("YYYY-MM-DD") ===
-            moment(selectedDate).format("YYYY-MM-DD")
-    );
+    const selectedDateKey = moment(selectedDate).format("YYYY-MM-DD");
+    const selectedTasks = tasksMap.get(selectedDateKey) || [];
 
     const handleDateChange = (date) => {
         setSelectedDate(date);
@@ -144,41 +150,40 @@ const Dashboard = () => {
                     <CalendarComponent
                         onChange={handleDateChange}
                         value={selectedDate}
-                        tileContent={({ date, view }) =>
-                            view === "month" &&
-                            tasks.some(
-                                (task) =>
-                                    moment(task.date).format("YYYY-MM-DD") ===
-                                    moment(date).format("YYYY-MM-DD")
-                            ) ? (
+                        tileContent={({ date, view }) => {
+                            const dateKey = moment(date).format("YYYY-MM-DD");
+                            return view === "month" && tasksMap.has(dateKey) ? (
                                 <div className="highlight-task"></div>
-                            ) : null
-                        }
+                            ) : null;
+                        }}
                     />
                 </div>
 
                 <div className="details-calendar-section">
+                    <h4>Task Details</h4>
                     <div className="task-details">
-                        <h4>Task Details</h4>
-                        {selectedTask ? (
-                            <>
-                                <p>
-                                    <strong>Project:</strong>{" "}
-                                    {selectedTask.details.project}
-                                </p>
-                                <p>
-                                    <strong>Task:</strong>{" "}
-                                    {selectedTask.details.task}
-                                </p>
-                                <p>
-                                    <strong>Deadline:</strong>{" "}
-                                    {selectedTask.details.deadline}
-                                </p>
-                                <p>
-                                    <strong>Time Left:</strong>{" "}
-                                    {selectedTask.details.timeLeft}
-                                </p>
-                            </>
+                        {selectedTasks.length > 0 ? (
+                            selectedTasks.map((task, index) => (
+                                <div key={index} className="task-detail-item">
+                                    <p>
+                                        <strong>Project:</strong>{" "}
+                                        {task.details.project}
+                                    </p>
+                                    <p>
+                                        <strong>Task:</strong>{" "}
+                                        {task.details.task}
+                                    </p>
+                                    <p>
+                                        <strong>Deadline:</strong>{" "}
+                                        {task.details.deadline}
+                                    </p>
+                                    <p>
+                                        <strong>Time Left:</strong>{" "}
+                                        {task.details.timeLeft}
+                                    </p>
+                                    <hr />
+                                </div>
+                            ))
                         ) : (
                             <p>No task for this date.</p>
                         )}
