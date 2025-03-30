@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     padding: 30px;
-    background-color: #f8f9fa;
+    background-color: #FBFBFB;
     min-height: 100vh;
     border-radius: 15px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
@@ -53,7 +53,7 @@
 .project-title {
     font-size: 20px;
     font-weight: bold;
-    color: #333333;
+    color: #205781;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -72,7 +72,7 @@
 }
 
 .edit-icon {
-    color: #007bff;
+    color: #333333;
     cursor: pointer;
     font-size: 1.1rem;
     transition: color 0.2s ease, transform 0.2s ease;
@@ -101,7 +101,7 @@
     text-transform: capitalize;
     border-radius: 15px;
     color: #ffffff;
-    background-color: #4caf50;
+    background-color: #118B50;
     margin: 0;
     display: inline-block;
     text-align: center;
@@ -158,7 +158,7 @@
 }
 
 .chat-now-button {
-    background-color: #20c997;
+    background-color: #006989;
     color: #ffffff;
     border: none;
     border-radius: 15px;
@@ -176,13 +176,13 @@
 }
 
 .chat-now-button:hover {
-    background-color: #198754;
+    background-color: #1982a2;
     transform: scale(1.03);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .delete-button {
-    background-color: #dc3545;
+    background-color: #B8001F;
     color: #ffffff;
     border: none;
     border-radius: 15px;
