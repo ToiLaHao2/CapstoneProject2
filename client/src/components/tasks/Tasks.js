@@ -164,7 +164,7 @@ const Tasks = () => {
     };
 
     const addCard = async (columnId) => {
-        const cardTitle = prompt("Enter task title:");
+        const cardTitle = prompt("Enter card title:");
         if (!cardTitle) return;
 
         try {

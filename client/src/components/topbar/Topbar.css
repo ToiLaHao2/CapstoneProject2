@@ -376,6 +376,10 @@
     flex-wrap: nowrap;
 }
 
+.icon {
+    color: #205781;
+}
+
 .submit-btn,
 .cancel-btn {
     padding: 10px 20px;
