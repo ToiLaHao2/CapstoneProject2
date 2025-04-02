@@ -98,7 +98,7 @@ async function GetCard(req, res) {
         const assignees = [];
         for (const assignee of card.card_assignees) {
             const user = await User.findById(assignee.card_assignee_id).select(
-                "user_name user_email user_avatar_url"
+                "user_full_name user_email user_avatar_url"
             );
             assignees.push(user);
         }

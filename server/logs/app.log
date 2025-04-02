@@ -2347,3 +2347,322 @@
 [2025-03-30 21:24:04] INFO: Successfull checking data to get all members
 [2025-03-30 21:24:14] INFO: Successfull checking data user for get user profile
 [2025-03-30 21:24:14] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:31:10] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-04-03 00:33:28] INFO: Successfull checking data register new user
+[2025-04-03 00:33:29] INFO: Hash password complete
+[2025-04-03 00:33:29] INFO: Complete create token
+[2025-04-03 00:33:29] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:33:30] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:33:30] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:33:30] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:33:30] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:33:32] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:33:32] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:34:06] INFO: Successfull checking data register new user
+[2025-04-03 00:34:06] INFO: Hash password complete
+[2025-04-03 00:34:06] INFO: Complete create token
+[2025-04-03 00:34:06] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:34:07] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:34:07] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:34:07] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:34:07] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:34:09] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:34:09] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:34:44] INFO: Successfull checking data register new user
+[2025-04-03 00:34:44] INFO: Hash password complete
+[2025-04-03 00:34:44] INFO: Complete create token
+[2025-04-03 00:34:44] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:34:45] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:34:45] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:34:45] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:34:45] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:35:12] INFO: Successfull checking data register new user
+[2025-04-03 00:35:12] INFO: Hash password complete
+[2025-04-03 00:35:13] INFO: Complete create token
+[2025-04-03 00:35:13] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:35:13] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:35:13] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:35:13] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:35:13] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:35:15] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:35:15] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:37:47] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:39:34] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:39:34] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:39:34] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:39:34] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:40:29] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:40:29] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:40:30] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:40:30] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:40:30] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:40:30] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:40:31] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:40:31] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:40:34] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:40:34] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:40:34] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:40:34] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:40:35] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:40:36] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:41:12] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:41:12] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:41:34] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:41:34] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:42:34] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:42:57] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:43:08] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:45:00] INFO: Successfull checking data register new user
+[2025-04-03 00:45:00] INFO: Hash password complete
+[2025-04-03 00:45:01] INFO: Complete create token
+[2025-04-03 00:45:01] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:45:02] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:45:02] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:45:02] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:45:02] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:45:04] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:45:04] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:45:34] INFO: Successfull checking data register new user
+[2025-04-03 00:45:34] INFO: Hash password complete
+[2025-04-03 00:45:34] INFO: Complete create token
+[2025-04-03 00:45:34] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:45:35] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:45:35] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:45:35] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:45:35] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:46:01] INFO: Successfull checking data register new user
+[2025-04-03 00:46:01] INFO: Hash password complete
+[2025-04-03 00:46:02] INFO: Complete create token
+[2025-04-03 00:46:02] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:46:02] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:46:02] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:46:02] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:46:02] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:46:27] INFO: Successfull checking data register new user
+[2025-04-03 00:46:27] INFO: Hash password complete
+[2025-04-03 00:46:27] INFO: Complete create token
+[2025-04-03 00:46:27] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:46:28] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:46:28] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:46:28] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:46:28] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:46:51] INFO: Successfull checking data register new user
+[2025-04-03 00:46:51] INFO: Hash password complete
+[2025-04-03 00:46:51] INFO: Complete create token
+[2025-04-03 00:46:51] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:46:52] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:46:52] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:46:52] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:46:52] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:47:17] INFO: Successfull checking data register new user
+[2025-04-03 00:47:18] INFO: Hash password complete
+[2025-04-03 00:47:18] INFO: Complete create token
+[2025-04-03 00:47:18] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:47:19] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:47:19] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:47:19] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:47:19] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:47:20] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:47:20] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:47:37] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:47:37] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:48:19] INFO: Successfull checking data user for login
+[2025-04-03 00:48:19] INFO: Compare hash complete
+[2025-04-03 00:48:19] INFO: Complete create token
+[2025-04-03 00:48:19] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:48:19] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:48:20] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:48:20] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:48:21] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:48:21] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:48:22] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:48:22] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:48:22] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:48:22] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:48:24] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:48:24] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:48:43] INFO: Successful file upload validation
+[2025-04-03 00:48:55] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:48:55] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:48:55] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:48:55] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:49:40] INFO: Successfull checking data to create board
+[2025-04-03 00:49:40] INFO: Successfull create board
+[2025-04-03 00:49:47] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:49:47] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:49:54] INFO: Successfull checking data user for search user profile
+[2025-04-03 00:49:57] INFO: Successfull checking data to add member to board
+[2025-04-03 00:49:57] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:49:57] INFO: Successfull checking data to get all members
+[2025-04-03 00:50:10] INFO: Successfull checking data user for search user profile
+[2025-04-03 00:50:10] INFO: Successfull checking data user for search user profile
+[2025-04-03 00:50:11] INFO: Successfull checking data user for search user profile
+[2025-04-03 00:50:11] INFO: Successfull checking data user for search user profile
+[2025-04-03 00:50:13] INFO: Successfull checking data to add member to board
+[2025-04-03 00:50:14] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:50:14] INFO: Successfull checking data to get all members
+[2025-04-03 00:50:17] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:50:17] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:50:28] INFO: Successfull checking data to create list
+[2025-04-03 00:50:28] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:50:29] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:50:37] INFO: Successfull checking data to create list
+[2025-04-03 00:50:37] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:50:37] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:50:37] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:50:43] INFO: Successfull checking data to create list
+[2025-04-03 00:50:44] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:50:44] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:50:44] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:50:44] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:51:10] INFO: Successfull checking data to create card
+[2025-04-03 00:51:15] ERROR: Error checking data list_id is required.
+[2025-04-03 00:51:15] ERROR: Error checking data list_id is required.
+[2025-04-03 00:51:17] ERROR: Error checking data list_id is required.
+[2025-04-03 00:51:17] INFO: Successfull checking data to get all members
+[2025-04-03 00:51:25] ERROR: Error checking data list_id is required.
+[2025-04-03 00:51:25] ERROR: Error checking data list_id is required.
+[2025-04-03 00:51:28] ERROR: Error checking data list_id is required.
+[2025-04-03 00:51:28] INFO: Successfull checking data to get all members
+[2025-04-03 00:51:30] ERROR: Error checking data list_id is required.
+[2025-04-03 00:51:30] ERROR: Error checking data list_id is required.
+[2025-04-03 00:51:47] ERROR: Error checking data list_id is required.
+[2025-04-03 00:51:47] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:51:47] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:51:48] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:51:48] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:51:48] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:51:48] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:51:48] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:51:48] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:51:49] INFO: Successfull checking data to get cardd
+[2025-04-03 00:51:49] INFO: Successfull checking data to get cardd
+[2025-04-03 00:52:01] INFO: Successfull checking data to get cardd
+[2025-04-03 00:52:01] INFO: Successfull checking data to get all members
+[2025-04-03 00:52:04] INFO: Successfull checking data to assign user to card
+[2025-04-03 00:52:04] INFO: Successfull checking data to get cardd
+[2025-04-03 00:52:06] INFO: Successfull checking data to update card
+[2025-04-03 00:52:06] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:52:06] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:52:06] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:52:06] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:52:06] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:52:06] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:52:06] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:52:06] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:52:27] INFO: Successfull checking data to create card
+[2025-04-03 00:52:28] ERROR: Error checking data list_id is required.
+[2025-04-03 00:52:28] ERROR: Error checking data list_id is required.
+[2025-04-03 00:52:30] ERROR: Error checking data list_id is required.
+[2025-04-03 00:52:30] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:52:30] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:52:30] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:52:30] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:52:30] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:52:30] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:52:30] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:52:30] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:52:31] INFO: Successfull checking data to get cardd
+[2025-04-03 00:52:31] INFO: Successfull checking data to get cardd
+[2025-04-03 00:52:36] INFO: Successfull checking data to get cardd
+[2025-04-03 00:52:36] INFO: Successfull checking data to get all members
+[2025-04-03 00:52:38] INFO: Successfull checking data to assign user to card
+[2025-04-03 00:52:39] INFO: Successfull checking data to get cardd
+[2025-04-03 00:53:41] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:53:41] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:53:41] INFO: Successfull checking data to get cardd
+[2025-04-03 00:53:41] INFO: Successfull checking data to get cardd
+[2025-04-03 00:53:41] INFO: Successfull checking data to get cardd
+[2025-04-03 00:53:41] INFO: Successfull checking data to get cardd
+[2025-04-03 00:53:52] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:53:52] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:54:07] INFO: Successfull checking data user for login
+[2025-04-03 00:54:08] INFO: Compare hash complete
+[2025-04-03 00:54:08] INFO: Complete create token
+[2025-04-03 00:54:08] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:54:08] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:54:08] INFO: Successfull checking data to get all members
+[2025-04-03 00:54:09] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:54:09] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:54:09] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:54:09] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:54:09] INFO: Successfull checking data to get all members
+[2025-04-03 00:54:09] INFO: Successfull checking data to get all members
+[2025-04-03 00:54:11] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:54:11] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:54:11] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:54:11] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:54:11] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:54:11] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:54:11] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:54:11] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:54:13] INFO: Successfull checking data to get cardd
+[2025-04-03 00:54:13] INFO: Successfull checking data to get cardd
+[2025-04-03 00:55:22] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:55:22] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:55:22] INFO: Successfull checking data to get cardd
+[2025-04-03 00:55:22] INFO: Successfull checking data to get cardd
+[2025-04-03 00:55:23] INFO: Successfull checking data to get cardd
+[2025-04-03 00:55:23] INFO: Successfull checking data to get cardd
+[2025-04-03 00:55:36] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:55:36] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:55:36] INFO: Successfull checking data to get cardd
+[2025-04-03 00:55:36] INFO: Successfull checking data to get cardd
+[2025-04-03 00:55:36] INFO: Successfull checking data to get cardd
+[2025-04-03 00:55:36] INFO: Successfull checking data to get cardd
+[2025-04-03 00:58:13] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-04-03 00:58:14] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:58:14] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:58:14] INFO: Successfull checking data to get cardd
+[2025-04-03 00:58:14] INFO: Successfull checking data to get cardd
+[2025-04-03 00:58:15] INFO: Successfull checking data to get cardd
+[2025-04-03 00:58:29] INFO: Successfull checking data to update card
+[2025-04-03 00:58:29] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:58:29] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:58:29] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:58:29] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:58:29] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:58:29] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:58:29] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:58:29] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:58:36] INFO: Successfull checking data to get cardd
+[2025-04-03 00:58:36] INFO: Successfull checking data to get cardd
+[2025-04-03 00:58:38] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:58:38] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:58:39] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:58:39] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:58:39] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:58:39] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:58:39] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:58:39] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:58:41] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:58:41] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:58:41] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:58:41] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:58:41] INFO: Successfull checking data to get all members
+[2025-04-03 00:58:41] INFO: Successfull checking data to get all members
+[2025-04-03 00:59:42] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:59:42] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:59:42] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:59:42] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:59:42] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:59:42] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:59:42] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:59:42] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:59:44] INFO: Successfull checking data to get cardd
+[2025-04-03 00:59:44] INFO: Successfull checking data to get cardd
+[2025-04-03 00:59:55] INFO: Successfull checking data to update card
+[2025-04-03 00:59:56] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:59:56] INFO: Successfull checking data to get lists in board
+[2025-04-03 00:59:56] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:59:56] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:59:56] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:59:56] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:59:56] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:59:56] INFO: Successfull checking data to get cards in list
+[2025-04-03 00:59:57] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:59:57] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:59:57] INFO: Successfull checking data to get board by user id
+[2025-04-03 00:59:57] INFO: Successfull checking data user for get user profile
+[2025-04-03 00:59:57] INFO: Successfull checking data to get all members
+[2025-04-03 00:59:57] INFO: Successfull checking data to get all members

@@ -289,6 +289,7 @@ function CardDetail() {
         setNewMember(member.user_email);
     };
 
+    console.log("member ", members);
     return (
         <div className="card-container">
             <div className="card-header">
@@ -348,7 +349,9 @@ function CardDetail() {
                                         index + 1
                                     }`}
                                 >
-                                    {member.charAt(0).toUpperCase()}
+                                    {member.user_full_name
+                                        .charAt(0)
+                                        .toUpperCase()}
                                 </div>
                             )
                         )}

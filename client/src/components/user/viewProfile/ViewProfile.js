@@ -9,7 +9,7 @@ const ViewProfile = () => {
     const [activeTab, setActiveTab] = useState("Activity");
     const [showAllProjects, setShowAllProjects] = useState(false);
     const { boards, getAllBoardsByUserId } = useBoard();
-    const { user, uploadAvatar } = useUser();
+    const { user, uploadAvatar, colorHashMap } = useUser();
     const navigate = useNavigate();
     const fileInputRef = useRef(null);
 
@@ -85,7 +85,21 @@ const ViewProfile = () => {
                             alt="small-avatar"
                         />
                     ) : (
-                        user.user_full_name.charAt(0).toUpperCase()
+                        <div
+                            className="small-no-avatar"
+                            style={{
+                                backgroundColor: `${
+                                    colorHashMap[
+                                        user.user_full_name
+                                            .charAt(0)
+                                            .toUpperCase()
+                                    ]
+                                }`,
+                                color: "white",
+                            }}
+                        >
+                            {user.user_full_name.charAt(0).toUpperCase()}
+                        </div>
                     )}
                     <div
                         className="avatar-edit-icon"

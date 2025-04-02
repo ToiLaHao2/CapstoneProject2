@@ -22,9 +22,8 @@ const Projects = () => {
         updateBoard,
         addMemberToBoard,
         updatePrivacy,
-        colorHashMap,
     } = useBoard();
-    const { user, searchUsers } = useUser();
+    const { user, searchUsers, colorHashMap } = useUser();
     const navigate = useNavigate();
 
     const [editingProjectId, setEditingProjectId] = useState(null);

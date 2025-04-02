@@ -7,34 +7,6 @@ const BoardContext = createContext();
 export const BoardProvider = ({ children }) => {
     const [boards, setBoards] = useState([]);
     const { user } = useUser();
-    const colorHashMap = {
-        A: "#8B0000", // Dark Red
-        B: "#00008B", // Dark Blue
-        C: "#006400", // Dark Green
-        D: "#B8860B", // Dark Goldenrod
-        E: "#FF8C00", // Dark Orange
-        F: "#4B0082", // Indigo
-        G: "#8B4513", // Saddle Brown
-        H: "#2F4F4F", // Dark Slate Gray
-        I: "#008B8B", // Dark Cyan
-        J: "#8B0000", // Dark Red
-        K: "#556B2F", // Dark Olive Green
-        L: "#483D8B", // Dark Slate Blue
-        M: "#8B008B", // Dark Magenta
-        N: "#800000", // Maroon
-        O: "#9932CC", // Dark Orchid
-        P: "#191970", // Midnight Blue
-        Q: "#8B0000", // Dark Red
-        R: "#228B22", // Forest Green
-        S: "#A52A2A", // Brown
-        T: "#2E8B57", // Sea Green
-        U: "#696969", // Dim Gray
-        V: "#3CB371", // Medium Sea Green
-        W: "#8B0000", // Dark Red
-        X: "#4B0082", // Indigo
-        Y: "#9400D3", // Dark Violet
-        Z: "#5F9EA0", // Cadet Blue
-    };
 
     // Gọi API để lấy danh sách bảng ngay sau khi đăng nhập
     const getAllBoardsByUserId = async () => {
@@ -216,22 +188,24 @@ export const BoardProvider = ({ children }) => {
             });
             const data = await response.data;
             return data.data;
-
         } catch (error) {
             console.log("Error getting members", error);
             return [];
         }
-    }
+    };
 
     //add member to board
     const addMemberToBoard = async (boardId, memberId, memberRole) => {
         try {
-            const response = await privateAxios.post("/board/addMemberToBoard", {
-                checkMessage: "Add member to board",
-                board_id: boardId,
-                member_id: memberId,
-                member_role: memberRole,
-            });
+            const response = await privateAxios.post(
+                "/board/addMemberToBoard",
+                {
+                    checkMessage: "Add member to board",
+                    board_id: boardId,
+                    member_id: memberId,
+                    member_role: memberRole,
+                }
+            );
 
             const data = await response.data;
 
@@ -248,7 +222,6 @@ export const BoardProvider = ({ children }) => {
         }
     };
 
-
     // const getAllUsers
 
     //end-mei
@@ -263,9 +236,8 @@ export const BoardProvider = ({ children }) => {
                 deleteBoard,
                 getListsInBoard,
                 updatePrivacy,
-                colorHashMap,
                 getAllMembers,
-                addMemberToBoard
+                addMemberToBoard,
             }}
         >
             {children}
