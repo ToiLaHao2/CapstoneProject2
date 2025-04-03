@@ -397,7 +397,7 @@ const Projects = () => {
                                             handleChatClick();
                                         }}
                                     >
-                                        Chat Now
+                                        Chat
                                     </button>
                                 )}
                                 <button

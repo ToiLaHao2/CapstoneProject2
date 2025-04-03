@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     padding: 30px;
-    background-color: #FBFBFB;
+    background-color: #fbfbfb;
     min-height: 100vh;
     border-radius: 15px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
@@ -101,7 +101,7 @@
     text-transform: capitalize;
     border-radius: 15px;
     color: #ffffff;
-    background-color: #118B50;
+    background-color: #118b50;
     margin: 0;
     display: inline-block;
     text-align: center;
@@ -168,11 +168,12 @@
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease,
         box-shadow 0.3s ease;
-    width: fit-content;
+    width: 80px;
     align-self: flex-start;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-left: 160px;
     margin-right: auto;
+    /* height: 65%; */
 }
 
 .chat-now-button:hover {
@@ -182,7 +183,7 @@
 }
 
 .delete-button {
-    background-color: #B8001F;
+    background-color: #b8001f;
     color: #ffffff;
     border: none;
     border-radius: 15px;
