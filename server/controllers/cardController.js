@@ -155,6 +155,7 @@ async function UpdateCard(req, res) {
             "card_description",
             "card_duration",
             "card_completed",
+            "card_priority",
         ];
         let hasUpdated = false;
 

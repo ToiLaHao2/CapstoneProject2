@@ -1,9 +1,9 @@
-async function CreateConversation(params) {}
+async function CreateConversation(req, res) {}
 
-async function AddMessageToConversation(params) {}
+async function AddMessageToConversation(req, res) {}
 
-async function GetConversationHistory(params) {}
+async function GetConversationHistory(req, res) {}
 
-async function AddParticipantToConversation(params) {}
+async function AddParticipantToConversation(req, res) {}
 
-async function RemoveParticipantFromConversation(params) {}
+async function RemoveParticipantFromConversation(req, res) {}

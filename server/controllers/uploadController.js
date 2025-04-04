@@ -57,4 +57,12 @@ async function UploadAvatar(req, res) {
     }
 }
 
+async function DownloadAvatar(req, res) {}
+
+async function UploadFile(req, res) {}
+
+async function DownloadFile(req, res) {}
+
+async function DeleteFile(req, res) {}
+
 module.exports = { UploadAvatar };
