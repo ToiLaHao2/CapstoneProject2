@@ -11,6 +11,7 @@ const userRouter = require("./routes/userRoutes");
 const listRouter = require("./routes/listRoutes");
 const cardRouter = require("./routes/cardRoutes");
 const upLoadrouter = require("./routes/uploadRoutes");
+const morgan = require("morgan");
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ const port = process.env.PORT;
 // Middlewares
 app.use(cors());
 app.use(bodyparser.json());
+app.use(morgan("dev"));
 
 // app.use(errorHandler);
 
