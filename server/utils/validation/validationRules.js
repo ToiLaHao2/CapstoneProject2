@@ -357,6 +357,18 @@ const validationRules = {
     // assignLabelToCard
     // archiveCard
     // updateCheckListsInCard
+
+    // Conversation
+    // createConversation
+    createConversation: {
+        checkMessage: "Create new conversation",
+        requiredFields: [
+            "conversation_title",
+            "conversation_participants",
+            "conversation_avatar_url",
+            "checkMessage",
+        ],
+    },
 };
 
 module.exports = { validationRules };

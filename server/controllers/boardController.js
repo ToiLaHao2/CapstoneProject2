@@ -579,9 +579,9 @@ async function AssignLabelsToBoard(params) {}
 // tùy chọn : lưu
 async function ArchiveBoard(params) {}
 
-async function CreateConversation(params) {}
+async function CreateConversation(req, res) {}
 
-async function ChangeBackgroundPicture() {}
+async function ChangeBackgroundPicture(req, res) {}
 
 module.exports = {
     CreateBoard,
