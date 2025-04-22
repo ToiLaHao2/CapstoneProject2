@@ -574,10 +574,10 @@ async function MoveList(req, res) {
     }
 }
 
-async function AssignLabelsToBoard(params) {}
+async function AssignLabelsToBoard(req, res) {}
 
 // tùy chọn : lưu
-async function ArchiveBoard(params) {}
+async function ArchiveBoard(req, res) {}
 
 async function CreateConversation(req, res) {}
 
