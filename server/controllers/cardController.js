@@ -378,6 +378,8 @@ async function AssignLabelToCard(req, res) {}
 // Lưu trữ card không còn hoạt động
 async function ArchiveCard(params) {}
 
+async function AddCheckListsToCard(req, res) {}
+
 async function UpdateCheckListsInCard(req, res) {}
 
 module.exports = {

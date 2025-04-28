@@ -574,14 +574,12 @@ async function MoveList(req, res) {
     }
 }
 
-async function AssignLabelsToBoard(req, res) {}
-
 // tùy chọn : lưu
 async function ArchiveBoard(req, res) {}
 
 async function CreateConversation(req, res) {}
 
-async function ChangeBackgroundPicture(req, res) {}
+// async function ChangeBackgroundPicture(req, res) {}
 
 module.exports = {
     CreateBoard,
