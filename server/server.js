@@ -34,7 +34,6 @@ app.use("/api/board", boardRouter);
 app.use("/api/user", userRouter);
 app.use("/api/list", listRouter);
 app.use("/api/card", cardRouter);
-app.use("/api/upload", upLoadrouter);
 
 // Listen
 app.listen(port, function () {

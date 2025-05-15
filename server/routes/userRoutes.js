@@ -10,6 +10,8 @@ const {
     validateSearchUsers,
     validateSuggestUsersToAdd,
 } = require("../middleware/userMiddleware");
+
+const { upload, validateUpload } = require("../middleware/uploadMiddleware");
 const {
     GetUserProfile,
     UpdateUserProfile,
@@ -20,6 +22,7 @@ const {
     GetUserCardsIncoming,
     SearchUsers,
     SuggestUsersToAdd,
+    UploadAvatar,
 } = require("../controllers/userController");
 
 const userRouter = express.Router();
@@ -52,6 +55,12 @@ userRouter.post(
     "/suggestUsersToAdd",
     validateSuggestUsersToAdd,
     SuggestUsersToAdd
+);
+userRouter.post(
+    "/uploadAvatar",
+    upload.single("avatar"),
+    validateUpload,
+    UploadAvatar
 );
 
 module.exports = userRouter;
