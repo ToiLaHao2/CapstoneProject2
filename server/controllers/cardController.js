@@ -367,6 +367,9 @@ async function RemoveUserFromCard(req, res) {
     }
 }
 
+// dùng upload middleware để upload file lên card
+// upload file vào google storage và lưu trữ đường dẫn vào card
+// sau đó trả về đường dẫn cho client để hiển thị file
 async function AddAttachmentToCard(req, res) {}
 
 async function AddCommentToCard(req, res) {}
