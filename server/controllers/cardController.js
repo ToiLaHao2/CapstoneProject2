@@ -367,13 +367,55 @@ async function RemoveUserFromCard(req, res) {
     }
 }
 
-async function AddAttachmentToCard(req, res) {}
+// luu file vào folder upload trong server
+// sau đó lưu đường dẫn vào card
+async function AddAttachmentToCard(req, res) {
+    try {
+        const { user_id, board_id, list_id, card_id } = req.body;
+        // check if user is a member of the board
+        const board = await Board.findById(board_id);
+        if (!board) {
+            return sendError(res, 404, "Board not found");
+        }
+        const isUserExist = board.board_collaborators.find(
+            (collaborator) => collaborator.board_collaborator_id == user_id
+        );
+        if (!isUserExist) {
+            if (String(board.created_by) !== user_id) {
+                return sendError(res, 401, "User not authorized", "GetList");
+            }
+        }
+        // check if list exists
+        const list = await List.findById(list_id);
+        if (!list) {
+            return sendError(res, 404, "List not found");
+        }
+        // check if list in board
+        if (String(list.board_id) !== board_id) {
+            return sendError(res, 403, "List does not belong to the board");
+        }
+        // check if card exists
+        const card = await Card.findById(card_id);
+        if (!card) {
+            return sendError(res, 404, "Card not found");
+        }
+        // check if card in list
+        const cardInList = list.list_cards.find(
+            (card) => String(card.card_id) === card_id
+        );
+        if (!cardInList) {
+            return sendError(res, 403, "Card does not belong to the list");
+        }
+    } catch (error) {
+        logger.error(error.message);
+    }
+}
 
 async function AddCommentToCard(req, res) {}
 
 async function GetCommentsInCard(req, res) {}
 
-async function AssignLabelToCard(req, res) {}
+// async function AssignLabelToCard(req, res) {}
 
 // Lưu trữ card không còn hoạt động
 async function ArchiveCard(params) {}

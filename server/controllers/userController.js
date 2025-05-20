@@ -5,6 +5,7 @@ const User = require("../models/User");
 const { findByIdOrThrow } = require("../utils/dbHelper");
 const logger = require("../utils/logger");
 const { sendSuccess, sendError } = require("../utils/response");
+const cloudinary = require("../configs/cloudinaryConfig");
 
 async function GetUserProfile(req, res) {
     const { user_id } = req.body;
@@ -73,41 +74,6 @@ async function UpdateUserProfile(req, res) {
             "Internal Server Error",
             {
                 details: error.message,
-            }
-        );
-    }
-}
-
-// viet kiem tra o upload middleware
-async function UploadProfilePicture(req, res) {
-    try {
-        // kiểm tra nếu có file được tải lên
-        if (!req.file) {
-            return sendError(res, 400, "No file uploaded", {
-                details: "No file was uploaded",
-            });
-        }
-
-        // lấy url của ảnh từ cloudinary
-        const imageUrl = req.file.path;
-
-        // cập nhật url ảnh đại diện vào db của người dùng
-        const { user_id } = req.body;
-        const user = await findByIdOrThrow(User, user_id, {
-            errorMessage: "User not found",
-        });
-
-        user.user_avatar_url = imageUrl;
-        await user.save();
-        return sendSuccess(res, "Profile picture uploaded successfully", user);
-    } catch (error) {
-        logger.error(error);
-        return sendError(
-            res,
-            error.statusCode || 500,
-            "Error uploading profile picture",
-            {
-                details: error.details || "Unexpected error",
             }
         );
     }
@@ -503,6 +469,57 @@ async function SuggestUsersToAdd(req, res) {
     }
 }
 
+async function UploadAvatar(req, res) {
+    try {
+        const { user_id } = req.body;
+        const file = req.file;
+
+        // Kiểm tra user có tồn tại không
+        const user = await User.findById(user_id);
+        if (!user) {
+            return sendError(res, 404, "User not found", "UploadAvatar");
+        }
+        // kiểm tra xem đã có ảnh chưa
+        if (user.user_avatar_url) {
+            // Xóa ảnh cũ
+            await cloudinary.uploader.destroy(user.user_avatar_url);
+        }
+        // Upload ảnh lên Cloudinary
+        cloudinary.uploader
+            .upload_stream(
+                { folder: "avatars" }, // Lưu ảnh vào thư mục "avatars"
+                async (error, result) => {
+                    if (error) {
+                        logger.error(
+                            `Cloudinary upload error: ${error.message}`
+                        );
+                        return sendError(
+                            res,
+                            500,
+                            "Cloudinary upload failed",
+                            error.message
+                        );
+                    }
+
+                    // Lưu URL ảnh vào database
+                    user.user_avatar_url = result.secure_url;
+                    await user.save();
+
+                    sendSuccess(
+                        res,
+                        "Avatar uploaded successfully",
+                        user,
+                        "UploadAvatar"
+                    );
+                }
+            )
+            .end(file.buffer); // Đẩy dữ liệu ảnh lên Cloudinary
+    } catch (error) {
+        logger.error(`Error in UploadAvatar: ${error.message}`);
+        return sendError(res, 500, "Internal server error", error.message);
+    }
+}
+
 async function UpdateNotificationsSettings(req, res) {}
 
 async function GetUserNotifications(req, res) {}
@@ -520,4 +537,5 @@ module.exports = {
     GetUserCardsIncoming,
     SearchUsers,
     SuggestUsersToAdd,
+    UploadAvatar,
 };

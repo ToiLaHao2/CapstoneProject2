@@ -127,6 +127,8 @@ async function validateRemoveUserFromCard(req, res, next) {
     }
 }
 
+// add attachments to card
+
 module.exports = {
     validateCreateCard,
     validateGetCard,
