@@ -10,7 +10,6 @@ const boardRouter = require("./routes/boardRoutes");
 const userRouter = require("./routes/userRoutes");
 const listRouter = require("./routes/listRoutes");
 const cardRouter = require("./routes/cardRoutes");
-const upLoadrouter = require("./routes/uploadRoutes");
 const morgan = require("morgan");
 
 dotenv.config();
