@@ -23,3 +23,16 @@ về việc upload Avatar:
 về việc hiện ảnh đại diện:
     - ảnh đại diện sẽ được hiện trong khu vực về thông tin người dùng. Thay vì mặc định là hình tròn với chữ cái thể hiện tên của người dùng thì sẽ 
     dùng thẻ img để hiện ảnh đại diện. Nếu người dùng chưa upload ảnh đại diện thì sẽ hiện ảnh mặc định.
+
+
+
+
+Thay đổi lại middleware cho chuẩn hơn
+    thay bằng 
+        auth.middleware
+        error.middleware
+        logger.middleware
+        upload.middleware
+        validate.middleware 
+    thay vì các middleware cho từng cái như trước
+    

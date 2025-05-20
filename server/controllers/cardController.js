@@ -366,7 +366,6 @@ async function RemoveUserFromCard(req, res) {
         return sendError(res, 500, "Internal server error");
     }
 }
-
 // luu file vào folder upload trong server
 // sau đó lưu đường dẫn vào card
 async function AddAttachmentToCard(req, res) {
