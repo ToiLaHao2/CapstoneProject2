@@ -352,6 +352,26 @@ const validationRules = {
         ],
     },
     // addAttachmentToCard
+    addAttachmentToCard: {
+        checkMessage: "Add attachment to card",
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "list_id",
+            "card_id",
+            "checkMessage",
+        ],
+        fileSize: 25 * 1024 * 1024, // Giới hạn file tối đa 25MB
+        allowedMimeTypes: [
+            "image/jpeg",
+            "image/png",
+            "image/jpg",
+            "application/zip",
+            "application/pdf",
+            "application/msword",
+            "application/x-rar-compressed",
+        ],
+    },
     // addCommentToCard
     // getCommentsInCard
     // assignLabelToCard

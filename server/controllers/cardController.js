@@ -4,6 +4,8 @@ const Board = require("../models/Board.js");
 const logger = require("../utils/logger.js");
 const { sendError, sendSuccess } = require("../utils/response.js");
 const User = require("../models/User.js");
+const Attachment = require("../models/Attachment.js");
+const upload = require("../configs/storageConfig.js").upload;
 
 async function CreateCard(req, res) {
     try {
@@ -188,7 +190,7 @@ async function UpdateCard(req, res) {
     }
 }
 
-async function DeleteCard(req, res) {}
+async function DeleteCard(req, res) { }
 
 // trong trường hợp người dùng đang mở card ra và muốn di chuyển nó sang một list khác trong cùng board
 async function MoveCard(req, res) {
@@ -405,23 +407,48 @@ async function AddAttachmentToCard(req, res) {
         if (!cardInList) {
             return sendError(res, 403, "Card does not belong to the list");
         }
+        // lưu file vào folder upload trong server
+        // sau đó lưu đường dẫn vào card
+        const file = req.file;
+        if (!file) {
+            return sendError(res, 400, "File not found");
+        }
+        // ghi file vao folder uploads
+        upload.single("file")(req, res, async (err) => {
+            if (err) {
+                return sendError(res, 400, "File upload failed", err);
+            }
+            // lưu đường dẫn vào card
+            const newAttachment = new Attachment({
+                attachment_card_id: card._id,
+                attachment_url: file.path,
+                attachment_name: file.originalname,
+                attachment_type: file.mimetype,
+                created_by: user_id,
+            });
+            const attachment = await newAttachment.save();
+            card.card_attachments.push({ card_attachment_id: attachment._id });
+            await card.save();
+            return sendSuccess(res, "File uploaded successfully", attachment);
+        });
     } catch (error) {
         logger.error(error.message);
+        return sendError(res, 500, "Internal server error");
     }
 }
 
-async function AddCommentToCard(req, res) {}
+async function AddCommentToCard(req, res) { }
 
-async function GetCommentsInCard(req, res) {}
+async function GetCommentsInCard(req, res) { }
 
 // async function AssignLabelToCard(req, res) {}
 
 // Lưu trữ card không còn hoạt động
-async function ArchiveCard(params) {}
+async function ArchiveCard(params) { }
 
-async function AddCheckListsToCard(req, res) {}
+async function AddCheckListsToCard(req, res) { }
 
-async function UpdateCheckListsInCard(req, res) {}
+async function UpdateCheckListsInCard(req, res) { }
 
 module.exports = {
     CreateCard,

@@ -188,3 +188,22 @@ Xem xét về thành phần numercial number trong model list mục list_cards l
     - tức là sẽ xóa đi thông tin đó trên list cũ và thêm nó vào list mới
     - mặc định theo usecase thì sẽ phải thêm card đó vào cuối list_cards mới 
     - nhưng khi đó xóa ở list_cards cũ thì sẽ cần cập nhật lại numercial number cho các id card đc lưu phía sau
+
+
+
+notification system:
+- khi có 1 hành động thực hiện, dựa theo thực thể mà hành động đó tác dụng lên để quyết định phạm vi thông báo sẽ được tạo. 
+Phạm vi sẽ là số người có liên quan đến thông báo. Thông báo sẽ được gửi qua socket.io. Nếu người nhận không online thì sẽ Nhận
+được thông báo sau khi đăng nhập.
+=> Model thông báo
+
+{
+  "_id": "notif123",
+  "userIds": "user456",
+  "title": "You were mentioned in a comment",
+  "message": `$ mentioned $ in task 'Fix UI bug'`,
+  "type": "mention",
+  "referenceId": "task789",
+  "createdAt": "2025-05-21T09:00:00Z",
+  "senderId": "user123",
+}

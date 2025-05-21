@@ -128,6 +128,25 @@ async function validateRemoveUserFromCard(req, res, next) {
 }
 
 // add attachments to card
+async function validateAddAttachmentsToCard(req, res, next) {
+    const token = await getTokenFromHeaders(req);
+    const checkToken = await VerifiedToken(token);
+    if (!checkToken) {
+        logger.error("Invalid token");
+        return sendError(res, 401, "Invalid token", "");
+    }
+    req.body.user_id = checkToken.id;
+    const cardAddAttachmentData = req.body;
+    const rules = validationRules["addAttachmentToCard"];
+    const result = await validateFields(cardAddAttachmentData, rules);
+    if (!result.valid) {
+        logger.error(`Error checking data ${result.error}`);
+        return sendError(res, 400, "Invalid data", result.error);
+    } else {
+        logger.info("Successfull checking data to add attachment to card");
+        next();
+    }
+}
 
 module.exports = {
     validateCreateCard,
@@ -136,4 +155,5 @@ module.exports = {
     validateMoveCard,
     validateAssignUserToCard,
     validateRemoveUserFromCard,
+    validateAddAttachmentsToCard,
 };
