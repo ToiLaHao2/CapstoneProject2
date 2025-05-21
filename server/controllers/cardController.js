@@ -437,6 +437,12 @@ async function AddAttachmentToCard(req, res) {
     }
 }
 
+async function RemoveAttachmentFromCard(req, res) { }
+
+async function GetAttachmentInCard(req, res) { }
+
+async function UpdateAttachmentInCard(req, res) { }
+
 async function AddCommentToCard(req, res) { }
 
 async function GetCommentsInCard(req, res) { }
@@ -457,4 +463,5 @@ module.exports = {
     MoveCard,
     AssignUserToCard,
     RemoveUserFromCard,
+    AddAttachmentToCard,
 };
