@@ -5,6 +5,7 @@ const logger = require("../utils/logger.js");
 const { sendError, sendSuccess } = require("../utils/response.js");
 const User = require("../models/User.js");
 const Attachment = require("../models/Attachment.js");
+const path = require("path");
 const upload = require("../configs/storageConfig.js").upload;
 
 async function CreateCard(req, res) {
@@ -437,9 +438,141 @@ async function AddAttachmentToCard(req, res) {
     }
 }
 
-async function RemoveAttachmentFromCard(req, res) { }
+async function RemoveAttachmentFromCard(req, res) {
+    try {
+        const { user_id, board_id, list_id, card_id, attachment_id } = req.body;
+        // check if user is a member of the board
+        const board = await Board.findById(board_id);
+        if (!board) {
+            return sendError(res, 404, "Board not found");
+        }
+        const isUserExist = board.board_collaborators.find(
+            (collaborator) => collaborator.board_collaborator_id == user_id
+        );
+        if (!isUserExist) {
+            if (String(board.created_by) !== user_id) {
+                return sendError(res, 401, "User not authorized", "GetList");
+            }
+        }
+        // check if list exists
+        const list = await List.findById(list_id);
+        if (!list) {
+            return sendError(res, 404, "List not found");
+        }
+        // check if list in board
+        if (String(list.board_id) !== board_id) {
+            return sendError(res, 403, "List does not belong to the board");
+        }
+        // check if card exists
+        const card = await Card.findById(card_id);
+        if (!card) {
+            return sendError(res, 404, "Card not found");
+        }
+        // check if card in list
+        const cardInList = list.list_cards.find(
+            (card) => String(card.card_id) === card_id
+        );
+        if (!cardInList) {
+            return sendError(res, 403, "Card does not belong to the list");
+        }
+        // check if attachment exists
+        const attachment = await Attachment.findById(attachment_id);
+        if (!attachment) {
+            return sendError(res, 404, "Attachment not found");
+        }
+        // check if attachment in card
+        const attachmentInCard = card.card_attachments.find(
+            (attachment) => String(attachment.card_attachment_id) === attachment_id
+        );
+        if (!attachmentInCard) {
+            return sendError(res, 403, "Attachment does not belong to the card");
+        }
+        // remove attachment from card
+        card.card_attachments = card.card_attachments.filter(
+            (attachment) => String(attachment.card_attachment_id) !== attachment_id
+        );
+        await card.save();
+        // remove attachment from database
+        await Attachment.findByIdAndDelete(attachment_id);
+        // remove file from server
+        const fs = require("fs");
+        const filePath = attachment.file_path;
+        fs.unlink(filePath, (err) => {
+            if (err) {
+                logger.error(err.message);
+                return sendError(res, 500, "Internal server error");
+            }
+        });
+        return sendSuccess(res, "Attachment removed successfully");
+    } catch (error) {
+        logger.error(error.message);
+        return sendError(res, 500, "Internal server error");
+    }
+}
 
-async function GetAttachmentInCard(req, res) { }
+async function GetAttachmentInCard(req, res) {
+    try {
+        const { user_id, board_id, list_id, card_id, attachment_id } = req.body;
+        // check if user is a member of the board
+        const board = await Board.findById(board_id);
+        if (!board) {
+            return sendError(res, 404, "Board not found");
+        }
+        const isUserExist = board.board_collaborators.find(
+            (collaborator) => collaborator.board_collaborator_id == user_id
+        );
+        if (!isUserExist) {
+            if (String(board.created_by) !== user_id) {
+                return sendError(res, 401, "User not authorized", "GetList");
+            }
+        }
+        // check if list exists
+        const list = await List.findById(list_id);
+        if (!list) {
+            return sendError(res, 404, "List not found");
+        }
+        // check if list in board
+        if (String(list.board_id) !== board_id) {
+            return sendError(res, 403, "List does not belong to the board");
+        }
+        // check if card exists
+        const card = await Card.findById(card_id);
+        if (!card) {
+            return sendError(res, 404, "Card not found");
+        }
+        // check if card in list
+        const cardInList = list.list_cards.find(
+            (card) => String(card.card_id) === card_id
+        );
+        if (!cardInList) {
+            return sendError(res, 403, "Card does not belong to the list");
+        }
+        // check if attachment exists
+        const attachment = await Attachment.findById(attachment_id);
+        if (!attachment) {
+            return sendError(res, 404, "Attachment not found");
+        }
+        // check if attachment in card
+        const attachmentInCard = card.card_attachments.find(
+            (attachment) => String(attachment.card_attachment_id) === attachment_id
+        );
+        if (!attachmentInCard) {
+            return sendError(res, 403, "Attachment does not belong to the card");
+        }
+        // if all checks pass, return the attachment
+        // get the attachment and send it to the client
+        const attachmentPath = path.resolve(__dirname, '..', attachment.attachment_url);
+        return res.download(attachmentPath, (err) => {
+            if (err) {
+                logger.error('Error sending file:', err);
+                return sendError(res, 500, 'Internal server error');
+            }
+        });
+    } catch (error) {
+        logger.error(error.message);
+        return sendError(res, 500, "Internal server error");
+    }
+}
 
 async function UpdateAttachmentInCard(req, res) { }
 
@@ -464,4 +597,6 @@ module.exports = {
     AssignUserToCard,
     RemoveUserFromCard,
     AddAttachmentToCard,
+    RemoveAttachmentFromCard,
+    GetAttachmentInCard,
 };

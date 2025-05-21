@@ -7,6 +7,8 @@ const {
     validateAssignUserToCard,
     validateRemoveUserFromCard,
     validateAddAttachmentsToCard,
+    validateRemoveAttachmentsFromCard,
+    validateGetAttachmentFromCard,
 } = require("../middleware/cardMiddleware");
 const {
     CreateCard,
@@ -15,7 +17,8 @@ const {
     MoveCard,
     AssignUserToCard,
     RemoveUserFromCard,
-    AddAttachmentToCard
+    AddAttachmentToCard,
+    GetAttachmentInCard
 } = require("../controllers/cardController");
 
 const cardRouter = express.Router();
@@ -38,6 +41,16 @@ cardRouter.post(
     "/addAttachmentToCard",
     validateAddAttachmentsToCard,
     AddAttachmentToCard
+);
+cardRouter.post(
+    "/removeAttachmentFromCard",
+    validateRemoveAttachmentsFromCard,
+    RemoveUserFromCard
+);
+cardRouter.post(
+    "/getAttachmentInCard",
+    validateGetAttachmentFromCard,
+    GetAttachmentInCard
 );
 
 module.exports = cardRouter;

@@ -372,7 +372,24 @@ const validationRules = {
             "application/x-rar-compressed",
         ],
     },
-    // addCommentToCard
+    // removeAttachmentFromCard
+    removeAttachmentFromCard: {
+        checkMessage: "Remove attachment from card",
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "list_id",
+            "card_id",
+            "attachment_id",
+            "checkMessage",
+        ],
+    },
+    // getAttachmentsInCard
+    getAttachmentInCard: {
+        checkMessage: "Get attachments in card",
+        requiredFields: ["user_id", "board_id", "list_id", "card_id", "attachment_id", "checkMessage"],
+    },
+    // 
     // getCommentsInCard
     // assignLabelToCard
     // archiveCard
