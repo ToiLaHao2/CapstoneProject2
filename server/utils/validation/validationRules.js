@@ -257,25 +257,11 @@ const validationRules = {
             "checkMessage",
         ],
     },
-    // moveCard
-    moveCardListUseCase: {
-        checkMessage: "Move card",
-        requiredFields: [
-            "user_id",
-            "board_id",
-            "list_id",
-            "card_id1",
-            "card_id2",
-            "checkMessage",
-        ],
-    },
     // getCardsInList
     getCardsInList: {
         checkMessage: "Get cards in list",
         requiredFields: ["user_id", "board_id", "list_id", "checkMessage"],
     },
-    // moveCardsInList
-    // moveCardToOtherList
 
     // Card middleware validate
     // createCard
@@ -324,6 +310,18 @@ const validationRules = {
             "old_list_id",
             "new_list_id",
             "card_id",
+            "checkMessage",
+        ],
+    },
+    // moveCardWithPosition
+    moveCardWithPosition: {
+        checkMessage: "Move card with position",
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "list_id",
+            "card_id",
+            "position",
             "checkMessage",
         ],
     },
