@@ -222,7 +222,91 @@ export const BoardProvider = ({ children }) => {
         }
     };
 
-    // const getAllUsers
+    // Move list trong board
+    const moveList = async (boardId, listId1, listId2) => {
+        try {
+            const response = await privateAxios.post("/board/moveList", {
+                checkMessage: "Move list",
+                board_id: boardId,
+                list_id1: listId1,
+                list_id2: listId2,
+            });
+
+            const data = await response.data;
+            if (data.success) {
+                // Cập nhật state boards để phản ánh sự thay đổi thứ tự list
+                setBoards((prevBoards) =>
+                    prevBoards.map((board) => {
+                        if (board._id === boardId) {
+                            const updatedBoardLists = [...board.board_lists];
+                            const index1 = updatedBoardLists.findIndex(
+                                (item) => String(item.list_id) === String(listId1)
+                            );
+                            const index2 = updatedBoardLists.findIndex(
+                                (item) => String(item.list_id) === String(listId2)
+                            );
+
+                            if (index1 !== -1 && index2 !== -1) {
+                                // Hoán đổi vị trí list_id trong mảng board_lists
+                                const temp = { ...updatedBoardLists[index1] };
+                                updatedBoardLists[index1].list_id = listId2;
+                                updatedBoardLists[index2].list_id = temp.list_id;
+                                return { ...board, board_lists: updatedBoardLists };
+                            }
+                        }
+                        return board;
+                    })
+                );
+                return "Success";
+            } else {
+                console.log("Move list failed:", data.message);
+                return "Failed";
+            }
+        } catch (error) {
+            console.error("Error moving list:", error);
+            return "Error";
+        }
+    };
+
+    // Remove member from board
+    const removeMemberFromBoard = async (boardId, memberId) => {
+        try {
+            const response = await privateAxios.post(
+                "/board/removeMemberFromBoard",
+                {
+                    checkMessage: "Remove member from board",
+                    board_id: boardId,
+                    member_id: memberId,
+                }
+            );
+
+            const data = await response.data;
+
+            if (data.success) {
+                // Cập nhật state boards để phản ánh việc xóa thành viên
+                setBoards((prevBoards) =>
+                    prevBoards.map((board) => {
+                        if (board._id === boardId) {
+                            return {
+                                ...board,
+                                board_collaborators: board.board_collaborators.filter(
+                                    (collab) => String(collab.board_collaborator_id) !== String(memberId)
+                                ),
+                            };
+                        }
+                        return board;
+                    })
+                );
+                return "Success";
+            } else {
+                console.log("Remove member failed:", data.message);
+                return "Failed";
+            }
+        } catch (error) {
+            console.log("Error removing member:", error);
+            return "Error";
+        }
+    };
 
     //end-mei
 
@@ -238,6 +322,8 @@ export const BoardProvider = ({ children }) => {
                 updatePrivacy,
                 getAllMembers,
                 addMemberToBoard,
+                moveList,
+                removeMemberFromBoard
             }}
         >
             {children}
