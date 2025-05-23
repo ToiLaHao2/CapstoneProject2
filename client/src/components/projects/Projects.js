@@ -22,6 +22,8 @@ const Projects = () => {
         updateBoard,
         addMemberToBoard,
         updatePrivacy,
+        removeMemberFromBoard,
+        getAllBoardsByUserId
     } = useBoard();
     const { user, searchUsers, colorHashMap } = useUser();
     const navigate = useNavigate();
@@ -40,6 +42,18 @@ const Projects = () => {
 
     const openAddMembersPopup = () => setIsAddMembersPopupOpen(true);
     const closeAddMembersPopup = () => setIsAddMembersPopupOpen(false);
+
+    const [userMenuVisibleId, setUserMenuVisibleId] = useState(null);
+    const userMenuRef = useRef({});
+
+    const [selectedCollaborator, setSelectedCollaborator] = useState(null);
+    const [boardMenuVisibleId, setBoardMenuVisibleId] = useState(null);
+
+    const [selectedCollaboratorToRemove, setSelectedCollaboratorToRemove] = useState(null);
+
+    const [removeSuccessDialogOpen, setRemoveSuccessDialogOpen] = useState(false);
+    const openRemoveSuccessDialog = () => setRemoveSuccessDialogOpen(true);
+    const closeRemoveSuccessDialog = () => setRemoveSuccessDialogOpen(false);
 
     // search user to add to
     const handleSearchChange = async (e) => {
@@ -65,23 +79,6 @@ const Projects = () => {
         setUserToAdd(user);
         setSearchResults([]);
     };
-
-    // add members
-    // const handleAddMember = async (memberId) => {
-    //     try {
-    //         console.log("currentBoardId:", currentBoardId);
-
-    //         const result = await addMemberToBoard(currentBoardId, memberId, "MEMBER");
-    //         if (result === "Success") {
-    //             console.log("Member added successfully");
-    //             closeAddMembersPopup();
-    //         } else {
-    //             console.error("Failed to add member");
-    //         }
-    //     } catch (error) {
-    //         console.error("Error adding member:", error);
-    //     }
-    // };
 
     // add members
     const handleAddMember = async () => {
@@ -146,7 +143,7 @@ const Projects = () => {
     };
 
     const handleAddMembersClick = async (e, boardId) => {
-        setCurrentBoardId(boardId); // Thêm dòng này
+        setCurrentBoardId(boardId);
         openAddMembersPopup();
     };
 
@@ -180,6 +177,59 @@ const Projects = () => {
 
     const closeMenu = () => {
         setMenuVisibleProjectId(null);
+    };
+
+    // remove member
+    const handleRemoveMemberClick = async (collaborator) => {
+        console.log("Removing collaborator:", collaborator);
+        console.log("currentBoardId when removing:", currentBoardId);
+        console.log("collaborator._boardId:", collaborator?._boardId);
+        console.log("collaborator._id:", collaborator?._id);
+        closeUserMenu();
+        setSelectedCollaboratorToRemove(collaborator);
+        const confirmRemove = window.confirm(
+            `Are you sure you want to remove ${collaborator.user_full_name} from this board?`
+        );
+        if (confirmRemove) {
+            if (collaborator?._boardId && collaborator?._id) {
+                const result = await removeMemberFromBoard(collaborator._boardId, collaborator._id);
+                if (result === "Success") {
+                    console.log("Member removed successfully");
+                    openRemoveSuccessDialog();
+
+                    //fetch lại boards từ context
+                    getAllBoardsByUserId();
+                } else {
+                    console.error("Failed to remove member");
+                }
+            } else {
+                console.error("Board ID or collaborator ID is missing for removal.");
+            }
+        }
+    };
+
+    const toggleUserMenu = (e, collaborator) => {
+        e.stopPropagation();
+        console.log("Toggling user menu for collaborator:", collaborator);
+        // Giả định collaborator._id là user_id
+        console.log("Toggling user menu for user_id:", collaborator?._id);
+        // Lấy board_id từ project._id của vòng lặp map bên ngoài
+        const boardId = collaborator?._boardId; // Truyền thêm _boardId khi map
+        if (collaborator?._id && boardId) {
+            setCurrentBoardId(boardId);
+            setSelectedCollaborator(collaborator);
+            setUserMenuVisibleId(
+                userMenuVisibleId === collaborator._id ? null : collaborator._id
+            );
+            setBoardMenuVisibleId(null);
+        } else {
+            console.error("Collaborator is missing _id (as user_id) or _boardId:", collaborator, boardId);
+        }
+    };
+
+    const closeUserMenu = () => {
+        setUserMenuVisibleId(null);
+        setSelectedCollaborator(null);
     };
 
     //Close menu when clicking outside
@@ -257,54 +307,66 @@ const Projects = () => {
                                 </div>
                                 <div className="project-status-and-users">
                                     <span
-                                        className={`project-status ${
-                                            project.board_is_public
-                                                ? "public"
-                                                : "private"
-                                        }`}
+                                        className={`project-status ${project.board_is_public
+                                            ? "public"
+                                            : "private"
+                                            }`}
                                     >
                                         {project.board_is_public
                                             ? "Public"
                                             : "Private"}
                                     </span>
-                                    {/* Conditionally render user icons - for now always showing static icons */}
+                                    {/* Conditionally render user icons */}
                                     <div className="project-users-icons">
-                                        {project.board_collaborators.length >
-                                            0 &&
-                                            project.board_collaborators.map(
-                                                (collaborator, index) =>
-                                                    collaborator.user_avatar_url !==
-                                                    "empty" ? (
+                                        {project.board_collaborators.map((collaborator, index) => {
+                                            console.log("Inside map - collaborator:", collaborator);
+                                            collaborator._boardId = project._id;
+                                            return (
+                                                <React.Fragment key={index}>
+                                                    {collaborator?.user_avatar_url !== "empty" ? (
                                                         <img
                                                             className="user-icon-circle"
-                                                            src={
-                                                                collaborator.user_avatar_url
-                                                            }
+                                                            src={collaborator.user_avatar_url}
                                                             alt="small-avatar"
+                                                            onClick={(e) => {
+                                                                console.log("Before toggleUserMenu - collaborator:", collaborator);
+                                                                toggleUserMenu(e, collaborator);
+                                                            }}
                                                         />
                                                     ) : (
                                                         <div
-                                                            key={index}
                                                             className="user-icon-circle"
                                                             style={{
-                                                                backgroundColor: `${
-                                                                    colorHashMap[
-                                                                        collaborator.user_full_name
-                                                                            .charAt(
-                                                                                0
-                                                                            )
-                                                                            .toUpperCase()
-                                                                    ]
-                                                                }`,
+                                                                backgroundColor: `${colorHashMap[
+                                                                    collaborator?.user_full_name
+                                                                        ?.charAt(0)
+                                                                        ?.toUpperCase()
+                                                                ]}`,
                                                                 color: "white",
                                                             }}
+                                                            onClick={(e) => {
+                                                                console.log("Before toggleUserMenu - collaborator:", collaborator);
+                                                                toggleUserMenu(e, collaborator);
+                                                            }}
                                                         >
-                                                            {collaborator.user_full_name
-                                                                .charAt(0)
-                                                                .toUpperCase()}
+                                                            {collaborator?.user_full_name
+                                                                ?.charAt(0)
+                                                                ?.toUpperCase()}
                                                         </div>
-                                                    )
-                                            )}
+                                                    )}
+                                                    {userMenuVisibleId === collaborator?._id && (
+                                                        <div className="dropdown-menu user-dropdown" ref={(el) => (userMenuRef.current[collaborator?._id] = el)}>
+                                                            <div className="dropdown-item">
+                                                                <b>Member: {collaborator?.user_full_name}</b>
+                                                            </div>
+                                                            <div className="dropdown-item" onClick={() => handleRemoveMemberClick(collaborator)}>
+                                                                Remove from board
+                                                            </div>
+                                                        </div>
+                                                    )}
+                                                </React.Fragment>
+                                            );
+                                        })}
                                     </div>
                                 </div>
 

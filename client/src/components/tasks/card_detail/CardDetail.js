@@ -1,92 +1,11 @@
-// import React, { useState } from 'react';
-// import './CardDetail.css';
-
-// import { FiCalendar, FiBold, FiUnderline, FiLink, FiImage } from 'react-icons/fi';
-// import { useParams, useLocation } from 'react-router-dom';
-
-// function CardDetail() {
-//   const { id } = useParams();
-//   const location = useLocation();
-//   const task = location.state?.task;
-//   const initialCardTitle = task?.card_title || '';
-//   const [cardTitle, setCardTitle] = useState(initialCardTitle);
-
-//   return (
-//     <div className="card-container">
-//       <div className="card-header">
-//         <div className="label label-highest">Highest</div>
-//         <input
-//           type="text"
-//           className="input-field"
-//           placeholder="Card Title"
-//           value={cardTitle}
-//           onChange={(e) => setCardTitle(e.target.value)}
-//         />
-//       </div>
-
-//       <div className="card-section">
-//         <div className="section-title">Members</div>
-//         <div className="member-icons-container">
-//           <div className="member-icon member-icon-1">M</div>
-//           <div className="member-icon member-icon-2">M</div>
-//           <div className="member-icon member-icon-3">M</div>
-//           <div className="add-member-icon">+</div>
-//         </div>
-//       </div>
-
-//       <div className="card-section">
-//         <div className="section-title">Due date:</div>
-//         <div className="input-field-container">
-//           <input type="date" className="input-field" placeholder="Select date" />
-//           <span className="input-icon">
-//             <FiCalendar />
-//           </span>
-//         </div>
-//       </div>
-
-//       <div className="card-section">
-//         <textarea className="textarea-field" placeholder="Description here...."></textarea>
-//         <div className="textarea-footer">
-//           <div className="textarea-icons">
-//             <span className="icon">
-//               <FiBold />
-//             </span>
-//             <span className="icon">
-//               <FiUnderline />
-//             </span>
-//             <span className="icon">
-//               <FiLink />
-//             </span>
-//             <span className="icon">
-//               <FiImage />
-//             </span>
-//           </div>
-//         </div>
-//       </div>
-
-//       <div className="card-actions">
-//         <button className="button button-primary">Save</button>
-//         <button className="button button-secondary">Cancel</button>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default CardDetail;
-
 import React, { useEffect, useState } from "react";
 import "./CardDetail.css";
 
-import {
-    FiCalendar,
-    FiBold,
-    FiUnderline,
-    FiLink,
-    FiImage,
-} from "react-icons/fi";
+import { FiCalendar, FiBold, FiUnderline, FiLink, FiImage, } from "react-icons/fi";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { useCard } from "../../../context/CardContext";
 import { useBoard } from "../../../context/BoardContext";
+import { useList } from "../../../context/ListContext";
 
 function CardDetail() {
     const { taskId } = useParams();
@@ -128,9 +47,30 @@ function CardDetail() {
     const { updateCard } = useCard();
     const { getCard } = useCard();
 
-    // console.log("Task ID:", task?.id);
-    // console.log("Board ID:", task?.board_id);
-    // console.log("List ID:", listId);
+    const [selectedListId, setSelectedListId] = useState(listId);
+    const [listsInBoard, setListsInBoard] = useState([]);
+    const { getListsInBoard } = useBoard();
+    const {moveList} = useBoard();
+
+    const [selectedCardId, setSelectedCardId] = useState(taskId);
+    const [cardsInList, setCardsInList] = useState([]);
+    const { getCardsInList } = useList();
+
+    const currentListId = location.state?.listId;
+    const [targetListId, setTargetListId] = useState(currentListId);
+
+    const {moveCard} = useCard();
+
+    const handleListChange = (event) => {
+        setTargetListId(event.target.value);
+        console.log("Selected Target List ID:", event.target.value);
+    };
+
+    const handleCardChange = (event) => {
+        setSelectedCardId(event.target.value);
+        console.log("Selected Card ID:", event.target.value);
+        // logic
+    };
 
     const handlePriorityChange = (event) => {
         setPriority(event.target.value);
@@ -141,17 +81,56 @@ function CardDetail() {
         console.log("Completed changed:", event.target.checked);
     };
 
+    // const handleSave = async () => {
+    //     try {
+    //         await updateCard(boardId, listId, taskId, {
+    //             card_id: taskId,
+    //             card_title: cardTitle,
+    //             card_description: description,
+    //             card_duration: duration
+    //                 ? new Date(duration).toISOString()
+    //                 : null,
+    //             card_completed: completed,
+    //             list_id: currentListId,
+    //         });
+
+    //         if (targetListId !== currentListId) {
+    //             const result = await moveList(boardId, currentListId, targetListId);
+    //             if (result === "Success") {
+    //                 console.log("List moved successfully");
+    //                 // Có thể navigate hoặc thông báo cho người dùng
+    //             } else {
+    //                 console.error("Failed to move list");
+    //                 // Xử lý lỗi nếu cần
+    //             }
+    //         }
+    //         navigate(-1);
+    //     } catch (error) {
+    //         console.error("Failed to update card:", error);
+    //     }
+    // };
+
     const handleSave = async () => {
         try {
-            await updateCard(boardId, listId, taskId, {
+            await updateCard(boardId, currentListId, taskId, {
                 card_id: taskId,
                 card_title: cardTitle,
                 card_description: description,
-                card_duration: duration
-                    ? new Date(duration).toISOString()
-                    : null,
+                card_duration: duration ? new Date(duration).toISOString() : null,
                 card_completed: completed,
+                list_id: currentListId,
             });
+
+            if (targetListId !== currentListId) {
+                const moved = await moveCard(boardId, currentListId, targetListId, taskId);
+                if (moved) {
+                    console.log(`Card ${taskId} moved to list ${targetListId}`);
+                    navigate(-1);
+                    return;
+                } else {
+                    console.error(`Failed to move card ${taskId} to list ${targetListId}`);
+                }
+            }
             navigate(-1);
         } catch (error) {
             console.error("Failed to update card:", error);
@@ -167,15 +146,6 @@ function CardDetail() {
         setNewMember("");
         setMemberSuggestions([]);
     };
-
-    // const handleAddMemberFormAdd = () => {
-    //   if (newMember.trim()) {
-    //     setMembers([...members, newMember.trim()]);
-    //     setShowAddMemberForm(false);
-    //     setNewMember('');
-    //     setMemberSuggestions([]);
-    //   }
-    // };
 
     const handleAddMemberFormAdd = async () => {
         if (newMember.trim()) {
@@ -204,25 +174,6 @@ function CardDetail() {
         }
     };
 
-    // useEffect(() => {
-    //   const fetchMembers = async () => {
-    //     if (showAddMemberForm) {
-    //       try {
-    //         const allMembers = await getAllMembers(boardId);
-    //         console.log("All members:", allMembers);
-    //         if (allMembers && Array.isArray(allMembers)) {
-    //           allMembers.forEach(member => console.log("Member:", member));
-    //           setMemberSuggestions(allMembers);
-    //         } else {
-    //           setMemberSuggestions([]);
-    //         }
-    //       } catch (error) {
-    //         console.error("Failed to fetch members:", error);
-    //       }
-    //     }
-    //   };
-    //   fetchMembers();
-    // }, [showAddMemberForm, getAllMembers, boardId]);
 
     useEffect(() => {
         const fetchCardDetails = async () => {
@@ -239,7 +190,7 @@ function CardDetail() {
                         })
                         .filter((email) => email);
                     setMembers(fetchedMembers);
-                    console.log("Members state:", fetchedMembers); // Thêm dòng này
+                    console.log("Members state:", fetchedMembers);
                 }
             } catch (error) {
                 console.error("Failed to fetch card details:", error);
@@ -268,6 +219,38 @@ function CardDetail() {
         };
         fetchMembers();
     }, [showAddMemberForm, getAllMembers, boardId, taskId]);
+
+    useEffect(() => {
+        const fetchLists = async () => {
+            if (boardId) {
+                const lists = await getListsInBoard(boardId);
+                if (lists) {
+                    setListsInBoard(lists);
+                    console.log("Lists in board:", lists);
+                }
+                // if (lists) {
+                //     setListsInBoard(lists.filter(list => list._id !== currentListId)); // Lọc bỏ list hiện tại
+                //     console.log("Lists in board (excluding current):", lists);
+                // }
+            }
+        };
+
+        fetchLists();
+    }, [boardId, getListsInBoard, currentListId]);
+
+    useEffect(() => {
+        const fetchCardsForCurrentList = async () => {
+            if (boardId && listId) {
+                const cards = await getCardsInList(boardId, listId);
+                if (cards) {
+                    setCardsInList(cards);
+                    console.log("Cards in list:", cards);
+                }
+            }
+        };
+
+        fetchCardsForCurrentList();
+    }, [boardId, listId, getCardsInList]);
 
     const handleMemberInputChange = (e) => {
         const inputValue = e.target.value;
@@ -322,17 +305,40 @@ function CardDetail() {
                 />
             </div>
 
+           {/* List Selection */}
+        <div className="card-section">
+            <label htmlFor="list-select" className="section-title">List</label>
+            <select
+                id="list-select"
+                className="input-field"
+                value={targetListId || currentListId || ''}
+                onChange={handleListChange}
+            >
+                <option value="">Select A List</option>
+                {listsInBoard.map(list => (
+                    <option key={list._id} value={list._id}>{list.list_title}</option>
+                ))}
+            </select>
+        </div>
+
+            {/* Card Selection */}
+            <div className="card-section">
+                <label htmlFor="card-select" className="section-title">Card</label>
+                <select
+                    id="card-select"
+                    className="input-field"
+                    value={selectedCardId || ''}
+                    onChange={handleCardChange}
+                >
+                    <option value="">Select A Card</option>
+                    {cardsInList.map(card => (
+                        <option key={card._id} value={card._id}>{card.card_title}</option>
+                    ))}
+                </select>
+            </div>
+
             <div className="card-section">
                 <div className="section-title">Members</div>
-                {/* <div className="member-icons-container">
-          {members.length > 0 && members.map((member, index) => (
-            <div key={index} className={`member-icon member-icon-${index + 1}`}>
-              {member.charAt(0).toUpperCase()}
-            </div>
-          ))}
-          <div className="add-member-icon" onClick={handleAddMemberIconClick}>+</div>
-        </div> */}
-
                 <div className="member-icons-container">
                     {members.length > 0 &&
                         members.map((member, index) =>
@@ -345,9 +351,8 @@ function CardDetail() {
                             ) : (
                                 <div
                                     key={index}
-                                    className={`member-icon member-icon-${
-                                        index + 1
-                                    }`}
+                                    className={`member-icon member-icon-${index + 1
+                                        }`}
                                 >
                                     {member.user_full_name
                                         .charAt(0)
@@ -367,13 +372,6 @@ function CardDetail() {
             <div className="card-section">
                 <div className="section-title">Due date:</div>
                 <div className="input-field-container">
-                    {/* <input
-            type="date"
-            className="input-field"
-            value={dueDate}
-            onChange={(e) => setDueDate(e.target.value)}
-          /> */}
-
                     <input
                         type="date"
                         className="input-field"
