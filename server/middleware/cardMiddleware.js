@@ -86,6 +86,27 @@ async function validateMoveCard(req, res, next) {
         next();
     }
 }
+
+// move card with position drag and drop
+async function validateMoveCardWithPosition(req, res, next) {
+    const token = await getTokenFromHeaders(req);
+    const checkToken = await VerifiedToken(token);
+    if (!checkToken) {
+        logger.error("Invalid token");
+        return sendError(res, 401, "Invalid token", "");
+    }
+    req.body.user_id = checkToken.id;
+    const cardMoveData = req.body;
+    const rules = validationRules["moveCardWithPosition"];
+    const result = await validateFields(cardMoveData, rules);
+    if (!result.valid) {
+        logger.error(`Error checking data ${result.error}`);
+        return sendError(res, 400, "Invalid data", result.error);
+    } else {
+        logger.info("Successfull checking data to move card with position");
+        next();
+    }
+}
 // assign user to card
 async function validateAssignUserToCard(req, res, next) {
     const token = await getTokenFromHeaders(req);
@@ -200,4 +221,5 @@ module.exports = {
     validateAddAttachmentsToCard,
     validateRemoveAttachmentsFromCard,
     validateGetAttachmentFromCard,
+    validateMoveCardWithPosition
 };

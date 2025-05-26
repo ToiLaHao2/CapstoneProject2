@@ -260,7 +260,74 @@ async function MoveCard(req, res) {
     }
 }
 
-// move card with positon
+// move card with position
+async function MoveCardWithPosition(req, res) {
+    try {
+        const {
+            user_id,
+            board_id,
+            old_list_id,
+            new_list_id,
+            card_id,
+            new_card_index,
+        } = req.body;
+
+        // 1. Kiểm tra board & quyền truy cập
+        const board = await Board.findById(board_id);
+        if (!board) return sendError(res, 404, "Board not found");
+
+        const isCollaborator =
+            board.created_by.toString() === user_id ||
+            board.board_collaborators.some(
+                (c) => c.board_collaborator_id.toString() === user_id
+            );
+        if (!isCollaborator)
+            return sendError(res, 401, "User not authorized", "MoveCard");
+
+        // 2. Lấy oldList và newList, kiểm tra thuộc board
+        const [oldList, newList] = await Promise.all([
+            List.findById(old_list_id),
+            List.findById(new_list_id),
+        ]);
+        if (!oldList)
+            return sendError(res, 404, "Old list not found");
+        if (!newList)
+            return sendError(res, 404, "New list not found");
+        if (oldList.board_id.toString() !== board_id)
+            return sendError(res, 403, "Old list does not belong to the board");
+        if (newList.board_id.toString() !== board_id)
+            return sendError(res, 403, "New list does not belong to the board");
+
+        // 3. Kiểm tra card tồn tại & có trong oldList
+        const card = await Card.findById(card_id);
+        if (!card) return sendError(res, 404, "Card not found");
+
+        const cardIndex = oldList.list_cards.findIndex(
+            (c) => c.card_id.toString() === card_id
+        );
+        if (cardIndex === -1)
+            return sendError(res, 403, "Card does not belong to the old list");
+
+        const alreadyInNewList = newList.list_cards.some(
+            (c) => c.card_id.toString() === card_id
+        );
+        if (alreadyInNewList)
+            return sendError(res, 403, "Card already exists in the new list");
+
+        // 4. Di chuyển thẻ
+        const [movedCard] = oldList.list_cards.splice(cardIndex, 1);
+        newList.list_cards.splice(new_card_index, 0, movedCard);
+
+        // 5. Lưu cả hai list
+        await Promise.all([oldList.save(), newList.save()]);
+
+        return res.status(200).json({ message: "Card moved successfully" });
+    } catch (error) {
+        logger.error(error.message);
+        return sendError(res, 500, "Internal server error");
+    }
+}
+
 
 async function AssignUserToCard(req, res) {
     try {
@@ -601,4 +668,5 @@ module.exports = {
     AddAttachmentToCard,
     RemoveAttachmentFromCard,
     GetAttachmentInCard,
+    MoveCardWithPosition
 };
