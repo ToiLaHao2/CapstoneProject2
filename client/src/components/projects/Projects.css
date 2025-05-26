@@ -146,7 +146,7 @@
     align-items: center;
 }
 
-.project-details div > strong {
+.project-details div>strong {
     margin-right: 5px;
 }
 
@@ -503,4 +503,34 @@ h2 {
 
 .user-icon-circle:hover {
     transform: scale(1.05);
+}
+
+.dropdown-menu.user-dropdown {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    min-width: 150px;
+    padding: 5px 0;
+    right: 60px;
+    top: 100%;
+    margin-top: 2px;
+}
+
+.dropdown-menu.user-dropdown .dropdown-item {
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.dropdown-menu.user-dropdown .dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+
+.project-users-icons .user-icon-circle {
+    cursor: pointer;
 }

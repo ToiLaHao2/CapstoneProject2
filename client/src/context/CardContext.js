@@ -121,9 +121,35 @@ export const CardProvider = ({ children }) => {
         }
     };
 
+    // move card
+    const moveCard = async (boardId, oldListId, newListId, cardId) => {
+        try {
+            const response = await privateAxios.post("/card/moveCard", {
+                board_id: boardId,
+                old_list_id: oldListId,
+                new_list_id: newListId,
+                card_id: cardId,
+                checkMessage: "Move card",
+            });
+
+            const data = response.data;
+            console.log("Moved card:", data);
+
+            if (data.success) {
+                return true;
+            } else {
+                console.error("Failed to move card:", data.message);
+                return false;
+            }
+        } catch (error) {
+            console.error("Error moving card:", error);
+            return false;
+        }
+    };
+
     return (
         <CardContext.Provider
-            value={{ createCard, getCard, updateCard, assignUserToCard }}
+            value={{ createCard, getCard, updateCard, assignUserToCard, moveCard }}
         >
             {children}
         </CardContext.Provider>
