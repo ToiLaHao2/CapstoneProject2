@@ -22,15 +22,11 @@ const CardSchema = new Schema({
             },
         },
     ],
-    card_labels: [
-        {
-            card_label_id: {
-                type: Schema.Types.ObjectId,
-                ref: "Label",
-                required: true,
-            },
-        },
-    ],
+    card_priority: {
+        type: String,
+        enum: ["LOW", "MEDIUM", "HIGH", "CRITICAL", "HIGHEST"],
+        default: "low",
+    },
     card_checklist_id: {
         type: Schema.Types.ObjectId,
         ref: "Checklist",

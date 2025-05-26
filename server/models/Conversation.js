@@ -19,6 +19,9 @@ const ConversationSchema = new Schema({
             ref: "Message",
         },
     ],
+    conversation_avatar_url: {
+        type: String,
+    },
     created_at: {
         type: Date,
         default: Date.now,

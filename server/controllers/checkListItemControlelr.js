@@ -1,5 +1,5 @@
-async function UpdateCheckListItem(params) {}
+async function UpdateCheckListItem(req, res) {}
 
-async function DeleteCheckListItem(params) {}
+async function DeleteCheckListItem(req, res) {}
 
-async function MarkItemAsDone(params) {}
+async function MarkItemAsDone(req, res) {}

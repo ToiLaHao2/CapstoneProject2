@@ -257,25 +257,11 @@ const validationRules = {
             "checkMessage",
         ],
     },
-    // moveCard
-    moveCardListUseCase: {
-        checkMessage: "Move card",
-        requiredFields: [
-            "user_id",
-            "board_id",
-            "list_id",
-            "card_id1",
-            "card_id2",
-            "checkMessage",
-        ],
-    },
     // getCardsInList
     getCardsInList: {
         checkMessage: "Get cards in list",
         requiredFields: ["user_id", "board_id", "list_id", "checkMessage"],
     },
-    // moveCardsInList
-    // moveCardToOtherList
 
     // Card middleware validate
     // createCard
@@ -327,6 +313,19 @@ const validationRules = {
             "checkMessage",
         ],
     },
+    // moveCardWithPosition
+    moveCardWithPosition: {
+        checkMessage: "Move card with position",
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "old_list_id",
+            "new_list_id",
+            "card_id",
+            "new_card_index",
+            "checkMessage",
+        ],
+    },
     // assignUserToCard
     assignUserToCard: {
         checkMessage: "Assign user to card",
@@ -352,11 +351,60 @@ const validationRules = {
         ],
     },
     // addAttachmentToCard
-    // addCommentToCard
+    addAttachmentToCard: {
+        checkMessage: "Add attachment to card",
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "list_id",
+            "card_id",
+            "checkMessage",
+        ],
+        fileSize: 25 * 1024 * 1024, // Giới hạn file tối đa 25MB
+        allowedMimeTypes: [
+            "image/jpeg",
+            "image/png",
+            "image/jpg",
+            "application/zip",
+            "application/pdf",
+            "application/msword",
+            "application/x-rar-compressed",
+        ],
+    },
+    // removeAttachmentFromCard
+    removeAttachmentFromCard: {
+        checkMessage: "Remove attachment from card",
+        requiredFields: [
+            "user_id",
+            "board_id",
+            "list_id",
+            "card_id",
+            "attachment_id",
+            "checkMessage",
+        ],
+    },
+    // getAttachmentsInCard
+    getAttachmentInCard: {
+        checkMessage: "Get attachments in card",
+        requiredFields: ["user_id", "board_id", "list_id", "card_id", "attachment_id", "checkMessage"],
+    },
+    // 
     // getCommentsInCard
     // assignLabelToCard
     // archiveCard
     // updateCheckListsInCard
+
+    // Conversation
+    // createConversation
+    createConversation: {
+        checkMessage: "Create new conversation",
+        requiredFields: [
+            "conversation_title",
+            "conversation_participants",
+            "conversation_avatar_url",
+            "checkMessage",
+        ],
+    },
 };
 
 module.exports = { validationRules };

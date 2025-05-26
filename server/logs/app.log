@@ -2666,3 +2666,86 @@
 [2025-04-03 00:59:57] INFO: Successfull checking data user for get user profile
 [2025-04-03 00:59:57] INFO: Successfull checking data to get all members
 [2025-04-03 00:59:57] INFO: Successfull checking data to get all members
+[2025-05-20 21:48:19] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-05-20 22:00:56] INFO: Successfull checking data user for login
+[2025-05-20 22:01:12] INFO: Successfull checking data user for login
+[2025-05-20 22:01:26] ERROR: Error : MongoServerSelectionError: 34110000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1605:SSL alert number 80
+
+[2025-05-20 22:01:42] ERROR: Error : MongoServerSelectionError: 34110000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1605:SSL alert number 80
+
+[2025-05-20 22:07:10] ERROR: Attempt 1: Failed to connect to MongoDB - ss is not defined
+[2025-05-20 22:07:15] ERROR: Attempt 1: Failed to connect to MongoDB - tls is not defined
+[2025-05-20 22:07:33] ERROR: Attempt 1: Failed to connect to MongoDB - fa is not defined
+[2025-05-20 22:08:24] ERROR: Attempt 1: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-05-20 22:08:39] ERROR: Attempt 1: Failed to connect to MongoDB - fas is not defined
+[2025-05-20 22:09:11] ERROR: Attempt 1: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-05-20 22:10:20] ERROR: Attempt 1: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-05-20 22:10:45] INFO: Successfull checking data user for login
+[2025-05-20 22:10:55] ERROR: Attempt 2: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-05-20 22:10:55] ERROR: Error : MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+[2025-05-20 22:11:00] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-05-20 22:11:06] INFO: Successfull checking data user for login
+[2025-05-20 22:11:06] INFO: Compare hash complete
+[2025-05-20 22:11:06] INFO: Complete create token
+[2025-05-20 22:11:06] INFO: Successfull checking data user for get user profile
+[2025-05-20 22:11:06] INFO: Successfull checking data to get board by user id
+[2025-05-20 22:11:06] INFO: Successfull checking data to get all members
+[2025-05-20 22:11:07] INFO: Successfull checking data to get all members
+[2025-05-20 22:11:07] INFO: Successfull checking data to get all members
+[2025-05-20 22:11:09] INFO: Successfull checking data to get board by user id
+[2025-05-20 22:11:09] INFO: Successfull checking data to get board by user id
+[2025-05-20 22:11:09] INFO: Successfull checking data user for get user profile
+[2025-05-20 22:11:09] INFO: Successfull checking data user for get user profile
+[2025-05-20 22:11:09] INFO: Successfull checking data to get all members
+[2025-05-20 22:11:10] INFO: Successfull checking data to get all members
+[2025-05-20 22:11:10] INFO: Successfull checking data to get all members
+[2025-05-20 22:11:10] INFO: Successfull checking data to get all members
+[2025-05-20 22:11:10] INFO: Successfull checking data to get all members
+[2025-05-20 22:11:10] INFO: Successfull checking data to get all members
+[2025-05-20 22:14:10] INFO: Successfull checking data user for login
+[2025-05-20 22:14:10] INFO: Compare hash complete
+[2025-05-20 22:14:10] INFO: Complete create token
+[2025-05-20 22:14:10] INFO: Successfull checking data user for get user profile
+[2025-05-20 22:14:10] INFO: Successfull checking data to get board by user id
+[2025-05-20 22:14:11] INFO: Successfull checking data to get all members
+[2025-05-20 22:14:11] INFO: Successfull checking data to get all members
+[2025-05-20 22:14:11] INFO: Successfull checking data to get all members
+[2025-05-20 22:14:14] INFO: Successfull checking data to get board by user id
+[2025-05-20 22:14:14] INFO: Successfull checking data to get board by user id
+[2025-05-20 22:14:14] INFO: Successfull checking data user for get user profile
+[2025-05-20 22:14:14] INFO: Successfull checking data user for get user profile
+[2025-05-20 22:14:14] INFO: Successfull checking data to get all members
+[2025-05-20 22:14:14] INFO: Successfull checking data to get all members
+[2025-05-20 22:14:14] INFO: Successfull checking data to get all members
+[2025-05-20 22:14:14] INFO: Successfull checking data to get all members
+[2025-05-20 22:14:14] INFO: Successfull checking data to get all members
+[2025-05-20 22:14:14] INFO: Successfull checking data to get all members
+[2025-05-21 08:25:02] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-05-21 08:34:22] INFO: Successfull checking data user for login
+[2025-05-21 08:34:22] INFO: Compare hash complete
+[2025-05-21 08:34:22] INFO: Complete create token
+[2025-05-21 08:34:22] INFO: Successfull checking data user for get user profile
+[2025-05-21 08:34:22] INFO: Successfull checking data to get board by user id
+[2025-05-21 08:34:22] INFO: Successfull checking data to get all members
+[2025-05-21 08:34:23] INFO: Successfull checking data to get all members
+[2025-05-21 08:34:23] INFO: Successfull checking data to get all members
+[2025-05-21 08:34:24] INFO: Successfull checking data to get board by user id
+[2025-05-21 08:34:24] INFO: Successfull checking data to get board by user id
+[2025-05-21 08:34:24] INFO: Successfull checking data user for get user profile
+[2025-05-21 08:34:24] INFO: Successfull checking data user for get user profile
+[2025-05-21 08:34:24] INFO: Successfull checking data to get all members
+[2025-05-21 08:34:24] INFO: Successfull checking data to get all members
+[2025-05-21 08:34:25] INFO: Successfull checking data to get all members
+[2025-05-21 08:34:25] INFO: Successfull checking data to get all members
+[2025-05-21 08:34:25] INFO: Successfull checking data to get all members
+[2025-05-21 08:34:25] INFO: Successfull checking data to get all members
+[2025-05-21 08:34:49] INFO: Successfull checking data to get lists in board
+[2025-05-21 08:34:49] INFO: Successfull checking data to get lists in board
+[2025-05-21 08:34:49] INFO: Successfull checking data to get cards in list
+[2025-05-21 08:34:49] INFO: Successfull checking data to get cards in list
+[2025-05-21 08:34:49] INFO: Successfull checking data to get cards in list
+[2025-05-21 08:34:49] INFO: Successfull checking data to get cards in list
+[2025-05-21 08:34:49] INFO: Successfull checking data to get cards in list
+[2025-05-21 08:34:49] INFO: Successfull checking data to get cards in list
+[2025-05-21 08:34:49] INFO: Successfull checking data to get cards in list
+[2025-05-21 08:34:49] INFO: Successfull checking data to get cards in list

@@ -1,10 +1,10 @@
-async function AddCommentToCard(params) {}
+async function AddCommentToCard(req, res) {}
 
-async function EditComment(params) {}
+async function EditComment(req, res) {}
 
-async function DeleteComment(params) {}
+async function DeleteComment(req, res) {}
 
-async function GetCommentsInCard(params) {}
+async function GetCommentsInCard(req, res) {}
 
 // Nhắc đến người dùng trong comment, gửi thông báo, dùng socket.io
-async function MentionUserInComment(params) {}
+async function MentionUserInComment(req, res) {}

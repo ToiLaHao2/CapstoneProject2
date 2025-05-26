@@ -167,13 +167,6 @@ async function GetCardsInList(req, res) {
     }
 }
 
-// di chuyen card trong 1 list
-// di chuyen card tu 1 list sang 1 list khac
-async function MoveCardInList(req, res) {}
-
-// di chuyen card tu 1 list sang 1 list khac
-async function MoveCardToOtherList(req, res) {}
-
 module.exports = {
     CreateList,
     GetList,

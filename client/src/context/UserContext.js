@@ -110,7 +110,7 @@ export const UserProvider = ({ children }) => {
     const uploadAvatar = async (formData) => {
         try {
             const response = await privateAxios.post(
-                "/upload/uploadAvatar",
+                "/user/uploadAvatar",
                 formData,
                 {
                     headers: {
