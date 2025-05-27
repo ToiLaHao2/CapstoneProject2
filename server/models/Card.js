@@ -25,7 +25,7 @@ const CardSchema = new Schema({
     card_priority: {
         type: String,
         enum: ["LOW", "MEDIUM", "HIGH", "CRITICAL", "HIGHEST"],
-        default: "low",
+        default: "LOW",
     },
     card_checklist_id: {
         type: Schema.Types.ObjectId,

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import privateAxios from "../../api/privateAxios"
 import axios from "axios";
 
 const UploadAvatar = ({ userId }) => {
@@ -10,8 +11,8 @@ const UploadAvatar = ({ userId }) => {
     useEffect(() => {
         const checkAvatar = async () => {
             try {
-                const response = await axios.post(
-                    "http://localhost:5000/api/user/check-avatar",
+                const response = await privateAxios.post(
+                    "/user/check-avatar",
                     { user_id: userId }
                 );
                 if (response.data.success) {
@@ -53,7 +54,7 @@ const UploadAvatar = ({ userId }) => {
             setAvatarUrl(uploadedUrl);
 
             // Cập nhật avatar vào database backend
-            await axios.post("http://localhost:5000/api/user/update-avatar", {
+            await privateAxios.post("/api/user/update-avatar", {
                 user_id: userId,
                 avatar_url: uploadedUrl,
             });
