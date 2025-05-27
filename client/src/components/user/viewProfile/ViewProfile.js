@@ -67,7 +67,7 @@ const ViewProfile = () => {
             console.log("File được chọn:", file);
             // Thêm logic gửi file lên server tại đây
             const formData = new FormData();
-            formData.append("file", file);
+            formData.append("avatar", file);
             formData.append("checkMessage", "Upload avatar");
             await uploadAvatar(formData);
         }
@@ -88,13 +88,12 @@ const ViewProfile = () => {
                         <div
                             className="small-no-avatar"
                             style={{
-                                backgroundColor: `${
-                                    colorHashMap[
-                                        user.user_full_name
-                                            .charAt(0)
-                                            .toUpperCase()
+                                backgroundColor: `${colorHashMap[
+                                    user.user_full_name
+                                        .charAt(0)
+                                        .toUpperCase()
                                     ]
-                                }`,
+                                    }`,
                                 color: "white",
                             }}
                         >
@@ -192,17 +191,15 @@ const ViewProfile = () => {
             {/* Tabs Section */}
             <div className="tabs">
                 <div
-                    className={`tab ${
-                        activeTab === "Activity" ? "active" : ""
-                    }`}
+                    className={`tab ${activeTab === "Activity" ? "active" : ""
+                        }`}
                     onClick={() => setActiveTab("Activity")}
                 >
                     Activity
                 </div>
                 <div
-                    className={`tab ${
-                        activeTab === "Schedule" ? "active" : ""
-                    }`}
+                    className={`tab ${activeTab === "Schedule" ? "active" : ""
+                        }`}
                     onClick={() => setActiveTab("Schedule")}
                 >
                     Schedule
