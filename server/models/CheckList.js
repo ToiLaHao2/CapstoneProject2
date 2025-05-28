@@ -7,6 +7,10 @@ const CheckListSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Card",
     },
+    checklist_name: {
+        type: String,
+        required: true,
+    },
     checklist_items: [
         {
             item_id: {

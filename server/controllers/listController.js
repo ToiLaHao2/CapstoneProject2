@@ -2,6 +2,7 @@ const Board = require("../models/Board");
 const Card = require("../models/Card");
 const List = require("../models/List");
 const User = require("../models/User");
+const { deleteList } = require("../utils/dbHelper");
 const { sendError, sendSuccess } = require("../utils/response");
 
 async function CreateList(req, res) {
@@ -19,9 +20,6 @@ async function CreateList(req, res) {
                 return sendError(res, 401, "User not authorized", "GetList");
             }
         }
-        // } else if (isUserExist.board_collaborator_role !== "EDITOR") {
-        //     return sendError(res, 401, "User not authorized", "GetList");
-        // }
         const list = new List({
             list_title: list_title,
             board_id: board_id,
@@ -31,10 +29,10 @@ async function CreateList(req, res) {
         });
         await list.save();
         await board.save();
-        sendSuccess(res, "Successful create list", list);
+        return sendSuccess(res, "Successful create list", list);
     } catch (error) {
         logger.error(error);
-        sendError(res, 500, "Internal server error", error);
+        return sendError(res, 500, "Internal server error", error);
     }
 }
 
@@ -57,10 +55,10 @@ async function GetList(req, res) {
         if (!list) {
             return sendError(res, 404, "List not found", "GetList");
         }
-        sendSuccess(res, 200, list, "GetList");
+        return sendSuccess(res, 200, list, "GetList");
     } catch (error) {
         logger.error(error);
-        sendError(res, 500, "Internal server error", error);
+        return sendError(res, 500, "Internal server error", error);
     }
 }
 
@@ -88,10 +86,10 @@ async function UpdateList(req, res) {
         const list = await List.findByIdAndUpdate(list_id, {
             list_title: list_title,
         });
-        sendSuccess(res, 200, list, "UpdateList");
+        return sendSuccess(res, 200, list, "UpdateList");
     } catch (error) {
         logger.error(error);
-        sendError(res, 500, "Internal server error", error);
+        return sendError(res, 500, "Internal server error", error);
     }
 }
 
@@ -118,15 +116,18 @@ async function DeleteList(req, res) {
         if (!isListInBoard) {
             return sendError(res, 404, "List not found", "DeleteList");
         }
-        const list = await List.findByIdAndDelete(list_id);
+        const listDeleteResult = await deleteList(list_id);
+        if (listDeleteResult.message !== "OK") {
+            return sendError(res, 500, listDeleteResult.message, "DeleteList");
+        }
         board.board_lists = board.board_lists.filter(
             (list) => list.list_id != list_id
         );
         await board.save();
-        sendSuccess(res, 200, list, "DeleteList");
+        return sendSuccess(res, "List deleted successfully");
     } catch (error) {
         logger.error(error);
-        sendError(res, 500, "Internal server error", error);
+        return sendError(res, 500, "Internal server error", error);
     }
 }
 
@@ -160,10 +161,10 @@ async function GetCardsInList(req, res) {
             const card = await Card.findById(cardEntry.card_id);
             cards.push(card);
         }
-        sendSuccess(res, 200, cards, "GetCardsInList");
+        return sendSuccess(res, 200, cards, "GetCardsInList");
     } catch (error) {
         logger.error(error);
-        sendError(res, 500, "Internal server error", error);
+        return sendError(res, 500, "Internal server error", error);
     }
 }
 

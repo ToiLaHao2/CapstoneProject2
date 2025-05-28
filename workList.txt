@@ -35,4 +35,12 @@ Thay đổi lại middleware cho chuẩn hơn
         upload.middleware
         validate.middleware 
     thay vì các middleware cho từng cái như trước
+
+
+
+
+làm thêm về xử lý trong task
+- card : làm về AddCheckListsToCard
+
+     
     
