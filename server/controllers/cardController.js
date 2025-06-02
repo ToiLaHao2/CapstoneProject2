@@ -6,6 +6,7 @@ const { sendError, sendSuccess } = require("../utils/response.js");
 const User = require("../models/User.js");
 const Attachment = require("../models/Attachment.js");
 const path = require("path");
+const { deleteCard } = require("../utils/dbHelper.js");
 const upload = require("../configs/storageConfig.js").upload;
 
 async function CreateCard(req, res) {
@@ -182,8 +183,6 @@ async function UpdateCard(req, res) {
         card.updated_by = user_id;
         const updatedCard = await card.save();
 
-        console.log(card_update_details);
-
         return sendSuccess(res, "Card updated successfully", updatedCard);
     } catch (error) {
         logger.error(error.message);
@@ -191,7 +190,59 @@ async function UpdateCard(req, res) {
     }
 }
 
-async function DeleteCard(req, res) { }
+async function DeleteCard(req, res) {
+    try {
+        const { user_id, board_id, list_id, card_id } = req.body;
+        // check if user is a member of the board
+        const board = await Board.findById(board_id);
+        if (!board) {
+            return sendError(res, 404, "Board not found");
+        }
+        const isUserExist = board.board_collaborators.find(
+            (collaborator) => collaborator.board_collaborator_id == user_id
+        );
+        if (!isUserExist) {
+            if (String(board.created_by) !== user_id) {
+                return sendError(res, 401, "User not authorized", "GetList");
+            }
+        }
+        // check if list exists
+        const list = await List.findById(list_id);
+        if (!list) {
+            return sendError(res, 404, "List not found");
+        }
+        // check if list in board
+        if (String(list.board_id) !== board_id) {
+            return sendError(res, 403, "List does not belong to the board");
+        }
+        // check if card exists
+        const card = await Card.findById(card_id);
+        if (!card) {
+            return sendError(res, 404, "Card not found");
+        }
+        // check if card in list
+        const cardInList = list.list_cards.find(
+            (card) => String(card.card_id) === card_id
+        );
+        if (!cardInList) {
+            return sendError(res, 403, "Card does not belong to the list");
+        }
+        // xóa card 
+        const cardDeleteResult = await deleteCard(card_id);
+        if (cardDeleteResult.message !== "OK") {
+            return sendError(res, 500, cardDeleteResult.message);
+        }
+        // remove card from list
+        list.list_cards = list.list_cards.filter(
+            (card) => String(card.card_id) !== card_id
+        );
+        await list.save();
+        return sendSuccess(res, "Card deleted successfully");
+    } catch (error) {
+        logger.error(error.message);
+        return sendError(res, 500, "Internal server error");
+    }
+}
 
 // trong trường hợp người dùng đang mở card ra và muốn di chuyển nó sang một list khác trong cùng board
 async function MoveCard(req, res) {
@@ -653,8 +704,6 @@ async function GetCommentsInCard(req, res) { }
 
 // Lưu trữ card không còn hoạt động
 async function ArchiveCard(params) { }
-
-async function AddCheckListsToCard(req, res) { }
 
 async function UpdateCheckListsInCard(req, res) { }
 

@@ -1,6 +1,7 @@
 const Board = require("../models/Board");
 const List = require("../models/List");
 const User = require("../models/User");
+const { deleteBoard } = require("../utils/dbHelper");
 const logger = require("../utils/logger");
 const { sendSuccess, sendError } = require("../utils/response");
 
@@ -179,26 +180,25 @@ async function DeleteBoard(req, res) {
     try {
         const { board_id, user_id } = req.body;
 
-        // Tìm và xóa bảng chỉ trong một bước
-        const deletedBoard = await Board.findOneAndDelete({
-            _id: board_id,
-            created_by: user_id, // Kiểm tra người tạo
-        });
+        const board = await Board.findById(board_id);
+        if (!board) {
+            return sendError(res, 404, "Board not found");
+        }
 
-        // Nếu không tìm thấy bảng, trả về lỗi
-        if (!deletedBoard) {
-            return sendError(res, 404, "Board not found or unauthorized", {
-                details: "User does not have permission to delete this board",
+        // Kiểm tra quyền sở hữu
+        if (String(board.created_by) !== String(user_id)) {
+            return sendError(res, 403, "Access Denied", {
+                details: "User is not the creator of this board",
             });
         }
 
-        // Nếu cần xóa các dữ liệu liên quan, bạn có thể thêm vào đây
-        // xóa thêm các lists , cards, comments và các mục liên quan
-        // nên tạo hàm deleteManyData để xóa tất cả các dữ liệu liên quan
-        // Ví dụ:
-        await List.deleteMany({ board_id: board_id });
-
-        // Trả về phản hồi thành công
+        // Xóa bảng
+        const deleteResult = await deleteBoard(board_id);
+        if (deleteResult.message !== "OK") {
+            return sendError(res, 500, "Error deleting board", {
+                details: deleteResult.message,
+            });
+        }
         return sendSuccess(res, "Board deleted successfully", {
             board_id: board_id,
         });
@@ -575,7 +575,7 @@ async function MoveList(req, res) {
 }
 
 // tùy chọn : lưu
-async function ArchiveBoard(req, res) {}
+// async function ArchiveBoard(req, res) { }
 
 // async function ChangeBackgroundPicture(req, res) {}
 
