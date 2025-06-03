@@ -68,6 +68,7 @@ export const CardProvider = ({ children }) => {
                 list_id: listId,
                 card_id: cardId,
                 card_update_details: cardUpdateDetails,
+                // ...cardUpdateDetails,
                 checkMessage: "Update card",
             });
 
@@ -121,6 +122,32 @@ export const CardProvider = ({ children }) => {
         }
     };
 
+    // remove user from card
+    const removeUserFromCard = async (boardId, listId, cardId, removeUserId) => {
+        try {
+            const response = await privateAxios.post("/card/removeUserFromCard", {
+                board_id: boardId,
+                list_id: listId,
+                card_id: cardId,
+                remove_user_id: removeUserId,
+                checkMessage: "Remove user from card",
+            });
+
+            const data = response.data;
+            console.log("Removed user from card:", data);
+
+            if (data.success) {
+                return true;
+            } else {
+                console.error("Failed to remove user from card:", data.message);
+                return false;
+            }
+        } catch (error) {
+            console.error("Error removing user from card:", error);
+            return false;
+        }
+    };
+
     // move card
     const moveCard = async (boardId, oldListId, newListId, cardId) => {
         try {
@@ -147,9 +174,37 @@ export const CardProvider = ({ children }) => {
         }
     };
 
+
+    // move card with drag and drop (with position)
+    const moveCardByDragAndDrop = async (boardId, oldListId, newListId, cardId, newCardIndex) => {
+        try {
+            const response = await privateAxios.post("/card/moveCardWithDragAndDrop", {
+                board_id: boardId,
+                old_list_id: oldListId,
+                new_list_id: newListId,
+                card_id: cardId,
+                new_card_index: newCardIndex,
+                checkMessage: "Move card with position",
+            });
+
+            const data = response.data;
+            console.log("Moved card with position:", data);
+
+            if (data.success) {
+                return true;
+            } else {
+                console.error("Failed to move card with position:", data.message);
+                return false;
+            }
+        } catch (error) {
+            console.error("Error moving card with position:", error);
+            return false;
+        }
+    };
+
     return (
         <CardContext.Provider
-            value={{ createCard, getCard, updateCard, assignUserToCard, moveCard }}
+            value={{ createCard, getCard, updateCard, assignUserToCard, removeUserFromCard, moveCard, moveCardByDragAndDrop }}
         >
             {children}
         </CardContext.Provider>
