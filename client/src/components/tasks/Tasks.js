@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { DndContext, closestCenter } from "@dnd-kit/core";
+import { DndContext, closestCenter, DragOverlay, useDroppable } from "@dnd-kit/core";
 import {
     SortableContext,
     verticalListSortingStrategy,
@@ -12,28 +12,52 @@ import { useBoard } from "../../context/BoardContext";
 import { useList } from "../../context/ListContext";
 import "../general/MainContentContainer.css";
 import "./Tasks.css";
-import { FiEdit, FiTrash2 } from "react-icons/fi";
+import { FiEdit, FiTrash2, FiMove } from "react-icons/fi";
 import { useCard } from "../../context/CardContext";
 
+
 const TaskCard = ({ task, boardId }) => {
-    const { attributes, listeners, setNodeRef, transform, transition } =
-        useSortable({ id: task.id });
+    const {
+        attributes,
+        listeners,
+        setNodeRef,
+        transform,
+        transition,
+        isDragging,
+    } = useSortable({ id: task.id });
+
     const navigate = useNavigate();
 
     const style = {
         transform: CSS.Transform.toString(transform),
         transition,
         cursor: "pointer",
+        opacity: isDragging ? 0.5 : 1,
+        transform: CSS.Transform.toString(transform),
+        transition,
+        // boxShadow: isDragging ? '0 4px 8px rgba(0,0,0,0.2)' : 'none',
+        boxShadow: 'none',
+        zIndex: isDragging ? 9999 : 0,
+        position: 'relative',
     };
+
+    const formattedCardDuration = task.card_duration
+        ? new Date(task.card_duration).toLocaleDateString('vi-VN', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric'
+        })
+        : '';
 
     return (
         <div
             className="task-card"
             ref={setNodeRef}
-            {...attributes}
             style={style}
         >
+
             <h3
+
                 className="task-title"
                 onClick={() => {
                     console.log("Task Data:", task);
@@ -49,9 +73,19 @@ const TaskCard = ({ task, boardId }) => {
                 {task.card_title}
             </h3>
 
-            <span className="task-tag" {...listeners}>
-                {task.tag}
-            </span>
+            <div className="task-footer">
+                <span className="task-tag">
+                    {/* {task.tag} */}
+                    {task.card_priority}<i> {formattedCardDuration}</i>
+
+                </span>
+
+                <div className="task-drag-handle" {...attributes} {...listeners}>
+                    <FiMove className="drag-icon" />
+                </div>
+            </div>
+
+
         </div>
     );
 };
@@ -64,8 +98,16 @@ const Column = ({
     onDeleteColumn,
     boardId,
 }) => {
+    // Sử dụng useDroppable để biến Column thành một droppable area
+    const { setNodeRef, isOver } = useDroppable({
+        id: column.id, // ID của droppable là ID của cột
+    });
+
     return (
-        <div className="column">
+        <div
+            className={`column ${isOver && tasks.length === 0 ? 'droppable-empty-list' : ''}`}
+            ref={setNodeRef}
+        >
             <div className="column-container-title">
                 <h2 className="column-title">{column.title}</h2>
 
@@ -76,7 +118,8 @@ const Column = ({
                     />
                     <FiTrash2
                         className="column-action-icon"
-                        onClick={onDeleteColumn}
+                        onClick={() => onDeleteColumn(column.id)}
+                    // onClick={onDeleteColumn}
                     />
                 </div>
             </div>
@@ -85,10 +128,15 @@ const Column = ({
                 items={tasks.map((task) => task.id)}
                 strategy={verticalListSortingStrategy}
             >
+
                 <div className="task-list">
                     {tasks.map((task) => (
                         <TaskCard key={task.id} task={task} boardId={boardId} />
                     ))}
+                    {/* Placeholder khi list rỗng để người dùng biết có thể thả vào */}
+                    {tasks.length === 0 && isOver && (
+                        <div className="drop-placeholder">Drop your card here</div>
+                    )}
                 </div>
             </SortableContext>
 
@@ -110,6 +158,12 @@ const Tasks = () => {
     const { createCard } = useCard();
     const { moveCardByDragAndDrop } = useCard();
 
+    const [activeId, setActiveId] = useState(null);
+    const activeTask = activeId
+        ? columns
+            .flatMap((column) => column.tasks)
+            .find((task) => task.id === activeId)
+        : null;
 
     const fetchLists = async () => {
         try {
@@ -120,7 +174,6 @@ const Tasks = () => {
                 lists.map(async (list) => {
                     const cards = await getCardsInList(boardId, list._id);
                     console.log(`Cards in list ${list._id}:`, cards);
-                    // console.log(`Cards in list ${list._id}:`, JSON.stringify(cards, null, 2));
 
                     return {
                         id: list._id,
@@ -142,6 +195,7 @@ const Tasks = () => {
             console.error("Error fetching lists:", error);
         }
     };
+
     useEffect(() => {
         if (!boardId) return;
         fetchLists();
@@ -196,128 +250,112 @@ const Tasks = () => {
         }
     };
 
-    const onDragEnd = (event) => {
+    // Hàm xử lý khi bắt đầu kéo
+    const onDragStart = (event) => {
+        setActiveId(event.active.id);
+    };
+
+    const onDragEnd = async (event) => {
         const { active, over } = event;
+
+        setActiveId(null);
 
         if (!over) {
             return;
         }
 
+        // Nếu kéo vào chính nó hoặc thả ra ngoài vùng hợp lệ, không làm gì
         if (active.id === over.id) {
             return;
         }
 
-        setColumns((prevColumns) => {
-            let sourceColumnId = null;
-            let sourceTasks = [];
-            let activeTask = null;
-            let oldIndex = -1;
+        let sourceColumnId = null;
+        let activeTask = null;
 
-            // Tìm column chứa card đang kéo
-            prevColumns.forEach((column) => {
-                const taskIndex = column.tasks.findIndex((task) => task.id === active.id);
-                if (taskIndex !== -1) {
-                    sourceColumnId = column.id;
-                    sourceTasks = [...column.tasks];
-                    activeTask = sourceTasks.splice(taskIndex, 1)[0];
-                    oldIndex = taskIndex;
+        // Tìm column chứa card đang kéo
+        columns.forEach((column) => {
+            const taskIndex = column.tasks.findIndex((task) => task.id === active.id);
+            if (taskIndex !== -1) {
+                sourceColumnId = column.id;
+                activeTask = column.tasks[taskIndex];
+            }
+        });
+
+        if (!activeTask || !sourceColumnId) {
+            return;
+        }
+
+        setColumns((prevColumns) => {
+            let newColumns = prevColumns.map((column) => ({ ...column, tasks: [...column.tasks] }));
+            let destinationColumnId = null;
+            let destinationTaskIndex = -1;
+
+            // Xóa card khỏi column nguồn trong trạng thái UI tạm thời
+            newColumns = newColumns.map(column => {
+                if (column.id === sourceColumnId) {
+                    return { ...column, tasks: column.tasks.filter(task => task.id !== active.id) };
                 }
+                return column;
             });
 
-            let newColumns = prevColumns.map((column) => ({ ...column, tasks: [...column.tasks] }));
-            let newActiveTask;
-
-            if (sourceColumnId) {
-                // Loại bỏ card khỏi column nguồn trong bản cập nhật giao diện
-                newColumns = newColumns.map((column) =>
-                    column.id === sourceColumnId ? { ...column, tasks: sourceTasks } : column
-                );
-
-                const overColumn = newColumns.find((column) => column.id === over.id);
-                if (overColumn) {
-                    // Thả vào một column
-                    const destinationColumnId = overColumn.id;
-                    newActiveTask = { ...activeTask, list_id: destinationColumnId };
-                    newColumns = newColumns.map((column) =>
-                        column.id === destinationColumnId
-                            ? { ...column, tasks: [...column.tasks, newActiveTask] }
-                            : column
-                    );
-
-                    // Gọi API để cập nhật backend
-                    const newIndex = newColumns
-                        .find((col) => col.id === destinationColumnId)
-                        .tasks.findIndex((task) => task.id === active.id); // Find the new index
-                    if (activeTask) {
-                        moveCardByDragAndDrop(
-                            boardId,
-                            sourceColumnId,
-                            destinationColumnId,
-                            activeTask.id,
-                            newIndex
-                        );
-                    }
-                } else {
-                    // Thả vào một card khác
-                    let destinationColumnId = null;
-                    let destinationTaskIndex = -1;
-
-                    for (let i = 0; i < newColumns.length; i++) {
-                        const taskIndex = newColumns[i].tasks.findIndex((task) => task.id === over.id);
-                        if (taskIndex !== -1) {
-                            destinationColumnId = newColumns[i].id;
-                            destinationTaskIndex = taskIndex;
-                            break;
-                        }
-                    }
-
-                    if (destinationColumnId) {
-                        newActiveTask = { ...activeTask, list_id: destinationColumnId };
-                        newColumns = newColumns.map((column) =>
-                            column.id === destinationColumnId
-                                ? {
-                                    ...column,
-                                    tasks: [
-                                        ...column.tasks.slice(0, destinationTaskIndex),
-                                        newActiveTask,
-                                        ...column.tasks.slice(destinationTaskIndex),
-                                    ],
-                                }
-                                : column
-                        );
-                        // Gọi API để cập nhật backend
-                        if (activeTask) {
-                            moveCardByDragAndDrop(
-                                boardId,
-                                sourceColumnId,
-                                destinationColumnId,
-                                activeTask.id,
-                                destinationTaskIndex
-                            );
-                        }
-                    } else if (sourceColumnId === over) {
-                        // Kéo thả trong cùng một list
-                        const sourceCol = newColumns.find(col => col.id === sourceColumnId);
-                        const overIndex = sourceCol.tasks.findIndex(task => task.id === active.id);
-                        const targetIndex = sourceCol.tasks.findIndex(task => task.id === over);
-                        if (sourceCol && overIndex !== -1 && targetIndex !== -1 && overIndex !== targetIndex) {
-                            const tempTasks = arrayMove(sourceCol.tasks, overIndex, targetIndex);
-                            newColumns = newColumns.map(col =>
-                                col.id === sourceColumnId ? { ...col, tasks: tempTasks } : col
-                            );
-                            // Cần gọi API để cập nhật thứ tự trong cùng một list nếu cần
-                            // Có thể cần một API khác cho việc này hoặc tái sử dụng moveCard với logic khác.
-                            if (activeTask) {
-                                // moveCardByDragAndDrop(boardId, sourceColumnId, sourceColumnId, activeTask.id, targetIndex);
-                                console.log("Reordered within the same list");
-                            }
-                        }
-                    }
+            // Xác định cột đích
+            // over.id có thể là ID của một TaskCard hoặc ID của một Column (khi kéo vào khoảng trống của cột đó)
+            let foundOverColumn = false;
+            for (const column of newColumns) {
+                // Trường hợp 1: Thả vào một card khác trong cột
+                const taskIndex = column.tasks.findIndex(task => task.id === over.id);
+                if (taskIndex !== -1) {
+                    destinationColumnId = column.id;
+                    destinationTaskIndex = taskIndex;
+                    foundOverColumn = true;
+                    break;
+                }
+                // Trường hợp 2: Thả trực tiếp vào một cột (có thể là cột rỗng)
+                // Kiểm tra nếu over.id là ID của một cột
+                if (column.id === over.id) {
+                    destinationColumnId = column.id;
+                    destinationTaskIndex = column.tasks.length; // Đặt cuối cột
+                    foundOverColumn = true;
+                    break;
                 }
             }
+
+            if (!foundOverColumn) {
+                // Nếu không tìm thấy cột đích hợp lệ, có thể card được thả ra ngoài
+                // Hoặc có lỗi trong logic tìm kiếm. Tốt nhất là không cập nhật gì.
+                console.warn("Could not find a valid drop target column.");
+                return prevColumns; // Trả về trạng thái cũ
+            }
+
+            // Cập nhật card vào cột đích trong UI
+            newColumns = newColumns.map((column) =>
+                column.id === destinationColumnId
+                    ? {
+                        ...column,
+                        tasks: [
+                            ...column.tasks.slice(0, destinationTaskIndex),
+                            activeTask, // Thêm activeTask vào vị trí mới
+                            ...column.tasks.slice(destinationTaskIndex),
+                        ],
+                    }
+                    : column
+            );
+
+            // Gọi API để cập nhật backend
+            if (activeTask) {
+                moveCardByDragAndDrop(
+                    boardId,
+                    sourceColumnId,
+                    destinationColumnId,
+                    activeTask.id,
+                    destinationTaskIndex
+                );
+            }
+
             return newColumns;
         });
     };
+
 
     const handleEditColumnTitle = async (columnId) => {
         const newTitle = prompt("Enter new column title:");
@@ -381,6 +419,16 @@ const Tasks = () => {
                         </button>
                     </div>
                 </SortableContext>
+
+
+                <DragOverlay>
+                    {activeTask ? (
+                        <TaskCard
+                            task={activeTask}
+                            boardId={boardId}
+                        />
+                    ) : null}
+                </DragOverlay>
             </DndContext>
         </div>
     );
