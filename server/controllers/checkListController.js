@@ -38,7 +38,7 @@ async function CreateCheckList(req, res) {
 }
 
 // Lấy checkList trong card
-async function GetCheckListsInCard(req, res) {
+async function GetCheckListInCard(req, res) {
     try {
         const { card_id, checklist_id } = req.body;
         const card = await Card.findById(card_id);
@@ -49,11 +49,13 @@ async function GetCheckListsInCard(req, res) {
         if (checklist_id && !card.card_checklist_id.includes(checklist_id)) {
             return sendError(res, 404, "Checklist not found in this card");
         }
-        // lấy checklist item của checklist
-        const checkList = await CheckList.find({
-            checklist_card_id: card_id,
-            ...(checklist_id && { _id: checklist_id })
-        }).populate("checklist_items.item_id", "item_name item_status");
+        // lấy checklist
+        const checkList = await CheckList.findById(checklist_id);
+        if (!checkList) {
+            return sendError(res, 404, "Checklist not found");
+        }
+        // lấy tất cả checklistitems trong checklist
+        ;
     } catch (error) {
         logger.error("Error getting checklists in card:", error);
         return sendError(res, 500, "Internal Server Error");

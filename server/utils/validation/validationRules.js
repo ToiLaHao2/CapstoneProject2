@@ -400,6 +400,7 @@ const validationRules = {
         checkMessage: "Create new conversation",
         requiredFields: [
             "conversation_title",
+            "conversation_board_id",
             "conversation_participants",
             "conversation_avatar_url",
             "checkMessage",
