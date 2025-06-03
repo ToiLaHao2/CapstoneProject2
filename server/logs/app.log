@@ -5481,3 +5481,1026 @@
 [2025-05-27 00:21:41] INFO: Successfull checking data user for get user profile
 [2025-05-27 00:21:41] INFO: Successfull checking data user for get user profile
 [2025-05-27 00:21:41] INFO: Successfull checking data to get board by user id
+[2025-05-28 19:17:27] INFO: MongoDB connected: ac-hubowxc-shard-00-01.sr36tc5.mongodb.net
+[2025-05-28 19:18:06] INFO: Successfull checking data user for login
+[2025-05-28 19:18:06] INFO: Compare hash complete
+[2025-05-28 19:18:06] INFO: Complete create token
+[2025-05-28 19:18:06] INFO: Successfull checking data user for get user profile
+[2025-05-28 19:18:06] INFO: Successfull checking data to get board by user id
+[2025-05-28 19:18:06] INFO: Successfull checking data to get all members
+[2025-05-28 19:18:06] INFO: Successfull checking data to get all members
+[2025-05-28 19:18:08] INFO: Successfull checking data to get board by user id
+[2025-05-28 19:18:08] INFO: Successfull checking data to get board by user id
+[2025-05-28 19:18:08] INFO: Successfull checking data user for get user profile
+[2025-05-28 19:18:08] INFO: Successfull checking data user for get user profile
+[2025-05-28 19:18:08] INFO: Successfull checking data to get all members
+[2025-05-28 19:18:08] INFO: Successfull checking data to get all members
+[2025-05-28 19:18:08] INFO: Successfull checking data to get all members
+[2025-05-28 19:18:08] INFO: Successfull checking data to get all members
+[2025-05-28 19:18:15] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:18:15] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:18:15] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:18:15] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:18:15] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:18:15] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:18:21] INFO: Successfull checking data to create card
+[2025-05-28 19:18:25] INFO: Successfull checking data to get cardd
+[2025-05-28 19:18:25] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:18:25] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:18:25] INFO: Successfull checking data to get cardd
+[2025-05-28 19:18:25] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:18:25] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:19:48] INFO: Successfull checking data to get cardd
+[2025-05-28 19:19:48] INFO: Successfull checking data to get all members
+[2025-05-28 19:19:50] INFO: Successfull checking data to assign user to card
+[2025-05-28 19:19:50] INFO: Successfull checking data to get cardd
+[2025-05-28 19:20:30] INFO: Successfull checking data to get cardd
+[2025-05-28 19:20:30] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:20:30] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:23:24] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:23:24] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:23:24] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:23:24] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:23:24] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:23:24] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:23:25] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:23:25] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:23:25] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:23:25] INFO: Successfull checking data to get cardd
+[2025-05-28 19:23:25] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:23:25] INFO: Successfull checking data to get cardd
+[2025-05-28 19:25:34] INFO: Successfull checking data to get cardd
+[2025-05-28 19:25:34] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:25:34] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:25:48] INFO: Successfull checking data to get cardd
+[2025-05-28 19:25:48] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:25:48] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:25:48] INFO: Successfull checking data to get cardd
+[2025-05-28 19:25:48] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:25:48] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:25:51] INFO: Successfull checking data to get cardd
+[2025-05-28 19:25:51] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:25:51] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:25:51] INFO: Successfull checking data to get cardd
+[2025-05-28 19:25:51] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:25:51] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:26:24] INFO: Successfull checking data to get cardd
+[2025-05-28 19:26:24] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:26:24] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:26:26] INFO: Successfull checking data to get cardd
+[2025-05-28 19:26:26] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:26:26] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:27:23] INFO: Successfull checking data to get cardd
+[2025-05-28 19:27:23] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:27:23] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:28:25] INFO: Successfull checking data to get cardd
+[2025-05-28 19:28:25] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:28:25] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:29:26] INFO: Successfull checking data to get cardd
+[2025-05-28 19:29:26] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:29:26] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:29:37] INFO: Successfull checking data to get cardd
+[2025-05-28 19:29:37] INFO: Successfull checking data to get all members
+[2025-05-28 19:29:40] INFO: Successfull checking data to get cardd
+[2025-05-28 19:29:43] INFO: Successfull checking data user for get user profile
+[2025-05-28 19:29:43] INFO: Successfull checking data user for get user profile
+[2025-05-28 19:29:43] INFO: Successfull checking data to get cardd
+[2025-05-28 19:29:43] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:29:43] INFO: Successfull checking data to get cardd
+[2025-05-28 19:29:43] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:29:43] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:29:43] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:29:43] INFO: Successfull checking data to get cardd
+[2025-05-28 19:29:44] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:29:44] INFO: Successfull checking data to get cardd
+[2025-05-28 19:29:44] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:31:55] INFO: Successfull checking data to get cardd
+[2025-05-28 19:31:55] INFO: Successfull checking data to get all members
+[2025-05-28 19:31:57] INFO: Successfull checking data to assign user to card
+[2025-05-28 19:31:57] INFO: Successfull checking data to get cardd
+[2025-05-28 19:33:24] INFO: Successfull checking data to get cardd
+[2025-05-28 19:33:24] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:33:24] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:33:24] INFO: Successfull checking data to get cardd
+[2025-05-28 19:33:24] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:33:24] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:34:39] INFO: Successfull checking data to get cardd
+[2025-05-28 19:34:39] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:34:39] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:34:42] INFO: Successfull checking data to get cardd
+[2025-05-28 19:34:42] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:34:42] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:34:44] INFO: Successfull checking data to get cardd
+[2025-05-28 19:34:44] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:34:44] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:40:25] INFO: Successfull checking data to get cardd
+[2025-05-28 19:40:25] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:40:25] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:40:25] INFO: Successfull checking data to get cardd
+[2025-05-28 19:40:25] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:40:25] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:40:34] INFO: Successfull checking data to get cardd
+[2025-05-28 19:40:34] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:40:34] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:40:35] INFO: Successfull checking data to get cardd
+[2025-05-28 19:40:35] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:40:35] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:45:29] INFO: Successfull checking data to get cardd
+[2025-05-28 19:45:29] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:45:29] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:45:29] INFO: Successfull checking data to get cardd
+[2025-05-28 19:45:29] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:45:29] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:45:40] INFO: Successfull checking data to get cardd
+[2025-05-28 19:45:40] INFO: Successfull checking data to get cardd
+[2025-05-28 19:45:40] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:45:40] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:45:40] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:45:40] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:45:45] INFO: Successfull checking data to get cardd
+[2025-05-28 19:45:45] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:45:45] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:45:45] INFO: Successfull checking data to get cardd
+[2025-05-28 19:45:45] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:45:45] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:46:08] INFO: Successfull checking data to get cardd
+[2025-05-28 19:46:08] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:46:08] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:46:08] INFO: Successfull checking data to get cardd
+[2025-05-28 19:46:08] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:46:08] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:46:10] INFO: Successfull checking data to get cardd
+[2025-05-28 19:46:10] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:46:10] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:46:14] INFO: Successfull checking data to get cardd
+[2025-05-28 19:46:14] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:46:14] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:48:21] INFO: Successfull checking data to get cardd
+[2025-05-28 19:48:21] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:48:21] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:49:20] INFO: Successfull checking data to get cardd
+[2025-05-28 19:49:20] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:49:20] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:49:25] INFO: Successfull checking data to get cardd
+[2025-05-28 19:49:25] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:49:25] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:49:34] INFO: Successfull checking data user for login
+[2025-05-28 19:49:34] INFO: Compare hash complete
+[2025-05-28 19:49:34] INFO: Complete create token
+[2025-05-28 19:49:34] INFO: Successfull checking data user for get user profile
+[2025-05-28 19:49:34] INFO: Successfull checking data to get board by user id
+[2025-05-28 19:49:34] INFO: Successfull checking data to get all members
+[2025-05-28 19:49:34] INFO: Successfull checking data to get all members
+[2025-05-28 19:49:35] INFO: Successfull checking data to get board by user id
+[2025-05-28 19:49:35] INFO: Successfull checking data to get board by user id
+[2025-05-28 19:49:35] INFO: Successfull checking data user for get user profile
+[2025-05-28 19:49:35] INFO: Successfull checking data user for get user profile
+[2025-05-28 19:49:36] INFO: Successfull checking data to get all members
+[2025-05-28 19:49:36] INFO: Successfull checking data to get all members
+[2025-05-28 19:49:36] INFO: Successfull checking data to get all members
+[2025-05-28 19:49:36] INFO: Successfull checking data to get all members
+[2025-05-28 19:49:37] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:49:37] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:49:38] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:49:38] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:49:38] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:49:38] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:49:41] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:49:41] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:49:41] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:49:41] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:49:41] INFO: Successfull checking data to get cardd
+[2025-05-28 19:49:41] INFO: Successfull checking data to get cardd
+[2025-05-28 19:49:48] INFO: Successfull checking data to update card
+[2025-05-28 19:49:48] INFO: Successfull checking data to remove user from card
+[2025-05-28 19:49:48] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:49:48] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:49:48] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:49:48] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:49:48] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:49:48] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:49:51] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:49:51] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:49:51] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:49:51] INFO: Successfull checking data to get cardd
+[2025-05-28 19:49:51] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:49:51] INFO: Successfull checking data to get cardd
+[2025-05-28 19:50:58] INFO: Successfull checking data to get cardd
+[2025-05-28 19:50:58] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:50:58] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:51:11] INFO: Successfull checking data to get cardd
+[2025-05-28 19:51:11] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:51:11] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:51:37] INFO: Successfull checking data to get cardd
+[2025-05-28 19:51:37] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:51:37] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:51:41] INFO: Successfull checking data to get cardd
+[2025-05-28 19:51:41] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:51:41] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:51:58] INFO: Successfull checking data to remove user from card
+[2025-05-28 19:57:15] INFO: Successfull checking data to get cardd
+[2025-05-28 19:57:15] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:57:15] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:57:17] INFO: Successfull checking data to get cardd
+[2025-05-28 19:57:17] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:57:17] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:57:17] INFO: Successfull checking data to get cardd
+[2025-05-28 19:57:17] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:57:17] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:57:19] INFO: Successfull checking data to get cardd
+[2025-05-28 19:57:19] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:57:19] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:57:59] INFO: Successfull checking data to get cardd
+[2025-05-28 19:57:59] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:57:59] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:58:03] INFO: Successfull checking data to get cardd
+[2025-05-28 19:58:03] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:58:03] INFO: Successfull checking data to get cards in list
+[2025-05-28 19:58:20] INFO: Successfull checking data to get cardd
+[2025-05-28 19:58:20] INFO: Successfull checking data to get lists in board
+[2025-05-28 19:58:20] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:00:06] INFO: Successfull checking data to get cardd
+[2025-05-28 20:00:06] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:00:06] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:00:07] INFO: Successfull checking data to get cardd
+[2025-05-28 20:00:07] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:00:07] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:00:09] INFO: Successfull checking data to get cardd
+[2025-05-28 20:00:09] INFO: Successfull checking data to get all members
+[2025-05-28 20:00:11] INFO: Successfull checking data to assign user to card
+[2025-05-28 20:00:11] INFO: Successfull checking data to get cardd
+[2025-05-28 20:00:16] INFO: Successfull checking data to remove user from card
+[2025-05-28 20:00:54] INFO: Successfull checking data to get cardd
+[2025-05-28 20:00:54] INFO: Successfull checking data to get all members
+[2025-05-28 20:00:55] INFO: Successfull checking data to assign user to card
+[2025-05-28 20:00:55] INFO: Successfull checking data to get cardd
+[2025-05-28 20:01:09] INFO: Successfull checking data to remove user from card
+[2025-05-28 20:01:12] INFO: Successfull checking data user for get user profile
+[2025-05-28 20:01:12] INFO: Successfull checking data user for get user profile
+[2025-05-28 20:01:12] INFO: Successfull checking data to get cardd
+[2025-05-28 20:01:12] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:01:12] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:01:12] INFO: Successfull checking data to get cardd
+[2025-05-28 20:01:12] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:01:12] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:01:12] INFO: Successfull checking data to get cardd
+[2025-05-28 20:01:12] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:01:12] INFO: Successfull checking data to get cardd
+[2025-05-28 20:01:12] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:01:55] INFO: Successfull checking data to get board by user id
+[2025-05-28 20:01:55] INFO: Successfull checking data user for get user profile
+[2025-05-28 20:01:55] INFO: Successfull checking data to get board by user id
+[2025-05-28 20:01:55] INFO: Successfull checking data user for get user profile
+[2025-05-28 20:01:55] INFO: Successfull checking data to get all members
+[2025-05-28 20:01:55] INFO: Successfull checking data to get all members
+[2025-05-28 20:01:55] INFO: Successfull checking data to get all members
+[2025-05-28 20:01:55] INFO: Successfull checking data to get all members
+[2025-05-28 20:02:32] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:02:32] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:02:33] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:02:33] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:02:33] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:02:33] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:02:34] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:02:34] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:02:34] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:02:34] INFO: Successfull checking data to get cardd
+[2025-05-28 20:02:34] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:02:34] INFO: Successfull checking data to get cardd
+[2025-05-28 20:02:35] INFO: Successfull checking data to get cardd
+[2025-05-28 20:02:35] INFO: Successfull checking data to get all members
+[2025-05-28 20:02:37] INFO: Successfull checking data to assign user to card
+[2025-05-28 20:02:37] INFO: Successfull checking data to get cardd
+[2025-05-28 20:03:20] INFO: Successfull checking data to get cardd
+[2025-05-28 20:03:20] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:03:20] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:03:21] INFO: Successfull checking data to get cardd
+[2025-05-28 20:03:21] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:03:21] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:03:35] INFO: Successfull checking data to get cardd
+[2025-05-28 20:03:35] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:03:35] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:03:40] INFO: Successfull checking data to get cardd
+[2025-05-28 20:03:40] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:03:40] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:03:44] INFO: Successfull checking data to get cardd
+[2025-05-28 20:03:44] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:03:44] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:03:45] INFO: Successfull checking data to get cardd
+[2025-05-28 20:03:45] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:03:45] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:04:00] INFO: Successfull checking data to get cardd
+[2025-05-28 20:04:00] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:04:00] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:04:03] INFO: Successfull checking data to get cardd
+[2025-05-28 20:04:03] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:04:03] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:04:05] INFO: Successfull checking data to get cardd
+[2025-05-28 20:04:05] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:04:05] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:46:06] INFO: Successfull checking data to get cardd
+[2025-05-28 20:46:06] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:46:06] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:46:08] INFO: Successfull checking data to get cardd
+[2025-05-28 20:46:08] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:46:08] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:46:40] INFO: Successfull checking data to get cardd
+[2025-05-28 20:46:40] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:46:40] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:46:50] INFO: Successfull checking data to get cardd
+[2025-05-28 20:46:50] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:46:50] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:46:54] INFO: Successfull checking data to get cardd
+[2025-05-28 20:46:54] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:46:54] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:47:03] INFO: Successfull checking data to get cardd
+[2025-05-28 20:47:03] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:47:03] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:47:06] INFO: Successfull checking data to get cardd
+[2025-05-28 20:47:06] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:47:06] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:47:12] INFO: Successfull checking data to get cardd
+[2025-05-28 20:47:12] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:47:12] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:47:19] INFO: Successfull checking data to get cardd
+[2025-05-28 20:47:19] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:47:19] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:47:20] INFO: Successfull checking data to get cardd
+[2025-05-28 20:47:20] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:47:20] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:47:22] INFO: Successfull checking data to get cardd
+[2025-05-28 20:47:22] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:47:22] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:47:24] INFO: Successfull checking data to get cardd
+[2025-05-28 20:47:24] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:47:24] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:48:41] INFO: Successfull checking data to get cardd
+[2025-05-28 20:48:41] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:48:41] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:48:41] INFO: Successfull checking data to get cardd
+[2025-05-28 20:48:41] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:48:41] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:49:09] INFO: Successfull checking data to get cardd
+[2025-05-28 20:49:09] INFO: Successfull checking data to get all members
+[2025-05-28 20:49:11] INFO: Successfull checking data to assign user to card
+[2025-05-28 20:49:11] INFO: Successfull checking data to get cardd
+[2025-05-28 20:49:15] INFO: Successfull checking data user for get user profile
+[2025-05-28 20:49:15] INFO: Successfull checking data user for get user profile
+[2025-05-28 20:49:18] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:49:18] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:49:18] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:49:18] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:49:18] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:49:18] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:49:20] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:49:20] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:49:20] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:49:20] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:49:20] INFO: Successfull checking data to get cardd
+[2025-05-28 20:49:20] INFO: Successfull checking data to get cardd
+[2025-05-28 20:49:25] INFO: Successfull checking data to update card
+[2025-05-28 20:49:25] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:49:25] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:49:25] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:49:25] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:49:25] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:49:25] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:49:29] INFO: Successfull checking data user for get user profile
+[2025-05-28 20:49:29] INFO: Successfull checking data user for get user profile
+[2025-05-28 20:50:49] ERROR: Error verified token:  jwt expired
+[2025-05-28 20:50:49] INFO: Invalid token in get lists in board
+[2025-05-28 20:50:54] INFO: Successfull checking data user for login
+[2025-05-28 20:50:54] INFO: Compare hash complete
+[2025-05-28 20:50:54] INFO: Complete create token
+[2025-05-28 20:50:54] INFO: Successfull checking data user for get user profile
+[2025-05-28 20:50:54] INFO: Successfull checking data to get board by user id
+[2025-05-28 20:50:54] INFO: Successfull checking data to get all members
+[2025-05-28 20:50:54] INFO: Successfull checking data to get all members
+[2025-05-28 20:50:55] INFO: Successfull checking data to get board by user id
+[2025-05-28 20:50:55] INFO: Successfull checking data to get board by user id
+[2025-05-28 20:50:55] INFO: Successfull checking data user for get user profile
+[2025-05-28 20:50:55] INFO: Successfull checking data user for get user profile
+[2025-05-28 20:50:55] INFO: Successfull checking data to get all members
+[2025-05-28 20:50:55] INFO: Successfull checking data to get all members
+[2025-05-28 20:50:55] INFO: Successfull checking data to get all members
+[2025-05-28 20:50:55] INFO: Successfull checking data to get all members
+[2025-05-28 20:51:02] INFO: Successfull checking data to get board by user id
+[2025-05-28 20:51:02] INFO: Successfull checking data user for get user profile
+[2025-05-28 20:51:02] INFO: Successfull checking data to get board by user id
+[2025-05-28 20:51:02] INFO: Successfull checking data user for get user profile
+[2025-05-28 20:51:03] INFO: Successfull checking data to get all members
+[2025-05-28 20:51:03] INFO: Successfull checking data to get all members
+[2025-05-28 20:51:03] INFO: Successfull checking data to get all members
+[2025-05-28 20:51:03] INFO: Successfull checking data to get all members
+[2025-05-28 20:55:11] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:55:11] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:55:12] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:55:12] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:55:12] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:55:12] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:55:13] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:55:13] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:55:13] INFO: Successfull checking data to get cardd
+[2025-05-28 20:55:13] INFO: Successfull checking data to get cardd
+[2025-05-28 20:55:13] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:55:13] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:55:16] INFO: Successfull checking data to update card
+[2025-05-28 20:55:16] ERROR: Card validation failed: card_priority: `critical` is not a valid enum value for path `card_priority`.
+[2025-05-28 20:55:16] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:55:16] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:55:16] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:55:16] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:55:16] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:55:16] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:55:17] INFO: Successfull checking data to get cardd
+[2025-05-28 20:55:17] INFO: Successfull checking data to get cardd
+[2025-05-28 20:55:17] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:55:17] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:55:17] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:55:17] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:57:51] INFO: Successfull checking data to get cardd
+[2025-05-28 20:57:51] INFO: Successfull checking data to get cardd
+[2025-05-28 20:57:51] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:57:51] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:57:51] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:57:51] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:57:54] INFO: Successfull checking data to get cardd
+[2025-05-28 20:57:54] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:57:54] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:59:11] INFO: Successfull checking data to get cardd
+[2025-05-28 20:59:11] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:59:11] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:59:23] INFO: Successfull checking data to get cardd
+[2025-05-28 20:59:23] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:59:23] INFO: Successfull checking data to get cards in list
+[2025-05-28 20:59:46] INFO: Successfull checking data to get cardd
+[2025-05-28 20:59:46] INFO: Successfull checking data to get lists in board
+[2025-05-28 20:59:46] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:01:07] INFO: Successfull checking data to get cardd
+[2025-05-28 21:01:07] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:01:07] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:23] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:02:23] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:23] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:02:23] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:26] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:02:26] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:26] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:02:26] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:26] INFO: Successfull checking data to get cardd
+[2025-05-28 21:02:26] INFO: Successfull checking data to get cardd
+[2025-05-28 21:02:30] INFO: Successfull checking data to update card
+[2025-05-28 21:02:30] ERROR: Card validation failed: card_priority: `critical` is not a valid enum value for path `card_priority`.
+[2025-05-28 21:02:30] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:02:30] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:02:30] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:30] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:30] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:30] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:33] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:02:33] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:33] INFO: Successfull checking data to get cardd
+[2025-05-28 21:02:33] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:02:33] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:33] INFO: Successfull checking data to get cardd
+[2025-05-28 21:02:36] INFO: Successfull checking data to update card
+[2025-05-28 21:02:36] ERROR: Card validation failed: card_priority: `critical` is not a valid enum value for path `card_priority`.
+[2025-05-28 21:02:36] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:02:36] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:02:36] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:36] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:36] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:36] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:38] INFO: Successfull checking data to get cardd
+[2025-05-28 21:02:38] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:02:38] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:38] INFO: Successfull checking data to get cardd
+[2025-05-28 21:02:38] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:02:38] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:46] INFO: Successfull checking data user for login
+[2025-05-28 21:02:46] INFO: Compare hash complete
+[2025-05-28 21:02:46] INFO: Complete create token
+[2025-05-28 21:02:46] INFO: Successfull checking data user for get user profile
+[2025-05-28 21:02:46] INFO: Successfull checking data to get board by user id
+[2025-05-28 21:02:46] INFO: Successfull checking data to get all members
+[2025-05-28 21:02:47] INFO: Successfull checking data to get all members
+[2025-05-28 21:02:48] INFO: Successfull checking data to get board by user id
+[2025-05-28 21:02:48] INFO: Successfull checking data to get board by user id
+[2025-05-28 21:02:48] INFO: Successfull checking data user for get user profile
+[2025-05-28 21:02:48] INFO: Successfull checking data user for get user profile
+[2025-05-28 21:02:48] INFO: Successfull checking data to get all members
+[2025-05-28 21:02:48] INFO: Successfull checking data to get all members
+[2025-05-28 21:02:48] INFO: Successfull checking data to get all members
+[2025-05-28 21:02:48] INFO: Successfull checking data to get all members
+[2025-05-28 21:02:50] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:02:50] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:02:50] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:50] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:50] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:50] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:51] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:02:51] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:51] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:02:51] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:02:51] INFO: Successfull checking data to get cardd
+[2025-05-28 21:02:51] INFO: Successfull checking data to get cardd
+[2025-05-28 21:03:12] INFO: Successfull checking data to update card
+[2025-05-28 21:03:12] ERROR: Card validation failed: card_priority: `critical` is not a valid enum value for path `card_priority`.
+[2025-05-28 21:03:12] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:03:12] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:03:12] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:03:12] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:03:12] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:03:12] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:06:25] INFO: Successfull checking data to get cardd
+[2025-05-28 21:06:25] INFO: Successfull checking data to get cardd
+[2025-05-28 21:06:25] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:06:25] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:06:25] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:06:25] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:06:31] INFO: Successfull checking data to update card
+[2025-05-28 21:06:32] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:06:32] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:06:32] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:06:32] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:06:32] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:06:32] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:09:22] INFO: Successfull checking data to get cardd
+[2025-05-28 21:09:22] INFO: Successfull checking data to get cardd
+[2025-05-28 21:09:22] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:09:22] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:09:22] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:09:22] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:09:27] INFO: Successfull checking data to update card
+[2025-05-28 21:09:27] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:09:27] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:09:27] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:09:27] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:09:27] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:09:27] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:13:45] INFO: Successfull checking data to get cardd
+[2025-05-28 21:13:45] INFO: Successfull checking data to get cardd
+[2025-05-28 21:13:45] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:13:45] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:13:45] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:13:45] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:13:52] INFO: Successfull checking data to update card
+[2025-05-28 21:13:52] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:13:52] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:13:52] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:13:52] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:13:52] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:13:52] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:14:23] INFO: Successfull checking data to get cardd
+[2025-05-28 21:14:23] INFO: Successfull checking data to get cardd
+[2025-05-28 21:14:23] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:14:23] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:14:23] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:14:23] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:14:39] INFO: Successfull checking data to update card
+[2025-05-28 21:14:39] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:14:39] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:14:40] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:14:40] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:14:40] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:14:40] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:14:48] INFO: Successfull checking data to get cardd
+[2025-05-28 21:14:48] INFO: Successfull checking data to get cardd
+[2025-05-28 21:14:48] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:14:48] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:14:48] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:14:48] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:15:03] INFO: Successfull checking data to update card
+[2025-05-28 21:15:03] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:15:03] INFO: Successfull checking data to get lists in board
+[2025-05-28 21:15:03] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:15:03] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:15:03] INFO: Successfull checking data to get cards in list
+[2025-05-28 21:15:03] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:36:58] INFO: MongoDB connected: ac-hubowxc-shard-00-02.sr36tc5.mongodb.net
+[2025-06-03 14:37:32] INFO: Successfull checking data user for login
+[2025-06-03 14:37:32] INFO: Compare hash complete
+[2025-06-03 14:37:32] INFO: Complete create token
+[2025-06-03 14:37:32] INFO: Successfull checking data user for get user profile
+[2025-06-03 14:37:32] INFO: Successfull checking data to get board by user id
+[2025-06-03 14:37:33] INFO: Successfull checking data to get all members
+[2025-06-03 14:37:33] INFO: Successfull checking data to get all members
+[2025-06-03 14:37:34] INFO: Successfull checking data to get board by user id
+[2025-06-03 14:37:34] INFO: Successfull checking data to get board by user id
+[2025-06-03 14:37:34] INFO: Successfull checking data user for get user profile
+[2025-06-03 14:37:34] INFO: Successfull checking data user for get user profile
+[2025-06-03 14:37:35] INFO: Successfull checking data to get all members
+[2025-06-03 14:37:35] INFO: Successfull checking data to get all members
+[2025-06-03 14:37:35] INFO: Successfull checking data to get all members
+[2025-06-03 14:37:35] INFO: Successfull checking data to get all members
+[2025-06-03 14:37:37] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:37:37] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:37:37] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:37:37] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:37:37] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:37:37] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:37:38] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:37:38] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:37:38] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:37:38] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:37:38] INFO: Successfull checking data to get cardd
+[2025-06-03 14:37:38] INFO: Successfull checking data to get cardd
+[2025-06-03 14:38:22] INFO: Successfull checking data to get cardd
+[2025-06-03 14:38:22] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:38:22] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:38:45] INFO: Successfull checking data to update card
+[2025-06-03 14:38:45] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:38:45] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:38:45] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:38:46] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:38:46] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:38:46] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:38:51] INFO: Successfull checking data to get cardd
+[2025-06-03 14:38:51] INFO: Successfull checking data to get cardd
+[2025-06-03 14:38:51] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:38:51] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:38:51] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:38:51] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:39:06] INFO: MongoDB connected: ac-hubowxc-shard-00-02.sr36tc5.mongodb.net
+[2025-06-03 14:43:11] INFO: Successfull checking data to get cardd
+[2025-06-03 14:43:11] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:43:11] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:44:52] INFO: Successfull checking data to get cardd
+[2025-06-03 14:44:52] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:44:52] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:45:09] INFO: Successfull checking data to get cardd
+[2025-06-03 14:45:09] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:45:09] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:46:01] INFO: Successfull checking data to get cardd
+[2025-06-03 14:46:01] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:46:01] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:46:05] INFO: Successfull checking data to get cardd
+[2025-06-03 14:46:05] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:46:05] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:46:13] INFO: Successfull checking data to get cardd
+[2025-06-03 14:46:13] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:46:13] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:46:15] INFO: Successfull checking data to get cardd
+[2025-06-03 14:46:15] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:46:15] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:48:10] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:48:10] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:48:10] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:48:10] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:48:13] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:48:13] INFO: Successfull checking data to get cardd
+[2025-06-03 14:48:13] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:48:13] INFO: Successfull checking data to get cardd
+[2025-06-03 14:48:13] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:48:13] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:48:22] INFO: Successfull checking data to update card
+[2025-06-03 14:48:23] ERROR: Card validation failed: card_priority: `critical` is not a valid enum value for path `card_priority`.
+[2025-06-03 14:48:23] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:48:23] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:48:23] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:48:23] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:48:23] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:48:23] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:50:53] INFO: Successfull checking data to get cardd
+[2025-06-03 14:50:53] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:50:53] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:50:53] INFO: Successfull checking data to get cardd
+[2025-06-03 14:50:53] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:50:53] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:51:00] INFO: Successfull checking data to update card
+[2025-06-03 14:51:00] ERROR: Card validation failed: card_priority: `critical` is not a valid enum value for path `card_priority`.
+[2025-06-03 14:51:00] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:51:00] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:51:00] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:51:00] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:51:00] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:51:00] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:53:00] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:53:00] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:53:00] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:53:00] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:53:00] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:53:00] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:53:01] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:53:01] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:53:02] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:53:02] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:53:02] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:53:02] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:53:14] INFO: Successfull checking data to get cardd
+[2025-06-03 14:53:14] INFO: Successfull checking data to get cardd
+[2025-06-03 14:53:14] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:53:14] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:53:14] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:53:14] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:53:22] ERROR: Error checking data card_update_details is required.
+[2025-06-03 14:53:22] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:53:22] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:53:22] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:53:22] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:53:22] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:53:22] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:54:49] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:54:49] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:54:49] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:54:49] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:54:49] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:54:49] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:54:51] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:54:51] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:54:51] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:54:51] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:54:51] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:54:51] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:54:53] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:54:53] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:54:53] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:54:53] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:54:53] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:54:53] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:54:54] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:54:54] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:54:55] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:54:55] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:54:55] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:54:55] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:55:05] INFO: Successfull checking data to get cardd
+[2025-06-03 14:55:05] INFO: Successfull checking data to get cardd
+[2025-06-03 14:55:05] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:55:05] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:55:05] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:55:05] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:55:11] INFO: Successfull checking data to update card
+[2025-06-03 14:55:12] ERROR: Card validation failed: card_priority: `critical` is not a valid enum value for path `card_priority`.
+[2025-06-03 14:55:12] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:55:12] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:55:12] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:55:12] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:55:12] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:55:12] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:57:18] INFO: Successfull checking data to get cardd
+[2025-06-03 14:57:18] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:57:18] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:57:18] INFO: Successfull checking data to get cardd
+[2025-06-03 14:57:18] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:57:18] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:57:24] INFO: Successfull checking data to update card
+[2025-06-03 14:57:25] INFO: Successfull checking data to get cardd
+[2025-06-03 14:57:25] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:57:25] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:57:25] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:57:25] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:57:25] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:57:25] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:57:36] INFO: Successfull checking data to get cardd
+[2025-06-03 14:57:36] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:57:36] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:57:36] INFO: Successfull checking data to get cardd
+[2025-06-03 14:57:36] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:57:36] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:57:44] INFO: Successfull checking data to update card
+[2025-06-03 14:57:44] INFO: Successfull checking data to get cardd
+[2025-06-03 14:57:44] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:57:44] INFO: Successfull checking data to get lists in board
+[2025-06-03 14:57:44] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:57:44] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:57:44] INFO: Successfull checking data to get cards in list
+[2025-06-03 14:57:44] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:03:17] INFO: Successfull checking data to get cardd
+[2025-06-03 15:03:17] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:03:17] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:03:17] INFO: Successfull checking data to get cardd
+[2025-06-03 15:03:17] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:03:17] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:03:27] INFO: Successfull checking data to update card
+[2025-06-03 15:03:27] INFO: Successfull checking data to get cardd
+[2025-06-03 15:03:27] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:03:27] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:03:27] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:03:27] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:03:27] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:03:27] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:03:31] INFO: Successfull checking data to get cardd
+[2025-06-03 15:03:31] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:03:31] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:03:31] INFO: Successfull checking data to get cardd
+[2025-06-03 15:03:31] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:03:31] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:03:50] INFO: Successfull checking data to update card
+[2025-06-03 15:03:50] INFO: Successfull checking data to move card in list
+[2025-06-03 15:03:50] INFO: Successfull checking data to get cardd
+[2025-06-03 15:03:50] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:03:50] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:03:50] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:03:50] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:03:50] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:03:50] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:03:53] INFO: Successfull checking data to get cardd
+[2025-06-03 15:03:53] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:03:53] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:03:53] INFO: Successfull checking data to get cardd
+[2025-06-03 15:03:53] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:03:53] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:03:56] INFO: Successfull checking data to update card
+[2025-06-03 15:03:56] INFO: Successfull checking data to move card in list
+[2025-06-03 15:03:56] INFO: Successfull checking data to get cardd
+[2025-06-03 15:03:56] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:03:56] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:03:57] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:03:57] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:03:57] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:03:57] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:04:00] INFO: Successfull checking data to get cardd
+[2025-06-03 15:04:00] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:04:00] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:04:00] INFO: Successfull checking data to get cardd
+[2025-06-03 15:04:00] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:04:00] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:04:10] INFO: Successfull checking data to update card
+[2025-06-03 15:04:10] INFO: Successfull checking data to get cardd
+[2025-06-03 15:04:10] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:04:10] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:04:10] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:04:10] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:04:10] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:04:10] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:04:12] INFO: Successfull checking data to get cardd
+[2025-06-03 15:04:12] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:04:12] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:04:12] INFO: Successfull checking data to get cardd
+[2025-06-03 15:04:12] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:04:12] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:04:25] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:04:25] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:04:26] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:04:26] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:04:26] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:04:26] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:04:31] INFO: Successfull checking data to create card
+[2025-06-03 15:04:34] ERROR: Error checking data list_id is required.
+[2025-06-03 15:04:34] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:04:34] ERROR: Error checking data list_id is required.
+[2025-06-03 15:04:34] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:04:40] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:04:40] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:04:40] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:04:40] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:04:40] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:04:40] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:04:41] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:04:41] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:04:41] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:04:41] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:04:41] INFO: Successfull checking data to get cardd
+[2025-06-03 15:04:41] INFO: Successfull checking data to get cardd
+[2025-06-03 15:04:50] INFO: Successfull checking data to get cardd
+[2025-06-03 15:04:50] INFO: Successfull checking data to get all members
+[2025-06-03 15:04:52] INFO: Successfull checking data to assign user to card
+[2025-06-03 15:04:52] INFO: Successfull checking data to get cardd
+[2025-06-03 15:04:53] INFO: Successfull checking data to get cardd
+[2025-06-03 15:04:53] INFO: Successfull checking data to get all members
+[2025-06-03 15:04:55] INFO: Successfull checking data to assign user to card
+[2025-06-03 15:04:55] INFO: Successfull checking data to get cardd
+[2025-06-03 15:05:00] INFO: Successfull checking data to update card
+[2025-06-03 15:05:00] INFO: Successfull checking data to get cardd
+[2025-06-03 15:05:00] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:05:00] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:05:00] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:05:00] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:05:00] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:05:00] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:05:02] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:05:02] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:05:02] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:05:02] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:05:02] INFO: Successfull checking data to get cardd
+[2025-06-03 15:05:02] INFO: Successfull checking data to get cardd
+[2025-06-03 15:05:08] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:05:08] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:05:08] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:05:08] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:05:08] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:05:08] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:09:17] INFO: MongoDB connected: ac-hubowxc-shard-00-02.sr36tc5.mongodb.net
+[2025-06-03 15:12:40] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:12:40] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:12:40] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:12:43] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:12:43] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:12:43] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:12:51] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:12:51] INFO: Successfull checking data to get cardd
+[2025-06-03 15:12:51] INFO: Successfull checking data to get cardd
+[2025-06-03 15:12:51] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:12:51] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:12:51] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:12:54] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:12:54] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:12:54] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:12:54] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:12:54] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:12:54] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:12:58] INFO: Successfull checking data to get cardd
+[2025-06-03 15:12:58] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:12:58] INFO: Successfull checking data to get cardd
+[2025-06-03 15:12:58] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:12:58] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:12:58] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:13:57] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:13:57] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:13:58] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:13:58] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:13:58] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:13:58] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:14:40] INFO: Successfull checking data to create list
+[2025-06-03 15:14:40] INFO: Successfull checking data to get lists in board
+[2025-06-03 15:14:41] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:14:41] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:14:41] INFO: Successfull checking data to get cards in list
+[2025-06-03 15:14:44] INFO: Successfull checking data to create card
+[2025-06-03 17:00:30] ERROR: Error verified token:  jwt expired
+[2025-06-03 17:00:30] INFO: Invalid token in get lists in board
+[2025-06-03 17:00:30] ERROR: Error verified token:  jwt expired
+[2025-06-03 17:00:30] INFO: Invalid token in get lists in board
+[2025-06-03 17:06:37] INFO: Successfull checking data user for login
+[2025-06-03 17:06:37] INFO: Compare hash complete
+[2025-06-03 17:06:37] INFO: Complete create token
+[2025-06-03 17:06:37] INFO: Successfull checking data user for get user profile
+[2025-06-03 17:06:37] INFO: Successfull checking data to get board by user id
+[2025-06-03 17:06:37] INFO: Successfull checking data to get all members
+[2025-06-03 17:06:38] INFO: Successfull checking data to get all members
+[2025-06-03 17:06:39] INFO: Successfull checking data to get board by user id
+[2025-06-03 17:06:39] INFO: Successfull checking data to get board by user id
+[2025-06-03 17:06:39] INFO: Successfull checking data user for get user profile
+[2025-06-03 17:06:39] INFO: Successfull checking data user for get user profile
+[2025-06-03 17:06:40] INFO: Successfull checking data to get all members
+[2025-06-03 17:06:40] INFO: Successfull checking data to get all members
+[2025-06-03 17:06:40] INFO: Successfull checking data to get all members
+[2025-06-03 17:06:40] INFO: Successfull checking data to get all members
+[2025-06-03 17:06:41] INFO: Successfull checking data to get lists in board
+[2025-06-03 17:06:41] INFO: Successfull checking data to get lists in board
+[2025-06-03 17:06:42] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:06:42] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:06:42] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:06:42] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:06:42] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:06:42] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:06:46] INFO: Successfull checking data to get lists in board
+[2025-06-03 17:06:46] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:06:46] INFO: Successfull checking data to get cardd
+[2025-06-03 17:06:46] INFO: Successfull checking data to get lists in board
+[2025-06-03 17:06:46] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:06:46] INFO: Successfull checking data to get cardd
+[2025-06-03 17:06:48] INFO: Successfull checking data to get lists in board
+[2025-06-03 17:06:48] INFO: Successfull checking data to get lists in board
+[2025-06-03 17:06:49] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:06:49] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:06:49] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:06:49] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:06:49] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:06:49] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:06:51] INFO: Successfull checking data to move card with position
+[2025-06-03 17:06:55] INFO: Successfull checking data to move card with position
+[2025-06-03 17:06:57] INFO: Successfull checking data to move card with position
+[2025-06-03 17:06:59] INFO: Successfull checking data user for get user profile
+[2025-06-03 17:06:59] INFO: Successfull checking data user for get user profile
+[2025-06-03 17:07:00] INFO: Successfull checking data to get lists in board
+[2025-06-03 17:07:00] INFO: Successfull checking data to get lists in board
+[2025-06-03 17:07:00] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:07:00] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:07:00] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:07:00] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:07:00] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:07:00] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:07:09] INFO: Successfull checking data to move card with position
+[2025-06-03 17:07:19] INFO: Successfull checking data user for login
+[2025-06-03 17:07:19] INFO: Compare hash complete
+[2025-06-03 17:07:20] INFO: Complete create token
+[2025-06-03 17:07:20] INFO: Successfull checking data user for get user profile
+[2025-06-03 17:07:20] INFO: Successfull checking data to get board by user id
+[2025-06-03 17:07:20] INFO: Successfull checking data to get all members
+[2025-06-03 17:07:20] INFO: Successfull checking data to get all members
+[2025-06-03 17:07:21] INFO: Successfull checking data to get board by user id
+[2025-06-03 17:07:21] INFO: Successfull checking data to get board by user id
+[2025-06-03 17:07:21] INFO: Successfull checking data user for get user profile
+[2025-06-03 17:07:21] INFO: Successfull checking data user for get user profile
+[2025-06-03 17:07:21] INFO: Successfull checking data to get all members
+[2025-06-03 17:07:21] INFO: Successfull checking data to get all members
+[2025-06-03 17:07:21] INFO: Successfull checking data to get all members
+[2025-06-03 17:07:21] INFO: Successfull checking data to get all members
+[2025-06-03 17:07:22] INFO: Successfull checking data to get lists in board
+[2025-06-03 17:07:22] INFO: Successfull checking data to get lists in board
+[2025-06-03 17:07:23] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:07:23] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:07:23] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:07:23] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:07:23] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:07:23] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:07:39] INFO: Successfull checking data to get lists in board
+[2025-06-03 17:07:40] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:07:40] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:07:40] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:08:01] INFO: Successfull checking data to get lists in board
+[2025-06-03 17:08:01] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:08:01] INFO: Successfull checking data to get cards in list
+[2025-06-03 17:08:01] INFO: Successfull checking data to get cards in list

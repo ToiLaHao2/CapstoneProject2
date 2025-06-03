@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./CardDetail.css";
 
 import { FiCalendar, FiBold, FiUnderline, FiLink, FiImage, } from "react-icons/fi";
@@ -50,7 +50,7 @@ function CardDetail() {
     const [selectedListId, setSelectedListId] = useState(listId);
     const [listsInBoard, setListsInBoard] = useState([]);
     const { getListsInBoard } = useBoard();
-    const {moveList} = useBoard();
+    const { moveList } = useBoard();
 
     const [selectedCardId, setSelectedCardId] = useState(taskId);
     const [cardsInList, setCardsInList] = useState([]);
@@ -59,7 +59,16 @@ function CardDetail() {
     const currentListId = location.state?.listId;
     const [targetListId, setTargetListId] = useState(currentListId);
 
-    const {moveCard} = useCard();
+    const { moveCard } = useCard();
+
+    const [openMemberDropdown, setOpenMemberDropdown] = useState(null);
+    const memberDropdownRef = useRef(null);
+    const { removeUserFromCard } = useCard();
+    const [userToRemove, setUserToRemove] = useState(null);
+
+    const [showRemoveConfirmation, setShowRemoveConfirmation] = useState(false);
+    const [userToRemoveConfirmation, setUserToRemoveConfirmation] = useState(null);
+
 
     const handleListChange = (event) => {
         setTargetListId(event.target.value);
@@ -81,45 +90,29 @@ function CardDetail() {
         console.log("Completed changed:", event.target.checked);
     };
 
-    // const handleSave = async () => {
-    //     try {
-    //         await updateCard(boardId, listId, taskId, {
-    //             card_id: taskId,
-    //             card_title: cardTitle,
-    //             card_description: description,
-    //             card_duration: duration
-    //                 ? new Date(duration).toISOString()
-    //                 : null,
-    //             card_completed: completed,
-    //             list_id: currentListId,
-    //         });
-
-    //         if (targetListId !== currentListId) {
-    //             const result = await moveList(boardId, currentListId, targetListId);
-    //             if (result === "Success") {
-    //                 console.log("List moved successfully");
-    //                 // Có thể navigate hoặc thông báo cho người dùng
-    //             } else {
-    //                 console.error("Failed to move list");
-    //                 // Xử lý lỗi nếu cần
-    //             }
-    //         }
-    //         navigate(-1);
-    //     } catch (error) {
-    //         console.error("Failed to update card:", error);
-    //     }
-    // };
-
     const handleSave = async () => {
         try {
-            await updateCard(boardId, currentListId, taskId, {
+            // await updateCard(boardId, currentListId, taskId, {
+            //     card_id: taskId,
+            //     card_title: cardTitle,
+            //     card_description: description,
+            //     card_duration: duration ? new Date(duration).toISOString() : null,
+            //     card_completed: completed,
+            //     list_id: currentListId,
+            // });
+
+            const cardUpdateDetails = {
                 card_id: taskId,
                 card_title: cardTitle,
                 card_description: description,
                 card_duration: duration ? new Date(duration).toISOString() : null,
                 card_completed: completed,
                 list_id: currentListId,
-            });
+                card_priority: priority, 
+            };
+            console.log("Data to update card:", cardUpdateDetails); 
+
+            await updateCard(boardId, currentListId, taskId, cardUpdateDetails);
 
             if (targetListId !== currentListId) {
                 const moved = await moveCard(boardId, currentListId, targetListId, taskId);
@@ -174,51 +167,167 @@ function CardDetail() {
         }
     };
 
+    //mei
+    const handleMemberIconClick = (memberId) => {
+        setOpenMemberDropdown((prevOpenMemberDropdown) =>
+            prevOpenMemberDropdown === memberId ? null : memberId
+        );
+    };
 
-    useEffect(() => {
-        const fetchCardDetails = async () => {
+    // const handleRemoveMemberClick = async (member) => {
+    //     try {
+    //         const removed = await removeUserFromCard(
+    //             boardId,
+    //             listId,
+    //             taskId,
+    //             member._id
+    //         );
+    //         if (removed) {
+    //             console.log(`Removed user ${member.user_email} from card`);
+    //             setMembers(members.filter((m) => m._id !== member._id));
+    //         } else {
+    //             console.error(`Failed to remove user ${member.user_email}`);
+    //         }
+    //         setOpenMemberDropdown(null);
+    //     } catch (error) {
+    //         console.error("Error removing user:", error);
+    //     }
+    // };
+
+    const handleRemoveMemberClick = (member) => {
+        setUserToRemoveConfirmation(member);
+        setShowRemoveConfirmation(true);
+        setOpenMemberDropdown(null);
+    };
+
+    const handleConfirmRemove = async () => {
+        if (userToRemoveConfirmation) {
             try {
-                const cardDetails = await getCard(boardId, listId, taskId);
-                console.log("Card Details:", cardDetails);
-                if (cardDetails && cardDetails.card_assignees) {
-                    const fetchedMembers = cardDetails.card_assignees
-                        .map((assignee) => {
-                            if (assignee && assignee.user_email) {
-                                return assignee;
-                            }
-                            return null;
-                        })
-                        .filter((email) => email);
-                    setMembers(fetchedMembers);
-                    console.log("Members state:", fetchedMembers);
+                const removed = await removeUserFromCard(
+                    boardId,
+                    listId,
+                    taskId,
+                    userToRemoveConfirmation._id
+                );
+                if (removed) {
+                    console.log(
+                        `Removed user ${userToRemoveConfirmation.user_email} from card`
+                    );
+                    setMembers(
+                        members.filter((m) => m._id !== userToRemoveConfirmation._id)
+                    );
+                } else {
+                    console.error(
+                        `Failed to remove user ${userToRemoveConfirmation.user_email}`
+                    );
                 }
             } catch (error) {
-                console.error("Failed to fetch card details:", error);
+                console.error("Error removing user:", error);
+            } finally {
+                setShowRemoveConfirmation(false);
+                setUserToRemoveConfirmation(null);
             }
-        };
+        }
+    };
 
-        fetchCardDetails();
+    const handleCancelRemove = () => {
+        setShowRemoveConfirmation(false);
+        setUserToRemoveConfirmation(null);
+    };
+    //mei
 
-        const fetchMembers = async () => {
-            if (showAddMemberForm) {
-                try {
-                    const allMembers = await getAllMembers(boardId);
-                    console.log("All members:", allMembers);
-                    if (allMembers && Array.isArray(allMembers)) {
-                        allMembers.forEach((member) =>
-                            console.log("Member:", member)
-                        );
-                        setMemberSuggestions(allMembers);
-                    } else {
-                        setMemberSuggestions([]);
-                    }
-                } catch (error) {
-                    console.error("Failed to fetch members:", error);
-                }
-            }
-        };
-        fetchMembers();
-    }, [showAddMemberForm, getAllMembers, boardId, taskId]);
+
+    // useEffect(() => {
+    //     const fetchCardDetails = async () => {
+    //         try {
+    //             const cardDetails = await getCard(boardId, listId, taskId);
+    //             console.log("Card Details:", cardDetails);
+    //             if (cardDetails && cardDetails.card_assignees) {
+    //                 const fetchedMembers = cardDetails.card_assignees
+    //                     .map((assignee) => {
+    //                         if (assignee && assignee.user_email) {
+    //                             return assignee;
+    //                         }
+    //                         return null;
+    //                     })
+    //                     .filter((email) => email);
+    //                 setMembers(fetchedMembers);
+    //                 console.log("Members state:", fetchedMembers);
+    //             }
+    //         } catch (error) {
+    //             console.error("Failed to fetch card details:", error);
+    //         }
+    //     };
+
+    //     fetchCardDetails();
+
+    //     const fetchMembers = async () => {
+    //         if (showAddMemberForm) {
+    //             try {
+    //                 const allMembers = await getAllMembers(boardId);
+    //                 console.log("All members:", allMembers);
+    //                 if (allMembers && Array.isArray(allMembers)) {
+    //                     allMembers.forEach((member) =>
+    //                         console.log("Member:", member)
+    //                     );
+    //                     setMemberSuggestions(allMembers);
+    //                 } else {
+    //                     setMemberSuggestions([]);
+    //                 }
+    //             } catch (error) {
+    //                 console.error("Failed to fetch members:", error);
+    //             }
+    //         }
+    //     };
+    //     fetchMembers();
+    // }, [showAddMemberForm, getAllMembers, boardId, taskId]);
+
+
+    useEffect(() => {
+    const fetchCardDetails = async () => {
+      try {
+        const cardDetails = await getCard(boardId, listId, taskId);
+        console.log("Card Details:", cardDetails);
+        if (cardDetails) {
+          setCardTitle(cardDetails.card_title || "");
+          setDescription(cardDetails.card_description || "");
+          setDuration(
+            cardDetails.card_duration
+              ? new Date(cardDetails.card_duration).toISOString().split("T")[0]
+              : ""
+          );
+          setCompleted(cardDetails.card_completed || false);
+          setPriority(cardDetails.card_priority || "high");
+          if (cardDetails.card_assignees) {
+            setMembers(cardDetails.card_assignees);
+            console.log("Members state:", cardDetails.card_assignees);
+          }
+        }
+      } catch (error) {
+        console.error("Failed to fetch card details:", error);
+      }
+    };
+
+    fetchCardDetails();
+
+    const fetchMembers = async () => {
+      if (showAddMemberForm) {
+        try {
+          const allMembers = await getAllMembers(boardId);
+          console.log("All members:", allMembers);
+          if (allMembers && Array.isArray(allMembers)) {
+            allMembers.forEach((member) => console.log("Member:", member));
+            setMemberSuggestions(allMembers);
+          } else {
+            setMemberSuggestions([]);
+          }
+        } catch (error) {
+          console.error("Failed to fetch members:", error);
+        }
+      }
+    };
+    fetchMembers();
+  }, [showAddMemberForm, getAllMembers, boardId, taskId, getCard, listId]);
 
     useEffect(() => {
         const fetchLists = async () => {
@@ -228,13 +337,8 @@ function CardDetail() {
                     setListsInBoard(lists);
                     console.log("Lists in board:", lists);
                 }
-                // if (lists) {
-                //     setListsInBoard(lists.filter(list => list._id !== currentListId)); // Lọc bỏ list hiện tại
-                //     console.log("Lists in board (excluding current):", lists);
-                // }
             }
         };
-
         fetchLists();
     }, [boardId, getListsInBoard, currentListId]);
 
@@ -273,6 +377,21 @@ function CardDetail() {
     };
 
     console.log("member ", members);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (memberDropdownRef.current && !memberDropdownRef.current.contains(event.target)) {
+                setOpenMemberDropdown(null);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [memberDropdownRef]);
+
     return (
         <div className="card-container">
             <div className="card-header">
@@ -281,9 +400,11 @@ function CardDetail() {
                     value={priority}
                     onChange={handlePriorityChange}
                 >
-                    <option value="high">High</option>
-                    <option value="medium">Medium</option>
-                    <option value="low">Low</option>
+                    <option value="HIGHEST">HIGHEST</option>
+                    <option value="CRITICAL">CRITICAL</option>
+                    <option value="HIGH">HIGH</option>
+                    <option value="MEDIUM">MEDIUM</option>
+                    <option value="LOW">LOW</option>
                 </select>
 
                 <div className="completed-checkbox">
@@ -305,21 +426,21 @@ function CardDetail() {
                 />
             </div>
 
-           {/* List Selection */}
-        <div className="card-section">
-            <label htmlFor="list-select" className="section-title">List</label>
-            <select
-                id="list-select"
-                className="input-field"
-                value={targetListId || currentListId || ''}
-                onChange={handleListChange}
-            >
-                <option value="">Select A List</option>
-                {listsInBoard.map(list => (
-                    <option key={list._id} value={list._id}>{list.list_title}</option>
-                ))}
-            </select>
-        </div>
+            {/* List Selection */}
+            <div className="card-section">
+                <label htmlFor="list-select" className="section-title">List</label>
+                <select
+                    id="list-select"
+                    className="input-field"
+                    value={targetListId || currentListId || ''}
+                    onChange={handleListChange}
+                >
+                    <option value="">Select A List</option>
+                    {listsInBoard.map(list => (
+                        <option key={list._id} value={list._id}>{list.list_title}</option>
+                    ))}
+                </select>
+            </div>
 
             {/* Card Selection */}
             <div className="card-section">
@@ -341,25 +462,38 @@ function CardDetail() {
                 <div className="section-title">Members</div>
                 <div className="member-icons-container">
                     {members.length > 0 &&
-                        members.map((member, index) =>
-                            member.user_avatar_url !== "empty" ? (
-                                <img
-                                    className="member-icon-img"
-                                    src={member.user_avatar_url}
-                                    alt="member-icon"
-                                />
-                            ) : (
-                                <div
-                                    key={index}
-                                    className={`member-icon member-icon-${index + 1
-                                        }`}
-                                >
-                                    {member.user_full_name
-                                        .charAt(0)
-                                        .toUpperCase()}
-                                </div>
-                            )
-                        )}
+                        members.map((member, index) => (
+                            <div key={member._id} className="member-icon-wrapper" ref={openMemberDropdown === member._id ? memberDropdownRef : null}>
+                                {member.user_avatar_url !== "empty" ? (
+                                    <img
+                                        className="member-icon-img"
+                                        src={member.user_avatar_url}
+                                        alt="member-icon"
+                                        onClick={() => handleMemberIconClick(member._id)}
+                                    />
+                                ) : (
+                                    <div
+                                        className={`member-icon member-icon-${index + 1}`}
+                                        onClick={() => handleMemberIconClick(member._id)}
+                                    >
+                                        {member.user_full_name?.charAt(0)?.toUpperCase()}
+                                    </div>
+                                )}
+                                {openMemberDropdown === member._id && (
+                                    <div className="member-dropdown">
+                                        <div className="member-info">
+                                            <b>{member.user_full_name}</b>  <i>({member.user_email})</i>
+                                        </div>
+                                        <div
+                                            className="dropdown-item"
+                                            onClick={() => handleRemoveMemberClick(member)}
+                                        >
+                                            Remove from card
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
                     <div
                         className="add-member-icon"
                         onClick={handleAddMemberIconClick}
@@ -368,6 +502,22 @@ function CardDetail() {
                     </div>
                 </div>
             </div>
+
+            {showRemoveConfirmation && userToRemoveConfirmation && (
+                <div className="confirmation-overlay">
+                    <div className="confirmation-dialog">
+                        <p>Are you sure you want to remove {userToRemoveConfirmation.user_full_name} from this card?</p>
+                        <div className="confirmation-buttons">
+                            <button onClick={handleConfirmRemove} className="button button-primary">
+                                Yes, Remove
+                            </button>
+                            <button onClick={handleCancelRemove} className="button button-secondary">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             <div className="card-section">
                 <div className="section-title">Due date:</div>
