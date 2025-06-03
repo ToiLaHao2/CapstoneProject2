@@ -149,3 +149,16 @@
 [2025-05-27 00:07:19] ERROR: Error checking data list_id is required.
 [2025-05-27 00:07:36] ERROR: Error checking data list_id is required.
 [2025-05-27 00:07:36] ERROR: Error checking data old_list_id is required.
+[2025-05-28 20:50:49] ERROR: Error verified token:  jwt expired
+[2025-05-28 20:55:16] ERROR: Card validation failed: card_priority: `critical` is not a valid enum value for path `card_priority`.
+[2025-05-28 21:02:30] ERROR: Card validation failed: card_priority: `critical` is not a valid enum value for path `card_priority`.
+[2025-05-28 21:02:36] ERROR: Card validation failed: card_priority: `critical` is not a valid enum value for path `card_priority`.
+[2025-05-28 21:03:12] ERROR: Card validation failed: card_priority: `critical` is not a valid enum value for path `card_priority`.
+[2025-06-03 14:48:23] ERROR: Card validation failed: card_priority: `critical` is not a valid enum value for path `card_priority`.
+[2025-06-03 14:51:00] ERROR: Card validation failed: card_priority: `critical` is not a valid enum value for path `card_priority`.
+[2025-06-03 14:53:22] ERROR: Error checking data card_update_details is required.
+[2025-06-03 14:55:12] ERROR: Card validation failed: card_priority: `critical` is not a valid enum value for path `card_priority`.
+[2025-06-03 15:04:34] ERROR: Error checking data list_id is required.
+[2025-06-03 15:04:34] ERROR: Error checking data list_id is required.
+[2025-06-03 17:00:30] ERROR: Error verified token:  jwt expired
+[2025-06-03 17:00:30] ERROR: Error verified token:  jwt expired
