@@ -281,3 +281,30 @@
 .column-action-icon:hover {
   color: red;
 }
+
+
+
+
+
+
+
+
+
+.column.droppable-empty-list {
+    background-color: #f0f8ff; 
+    border: 2px dashed #b0e0e6; 
+}
+
+.task-list {
+    min-height: 50px; 
+}
+
+.drop-placeholder {
+    padding: 10px;
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    border: 1px dashed #ccc;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+}
