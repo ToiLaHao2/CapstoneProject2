@@ -162,3 +162,80 @@
 [2025-06-03 15:04:34] ERROR: Error checking data list_id is required.
 [2025-06-03 17:00:30] ERROR: Error verified token:  jwt expired
 [2025-06-03 17:00:30] ERROR: Error verified token:  jwt expired
+[2025-06-04 10:00:14] ERROR: No matching document found for id "683efeeb60fc8ad52667b6c7" version 8 modifiedPaths "list_cards"
+[2025-06-04 10:00:40] ERROR: No matching document found for id "683efeeb60fc8ad52667b6c7" version 11 modifiedPaths "list_cards"
+[2025-06-04 10:47:34] ERROR: Error checking data list_id is required.
+[2025-06-04 10:47:34] ERROR: Error checking data list_id is required.
+[2025-06-04 10:47:41] ERROR: Error checking data list_id is required.
+[2025-06-04 10:48:14] ERROR: Error checking data list_id is required.
+[2025-06-04 10:48:14] ERROR: Error checking data list_id is required.
+[2025-06-04 10:48:41] ERROR: Error checking data list_id is required.
+[2025-06-04 10:48:41] ERROR: Error checking data list_id is required.
+[2025-06-04 10:54:16] ERROR: Card validation failed: card_title: Path `card_title` is required.
+[2025-06-04 10:54:24] ERROR: Card validation failed: card_title: Path `card_title` is required.
+[2025-06-04 11:04:19] ERROR: Error checking data list_id is required.
+[2025-06-04 11:04:19] ERROR: Error checking data list_id is required.
+[2025-06-04 11:18:15] ERROR: Error verified token:  jwt expired
+[2025-06-04 11:18:15] ERROR: Invalid token
+[2025-06-04 11:18:15] ERROR: Error verified token:  jwt expired
+[2025-06-04 11:18:15] ERROR: Error verified token:  jwt expired
+[2025-06-04 11:18:15] ERROR: Error verified token:  jwt expired
+[2025-06-04 11:18:15] ERROR: Invalid token
+[2025-06-04 11:18:15] ERROR: Error verified token:  jwt expired
+[2025-06-04 11:18:15] ERROR: Error verified token:  jwt expired
+[2025-06-04 11:26:12] ERROR: Error deleting checklist: Cannot read properties of null (reading 'checklist_items')
+[2025-06-04 11:26:12] ERROR: Error deleting card: Error deleting checklist
+[2025-06-04 11:26:12] ERROR: Error deleting cards: Error deleting card
+[2025-06-04 11:26:12] ERROR: Error deleting documents: Error deleting cards
+[2025-06-04 11:26:12] ERROR: Error with DeleteBoard: [object Object]
+[2025-06-04 11:26:46] ERROR: Error deleting checklist: Cannot read properties of null (reading 'checklist_items')
+[2025-06-04 11:26:46] ERROR: Error deleting card: Error deleting checklist
+[2025-06-04 11:26:46] ERROR: Error deleting cards: Error deleting card
+[2025-06-04 11:26:46] ERROR: Error deleting documents: Error deleting cards
+[2025-06-04 11:26:46] ERROR: Error with DeleteBoard: [object Object]
+[2025-06-04 11:27:49] ERROR: Error deleting checklist: Cannot read properties of null (reading 'checklist_items')
+[2025-06-04 11:27:49] ERROR: Error deleting card: Error deleting checklist
+[2025-06-04 11:27:49] ERROR: Error deleting cards: Error deleting card
+[2025-06-04 11:27:49] ERROR: Error deleting documents: Error deleting cards
+[2025-06-04 11:27:49] ERROR: Error with DeleteBoard: [object Object]
+[2025-06-04 11:28:31] ERROR: Error deleting checklist: Cannot read properties of null (reading 'checklist_items')
+[2025-06-04 11:28:31] ERROR: Error deleting card: Error deleting checklist
+[2025-06-04 11:28:31] ERROR: Error deleting cards: Error deleting card
+[2025-06-04 11:28:31] ERROR: Error deleting documents: Error deleting cards
+[2025-06-04 11:28:31] ERROR: Error with DeleteBoard: [object Object]
+[2025-06-04 11:29:03] ERROR: Error deleting checklist: Cannot read properties of null (reading 'checklist_items')
+[2025-06-04 11:29:03] ERROR: Error deleting card: Error deleting checklist
+[2025-06-04 11:29:03] ERROR: Error deleting cards: Error deleting card
+[2025-06-04 11:29:03] ERROR: Error deleting documents: Error deleting cards
+[2025-06-04 11:29:03] ERROR: Error with DeleteBoard: [object Object]
+[2025-06-04 11:30:46] ERROR: Error checking data list_id is required.
+[2025-06-04 11:30:46] ERROR: Error checking data list_id is required.
+[2025-06-04 11:30:53] ERROR: Error checking data list_id is required.
+[2025-06-04 11:30:53] ERROR: Error checking data old_list_id is required.
+[2025-06-04 11:31:24] ERROR: Error checking data list_id is required.
+[2025-06-04 11:31:24] ERROR: Error checking data list_id is required.
+[2025-06-04 11:31:29] ERROR: Error checking data list_id is required.
+[2025-06-04 11:31:30] ERROR: Error checking data list_id is required.
+[2025-06-04 11:31:30] ERROR: Error checking data list_id is required.
+[2025-06-04 11:31:37] ERROR: Error checking data list_id is required.
+[2025-06-04 11:31:37] ERROR: Error checking data old_list_id is required.
+[2025-06-04 11:34:47] ERROR: Error checking data list_id is required.
+[2025-06-04 11:34:47] ERROR: Error checking data list_id is required.
+[2025-06-04 11:34:52] ERROR: Error checking data list_id is required.
+[2025-06-04 11:34:53] ERROR: Error checking data list_id is required.
+[2025-06-04 11:34:53] ERROR: Error checking data list_id is required.
+[2025-06-04 11:34:56] ERROR: Error checking data list_id is required.
+[2025-06-04 11:34:56] ERROR: Error checking data old_list_id is required.
+[2025-06-04 11:35:33] ERROR: Error checking data list_id is required.
+[2025-06-04 11:35:33] ERROR: Error checking data list_id is required.
+[2025-06-04 11:35:40] ERROR: Error checking data list_id is required.
+[2025-06-04 11:35:41] ERROR: Error checking data list_id is required.
+[2025-06-04 11:35:41] ERROR: Error checking data list_id is required.
+[2025-06-04 11:35:48] ERROR: Error checking data list_id is required.
+[2025-06-04 11:35:49] ERROR: Error checking data old_list_id is required.
+[2025-06-04 11:40:29] ERROR: Error checking data list_id is required.
+[2025-06-04 11:40:29] ERROR: Error checking data list_id is required.
+[2025-06-04 11:40:32] ERROR: Error checking data list_id is required.
+[2025-06-04 11:40:33] ERROR: Error checking data list_id is required.
+[2025-06-04 11:40:33] ERROR: Error checking data list_id is required.
+[2025-06-04 11:40:39] ERROR: Error checking data list_id is required.

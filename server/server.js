@@ -20,7 +20,8 @@ const port = process.env.PORT;
 // Middlewares
 app.use(cors());
 app.use(bodyparser.json());
-app.use(morgan("dev"));
+// app.use(morgan("dev"));
+app.use(morgan(':method :url :status :remote-addr - :response-time ms'));
 
 // app.use(errorHandler);
 

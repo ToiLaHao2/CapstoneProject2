@@ -349,6 +349,26 @@ async function MoveCardWithPosition(req, res) {
         if (newList.board_id.toString() !== board_id)
             return sendError(res, 403, "New list does not belong to the board");
 
+        // kiểm tra xem 2 list có khác nhau không
+        if (oldList._id.toString() === newList._id.toString()) {
+            // trường hợp di chuyển card trong cùng 1 list
+            if (new_card_index < 0 || new_card_index >= oldList.list_cards.length) {
+                return sendError(res, 400, "Invalid new card index");
+            }
+            // 3. Kiểm tra card tồn tại & có trong oldList
+            const cardIndex = oldList.list_cards.findIndex(
+                (c) => c.card_id.toString() === card_id
+            );
+            if (cardIndex === -1)
+                return sendError(res, 403, "Card does not belong to the old list");
+            // di chuyển thẻ trong cùng 1 list
+            const [movedCard] = oldList.list_cards.splice(cardIndex, 1);
+            oldList.list_cards.splice(new_card_index, 0, movedCard);
+            // lưu lại list
+            await oldList.save();
+            return sendSuccess(res, "Card moved successfully within the same list");
+        }
+
         // 3. Kiểm tra card tồn tại & có trong oldList
         const card = await Card.findById(card_id);
         if (!card) return sendError(res, 404, "Card not found");
