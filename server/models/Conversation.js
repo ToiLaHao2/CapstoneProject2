@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ConversationSchema = new Schema({
-    conversatopm_board_id: {
+    conversation_board_id: {
         type: Schema.Types.ObjectId,
         ref: "Board",
         required: true,
@@ -24,6 +24,11 @@ const ConversationSchema = new Schema({
             ref: "Message",
         },
     ],
+    conversation_owner: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        required: true,
+    },
     conversation_avatar_url: {
         type: String,
     },
