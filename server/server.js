@@ -11,6 +11,7 @@ const userRouter = require("./routes/userRoutes");
 const listRouter = require("./routes/listRoutes");
 const cardRouter = require("./routes/cardRoutes");
 const morgan = require("morgan");
+const conversationRouter = require("./routes/convsersationRoutes");
 
 dotenv.config();
 
@@ -34,6 +35,9 @@ app.use("/api/board", boardRouter);
 app.use("/api/user", userRouter);
 app.use("/api/list", listRouter);
 app.use("/api/card", cardRouter);
+app.use("/api/conversation", conversationRouter);
+app.use("/api/message");
+app.use("/api/notification");
 
 // Listen
 app.listen(port, function () {
