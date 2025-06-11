@@ -1,22 +1,12 @@
 const express = require("express");
-const {
-
-} = require("../middleware/messageMiddleware");
-
-const { upload, validateUpload } = require("../middleware/uploadMiddleware");
-const {
-
-} = require("../controllers/messageController");
+const { validateLoadMessages, validateUpdateMessage, validateDeleteMessage } = require("../middleware/messageMiddleware");
+const { LoadMessages, UpdateMessage, DeleteMessage } = require("../controllers/messageController");
 
 const messageRouter = express.Router();
 
-messageRouter.post("/getProfile", validateGetUserProfile, GetUserProfile);
-messageRouter.post("/updateProfile", validateUpdateUserProfile, UpdateUserProfile);
-//
-messageRouter.post(
-    "/getAllUserInBoard",
-    validateGetAllUserInBoard,
-    GetAllUserInBoard
+messageRouter.post("/loadMessages", validateLoadMessages, LoadMessages);
+messageRouter.post("/updateMessage", validateUpdateMessage, UpdateMessage);
+messageRouter.post("/deleteMessage", validateDeleteMessage, DeleteMessage
 );
 
 module.exports = messageRouter;

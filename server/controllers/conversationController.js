@@ -9,6 +9,7 @@ const Board = require('../models/Board');
 const User = require('../models/User');
 const logger = require('../utils/logger');
 const { sendError, sendSuccess } = require('../utils/response');
+const cloudinary = require("../configs/cloudinaryConfig");
 
 /* ---------------------------------------------------------------------------
    Helpers
@@ -33,8 +34,8 @@ function uniqObjectIds(arr = []) {
 --------------------------------------------------------------------------- */
 async function CreateConversation(req, res) {
     try {
-        const { boardId, title, participants , user_id } = req.body;
-        
+        const { boardId, title, participants, user_id } = req.body;
+        const file = req.file;
 
         const [user, board] = await Promise.all([
             User.findById(user_id),
@@ -53,6 +54,20 @@ async function CreateConversation(req, res) {
             user_id
         ]);
 
+        // nếu có file thì đẩy lên cloudinary không thì lưu null
+        let avatarUrl = null;
+        if (file) {
+            cloudinary.uploader.upload_stream(
+                { folder: "conversations" },
+                (error, result) => {
+                    if (error) {
+                        logger.error('Cloudinary upload error:', error);
+                        return sendError(res, 500, 'Cloudinary upload error');
+                    }
+                    avatarUrl = result?.secure_url || null;
+                }
+            )
+        }
         const conversation = await Conversation.create({
             boardId,
             title,
