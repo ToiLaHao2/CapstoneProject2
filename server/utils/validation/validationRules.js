@@ -399,12 +399,79 @@ const validationRules = {
     createConversation: {
         checkMessage: "Create new conversation",
         requiredFields: [
-            "conversation_title",
-            "conversation_participants",
-            "conversation_avatar_url",
+            "boardId",
+            "title",
+            "participants",
+            "owner",
+            "avatarUrl",
+            "checkMessage",
+        ],
+        fileSize: 5 * 1024 * 1024, // Giới hạn file tối đa 5MB
+        allowedMimeTypes: [
+            "image/jpeg",
+            "image/png",
+            "image/jpg",
+            "application/zip",
+            "application/x-rar-compressed",
+        ],
+        fileCategory: {
+            avatar: ["image/jpeg", "image/png", "image/jpg"],
+            compressed: ["application/zip", "application/x-rar-compressed"],
+        },
+    },
+    // addMessageToConversation
+    addMessageToConversation: {
+        checkMessage: "Add message to conversation",
+        requiredFields: ["conversationId", "content", "user_id", "checkMessage"],
+    },
+    // getConversation
+    getConversation: {
+        checkMessage: "Get conversation",
+        requiredFields: ["conversationId", "user_id", "checkMessage"],
+    },
+    // addParticipantToConversation
+    addParticipantToConversation: {
+        checkMessage: "Add participant to conversation",
+        requiredFields: [
+            "conversationId",
+            "user_add_id",
+            "user_id",
             "checkMessage",
         ],
     },
+    // removeParticipantFromConversation
+    removeParticipantFromConversation: {
+        checkMessage: "Remove participant from conversation",
+        requiredFields: [
+            "conversationId",
+            "user_remove_id",
+            "user_id",
+            "checkMessage",
+        ],
+    },
+    // getConversationsByUser
+    getConversationsByUser: {
+        checkMessage: "Get conversations by user",
+        requiredFields: ["user_id", "checkMessage"],
+    },
+
+    // message
+    // load messages
+    loadMessages: {
+        checkMessage: "Load messages",
+        requiredFields: ["conversationId", "user_id", "beforeId", "checkMessage"],
+    },
+    // update message
+    updateMessage: {
+        checkMessage: "Update message",
+        requiredFields: ["messageId", "content", "user_id"]
+    },
+    // delete message
+    deleteMessage: {
+        checkMessage: "Delete message",
+        requiredFields: ["messageId", "user_id"]
+    }
+    // 
 };
 
 module.exports = { validationRules };

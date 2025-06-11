@@ -123,6 +123,9 @@ async function DeleteList(req, res) {
         board.board_lists = board.board_lists.filter(
             (list) => list.list_id != list_id
         );
+        // thêm người da delete list trong board
+        // board.updated_by = user_id;
+        // board.updated_at = new Date();
         await board.save();
         return sendSuccess(res, "List deleted successfully");
     } catch (error) {

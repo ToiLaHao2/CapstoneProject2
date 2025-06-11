@@ -1,4 +1,5 @@
 const Card = require("../models/Card");
+const CheckList = require("../models/CheckList");
 const checkList = require("../models/CheckList");
 const logger = require("../utils/logger");
 const { sendError, sendSuccess } = require("../utils/response");
@@ -37,7 +38,29 @@ async function CreateCheckList(req, res) {
 }
 
 // Lấy checkList trong card
-async function GetCheckListsInCard(req, res) { }
+async function GetCheckListInCard(req, res) {
+    try {
+        const { card_id, checklist_id } = req.body;
+        const card = await Card.findById(card_id);
+        if (!card) {
+            return sendError(res, 404, "Card not found");
+        }
+        // kiểm tra xem checklist_id có tồn tại trong card hay không
+        if (checklist_id && !card.card_checklist_id.includes(checklist_id)) {
+            return sendError(res, 404, "Checklist not found in this card");
+        }
+        // lấy checklist
+        const checkList = await CheckList.findById(checklist_id);
+        if (!checkList) {
+            return sendError(res, 404, "Checklist not found");
+        }
+        // lấy tất cả checklistitems trong checklist
+        ;
+    } catch (error) {
+        logger.error("Error getting checklists in card:", error);
+        return sendError(res, 500, "Internal Server Error");
+    }
+}
 
 // Cập nhật checkList trong card (tên, mô tả, thứ tự)
 async function UpdateCheckList(req, res) { }

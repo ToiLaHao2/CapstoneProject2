@@ -10,6 +10,7 @@ const cloudinary = require("../configs/cloudinaryConfig");
 async function GetUserProfile(req, res) {
     const { user_id } = req.body;
     try {
+        // chỉ lấy những thông tin cần thiết của user
         const user = await findByIdOrThrow(User, user_id, {
             errorMessage: "User not found",
         });

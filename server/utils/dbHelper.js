@@ -89,6 +89,11 @@ async function deleteBoard(id) {
             { _id: { $in: users } },
             { $pull: { user_boards: { board_id: id } } }
         );
+        // loại thông tin của board trong với creator
+        await User.findByIdAndUpdate(
+            board.created_by,
+            { $pull: { user_boards: { board_id: id } } }
+        );
         // lấy các list trong board ar
         const lists = board.board_lists.map(list => list.list_id);
         // xóa các list trong board
@@ -156,31 +161,31 @@ async function deleteCard(id) {
         const card = await Card.findById(id);
         // xóa checklist
         // gọi hàm xóa checklist
-        const messageDeteteCL = await deleteChecklist(card.card_checklist_id);
-        // đợi báo thành công
-        if (messageDeteteCL.message !== "OK") {
-            throw new Error(messageDeteteCL.message);
-        }
+        // const messageDeteteCL = await deleteChecklist(card.card_checklist_id);
+        // // đợi báo thành công
+        // if (messageDeteteCL.message !== "OK") {
+        //     throw new Error(messageDeteteCL.message);
+        // }
         // xóa các attachment
-        const attachmentIds = card.card_attachments.map(attachment => attachment.card_attachment_id);
-        // gọi hàm xóa từng attachment
-        for (const attachmentId of attachmentIds) {
-            const messageDeleteAttachment = await deleteAttachment(attachmentId);
-            // đợi báo thành công
-            if (messageDeleteAttachment.message !== "OK") {
-                throw new Error(messageDeleteAttachment.message);
-            }
-        }
-        // xóa các comment
-        const commentIds = card.card_comments.map(comment => comment.card_comment_id);
-        // gọi hàm xóa từng comment
-        for (const commentId of commentIds) {
-            const messageDeleteComment = await deleteComment(commentId);
-            // đợi báo thành công
-            if (messageDeleteComment.message !== "OK") {
-                throw new Error(messageDeleteComment.message);
-            }
-        }
+        // const attachmentIds = card.card_attachments.map(attachment => attachment.card_attachment_id);
+        // // gọi hàm xóa từng attachment
+        // for (const attachmentId of attachmentIds) {
+        //     const messageDeleteAttachment = await deleteAttachment(attachmentId);
+        //     // đợi báo thành công
+        //     if (messageDeleteAttachment.message !== "OK") {
+        //         throw new Error(messageDeleteAttachment.message);
+        //     }
+        // }
+        // // xóa các comment
+        // const commentIds = card.card_comments.map(comment => comment.card_comment_id);
+        // // gọi hàm xóa từng comment
+        // for (const commentId of commentIds) {
+        //     const messageDeleteComment = await deleteComment(commentId);
+        //     // đợi báo thành công
+        //     if (messageDeleteComment.message !== "OK") {
+        //         throw new Error(messageDeleteComment.message);
+        //     }
+        // }
         // đợi báo thành công
         // xoa card
         await Card.findByIdAndDelete(id);

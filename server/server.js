@@ -11,6 +11,8 @@ const userRouter = require("./routes/userRoutes");
 const listRouter = require("./routes/listRoutes");
 const cardRouter = require("./routes/cardRoutes");
 const morgan = require("morgan");
+const conversationRouter = require("./routes/convsersationRoutes");
+const messageRouter = require("./routes/messageRoutes");
 
 dotenv.config();
 
@@ -20,7 +22,8 @@ const port = process.env.PORT;
 // Middlewares
 app.use(cors());
 app.use(bodyparser.json());
-app.use(morgan("dev"));
+// app.use(morgan("dev"));
+app.use(morgan(':method :url :status :remote-addr - :response-time ms'));
 
 // app.use(errorHandler);
 
@@ -33,6 +36,9 @@ app.use("/api/board", boardRouter);
 app.use("/api/user", userRouter);
 app.use("/api/list", listRouter);
 app.use("/api/card", cardRouter);
+app.use("/api/conversation", conversationRouter);
+app.use("/api/message", messageRouter);
+app.use("/api/notification");
 
 // Listen
 app.listen(port, function () {

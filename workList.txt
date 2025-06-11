@@ -42,5 +42,24 @@ Thay đổi lại middleware cho chuẩn hơn
 làm thêm về xử lý trong task
 - card : làm về AddCheckListsToCard
 
-     
-    
+về nút chat trong tab board của FE
+khi bấm sẽ thực hiện nhiệm vụ
+
+usecase khi ấn nút chat trong tab board để vào conversation
+1. gửi request kiểm tra xem đã có conversation chưa (để tiết kiệm thì nên gửi tới endpoint getConversation)
+2. nếu có thì sẽ hiện ra tab chat OR gửi ra thông báo chưa có và hỏi bạn có muốn tạo mới không
+
+
+usecase: user mới được add vào board nhưng chưa add vào conversation
+1. user khi bấm chat now cũng gửi request tới server
+2. server check nhưng không thấy user thuộc conversation
+3. server báo về cho ui
+4. ui báo người dùng chưa tham gia vào board và có 2 nút join now or cancel.
+5. người dùng bấm join now
+6. ui gửi request tới server
+7. server đưa user vào hàng chờ.
+8. server gửi thông báo tới creator.
+9. creator bấm accept
+10. user được thêm vào conversation.
+
+usecase: creator thêm user đã add vào conversation

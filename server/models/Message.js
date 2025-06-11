@@ -1,21 +1,17 @@
-const mongoose = require("mongoose");
+/* models/message.js */
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-const Schema = mongoose.Schema;
+const MessageSchema = new Schema(
+    {
+        conversationId: { type: Schema.Types.ObjectId, ref: 'Conversation', required: true },
+        senderId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+        content: { type: String, required: true }
+    },
+    { timestamps: { createdAt: true, updatedAt: false } }  // chỉ cần createdAt
+);
 
-const MessageSchema = new Schema({
-    message_sender_id: {
-        type: Schema.Types.ObjectId,
-        ref: "User",
-        required: true,
-    },
-    message_content: {
-        type: String,
-        required: true,
-    },
-    created_at: {
-        type: Date,
-        default: Date.now,
-    },
-});
+// index ghép khoá giúp paging cực nhanh (mới ➜ cũ)
+MessageSchema.index({ conversationId: 1, _id: -1 });
 
-module.exports = mongoose.model("Message", MessageSchema);
+module.exports = mongoose.model('Message', MessageSchema);

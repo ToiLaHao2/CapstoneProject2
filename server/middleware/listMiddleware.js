@@ -4,7 +4,6 @@ const { VerifiedToken } = require("../utils/authHelpers");
 const { getTokenFromHeaders } = require("../utils/jwt/getToken");
 const logger = require("../utils/logger");
 const { sendError } = require("../utils/response");
-const { get } = require("mongoose");
 // create list
 async function validateCreateList(req, res, next) {
     const token = await getTokenFromHeaders(req);

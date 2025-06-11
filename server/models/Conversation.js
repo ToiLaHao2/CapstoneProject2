@@ -1,31 +1,26 @@
-const mongoose = require("mongoose");
+/* models/conversation.js */
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-const Schema = mongoose.Schema;
+const ConversationSchema = new Schema(
+    {
+        boardId: { type: Schema.Types.ObjectId, ref: 'Board', required: true },
+        title: { type: String, required: true },
+        participants: [{ type: Schema.Types.ObjectId, ref: 'User' }],   // danh sách thành viên
+        owner: { type: Schema.Types.ObjectId, ref: 'User', required: true },
 
-const ConversationSchema = new Schema({
-    conversation_title: {
-        type: String,
-        required: true,
-    },
-    conversation_participants: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "User",
-        },
-    ],
-    conversation_messages: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Message",
-        },
-    ],
-    conversation_avatar_url: {
-        type: String,
-    },
-    created_at: {
-        type: Date,
-        default: Date.now,
-    },
-});
+        // phục vụ hiển thị list conversation
+        lastMessageId: { type: Schema.Types.ObjectId, ref: 'Message' },
+        lastMessageAt: { type: Date },
 
-module.exports = mongoose.model("Conversation", ConversationSchema);
+        avatarUrl: { type: String }
+    },
+    { timestamps: true }   // tự sinh createdAt & updatedAt
+);
+
+// index để list & tìm kiếm nhanh
+ConversationSchema.index({ boardId: 1 });
+ConversationSchema.index({ participants: 1 });
+ConversationSchema.index({ lastMessageAt: -1 });
+
+module.exports = mongoose.model('Conversation', ConversationSchema);
