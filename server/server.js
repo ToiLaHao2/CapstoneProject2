@@ -38,7 +38,7 @@ app.use("/api/list", listRouter);
 app.use("/api/card", cardRouter);
 app.use("/api/conversation", conversationRouter);
 app.use("/api/message", messageRouter);
-app.use("/api/notification");
+//app.use("/api/notification");
 
 // Listen
 app.listen(port, function () {
