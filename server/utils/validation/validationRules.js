@@ -442,9 +442,24 @@ const validationRules = {
         checkMessage: "Get conversations by user",
         requiredFields: ["user_id", "checkMessage"],
     },
-    
+
     // message
-    
+    // load messages
+    loadMessages: {
+        checkMessage: "Load messages",
+        requiredFields: ["conversationId", "user_id", "beforeId", "checkMessage"],
+    },
+    // update message
+    updateMessage: {
+        checkMessage: "Update message",
+        requiredFields: ["messageId", "content", "user_id"]
+    },
+    // delete message
+    deleteMessage: {
+        checkMessage: "Delete message",
+        requiredFields: ["messageId", "user_id"]
+    }
+    // 
 };
 
 module.exports = { validationRules };

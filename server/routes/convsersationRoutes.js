@@ -14,6 +14,8 @@ const {
     validateRemoveParticipantFromConversation
 } = require('../middleware/conversationMiddleware');
 
+const { upload, validateUpload } = require("../middleware/uploadMiddleware");
+
 const {
     CreateConversation,
     AddMessageToConversation,

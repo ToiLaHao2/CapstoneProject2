@@ -39,7 +39,7 @@ function validator(ruleName) {
     };
 }
 
-// ------------------------------ CARD ---------------------------------------
+// ------------------------------ Conversation ---------------------------------------
 const validateCreateConversation = validator('createConversation');
 const validateAddMessageToConversation = validator('addMessageToConversation');
 const validateGetConversation = validator('getConversation');

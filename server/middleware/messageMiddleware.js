@@ -31,3 +31,16 @@ function validator(ruleName) {
     };
 }
 
+
+// message
+const validateLoadMessages = validator("loadMessages");
+const validateUpdateMessage = validator("updateMessage");
+const validateDeleteMessage = validator("deleteMessage");
+
+module.exports = {
+    validateLoadMessages,
+    validateUpdateMessage,
+    validateDeleteMessage
+}
+
+
