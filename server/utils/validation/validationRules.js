@@ -406,6 +406,18 @@ const validationRules = {
             "avatarUrl",
             "checkMessage",
         ],
+        fileSize: 5 * 1024 * 1024, // Giới hạn file tối đa 5MB
+        allowedMimeTypes: [
+            "image/jpeg",
+            "image/png",
+            "image/jpg",
+            "application/zip",
+            "application/x-rar-compressed",
+        ],
+        fileCategory: {
+            avatar: ["image/jpeg", "image/png", "image/jpg"],
+            compressed: ["application/zip", "application/x-rar-compressed"],
+        },
     },
     // addMessageToConversation
     addMessageToConversation: {

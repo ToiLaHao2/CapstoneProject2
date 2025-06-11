@@ -28,7 +28,7 @@ const {
 const conversationRouter = express.Router();
 
 // Create conversation
-conversationRouter.post('/createConversation', validateCreateConversation, CreateConversation);
+conversationRouter.post('/createConversation', upload.single("avatar"), validateCreateConversation, CreateConversation);
 
 // Get a single conversation
 conversationRouter.post('/getConversation', validateGetConversation, GetConversation);
