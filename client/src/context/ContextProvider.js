@@ -23,18 +23,21 @@ import { UserProvider } from "./UserContext";
 import { BoardProvider } from "./BoardContext";
 import { ListProvider } from "./ListContext";
 import { CardProvider } from "./CardContext";
+import { SocketProvider } from "./SocketContext";
 
 const ContextProvider = ({ children }) => {
     return (
-        <UserProvider>
-            <AuthProvider>
-                <BoardProvider>
-                    <ListProvider>
-                        <CardProvider>{children}</CardProvider>
-                    </ListProvider>
-                </BoardProvider>
-            </AuthProvider>
-        </UserProvider>
+        <SocketProvider>
+            <UserProvider>
+                <AuthProvider>
+                    <BoardProvider>
+                        <ListProvider>
+                            <CardProvider>{children}</CardProvider>
+                        </ListProvider>
+                    </BoardProvider>
+                </AuthProvider>
+            </UserProvider>
+        </SocketProvider>
     );
 };
 
