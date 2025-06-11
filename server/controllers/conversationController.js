@@ -33,7 +33,8 @@ function uniqObjectIds(arr = []) {
 --------------------------------------------------------------------------- */
 async function CreateConversation(req, res) {
     try {
-        const { boardId, title, participants , avatarUrl, user_id } = req.body;
+        const { boardId, title, participants , user_id } = req.body;
+        
 
         const [user, board] = await Promise.all([
             User.findById(user_id),
