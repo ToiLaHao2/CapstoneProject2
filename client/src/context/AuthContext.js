@@ -2,6 +2,7 @@ import React, { createContext, useState, useContext, useEffect } from "react";
 import publicAxios from "../api/publicAxios";
 import privateAxios from "../api/privateAxios";
 import { useUser } from "./UserContext"; // ✅ Import từ UserContext
+import { connectSocket, disconnectSocket } from "../socket/index";
 
 const AuthContext = createContext();
 
@@ -58,6 +59,8 @@ export const AuthProvider = ({ children }) => {
             setIsAuthenticated(true);
             saveToken(data.data.token);
 
+            connectSocket(data.data.token); // Kết nối socket với token
+
             const result = await getUserData();
             return result;
         } catch (error) {
@@ -70,6 +73,7 @@ export const AuthProvider = ({ children }) => {
         setToken(null);
         setIsAuthenticated(false);
         removeToken();
+        disconnectSocket();
     };
 
     const changePassword = async (
