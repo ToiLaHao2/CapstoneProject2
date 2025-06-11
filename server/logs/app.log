@@ -10133,3 +10133,8 @@
 [2025-06-04 16:25:51] INFO: Successfull checking data user for get user profile
 [2025-06-04 16:25:51] INFO: Successfull checking data user for get user profile
 [2025-06-04 16:26:26] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-11 14:03:11] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-11 14:25:05] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-11 14:25:18] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-11 14:26:03] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-11 14:26:43] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
