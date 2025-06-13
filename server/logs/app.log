@@ -10204,3 +10204,168 @@
 [2025-06-11 22:59:52] INFO: Successfull checking data user for get user profile
 [2025-06-11 22:59:52] INFO: Successfull checking data to get board by user id
 [2025-06-11 22:59:52] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:40:32] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-13 11:41:11] INFO: Successfull checking data user for login
+[2025-06-13 11:41:11] INFO: Compare hash complete
+[2025-06-13 11:41:11] INFO: Complete create token
+[2025-06-13 11:41:11] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:41:11] INFO: Successfull checking data to get board by user id
+[2025-06-13 11:41:13] INFO: Successfull checking data to get board by user id
+[2025-06-13 11:41:13] INFO: Successfull checking data to get board by user id
+[2025-06-13 11:41:13] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:41:13] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:42:11] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-13 11:42:15] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-13 11:42:35] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-13 11:42:52] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-13 11:58:01] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:58:01] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:58:01] INFO: Successfull checking data to get board by user id
+[2025-06-13 11:58:01] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:58:01] INFO: Successfull checking data to get board by user id
+[2025-06-13 11:58:01] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:58:02] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:58:02] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:58:06] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:58:06] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:58:06] INFO: Successfull checking data to get board by user id
+[2025-06-13 11:58:06] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:58:06] INFO: Successfull checking data to get board by user id
+[2025-06-13 11:58:06] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:58:06] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:58:07] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:59:37] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:59:37] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:59:37] INFO: Successfull checking data to get board by user id
+[2025-06-13 11:59:37] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:59:37] INFO: Successfull checking data to get board by user id
+[2025-06-13 11:59:37] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:59:38] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:59:38] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:59:38] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:59:38] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:59:38] INFO: Successfull checking data to get board by user id
+[2025-06-13 11:59:38] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:59:38] INFO: Successfull checking data to get board by user id
+[2025-06-13 11:59:38] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:59:38] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:59:39] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:59:58] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:59:58] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:59:58] INFO: Successfull checking data to get board by user id
+[2025-06-13 11:59:58] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:59:58] INFO: Successfull checking data to get board by user id
+[2025-06-13 11:59:58] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:59:59] INFO: Successfull checking data user for get user profile
+[2025-06-13 11:59:59] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:00:00] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:00:00] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:00:00] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:00:00] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:00:00] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:00:00] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:00:00] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:00:01] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:00:04] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:00:04] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:00:04] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:00:04] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:00:04] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:00:04] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:00:04] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:00:05] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:00:40] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:00:40] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:00:40] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:00:40] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:00:40] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:00:40] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:00:41] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:00:41] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:02:43] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:02:43] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:02:43] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:02:43] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:02:43] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:02:44] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:04:32] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:04:32] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:04:33] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:04:33] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:04:33] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:04:33] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:04:33] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:04:33] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:04:58] INFO: Successfull checking data user for login
+[2025-06-13 12:04:58] INFO: Compare hash complete
+[2025-06-13 12:04:58] INFO: Complete create token
+[2025-06-13 12:04:58] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:04:58] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:04:59] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:04:59] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:04:59] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:04:59] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:09:15] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:09:15] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:09:15] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:09:15] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:09:15] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:09:15] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:09:16] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:09:36] INFO: Successfull checking data user for login
+[2025-06-13 12:09:36] INFO: Compare hash complete
+[2025-06-13 12:09:36] INFO: Complete create token
+[2025-06-13 12:09:36] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:09:37] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:09:37] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:09:37] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:09:38] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:09:38] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:11:04] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-13 12:12:34] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-13 12:12:54] INFO: Successfull checking data user for login
+[2025-06-13 12:12:54] INFO: Compare hash complete
+[2025-06-13 12:12:54] INFO: Complete create token
+[2025-06-13 12:12:54] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:12:54] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:12:55] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:12:55] INFO: Successfull checking data to get board by user id
+[2025-06-13 12:12:55] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:12:55] INFO: Successfull checking data user for get user profile
+[2025-06-13 12:17:35] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-13 12:17:38] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-13 12:17:53] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-13 12:18:01] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-13 12:18:37] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-13 12:18:44] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-13 12:18:52] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-13 12:19:21] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-13 12:19:36] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-13 12:19:45] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-13 12:28:16] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-13 12:28:25] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-13 12:35:15] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-13 12:35:17] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-13 12:35:33] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-13 12:35:36] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-13 12:36:04] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-13 12:37:11] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-13 12:37:29] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-13 12:41:44] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:41:47] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-13 12:41:48] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:41:51] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:41:57] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-13 12:41:57] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:42:00] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:42:03] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:42:10] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:42:47] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-13 12:42:50] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:43:50] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-13 12:43:53] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:44:06] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:44:20] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:45:39] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:45:48] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:46:13] ERROR: Error verified token:  jwt expired

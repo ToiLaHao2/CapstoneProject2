@@ -15,6 +15,8 @@ const cardRouter = require("./routes/cardRoutes");
 const morgan = require("morgan");
 const conversationRouter = require("./routes/convsersationRoutes");
 const messageRouter = require("./routes/messageRoutes");
+const { VerifiedToken } = require("./utils/authHelpers");
+const { addUser, onlineUsers, removeUser } = require("./utils/onlineUser");
 
 dotenv.config();
 
@@ -52,10 +54,19 @@ app.use("/api/conversation", conversationRouter);
 app.use("/api/message", messageRouter);
 // app.use("/api/notification");
 
-io.on("connection", (socket) => {
+io.on("connection", async (socket) => {
     console.log("🔌 New client:", socket.id);
+    const getId = await VerifiedToken(socket.handshake.auth.token);
+    console.log("👤 User connected:", getId.id);
+
+    // thêm thông tin người dùng vào online users
+    addUser(getId.id, socket.id);
+
+    console.log("🗺️ Online users:", onlineUsers.get("68495e4d83ed810c6b1c33a8"));
 
     socket.on("disconnect", () => {
+        // xoá thông tin người dùng khỏi online users
+
         console.log("❌ Client disconnected:", socket.id);
     });
 });
