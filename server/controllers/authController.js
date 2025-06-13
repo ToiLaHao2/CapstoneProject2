@@ -6,6 +6,7 @@ const {
 } = require("../utils/authHelpers");
 const { sendSuccess, sendError } = require("../utils/response");
 const logger = require("../utils/logger");
+const { onlineUsers, removeUser } = require("../utils/onlineUser");
 
 async function Register(req, res) {
     const userRegist = req.body;
@@ -86,4 +87,12 @@ async function ChangePassword(req, res) {
     }
 }
 
-module.exports = { Register, Login, ChangePassword };
+async function Logout(req, res) {
+    // This function is not implemented yet
+    removeUser(req.user_id);
+    // show thông tin online users
+    // console.log(`Online users: ${onlineUsers.get(req.user_id)}`);
+    return sendSuccess(res, "Logout successful");
+}
+
+module.exports = { Register, Login, ChangePassword, Logout };

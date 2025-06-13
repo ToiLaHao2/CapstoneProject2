@@ -1,5 +1,5 @@
 // utils/onlineUsers.js
-let onlineUsers = new Map();        // userId → Set(socketId)
+const onlineUsers = new Map();        // userId → Set(socketId)
 
 /* Thêm socket cho user */
 function addUser(userId, socketId) {
@@ -9,11 +9,9 @@ function addUser(userId, socketId) {
 
 /* Xoá socket (khi disconnect) */
 // remove dựa trên socketId
-function removeUser(userId, socketId) {
-    const set = onlineUsers.get(userId);
-    if (!set) return;
-    set.delete(socketId);
-    if (set.size === 0) onlineUsers.delete(userId);     // user hoàn toàn offline
+function removeUser(userId) {
+    onlineUsers.delete(userId);
+    // user hoàn toàn offline
 }
 
 /* Lấy danh sách socket của user */

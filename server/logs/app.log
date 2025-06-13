@@ -10369,3 +10369,296 @@
 [2025-06-13 12:45:39] ERROR: Error verified token:  jwt expired
 [2025-06-13 12:45:48] ERROR: Error verified token:  jwt expired
 [2025-06-13 12:46:13] ERROR: Error verified token:  jwt expired
+[2025-06-13 15:02:54] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-13 15:03:50] INFO: Successfull checking data user for login
+[2025-06-13 15:03:51] INFO: Compare hash complete
+[2025-06-13 15:03:51] INFO: Complete create token
+[2025-06-13 15:03:51] INFO: Successfull checking data user for get user profile
+[2025-06-13 15:03:51] INFO: Successfull checking data to get board by user id
+[2025-06-13 15:04:01] INFO: Successfull checking data to get board by user id
+[2025-06-13 15:04:01] INFO: Successfull checking data user for get user profile
+[2025-06-13 15:04:01] INFO: Successfull checking data to get board by user id
+[2025-06-13 15:04:01] INFO: Successfull checking data user for get user profile
+[2025-06-13 15:43:53] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-13 15:44:08] WARN: No token provided
+[2025-06-13 15:44:08] WARN: No token provided
+[2025-06-13 15:44:08] WARN: No token provided
+[2025-06-13 15:44:08] WARN: No token provided
+[2025-06-13 15:44:09] WARN: No token provided
+[2025-06-13 15:44:09] WARN: No token provided
+[2025-06-13 15:44:09] WARN: No token provided
+[2025-06-13 15:44:09] WARN: No token provided
+[2025-06-13 15:44:09] WARN: No token provided
+[2025-06-13 15:44:09] WARN: No token provided
+[2025-06-13 15:44:09] WARN: No token provided
+[2025-06-13 15:44:09] WARN: No token provided
+[2025-06-13 15:44:09] WARN: No token provided
+[2025-06-13 15:44:09] WARN: No token provided
+[2025-06-13 15:44:09] WARN: No token provided
+[2025-06-13 15:44:09] WARN: No token provided
+[2025-06-13 15:44:10] WARN: No token provided
+[2025-06-13 15:44:10] WARN: No token provided
+[2025-06-13 15:44:10] WARN: No token provided
+[2025-06-13 15:44:10] WARN: No token provided
+[2025-06-13 15:44:10] WARN: No token provided
+[2025-06-13 15:44:10] WARN: No token provided
+[2025-06-13 15:44:10] WARN: No token provided
+[2025-06-13 15:44:10] WARN: No token provided
+[2025-06-13 15:44:10] WARN: No token provided
+[2025-06-13 15:44:10] WARN: No token provided
+[2025-06-13 15:44:10] WARN: No token provided
+[2025-06-13 15:44:10] WARN: No token provided
+[2025-06-13 15:44:10] WARN: No token provided
+[2025-06-13 15:44:10] WARN: No token provided
+[2025-06-13 15:44:11] WARN: No token provided
+[2025-06-13 15:44:11] WARN: No token provided
+[2025-06-13 15:44:11] WARN: No token provided
+[2025-06-13 15:44:11] WARN: No token provided
+[2025-06-13 15:44:11] WARN: No token provided
+[2025-06-13 15:44:11] WARN: No token provided
+[2025-06-13 15:44:11] WARN: No token provided
+[2025-06-13 15:44:11] WARN: No token provided
+[2025-06-13 15:44:11] WARN: No token provided
+[2025-06-13 15:44:11] WARN: No token provided
+[2025-06-13 15:44:11] WARN: No token provided
+[2025-06-13 15:44:11] WARN: No token provided
+[2025-06-13 15:44:11] WARN: No token provided
+[2025-06-13 15:44:11] WARN: No token provided
+[2025-06-13 15:44:12] WARN: No token provided
+[2025-06-13 15:44:12] WARN: No token provided
+[2025-06-13 15:44:12] WARN: No token provided
+[2025-06-13 15:44:12] WARN: No token provided
+[2025-06-13 15:44:12] WARN: No token provided
+[2025-06-13 15:44:12] WARN: No token provided
+[2025-06-13 15:44:12] WARN: No token provided
+[2025-06-13 15:44:12] WARN: No token provided
+[2025-06-13 15:44:12] WARN: No token provided
+[2025-06-13 15:44:12] WARN: No token provided
+[2025-06-13 15:44:13] WARN: No token provided
+[2025-06-13 15:44:13] WARN: No token provided
+[2025-06-13 15:44:13] WARN: No token provided
+[2025-06-13 15:44:13] WARN: No token provided
+[2025-06-13 15:44:13] WARN: No token provided
+[2025-06-13 15:44:13] WARN: No token provided
+[2025-06-13 15:44:13] WARN: No token provided
+[2025-06-13 15:44:13] WARN: No token provided
+[2025-06-13 15:44:13] WARN: No token provided
+[2025-06-13 15:44:13] WARN: No token provided
+[2025-06-13 15:44:13] WARN: No token provided
+[2025-06-13 15:44:13] WARN: No token provided
+[2025-06-13 15:44:14] WARN: No token provided
+[2025-06-13 15:44:14] WARN: No token provided
+[2025-06-13 15:44:14] WARN: No token provided
+[2025-06-13 15:44:14] WARN: No token provided
+[2025-06-13 15:44:14] WARN: No token provided
+[2025-06-13 15:44:14] WARN: No token provided
+[2025-06-13 15:44:14] WARN: No token provided
+[2025-06-13 15:44:14] WARN: No token provided
+[2025-06-13 15:44:14] WARN: No token provided
+[2025-06-13 15:44:14] WARN: No token provided
+[2025-06-13 15:44:14] WARN: No token provided
+[2025-06-13 15:44:14] WARN: No token provided
+[2025-06-13 15:44:14] WARN: No token provided
+[2025-06-13 15:44:14] WARN: No token provided
+[2025-06-13 15:44:15] WARN: No token provided
+[2025-06-13 15:44:15] WARN: No token provided
+[2025-06-13 15:44:15] WARN: No token provided
+[2025-06-13 15:44:15] WARN: No token provided
+[2025-06-13 15:44:15] WARN: No token provided
+[2025-06-13 15:44:15] WARN: No token provided
+[2025-06-13 15:44:15] WARN: No token provided
+[2025-06-13 15:44:15] WARN: No token provided
+[2025-06-13 15:44:15] WARN: No token provided
+[2025-06-13 15:44:15] WARN: No token provided
+[2025-06-13 15:44:15] WARN: No token provided
+[2025-06-13 15:44:15] WARN: No token provided
+[2025-06-13 15:44:16] WARN: No token provided
+[2025-06-13 15:44:16] WARN: No token provided
+[2025-06-13 15:44:16] WARN: No token provided
+[2025-06-13 15:44:16] WARN: No token provided
+[2025-06-13 15:44:16] WARN: No token provided
+[2025-06-13 15:44:16] WARN: No token provided
+[2025-06-13 15:44:16] WARN: No token provided
+[2025-06-13 15:44:16] WARN: No token provided
+[2025-06-13 15:44:16] WARN: No token provided
+[2025-06-13 15:44:16] WARN: No token provided
+[2025-06-13 15:44:17] WARN: No token provided
+[2025-06-13 15:44:17] WARN: No token provided
+[2025-06-13 15:44:17] WARN: No token provided
+[2025-06-13 15:44:17] WARN: No token provided
+[2025-06-13 15:44:17] WARN: No token provided
+[2025-06-13 15:44:17] WARN: No token provided
+[2025-06-13 15:44:17] WARN: No token provided
+[2025-06-13 15:44:17] WARN: No token provided
+[2025-06-13 15:44:17] WARN: No token provided
+[2025-06-13 15:44:17] WARN: No token provided
+[2025-06-13 15:44:17] WARN: No token provided
+[2025-06-13 15:44:17] WARN: No token provided
+[2025-06-13 15:44:17] WARN: No token provided
+[2025-06-13 15:44:17] WARN: No token provided
+[2025-06-13 15:44:18] WARN: No token provided
+[2025-06-13 15:44:18] WARN: No token provided
+[2025-06-13 15:44:18] WARN: No token provided
+[2025-06-13 15:44:18] WARN: No token provided
+[2025-06-13 15:44:18] WARN: No token provided
+[2025-06-13 15:44:18] WARN: No token provided
+[2025-06-13 15:44:18] WARN: No token provided
+[2025-06-13 15:44:18] WARN: No token provided
+[2025-06-13 15:44:18] WARN: No token provided
+[2025-06-13 15:44:18] WARN: No token provided
+[2025-06-13 15:44:19] WARN: No token provided
+[2025-06-13 15:44:19] WARN: No token provided
+[2025-06-13 15:44:19] WARN: No token provided
+[2025-06-13 15:44:19] WARN: No token provided
+[2025-06-13 15:44:19] WARN: No token provided
+[2025-06-13 15:44:19] WARN: No token provided
+[2025-06-13 15:44:19] WARN: No token provided
+[2025-06-13 15:44:19] WARN: No token provided
+[2025-06-13 15:44:19] WARN: No token provided
+[2025-06-13 15:44:19] WARN: No token provided
+[2025-06-13 15:44:19] WARN: No token provided
+[2025-06-13 15:44:19] WARN: No token provided
+[2025-06-13 15:44:19] WARN: No token provided
+[2025-06-13 15:44:19] WARN: No token provided
+[2025-06-13 15:44:20] WARN: No token provided
+[2025-06-13 15:44:20] WARN: No token provided
+[2025-06-13 15:44:20] WARN: No token provided
+[2025-06-13 15:44:20] WARN: No token provided
+[2025-06-13 15:44:20] WARN: No token provided
+[2025-06-13 15:44:20] WARN: No token provided
+[2025-06-13 15:44:20] WARN: No token provided
+[2025-06-13 15:44:20] WARN: No token provided
+[2025-06-13 15:44:20] WARN: No token provided
+[2025-06-13 15:44:20] WARN: No token provided
+[2025-06-13 15:44:20] WARN: No token provided
+[2025-06-13 15:44:20] WARN: No token provided
+[2025-06-13 15:44:20] WARN: No token provided
+[2025-06-13 15:44:20] WARN: No token provided
+[2025-06-13 15:44:21] WARN: No token provided
+[2025-06-13 15:44:21] WARN: No token provided
+[2025-06-13 15:44:21] WARN: No token provided
+[2025-06-13 15:44:21] WARN: No token provided
+[2025-06-13 15:44:21] WARN: No token provided
+[2025-06-13 15:44:21] WARN: No token provided
+[2025-06-13 15:44:21] WARN: No token provided
+[2025-06-13 15:44:21] WARN: No token provided
+[2025-06-13 15:44:21] WARN: No token provided
+[2025-06-13 15:44:21] WARN: No token provided
+[2025-06-13 15:44:21] WARN: No token provided
+[2025-06-13 15:44:21] WARN: No token provided
+[2025-06-13 15:44:22] WARN: No token provided
+[2025-06-13 15:44:22] WARN: No token provided
+[2025-06-13 15:44:22] WARN: No token provided
+[2025-06-13 15:44:22] WARN: No token provided
+[2025-06-13 15:44:22] WARN: No token provided
+[2025-06-13 15:44:22] WARN: No token provided
+[2025-06-13 15:44:22] WARN: No token provided
+[2025-06-13 15:44:22] WARN: No token provided
+[2025-06-13 15:44:22] WARN: No token provided
+[2025-06-13 15:44:22] WARN: No token provided
+[2025-06-13 15:44:22] WARN: No token provided
+[2025-06-13 15:44:22] WARN: No token provided
+[2025-06-13 15:44:23] WARN: No token provided
+[2025-06-13 15:44:23] WARN: No token provided
+[2025-06-13 15:44:23] WARN: No token provided
+[2025-06-13 15:44:23] WARN: No token provided
+[2025-06-13 15:44:23] WARN: No token provided
+[2025-06-13 15:44:23] WARN: No token provided
+[2025-06-13 15:44:23] WARN: No token provided
+[2025-06-13 15:44:23] WARN: No token provided
+[2025-06-13 15:44:23] WARN: No token provided
+[2025-06-13 15:44:23] WARN: No token provided
+[2025-06-13 15:44:23] WARN: No token provided
+[2025-06-13 15:44:23] WARN: No token provided
+[2025-06-13 15:44:24] WARN: No token provided
+[2025-06-13 15:44:24] WARN: No token provided
+[2025-06-13 15:44:24] WARN: No token provided
+[2025-06-13 15:44:24] WARN: No token provided
+[2025-06-13 15:44:24] WARN: No token provided
+[2025-06-13 15:44:24] WARN: No token provided
+[2025-06-13 15:44:24] WARN: No token provided
+[2025-06-13 15:44:24] WARN: No token provided
+[2025-06-13 15:44:25] WARN: No token provided
+[2025-06-13 15:44:25] WARN: No token provided
+[2025-06-13 15:44:25] WARN: No token provided
+[2025-06-13 15:44:25] WARN: No token provided
+[2025-06-13 15:44:25] WARN: No token provided
+[2025-06-13 15:44:25] WARN: No token provided
+[2025-06-13 15:44:25] WARN: No token provided
+[2025-06-13 15:44:25] WARN: No token provided
+[2025-06-13 15:44:25] WARN: No token provided
+[2025-06-13 15:44:25] WARN: No token provided
+[2025-06-13 15:44:26] WARN: No token provided
+[2025-06-13 15:44:26] WARN: No token provided
+[2025-06-13 15:44:26] WARN: No token provided
+[2025-06-13 15:44:26] WARN: No token provided
+[2025-06-13 15:44:26] WARN: No token provided
+[2025-06-13 15:44:26] WARN: No token provided
+[2025-06-13 15:44:26] WARN: No token provided
+[2025-06-13 15:44:26] WARN: No token provided
+[2025-06-13 15:44:27] WARN: No token provided
+[2025-06-13 15:44:27] WARN: No token provided
+[2025-06-13 15:44:27] WARN: No token provided
+[2025-06-13 15:44:27] WARN: No token provided
+[2025-06-13 15:44:27] WARN: No token provided
+[2025-06-13 15:44:27] WARN: No token provided
+[2025-06-13 15:44:27] WARN: No token provided
+[2025-06-13 15:44:27] WARN: No token provided
+[2025-06-13 15:44:27] WARN: No token provided
+[2025-06-13 15:44:27] WARN: No token provided
+[2025-06-13 15:44:28] WARN: No token provided
+[2025-06-13 15:44:28] WARN: No token provided
+[2025-06-13 15:44:28] WARN: No token provided
+[2025-06-13 15:44:28] WARN: No token provided
+[2025-06-13 15:44:28] WARN: No token provided
+[2025-06-13 15:44:28] WARN: No token provided
+[2025-06-13 15:44:28] WARN: No token provided
+[2025-06-13 15:44:28] WARN: No token provided
+[2025-06-13 15:44:28] WARN: No token provided
+[2025-06-13 15:44:28] WARN: No token provided
+[2025-06-13 15:44:29] WARN: No token provided
+[2025-06-13 15:44:29] WARN: No token provided
+[2025-06-13 15:52:23] INFO: Successfull checking data user for login
+[2025-06-13 15:52:23] INFO: Compare hash complete
+[2025-06-13 15:52:23] INFO: Complete create token
+[2025-06-13 15:52:23] INFO: Successfull checking data user for get user profile
+[2025-06-13 15:52:23] INFO: Successfull checking data to get board by user id
+[2025-06-13 15:52:30] INFO: Successfull checking data to get board by user id
+[2025-06-13 15:52:30] INFO: Successfull checking data user for get user profile
+[2025-06-13 15:52:30] INFO: Successfull checking data to get board by user id
+[2025-06-13 15:52:30] INFO: Successfull checking data user for get user profile
+[2025-06-13 15:53:23] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-13 15:53:27] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-13 15:53:33] INFO: Successfull checking data user for login
+[2025-06-13 15:53:33] INFO: Compare hash complete
+[2025-06-13 15:53:33] INFO: Complete create token
+[2025-06-13 15:53:33] INFO: Successfull checking data user for get user profile
+[2025-06-13 15:53:34] INFO: Successfull checking data to get board by user id
+[2025-06-13 15:53:36] INFO: Successfull checking data to get board by user id
+[2025-06-13 15:53:36] INFO: Successfull checking data to get board by user id
+[2025-06-13 15:53:36] INFO: Successfull checking data user for get user profile
+[2025-06-13 15:53:36] INFO: Successfull checking data user for get user profile
+[2025-06-13 15:54:29] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-13 15:54:36] INFO: Successfull checking data user for login
+[2025-06-13 15:54:36] INFO: Compare hash complete
+[2025-06-13 15:54:36] INFO: Complete create token
+[2025-06-13 15:54:36] INFO: Successfull checking data user for get user profile
+[2025-06-13 15:54:37] INFO: Successfull checking data to get board by user id
+[2025-06-13 15:54:38] INFO: Successfull checking data to get board by user id
+[2025-06-13 15:54:38] INFO: Successfull checking data to get board by user id
+[2025-06-13 15:54:38] INFO: Successfull checking data user for get user profile
+[2025-06-13 15:54:38] INFO: Successfull checking data user for get user profile
+[2025-06-13 15:54:58] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-13 15:55:00] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-13 15:55:06] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-13 15:55:10] INFO: Successfull checking data user for login
+[2025-06-13 15:55:10] INFO: Compare hash complete
+[2025-06-13 15:55:10] INFO: Complete create token
+[2025-06-13 15:55:10] INFO: Successfull checking data user for get user profile
+[2025-06-13 15:55:10] INFO: Successfull checking data to get board by user id
+[2025-06-13 15:55:11] INFO: Successfull checking data to get board by user id
+[2025-06-13 15:55:11] INFO: Successfull checking data to get board by user id
+[2025-06-13 15:55:11] INFO: Successfull checking data user for get user profile
+[2025-06-13 15:55:11] INFO: Successfull checking data user for get user profile
+[2025-06-13 15:55:24] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-13 16:03:30] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net

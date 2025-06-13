@@ -60,7 +60,17 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
-    const logout = () => {
+    const logout = async () => {
+        // gửi thông tin logout lên server
+        try {
+            const response = await privateAxios.post("/auth/logout");
+            if (response.status !== 200) {
+                console.error("Logout failed:", response.data);
+                return;
+            }
+        } catch (error) {
+            console.error("Logout error:", error);
+        }
         setToken(null);              // 👉 điều này sẽ khiến SocketProvider tự disconnect
         setIsAuthenticated(false);
         removeToken();
@@ -88,7 +98,9 @@ export const AuthProvider = ({ children }) => {
             setIsAuthenticated(true);
             getUserData();          // load profile sau refresh
         } else {
-            logout();               // xoá mọi thứ nếu không có token
+            setToken(null);              // 👉 điều này sẽ khiến SocketProvider tự disconnect
+            setIsAuthenticated(false);
+            removeToken();              // xoá mọi thứ nếu không có token
         }
         setLoading(false);
     }, []);

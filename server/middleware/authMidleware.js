@@ -43,7 +43,7 @@ async function validationChangePassword(req, res, next) {
     const token = await getTokenFromHeaders(req);
     const checkToken = await VerifiedToken(token);
     if (!checkToken) {
-        return res.status(401).json({ error: "Invalid token" });
+        return sendError(res, 401, "Invalid token");
     }
     const userRequestChangePassword = req.body;
     const rules = validationRules["changePassword"];
@@ -64,4 +64,14 @@ async function validationChangePassword(req, res, next) {
     }
 }
 
-module.exports = { validateRegister, validateLogin, validationChangePassword };
+async function validateLogout(req, res, next) {
+    const token = await getTokenFromHeaders(req);
+    const checkToken = await VerifiedToken(token);
+    if (!checkToken) {
+        return sendError(res, 401, "Invalid token");
+    }
+    req.user_id = checkToken.id;
+    next();
+}
+
+module.exports = { validateRegister, validateLogin, validationChangePassword, validateLogout };
