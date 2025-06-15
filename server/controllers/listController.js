@@ -29,6 +29,7 @@ async function CreateList(req, res) {
         });
         await list.save();
         await board.save();
+        // notify các người dùng trong board về việc tạo list mới
         return sendSuccess(res, "Successful create list", list);
     } catch (error) {
         logger.error(error);
@@ -86,6 +87,7 @@ async function UpdateList(req, res) {
         const list = await List.findByIdAndUpdate(list_id, {
             list_title: list_title,
         });
+        // notify các người dùng trong board về việc cập nhật list
         return sendSuccess(res, 200, list, "UpdateList");
     } catch (error) {
         logger.error(error);
@@ -127,6 +129,7 @@ async function DeleteList(req, res) {
         // board.updated_by = user_id;
         // board.updated_at = new Date();
         await board.save();
+        // notify các người dùng trong board về việc xóa list
         return sendSuccess(res, "List deleted successfully");
     } catch (error) {
         logger.error(error);

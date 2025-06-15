@@ -41,6 +41,7 @@ async function CreateBoard(req, res) {
                 }
             }
         }
+        // notify các user đã được thêm vào board từ đầu nếu có
         logger.info("Successfull create board");
         return sendSuccess(res, "Create board success", newBoard._id);
     } catch (error) {
@@ -165,6 +166,7 @@ async function UpdateBoard(req, res) {
 
         // Lưu thay đổi vào CSDL
         const updatedBoard = await board.save();
+        // notyfy các thành viên về sự thay đổi của bảng
 
         // Trả về thành công
         return sendSuccess(res, "Board updated successfully", updatedBoard);
@@ -192,6 +194,8 @@ async function DeleteBoard(req, res) {
             });
         }
 
+        // lấy danh sách các thành viên
+
         // Xóa bảng
         const deleteResult = await deleteBoard(board_id);
         if (deleteResult.message !== "OK") {
@@ -199,6 +203,8 @@ async function DeleteBoard(req, res) {
                 details: deleteResult.message,
             });
         }
+
+        // notify các thành viên về việc xóa bảng
         return sendSuccess(res, "Board deleted successfully", {
             board_id: board_id,
         });
@@ -258,6 +264,7 @@ async function AddMemberToBoard(req, res) {
         const updatedBoard = await board.save();
         await member.save();
         // Trả về phản hồi thành công
+        // notify các thành viên về việc thêm thành viên mới
         return sendSuccess(res, "Member added successfully", updatedBoard);
     } catch (error) {
         logger.error(`Error with AddMemberToBoard: ${error}`);
@@ -309,6 +316,7 @@ async function RemoveMemberFromBoard(req, res) {
         );
         const updatedBoard = await board.save();
         await member.save();
+        // notify các thành viên về việc xóa thành viên
         // Trả về phản hồi thành công
         return sendSuccess(res, "Member removed successfully", updatedBoard);
     } catch (error) {
@@ -363,6 +371,7 @@ async function UpdateMemberRole(req, res) {
         // Lưu thay đổi vào CSDL
         const updatedBoard = await board.save();
         // Trả về phản hồi thành công
+        // notify các thành viên về việc cập nhật vai trò của thành viên
         return sendSuccess(
             res,
             "Member role updated successfully",
@@ -435,6 +444,7 @@ async function UpdatePrivacy(req, res) {
         // Lưu thay đổi vào CSDL
         const updatedBoard = await board.save();
         // Trả về phản hồi thành công
+        // notify các thành viên về việc cập nhật quyền riêng tư của bảng
         return sendSuccess(res, "Privacy updated successfully", updatedBoard);
     } catch (error) {
         logger.error(`Error with UpdatePrivacy: ${error}`);
@@ -515,6 +525,7 @@ async function AddListToBoard(req, res) {
             list_id,
         });
         const updatedBoard = await board.save();
+        // notify các thành viên về việc thêm list mới
         return sendSuccess(res, "List added successfully", updatedBoard);
     } catch (error) {
         logger.error(`Error with AddListToBoard: ${error}`);

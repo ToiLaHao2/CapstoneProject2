@@ -7,6 +7,7 @@
 const Notification = require('../models/Notification');
 const User = require('../models/User');
 const logger = require('../utils/logger');
+const { onlineUsers } = require('../utils/onlineUser');
 const { sendError, sendSuccess } = require('../utils/response');
 
 /* ---------------------------------------------------------------------------
@@ -30,7 +31,13 @@ async function notify({ senderId, receiverIds, title, message, reference, io }) 
         // emit realtime event (optional)
         if (io) {
             receiverIds.forEach(uid => {
-                io.to(String(uid)).emit('newNotification', noti);
+                // kiểm tra xem người dùng có đang online không
+                if (onlineUsers.has(uid)) {
+                    // lấy socket của người dùng
+                    const user_socket_id = onlineUsers.get(uid);
+                    // gửi thông báo đến người dùng
+                    io.to(user_socket_id).emit('newNotification', noti)
+                }
             });
         }
 
@@ -98,7 +105,7 @@ async function MarkAllRead(req, res) {
             { $set: { 'notification_receiver_ids.$[elem].is_read': true } },
             { arrayFilters: [{ 'elem.receiver_id': user_id, 'elem.is_read': false }] }
         );
-s
+        s
         return sendSuccess(res, 200, 'All notifications marked as read');
     } catch (err) {
         logger.error('MarkAllRead:', err);

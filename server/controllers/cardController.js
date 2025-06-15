@@ -54,6 +54,7 @@ async function CreateCard(req, res) {
             card_id: card._id,
         });
         await list.save();
+        // notify các thành viên về viêc tạo card mới
         return sendSuccess(res, 201, card);
     } catch (error) {
         logger.error(error.message);
@@ -182,7 +183,7 @@ async function UpdateCard(req, res) {
         card.updated_at = Date.now();
         card.updated_by = user_id;
         const updatedCard = await card.save();
-
+        // notify các thành viên card và owner board về việc cập nhật card
         return sendSuccess(res, "Card updated successfully", updatedCard);
     } catch (error) {
         logger.error(error.message);
@@ -227,6 +228,7 @@ async function DeleteCard(req, res) {
         if (!cardInList) {
             return sendError(res, 403, "Card does not belong to the list");
         }
+        // lấy danh sach assignees của card
         // xóa card 
         const cardDeleteResult = await deleteCard(card_id);
         if (cardDeleteResult.message !== "OK") {
@@ -237,6 +239,7 @@ async function DeleteCard(req, res) {
             (card) => String(card.card_id) !== card_id
         );
         await list.save();
+        // notify các thành viên card và owner board về việc xóa card
         return sendSuccess(res, "Card deleted successfully");
     } catch (error) {
         logger.error(error.message);
@@ -453,6 +456,7 @@ async function AssignUserToCard(req, res) {
         // add assignees
         card.card_assignees.push({ card_assignee_id: assign_user_id });
         await card.save();
+        // notify các thành viên card và owner board về việc gán user vào card
         sendSuccess(res, "Succesfull assign user to card");
     } catch (error) {
         logger.error(error.message);
@@ -503,6 +507,7 @@ async function RemoveUserFromCard(req, res) {
             (assignee) => String(assignee.card_assignee_id) !== remove_user_id
         );
         card.save();
+        // notify các thành viên card và owner board và user bị remove về việc gỡ user khỏi card
         return sendSuccess(res, "Success remove user from card");
     } catch (error) {
         logger.error(error);
