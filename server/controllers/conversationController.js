@@ -10,6 +10,9 @@ const User = require('../models/User');
 const logger = require('../utils/logger');
 const { sendError, sendSuccess } = require('../utils/response');
 const cloudinary = require("../configs/cloudinaryConfig");
+const { notify } = require("../controllers/notificationController");
+const { onlineUsers } = require('../utils/onlineUser');
+const { getIO } = require('../sockets/index');
 
 /* ---------------------------------------------------------------------------
    Helpers
@@ -75,7 +78,26 @@ async function CreateConversation(req, res) {
             owner: board.created_by,
             avatarUrl
         });
+        // gửi thông báo đến tất cả người dùng trong cuộc trò chuyện
+        const receiverIds = participantIds.filter(id => String(id) !== String(user_id));
+        const CreateConversationNotification = await notify({
+            senderId: user_id,
+            receiverIds,
+            title: 'New Conversation Created',
+            message: `You have been added to a new conversation: ${title}`,
+            reference: conversation._id.toString(),
+        });
+        if (CreateConversationNotification !== "OK") {
+            logger.error('CreateConversation: Failed to send notification');
+        }
 
+        // gửi thông tin conversation đến tất cả người dùng trong cuộc trò chuyện qua socket.io
+        const io = getIO();
+        for (const participantId of receiverIds) {
+            if (onlineUsers.has(participantId)) {
+                io.to(onlineUsers.get(participantId)).emit('conversation:created', conversation);
+            }
+        }
         logger.info(`Conversation created ${conversation._id}`);
         return sendSuccess(res, 201, 'Conversation created', conversation);
     } catch (err) {
@@ -113,8 +135,28 @@ async function AddMessageToConversation(req, res) {
         conv.lastMessageAt = msg.createdAt;
         await conv.save();
 
-        const io = req.app.get('io');
-        if (io) io.to(conversationId).emit('newMessage', msg);
+        // gửi thông tin message đến tất cả người dùng trong cuộc trò chuyện qua socket.io
+        const io = getIO();
+        const receiverIds = conv.participants.filter(id => String(id) !== String(user_id));
+        for (const receiverId of receiverIds) {
+            if (onlineUsers.has(receiverId)) {
+                io.to(onlineUsers.get(receiverId)).emit('message:added', {
+                    conversationId,
+                    message: msg
+                });
+            }
+        }
+        // gửi thông báo đến tất cả người dùng trong cuộc trò chuyện có tin nhắn mới
+        const addMessageNotification = await notify({
+            senderId: user_id,
+            receiverIds,
+            title: 'New Message',
+            message: `You have a new message in conversation: ${conv.title || 'No title'}`,
+            reference: conversationId,
+        });
+        if (addMessageNotification !== "OK") {
+            logger.error('AddMessageToConversation: Failed to send notification');
+        }
 
         logger.info(`Message ${msg._id} -> Conversation ${conversationId}`);
         return sendSuccess(res, 201, 'Message created', msg);
@@ -163,6 +205,8 @@ async function AddParticipantToConversation(req, res) {
         if (!conv) return sendError(res, 404, 'Conversation not found');
         if (!board) return sendError(res, 404, 'Board not found');
 
+        const participantIds = conv.participants.map(p => String(p._id || p));
+
         if (!conv.participants.some(id => String(id) === String(user_id))) {
             return sendError(res, 401, 'Requester not in conversation');
         }
@@ -177,6 +221,16 @@ async function AddParticipantToConversation(req, res) {
 
         conv.participants.push(user_add_id);
         await conv.save();
+        // gửi thông tin về người dùng mới được thêm vào cuộc trò chuyện
+        const io = getIO();
+        for (const participantId of participantIds) {
+            if (onlineUsers.has(participantId)) {
+                io.to(onlineUsers.get(participantId)).emit('participant:added', {
+                    conversationId,
+                    userId: user_add_id
+                });
+            }
+        }
 
         logger.info(`AddParticipant ${user_add_id} -> Conversation ${conversationId}`);
         return sendSuccess(res, 200, 'Participant added');
@@ -200,12 +254,25 @@ async function RemoveParticipantFromConversation(req, res) {
             return sendError(res, 401, 'Only owner can remove');
         }
 
+        const participantIds = conv.participants.map(p => String(p._id || p));
+
         if (!conv.participants.some(id => String(id) === String(user_remove_id))) {
             return sendError(res, 404, 'User not in conversation');
         }
 
         conv.participants.pull(user_remove_id);
         await conv.save();
+
+        // gửi thông tin về người dùng bị xóa khỏi cuộc trò chuyện
+        const io = getIO();
+        for (const participantId of participantIds) {
+            if (onlineUsers.has(participantId)) {
+                io.to(onlineUsers.get(participantId)).emit('participant:removed', {
+                    conversationId,
+                    userId: user_remove_id
+                });
+            }
+        }
 
         logger.info(`RemoveParticipant ${user_remove_id} <- Conversation ${conversationId}`);
         return sendSuccess(res, 200, 'Participant removed');

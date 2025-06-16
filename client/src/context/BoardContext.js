@@ -1,12 +1,13 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useContext, useEffect } from "react";
 import privateAxios from "../api/privateAxios";
-import { useUser } from "./UserContext";
+import { useSocket } from "./SocketContext";
 
 const BoardContext = createContext();
 
 export const BoardProvider = ({ children }) => {
     const [boards, setBoards] = useState([]);
-    const { user } = useUser();
+    const { socket, connected } = useSocket();
+
 
     // Gọi API để lấy danh sách bảng ngay sau khi đăng nhập
     const getAllBoardsByUserId = async () => {
@@ -309,6 +310,74 @@ export const BoardProvider = ({ children }) => {
     };
 
     //end-mei
+
+    useEffect(() => {
+        if (!connected) return;
+
+        /* ---------- Board được tạo (creator tab khác hoặc collaborator) */
+        const onCreated = ({ board }) => {
+            setBoards((prev) =>
+                prev.some((b) => String(b._id) === String(board._id))
+                    ? prev
+                    : [...prev, board]
+            );
+        };
+
+        /* ---------- Board được cập-nhật (tiêu đề, privacy …) ----------- */
+        const onUpdated = ({ patch, reference }) => {
+            setBoards((prev) =>
+                prev.map((b) =>
+                    String(b._id) === String(reference.id) ? { ...b, ...patch } : b
+                )
+            );
+        };
+
+        /* ---------- Board bị xoá --------------------------------------- */
+        // const onDeleted = ({ reference }) => {
+        //     setBoards((prev) =>
+        //         prev.filter((b) => String(b._id) !== String(reference.id))
+        //     );
+        //     // Nếu đang đứng trong board vừa bị xoá → về dashboard
+        //     if (window.location.pathname.includes(reference.id))
+        //         navigate("/dashboard");
+        // };
+
+        /* ---------- Notification (khi collaborator được add) ----------- */
+        const onNotification = async (noti) => {
+            const ref = noti.notification_reference;
+            if (ref?.type !== "BOARD") return;
+
+            const already = boards.some(
+                (b) => String(b._id) === String(ref.id)
+            );
+            if (already) return;
+
+            // REST lấy board đầy đủ
+            try {
+                const { data } = await privateAxios.post("/board/getBoardById", {
+                    board_id: ref.id,
+                    checkMessage: "Get board by id",
+                });
+                if (data.success) {
+                    setBoards((prev) => [...prev, data.data]);
+                }
+            } catch (err) {
+                console.error("Fetch board error", err);
+            }
+        };
+
+        socket.on("board:created", onCreated);
+        socket.on("board:updated", onUpdated);
+        // socket.on("board:deleted", onDeleted);
+        socket.on("newNotification", onNotification);
+
+        return () => {
+            socket.off("board:created", onCreated);
+            socket.off("board:updated", onUpdated);
+            // socket.off("board:deleted", onDeleted);
+            socket.off("newNotification", onNotification);
+        };
+    }, [connected, socket, boards]);
 
     return (
         <BoardContext.Provider

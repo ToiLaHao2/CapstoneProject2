@@ -63,3 +63,8 @@ usecase: user mới được add vào board nhưng chưa add vào conversation
 10. user được thêm vào conversation.
 
 usecase: creator thêm user đã add vào conversation
+
+
+[2025-06-17 00:00:02] ERROR: Failed to notify collaborators for new member in board 68504d8b5b3b3f9bbec8baa6
+[2025-06-17 00:00:02] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('68504d8b5b3b3f9bbec8baa6') }" (type Object) at path "notification_reference"
+[2025-06-17 00:00:02] ERROR: Failed to notify new member for board 68504d8b5b3b3f9bbec8baa6

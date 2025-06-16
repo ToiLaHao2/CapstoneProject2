@@ -2,7 +2,9 @@ const Board = require("../models/Board");
 const Card = require("../models/Card");
 const List = require("../models/List");
 const User = require("../models/User");
+const { getIO } = require("../sockets");
 const { deleteList } = require("../utils/dbHelper");
+const { onlineUsers } = require("../utils/onlineUser");
 const { sendError, sendSuccess } = require("../utils/response");
 
 async function CreateList(req, res) {
@@ -30,6 +32,21 @@ async function CreateList(req, res) {
         await list.save();
         await board.save();
         // notify các người dùng trong board về việc tạo list mới
+        // gửi thông tin list mới cho tất cả người dùng trong board
+        const collaborators = board.board_collaborators.map(
+            (collaborator) => collaborator.board_collaborator_id
+        );
+        collaborators.push(String(board.created_by)); // thêm người tạo board vào danh sách
+        const io = getIO();
+        for (const collaboratorId of collaborators) {
+            if (onlineUsers.has(collaboratorId)) {
+                const userSocketId = onlineUsers.get(collaboratorId);
+                io.to(userSocketId).emit("list:created", {
+                    list: list,
+                    board_id: board_id,
+                });
+            }
+        }
         return sendSuccess(res, "Successful create list", list);
     } catch (error) {
         logger.error(error);
@@ -88,6 +105,21 @@ async function UpdateList(req, res) {
             list_title: list_title,
         });
         // notify các người dùng trong board về việc cập nhật list
+        // gửi thông tin list đã cập nhật cho tất cả người dùng trong board
+        const collaborators = board.board_collaborators.map(
+            (collaborator) => collaborator.board_collaborator_id
+        );
+        collaborators.push(String(board.created_by)); // thêm người tạo board vào danh sách
+        const io = getIO();
+        for (const collaboratorId of collaborators) {
+            if (onlineUsers.has(collaboratorId)) {
+                const userSocketId = onlineUsers.get(collaboratorId);
+                io.to(userSocketId).emit("list:updated", {
+                    list: list,
+                    board_id: board_id,
+                });
+            }
+        }
         return sendSuccess(res, 200, list, "UpdateList");
     } catch (error) {
         logger.error(error);
@@ -130,6 +162,21 @@ async function DeleteList(req, res) {
         // board.updated_at = new Date();
         await board.save();
         // notify các người dùng trong board về việc xóa list
+        // gửi thông tin list đã xóa cho tất cả người dùng trong board
+        const collaborators = board.board_collaborators.map(
+            (collaborator) => collaborator.board_collaborator_id
+        );
+        collaborators.push(String(board.created_by)); // thêm người tạo board vào danh sách
+        const io = getIO();
+        for (const collaboratorId of collaborators) {
+            if (onlineUsers.has(collaboratorId)) {
+                const userSocketId = onlineUsers.get(collaboratorId);
+                io.to(userSocketId).emit("list:deleted", {
+                    list_id: list_id,
+                    board_id: board_id,
+                });
+            }
+        }
         return sendSuccess(res, "List deleted successfully");
     } catch (error) {
         logger.error(error);

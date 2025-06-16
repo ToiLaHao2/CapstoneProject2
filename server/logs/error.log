@@ -257,3 +257,35 @@
 [2025-06-13 12:45:39] ERROR: Error verified token:  jwt expired
 [2025-06-13 12:45:48] ERROR: Error verified token:  jwt expired
 [2025-06-13 12:46:13] ERROR: Error verified token:  jwt expired
+[2025-06-16 16:57:39] ERROR: Error with AddMemberToBoard: ReferenceError: Cannot access 'updatedBoard' before initialization
+[2025-06-16 23:18:22] ERROR: Error with AddMemberToBoard: ReferenceError: Cannot access 'updatedBoard' before initialization
+[2025-06-16 23:18:26] ERROR: Error with AddMemberToBoard: ReferenceError: Cannot access 'updatedBoard' before initialization
+[2025-06-16 23:19:13] ERROR: Error with AddMemberToBoard: ReferenceError: Cannot access 'updatedBoard' before initialization
+[2025-06-16 23:21:16] ERROR: Error with AddMemberToBoard: ReferenceError: Cannot access 'updatedBoard' before initialization
+[2025-06-16 23:23:03] ERROR: Failed to notify collaborators for new member in board 684fea6f6d2bfebeb8ec33d6
+[2025-06-16 23:23:03] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('684fea6f6d2bfebeb8ec33d6') }" (type Object) at path "notification_reference"
+[2025-06-16 23:23:03] ERROR: Failed to notify new member for board 684fea6f6d2bfebeb8ec33d6
+[2025-06-16 23:29:40] ERROR: Failed to notify collaborators for new member in board 68504665448581361df37ff1
+[2025-06-16 23:29:40] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('68504665448581361df37ff1') }" (type Object) at path "notification_reference"
+[2025-06-16 23:29:40] ERROR: Failed to notify new member for board 68504665448581361df37ff1
+[2025-06-16 23:38:27] ERROR: Failed to notify collaborators for new member in board 68504871448581361df380c1
+[2025-06-16 23:38:27] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('68504871448581361df380c1') }" (type Object) at path "notification_reference"
+[2025-06-16 23:38:27] ERROR: Failed to notify new member for board 68504871448581361df380c1
+[2025-06-16 23:39:59] ERROR: Failed to notify collaborators for new member in board 685048cd448581361df381ec
+[2025-06-16 23:39:59] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('685048cd448581361df381ec') }" (type Object) at path "notification_reference"
+[2025-06-16 23:39:59] ERROR: Failed to notify new member for board 685048cd448581361df381ec
+[2025-06-16 23:40:23] ERROR: Failed to notify collaborators for new member in board 685048f1448581361df38296
+[2025-06-16 23:40:23] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('685048f1448581361df38296') }" (type Object) at path "notification_reference"
+[2025-06-16 23:40:23] ERROR: Failed to notify new member for board 685048f1448581361df38296
+[2025-06-16 23:50:16] ERROR: Failed to notify collaborators for new member in board 68504b3e448581361df383d8
+[2025-06-16 23:50:16] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('68504b3e448581361df383d8') }" (type Object) at path "notification_reference"
+[2025-06-16 23:50:16] ERROR: Failed to notify new member for board 68504b3e448581361df383d8
+[2025-06-16 23:53:20] ERROR: Failed to notify collaborators for new member in board 68504bfbd9ee9bf3744ff6c9
+[2025-06-16 23:53:20] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('68504bfbd9ee9bf3744ff6c9') }" (type Object) at path "notification_reference"
+[2025-06-16 23:53:20] ERROR: Failed to notify new member for board 68504bfbd9ee9bf3744ff6c9
+[2025-06-16 23:58:27] ERROR: Failed to notify collaborators for new member in board 68504d2ae636c6ddc9900653
+[2025-06-16 23:58:27] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('68504d2ae636c6ddc9900653') }" (type Object) at path "notification_reference"
+[2025-06-16 23:58:27] ERROR: Failed to notify new member for board 68504d2ae636c6ddc9900653
+[2025-06-17 00:00:02] ERROR: Failed to notify collaborators for new member in board 68504d8b5b3b3f9bbec8baa6
+[2025-06-17 00:00:02] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('68504d8b5b3b3f9bbec8baa6') }" (type Object) at path "notification_reference"
+[2025-06-17 00:00:02] ERROR: Failed to notify new member for board 68504d8b5b3b3f9bbec8baa6

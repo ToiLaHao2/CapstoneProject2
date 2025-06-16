@@ -3,8 +3,7 @@ const onlineUsers = new Map();        // userId → Set(socketId)
 
 /* Thêm socket cho user */
 function addUser(userId, socketId) {
-    if (!onlineUsers.has(userId)) onlineUsers.set(userId, new Set());
-    onlineUsers.get(userId).add(socketId);
+    onlineUsers.set(userId, socketId);
 }
 
 /* Xoá socket (khi disconnect) */
@@ -15,16 +14,14 @@ function removeUser(userId) {
 }
 
 function removeSocket(socketId) {
-    for (const [userId, sockets] of onlineUsers.entries()) {
-        if (sockets.has(socketId)) {
-            sockets.delete(socketId);
-            if (sockets.size === 0) {
-                onlineUsers.delete(userId); // xoá user nếu không còn socket nào
-            }
-            break; // chỉ cần xoá một socket là đủ
+    for (const [userId, sktId] of onlineUsers) {
+        if (sktId === socketId) {
+            onlineUsers.delete(userId);
+            break;
         }
     }
 }
+
 
 /* Lấy danh sách socket của user */
 function getSockets(userId) {

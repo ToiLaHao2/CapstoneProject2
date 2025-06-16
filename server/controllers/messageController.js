@@ -8,6 +8,8 @@ const Conversation = require('../models/Conversation');
 const User = require('../models/User');
 const logger = require('../utils/logger');
 const { sendError, sendSuccess } = require('../utils/response');
+const { getIO } = require('../sockets/index');
+const { onlineUsers } = require('../utils/onlineUser');
 
 /* ---------------------------------------------------------------------------
    1️⃣  LoadMessages – cursor‑based paging (client cuộn lên)
@@ -92,6 +94,16 @@ async function DeleteMessage(req, res) {
         }
 
         await msg.remove();
+        // gửi thông tin message đã xóa đến tất cả người dùng trong conversation
+        const participantIds = conv.participants.map(id => String(id));
+        const io = getIO();
+        for (const participantId of participantIds) {
+            if (onlineUsers.has(participantId)) {
+                const userSocketId = onlineUsers.get(participantId);
+                io.to(userSocketId).emit('message:deleted', { messageId });
+            }
+        }
+
         return sendSuccess(res, 200, 'Message deleted');
     } catch (err) {
         logger.error('DeleteMessage:', err);

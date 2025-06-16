@@ -30,7 +30,8 @@ function initSocket(server) {
         console.log("👤 User connected:", getId.id);
 
         // thêm thông tin người dùng vào online users
-        addUser(getId.id, socket.id);
+
+        addUser(String(getId.id), socket.id);
 
         // console.log("🗺️ Online users:", onlineUsers.get("68495e4d83ed810c6b1c33a8"));
 

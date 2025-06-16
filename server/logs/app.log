@@ -10689,3 +10689,518 @@
 [2025-06-15 23:59:00] INFO: Successfull checking data to get board by user id
 [2025-06-15 23:59:00] INFO: Successfull checking data user for get user profile
 [2025-06-15 23:59:00] INFO: Successfull checking data user for get user profile
+[2025-06-16 16:56:07] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-16 16:56:27] INFO: Successfull checking data user for login
+[2025-06-16 16:56:27] INFO: Compare hash complete
+[2025-06-16 16:56:27] INFO: Complete create token
+[2025-06-16 16:56:27] INFO: Successfull checking data user for get user profile
+[2025-06-16 16:56:27] INFO: Successfull checking data to get board by user id
+[2025-06-16 16:56:28] INFO: Successfull checking data to get board by user id
+[2025-06-16 16:56:28] INFO: Successfull checking data to get board by user id
+[2025-06-16 16:56:28] INFO: Successfull checking data user for get user profile
+[2025-06-16 16:56:28] INFO: Successfull checking data user for get user profile
+[2025-06-16 16:56:40] INFO: Successfull checking data to get board by user id
+[2025-06-16 16:56:40] INFO: Successfull checking data user for get user profile
+[2025-06-16 16:56:40] INFO: Successfull checking data to get board by user id
+[2025-06-16 16:56:40] INFO: Successfull checking data user for get user profile
+[2025-06-16 16:57:03] INFO: Successfull checking data to create board
+[2025-06-16 16:57:03] INFO: Successfull create board
+[2025-06-16 16:57:21] INFO: Successfull checking data to get board by user id
+[2025-06-16 16:57:21] INFO: Successfull checking data user for get user profile
+[2025-06-16 16:57:21] INFO: Successfull checking data to get board by user id
+[2025-06-16 16:57:21] INFO: Successfull checking data user for get user profile
+[2025-06-16 16:57:21] INFO: Successfull checking data to get all members
+[2025-06-16 16:57:21] INFO: Successfull checking data to get all members
+[2025-06-16 16:57:26] INFO: Successfull checking data to get lists in board
+[2025-06-16 16:57:26] INFO: Successfull checking data to get lists in board
+[2025-06-16 16:57:33] INFO: Successfull checking data user for search user profile
+[2025-06-16 16:57:33] INFO: Successfull checking data user for search user profile
+[2025-06-16 16:57:35] INFO: Successfull checking data user for search user profile
+[2025-06-16 16:57:36] INFO: Successfull checking data user for search user profile
+[2025-06-16 16:57:36] INFO: Successfull checking data user for search user profile
+[2025-06-16 16:57:37] INFO: Successfull checking data user for search user profile
+[2025-06-16 16:57:37] INFO: Successfull checking data user for search user profile
+[2025-06-16 16:57:37] INFO: Successfull checking data user for search user profile
+[2025-06-16 16:57:38] INFO: Successfull checking data user for search user profile
+[2025-06-16 16:57:39] INFO: Successfull checking data to add member to board
+[2025-06-16 16:57:39] ERROR: Error with AddMemberToBoard: ReferenceError: Cannot access 'updatedBoard' before initialization
+[2025-06-16 16:57:43] INFO: Successfull checking data to get lists in board
+[2025-06-16 16:57:43] INFO: Successfull checking data to get lists in board
+[2025-06-16 16:57:58] INFO: Successfull checking data user for get user profile
+[2025-06-16 16:57:58] INFO: Successfull checking data user for get user profile
+[2025-06-16 16:57:59] INFO: Successfull checking data user for get user profile
+[2025-06-16 16:57:59] INFO: Successfull checking data user for get user profile
+[2025-06-16 16:58:00] INFO: Successfull checking data to get board by user id
+[2025-06-16 16:58:00] INFO: Successfull checking data user for get user profile
+[2025-06-16 16:58:00] INFO: Successfull checking data to get board by user id
+[2025-06-16 16:58:00] INFO: Successfull checking data user for get user profile
+[2025-06-16 16:58:00] INFO: Successfull checking data to get all members
+[2025-06-16 16:58:00] INFO: Successfull checking data to get all members
+[2025-06-16 16:58:09] INFO: Successfull checking data to get lists in board
+[2025-06-16 16:58:09] INFO: Successfull checking data to get lists in board
+[2025-06-16 23:04:33] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-16 23:04:51] INFO: Successfull checking data user for login
+[2025-06-16 23:04:51] INFO: Compare hash complete
+[2025-06-16 23:04:51] INFO: Complete create token
+[2025-06-16 23:04:51] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:04:51] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:04:51] INFO: Successfull checking data to get all members
+[2025-06-16 23:04:53] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:04:53] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:04:53] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:04:53] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:04:53] INFO: Successfull checking data to get all members
+[2025-06-16 23:04:53] INFO: Successfull checking data to get all members
+[2025-06-16 23:17:05] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-16 23:17:55] INFO: Successfull checking data register new user
+[2025-06-16 23:17:55] INFO: Hash password complete
+[2025-06-16 23:17:55] INFO: Complete create token
+[2025-06-16 23:17:55] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:18:00] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:18:00] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:18:00] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:18:00] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:18:09] INFO: Successfull checking data user for login
+[2025-06-16 23:18:09] INFO: Compare hash complete
+[2025-06-16 23:18:09] INFO: Complete create token
+[2025-06-16 23:18:09] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:18:09] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:18:09] INFO: Successfull checking data to get all members
+[2025-06-16 23:18:11] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:18:11] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:18:11] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:18:11] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:18:11] INFO: Successfull checking data to get all members
+[2025-06-16 23:18:11] INFO: Successfull checking data to get all members
+[2025-06-16 23:18:18] INFO: Successfull checking data user for search user profile
+[2025-06-16 23:18:19] INFO: Successfull checking data user for search user profile
+[2025-06-16 23:18:21] INFO: Successfull checking data to add member to board
+[2025-06-16 23:18:22] ERROR: Error with AddMemberToBoard: ReferenceError: Cannot access 'updatedBoard' before initialization
+[2025-06-16 23:18:26] INFO: Successfull checking data to add member to board
+[2025-06-16 23:18:26] ERROR: Error with AddMemberToBoard: ReferenceError: Cannot access 'updatedBoard' before initialization
+[2025-06-16 23:18:54] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:18:54] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:18:54] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:18:54] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:18:54] INFO: Successfull checking data to get all members
+[2025-06-16 23:18:54] INFO: Successfull checking data to get all members
+[2025-06-16 23:18:59] INFO: Successfull checking data to get lists in board
+[2025-06-16 23:18:59] INFO: Successfull checking data to get lists in board
+[2025-06-16 23:19:05] INFO: Successfull checking data user for search user profile
+[2025-06-16 23:19:05] INFO: Successfull checking data user for search user profile
+[2025-06-16 23:19:13] INFO: Successfull checking data to add member to board
+[2025-06-16 23:19:13] ERROR: Error with AddMemberToBoard: ReferenceError: Cannot access 'updatedBoard' before initialization
+[2025-06-16 23:21:13] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-16 23:21:16] INFO: Successfull checking data to add member to board
+[2025-06-16 23:21:16] ERROR: Error with AddMemberToBoard: ReferenceError: Cannot access 'updatedBoard' before initialization
+[2025-06-16 23:23:02] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-16 23:23:03] INFO: Successfull checking data to add member to board
+[2025-06-16 23:23:03] ERROR: Failed to notify collaborators for new member in board 684fea6f6d2bfebeb8ec33d6
+[2025-06-16 23:23:03] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('684fea6f6d2bfebeb8ec33d6') }" (type Object) at path "notification_reference"
+[2025-06-16 23:23:03] ERROR: Failed to notify new member for board 684fea6f6d2bfebeb8ec33d6
+[2025-06-16 23:23:03] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:23:03] INFO: Successfull checking data to get all members
+[2025-06-16 23:24:19] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-16 23:24:25] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-16 23:24:45] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-16 23:24:52] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-16 23:25:00] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-16 23:25:03] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-16 23:25:06] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-16 23:25:19] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-16 23:26:18] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-16 23:27:28] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-16 23:27:35] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-16 23:29:06] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-16 23:29:09] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:29:09] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:29:11] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:29:11] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:29:11] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:29:11] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:29:11] INFO: Successfull checking data to get all members
+[2025-06-16 23:29:11] INFO: Successfull checking data to get all members
+[2025-06-16 23:29:25] INFO: Successfull checking data to create board
+[2025-06-16 23:29:25] INFO: Successfull create board
+[2025-06-16 23:29:29] INFO: Successfull checking data to get lists in board
+[2025-06-16 23:29:29] INFO: Successfull checking data to get lists in board
+[2025-06-16 23:29:37] INFO: Successfull checking data user for search user profile
+[2025-06-16 23:29:37] INFO: Successfull checking data user for search user profile
+[2025-06-16 23:29:37] INFO: Successfull checking data user for search user profile
+[2025-06-16 23:29:40] INFO: Successfull checking data to add member to board
+[2025-06-16 23:29:40] ERROR: Failed to notify collaborators for new member in board 68504665448581361df37ff1
+[2025-06-16 23:29:40] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('68504665448581361df37ff1') }" (type Object) at path "notification_reference"
+[2025-06-16 23:29:40] ERROR: Failed to notify new member for board 68504665448581361df37ff1
+[2025-06-16 23:29:40] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:29:40] INFO: Successfull checking data to get all members
+[2025-06-16 23:29:40] INFO: Successfull checking data to get all members
+[2025-06-16 23:29:49] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:29:49] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:29:49] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:29:49] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:29:49] INFO: Successfull checking data to get all members
+[2025-06-16 23:29:49] INFO: Successfull checking data to get all members
+[2025-06-16 23:29:49] INFO: Successfull checking data to get all members
+[2025-06-16 23:29:49] INFO: Successfull checking data to get all members
+[2025-06-16 23:34:23] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:34:23] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:34:23] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:34:23] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:34:24] INFO: Successfull checking data to get all members
+[2025-06-16 23:34:24] INFO: Successfull checking data to get all members
+[2025-06-16 23:34:24] INFO: Successfull checking data to get all members
+[2025-06-16 23:34:24] INFO: Successfull checking data to get all members
+[2025-06-16 23:34:28] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:34:28] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:34:28] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:34:28] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:34:28] INFO: Successfull checking data to get all members
+[2025-06-16 23:34:28] INFO: Successfull checking data to get all members
+[2025-06-16 23:34:29] INFO: Successfull checking data to get all members
+[2025-06-16 23:34:29] INFO: Successfull checking data to get all members
+[2025-06-16 23:37:27] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:37:27] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:37:27] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:37:27] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:37:54] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:37:54] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:37:54] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:37:54] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:37:54] INFO: Successfull checking data to get all members
+[2025-06-16 23:37:54] INFO: Successfull checking data to get all members
+[2025-06-16 23:37:54] INFO: Successfull checking data to get all members
+[2025-06-16 23:37:54] INFO: Successfull checking data to get all members
+[2025-06-16 23:37:58] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:37:58] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:37:58] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:37:58] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:37:58] INFO: Successfull checking data to get all members
+[2025-06-16 23:37:58] INFO: Successfull checking data to get all members
+[2025-06-16 23:37:58] INFO: Successfull checking data to get all members
+[2025-06-16 23:37:59] INFO: Successfull checking data to get all members
+[2025-06-16 23:38:09] INFO: Successfull checking data to create board
+[2025-06-16 23:38:10] INFO: Successfull create board
+[2025-06-16 23:38:16] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:38:16] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:38:18] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:38:18] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:38:18] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:38:18] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:38:18] INFO: Successfull checking data to get all members
+[2025-06-16 23:38:18] INFO: Successfull checking data to get all members
+[2025-06-16 23:38:18] INFO: Successfull checking data to get all members
+[2025-06-16 23:38:18] INFO: Successfull checking data to get all members
+[2025-06-16 23:38:18] INFO: Successfull checking data to get all members
+[2025-06-16 23:38:18] INFO: Successfull checking data to get all members
+[2025-06-16 23:38:25] INFO: Successfull checking data user for search user profile
+[2025-06-16 23:38:25] INFO: Successfull checking data user for search user profile
+[2025-06-16 23:38:25] INFO: Successfull checking data user for search user profile
+[2025-06-16 23:38:27] INFO: Successfull checking data to add member to board
+[2025-06-16 23:38:27] ERROR: Failed to notify collaborators for new member in board 68504871448581361df380c1
+[2025-06-16 23:38:27] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('68504871448581361df380c1') }" (type Object) at path "notification_reference"
+[2025-06-16 23:38:27] ERROR: Failed to notify new member for board 68504871448581361df380c1
+[2025-06-16 23:38:27] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:38:27] INFO: Successfull checking data to get all members
+[2025-06-16 23:38:27] INFO: Successfull checking data to get all members
+[2025-06-16 23:38:27] INFO: Successfull checking data to get all members
+[2025-06-16 23:38:35] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:38:35] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:38:36] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:38:36] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:38:36] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:38:36] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:38:36] INFO: Successfull checking data to get all members
+[2025-06-16 23:38:36] INFO: Successfull checking data to get all members
+[2025-06-16 23:38:36] INFO: Successfull checking data to get all members
+[2025-06-16 23:38:36] INFO: Successfull checking data to get all members
+[2025-06-16 23:38:36] INFO: Successfull checking data to get all members
+[2025-06-16 23:38:36] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:08] INFO: Successfull checking data user for login
+[2025-06-16 23:39:08] INFO: Compare hash complete
+[2025-06-16 23:39:08] INFO: Complete create token
+[2025-06-16 23:39:08] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:39:08] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:39:09] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:09] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:09] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:11] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:39:11] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:39:11] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:39:11] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:39:11] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:11] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:11] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:11] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:11] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:11] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:25] INFO: Successfull checking data user for login
+[2025-06-16 23:39:25] INFO: Compare hash complete
+[2025-06-16 23:39:25] INFO: Complete create token
+[2025-06-16 23:39:25] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:39:25] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:39:25] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:25] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:26] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:26] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:39:26] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:39:26] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:39:26] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:39:26] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:26] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:26] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:26] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:26] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:26] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:41] INFO: Successfull checking data to create board
+[2025-06-16 23:39:41] INFO: Successfull create board
+[2025-06-16 23:39:44] INFO: Successfull checking data to get lists in board
+[2025-06-16 23:39:44] INFO: Successfull checking data to get lists in board
+[2025-06-16 23:39:48] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:39:48] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:39:48] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:39:48] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:39:48] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:48] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:48] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:48] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:48] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:49] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:49] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:49] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:50] INFO: Successfull checking data to get lists in board
+[2025-06-16 23:39:50] INFO: Successfull checking data to get lists in board
+[2025-06-16 23:39:57] INFO: Successfull checking data user for search user profile
+[2025-06-16 23:39:59] INFO: Successfull checking data to add member to board
+[2025-06-16 23:39:59] ERROR: Failed to notify collaborators for new member in board 685048cd448581361df381ec
+[2025-06-16 23:39:59] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('685048cd448581361df381ec') }" (type Object) at path "notification_reference"
+[2025-06-16 23:39:59] ERROR: Failed to notify new member for board 685048cd448581361df381ec
+[2025-06-16 23:39:59] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:39:59] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:59] INFO: Successfull checking data to get all members
+[2025-06-16 23:39:59] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:00] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:06] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:40:06] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:40:06] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:40:06] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:40:06] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:06] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:06] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:06] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:07] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:07] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:07] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:07] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:17] INFO: Successfull checking data to create board
+[2025-06-16 23:40:17] INFO: Successfull create board
+[2025-06-16 23:40:23] INFO: Successfull checking data to add member to board
+[2025-06-16 23:40:23] ERROR: Failed to notify collaborators for new member in board 685048f1448581361df38296
+[2025-06-16 23:40:23] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('685048f1448581361df38296') }" (type Object) at path "notification_reference"
+[2025-06-16 23:40:23] ERROR: Failed to notify new member for board 685048f1448581361df38296
+[2025-06-16 23:40:23] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:40:24] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:24] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:24] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:24] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:24] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:30] INFO: Successfull checking data to get lists in board
+[2025-06-16 23:40:30] INFO: Successfull checking data to get lists in board
+[2025-06-16 23:40:38] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:40:38] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:40:39] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:40:39] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:40:39] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:40:39] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:40:39] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:39] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:39] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:39] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:39] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:39] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:39] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:40] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:40] INFO: Successfull checking data to get all members
+[2025-06-16 23:40:40] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:11] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:49:11] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:49:13] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:49:13] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:49:20] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:49:20] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:49:20] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:49:20] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:49:21] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:21] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:21] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:21] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:21] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:21] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:21] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:22] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:22] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:22] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:23] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:49:23] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:49:23] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:49:23] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:49:24] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:24] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:24] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:24] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:24] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:24] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:24] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:24] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:24] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:24] INFO: Successfull checking data to get all members
+[2025-06-16 23:49:25] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:49:25] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:50:05] INFO: Successfull checking data to create board
+[2025-06-16 23:50:06] INFO: Successfull create board
+[2025-06-16 23:50:09] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:50:09] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:50:09] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:50:09] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:50:10] INFO: Successfull checking data to get all members
+[2025-06-16 23:50:10] INFO: Successfull checking data to get all members
+[2025-06-16 23:50:10] INFO: Successfull checking data to get all members
+[2025-06-16 23:50:10] INFO: Successfull checking data to get all members
+[2025-06-16 23:50:10] INFO: Successfull checking data to get all members
+[2025-06-16 23:50:10] INFO: Successfull checking data to get all members
+[2025-06-16 23:50:10] INFO: Successfull checking data to get all members
+[2025-06-16 23:50:10] INFO: Successfull checking data to get all members
+[2025-06-16 23:50:10] INFO: Successfull checking data to get all members
+[2025-06-16 23:50:10] INFO: Successfull checking data to get all members
+[2025-06-16 23:50:10] INFO: Successfull checking data to get all members
+[2025-06-16 23:50:10] INFO: Successfull checking data to get all members
+[2025-06-16 23:50:15] INFO: Successfull checking data user for search user profile
+[2025-06-16 23:50:16] INFO: Successfull checking data to add member to board
+[2025-06-16 23:50:16] ERROR: Failed to notify collaborators for new member in board 68504b3e448581361df383d8
+[2025-06-16 23:50:16] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('68504b3e448581361df383d8') }" (type Object) at path "notification_reference"
+[2025-06-16 23:50:16] ERROR: Failed to notify new member for board 68504b3e448581361df383d8
+[2025-06-16 23:50:16] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:50:16] INFO: Successfull checking data to get all members
+[2025-06-16 23:50:17] INFO: Successfull checking data to get all members
+[2025-06-16 23:50:17] INFO: Successfull checking data to get all members
+[2025-06-16 23:50:17] INFO: Successfull checking data to get all members
+[2025-06-16 23:50:17] INFO: Successfull checking data to get all members
+[2025-06-16 23:50:17] INFO: Successfull checking data to get all members
+[2025-06-16 23:52:11] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-16 23:52:23] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-16 23:52:34] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-16 23:52:51] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-16 23:52:59] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-16 23:53:03] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:53:03] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:53:03] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:53:03] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:53:04] INFO: Successfull checking data to get all members
+[2025-06-16 23:53:04] INFO: Successfull checking data to get all members
+[2025-06-16 23:53:04] INFO: Successfull checking data to get all members
+[2025-06-16 23:53:04] INFO: Successfull checking data to get all members
+[2025-06-16 23:53:04] INFO: Successfull checking data to get all members
+[2025-06-16 23:53:04] INFO: Successfull checking data to get all members
+[2025-06-16 23:53:04] INFO: Successfull checking data to get all members
+[2025-06-16 23:53:04] INFO: Successfull checking data to get all members
+[2025-06-16 23:53:04] INFO: Successfull checking data to get all members
+[2025-06-16 23:53:04] INFO: Successfull checking data to get all members
+[2025-06-16 23:53:04] INFO: Successfull checking data to get all members
+[2025-06-16 23:53:04] INFO: Successfull checking data to get all members
+[2025-06-16 23:53:15] INFO: Successfull checking data to create board
+[2025-06-16 23:53:15] INFO: Successfull create board
+[2025-06-16 23:53:20] INFO: Successfull checking data to add member to board
+[2025-06-16 23:53:20] ERROR: Failed to notify collaborators for new member in board 68504bfbd9ee9bf3744ff6c9
+[2025-06-16 23:53:20] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('68504bfbd9ee9bf3744ff6c9') }" (type Object) at path "notification_reference"
+[2025-06-16 23:53:20] ERROR: Failed to notify new member for board 68504bfbd9ee9bf3744ff6c9
+[2025-06-16 23:53:20] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:53:20] INFO: Successfull checking data to get all members
+[2025-06-16 23:53:20] INFO: Successfull checking data to get all members
+[2025-06-16 23:53:20] INFO: Successfull checking data to get all members
+[2025-06-16 23:53:21] INFO: Successfull checking data to get all members
+[2025-06-16 23:53:21] INFO: Successfull checking data to get all members
+[2025-06-16 23:53:21] INFO: Successfull checking data to get all members
+[2025-06-16 23:53:21] INFO: Successfull checking data to get all members
+[2025-06-16 23:54:05] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:54:05] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:54:05] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:54:05] INFO: Successfull checking data user for get user profile
+[2025-06-16 23:54:06] INFO: Successfull checking data to get all members
+[2025-06-16 23:54:06] INFO: Successfull checking data to get all members
+[2025-06-16 23:54:06] INFO: Successfull checking data to get all members
+[2025-06-16 23:54:06] INFO: Successfull checking data to get all members
+[2025-06-16 23:54:06] INFO: Successfull checking data to get all members
+[2025-06-16 23:54:06] INFO: Successfull checking data to get all members
+[2025-06-16 23:54:06] INFO: Successfull checking data to get all members
+[2025-06-16 23:54:06] INFO: Successfull checking data to get all members
+[2025-06-16 23:54:07] INFO: Successfull checking data to get all members
+[2025-06-16 23:54:07] INFO: Successfull checking data to get all members
+[2025-06-16 23:54:07] INFO: Successfull checking data to get all members
+[2025-06-16 23:54:07] INFO: Successfull checking data to get all members
+[2025-06-16 23:54:07] INFO: Successfull checking data to get all members
+[2025-06-16 23:54:07] INFO: Successfull checking data to get all members
+[2025-06-16 23:57:19] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-16 23:57:22] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-16 23:58:02] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-16 23:58:03] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-16 23:58:18] INFO: Successfull checking data to create board
+[2025-06-16 23:58:18] INFO: Successfull create board
+[2025-06-16 23:58:25] INFO: Successfull checking data user for search user profile
+[2025-06-16 23:58:25] INFO: Successfull checking data user for search user profile
+[2025-06-16 23:58:25] INFO: Successfull checking data user for search user profile
+[2025-06-16 23:58:27] INFO: Successfull checking data to add member to board
+[2025-06-16 23:58:27] ERROR: Failed to notify collaborators for new member in board 68504d2ae636c6ddc9900653
+[2025-06-16 23:58:27] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('68504d2ae636c6ddc9900653') }" (type Object) at path "notification_reference"
+[2025-06-16 23:58:27] ERROR: Failed to notify new member for board 68504d2ae636c6ddc9900653
+[2025-06-16 23:58:27] INFO: Successfull checking data to get board by user id
+[2025-06-16 23:58:28] INFO: Successfull checking data to get all members
+[2025-06-16 23:58:28] INFO: Successfull checking data to get all members
+[2025-06-16 23:58:28] INFO: Successfull checking data to get all members
+[2025-06-16 23:58:28] INFO: Successfull checking data to get all members
+[2025-06-16 23:58:28] INFO: Successfull checking data to get all members
+[2025-06-16 23:58:29] INFO: Successfull checking data to get all members
+[2025-06-16 23:58:29] INFO: Successfull checking data to get all members
+[2025-06-16 23:58:29] INFO: Successfull checking data to get all members
+[2025-06-16 23:59:42] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-16 23:59:45] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-16 23:59:48] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-16 23:59:55] INFO: Successfull checking data to create board
+[2025-06-16 23:59:55] INFO: Successfull create board
+[2025-06-17 00:00:02] INFO: Successfull checking data to add member to board
+[2025-06-17 00:00:02] ERROR: Failed to notify collaborators for new member in board 68504d8b5b3b3f9bbec8baa6
+[2025-06-17 00:00:02] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('68504d8b5b3b3f9bbec8baa6') }" (type Object) at path "notification_reference"
+[2025-06-17 00:00:02] ERROR: Failed to notify new member for board 68504d8b5b3b3f9bbec8baa6
+[2025-06-17 00:00:02] INFO: Successfull checking data to get board by user id
+[2025-06-17 00:00:02] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:03] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:03] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:03] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:03] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:03] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:03] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:03] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:04] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:10] INFO: Successfull checking data to get board by user id
+[2025-06-17 00:00:10] INFO: Successfull checking data user for get user profile
+[2025-06-17 00:00:10] INFO: Successfull checking data to get board by user id
+[2025-06-17 00:00:10] INFO: Successfull checking data user for get user profile
+[2025-06-17 00:00:10] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:10] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:10] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:10] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:11] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:11] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:11] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:11] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:11] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:11] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:11] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:11] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:11] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:11] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:11] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:11] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:11] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:11] INFO: Successfull checking data to get all members
+[2025-06-17 00:00:53] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-17 00:00:58] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-17 00:00:59] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
