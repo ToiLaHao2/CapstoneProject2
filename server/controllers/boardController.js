@@ -60,7 +60,6 @@ async function CreateBoard(req, res) {
                 title: "You have been added to a new board",
                 message: `You have been added to the board "${boardReqCreate.board_title}"`,
                 reference: {
-                    type: "BOARD",
                     id: newBoard._id,
                 },
             });
@@ -211,7 +210,6 @@ async function UpdateBoard(req, res) {
             title: "Board updated",
             message: `The board "${board.board_title}" has been updated by ${user.user_full_name}`,
             reference: {
-                type: "BOARD",
                 id: updatedBoard._id,
             },
         });
@@ -287,7 +285,6 @@ async function DeleteBoard(req, res) {
             title: "Board deleted",
             message: `The board "${board_title}" has been deleted`,
             reference: {
-                type: "BOARD",
                 id: board_id,
             },
         });
@@ -361,8 +358,7 @@ async function AddMemberToBoard(req, res) {
             title: "New member added to board",
             message: `${member.user_full_name} has been added to the board "${board.board_title}"`,
             reference: {
-                type: "BOARD",
-                id: board._id.toString(),
+                id: board._id,
             },
         });
         if (sendNotiResultCollaborators !== "OK") {
