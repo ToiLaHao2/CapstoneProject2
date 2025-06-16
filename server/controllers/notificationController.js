@@ -6,6 +6,7 @@
 
 const Notification = require('../models/Notification');
 const User = require('../models/User');
+const { getIO } = require('../sockets');
 const logger = require('../utils/logger');
 const { onlineUsers } = require('../utils/onlineUser');
 const { sendError, sendSuccess } = require('../utils/response');
@@ -13,8 +14,9 @@ const { sendError, sendSuccess } = require('../utils/response');
 /* ---------------------------------------------------------------------------
    Internal helper: create notification + emit socket event (if `io` passed)
 --------------------------------------------------------------------------- */
-async function notify({ senderId, receiverIds, title, message, reference, io }) {
+async function notify({ senderId, receiverIds, title, message, reference }) {
     try {
+        const io = getIO(); // lấy instance io từ socket.js
         if (!Array.isArray(receiverIds) || receiverIds.length === 0) return;
 
         // build receivers array
@@ -29,7 +31,8 @@ async function notify({ senderId, receiverIds, title, message, reference, io }) 
         });
 
         // emit realtime event (optional)
-        if (io) {
+        if (!io) {
+            logger.warn('notify(): No socket.io instance available');
             receiverIds.forEach(uid => {
                 // kiểm tra xem người dùng có đang online không
                 if (onlineUsers.has(uid)) {
@@ -40,9 +43,8 @@ async function notify({ senderId, receiverIds, title, message, reference, io }) 
                 }
             });
         }
-
         logger.info(`Notification ${noti._id} -> [${receiverIds.join(',')}]`);
-        return noti;
+        return "OK";
     } catch (err) {
         logger.error('notify():', err);
     }

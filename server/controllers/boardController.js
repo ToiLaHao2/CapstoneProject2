@@ -4,6 +4,7 @@ const User = require("../models/User");
 const { deleteBoard } = require("../utils/dbHelper");
 const logger = require("../utils/logger");
 const { sendSuccess, sendError } = require("../utils/response");
+const { notify } = require("./notificationController");
 
 async function CreateBoard(req, res) {
     const boardReqCreate = req.body;
@@ -40,8 +41,26 @@ async function CreateBoard(req, res) {
                     await collaboratorUser.save();
                 }
             }
+            // notify các user đã được thêm vào board từ đầu nếu có
+            const sendNotiResult = await notify({
+                senderId: boardReqCreate.user_id,
+                receiverIds: boardReqCreate.board_collaborators.map(
+                    (collab) => collab.board_collaborator_id
+                ),
+                title: "You have been added to a new board",
+                message: `You have been added to the board "${boardReqCreate.board_title}"`,
+                reference: {
+                    type: "BOARD",
+                    id: newBoard._id,
+                },
+            });
+            if (sendNotiResult !== "OK") {
+                logger.error(
+                    `Failed to notify collaborators for board ${newBoard._id}`
+                );
+            }
         }
-        // notify các user đã được thêm vào board từ đầu nếu có
+
         logger.info("Successfull create board");
         return sendSuccess(res, "Create board success", newBoard._id);
     } catch (error) {
@@ -104,6 +123,13 @@ async function GetAllBoardByUserId(req, res) {
 async function UpdateBoard(req, res) {
     try {
         const { board_id, board_update_details, user_id } = req.body;
+        // kiểm tra user_id có tồn tại không
+        const user = await User.findById(user_id);
+        if (!user) {
+            return sendError(res, 401, "Unauthorized", {
+                details: "User is not registered",
+            });
+        }
 
         // Kiểm tra object board_update_details có rỗng không
         if (
@@ -167,6 +193,24 @@ async function UpdateBoard(req, res) {
         // Lưu thay đổi vào CSDL
         const updatedBoard = await board.save();
         // notyfy các thành viên về sự thay đổi của bảng
+        const sendNotiResult = await notify({
+            senderId: user_id,
+            receiverIds: board.board_collaborators.map(
+                (collab) => collab.board_collaborator_id
+            ),
+            title: "Board updated",
+            message: `The board "${board.board_title}" has been updated by ${user.user_full_name}`,
+            reference: {
+                type: "BOARD",
+                id: updatedBoard._id,
+            },
+        });
+        if (sendNotiResult !== "OK") {
+            logger.error(
+                `Failed to notify collaborators for board ${updatedBoard._id}`
+            );
+        }
+        logger.info("Board updated successfully");
 
         // Trả về thành công
         return sendSuccess(res, "Board updated successfully", updatedBoard);
@@ -194,7 +238,12 @@ async function DeleteBoard(req, res) {
             });
         }
 
-        // lấy danh sách các thành viên
+        // lấy danh sách id các thành viên
+        const collaborators = board.board_collaborators.map(
+            (collab) => collab.board_collaborator_id
+        );
+
+        const board_title = board.board_title;
 
         // Xóa bảng
         const deleteResult = await deleteBoard(board_id);
@@ -205,6 +254,21 @@ async function DeleteBoard(req, res) {
         }
 
         // notify các thành viên về việc xóa bảng
+        const sendNotiResult = await notify({
+            senderId: user_id,
+            receiverIds: collaborators,
+            title: "Board deleted",
+            message: `The board "${board_title}" has been deleted`,
+            reference: {
+                type: "BOARD",
+                id: board_id,
+            },
+        });
+        if (sendNotiResult !== "OK") {
+            logger.error(
+                `Failed to notify collaborators for deleted board ${board_id}`
+            );
+        }
         return sendSuccess(res, "Board deleted successfully", {
             board_id: board_id,
         });
@@ -252,11 +316,31 @@ async function AddMemberToBoard(req, res) {
             });
         }
 
+        const collaboratorsBeforeAdd = board.board_collaborators.map(
+            (collab) => collab.board_collaborator_id
+        );
+
         // Thêm thành viên vào danh sách cộng tác viên
         board.board_collaborators.push({
             board_collaborator_id: member_id,
             board_collaborator_role: member_role,
         });
+
+        const sendNotiResultCollaborators = await notify({
+            senderId: user_id,
+            receiverIds: collaboratorsBeforeAdd,
+            title: "New member added to board",
+            message: `${member.user_full_name} has been added to the board "${board.board_title}"`,
+            reference: {
+                type: "BOARD",
+                id: updatedBoard._id,
+            },
+        });
+        if (sendNotiResultCollaborators !== "OK") {
+            logger.error(
+                `Failed to notify collaborators for new member in board ${updatedBoard._id}`
+            );
+        }
 
         member.user_boards.push({ board_id: board_id, role: "MEMBER" });
 
@@ -265,6 +349,22 @@ async function AddMemberToBoard(req, res) {
         await member.save();
         // Trả về phản hồi thành công
         // notify các thành viên về việc thêm thành viên mới
+        const sendNotiResult = await notify({
+            senderId: user_id,
+            receiverIds: [member_id],
+            title: "You have been added to a board",
+            message: `You have been added to the board "${board.board_title}"`,
+            reference: {
+                type: "BOARD",
+                id: updatedBoard._id,
+            },
+        });
+        if (sendNotiResult !== "OK") {
+            logger.error(
+                `Failed to notify new member for board ${updatedBoard._id}`
+            );
+        }
+
         return sendSuccess(res, "Member added successfully", updatedBoard);
     } catch (error) {
         logger.error(`Error with AddMemberToBoard: ${error}`);
@@ -314,9 +414,44 @@ async function RemoveMemberFromBoard(req, res) {
         member.user_boards = member.user_boards.filter(
             (board) => String(board.board_id) !== String(board_id)
         );
+        // notify các thành viên về việc xóa thành viên
+        const sendNotiResult = await notify({
+            senderId: user_id,
+            receiverIds: board.board_collaborators.map(
+                (collab) => collab.board_collaborator_id
+            ),
+            title: "Member removed from board",
+            message: `${member.user_full_name} has been removed from the board "${board.board_title}"`,
+            reference: {
+                type: "BOARD",
+                id: board_id,
+            },
+        });
+        if (sendNotiResult !== "OK") {
+            logger.error(
+                `Failed to notify collaborators for removed member in board ${board_id}`
+            );
+        }
+
         const updatedBoard = await board.save();
         await member.save();
         // notify các thành viên về việc xóa thành viên
+        const sendNotiResultMember = await notify({
+            senderId: user_id,
+            receiverIds: [member_id],
+            title: "You have been removed from a board",
+            message: `You have been removed from the board "${board.board_title}"`,
+            reference: {
+                type: "BOARD",
+                id: board_id,
+            },
+        });
+        if (sendNotiResultMember !== "OK") {
+            logger.error(
+                `Failed to notify removed member for board ${board_id}`
+            );
+        }
+
         // Trả về phản hồi thành công
         return sendSuccess(res, "Member removed successfully", updatedBoard);
     } catch (error) {
@@ -371,7 +506,23 @@ async function UpdateMemberRole(req, res) {
         // Lưu thay đổi vào CSDL
         const updatedBoard = await board.save();
         // Trả về phản hồi thành công
-        // notify các thành viên về việc cập nhật vai trò của thành viên
+        // notify thành viên về việc cập nhật vai trò của thành viên
+        const sendNotiResult = await notify({
+            senderId: user_id,
+            receiverIds: [member_id],
+            title: "Member role updated",
+            message: `Your role in the board "${board.board_title}" has been updated to ${new_member_role}`,
+            reference: {
+                type: "BOARD",
+                id: updatedBoard._id,
+            },
+        });
+        if (sendNotiResult !== "OK") {
+            logger.error(
+                `Failed to notify member for role update in board ${updatedBoard._id}`
+            );
+        }
+        logger.info("Member role updated successfully");
         return sendSuccess(
             res,
             "Member role updated successfully",
