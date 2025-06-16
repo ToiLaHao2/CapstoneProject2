@@ -23,6 +23,7 @@ import { UserProvider } from "./UserContext";
 import { BoardProvider } from "./BoardContext";
 import { ListProvider } from "./ListContext";
 import { CardProvider } from "./CardContext";
+import { ConversationProvider } from "./ConversationContext";
 
 const ContextProvider = ({ children }) => {
     return (
@@ -30,7 +31,11 @@ const ContextProvider = ({ children }) => {
             <AuthProvider>
                 <BoardProvider>
                     <ListProvider>
-                        <CardProvider>{children}</CardProvider>
+                        <CardProvider>
+                            <ConversationProvider>
+                                {children}
+                            </ConversationProvider>
+                        </CardProvider>
                     </ListProvider>
                 </BoardProvider>
             </AuthProvider>
