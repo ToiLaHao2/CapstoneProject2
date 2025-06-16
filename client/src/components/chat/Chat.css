@@ -1,105 +1,4 @@
-/* Chat.css
-
-.chat-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100%;
-    background-color: #f9f9f9;
-    font-family: Arial, sans-serif;
-}
-
-.chat-header {
-    padding: 15px;
-    background-color: #ffffff;
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-}
-
-.avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #ccc;
-    margin-right: 10px;
-}
-
-.user-details h4 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.chat-messages {
-    flex: 1;
-    padding: 15px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.message {
-    max-width: 70%;
-    padding: 10px 15px;
-    border-radius: 10px;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.user-message {
-    align-self: flex-end;
-    background-color: #007bff;
-    color: white;
-    border-top-right-radius: 0;
-}
-
-.response-message {
-    align-self: flex-start;
-    background-color: #e5e5e5;
-    color: #333;
-    border-top-left-radius: 0;
-}
-
-.chat-input {
-    padding: 10px;
-    background-color: #ffffff;
-    border-top: 1px solid #ddd;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.chat-input input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.chat-input button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.chat-input button:hover {
-    background-color: #0056b3;
-} */
-
-.customer-search {
+.team-search {
     display: flex;
     align-items: center;
     padding: 10px 15px;
@@ -107,7 +6,7 @@
     border-bottom: 1px solid #e0e0e0;
 }
 
-.customer-search input[type="text"] {
+.team-search input[type="text"] {
     flex: 1;
     padding: 10px 12px;
     font-size: 14px;
@@ -117,14 +16,14 @@
     transition: all 0.3s ease;
 }
 
-.customer-search input[type="text"]:focus {
-    border-color: #007bff;
+.team-search input[type="text"]:focus {
+    border-color: #205781;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-.customer-search button {
+.team-search button {
     margin-left: 10px;
-    background-color: #007bff;
+    background-color: #205781;
     color: white;
     border: none;
     padding: 8px 12px;
@@ -134,68 +33,77 @@
     transition: background-color 0.3s ease;
 }
 
-.customer-search button:hover {
-    background-color: #0056b3;
+.team-search button:hover {
+    background-color: #205781;
 }
 
-.customer-search svg {
+.team-search svg {
     width: 20px;
     height: 20px;
 }
 
 
-.chat-ui {
+/* .chat-ui {
     display: flex;
     height: 100%;
+} */
+
+.chat-ui {
+    display: flex;
+    height: 100vh; 
+    width: 100%;
+    overflow: hidden; 
+    box-sizing: border-box; 
 }
 
-.customer-message-list {
+.team-message-list {
     width: 30%;
     border-right: 1px solid #ccc;
     padding: 10px;
     background-color: #f9f9f9;
 }
 
-.customer-message-list .header {
+
+.team-message-list .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
 }
 
-.customer-message-list .header h3 {
+.team-message-list .header h3 {
     font-size: 18px;
     margin: 0;
 }
 
-.customer-message-list .search-bar {
+.team-message-list .search-bar {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-.customer-message-list .search-bar input {
+.team-message-list .search-bar input {
     width: 100%;
     padding: 5px 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-.customer-message-list .search-bar button {
+.team-message-list .search-bar button {
     padding: 5px 10px;
-    background-color: #007bff;
+    background-color: #205781;
     border: none;
     color: #fff;
     border-radius: 4px;
     cursor: pointer;
 }
 
-.customer-message-list .customer-list {
+.team-message-list .team-list {
     overflow-y: auto;
     max-height: calc(100vh - 100px); /* Adjust as needed */
 }
 
-.customer-message-list .customer-card {
+.team-message-list .team-card {
     display: flex;
     align-items: center;
     padding: 10px;
@@ -203,11 +111,11 @@
     cursor: pointer;
 }
 
-.customer-message-list .customer-card:hover {
+.team-message-list .team-card:hover {
     background-color: #f1f1f1;
 }
 
-.customer-message-list .avatar {
+.team-message-list .avatar {
     width: 40px;
     height: 40px;
     background-color: #ccc;
@@ -220,22 +128,22 @@
     margin-right: 10px;
 }
 
-.customer-message-list .customer-details {
+.team-message-list .team-details {
     flex: 1;
 }
 
-.customer-message-list .customer-details h4 {
+.team-message-list .team-details h4 {
     font-size: 16px;
     margin: 0;
 }
 
-.customer-message-list .customer-details p {
+.team-message-list .team-details p {
     font-size: 14px;
     color: #555;
     margin: 0;
 }
 
-.customer-message-list .time {
+.team-message-list .time {
     text-align: right;
     font-size: 12px;
     color: #999;
@@ -244,7 +152,7 @@
     align-items: flex-end;
 }
 
-.customer-message-list .unread-indicator {
+.team-message-list .unread-indicator {
     width: 8px;
     height: 8px;
     background-color: red;
@@ -263,7 +171,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 15px;
-    background-color: #007bff;
+    background-color: #205781;
     color: #fff;
 }
 
@@ -304,7 +212,7 @@
 
 .user-message {
     align-self: flex-end;
-    background-color: #007bff;
+    background-color: #205781;
     color: #fff;
 }
 
@@ -335,14 +243,14 @@
     padding: 10px 15px;
     font-size: 14px;
     color: #fff;
-    background-color: #007bff;
+    background-color: #205781;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
 .chat-input button:hover {
-    background-color: #0056b3;
+    background-color: #205781;
 }
 
 .chat-ui {

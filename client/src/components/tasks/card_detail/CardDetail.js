@@ -407,7 +407,7 @@ function CardDetail() {
                     <option value="LOW">LOW</option>
                 </select>
 
-                <div className="completed-checkbox">
+                {/* <div className="completed-checkbox">
                     <input
                         type="checkbox"
                         id="completed"
@@ -415,7 +415,7 @@ function CardDetail() {
                         onChange={handleCompletedChange}
                     />
                     <label htmlFor="completed">Completed</label>
-                </div>
+                </div> */}
 
                 <input
                     type="text"
