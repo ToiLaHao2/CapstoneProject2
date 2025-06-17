@@ -446,7 +446,7 @@ export const BoardProvider = ({ children }) => {
         socket.on("board:allmember:added", onAddNewMemberToBoard);
         socket.on("board:allmember:removed", onRemoveMemberFromBoard);
         socket.on("board:member:added", onAddMemberToBoard);
-        socket.on("board:member:removed", onRemoveBoardFromBoads);
+        socket.on("board:member:removed", onRemoveBoardFromBoards);
 
         return () => {
             socket.off("board:created", onCreated);
@@ -457,7 +457,7 @@ export const BoardProvider = ({ children }) => {
             socket.off("board:allmember:added", onAddNewMemberToBoard);
             socket.off("board:allmember:removed", onRemoveMemberFromBoard);
             socket.off("board:member:added", onAddMemberToBoard);
-            socket.off("board:member:removed", onRemoveMemberFromBoard);
+            socket.off("board:member:removed", onRemoveBoardFromBoards);
         };
     }, [connected, socket, boards]);
 
