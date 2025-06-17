@@ -33,18 +33,13 @@ async function CreateList(req, res) {
         await board.save();
         // notify các người dùng trong board về việc tạo list mới
         // gửi thông tin list mới cho tất cả người dùng trong board
-        const collaborators = board.board_collaborators.map(
-            (collaborator) => collaborator.board_collaborator_id
-        );
-        collaborators.push(String(board.created_by)); // thêm người tạo board vào danh sách
-        const io = getIO();
-        for (const collaboratorId of collaborators) {
-            if (onlineUsers.has(collaboratorId)) {
-                const userSocketId = onlineUsers.get(collaboratorId);
-                io.to(userSocketId).emit("list:created", {
+        for (let collaborator of board.board_collaborators) {
+            if (onlineUsers.has(collaborator.board_collaborator_id.toString())) {
+                const socketId = onlineUsers.get(collaborator.board_collaborator_id.toString());
+                await sendToSocket(socketId, "list:allmember:created", {
                     list: list,
                     board_id: board_id,
-                });
+                })
             }
         }
         return sendSuccess(res, "Successful create list", list);
@@ -106,18 +101,13 @@ async function UpdateList(req, res) {
         });
         // notify các người dùng trong board về việc cập nhật list
         // gửi thông tin list đã cập nhật cho tất cả người dùng trong board
-        const collaborators = board.board_collaborators.map(
-            (collaborator) => collaborator.board_collaborator_id
-        );
-        collaborators.push(String(board.created_by)); // thêm người tạo board vào danh sách
-        const io = getIO();
-        for (const collaboratorId of collaborators) {
-            if (onlineUsers.has(collaboratorId)) {
-                const userSocketId = onlineUsers.get(collaboratorId);
-                io.to(userSocketId).emit("list:updated", {
+        for (let collaborator of board.board_collaborators) {
+            if (onlineUsers.has(collaborator.board_collaborator_id.toString())) {
+                const socketId = onlineUsers.get(collaborator.board_collaborator_id.toString());
+                await sendToSocket(socketId, "list:allmember:updated", {
                     list: list,
                     board_id: board_id,
-                });
+                })
             }
         }
         return sendSuccess(res, 200, list, "UpdateList");
@@ -163,18 +153,13 @@ async function DeleteList(req, res) {
         await board.save();
         // notify các người dùng trong board về việc xóa list
         // gửi thông tin list đã xóa cho tất cả người dùng trong board
-        const collaborators = board.board_collaborators.map(
-            (collaborator) => collaborator.board_collaborator_id
-        );
-        collaborators.push(String(board.created_by)); // thêm người tạo board vào danh sách
-        const io = getIO();
-        for (const collaboratorId of collaborators) {
-            if (onlineUsers.has(collaboratorId)) {
-                const userSocketId = onlineUsers.get(collaboratorId);
-                io.to(userSocketId).emit("list:deleted", {
+        for (let collaborator of board.board_collaborators) {
+            if (onlineUsers.has(collaborator.board_collaborator_id.toString())) {
+                const socketId = onlineUsers.get(collaborator.board_collaborator_id.toString());
+                await sendToSocket(socketId, "list:allmember:deleted", {
                     list_id: list_id,
                     board_id: board_id,
-                });
+                })
             }
         }
         return sendSuccess(res, "List deleted successfully");

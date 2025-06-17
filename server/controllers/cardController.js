@@ -8,7 +8,7 @@ const Attachment = require("../models/Attachment.js");
 const path = require("path");
 const { deleteCard } = require("../utils/dbHelper.js");
 const upload = require("../configs/storageConfig.js").upload;
-const { getIO } = require("../sockets/index.js");
+const { getIO, onlineUsers, sendToSocket } = require("../sockets/index.js");
 const { notify } = require("./notificationController.js");
 const fs = require("fs");
 
@@ -57,19 +57,18 @@ async function CreateCard(req, res) {
             card_id: card._id,
         });
         await list.save();
-        const colaborators = board.board_collaborators.map(
+        const collaborators = board.board_collaborators.map(
             (collaborator) => collaborator.board_collaborator_id
         );
         // gửi thông tin về card mới tạo cho người dùng
-        const io = getIO();
-        for (let collaborator of colaborators) {
-            if (onlineUsers.has(collaborator)) {
-                io.to(onlineUsers.get(collaborator))
-                    .emit("card:created", {
-                        card: card,
-                        list_id: list_id,
-                        board_id: board_id,
-                    });
+        for (let collaborator of collaborators) {
+            if (onlineUsers.has(collaborator.toString())) {
+                const socketId = onlineUsers.get(collaborator.toString());
+                await sendToSocket(socketId, "card:allmember:created", {
+                    card: card,
+                    list_id: list_id,
+                    board_id: board_id,
+                })
             }
         }
         // notify các thành viên về viêc tạo card mới
@@ -201,29 +200,35 @@ async function UpdateCard(req, res) {
         card.updated_at = Date.now();
         card.updated_by = user_id;
         const updatedCard = await card.save();
-        const colaborators = board.board_collaborators.map(
+        const collaborators = board.board_collaborators.map(
             (collaborator) => collaborator.board_collaborator_id
         );
         // gửi thông tin về card đã cập nhật cho người dùng
-        const io = getIO();
-        for (let collaborator of colaborators) {
-            if (onlineUsers.has(collaborator)) {
-                io.to(onlineUsers.get(collaborator))
-                    .emit("card:updated", {
-                        card: updatedCard,
-                        list_id: list_id,
-                        board_id: board_id,
-                    });
+        for (let collaborator of collaborators) {
+            if (onlineUsers.has(collaborator.toString())) {
+                const socketId = onlineUsers.get(collaborator.toString());
+                await sendToSocket(socketId, "card:allmember:updated", {
+                    card: updatedCard,
+                    list_id: list_id,
+                    board_id: board_id,
+                })
             }
         }
+
         // notify các thành viên card và owner board về việc cập nhật card
+        const cardAssignees = updatedCard.card_assignees.map(
+            (assignee) => assignee.card_assignee_id
+        );
 
         const sendNotiResult = await notify({
             sender_id: user_id,
-            receiver_ids: colaborators,
+            receiver_ids: cardAssignees,
             title: "Card Updated",
             message: `Card "${updatedCard.card_title}" has been updated.`,
-            reference: "Card",
+            reference: {
+                type: "CARD",
+                id: updatedCard.card_id,
+            },
         });
         if (sendNotiResult !== "OK") {
             logger.error("Failed to send notification:", sendNotiResult);
@@ -287,22 +292,23 @@ async function DeleteCard(req, res) {
         );
         await list.save();
         // gửi thông tin card bị xóa tới tất cả thành viên
-        const io = getIO();
         for (let collaborator of board.board_collaborators) {
-            if (onlineUsers.has(collaborator.board_collaborator_id)) {
-                io.to(onlineUsers.get(collaborator.board_collaborator_id))
-                    .emit("card:deleted", {
-                        card_id: card_id,
-                        list_id: list_id,
-                        board_id: board_id,
-                    });
+            if (onlineUsers.has(collaborator.board_collaborator_id.toString())) {
+                const socketId = onlineUsers.get(collaborator.board_collaborator_id.toString());
+                await sendToSocket(socketId, "card:allmember:deleted", {
+                    card_id: card_id,
+                    list_id: list_id,
+                    board_id: board_id,
+                })
             }
         }
 
         // notify các thành viên card và owner board về việc xóa card
+        const assigneesAndCreator = [...assignees, board.created_by];
+
         const sendNotiResult = await notify({
             sender_id: user_id,
-            receiver_ids: assignees.concat(board.created_by),
+            receiver_ids: assigneesAndCreator,
             title: "Card Deleted",
             message: `Card "${card.card_title}" has been deleted.`,
             reference: "Card",
@@ -379,16 +385,15 @@ async function MoveCard(req, res) {
         await oldList.save();
         await newList.save();
         // gửi thông tin về card đã di chuyển cho người dùng
-        const io = getIO();
         for (let collaborator of board.board_collaborators) {
-            if (onlineUsers.has(collaborator.board_collaborator_id)) {
-                io.to(onlineUsers.get(collaborator.board_collaborator_id))
-                    .emit("card:moved", {
-                        card_id: card_id,
-                        old_list_id: old_list_id,
-                        new_list_id: new_list_id,
-                        board_id: board_id,
-                    });
+            if (onlineUsers.has(collaborator.board_collaborator_id.toString())) {
+                const socketId = onlineUsers.get(collaborator.board_collaborator_id.toString());
+                await sendToSocket(socketId, "card:allmember:move", {
+                    card_id: card_id,
+                    old_list_id: old_list_id,
+                    new_list_id: new_list_id,
+                    board_id: board_id,
+                })
             }
         }
         return sendSuccess(res, "Card moved successfully");
@@ -479,20 +484,16 @@ async function MoveCardWithPosition(req, res) {
         // 5. Lưu cả hai list
         await Promise.all([oldList.save(), newList.save()]);
         // gửi thông tin về card đã di chuyển cho người dùng
-        const io = getIO();
-        const colaborators = board.board_collaborators.map(
-            (c) => c.board_collaborator_id
-        );
-        for (let collaborator of colaborators) {
-            if (onlineUsers.has(collaborator)) {
-                io.to(onlineUsers.get(collaborator))
-                    .emit("card:moved", {
-                        card_id: card_id,
-                        old_list_id: old_list_id,
-                        new_list_id: new_list_id,
-                        board_id: board_id,
-                        new_card_index: new_card_index,
-                    });
+        for (let collaborator of board.board_collaborators) {
+            if (onlineUsers.has(collaborator.board_collaborator_id.toString())) {
+                const socketId = onlineUsers.get(collaborator.board_collaborator_id.toString());
+                await sendToSocket(socketId, "card:allmember:move:position", {
+                    card_id: card_id,
+                    old_list_id: old_list_id,
+                    new_list_id: new_list_id,
+                    board_id: board_id,
+                    new_card_index: new_card_index,
+                })
             }
         }
 
@@ -555,13 +556,34 @@ async function AssignUserToCard(req, res) {
             return sendError(res, 403, "User already assigned to the card");
         }
         // add assignees
-        // notify các thành viên card và owner board về việc gán user vào card
+
         const assignees = card.card_assignees.map(
             (assignee) => assignee.card_assignee_id
         );
+
+        assignees.push(board.created_by);
+
+
+        card.card_assignees.push({ card_assignee_id: assign_user_id });
+        await card.save();
+
+        // gửi thay đổi realtime tới tất cả thành viên trong board
+        for (let collaborator of board.board_collaborators) {
+            if (onlineUsers.has(collaborator.board_collaborator_id.toString())) {
+                const socketId = onlineUsers.get(collaborator.board_collaborator_id.toString());
+                await sendToSocket(socketId, "card:allmember:assign", {
+                    card_id: card_id,
+                    list_id: list_id,
+                    board_id: board_id,
+                    assign_user_id: assign_user_id,
+                })
+            }
+        }
+
+        // notify các thành viên card và owner board về việc gán user vào card
         const sendNotiResult = await notify({
             sender_id: user_id,
-            receiver_ids: assignees.concat(board.created_by),
+            receiver_ids: assignees,
             title: "User Assigned to Card",
             message: `User "${assignee.user_full_name}" has been assigned to card "${card.card_title}".`,
             reference: "Card",
@@ -569,8 +591,7 @@ async function AssignUserToCard(req, res) {
         if (sendNotiResult !== "OK") {
             logger.error("Failed to send notification:", sendNotiResult);
         }
-        card.card_assignees.push({ card_assignee_id: assign_user_id });
-        await card.save();
+
         // gửi thông báo cho người dùng được thêm vào card
         const sendNotiToAssigneeResult = await notify({
             sender_id: user_id,
@@ -581,19 +602,6 @@ async function AssignUserToCard(req, res) {
         });
         if (sendNotiToAssigneeResult !== "OK") {
             logger.error("Failed to send notification to assignee:", sendNotiToAssigneeResult);
-        }
-        // gửi thay đổi realtime tới tất cả thành viên trong board
-        const io = getIO();
-        for (let collaborator of board.board_collaborators) {
-            if (onlineUsers.has(collaborator.board_collaborator_id)) {
-                io.to(onlineUsers.get(collaborator.board_collaborator_id))
-                    .emit("card:assignee:added", {
-                        card_id: card_id,
-                        list_id: list_id,
-                        board_id: board_id,
-                        assign_user_id: assign_user_id,
-                    });
-            }
         }
 
         return sendSuccess(res, "Succesfull assign user to card");
@@ -645,14 +653,30 @@ async function RemoveUserFromCard(req, res) {
         card.card_assignees = card.card_assignees.filter(
             (assignee) => String(assignee.card_assignee_id) !== remove_user_id
         );
-        card.save();
+        await card.save();
+
+        // gửi thay đổi realtime tới tất cả thành viên trong board
+        for (let collaborator of board.board_collaborators) {
+            if (onlineUsers.has(collaborator.board_collaborator_id.toString())) {
+                const socketId = onlineUsers.get(collaborator.board_collaborator_id.toString());
+                await sendToSocket(socketId, "card:allmember:remove", {
+                    card_id: card_id,
+                    list_id: list_id,
+                    board_id: board_id,
+                    remove_user_id: remove_user_id,
+                })
+            }
+        }
+
         // notify các thành viên card và owner board và user bị remove về việc gỡ user khỏi card
         const assignees = card.card_assignees.map(
             (assignee) => assignee.card_assignee_id
         );
+        assignees.push(board.created_by);
+
         const sendNotiResult = await notify({
             sender_id: user_id,
-            receiver_ids: assignees.concat(board.created_by, remove_user_id),
+            receiver_ids: assignees,
             title: "User Removed from Card",
             message: `User "${remove_user_id}" has been removed from card "${card.card_title}".`,
             reference: "Card",
@@ -660,22 +684,18 @@ async function RemoveUserFromCard(req, res) {
         if (sendNotiResult !== "OK") {
             logger.error("Failed to send notification:", sendNotiResult);
         }
-        // gửi thong tin realtime tới tất cả thành viên trong board
-        const colaborators = board.board_collaborators.map(
-            (collaborator) => collaborator.board_collaborator_id
-        );
-        let io = getIO();
-        for (let collaborator of colaborators) {
-            if (onlineUsers.has(collaborator)) {
-                io.to(onlineUsers.get(collaborator))
-                    .emit("card:assignee:removed", {
-                        card_id: card_id,
-                        list_id: list_id,
-                        board_id: board_id,
-                        remove_user_id: remove_user_id,
-                    });
-            }
+        // gửi thong tin thành viên bị remove khỏi card
+        const sendNotiResult2 = await notify({
+            sender_id: user_id,
+            receiver_ids: [remove_user_id],
+            title: "User Removed from Card",
+            message: `You have been removed from card "${card.card_title}".`,
+            reference: "Card",
+        });
+        if (sendNotiResult2 !== "OK") {
+            logger.error("Failed to send notification:", sendNotiResult2);
         }
+
         return sendSuccess(res, "Success remove user from card");
     } catch (error) {
         logger.error(error);
@@ -744,16 +764,15 @@ async function AddAttachmentToCard(req, res) {
             card.card_attachments.push({ card_attachment_id: attachment._id });
             await card.save();
             // gửi thông tin về file đã upload cho người dùng
-            const io = getIO();
             for (let collaborator of board.board_collaborators) {
-                if (onlineUsers.has(collaborator.board_collaborator_id)) {
-                    io.to(onlineUsers.get(collaborator.board_collaborator_id))
-                        .emit("card:attachment:added", {
-                            card_id: card_id,
-                            list_id: list_id,
-                            board_id: board_id,
-                            attachment: attachment,
-                        });
+                if (onlineUsers.has(collaborator.board_collaborator_id.toString())) {
+                    const socketId = onlineUsers.get(collaborator.board_collaborator_id.toString());
+                    await sendToSocket(socketId, "card:allmember:add:attachment", {
+                        card_id: card_id,
+                        list_id: list_id,
+                        board_id: board_id,
+                        attachment: attachment,
+                    })
                 }
             }
             return sendSuccess(res, "File uploaded successfully", attachment);
@@ -829,18 +848,18 @@ async function RemoveAttachmentFromCard(req, res) {
             }
         });
         // gửi thông tin về file đã xóa cho người dùng
-        const io = getIO();
         for (let collaborator of board.board_collaborators) {
-            if (onlineUsers.has(collaborator.board_collaborator_id)) {
-                io.to(onlineUsers.get(collaborator.board_collaborator_id))
-                    .emit("card:attachment:removed", {
-                        card_id: card_id,
-                        list_id: list_id,
-                        board_id: board_id,
-                        attachment_id: attachment_id,
-                    });
+            if (onlineUsers.has(collaborator.board_collaborator_id.toString())) {
+                const socketId = onlineUsers.get(collaborator.board_collaborator_id.toString());
+                await sendToSocket(socketId, "card:allmember:removed:attachment", {
+                    card_id: card_id,
+                    list_id: list_id,
+                    board_id: board_id,
+                    attachment_id: attachment_id,
+                })
             }
         }
+
         return sendSuccess(res, "Attachment removed successfully");
     } catch (error) {
         logger.error(error.message);

@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useState } from "react";
 import privateAxios from "../api/privateAxios";
+import { useEffect } from "react";
+import { useSocket } from "./SocketContext";
 
 const CardContext = createContext();
 
@@ -7,6 +9,7 @@ export const useCard = () => useContext(CardContext);
 
 export const CardProvider = ({ children }) => {
     const [cards, setCards] = useState([]);
+    const { socket, connected } = useSocket();
 
     // create card
     const createCard = async (boardId, listId, cardTitle) => {
@@ -201,6 +204,77 @@ export const CardProvider = ({ children }) => {
             return false;
         }
     };
+
+    useEffect(() => {
+        if (!connected) return;
+
+        /* ---------- card được tạo (creator tab khác hoặc collaborator) */
+        const onCreated = ({ card, list_id, board_id }) => {
+
+        };
+
+        /* ---------- card được cập-nhật (tiêu đề, privacy …) ----------- */
+        const onUpdated = ({ card, list_id, board_id }) => {
+
+        };
+
+        /* ---------- card bị xoá --------------------------------------- */
+        const onDeleted = ({ card_id, list_id, board_id }) => {
+
+        };
+
+        /* ----------Move card --------------------------------------*/
+        const onMoveCard = ({ card_id, old_list_id, new_list_id, board_id }) => {
+
+        }
+
+        /* ----------Move card with position-------------------------*/
+        const onMoveCardWithPosition = ({ card_id, old_list_id, new_list_id, new_card_index }) => {
+
+        }
+
+        /* ----------Thêm user vào card---------------*/
+        const onAddNewMemberToCard = ({ card_id, list_id, board_id, assign_user_id }) => {
+
+        };
+
+        /* ----------tháo user khỏi card---------------*/
+        const onRemoveMemberFromCard = ({ card_id, list_id, board_id, remove_user_id }) => {
+
+        };
+
+        /* ----------thêm attachment vào card---------------*/
+        const onAddAttachment = ({ card_id, list_id, board_id, attachment }) => {
+
+        }
+
+        /* ----------tháo attachment khỏi card---------------*/
+        const onRemoveAttachment = ({ board_id }) => {
+
+        };
+
+        socket.on("card:allmember:created", onCreated);
+        socket.on("card:allmember:updated", onUpdated);
+        socket.on("card:allmember:deleted", onDeleted);
+        socket.on("card:allmember:move", onMoveCard);
+        socket.on("card:allmember:move:position", onMoveCardWithPosition);
+        socket.on("card:allmember:assign", onAddNewMemberToCard);
+        socket.on("card:allmember:remove", onRemoveMemberFromCard);
+        socket.on("card:allmember:add:attachment", onAddAttachment);
+        socket.on("card:allmember:removed:attachment", onRemoveAttachment);
+
+        return () => {
+            socket.off("card:allmember:created", onCreated);
+            socket.off("card:allmember:updated", onUpdated);
+            socket.off("card:allmember:deleted", onDeleted);
+            socket.off("card:allmember:move", onMoveCard);
+            socket.off("card:allmember:move:position", onMoveCardWithPosition);
+            socket.off("card:allmember:assign", onAddNewMemberToCard);
+            socket.off("card:allmember:remove", onRemoveMemberFromCard);
+            socket.off("card:allmember:add:attachment", onAddAttachment);
+            socket.off("card:allmember:removed:attachment", onRemoveAttachment);
+        };
+    }, [connected, socket, cards]);
 
     return (
         <CardContext.Provider
