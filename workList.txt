@@ -68,3 +68,29 @@ usecase: creator thêm user đã add vào conversation
 [2025-06-17 00:00:02] ERROR: Failed to notify collaborators for new member in board 68504d8b5b3b3f9bbec8baa6
 [2025-06-17 00:00:02] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('68504d8b5b3b3f9bbec8baa6') }" (type Object) at path "notification_reference"
 [2025-06-17 00:00:02] ERROR: Failed to notify new member for board 68504d8b5b3b3f9bbec8baa6
+
+gửi thông tin mới cho các thành viên
+for (let collaborator of collaboratorsBeforeAdd) {
+            if (onlineUsers.has(collaborator.board_collaborator_id)) {
+                const socketId = onlineUsers.get(collaborator.board_collaborator_id);
+                await sendToSocket(socketId, "board:member:added", {
+                    board_id: board_id,
+                    member_id: member_id,
+                    member_role: member_role
+                })
+            }
+        }
+
+gửi thông tin cho 1 thành viên
+
+if (onlineUsers.has(member._id.toString())) {
+            const socketId = onlineUsers.get(member._id.toString());
+            console.log(socketId, "is online");
+            await sendToSocket(socketId, "board:newMember:added", {
+                board: updatedBoard,
+            })
+        }
+
+công thức đặt tên cho socket.emit
+
+từ { đối tượng }:đến { đối tượng }: { hành động }

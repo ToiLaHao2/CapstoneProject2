@@ -5,7 +5,7 @@ const { deleteBoard } = require("../utils/dbHelper");
 const logger = require("../utils/logger");
 const { sendSuccess, sendError } = require("../utils/response");
 const { notify } = require("./notificationController");
-const { getIO } = require("../sockets/index");
+const { getIO, sendToSocket } = require("../sockets/index");
 const { onlineUsers } = require("../utils/onlineUser");
 
 async function CreateBoard(req, res) {
@@ -32,7 +32,6 @@ async function CreateBoard(req, res) {
         await user.save();
         if (boardReqCreate.board_collaborators.length > 0) {
             // gửi board mới về cho các colaborators
-            let io = getIO();
             for (let collaborator of boardReqCreate.board_collaborators) {
                 const collaboratorUser = await User.findById(
                     collaborator.board_collaborator_id
@@ -46,8 +45,10 @@ async function CreateBoard(req, res) {
                 }
                 if (onlineUsers.has(collaborator.board_collaborator_id)) {
                     // nếu user đang online thì gửi board mới về cho họ
-                    io.to(onlineUsers.get(collaborator.board_collaborator_id))
-                        .emit("board:created", newBoard);
+                    const socketId = onlineUsers.get(collaborator.board_collaborator_id.toString());
+                    await sendToSocket(socketId, "board:allmember:created", {
+                        board: newBoard,
+                    })
                 }
             }
 
@@ -60,7 +61,9 @@ async function CreateBoard(req, res) {
                 title: "You have been added to a new board",
                 message: `You have been added to the board "${boardReqCreate.board_title}"`,
                 reference: {
-                    id: newBoard._id,
+                    type: "BOARD",
+                    boardId: newBoard._id,
+
                 },
             });
             if (sendNotiResult !== "OK") {
@@ -201,6 +204,18 @@ async function UpdateBoard(req, res) {
 
         // Lưu thay đổi vào CSDL
         const updatedBoard = await board.save();
+        logger.info("Board updated successfully");
+
+        // gửi thay đổi về cho các cộng tác viên đang online
+        for (let collaborator of board.board_collaborators) {
+            if (onlineUsers.has(collaborator.board_collaborator_id.toString())) {
+                const socketId = onlineUsers.get(collaborator.board_collaborator_id.toString());
+                await sendToSocket(socketId, "board:allmember:updated", {
+                    board: updatedBoard,
+                })
+            }
+        }
+
         // notyfy các thành viên về sự thay đổi của bảng
         const sendNotiResult = await notify({
             senderId: user_id,
@@ -210,7 +225,8 @@ async function UpdateBoard(req, res) {
             title: "Board updated",
             message: `The board "${board.board_title}" has been updated by ${user.user_full_name}`,
             reference: {
-                id: updatedBoard._id,
+                type: "BOARD",
+                id: updatedBoard._id
             },
         });
         if (sendNotiResult !== "OK") {
@@ -218,16 +234,6 @@ async function UpdateBoard(req, res) {
                 `Failed to notify collaborators for board ${updatedBoard._id}`
             );
         }
-        // gửi thay đổi về cho các cộng tác viên đang online
-        let io = getIO();
-        for (let collaborator of board.board_collaborators) {
-            if (onlineUsers.has(collaborator.board_collaborator_id)) {
-                io.to(onlineUsers.get(collaborator.board_collaborator_id))
-                    .emit("board:updated", updatedBoard);
-            }
-        }
-
-        logger.info("Board updated successfully");
 
         // Trả về thành công
         return sendSuccess(res, "Board updated successfully", updatedBoard);
@@ -269,12 +275,14 @@ async function DeleteBoard(req, res) {
                 details: deleteResult.message,
             });
         }
+
         // gửi thông tin tới client đang online
-        let io = getIO();
         for (let collaborator of collaborators) {
-            if (onlineUsers.has(collaborator.board_collaborator_id)) {
-                io.to(onlineUsers.get(collaborator.board_collaborator_id))
-                    .emit("board:deleted", { board_id: board_id });
+            if (onlineUsers.has(collaborator)) {
+                const socketId = onlineUsers.get(collaborator);
+                await sendToSocket(socketId, "board:allmember:deleted", {
+                    board_id: board_id,
+                })
             }
         }
 
@@ -285,6 +293,7 @@ async function DeleteBoard(req, res) {
             title: "Board deleted",
             message: `The board "${board_title}" has been deleted`,
             reference: {
+                type: "BOARD",
                 id: board_id,
             },
         });
@@ -350,14 +359,29 @@ async function AddMemberToBoard(req, res) {
             board_collaborator_role: member_role,
         });
 
-        // gửi thông tin member mới tới các cộng tác viên đang online
+        // lưu board
+        const updatedBoard = await board.save();
 
+        // gửi thông tin member mới tới các cộng tác viên đang online
+        for (let collaborator of collaboratorsBeforeAdd) {
+            if (onlineUsers.has(collaborator)) {
+                const socketId = onlineUsers.get(collaborator);
+                await sendToSocket(socketId, "board:allmember:added", {
+                    board_id: board_id,
+                    member_id: member_id,
+                    member_role: member_role
+                })
+            }
+        }
+
+        // gửi thông báo về member mới cho các cộng tác viên đang online
         const sendNotiResultCollaborators = await notify({
             senderId: user_id,
             receiverIds: collaboratorsBeforeAdd,
             title: "New member added to board",
             message: `${member.user_full_name} has been added to the board "${board.board_title}"`,
             reference: {
+                type: "BOARD",
                 id: board._id,
             },
         });
@@ -370,20 +394,17 @@ async function AddMemberToBoard(req, res) {
         member.user_boards.push({ board_id: board_id, role: "MEMBER" });
 
         // Lưu thay đổi vào CSDL
-        const updatedBoard = await board.save();
-        let io = getIO();
-        for (let collaborator of updatedBoard.board_collaborators) {
-            if (onlineUsers.has(collaborator)) {
-                io.to(onlineUsers.get(collaborator)).emit("board:member:added", {
-                    board_id: board_id,
-                    member_id: member_id,
-                    member_role: member_role,
-                });
-            }
-        }
         await member.save();
-        // Trả về phản hồi thành công
-        // notify các thành viên về việc thêm thành viên mới
+
+        // gửi thông tin board cho user được thêm vào
+        if (onlineUsers.has(member._id.toString())) {
+            const socketId = onlineUsers.get(member._id.toString());
+            console.log(socketId, "is online");
+            await sendToSocket(socketId, "board:member:added", {
+                board: updatedBoard,
+            })
+        }
+        // Thông báo về việc member đã được add vào board
         const sendNotiResult = await notify({
             senderId: user_id,
             receiverIds: [member_id],
@@ -445,19 +466,18 @@ async function RemoveMemberFromBoard(req, res) {
             (collab) =>
                 String(collab.board_collaborator_id) !== String(member_id)
         );
-        // Lưu thay đổi vào CSDL
-        member.user_boards = member.user_boards.filter(
-            (board) => String(board.board_id) !== String(board_id)
-        );
+
+        // lưu board
+        const updatedBoard = await board.save();
+
         // gửi thông tin member bị xóa tới các cộng tác viên đang online
-        let io = getIO();
-        for (let collaborator of board.board_collaborators) {
-            if (onlineUsers.has(collaborator.board_collaborator_id)) {
-                io.to(onlineUsers.get(collaborator.board_collaborator_id))
-                    .emit("board:member:removed", {
-                        board_id: board_id,
-                        member_id: member_id,
-                    });
+        for (let collaborator of updatedBoard.board_collaborators) {
+            if (onlineUsers.has(collaborator.board_collaborator_id.toString())) {
+                const socketId = onlineUsers.get(collaborator.board_collaborator_id.toString());
+                await sendToSocket(socketId, "board:allmember:removed", {
+                    board_id: board_id,
+                    remove_member_id: member_id,
+                })
             }
         }
         // notify các thành viên về việc xóa thành viên
@@ -479,16 +499,29 @@ async function RemoveMemberFromBoard(req, res) {
             );
         }
 
-        const updatedBoard = await board.save();
+        // xóa board khỏi ds của member
+        member.user_boards = member.user_boards.filter(
+            (board) => String(board.board_id) !== String(board_id)
+        );
+        // luu member
         await member.save();
-        // notify các thành viên về việc xóa thành viên
+
+        // gửi thông tin remove của member bị xóa
+        if (onlineUsers.has(member_id)) {
+            const socketId = onlineUsers.get(member_id);
+            console.log(socketId, "is online");
+            await sendToSocket(socketId, "board:member:removed", {
+                board_id: updatedBoard._id,
+            })
+        }
+
+        // notify member về việc mình bị xóa
         const sendNotiResultMember = await notify({
             senderId: user_id,
             receiverIds: [member_id],
             title: "You have been removed from a board",
             message: `You have been removed from the board "${board.board_title}"`,
             reference: {
-                type: "BOARD",
                 id: board_id,
             },
         });
@@ -551,20 +584,20 @@ async function UpdateMemberRole(req, res) {
         });
         // Lưu thay đổi vào CSDL
         const updatedBoard = await board.save();
-        // Trả về phản hồi thành công
-        // gửi thông tin member mới tới các cộng tác viên đang online
-        let io = getIO();
+
+        // gửi thông tin về sự thay đổi role của member tới các member đang online
         for (let collaborator of board.board_collaborators) {
-            if (onlineUsers.has(collaborator.board_collaborator_id)) {
-                io.to(onlineUsers.get(collaborator.board_collaborator_id))
-                    .emit("board:member:role_updated", {
-                        board_id: board_id,
-                        member_id: member_id,
-                        new_member_role: new_member_role,
-                    });
+            if (onlineUsers.has(collaborator.board_collaborator_id.toString())) {
+                const socketId = onlineUsers.get(collaborator.board_collaborator_id.toString());
+                await sendToSocket(socketId, "board:allmember:role", {
+                    board_id: board_id,
+                    member_id: member_id,
+                    member_role: new_member_role
+                })
             }
         }
-        // notify thành viên về việc cập nhật vai trò của thành viên
+
+        // notify thành viên về việc cập nhật vai trò của mình
         const sendNotiResult = await notify({
             senderId: user_id,
             receiverIds: [member_id],
@@ -581,6 +614,7 @@ async function UpdateMemberRole(req, res) {
             );
         }
         logger.info("Member role updated successfully");
+
         return sendSuccess(
             res,
             "Member role updated successfully",
@@ -642,28 +676,31 @@ async function UpdatePrivacy(req, res) {
                 details: "The requested board does not exist",
             });
         }
+
         // Kiểm tra quyền của người dùng
         if (String(board.created_by) !== String(user_id)) {
             return sendError(res, 403, "Access Denied", {
                 details: "User is not the creator of this board",
             });
         }
+
         // Cập nhật trạng thái công khai
         board.board_is_public = new_privacy;
+
         // Lưu thay đổi vào CSDL
         const updatedBoard = await board.save();
-        // Trả về phản hồi thành công
+
         // gửi thông tin về trạng thái công khai mới tới các cộng tác viên đang online
-        let io = getIO();
-        for (let collaborator of board.board_collaborators) {
-            if (onlineUsers.has(collaborator.board_collaborator_id)) {
-                io.to(onlineUsers.get(collaborator.board_collaborator_id))
-                    .emit("board:privacy_updated", {
-                        board_id: board_id,
-                        new_privacy: new_privacy,
-                    });
+        for (let collaborator of updatedBoard.board_collaborators) {
+            if (onlineUsers.has(collaborator.board_collaborator_id.toString())) {
+                const socketId = onlineUsers.get(collaborator.board_collaborator_id.toString());
+                await sendToSocket(socketId, "board:privacy:updated", {
+                    board_id: updatedBoard._id,
+                    board_privacy: new_privacy,
+                })
             }
         }
+
         // notify các thành viên về việc cập nhật quyền riêng tư của bảng
         const sendNotiResult = await notify({
             senderId: user_id,
@@ -724,7 +761,7 @@ async function GetListsInBoard(req, res) {
         return sendSuccess(res, "Get all lists success", lists);
     } catch (error) {
         logger.error(`Error with GetListsInBoard: ${error}`);
-        return sendError(res, 500, "Internal Server Error", {
+        return sendError(res, 500, "Internal Servert Error", {
             details: error.message,
         });
     }
@@ -764,17 +801,15 @@ async function AddListToBoard(req, res) {
         });
         const updatedBoard = await board.save();
         // gửi thông tin list mới tới các cộng tác viên đang online
-        let io = getIO();
-        for (let collaborator of board.board_collaborators) {
-            if (onlineUsers.has(collaborator.board_collaborator_id)) {
-                io.to(onlineUsers.get(collaborator.board_collaborator_id))
-                    .emit("board:list:added", {
-                        board_id: board_id,
-                        list_id: list_id,
-                    });
+        for (let collaborator of updatedBoard.board_collaborators) {
+            if (onlineUsers.has(collaborator.board_collaborator_id.toString())) {
+                const socketId = onlineUsers.get(collaborator.board_collaborator_id.toString());
+                await sendToSocket(socketId, "board:list:added", {
+                    list: list
+                })
             }
         }
-        // notify các thành viên về việc thêm list mới
+
         return sendSuccess(res, "List added successfully", updatedBoard);
     } catch (error) {
         logger.error(`Error with AddListToBoard: ${error}`);
@@ -826,17 +861,17 @@ async function MoveList(req, res) {
         board.board_lists[index2].list_id = list_id1;
         const updatedBoard = await board.save();
         // gửi thông tin list đã được di chuyển tới các cộng tác viên đang online
-        let io = getIO();
-        for (let collaborator of board.board_collaborators) {
-            if (onlineUsers.has(collaborator.board_collaborator_id)) {
-                io.to(onlineUsers.get(collaborator.board_collaborator_id))
-                    .emit("board:list:moved", {
-                        board_id: board_id,
-                        list_id1: list_id1,
-                        list_id2: list_id2,
-                    });
+        for (let collaborator of updatedBoard.board_collaborators) {
+            if (onlineUsers.has(collaborator.board_collaborator_id.toString())) {
+                const socketId = onlineUsers.get(collaborator.board_collaborator_id.toString());
+                await sendToSocket(socketId, "board:list:moved", {
+                    board_id: board_id,
+                    list_id1: list_id1,
+                    list_id2: list_id2,
+                })
             }
         }
+
         return sendSuccess(res, "List moved successfully", updatedBoard);
     } catch (error) {
         logger.error(`Error with MoveList: ${error}`);

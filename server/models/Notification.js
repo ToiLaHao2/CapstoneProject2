@@ -15,7 +15,7 @@ const NotificationSchema = new Schema(
         ],
         notification_title: { type: String, required: true },
         notification_message: { type: String, required: true },
-        notification_reference: { type: String, required: true },
+        notification_reference: { type: Object, required: true },
     },
     { timestamps: { createdAt: 'created_at', updatedAt: false } } // tự sinh created_at
 );

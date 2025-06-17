@@ -324,58 +324,140 @@ export const BoardProvider = ({ children }) => {
         };
 
         /* ---------- Board được cập-nhật (tiêu đề, privacy …) ----------- */
-        const onUpdated = ({ patch, reference }) => {
-            setBoards((prev) =>
-                prev.map((b) =>
-                    String(b._id) === String(reference.id) ? { ...b, ...patch } : b
+        const onUpdated = ({ updateBoard }) => {
+            setBoards((prevBoards) =>
+                prevBoards.map((board) =>
+                    board._id === updateBoard._id
+                        ? { ...board, board_title: updateBoard.board_title }
+                        : board
                 )
             );
         };
 
         /* ---------- Board bị xoá --------------------------------------- */
-        // const onDeleted = ({ reference }) => {
-        //     setBoards((prev) =>
-        //         prev.filter((b) => String(b._id) !== String(reference.id))
-        //     );
-        //     // Nếu đang đứng trong board vừa bị xoá → về dashboard
-        //     if (window.location.pathname.includes(reference.id))
-        //         navigate("/dashboard");
-        // };
-
-        /* ---------- Notification (khi collaborator được add) ----------- */
-        const onNotification = async (noti) => {
-            const ref = noti.notification_reference;
-            if (ref?.type !== "BOARD") return;
-
-            const already = boards.some(
-                (b) => String(b._id) === String(ref.id)
+        const onDeleted = ({ board_id }) => {
+            setBoards((prevBoards) =>
+                prevBoards.filter((board) => board._id !== board_id)
             );
-            if (already) return;
-
-            // REST lấy board đầy đủ
-            try {
-                const { data } = await privateAxios.post("/board/getBoardById", {
-                    board_id: ref.id,
-                    checkMessage: "Get board by id",
-                });
-                if (data.success) {
-                    setBoards((prev) => [...prev, data.data]);
-                }
-            } catch (err) {
-                console.error("Fetch board error", err);
-            }
         };
 
-        socket.on("board:created", onCreated);
-        socket.on("board:updated", onUpdated);
-        // socket.on("board:deleted", onDeleted);
-        socket.on("newNotification", onNotification);
+        /* ----------Update privacy --------------------------------------*/
+        const onUpdatePrivacy = ({ board_id, board_privacy }) => {
+            setBoards((prevBoards) =>
+                prevBoards.map((board) =>
+                    board._id === board_id
+                        ? { ...board, board_is_public: board_privacy }
+                        : board
+                )
+            );
+        }
+
+        const onMoveList = ({ board_id, list_id1, list_id2 }) => {
+            setBoards((prevBoards) =>
+                prevBoards.map((board) => {
+                    if (board._id === board_id) {
+                        const updatedBoardLists = [...board.board_lists];
+                        const index1 = updatedBoardLists.findIndex(
+                            (item) => String(item.list_id) === String(list_id1)
+                        );
+                        const index2 = updatedBoardLists.findIndex(
+                            (item) => String(item.list_id) === String(list_id2)
+                        );
+
+                        if (index1 !== -1 && index2 !== -1) {
+                            // Hoán đổi vị trí list_id trong mảng board_lists
+                            const temp = { ...updatedBoardLists[index1] };
+                            updatedBoardLists[index1].list_id = list_id2;
+                            updatedBoardLists[index2].list_id = temp.list_id;
+                            return { ...board, board_lists: updatedBoardLists };
+                        }
+                    }
+                    return board;
+                })
+            );
+        }
+
+        /* ----------Thêm user vào board---------------*/
+        const onAddNewMemberToBoard = (payload) => {
+            setBoards((prevBoards) =>
+                prevBoards.map((board) => {
+                    if (String(board._id) !== String(payload.board_id)) return board;
+
+                    // tạo bản sao collaborators + phần tử mới
+                    const updatedCollaborators = [
+                        ...board.board_collaborators,
+                        {
+                            board_collaborator_id: payload.member_id,
+                            board_collaborator_role: payload.member_role,
+                        },
+                    ];
+
+                    // trả về board mới, KHÔNG mutate board gốc
+                    return { ...board, board_collaborators: updatedCollaborators };
+                })
+            );
+        };
+
+        // payload = { board_id: "...", remove_member_id: "..." }
+        const onRemoveMemberFromBoard = (payload) => {
+            setBoards((prevBoards) =>
+                prevBoards.map((board) => {
+                    if (String(board._id) !== String(payload.board_id)) return board;
+
+                    // tạo mảng mới KHÔNG chứa thành viên bị xoá
+                    const updatedCollaborators = board.board_collaborators.filter(
+                        (c) => String(c.board_collaborator_id) !== String(payload.remove_member_id)
+                    );
+
+                    return { ...board, board_collaborators: updatedCollaborators };
+                })
+            );
+        };
+
+
+        const onAddMemberToBoard = async (payload) => {
+            // thêm board từ payload vào danh sách boards. payload.board là board mới được thêm thành viên
+            const boardAdd = payload.board;
+            const colaborators = await getAllMembers(boardAdd._id);
+            boardAdd.board_collaborators = colaborators;
+            setBoards((prev) => {
+                const already = prev.some(
+                    (b) => String(b._id) === String(payload.board._id)
+                );
+                if (already) return prev;
+
+                return [...prev, boardAdd];
+            });
+        }
+
+        const onRemoveBoardFromBoards = ({ board_id }) => {
+            setBoards((prevBoards) =>
+                prevBoards.filter(
+                    (b) => String(b._id) !== String(board_id)   // giữ tất cả board ≠ board_id
+                )
+            );
+        };
+
+        socket.on("board:allmember:created", onCreated);
+        socket.on("board:allmember:updated", onUpdated);
+        socket.on("board:allmember:deleted", onDeleted);
+        socket.on("board:privacy:updated", onUpdatePrivacy);
+        socket.on("board:list:moved", onMoveList);
+        socket.on("board:allmember:added", onAddNewMemberToBoard);
+        socket.on("board:allmember:removed", onRemoveMemberFromBoard);
+        socket.on("board:member:added", onAddMemberToBoard);
+        socket.on("board:member:removed", onRemoveBoardFromBoads);
 
         return () => {
             socket.off("board:created", onCreated);
             socket.off("board:updated", onUpdated);
-            // socket.off("board:deleted", onDeleted);
-            socket.off("newNotification", onNotification);
+            socket.off("board:deleted", onDeleted);
+            socket.off("board:privacy:updated", onUpdatePrivacy);
+            socket.off("board:list:moved", onMoveList);
+            socket.off("board:allmember:added", onAddNewMemberToBoard);
+            socket.off("board:allmember:removed", onRemoveMemberFromBoard);
+            socket.off("board:member:added", onAddMemberToBoard);
+            socket.off("board:member:removed", onRemoveMemberFromBoard);
         };
     }, [connected, socket, boards]);
 
@@ -387,12 +469,12 @@ export const BoardProvider = ({ children }) => {
                 createBoard,
                 updateBoard,
                 deleteBoard,
-                getListsInBoard,
                 updatePrivacy,
-                getAllMembers,
-                addMemberToBoard,
                 moveList,
-                removeMemberFromBoard
+                addMemberToBoard,
+                removeMemberFromBoard,
+                getListsInBoard,
+                getAllMembers
             }}
         >
             {children}

@@ -85,7 +85,7 @@ async function CreateConversation(req, res) {
             receiverIds,
             title: 'New Conversation Created',
             message: `You have been added to a new conversation: ${title}`,
-            reference: conversation._id.toString(),
+            reference: conversation._id,
         });
         if (CreateConversationNotification !== "OK") {
             logger.error('CreateConversation: Failed to send notification');

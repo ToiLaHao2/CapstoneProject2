@@ -51,4 +51,9 @@ function getIO() {
     return io;
 }
 
-module.exports = { initSocket, getIO };
+async function sendToSocket(socketId, event, payload) {                      // instance đã khởi tạo
+    const skt = io.sockets.sockets.get(socketId); // lấy object nếu còn online
+    if (skt) skt.emit(event, payload);           // chỉ 1 client nhận
+}
+
+module.exports = { initSocket, getIO, sendToSocket, onlineUsers }; // export instance io
