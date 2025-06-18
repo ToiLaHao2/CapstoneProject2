@@ -444,3 +444,6 @@
 [2025-06-18 11:49:58] ERROR: Error verified token:  jwt expired
 [2025-06-18 11:50:35] ERROR: Error verified token:  jwt expired
 [2025-06-18 11:50:35] ERROR: Error verified token:  jwt expired
+[2025-06-18 12:04:20] ERROR: Failed to send notification to assignee:
+[2025-06-18 12:04:57] ERROR: Failed to send notification to assignee:
+[2025-06-18 12:05:17] ERROR: Failed to send notification to assignee:

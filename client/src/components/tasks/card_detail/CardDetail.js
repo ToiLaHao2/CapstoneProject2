@@ -76,8 +76,8 @@ function CardDetail() {
     useEffect(() => {
         if (!connected) return;
         /* ----------Thêm user vào card---------------*/
-        const onAddNewMemberToCard = ({ card_id, list_id, board_id, assign_user_email }) => {
-            setMembers([...members, assign_user_email]);
+        const onAddNewMemberToCard = ({ card_id, list_id, board_id, assignee }) => {
+            setMembers([...members, assignee]);
         };
 
         /* ----------tháo user khỏi card---------------*/
@@ -89,7 +89,7 @@ function CardDetail() {
 
         socket.on("card:allmember:assign", onAddNewMemberToCard);
         socket.on("card:allmember:remove", onRemoveMemberFromCard);
-        
+
         return () => {
             socket.off("card:allmember:assign", onAddNewMemberToCard);
             socket.off("card:allmember:remove", onRemoveMemberFromCard);
