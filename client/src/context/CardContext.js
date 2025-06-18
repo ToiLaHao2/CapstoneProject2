@@ -71,7 +71,6 @@ export const CardProvider = ({ children }) => {
                 list_id: listId,
                 card_id: cardId,
                 card_update_details: cardUpdateDetails,
-                // ...cardUpdateDetails,
                 checkMessage: "Update card",
             });
 
@@ -111,7 +110,6 @@ export const CardProvider = ({ children }) => {
             });
 
             const data = response.data;
-            console.log("Assigned user to card:", data);
 
             if (data.success) {
                 return data.data;
@@ -137,7 +135,6 @@ export const CardProvider = ({ children }) => {
             });
 
             const data = response.data;
-            console.log("Removed user from card:", data);
 
             if (data.success) {
                 return true;
@@ -163,7 +160,6 @@ export const CardProvider = ({ children }) => {
             });
 
             const data = response.data;
-            console.log("Moved card:", data);
 
             if (data.success) {
                 return true;
@@ -208,38 +204,18 @@ export const CardProvider = ({ children }) => {
     useEffect(() => {
         if (!connected) return;
 
-        /* ---------- card được tạo (creator tab khác hoặc collaborator) */
-        const onCreated = ({ card, list_id, board_id }) => {
-
-        };
-
         /* ---------- card được cập-nhật (tiêu đề, privacy …) ----------- */
-        const onUpdated = ({ card, list_id, board_id }) => {
-
+        // payload = { updated_card, list_id, board_id }
+        const onUpdated = ({ updated_card }) => {
+            setCards((prevCards) =>
+                prevCards.map((card) =>
+                    String(card._id) === String(updated_card._id) ? updated_card : card
+                )
+            );
         };
 
         /* ---------- card bị xoá --------------------------------------- */
         const onDeleted = ({ card_id, list_id, board_id }) => {
-
-        };
-
-        /* ----------Move card --------------------------------------*/
-        const onMoveCard = ({ card_id, old_list_id, new_list_id, board_id }) => {
-
-        }
-
-        /* ----------Move card with position-------------------------*/
-        const onMoveCardWithPosition = ({ card_id, old_list_id, new_list_id, new_card_index }) => {
-
-        }
-
-        /* ----------Thêm user vào card---------------*/
-        const onAddNewMemberToCard = ({ card_id, list_id, board_id, assign_user_id }) => {
-
-        };
-
-        /* ----------tháo user khỏi card---------------*/
-        const onRemoveMemberFromCard = ({ card_id, list_id, board_id, remove_user_id }) => {
 
         };
 
@@ -253,24 +229,14 @@ export const CardProvider = ({ children }) => {
 
         };
 
-        socket.on("card:allmember:created", onCreated);
         socket.on("card:allmember:updated", onUpdated);
         socket.on("card:allmember:deleted", onDeleted);
-        socket.on("card:allmember:move", onMoveCard);
-        socket.on("card:allmember:move:position", onMoveCardWithPosition);
-        socket.on("card:allmember:assign", onAddNewMemberToCard);
-        socket.on("card:allmember:remove", onRemoveMemberFromCard);
         socket.on("card:allmember:add:attachment", onAddAttachment);
         socket.on("card:allmember:removed:attachment", onRemoveAttachment);
 
         return () => {
-            socket.off("card:allmember:created", onCreated);
             socket.off("card:allmember:updated", onUpdated);
             socket.off("card:allmember:deleted", onDeleted);
-            socket.off("card:allmember:move", onMoveCard);
-            socket.off("card:allmember:move:position", onMoveCardWithPosition);
-            socket.off("card:allmember:assign", onAddNewMemberToCard);
-            socket.off("card:allmember:remove", onRemoveMemberFromCard);
             socket.off("card:allmember:add:attachment", onAddAttachment);
             socket.off("card:allmember:removed:attachment", onRemoveAttachment);
         };

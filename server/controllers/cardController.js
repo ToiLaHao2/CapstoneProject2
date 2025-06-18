@@ -57,10 +57,12 @@ async function CreateCard(req, res) {
             card_id: card._id,
         });
         await list.save();
-        const collaborators = board.board_collaborators.map(
-            (collaborator) => collaborator.board_collaborator_id
+
+        // gửi thông tin về card mới tạo cho người dùng trừ người tạo
+        const collaborators = board.board_collaborators.filter(
+            (collaborator) =>
+                collaborator.board_collaborator_id !== user_id
         );
-        // gửi thông tin về card mới tạo cho người dùng
 
         for (let collaborator of collaborators) {
             if (onlineUsers.has(collaborator.toString())) {
@@ -209,7 +211,7 @@ async function UpdateCard(req, res) {
             if (onlineUsers.has(collaborator.toString())) {
                 const socketId = onlineUsers.get(collaborator.toString());
                 await sendToSocket(socketId, "card:allmember:updated", {
-                    card: updatedCard,
+                    updated_card: updatedCard,
                     list_id: list_id,
                     board_id: board_id,
                 })
@@ -228,7 +230,7 @@ async function UpdateCard(req, res) {
             message: `Card "${updatedCard.card_title}" has been updated.`,
             reference: {
                 type: "CARD",
-                id: updatedCard.card_id,
+                id: updatedCard._id,
             },
         });
         if (sendNotiResult !== "OK") {
@@ -576,7 +578,7 @@ async function AssignUserToCard(req, res) {
                     card_id: card_id,
                     list_id: list_id,
                     board_id: board_id,
-                    assign_user_id: assign_user_id,
+                    assign_user_email: assignee.user_email,
                 })
             }
         }

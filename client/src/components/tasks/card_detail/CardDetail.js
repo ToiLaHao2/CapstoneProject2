@@ -6,6 +6,7 @@ import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { useCard } from "../../../context/CardContext";
 import { useBoard } from "../../../context/BoardContext";
 import { useList } from "../../../context/ListContext";
+import { useSocket } from "../../../context/SocketContext";
 
 function CardDetail() {
     const { taskId } = useParams();
@@ -69,6 +70,31 @@ function CardDetail() {
     const [showRemoveConfirmation, setShowRemoveConfirmation] = useState(false);
     const [userToRemoveConfirmation, setUserToRemoveConfirmation] = useState(null);
 
+    const { socket, connected } = useSocket();
+
+    // socket here
+    useEffect(() => {
+        if (!connected) return;
+        /* ----------Thêm user vào card---------------*/
+        const onAddNewMemberToCard = ({ card_id, list_id, board_id, assign_user_email }) => {
+            setMembers([...members, assign_user_email]);
+        };
+
+        /* ----------tháo user khỏi card---------------*/
+        const onRemoveMemberFromCard = ({ card_id, list_id, board_id, remove_user_id }) => {
+            setMembers(
+                members.filter((m) => m._id !== remove_user_id)
+            );
+        };
+
+        socket.on("card:allmember:assign", onAddNewMemberToCard);
+        socket.on("card:allmember:remove", onRemoveMemberFromCard);
+        
+        return () => {
+            socket.off("card:allmember:assign", onAddNewMemberToCard);
+            socket.off("card:allmember:remove", onRemoveMemberFromCard);
+        }
+    }, [connected, socket, members])
 
     const handleListChange = (event) => {
         setTargetListId(event.target.value);
@@ -92,14 +118,6 @@ function CardDetail() {
 
     const handleSave = async () => {
         try {
-            // await updateCard(boardId, currentListId, taskId, {
-            //     card_id: taskId,
-            //     card_title: cardTitle,
-            //     card_description: description,
-            //     card_duration: duration ? new Date(duration).toISOString() : null,
-            //     card_completed: completed,
-            //     list_id: currentListId,
-            // });
 
             const cardUpdateDetails = {
                 card_id: taskId,
@@ -108,9 +126,8 @@ function CardDetail() {
                 card_duration: duration ? new Date(duration).toISOString() : null,
                 card_completed: completed,
                 list_id: currentListId,
-                card_priority: priority, 
+                card_priority: priority,
             };
-            console.log("Data to update card:", cardUpdateDetails); 
 
             await updateCard(boardId, currentListId, taskId, cardUpdateDetails);
 
@@ -174,26 +191,6 @@ function CardDetail() {
         );
     };
 
-    // const handleRemoveMemberClick = async (member) => {
-    //     try {
-    //         const removed = await removeUserFromCard(
-    //             boardId,
-    //             listId,
-    //             taskId,
-    //             member._id
-    //         );
-    //         if (removed) {
-    //             console.log(`Removed user ${member.user_email} from card`);
-    //             setMembers(members.filter((m) => m._id !== member._id));
-    //         } else {
-    //             console.error(`Failed to remove user ${member.user_email}`);
-    //         }
-    //         setOpenMemberDropdown(null);
-    //     } catch (error) {
-    //         console.error("Error removing user:", error);
-    //     }
-    // };
-
     const handleRemoveMemberClick = (member) => {
         setUserToRemoveConfirmation(member);
         setShowRemoveConfirmation(true);
@@ -210,9 +207,6 @@ function CardDetail() {
                     userToRemoveConfirmation._id
                 );
                 if (removed) {
-                    console.log(
-                        `Removed user ${userToRemoveConfirmation.user_email} from card`
-                    );
                     setMembers(
                         members.filter((m) => m._id !== userToRemoveConfirmation._id)
                     );
@@ -236,98 +230,51 @@ function CardDetail() {
     };
     //mei
 
-
-    // useEffect(() => {
-    //     const fetchCardDetails = async () => {
-    //         try {
-    //             const cardDetails = await getCard(boardId, listId, taskId);
-    //             console.log("Card Details:", cardDetails);
-    //             if (cardDetails && cardDetails.card_assignees) {
-    //                 const fetchedMembers = cardDetails.card_assignees
-    //                     .map((assignee) => {
-    //                         if (assignee && assignee.user_email) {
-    //                             return assignee;
-    //                         }
-    //                         return null;
-    //                     })
-    //                     .filter((email) => email);
-    //                 setMembers(fetchedMembers);
-    //                 console.log("Members state:", fetchedMembers);
-    //             }
-    //         } catch (error) {
-    //             console.error("Failed to fetch card details:", error);
-    //         }
-    //     };
-
-    //     fetchCardDetails();
-
-    //     const fetchMembers = async () => {
-    //         if (showAddMemberForm) {
-    //             try {
-    //                 const allMembers = await getAllMembers(boardId);
-    //                 console.log("All members:", allMembers);
-    //                 if (allMembers && Array.isArray(allMembers)) {
-    //                     allMembers.forEach((member) =>
-    //                         console.log("Member:", member)
-    //                     );
-    //                     setMemberSuggestions(allMembers);
-    //                 } else {
-    //                     setMemberSuggestions([]);
-    //                 }
-    //             } catch (error) {
-    //                 console.error("Failed to fetch members:", error);
-    //             }
-    //         }
-    //     };
-    //     fetchMembers();
-    // }, [showAddMemberForm, getAllMembers, boardId, taskId]);
-
-
     useEffect(() => {
-    const fetchCardDetails = async () => {
-      try {
-        const cardDetails = await getCard(boardId, listId, taskId);
-        console.log("Card Details:", cardDetails);
-        if (cardDetails) {
-          setCardTitle(cardDetails.card_title || "");
-          setDescription(cardDetails.card_description || "");
-          setDuration(
-            cardDetails.card_duration
-              ? new Date(cardDetails.card_duration).toISOString().split("T")[0]
-              : ""
-          );
-          setCompleted(cardDetails.card_completed || false);
-          setPriority(cardDetails.card_priority || "high");
-          if (cardDetails.card_assignees) {
-            setMembers(cardDetails.card_assignees);
-            console.log("Members state:", cardDetails.card_assignees);
-          }
-        }
-      } catch (error) {
-        console.error("Failed to fetch card details:", error);
-      }
-    };
+        const fetchCardDetails = async () => {
+            try {
+                const cardDetails = await getCard(boardId, listId, taskId);
+                console.log("Card Details:", cardDetails);
+                if (cardDetails) {
+                    setCardTitle(cardDetails.card_title || "");
+                    setDescription(cardDetails.card_description || "");
+                    setDuration(
+                        cardDetails.card_duration
+                            ? new Date(cardDetails.card_duration).toISOString().split("T")[0]
+                            : ""
+                    );
+                    setCompleted(cardDetails.card_completed || false);
+                    setPriority(cardDetails.card_priority || "high");
+                    if (cardDetails.card_assignees) {
+                        setMembers(cardDetails.card_assignees);
+                        console.log("Members state:", cardDetails.card_assignees);
+                    }
+                }
+            } catch (error) {
+                console.error("Failed to fetch card details:", error);
+            }
+        };
 
-    fetchCardDetails();
+        fetchCardDetails();
 
-    const fetchMembers = async () => {
-      if (showAddMemberForm) {
-        try {
-          const allMembers = await getAllMembers(boardId);
-          console.log("All members:", allMembers);
-          if (allMembers && Array.isArray(allMembers)) {
-            allMembers.forEach((member) => console.log("Member:", member));
-            setMemberSuggestions(allMembers);
-          } else {
-            setMemberSuggestions([]);
-          }
-        } catch (error) {
-          console.error("Failed to fetch members:", error);
-        }
-      }
-    };
-    fetchMembers();
-  }, [showAddMemberForm, getAllMembers, boardId, taskId, getCard, listId]);
+        const fetchMembers = async () => {
+            if (showAddMemberForm) {
+                try {
+                    const allMembers = await getAllMembers(boardId);
+                    console.log("All members:", allMembers);
+                    if (allMembers && Array.isArray(allMembers)) {
+                        allMembers.forEach((member) => console.log("Member:", member));
+                        setMemberSuggestions(allMembers);
+                    } else {
+                        setMemberSuggestions([]);
+                    }
+                } catch (error) {
+                    console.error("Failed to fetch members:", error);
+                }
+            }
+        };
+        fetchMembers();
+    }, [showAddMemberForm, getAllMembers, boardId, taskId, getCard, listId]);
 
     useEffect(() => {
         const fetchLists = async () => {
