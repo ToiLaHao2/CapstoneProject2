@@ -338,10 +338,43 @@ const Tasks = () => {
             });
         };
 
+        /* ----------List được tạo (creator tab khác hoặc collaborator) */
+        const onCreatedList = ({ list, board_id }) => {
+            setColumns((prev) => {
+                if (prev.some((c) => String(c._id) === String(list._id))) return prev;
+                return [...prev, list];
+            })
+        };
+
+        /* ---------- list được cập-nhật  ----------- */
+        const onUpdatedList = ({ list, board_id }) => {
+            setColumns((prevCols) =>
+                prevCols.map((col) =>
+                    col._id === list._id
+                        ? { ...col, list }
+                        : col
+                )
+            );
+        };
+
+        /* ---------- list bị xoá --------------------------------------- */
+        const onDeletedList = ({ list_id, board_id }) => {
+            setColumns((prevCols) =>
+                prevCols.filter((col) => col._id !== list_id)
+            );
+        };
+
+
+        socket.on("list:allmember:created", onCreatedList);
+        socket.on("list:allmember:updated", onUpdatedList);
+        socket.on("list:allmember:deleted", onDeletedList);
         socket.on("card:allmember:created", onCreated);
         socket.on("card:allmember:move", onMoveCard);
         socket.on("card:allmember:move:position", onMoveCardWithPosition);
         return () => {
+            socket.off("list:allmember:created", onCreatedList);
+            socket.off("list:allmember:deleted", onUpdatedList);
+            socket.off("list:allmember:deleted", onDeletedList);
             socket.off("card:allmember:created", onCreated);
             socket.off("card:allmember:move", onMoveCard);
             socket.off("card:allmember:move:position", onMoveCardWithPosition);
@@ -361,7 +394,6 @@ const Tasks = () => {
             const newList = await createList(
                 boardId,
                 columnTitle,
-                columns.length + 1
             );
             if (newList) {
                 await fetchLists();

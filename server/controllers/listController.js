@@ -111,7 +111,7 @@ async function UpdateList(req, res) {
                 })
             }
         }
-        return sendSuccess(res, 200, list, "UpdateList");
+        return sendSuccess(res, "Update success full", list);
     } catch (error) {
         logger.error(error);
         return sendError(res, 500, "Internal server error", error);
