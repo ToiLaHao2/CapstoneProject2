@@ -12160,3 +12160,1030 @@
 [2025-06-17 17:07:52] INFO: Successfull checking data to get all members
 [2025-06-17 17:07:52] INFO: Successfull checking data to get all members
 [2025-06-17 17:11:23] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 10:49:19] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 10:49:57] INFO: Successfull checking data user for login
+[2025-06-18 10:49:57] INFO: Compare hash complete
+[2025-06-18 10:49:57] INFO: Complete create token
+[2025-06-18 10:49:57] INFO: Successfull checking data user for get user profile
+[2025-06-18 10:49:57] INFO: Successfull checking data to get board by user id
+[2025-06-18 10:49:57] INFO: Successfull checking data to get all members
+[2025-06-18 10:49:58] INFO: Successfull checking data to get board by user id
+[2025-06-18 10:49:58] INFO: Successfull checking data to get board by user id
+[2025-06-18 10:49:58] INFO: Successfull checking data user for get user profile
+[2025-06-18 10:49:58] INFO: Successfull checking data user for get user profile
+[2025-06-18 10:49:58] INFO: Successfull checking data to get all members
+[2025-06-18 10:49:58] INFO: Successfull checking data to get all members
+[2025-06-18 10:50:12] INFO: Successfull checking data user for login
+[2025-06-18 10:50:12] INFO: Compare hash complete
+[2025-06-18 10:50:12] INFO: Complete create token
+[2025-06-18 10:50:12] INFO: Successfull checking data user for get user profile
+[2025-06-18 10:50:12] INFO: Successfull checking data to get board by user id
+[2025-06-18 10:50:12] INFO: Successfull checking data to get all members
+[2025-06-18 10:50:13] INFO: Successfull checking data to get board by user id
+[2025-06-18 10:50:13] INFO: Successfull checking data to get board by user id
+[2025-06-18 10:50:13] INFO: Successfull checking data user for get user profile
+[2025-06-18 10:50:13] INFO: Successfull checking data user for get user profile
+[2025-06-18 10:50:13] INFO: Successfull checking data to get all members
+[2025-06-18 10:50:13] INFO: Successfull checking data to get all members
+[2025-06-18 10:50:17] INFO: Successfull checking data to get lists in board
+[2025-06-18 10:50:17] INFO: Successfull checking data to get lists in board
+[2025-06-18 10:50:18] INFO: Successfull checking data to get lists in board
+[2025-06-18 10:50:18] INFO: Successfull checking data to get lists in board
+[2025-06-18 10:50:26] INFO: Successfull checking data to create list
+[2025-06-18 10:50:54] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 10:50:59] INFO: Successfull checking data user for get user profile
+[2025-06-18 10:50:59] INFO: Successfull checking data user for get user profile
+[2025-06-18 10:50:59] INFO: Successfull checking data to get lists in board
+[2025-06-18 10:50:59] INFO: Successfull checking data to get lists in board
+[2025-06-18 10:50:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 10:50:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 10:51:03] INFO: Successfull checking data user for get user profile
+[2025-06-18 10:51:03] INFO: Successfull checking data user for get user profile
+[2025-06-18 10:51:03] INFO: Successfull checking data to get lists in board
+[2025-06-18 10:51:03] INFO: Successfull checking data to get lists in board
+[2025-06-18 10:51:03] INFO: Successfull checking data to get cards in list
+[2025-06-18 10:51:03] INFO: Successfull checking data to get cards in list
+[2025-06-18 10:51:54] INFO: Successfull checking data to create card
+[2025-06-18 10:57:58] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 10:58:06] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 10:58:15] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 10:58:18] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 10:58:38] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 10:58:44] INFO: Successfull checking data user for get user profile
+[2025-06-18 10:58:44] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 10:58:44] INFO: Successfull checking data user for get user profile
+[2025-06-18 10:58:44] INFO: Successfull checking data to get lists in board
+[2025-06-18 10:58:44] INFO: Successfull checking data to get lists in board
+[2025-06-18 10:58:44] INFO: Successfull checking data to get cards in list
+[2025-06-18 10:58:44] INFO: Successfull checking data to get cards in list
+[2025-06-18 10:59:26] INFO: Successfull checking data to create card
+[2025-06-18 10:59:47] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:00:20] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:01:06] INFO: Successfull checking data user for get user profile
+[2025-06-18 11:01:06] INFO: Successfull checking data user for get user profile
+[2025-06-18 11:01:07] INFO: Successfull checking data user for get user profile
+[2025-06-18 11:01:07] INFO: Successfull checking data to get board by user id
+[2025-06-18 11:01:07] INFO: Successfull checking data user for get user profile
+[2025-06-18 11:01:07] INFO: Successfull checking data to get board by user id
+[2025-06-18 11:01:08] INFO: Successfull checking data to get all members
+[2025-06-18 11:01:08] INFO: Successfull checking data to get all members
+[2025-06-18 11:01:09] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:01:09] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:01:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:01:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:02:55] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:02:59] INFO: Successfull checking data to get board by user id
+[2025-06-18 11:03:00] INFO: Successfull checking data user for get user profile
+[2025-06-18 11:03:00] INFO: Successfull checking data to get board by user id
+[2025-06-18 11:03:00] INFO: Successfull checking data user for get user profile
+[2025-06-18 11:03:00] INFO: Successfull checking data to get all members
+[2025-06-18 11:03:00] INFO: Successfull checking data to get all members
+[2025-06-18 11:03:01] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:03:01] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:03:01] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:03:01] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:03:07] INFO: Successfull checking data to create card
+[2025-06-18 11:05:28] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:05:32] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:05:39] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:05:48] INFO: Successfull checking data to create card
+[2025-06-18 11:06:21] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:06:30] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:06:39] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:06:39] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:06:40] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:06:40] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:06:40] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:06:58] INFO: Successfull checking data to create card
+[2025-06-18 11:07:27] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:07:33] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:07:39] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:07:45] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:07:57] INFO: Successfull checking data to delete board
+[2025-06-18 11:08:06] INFO: Successfull checking data to delete board
+[2025-06-18 11:08:06] INFO: Send to teFl6CLR8XDXDWS-AAAC
+[2025-06-18 11:08:06] INFO: Send to JfJRn4TEUbWqeyFeAAAD
+[2025-06-18 11:08:07] INFO: Send to teFl6CLR8XDXDWS-AAAC
+[2025-06-18 11:08:07] INFO: Send to JfJRn4TEUbWqeyFeAAAD
+[2025-06-18 11:08:07] INFO: Notification 68523ba69360cdfe8eb553a9 -> [6850ca38390e6693ac6ad043,6850ca37390e6693ac6ad03b]
+[2025-06-18 11:08:15] INFO: Successfull checking data to create board
+[2025-06-18 11:08:15] INFO: Successfull create board
+[2025-06-18 11:08:15] INFO: Successfull checking data to get all members
+[2025-06-18 11:08:20] INFO: Successfull checking data user for search user profile
+[2025-06-18 11:08:21] INFO: Successfull checking data user for search user profile
+[2025-06-18 11:08:24] INFO: Successfull checking data user for search user profile
+[2025-06-18 11:08:27] INFO: Successfull checking data user for search user profile
+[2025-06-18 11:08:36] INFO: Successfull checking data to get board by user id
+[2025-06-18 11:08:36] INFO: Successfull checking data to get board by user id
+[2025-06-18 11:08:36] INFO: Successfull checking data to get all members
+[2025-06-18 11:08:36] INFO: Successfull checking data to get all members
+[2025-06-18 11:08:42] INFO: Successfull checking data user for search user profile
+[2025-06-18 11:08:44] INFO: Successfull checking data to add member to board
+[2025-06-18 11:08:44] INFO: Send to JfJRn4TEUbWqeyFeAAAD
+[2025-06-18 11:08:44] INFO: Send to JfJRn4TEUbWqeyFeAAAD
+[2025-06-18 11:08:44] INFO: Notification 68523bcc9360cdfe8eb553ce -> [6850ca37390e6693ac6ad03b]
+[2025-06-18 11:08:44] INFO: Send to teFl6CLR8XDXDWS-AAAC
+[2025-06-18 11:08:44] INFO: Successfull checking data to get all members
+[2025-06-18 11:08:44] INFO: Send to teFl6CLR8XDXDWS-AAAC
+[2025-06-18 11:08:44] INFO: Notification 68523bcc9360cdfe8eb553d3 -> [6850ca38390e6693ac6ad043]
+[2025-06-18 11:08:44] INFO: Successfull checking data to get board by user id
+[2025-06-18 11:08:44] INFO: Successfull checking data to get all members
+[2025-06-18 11:08:48] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:08:48] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:08:53] INFO: Successfull checking data to create list
+[2025-06-18 11:08:53] ERROR: sendToSocket is not defined
+[2025-06-18 11:09:14] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:09:18] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:09:18] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:09:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:09:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:09:22] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:09:22] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:09:22] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:09:22] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:09:30] INFO: Successfull checking data to create card
+[2025-06-18 11:09:30] INFO: Send to tr6GI7ZXziV74PXFAAAB
+[2025-06-18 11:09:45] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:10:16] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:10:16] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:10:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:10:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:12:32] INFO: Successfull checking data to get cardd
+[2025-06-18 11:12:32] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:12:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:12:32] INFO: Successfull checking data to get cardd
+[2025-06-18 11:12:32] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:12:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:12:33] INFO: Successfull checking data to get cardd
+[2025-06-18 11:12:33] INFO: Successfull checking data to get all members
+[2025-06-18 11:12:35] INFO: Successfull checking data to assign user to card
+[2025-06-18 11:12:35] INFO: Send to J-mHpafloqTp4u5gAAAD
+[2025-06-18 11:12:35] INFO: Send to 7Tqpt_FSbATrXgmkAAAB
+[2025-06-18 11:12:35] ERROR: Failed to send notification:
+[2025-06-18 11:12:35] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:12:35] INFO: Successfull checking data to get cardd
+[2025-06-18 11:12:36] INFO: Successfull checking data to get cardd
+[2025-06-18 11:12:36] INFO: Successfull checking data to get all members
+[2025-06-18 11:12:38] INFO: Successfull checking data to assign user to card
+[2025-06-18 11:12:38] INFO: Send to J-mHpafloqTp4u5gAAAD
+[2025-06-18 11:12:38] INFO: Send to 7Tqpt_FSbATrXgmkAAAB
+[2025-06-18 11:12:38] ERROR: Failed to send notification:
+[2025-06-18 11:12:38] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:12:38] INFO: Successfull checking data to get cardd
+[2025-06-18 11:12:40] INFO: Successfull checking data to update card
+[2025-06-18 11:12:40] INFO: Send to J-mHpafloqTp4u5gAAAD
+[2025-06-18 11:12:40] INFO: Send to 7Tqpt_FSbATrXgmkAAAB
+[2025-06-18 11:12:40] ERROR: Failed to send notification:
+[2025-06-18 11:12:40] INFO: Successfull checking data to get cardd
+[2025-06-18 11:12:40] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:12:40] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:12:40] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:12:40] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:12:42] INFO: Successfull checking data to get cardd
+[2025-06-18 11:12:42] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:12:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:12:42] INFO: Successfull checking data to get cardd
+[2025-06-18 11:12:42] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:12:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:12:49] ERROR: Error checking data list_id is required.
+[2025-06-18 11:12:49] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:12:49] ERROR: Error checking data list_id is required.
+[2025-06-18 11:12:49] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:12:52] INFO: Successfull checking data user for get user profile
+[2025-06-18 11:12:52] INFO: Successfull checking data user for get user profile
+[2025-06-18 11:12:52] ERROR: Error checking data list_id is required.
+[2025-06-18 11:12:52] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:12:52] ERROR: Error checking data list_id is required.
+[2025-06-18 11:12:52] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:12:52] ERROR: Error checking data list_id is required.
+[2025-06-18 11:12:52] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:12:52] ERROR: Error checking data list_id is required.
+[2025-06-18 11:12:52] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:12:52] ERROR: Error checking data list_id is required.
+[2025-06-18 11:12:52] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:12:56] INFO: Successfull checking data to get board by user id
+[2025-06-18 11:12:56] INFO: Successfull checking data user for get user profile
+[2025-06-18 11:12:56] INFO: Successfull checking data to get board by user id
+[2025-06-18 11:12:56] INFO: Successfull checking data user for get user profile
+[2025-06-18 11:12:56] INFO: Successfull checking data to get all members
+[2025-06-18 11:12:56] INFO: Successfull checking data to get all members
+[2025-06-18 11:12:57] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:12:57] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:12:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:12:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:13:01] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:13:01] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:13:01] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:13:01] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:13:01] INFO: Successfull checking data to get cardd
+[2025-06-18 11:13:01] INFO: Successfull checking data to get cardd
+[2025-06-18 11:13:12] INFO: Successfull checking data to get board by user id
+[2025-06-18 11:13:12] INFO: Successfull checking data to get board by user id
+[2025-06-18 11:13:12] INFO: Successfull checking data to get all members
+[2025-06-18 11:13:12] INFO: Successfull checking data to get all members
+[2025-06-18 11:13:17] INFO: Successfull checking data user for get user profile
+[2025-06-18 11:13:17] INFO: Successfull checking data user for get user profile
+[2025-06-18 11:13:18] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:13:18] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:13:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:13:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:13:23] INFO: Successfull checking data to remove user from card
+[2025-06-18 11:13:23] INFO: Send to tYdQDYyeExR2QajyAAAF
+[2025-06-18 11:13:23] INFO: Send to 7Tqpt_FSbATrXgmkAAAB
+[2025-06-18 11:13:23] ERROR: Failed to send notification:
+[2025-06-18 11:13:23] ERROR: Failed to send notification:
+[2025-06-18 11:14:47] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:16:04] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:16:04] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:16:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:16:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:16:06] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:16:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:16:06] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:16:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:16:06] INFO: Successfull checking data to get cardd
+[2025-06-18 11:16:06] INFO: Successfull checking data to get cardd
+[2025-06-18 11:16:07] INFO: Successfull checking data to get cardd
+[2025-06-18 11:16:07] INFO: Successfull checking data to get all members
+[2025-06-18 11:16:09] INFO: Successfull checking data to assign user to card
+[2025-06-18 11:16:10] INFO: Send to ARGcYIjw0Gfee-VDAAAC
+[2025-06-18 11:16:10] INFO: Send to 6ZeRzdgMkw0HojgrAAAD
+[2025-06-18 11:16:10] ERROR: Failed to send notification:
+[2025-06-18 11:16:10] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:16:10] INFO: Successfull checking data to get cardd
+[2025-06-18 11:16:51] INFO: Successfull checking data to get cardd
+[2025-06-18 11:16:51] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:16:51] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:16:51] INFO: Successfull checking data to get cardd
+[2025-06-18 11:16:51] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:16:51] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:17:32] INFO: Successfull checking data to get cardd
+[2025-06-18 11:17:32] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:17:33] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:17:33] INFO: Successfull checking data to get cardd
+[2025-06-18 11:17:33] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:17:42] INFO: Successfull checking data to remove user from card
+[2025-06-18 11:17:42] INFO: Send to TV-MwpDuTXMDfAR3AAAD
+[2025-06-18 11:17:42] INFO: Send to c1RDbIH2cmxXDheeAAAB
+[2025-06-18 11:17:42] ERROR: Failed to send notification:
+[2025-06-18 11:17:42] ERROR: Failed to send notification:
+[2025-06-18 11:19:48] INFO: Successfull checking data to get cardd
+[2025-06-18 11:19:48] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:19:48] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:19:48] INFO: Successfull checking data to get cardd
+[2025-06-18 11:19:48] INFO: Successfull checking data to get cardd
+[2025-06-18 11:19:48] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:19:48] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:19:49] INFO: Successfull checking data to get cardd
+[2025-06-18 11:19:49] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:20:05] INFO: Successfull checking data to get cardd
+[2025-06-18 11:20:05] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:20:05] INFO: Successfull checking data to get cardd
+[2025-06-18 11:20:05] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:20:05] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:20:08] INFO: Successfull checking data to get cardd
+[2025-06-18 11:20:08] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:20:08] INFO: Successfull checking data to get cardd
+[2025-06-18 11:20:08] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:20:08] INFO: Successfull checking data to get cardd
+[2025-06-18 11:20:08] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:20:08] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:20:09] INFO: Successfull checking data to get cardd
+[2025-06-18 11:20:09] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:20:11] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:20:11] INFO: Successfull checking data to get cardd
+[2025-06-18 11:20:11] INFO: Successfull checking data to get cardd
+[2025-06-18 11:20:11] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:20:11] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:20:11] INFO: Successfull checking data to get cardd
+[2025-06-18 11:20:11] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:20:12] INFO: Successfull checking data to get cardd
+[2025-06-18 11:20:12] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:20:12] INFO: Successfull checking data to get cardd
+[2025-06-18 11:20:12] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:20:15] INFO: Successfull checking data to get cardd
+[2025-06-18 11:20:15] INFO: Successfull checking data to get all members
+[2025-06-18 11:20:18] INFO: Successfull checking data to assign user to card
+[2025-06-18 11:20:19] INFO: Send to DDInaJNnigRM37bNAAAD
+[2025-06-18 11:20:19] INFO: Send to bPqbfr7bjjTiFOJMAAAC
+[2025-06-18 11:20:19] ERROR: Failed to send notification:
+[2025-06-18 11:20:19] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:20:19] INFO: Successfull checking data to get cardd
+[2025-06-18 11:21:05] INFO: Successfull checking data to get cardd
+[2025-06-18 11:21:05] INFO: Successfull checking data to get cardd
+[2025-06-18 11:21:05] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:21:05] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:21:05] INFO: Successfull checking data to get cardd
+[2025-06-18 11:21:05] INFO: Successfull checking data to get cardd
+[2025-06-18 11:21:05] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:21:06] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:21:06] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:21:20] INFO: Successfull checking data to get cardd
+[2025-06-18 11:21:20] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:21:20] INFO: Successfull checking data to get cardd
+[2025-06-18 11:21:20] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:21:20] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:21:20] INFO: Successfull checking data to get cardd
+[2025-06-18 11:21:20] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:21:21] INFO: Successfull checking data to get cardd
+[2025-06-18 11:21:21] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:21:46] INFO: Successfull checking data to get cardd
+[2025-06-18 11:21:46] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:21:46] INFO: Successfull checking data to get cardd
+[2025-06-18 11:21:46] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:21:47] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:21:53] INFO: Successfull checking data to remove user from card
+[2025-06-18 11:21:54] INFO: Send to cQvFZRLqNfL6lErGAAAB
+[2025-06-18 11:21:54] INFO: Send to y6qDkUdfrH_cec1_AAAD
+[2025-06-18 11:21:54] ERROR: Failed to send notification:
+[2025-06-18 11:21:54] ERROR: Failed to send notification:
+[2025-06-18 11:22:47] INFO: Successfull checking data to get cardd
+[2025-06-18 11:22:47] INFO: Successfull checking data to get cardd
+[2025-06-18 11:22:47] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:22:47] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:22:47] INFO: Successfull checking data to get cardd
+[2025-06-18 11:22:47] INFO: Successfull checking data to get cardd
+[2025-06-18 11:22:47] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:22:48] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:22:48] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:22:54] INFO: Successfull checking data to get cardd
+[2025-06-18 11:22:54] INFO: Successfull checking data to get all members
+[2025-06-18 11:22:56] INFO: Successfull checking data to assign user to card
+[2025-06-18 11:22:56] INFO: Send to txKusV7FkUIFvLVPAAAD
+[2025-06-18 11:22:56] INFO: Send to kfa4nnkZXn8bYst9AAAB
+[2025-06-18 11:22:56] ERROR: Failed to send notification:
+[2025-06-18 11:22:56] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:22:56] INFO: Successfull checking data to get cardd
+[2025-06-18 11:23:24] INFO: Successfull checking data to get cardd
+[2025-06-18 11:23:24] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:23:25] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:23:26] INFO: Successfull checking data to get cardd
+[2025-06-18 11:23:26] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:23:29] INFO: Successfull checking data to remove user from card
+[2025-06-18 11:23:29] INFO: Send to ouBXhcIR8SjGXsmvAAAD
+[2025-06-18 11:23:29] INFO: Send to hMjK1HkiHBo6XtNHAAAB
+[2025-06-18 11:23:29] ERROR: Failed to send notification:
+[2025-06-18 11:23:29] ERROR: Failed to send notification:
+[2025-06-18 11:24:31] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:24:31] INFO: Successfull checking data to get cardd
+[2025-06-18 11:24:31] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:24:32] INFO: Successfull checking data to get cardd
+[2025-06-18 11:24:32] INFO: Successfull checking data to get cardd
+[2025-06-18 11:24:32] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:24:32] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:24:32] INFO: Successfull checking data to get cardd
+[2025-06-18 11:24:33] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:24:35] INFO: Successfull checking data to get cardd
+[2025-06-18 11:24:35] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:24:35] INFO: Successfull checking data to get cardd
+[2025-06-18 11:24:35] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:24:35] INFO: Successfull checking data to get cardd
+[2025-06-18 11:24:35] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:24:37] INFO: Successfull checking data to get cardd
+[2025-06-18 11:24:37] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:24:37] INFO: Successfull checking data to get cardd
+[2025-06-18 11:24:37] INFO: Successfull checking data to get cardd
+[2025-06-18 11:24:37] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:24:37] INFO: Successfull checking data to get cardd
+[2025-06-18 11:24:37] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:24:38] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:24:38] INFO: Successfull checking data to get cardd
+[2025-06-18 11:24:38] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:24:38] INFO: Successfull checking data to get cardd
+[2025-06-18 11:24:38] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:24:44] INFO: Successfull checking data to get cardd
+[2025-06-18 11:24:44] INFO: Successfull checking data to get all members
+[2025-06-18 11:24:46] INFO: Successfull checking data to assign user to card
+[2025-06-18 11:24:46] INFO: Send to Z16-LcekryORoKHeAAAB
+[2025-06-18 11:24:46] INFO: Send to TgqQCUhVDzHEJMpfAAAD
+[2025-06-18 11:24:46] ERROR: Failed to send notification:
+[2025-06-18 11:24:46] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:24:46] INFO: Successfull checking data to get cardd
+[2025-06-18 11:25:14] INFO: Successfull checking data to get cardd
+[2025-06-18 11:25:14] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:25:15] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:25:16] INFO: Successfull checking data to get cardd
+[2025-06-18 11:25:16] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:25:19] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:25:19] INFO: Successfull checking data to get cardd
+[2025-06-18 11:25:19] INFO: Successfull checking data to get cardd
+[2025-06-18 11:25:19] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:25:19] INFO: Successfull checking data to get cardd
+[2025-06-18 11:25:19] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:25:19] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:25:20] INFO: Successfull checking data to get cardd
+[2025-06-18 11:25:20] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:25:28] INFO: Successfull checking data to remove user from card
+[2025-06-18 11:25:28] INFO: Send to bfFi8IPa7NLlRHdYAAAD
+[2025-06-18 11:25:28] INFO: Send to MuK4lVoRuiI_QOgWAAAB
+[2025-06-18 11:25:28] ERROR: Failed to send notification:
+[2025-06-18 11:25:28] ERROR: Failed to send notification:
+[2025-06-18 11:25:37] INFO: Successfull checking data to remove user from card
+[2025-06-18 11:25:37] INFO: Send to bfFi8IPa7NLlRHdYAAAD
+[2025-06-18 11:25:37] INFO: Send to MuK4lVoRuiI_QOgWAAAB
+[2025-06-18 11:25:37] ERROR: Failed to send notification:
+[2025-06-18 11:25:37] ERROR: Failed to send notification:
+[2025-06-18 11:25:39] INFO: Successfull checking data to get cardd
+[2025-06-18 11:25:39] INFO: Successfull checking data to get all members
+[2025-06-18 11:25:41] INFO: Successfull checking data to assign user to card
+[2025-06-18 11:25:41] INFO: Send to bfFi8IPa7NLlRHdYAAAD
+[2025-06-18 11:25:41] INFO: Send to MuK4lVoRuiI_QOgWAAAB
+[2025-06-18 11:25:41] ERROR: Failed to send notification:
+[2025-06-18 11:25:41] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:25:41] INFO: Successfull checking data to get cardd
+[2025-06-18 11:25:58] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:25:58] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:25:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:25:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:25:58] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:25:58] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:25:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:25:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:25:58] INFO: Successfull checking data to get cardd
+[2025-06-18 11:25:58] INFO: Successfull checking data to get cardd
+[2025-06-18 11:26:21] INFO: Successfull checking data to get cardd
+[2025-06-18 11:26:21] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:26:21] INFO: Successfull checking data to get cardd
+[2025-06-18 11:26:21] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:26:21] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:26:23] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:26:23] INFO: Successfull checking data to get cardd
+[2025-06-18 11:26:26] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:26:27] INFO: Successfull checking data to get cardd
+[2025-06-18 11:26:27] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:26:30] INFO: Successfull checking data to get cardd
+[2025-06-18 11:26:30] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:26:31] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:26:34] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:26:34] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:26:34] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:26:34] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:26:35] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:26:35] INFO: Successfull checking data to get cardd
+[2025-06-18 11:26:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:26:35] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:26:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:26:35] INFO: Successfull checking data to get cardd
+[2025-06-18 11:26:38] INFO: Successfull checking data to remove user from card
+[2025-06-18 11:26:38] INFO: Send to 3-G0duglN81vAolnAAAD
+[2025-06-18 11:26:38] INFO: Send to Z_i21kVdbuiILZoGAAAC
+[2025-06-18 11:26:38] ERROR: Failed to send notification:
+[2025-06-18 11:26:38] ERROR: Failed to send notification:
+[2025-06-18 11:26:42] INFO: Successfull checking data to get cardd
+[2025-06-18 11:26:42] INFO: Successfull checking data to get all members
+[2025-06-18 11:26:44] INFO: Successfull checking data to assign user to card
+[2025-06-18 11:26:44] INFO: Send to 3-G0duglN81vAolnAAAD
+[2025-06-18 11:26:44] INFO: Send to Z_i21kVdbuiILZoGAAAC
+[2025-06-18 11:26:44] ERROR: Failed to send notification:
+[2025-06-18 11:26:44] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:26:44] INFO: Successfull checking data to get cardd
+[2025-06-18 11:27:35] INFO: Successfull checking data to get cardd
+[2025-06-18 11:27:35] INFO: Successfull checking data to get cardd
+[2025-06-18 11:27:35] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:27:35] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:27:35] INFO: Successfull checking data to get cardd
+[2025-06-18 11:27:35] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:27:36] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:27:36] INFO: Successfull checking data to get cardd
+[2025-06-18 11:27:36] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:27:40] INFO: Successfull checking data to get cardd
+[2025-06-18 11:27:40] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:27:40] INFO: Successfull checking data to get cardd
+[2025-06-18 11:27:40] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:27:40] INFO: Successfull checking data to get cardd
+[2025-06-18 11:27:40] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:27:40] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:27:41] INFO: Successfull checking data to get cardd
+[2025-06-18 11:27:41] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:27:44] INFO: Successfull checking data to remove user from card
+[2025-06-18 11:27:44] INFO: Send to ijCGWJWqg3OAPI0AAAAD
+[2025-06-18 11:27:44] INFO: Send to D_5a1A5nVjAqV983AAAB
+[2025-06-18 11:27:44] ERROR: Failed to send notification:
+[2025-06-18 11:27:44] ERROR: Failed to send notification:
+[2025-06-18 11:28:38] INFO: Successfull checking data to get cardd
+[2025-06-18 11:28:38] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:28:38] INFO: Successfull checking data to get cardd
+[2025-06-18 11:28:38] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:28:38] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:28:38] INFO: Successfull checking data to get cardd
+[2025-06-18 11:28:38] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:28:39] INFO: Successfull checking data to get cardd
+[2025-06-18 11:28:39] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:28:46] INFO: Successfull checking data to get cardd
+[2025-06-18 11:28:46] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:28:46] INFO: Successfull checking data to get cardd
+[2025-06-18 11:28:46] INFO: Successfull checking data to get cardd
+[2025-06-18 11:28:46] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:28:46] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:28:46] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:28:46] INFO: Successfull checking data to get cardd
+[2025-06-18 11:28:46] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:28:49] INFO: Successfull checking data to get cardd
+[2025-06-18 11:28:49] INFO: Successfull checking data to get all members
+[2025-06-18 11:28:51] INFO: Successfull checking data to assign user to card
+[2025-06-18 11:28:51] INFO: Send to 2rkpkOzuAvPzpox8AAAD
+[2025-06-18 11:28:51] INFO: Send to StIsX_h8dfShBaHoAAAB
+[2025-06-18 11:28:51] ERROR: notify(): Cannot read properties of undefined (reading 'map')
+[2025-06-18 11:28:51] ERROR: Failed to send notification:
+[2025-06-18 11:28:51] ERROR: notify(): Cannot read properties of undefined (reading 'map')
+[2025-06-18 11:28:51] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:28:51] INFO: Successfull checking data to get cardd
+[2025-06-18 11:29:01] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:29:01] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:29:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:29:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:29:03] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:29:03] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:29:03] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:29:03] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:29:03] INFO: Successfull checking data to get cardd
+[2025-06-18 11:29:03] INFO: Successfull checking data to get cardd
+[2025-06-18 11:29:06] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:29:06] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:29:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:29:07] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:29:07] INFO: Successfull checking data to get cardd
+[2025-06-18 11:29:07] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:29:07] INFO: Successfull checking data to get cardd
+[2025-06-18 11:29:07] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:29:07] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:29:07] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:29:24] INFO: Successfull checking data to get cardd
+[2025-06-18 11:29:24] INFO: Successfull checking data to get cardd
+[2025-06-18 11:29:24] INFO: Successfull checking data to get cardd
+[2025-06-18 11:29:24] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:29:24] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:29:24] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:29:24] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:29:25] INFO: Successfull checking data to get cardd
+[2025-06-18 11:29:25] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:30:40] INFO: Successfull checking data to get cardd
+[2025-06-18 11:30:40] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:30:40] INFO: Successfull checking data to get cardd
+[2025-06-18 11:30:40] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:30:41] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:31:47] INFO: Successfull checking data to get cardd
+[2025-06-18 11:31:47] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:31:48] INFO: Successfull checking data to get cardd
+[2025-06-18 11:31:48] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:31:48] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:31:48] INFO: Successfull checking data to get cardd
+[2025-06-18 11:31:48] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:31:48] INFO: Successfull checking data to get cardd
+[2025-06-18 11:31:48] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:31:52] INFO: Successfull checking data to get cardd
+[2025-06-18 11:31:52] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:31:52] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:31:52] INFO: Successfull checking data to get cardd
+[2025-06-18 11:31:52] INFO: Successfull checking data to get cardd
+[2025-06-18 11:31:52] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:31:53] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:31:53] INFO: Successfull checking data to get cardd
+[2025-06-18 11:31:53] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:32:00] INFO: Successfull checking data to get cardd
+[2025-06-18 11:32:00] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:32:00] INFO: Successfull checking data to get cardd
+[2025-06-18 11:32:00] INFO: Successfull checking data to get cardd
+[2025-06-18 11:32:00] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:32:00] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:32:00] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:32:00] INFO: Successfull checking data to get cardd
+[2025-06-18 11:32:00] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:32:06] INFO: Successfull checking data to remove user from card
+[2025-06-18 11:32:06] INFO: Send to rr__MCsnV07GAIVvAAAB
+[2025-06-18 11:32:06] INFO: Send to HRgeRnbjOmiRKqt3AAAD
+[2025-06-18 11:32:06] ERROR: Failed to send notification:
+[2025-06-18 11:32:06] ERROR: Failed to send notification:
+[2025-06-18 11:32:15] INFO: Successfull checking data to get cardd
+[2025-06-18 11:32:15] INFO: Successfull checking data to get all members
+[2025-06-18 11:32:16] INFO: Successfull checking data to assign user to card
+[2025-06-18 11:32:17] INFO: Send to rr__MCsnV07GAIVvAAAB
+[2025-06-18 11:32:17] INFO: Send to HRgeRnbjOmiRKqt3AAAD
+[2025-06-18 11:32:17] ERROR: Failed to send notification:
+[2025-06-18 11:32:17] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:32:17] INFO: Successfull checking data to get cardd
+[2025-06-18 11:33:57] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:34:04] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:34:08] INFO: Successfull checking data to get cardd
+[2025-06-18 11:34:08] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:34:08] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:34:08] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:34:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:34:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:34:09] INFO: Successfull checking data to get cardd
+[2025-06-18 11:34:09] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:34:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:34:09] INFO: Successfull checking data to get cardd
+[2025-06-18 11:34:09] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:34:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:34:15] INFO: Successfull checking data to remove user from card
+[2025-06-18 11:34:15] INFO: Send to L5fpcUngvQGKK6fdAAAB
+[2025-06-18 11:34:15] INFO: Send to DSLxZSE8V2E69s6MAAAD
+[2025-06-18 11:34:15] ERROR: Failed to send notification:
+[2025-06-18 11:34:15] ERROR: Failed to send notification:
+[2025-06-18 11:34:21] INFO: Successfull checking data to get cardd
+[2025-06-18 11:34:21] INFO: Successfull checking data to get all members
+[2025-06-18 11:34:22] INFO: Successfull checking data to assign user to card
+[2025-06-18 11:34:23] INFO: Send to L5fpcUngvQGKK6fdAAAB
+[2025-06-18 11:34:23] INFO: Send to DSLxZSE8V2E69s6MAAAD
+[2025-06-18 11:34:23] ERROR: Failed to send notification:
+[2025-06-18 11:34:23] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:34:23] INFO: Successfull checking data to get cardd
+[2025-06-18 11:36:19] INFO: Successfull checking data to get cardd
+[2025-06-18 11:36:20] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:36:20] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:36:22] INFO: Successfull checking data to get cardd
+[2025-06-18 11:36:22] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:36:34] INFO: Successfull checking data to get cardd
+[2025-06-18 11:36:34] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:36:36] INFO: Successfull checking data to get cardd
+[2025-06-18 11:36:36] INFO: Successfull checking data to get cardd
+[2025-06-18 11:36:36] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:36:36] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:36:36] INFO: Successfull checking data to get cardd
+[2025-06-18 11:36:36] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:36:36] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:36:37] INFO: Successfull checking data to get cardd
+[2025-06-18 11:36:37] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:36:37] INFO: Successfull checking data to get cardd
+[2025-06-18 11:36:37] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:36:37] INFO: Successfull checking data to get cardd
+[2025-06-18 11:36:37] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:36:41] INFO: Successfull checking data to get cardd
+[2025-06-18 11:36:41] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:36:41] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:36:41] INFO: Successfull checking data to get cardd
+[2025-06-18 11:36:42] INFO: Successfull checking data to get cardd
+[2025-06-18 11:36:42] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:36:42] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:36:42] INFO: Successfull checking data to get cardd
+[2025-06-18 11:36:42] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:36:47] INFO: Successfull checking data to remove user from card
+[2025-06-18 11:36:47] INFO: Send to 4CfIDSOBKgvdjGLuAAAB
+[2025-06-18 11:36:47] INFO: Send to BdlhTmjBcpxr5vPXAAAD
+[2025-06-18 11:36:47] ERROR: Failed to send notification:
+[2025-06-18 11:36:47] ERROR: Failed to send notification:
+[2025-06-18 11:36:51] INFO: Successfull checking data to get cardd
+[2025-06-18 11:36:51] INFO: Successfull checking data to get all members
+[2025-06-18 11:36:52] INFO: Successfull checking data to assign user to card
+[2025-06-18 11:36:52] INFO: Send to 4CfIDSOBKgvdjGLuAAAB
+[2025-06-18 11:36:52] INFO: Send to BdlhTmjBcpxr5vPXAAAD
+[2025-06-18 11:36:52] ERROR: Failed to send notification:
+[2025-06-18 11:36:52] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:36:53] INFO: Successfull checking data to get cardd
+[2025-06-18 11:37:31] INFO: Successfull checking data to get cardd
+[2025-06-18 11:37:31] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:37:31] INFO: Successfull checking data to get cardd
+[2025-06-18 11:37:31] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:37:31] INFO: Successfull checking data to get cardd
+[2025-06-18 11:37:31] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:37:32] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:37:32] INFO: Successfull checking data to get cardd
+[2025-06-18 11:37:32] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:37:37] INFO: Successfull checking data to remove user from card
+[2025-06-18 11:37:37] INFO: Send to _O0eUgnxzur2oBq_AAAD
+[2025-06-18 11:37:37] INFO: Send to 8XbthKtMkoU2KYlHAAAB
+[2025-06-18 11:37:37] ERROR: Failed to send notification:
+[2025-06-18 11:37:37] ERROR: Failed to send notification:
+[2025-06-18 11:37:39] INFO: Successfull checking data to get cardd
+[2025-06-18 11:37:39] INFO: Successfull checking data to get all members
+[2025-06-18 11:37:40] INFO: Successfull checking data to assign user to card
+[2025-06-18 11:37:40] INFO: Send to _O0eUgnxzur2oBq_AAAD
+[2025-06-18 11:37:40] INFO: Send to 8XbthKtMkoU2KYlHAAAB
+[2025-06-18 11:37:40] ERROR: Failed to send notification:
+[2025-06-18 11:37:40] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:37:40] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:20] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:20] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:20] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:20] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:20] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:20] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:20] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:38:21] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:21] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:23] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:23] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:23] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:23] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:23] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:23] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:24] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:38:24] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:24] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:26] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:26] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:26] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:26] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:26] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:26] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:27] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:38:29] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:29] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:29] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:29] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:29] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:29] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:29] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:38:30] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:30] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:30] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:30] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:30] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:30] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:34] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:34] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:34] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:34] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:34] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:34] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:35] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:38:35] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:35] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:38] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:38] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:38] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:38] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:38] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:38] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:38] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:38:38] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:38] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:44] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:44] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:44] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:44] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:44] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:44] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:38:44] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:38:45] INFO: Successfull checking data to get cardd
+[2025-06-18 11:38:45] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:39:10] INFO: Successfull checking data to get cardd
+[2025-06-18 11:39:10] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:39:10] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:39:12] INFO: Successfull checking data to get cardd
+[2025-06-18 11:39:12] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:39:22] INFO: Successfull checking data to get cardd
+[2025-06-18 11:39:22] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:39:22] INFO: Successfull checking data to get cardd
+[2025-06-18 11:39:22] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:39:23] INFO: Successfull checking data to get cardd
+[2025-06-18 11:39:23] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:39:23] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:39:23] INFO: Successfull checking data to get cardd
+[2025-06-18 11:39:23] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:39:27] INFO: Successfull checking data to get cardd
+[2025-06-18 11:39:27] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:39:27] INFO: Successfull checking data to get cardd
+[2025-06-18 11:39:27] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:39:27] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:39:29] INFO: Successfull checking data to remove user from card
+[2025-06-18 11:39:29] INFO: Send to c_4fLkZp5GffcKQGAAAD
+[2025-06-18 11:39:29] INFO: Send to m6zZpvUHwodLIBCxAAAB
+[2025-06-18 11:39:29] ERROR: Failed to send notification:
+[2025-06-18 11:39:29] ERROR: Failed to send notification:
+[2025-06-18 11:39:34] INFO: Successfull checking data to get cardd
+[2025-06-18 11:39:34] INFO: Successfull checking data to get all members
+[2025-06-18 11:39:36] INFO: Successfull checking data to assign user to card
+[2025-06-18 11:39:36] INFO: Send to c_4fLkZp5GffcKQGAAAD
+[2025-06-18 11:39:36] INFO: Send to m6zZpvUHwodLIBCxAAAB
+[2025-06-18 11:39:36] ERROR: Failed to send notification:
+[2025-06-18 11:39:36] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:39:36] INFO: Successfull checking data to get cardd
+[2025-06-18 11:41:59] INFO: Successfull checking data to get cardd
+[2025-06-18 11:41:59] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:42:00] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:42:00] INFO: Successfull checking data to get cardd
+[2025-06-18 11:42:00] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:42:03] INFO: Successfull checking data to remove user from card
+[2025-06-18 11:42:03] INFO: Send to y8mOeXBbJydhbGmcAAAB
+[2025-06-18 11:42:03] INFO: Send to IClFXB2ibXW8MBoxAAAD
+[2025-06-18 11:42:03] ERROR: Failed to send notification:
+[2025-06-18 11:42:03] ERROR: Failed to send notification:
+[2025-06-18 11:42:08] INFO: Successfull checking data to get cardd
+[2025-06-18 11:42:08] INFO: Successfull checking data to get all members
+[2025-06-18 11:42:10] INFO: Successfull checking data to assign user to card
+[2025-06-18 11:42:10] INFO: Send to y8mOeXBbJydhbGmcAAAB
+[2025-06-18 11:42:10] INFO: Send to IClFXB2ibXW8MBoxAAAD
+[2025-06-18 11:42:10] ERROR: Failed to send notification:
+[2025-06-18 11:42:10] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:42:10] INFO: Successfull checking data to get cardd
+[2025-06-18 11:42:40] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:42:40] INFO: Successfull checking data to get cardd
+[2025-06-18 11:42:40] INFO: Successfull checking data to get cardd
+[2025-06-18 11:42:40] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:42:40] INFO: Successfull checking data to get cardd
+[2025-06-18 11:42:40] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:42:40] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:42:41] INFO: Successfull checking data to get cardd
+[2025-06-18 11:42:41] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:42:51] INFO: Successfull checking data to get cardd
+[2025-06-18 11:42:51] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:42:51] INFO: Successfull checking data to get cardd
+[2025-06-18 11:42:51] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:42:51] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:43:04] INFO: Successfull checking data to get cardd
+[2025-06-18 11:43:04] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:43:04] INFO: Successfull checking data to get cardd
+[2025-06-18 11:43:04] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:43:04] INFO: Successfull checking data to get cardd
+[2025-06-18 11:43:04] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:43:04] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:43:19] INFO: Successfull checking data to get cardd
+[2025-06-18 11:43:19] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:43:19] INFO: Successfull checking data to get cardd
+[2025-06-18 11:43:19] INFO: Successfull checking data to get cardd
+[2025-06-18 11:43:19] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:43:19] INFO: Successfull checking data to get cardd
+[2025-06-18 11:43:20] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:43:20] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:43:20] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:43:32] INFO: Successfull checking data to get cardd
+[2025-06-18 11:43:32] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:43:32] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:43:32] INFO: Successfull checking data to get cardd
+[2025-06-18 11:43:32] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:43:41] INFO: Successfull checking data to get cardd
+[2025-06-18 11:43:41] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:43:41] INFO: Successfull checking data to get cardd
+[2025-06-18 11:43:41] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:43:41] INFO: Successfull checking data to get cardd
+[2025-06-18 11:43:41] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:43:42] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:43:42] INFO: Successfull checking data to get cardd
+[2025-06-18 11:43:42] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:44:20] INFO: Successfull checking data to remove user from card
+[2025-06-18 11:44:21] INFO: Send to OBjPWrdKIdSytT7PAAAD
+[2025-06-18 11:44:21] INFO: Send to RFuBhAwzMvA8WLh0AAAC
+[2025-06-18 11:44:21] ERROR: notify(): Notification validation failed: notification_sender_id: Path `notification_sender_id` is required.
+[2025-06-18 11:44:21] ERROR: Failed to send notification:
+[2025-06-18 11:44:21] ERROR: notify(): Notification validation failed: notification_sender_id: Path `notification_sender_id` is required.
+[2025-06-18 11:44:21] ERROR: Failed to send notification:
+[2025-06-18 11:45:16] INFO: Successfull checking data to get cardd
+[2025-06-18 11:45:16] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:45:16] INFO: Successfull checking data to get cardd
+[2025-06-18 11:45:16] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:45:16] INFO: Successfull checking data to get cardd
+[2025-06-18 11:45:16] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:45:16] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:45:17] INFO: Successfull checking data to get cardd
+[2025-06-18 11:45:17] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:45:39] INFO: Successfull checking data to get cardd
+[2025-06-18 11:45:39] INFO: Successfull checking data to get all members
+[2025-06-18 11:45:40] INFO: Successfull checking data to assign user to card
+[2025-06-18 11:45:40] INFO: Send to 8t0h47b7eO4e5HW7AAAC
+[2025-06-18 11:45:40] INFO: Send to qX0DBU2SOoa7cvfjAAAD
+[2025-06-18 11:45:40] ERROR: notify(): Notification validation failed: notification_sender_id: Path `notification_sender_id` is required.
+[2025-06-18 11:45:40] ERROR: Failed to send notification:
+[2025-06-18 11:45:40] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:45:40] INFO: Successfull checking data to get cardd
+[2025-06-18 11:45:59] INFO: Successfull checking data to get cardd
+[2025-06-18 11:45:59] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:45:59] INFO: Successfull checking data to get cardd
+[2025-06-18 11:45:59] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:45:59] INFO: Successfull checking data to get cardd
+[2025-06-18 11:45:59] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:46:00] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:46:00] INFO: Successfull checking data to get cardd
+[2025-06-18 11:46:00] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:46:03] INFO: Successfull checking data to get cardd
+[2025-06-18 11:46:03] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:46:03] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:46:03] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:46:03] INFO: Successfull checking data to get cardd
+[2025-06-18 11:46:03] INFO: Successfull checking data to get cardd
+[2025-06-18 11:46:03] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:46:04] INFO: Successfull checking data to get cardd
+[2025-06-18 11:46:04] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:48:59] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:48:59] INFO: Successfull checking data to get cardd
+[2025-06-18 11:48:59] INFO: Successfull checking data to get cardd
+[2025-06-18 11:48:59] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:48:59] INFO: Successfull checking data to get cardd
+[2025-06-18 11:48:59] INFO: Successfull checking data to get cardd
+[2025-06-18 11:48:59] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:49:00] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:00] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:24] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:24] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:24] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:24] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:24] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:24] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:25] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:49:25] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:25] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:40] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:40] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:40] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:40] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:40] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:40] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:41] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:49:41] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:41] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:45] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:45] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:45] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:45] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:45] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:45] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:46] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:49:46] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:46] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:49] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:49] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:49] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:49] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:49] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:50] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:50] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:49:50] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:50] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:53] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:53] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:53] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:54] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:54] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:54] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:54] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:49:54] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:54] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:58] INFO: Successfull checking data to get cardd
+[2025-06-18 11:49:58] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:49:58] ERROR: Error verified token:  jwt expired
+[2025-06-18 11:49:58] ERROR: Invalid token
+[2025-06-18 11:49:58] ERROR: Error verified token:  jwt expired
+[2025-06-18 11:49:58] INFO: Invalid token in get lists in board
+[2025-06-18 11:49:58] ERROR: Error verified token:  jwt expired
+[2025-06-18 11:50:03] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:50:04] INFO: Successfull checking data to get cardd
+[2025-06-18 11:50:04] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:50:35] ERROR: Error verified token:  jwt expired
+[2025-06-18 11:50:35] INFO: Invalid token in get boards by user id
+[2025-06-18 11:50:35] ERROR: Error verified token:  jwt expired
+[2025-06-18 11:50:35] INFO: Invalid token in get boards by user id
+[2025-06-18 11:50:44] INFO: Successfull checking data user for login
+[2025-06-18 11:50:44] INFO: Compare hash complete
+[2025-06-18 11:50:44] INFO: Complete create token
+[2025-06-18 11:50:44] INFO: Successfull checking data user for get user profile
+[2025-06-18 11:50:44] INFO: Successfull checking data to get board by user id
+[2025-06-18 11:50:44] INFO: Successfull checking data to get all members
+[2025-06-18 11:50:45] INFO: Successfull checking data to get board by user id
+[2025-06-18 11:50:45] INFO: Successfull checking data to get board by user id
+[2025-06-18 11:50:45] INFO: Successfull checking data user for get user profile
+[2025-06-18 11:50:45] INFO: Successfull checking data user for get user profile
+[2025-06-18 11:50:45] INFO: Successfull checking data to get all members
+[2025-06-18 11:50:45] INFO: Successfull checking data to get all members
+[2025-06-18 11:50:53] INFO: Successfull checking data user for login
+[2025-06-18 11:50:53] INFO: Compare hash complete
+[2025-06-18 11:50:53] INFO: Complete create token
+[2025-06-18 11:50:53] INFO: Successfull checking data user for get user profile
+[2025-06-18 11:50:54] INFO: Successfull checking data to get board by user id
+[2025-06-18 11:50:54] INFO: Successfull checking data to get all members
+[2025-06-18 11:50:55] INFO: Successfull checking data to get board by user id
+[2025-06-18 11:50:55] INFO: Successfull checking data to get board by user id
+[2025-06-18 11:50:55] INFO: Successfull checking data user for get user profile
+[2025-06-18 11:50:55] INFO: Successfull checking data user for get user profile
+[2025-06-18 11:50:55] INFO: Successfull checking data to get all members
+[2025-06-18 11:50:55] INFO: Successfull checking data to get all members
+[2025-06-18 11:50:57] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:50:57] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:50:57] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:50:57] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:50:59] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:50:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:50:59] INFO: Successfull checking data to get cardd
+[2025-06-18 11:50:59] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:50:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:50:59] INFO: Successfull checking data to get cardd
+[2025-06-18 11:51:02] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:51:02] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:51:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:51:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:51:04] INFO: Successfull checking data to get cardd
+[2025-06-18 11:51:04] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:51:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:51:04] INFO: Successfull checking data to get cardd
+[2025-06-18 11:51:04] INFO: Successfull checking data to get lists in board
+[2025-06-18 11:51:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 11:51:06] INFO: Successfull checking data to remove user from card
+[2025-06-18 11:51:06] INFO: Send to O-C8warW-gXaXJjqAAAD
+[2025-06-18 11:51:06] INFO: Send to b6mIl6gQatleI-gnAAAF
+[2025-06-18 11:51:06] INFO: Send to O-C8warW-gXaXJjqAAAD
+[2025-06-18 11:51:06] INFO: Notification 685245ba05493c05a4ede98f -> [6850ca37390e6693ac6ad03b]
+[2025-06-18 11:51:07] INFO: Send to b6mIl6gQatleI-gnAAAF
+[2025-06-18 11:51:07] INFO: Notification 685245ba05493c05a4ede992 -> [6850ca38390e6693ac6ad043]
+[2025-06-18 11:51:21] INFO: Successfull checking data to get board by user id
+[2025-06-18 11:51:21] INFO: Successfull checking data user for get user profile
+[2025-06-18 11:51:21] INFO: Successfull checking data to get board by user id
+[2025-06-18 11:51:21] INFO: Successfull checking data user for get user profile
+[2025-06-18 11:51:21] INFO: Successfull checking data to get all members
+[2025-06-18 11:51:21] INFO: Successfull checking data to get all members
+[2025-06-18 11:51:37] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:51:41] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:52:52] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 11:53:03] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:53:07] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 11:53:10] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 11:53:29] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net

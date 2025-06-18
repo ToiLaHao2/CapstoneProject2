@@ -67,8 +67,7 @@ export const ListProvider = ({ children }) => {
             const response = await privateAxios.post("/list/createList", {
                 checkMessage: "Create new list",
                 board_id: boardId,
-                list_title: listTitle,
-                list_numerical_order: listOrder,
+                list_title: listTitle
             });
 
             const data = response.data;
@@ -78,7 +77,6 @@ export const ListProvider = ({ children }) => {
                 return {
                     _id: data.data._id,
                     list_title: listTitle,
-                    list_numerical_order: listOrder,
                     list_cards: [],
                     create_at: Date.now(),
                 };
