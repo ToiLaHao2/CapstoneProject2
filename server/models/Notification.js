@@ -16,8 +16,11 @@ const NotificationSchema = new Schema(
         notification_title: { type: String, required: true },
         notification_message: { type: String, required: true },
         notification_reference: { type: Object, required: true },
+        created_at: {
+            type: Date,
+            default: Date.now,
+        }
     },
-    { timestamps: { createdAt: 'created_at', updatedAt: false } } // tự sinh created_at
 );
 
 // thêm 1 index đơn giản để khi lấy thông báo theo user nhanh hơn

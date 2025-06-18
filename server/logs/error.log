@@ -339,3 +339,26 @@
 [2025-06-17 09:56:59] ERROR: Failed to notify collaborators for new member in board 6850d97414df292ae2aefed8
 [2025-06-17 10:08:11] ERROR: Failed to notify collaborators for new member in board 6850dc1214df292ae2aeff5a
 [2025-06-17 10:11:15] ERROR: Failed to notify collaborators for new member in board 6850dccd14df292ae2aeff90
+[2025-06-17 15:59:18] ERROR: Failed to notify collaborators for new member in board 68512e5ff10760439143d812
+[2025-06-17 15:59:18] ERROR: notify(): io is not defined
+[2025-06-17 15:59:18] ERROR: Failed to notify new member for board 68512e5ff10760439143d812
+[2025-06-17 16:01:27] ERROR: Failed to notify collaborators for new member in board 68512ee30d8d9cadfb3efda2
+[2025-06-17 16:01:27] ERROR: notify(): io is not defined
+[2025-06-17 16:01:27] ERROR: Failed to notify new member for board 68512ee30d8d9cadfb3efda2
+[2025-06-17 16:01:33] ERROR: notify(): io is not defined
+[2025-06-17 16:01:33] ERROR: Failed to notify collaborators for deleted board 68512ee30d8d9cadfb3efda2
+[2025-06-17 16:02:22] ERROR: Failed to notify collaborators for new member in board 68512f1bbecdca57138bc220
+[2025-06-17 16:02:22] ERROR: notify(): io is not defined
+[2025-06-17 16:02:22] ERROR: Failed to notify new member for board 68512f1bbecdca57138bc220
+[2025-06-17 16:02:27] ERROR: notify(): io is not defined
+[2025-06-17 16:02:27] ERROR: Failed to notify collaborators for deleted board 68512f1bbecdca57138bc220
+[2025-06-17 16:04:33] ERROR: Failed to notify collaborators for new member in board 68512f9818eec3c2b46eb0ca
+[2025-06-17 16:11:00] ERROR: Failed to notify collaborators for new member in board 6851311c7ce9b6ed76d53ef0
+[2025-06-17 16:15:27] ERROR: Failed to notify collaborators for new member in board 6851322b7ce9b6ed76d53f1f
+[2025-06-17 16:21:31] ERROR: Failed to notify collaborators for new member in board 68513396c0067fb3cb7ad7bc
+[2025-06-17 16:34:31] ERROR: Failed to notify collaborators for new member in board 685136a025429eb19415e267
+[2025-06-17 16:46:03] ERROR: Failed to notify collaborators for deleted board 6851374125429eb19415e283
+[2025-06-17 16:46:09] ERROR: Failed to notify collaborators for deleted board 685137d325429eb19415e2a8
+[2025-06-17 16:47:36] ERROR: Failed to notify collaborators for deleted board 6851396525429eb19415e2c8
+[2025-06-17 17:01:35] ERROR: Error verified token:  jwt expired
+[2025-06-17 17:01:54] ERROR: Error verified token:  jwt expired

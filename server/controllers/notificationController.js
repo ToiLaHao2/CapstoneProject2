@@ -6,7 +6,7 @@
 
 const Notification = require('../models/Notification');
 const User = require('../models/User');
-const { getIO } = require('../sockets');
+const { sendToSocket } = require('../sockets');
 const logger = require('../utils/logger');
 const { onlineUsers } = require('../utils/onlineUser');
 const { sendError, sendSuccess } = require('../utils/response');
@@ -16,7 +16,6 @@ const { sendError, sendSuccess } = require('../utils/response');
 --------------------------------------------------------------------------- */
 async function notify({ senderId, receiverIds, title, message, reference }) {
     try {
-        const io = getIO(); // lấy instance io từ socket.js
         if (!Array.isArray(receiverIds) || receiverIds.length === 0) return;
 
         // build receivers array
@@ -31,18 +30,29 @@ async function notify({ senderId, receiverIds, title, message, reference }) {
         });
 
         // emit realtime event (optional)
-        if (!io) {
-            logger.warn('notify(): No socket.io instance available');
-            receiverIds.forEach(uid => {
-                // kiểm tra xem người dùng có đang online không
-                if (onlineUsers.has(uid)) {
-                    // lấy socket của người dùng
-                    const user_socket_id = onlineUsers.get(uid);
-                    // gửi thông báo đến người dùng
-                    io.to(user_socket_id).emit('newNotification', noti)
-                }
-            });
-        }
+        // lọc thông tin noti để gửi đi
+
+        const basePayload = {
+            notiId: noti._id,
+            notification_title: noti.notification_title,
+            notification_message: noti.notification_message,
+            created_at: noti.created_at
+        };
+
+        receiverIds.forEach(async uid => {
+            // kiểm tra xem người dùng có đang online không
+            if (onlineUsers.has(uid.toString())) {
+                // lấy socket của người dùng
+                const user_socket_id = onlineUsers.get(uid.toString());
+                // gửi thông báo đến người dùng
+                await sendToSocket(user_socket_id, 'notification:new', {
+                    ...basePayload,
+                    notification_receiver_id: uid,
+                    isRead: false,
+                });
+            }
+        });
+
         logger.info(`Notification ${noti._id} -> [${receiverIds.join(',')}]`);
         return "OK";
     } catch (err) {

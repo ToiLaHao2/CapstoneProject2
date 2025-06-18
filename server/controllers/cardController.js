@@ -61,6 +61,7 @@ async function CreateCard(req, res) {
             (collaborator) => collaborator.board_collaborator_id
         );
         // gửi thông tin về card mới tạo cho người dùng
+<<<<<<< Updated upstream
         for (let collaborator of collaborators) {
             if (onlineUsers.has(collaborator.toString())) {
                 const socketId = onlineUsers.get(collaborator.toString());
@@ -69,6 +70,17 @@ async function CreateCard(req, res) {
                     list_id: list_id,
                     board_id: board_id,
                 })
+=======
+        const io = getIO();
+        for (let collaborator of colaborators) {
+            if (onlineUsers.has(collaborator.toString())) {
+                io.to(onlineUsers.get(collaborator))
+                    .emit("card:created", {
+                        card: card,
+                        list_id: list_id,
+                        board_id: board_id,
+                    });
+>>>>>>> Stashed changes
             }
         }
         // notify các thành viên về viêc tạo card mới

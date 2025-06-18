@@ -24,20 +24,23 @@ import { BoardProvider } from "./BoardContext";
 import { ListProvider } from "./ListContext";
 import { CardProvider } from "./CardContext";
 import { ConversationProvider } from "./ConversationContext";
+import { NotificationProvider } from "./NotifiacationContext";
 
 const ContextProvider = ({ children }) => {
     return (
         <UserProvider>
             <AuthProvider>
-                <BoardProvider>
-                    <ListProvider>
-                        <CardProvider>
-                            <ConversationProvider>
-                                {children}
-                            </ConversationProvider>
-                        </CardProvider>
-                    </ListProvider>
-                </BoardProvider>
+                <NotificationProvider>
+                    <BoardProvider>
+                        <ListProvider>
+                            <CardProvider>
+                                <ConversationProvider>
+                                    {children}
+                                </ConversationProvider>
+                            </CardProvider>
+                        </ListProvider>
+                    </BoardProvider>
+                </NotificationProvider>
             </AuthProvider>
         </UserProvider>
     );

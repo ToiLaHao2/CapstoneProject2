@@ -27,6 +27,8 @@ async function CreateBoard(req, res) {
             created_at: Date.now(),
         });
 
+        board.board_collaborators.push({ board_collaborator_id: user._id, board_collaborator_role: "EDITOR" });
+
         const newBoard = await board.save();
         user.user_boards.push({ board_id: newBoard._id, role: "ADMIN" });
         await user.save();
@@ -43,7 +45,7 @@ async function CreateBoard(req, res) {
                     });
                     await collaboratorUser.save();
                 }
-                if (onlineUsers.has(collaborator.board_collaborator_id)) {
+                if (onlineUsers.has(collaborator.board_collaborator_id.toString())) {
                     // nếu user đang online thì gửi board mới về cho họ
                     const socketId = onlineUsers.get(collaborator.board_collaborator_id.toString());
                     await sendToSocket(socketId, "board:allmember:created", {
@@ -278,8 +280,8 @@ async function DeleteBoard(req, res) {
 
         // gửi thông tin tới client đang online
         for (let collaborator of collaborators) {
-            if (onlineUsers.has(collaborator)) {
-                const socketId = onlineUsers.get(collaborator);
+            if (onlineUsers.has(collaborator.toString())) {
+                const socketId = onlineUsers.get(collaborator.toString());
                 await sendToSocket(socketId, "board:allmember:deleted", {
                     board_id: board_id,
                 })
@@ -364,8 +366,8 @@ async function AddMemberToBoard(req, res) {
 
         // gửi thông tin member mới tới các cộng tác viên đang online
         for (let collaborator of collaboratorsBeforeAdd) {
-            if (onlineUsers.has(collaborator)) {
-                const socketId = onlineUsers.get(collaborator);
+            if (onlineUsers.has(collaborator.toString())) {
+                const socketId = onlineUsers.get(collaborator.toString());
                 await sendToSocket(socketId, "board:allmember:added", {
                     board_id: board_id,
                     member_id: member_id,
@@ -651,11 +653,6 @@ async function GetAllMembers(req, res) {
                 ),
             },
         }).select("_id user_full_name user_email user_avatar_url");
-        members.push(
-            await User.findById(board.created_by).select(
-                "_id user_full_name user_email user_avatar_url"
-            )
-        );
         return sendSuccess(res, "Get all members success", members);
     } catch (error) {
         logger.error(`Error with GetAllMembers: ${error}`);

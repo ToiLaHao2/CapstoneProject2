@@ -62,6 +62,8 @@ export const BoardProvider = ({ children }) => {
             const data = await response.data;
             newBoard._id = data.data;
             newBoard.create_at = Date.now();
+            const colaborators = await getAllMembers(newBoard._id);
+            newBoard.board_collaborators = colaborators;
             setBoards([...boards, newBoard]);
             return "Success";
         } catch (error) {
