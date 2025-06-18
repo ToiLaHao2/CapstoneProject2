@@ -240,9 +240,9 @@ async function RemoveUserFromBoard(req, res) {
     }
 }
 
-async function UpdateUserRoleInBoard(req, res) {}
+async function UpdateUserRoleInBoard(req, res) { }
 // assignUserToCard
-async function AssignUserToCard(req, res) {}
+async function AssignUserToCard(req, res) { }
 
 // removeUserToCard
 
@@ -515,18 +515,19 @@ async function UploadAvatar(req, res) {
                 }
             )
             .end(file.buffer); // Đẩy dữ liệu ảnh lên Cloudinary
+        // notify người dùng về việc cập nhật ảnh đại diện
     } catch (error) {
         logger.error(`Error in UploadAvatar: ${error.message}`);
         return sendError(res, 500, "Internal server error", error.message);
     }
 }
 
-async function UpdateNotificationsSettings(req, res) {}
+async function UpdateNotificationsSettings(req, res) { }
 
-async function GetUserNotifications(req, res) {}
+async function GetUserNotifications(req, res) { }
 
 // Tạo nhóm làm việc chung
-async function CreateWorkGroup(req, res) {}
+async function CreateWorkGroup(req, res) { }
 
 module.exports = {
     GetUserProfile,

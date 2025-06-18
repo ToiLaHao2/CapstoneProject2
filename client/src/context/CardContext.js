@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useState } from "react";
 import privateAxios from "../api/privateAxios";
+import { useEffect } from "react";
+import { useSocket } from "./SocketContext";
 
 const CardContext = createContext();
 
@@ -7,6 +9,7 @@ export const useCard = () => useContext(CardContext);
 
 export const CardProvider = ({ children }) => {
     const [cards, setCards] = useState([]);
+    const { socket, connected } = useSocket();
 
     // create card
     const createCard = async (boardId, listId, cardTitle) => {
@@ -68,7 +71,6 @@ export const CardProvider = ({ children }) => {
                 list_id: listId,
                 card_id: cardId,
                 card_update_details: cardUpdateDetails,
-                // ...cardUpdateDetails,
                 checkMessage: "Update card",
             });
 
@@ -108,7 +110,6 @@ export const CardProvider = ({ children }) => {
             });
 
             const data = response.data;
-            console.log("Assigned user to card:", data);
 
             if (data.success) {
                 return data.data;
@@ -134,7 +135,6 @@ export const CardProvider = ({ children }) => {
             });
 
             const data = response.data;
-            console.log("Removed user from card:", data);
 
             if (data.success) {
                 return true;
@@ -160,7 +160,6 @@ export const CardProvider = ({ children }) => {
             });
 
             const data = response.data;
-            console.log("Moved card:", data);
 
             if (data.success) {
                 return true;
@@ -201,6 +200,47 @@ export const CardProvider = ({ children }) => {
             return false;
         }
     };
+
+    useEffect(() => {
+        if (!connected) return;
+
+        /* ---------- card được cập-nhật (tiêu đề, privacy …) ----------- */
+        // payload = { updated_card, list_id, board_id }
+        const onUpdated = ({ updated_card }) => {
+            setCards((prevCards) =>
+                prevCards.map((card) =>
+                    String(card._id) === String(updated_card._id) ? updated_card : card
+                )
+            );
+        };
+
+        /* ---------- card bị xoá --------------------------------------- */
+        const onDeleted = ({ card_id, list_id, board_id }) => {
+
+        };
+
+        /* ----------thêm attachment vào card---------------*/
+        const onAddAttachment = ({ card_id, list_id, board_id, attachment }) => {
+
+        }
+
+        /* ----------tháo attachment khỏi card---------------*/
+        const onRemoveAttachment = ({ board_id }) => {
+
+        };
+
+        socket.on("card:allmember:updated", onUpdated);
+        socket.on("card:allmember:deleted", onDeleted);
+        socket.on("card:allmember:add:attachment", onAddAttachment);
+        socket.on("card:allmember:removed:attachment", onRemoveAttachment);
+
+        return () => {
+            socket.off("card:allmember:updated", onUpdated);
+            socket.off("card:allmember:deleted", onDeleted);
+            socket.off("card:allmember:add:attachment", onAddAttachment);
+            socket.off("card:allmember:removed:attachment", onRemoveAttachment);
+        };
+    }, [connected, socket, cards]);
 
     return (
         <CardContext.Provider

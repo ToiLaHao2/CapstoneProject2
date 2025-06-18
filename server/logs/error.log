@@ -239,3 +239,126 @@
 [2025-06-04 11:40:33] ERROR: Error checking data list_id is required.
 [2025-06-04 11:40:33] ERROR: Error checking data list_id is required.
 [2025-06-04 11:40:39] ERROR: Error checking data list_id is required.
+[2025-06-11 17:25:32] ERROR: Attempt 1: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-06-11 17:26:08] ERROR: Attempt 2: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-06-11 17:26:47] ERROR: Attempt 3: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-06-11 22:43:47] ERROR: Attempt 1: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-06-13 12:41:44] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:41:48] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:41:51] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:41:57] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:42:00] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:42:03] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:42:10] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:42:50] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:43:53] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:44:06] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:44:20] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:45:39] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:45:48] ERROR: Error verified token:  jwt expired
+[2025-06-13 12:46:13] ERROR: Error verified token:  jwt expired
+[2025-06-16 16:57:39] ERROR: Error with AddMemberToBoard: ReferenceError: Cannot access 'updatedBoard' before initialization
+[2025-06-16 23:18:22] ERROR: Error with AddMemberToBoard: ReferenceError: Cannot access 'updatedBoard' before initialization
+[2025-06-16 23:18:26] ERROR: Error with AddMemberToBoard: ReferenceError: Cannot access 'updatedBoard' before initialization
+[2025-06-16 23:19:13] ERROR: Error with AddMemberToBoard: ReferenceError: Cannot access 'updatedBoard' before initialization
+[2025-06-16 23:21:16] ERROR: Error with AddMemberToBoard: ReferenceError: Cannot access 'updatedBoard' before initialization
+[2025-06-16 23:23:03] ERROR: Failed to notify collaborators for new member in board 684fea6f6d2bfebeb8ec33d6
+[2025-06-16 23:23:03] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('684fea6f6d2bfebeb8ec33d6') }" (type Object) at path "notification_reference"
+[2025-06-16 23:23:03] ERROR: Failed to notify new member for board 684fea6f6d2bfebeb8ec33d6
+[2025-06-16 23:29:40] ERROR: Failed to notify collaborators for new member in board 68504665448581361df37ff1
+[2025-06-16 23:29:40] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('68504665448581361df37ff1') }" (type Object) at path "notification_reference"
+[2025-06-16 23:29:40] ERROR: Failed to notify new member for board 68504665448581361df37ff1
+[2025-06-16 23:38:27] ERROR: Failed to notify collaborators for new member in board 68504871448581361df380c1
+[2025-06-16 23:38:27] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('68504871448581361df380c1') }" (type Object) at path "notification_reference"
+[2025-06-16 23:38:27] ERROR: Failed to notify new member for board 68504871448581361df380c1
+[2025-06-16 23:39:59] ERROR: Failed to notify collaborators for new member in board 685048cd448581361df381ec
+[2025-06-16 23:39:59] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('685048cd448581361df381ec') }" (type Object) at path "notification_reference"
+[2025-06-16 23:39:59] ERROR: Failed to notify new member for board 685048cd448581361df381ec
+[2025-06-16 23:40:23] ERROR: Failed to notify collaborators for new member in board 685048f1448581361df38296
+[2025-06-16 23:40:23] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('685048f1448581361df38296') }" (type Object) at path "notification_reference"
+[2025-06-16 23:40:23] ERROR: Failed to notify new member for board 685048f1448581361df38296
+[2025-06-16 23:50:16] ERROR: Failed to notify collaborators for new member in board 68504b3e448581361df383d8
+[2025-06-16 23:50:16] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('68504b3e448581361df383d8') }" (type Object) at path "notification_reference"
+[2025-06-16 23:50:16] ERROR: Failed to notify new member for board 68504b3e448581361df383d8
+[2025-06-16 23:53:20] ERROR: Failed to notify collaborators for new member in board 68504bfbd9ee9bf3744ff6c9
+[2025-06-16 23:53:20] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('68504bfbd9ee9bf3744ff6c9') }" (type Object) at path "notification_reference"
+[2025-06-16 23:53:20] ERROR: Failed to notify new member for board 68504bfbd9ee9bf3744ff6c9
+[2025-06-16 23:58:27] ERROR: Failed to notify collaborators for new member in board 68504d2ae636c6ddc9900653
+[2025-06-16 23:58:27] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('68504d2ae636c6ddc9900653') }" (type Object) at path "notification_reference"
+[2025-06-16 23:58:27] ERROR: Failed to notify new member for board 68504d2ae636c6ddc9900653
+[2025-06-17 00:00:02] ERROR: Failed to notify collaborators for new member in board 68504d8b5b3b3f9bbec8baa6
+[2025-06-17 00:00:02] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ type: 'BOARD', id: new ObjectId('68504d8b5b3b3f9bbec8baa6') }" (type Object) at path "notification_reference"
+[2025-06-17 00:00:02] ERROR: Failed to notify new member for board 68504d8b5b3b3f9bbec8baa6
+[2025-06-17 08:45:48] ERROR: Attempt 1: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-06-17 08:46:23] ERROR: Attempt 2: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-06-17 08:46:58] ERROR: Attempt 3: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-06-17 08:47:33] ERROR: Attempt 4: Failed to connect to MongoDB - Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2025-06-17 08:52:11] ERROR: Failed to notify collaborators for new member in board 6850ca43390e6693ac6ad04b
+[2025-06-17 08:52:11] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ id: new ObjectId('6850ca43390e6693ac6ad04b') }" (type Object) at path "notification_reference"
+[2025-06-17 08:52:11] ERROR: Failed to notify new member for board 6850ca43390e6693ac6ad04b
+[2025-06-17 08:54:48] ERROR: Failed to notify collaborators for new member in board 6850cae3c3ac92f1333da33d
+[2025-06-17 08:54:48] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ id: '6850cae3c3ac92f1333da33d' }" (type Object) at path "notification_reference"
+[2025-06-17 08:54:48] ERROR: Failed to notify new member for board 6850cae3c3ac92f1333da33d
+[2025-06-17 08:58:36] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ id: '6850cb6b958abadc941d9f2a' }" (type Object) at path "notification_reference"
+[2025-06-17 08:58:36] ERROR: Failed to notify collaborators for deleted board 6850cb6b958abadc941d9f2a
+[2025-06-17 08:58:38] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ id: '6850cae3c3ac92f1333da33d' }" (type Object) at path "notification_reference"
+[2025-06-17 08:58:38] ERROR: Failed to notify collaborators for deleted board 6850cae3c3ac92f1333da33d
+[2025-06-17 08:58:39] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ id: '6850ca43390e6693ac6ad04b' }" (type Object) at path "notification_reference"
+[2025-06-17 08:58:39] ERROR: Failed to notify collaborators for deleted board 6850ca43390e6693ac6ad04b
+[2025-06-17 08:59:41] ERROR: Error with DeleteBoard: MongooseError: Operation `boards.findOne()` buffering timed out after 10000ms
+[2025-06-17 08:59:42] ERROR: Error getting user cards incoming: MongooseError: Operation `boards.aggregate()` buffering timed out after 10000ms
+[2025-06-17 08:59:42] ERROR: Error getting user cards incoming: MongooseError: Operation `boards.aggregate()` buffering timed out after 10000ms
+[2025-06-17 08:59:45] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ id: '6850cbe1ad2f46959270a984' }" (type Object) at path "notification_reference"
+[2025-06-17 08:59:45] ERROR: Failed to notify collaborators for deleted board 6850cbe1ad2f46959270a984
+[2025-06-17 09:02:06] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ id: '6850cc6896ab5ab6869a23ee' }" (type Object) at path "notification_reference"
+[2025-06-17 09:02:06] ERROR: Failed to notify collaborators for deleted board 6850cc6896ab5ab6869a23ee
+[2025-06-17 09:03:47] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ id: '6850ccaa168a3cafd59b8183' }" (type Object) at path "notification_reference"
+[2025-06-17 09:03:47] ERROR: Failed to notify collaborators for deleted board 6850ccaa168a3cafd59b8183
+[2025-06-17 09:04:29] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ id: '6850cd075eb2aca27bdb32d4' }" (type Object) at path "notification_reference"
+[2025-06-17 09:04:29] ERROR: Failed to notify collaborators for deleted board 6850cd075eb2aca27bdb32d4
+[2025-06-17 09:05:29] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ id: '6850cd323663188966a3cf40' }" (type Object) at path "notification_reference"
+[2025-06-17 09:05:29] ERROR: Failed to notify collaborators for deleted board 6850cd323663188966a3cf40
+[2025-06-17 09:06:16] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ id: '6850cd6ee7fd5a70307cc36a' }" (type Object) at path "notification_reference"
+[2025-06-17 09:06:16] ERROR: Failed to notify collaborators for deleted board 6850cd6ee7fd5a70307cc36a
+[2025-06-17 09:22:51] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ id: '6850cd9d484d16087c0612fa' }" (type Object) at path "notification_reference"
+[2025-06-17 09:22:51] ERROR: Failed to notify collaborators for deleted board 6850cd9d484d16087c0612fa
+[2025-06-17 09:23:42] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ id: '6850d17f3e126f64f543876e' }" (type Object) at path "notification_reference"
+[2025-06-17 09:23:42] ERROR: Failed to notify collaborators for deleted board 6850d17f3e126f64f543876e
+[2025-06-17 09:24:26] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ id: '6850d1b2be767ceb17445896' }" (type Object) at path "notification_reference"
+[2025-06-17 09:24:26] ERROR: Failed to notify collaborators for deleted board 6850d1b2be767ceb17445896
+[2025-06-17 09:47:18] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ id: '6850d3077951f446c31dba80' }" (type Object) at path "notification_reference"
+[2025-06-17 09:47:18] ERROR: Failed to notify collaborators for deleted board 6850d3077951f446c31dba80
+[2025-06-17 09:47:34] ERROR: Failed to notify collaborators for new member in board 6850d73e7a986c6184899317
+[2025-06-17 09:47:34] ERROR: Error with AddMemberToBoard: ReferenceError: collaborator is not defined
+[2025-06-17 09:52:12] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ id: '6850d73e7a986c6184899317' }" (type Object) at path "notification_reference"
+[2025-06-17 09:52:12] ERROR: Failed to notify collaborators for deleted board 6850d73e7a986c6184899317
+[2025-06-17 09:52:21] ERROR: Failed to notify collaborators for new member in board 6850d861aebdc7e375084ea0
+[2025-06-17 09:52:22] ERROR: notify(): Notification validation failed: notification_reference: Cast to string failed for value "{ id: '6850d861aebdc7e375084ea0' }" (type Object) at path "notification_reference"
+[2025-06-17 09:52:22] ERROR: Failed to notify new member for board 6850d861aebdc7e375084ea0
+[2025-06-17 09:56:14] ERROR: Failed to notify collaborators for new member in board 6850d94914df292ae2aefeaa
+[2025-06-17 09:56:59] ERROR: Failed to notify collaborators for new member in board 6850d97414df292ae2aefed8
+[2025-06-17 10:08:11] ERROR: Failed to notify collaborators for new member in board 6850dc1214df292ae2aeff5a
+[2025-06-17 10:11:15] ERROR: Failed to notify collaborators for new member in board 6850dccd14df292ae2aeff90
+[2025-06-17 15:59:18] ERROR: Failed to notify collaborators for new member in board 68512e5ff10760439143d812
+[2025-06-17 15:59:18] ERROR: notify(): io is not defined
+[2025-06-17 15:59:18] ERROR: Failed to notify new member for board 68512e5ff10760439143d812
+[2025-06-17 16:01:27] ERROR: Failed to notify collaborators for new member in board 68512ee30d8d9cadfb3efda2
+[2025-06-17 16:01:27] ERROR: notify(): io is not defined
+[2025-06-17 16:01:27] ERROR: Failed to notify new member for board 68512ee30d8d9cadfb3efda2
+[2025-06-17 16:01:33] ERROR: notify(): io is not defined
+[2025-06-17 16:01:33] ERROR: Failed to notify collaborators for deleted board 68512ee30d8d9cadfb3efda2
+[2025-06-17 16:02:22] ERROR: Failed to notify collaborators for new member in board 68512f1bbecdca57138bc220
+[2025-06-17 16:02:22] ERROR: notify(): io is not defined
+[2025-06-17 16:02:22] ERROR: Failed to notify new member for board 68512f1bbecdca57138bc220
+[2025-06-17 16:02:27] ERROR: notify(): io is not defined
+[2025-06-17 16:02:27] ERROR: Failed to notify collaborators for deleted board 68512f1bbecdca57138bc220
+[2025-06-17 16:04:33] ERROR: Failed to notify collaborators for new member in board 68512f9818eec3c2b46eb0ca
+[2025-06-17 16:11:00] ERROR: Failed to notify collaborators for new member in board 6851311c7ce9b6ed76d53ef0
+[2025-06-17 16:15:27] ERROR: Failed to notify collaborators for new member in board 6851322b7ce9b6ed76d53f1f
+[2025-06-17 16:21:31] ERROR: Failed to notify collaborators for new member in board 68513396c0067fb3cb7ad7bc
+[2025-06-17 16:34:31] ERROR: Failed to notify collaborators for new member in board 685136a025429eb19415e267
+[2025-06-17 16:46:03] ERROR: Failed to notify collaborators for deleted board 6851374125429eb19415e283
+[2025-06-17 16:46:09] ERROR: Failed to notify collaborators for deleted board 685137d325429eb19415e2a8
+[2025-06-17 16:47:36] ERROR: Failed to notify collaborators for deleted board 6851396525429eb19415e2c8
+[2025-06-17 17:01:35] ERROR: Error verified token:  jwt expired
+[2025-06-17 17:01:54] ERROR: Error verified token:  jwt expired

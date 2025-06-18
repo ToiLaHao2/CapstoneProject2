@@ -14,6 +14,7 @@ import "../general/MainContentContainer.css";
 import "./Tasks.css";
 import { FiEdit, FiTrash2, FiMove } from "react-icons/fi";
 import { useCard } from "../../context/CardContext";
+import { useSocket } from "../../context/SocketContext";
 
 
 const TaskCard = ({ task, boardId }) => {
@@ -157,6 +158,7 @@ const Tasks = () => {
     const [columnOrder, setColumnOrder] = useState([]);
     const { createCard } = useCard();
     const { moveCardByDragAndDrop } = useCard();
+    const { socket, connected } = useSocket();
 
     const [activeId, setActiveId] = useState(null);
     const activeTask = activeId
@@ -196,6 +198,156 @@ const Tasks = () => {
         }
     };
 
+    // socket here
+    useEffect(() => {
+        if (!connected) return;
+        /* ---------- card được tạo (creator tab khác hoặc collaborator) */
+        const onCreated = ({ card, list_id, board_id }) => {
+            setColumns((prevColumns) =>
+                prevColumns.map((column) => {
+                    if (column.id === list_id) {
+                        return {
+                            ...column,
+                            tasks: [
+                                ...column.tasks,
+                                { ...card, id: card._id },
+                            ],
+                        };
+                    }
+                    return column;
+                })
+            );
+        };
+
+        /* ----------Move card --------------------------------------*/
+        const onMoveCard = ({ card_id, old_list_id, new_list_id }) => {
+            setColumns((prevCols) => {
+                /* 1️⃣ Tìm ra card cần di chuyển */
+                let movedCard = null;
+
+                const colsWithoutCard = prevCols.map((col) => {
+                    if (String(col._id) !== String(old_list_id)) return col;
+
+                    // Lấy card & loại khỏi mảng
+                    const filtered = col.cards.filter((c) => {
+                        if (String(c._id) === String(card_id)) {
+                            movedCard = c;          // giữ lại để add sang list mới
+                            return false;           // loại khỏi list cũ
+                        }
+                        return true;
+                    });
+
+                    return { ...col, cards: filtered };
+                });
+
+                if (!movedCard) return prevCols;        // không tìm thấy → bỏ qua
+
+                /* 2️⃣ Thêm card vào list đích */
+                const updated = colsWithoutCard.map((col) =>
+                    String(col._id) === String(new_list_id)
+                        ? { ...col, cards: [...col.cards, movedCard] } // thêm cuối list
+                        : col
+                );
+
+                return updated;
+            });
+        };
+
+        /* ----------Move card with position-------------------------*/
+        const onMoveCardWithPosition = ({
+            card_id,
+            old_list_id,
+            new_list_id,
+            new_card_index,
+        }) => {
+            setColumns((prevCols) => {
+                /*------------------------------------------------------------
+                 * 1. Nếu di chuyển trong **cùng một list**: chỉ cần reorder
+                 *-----------------------------------------------------------*/
+                if (String(old_list_id) === String(new_list_id)) {
+                    return prevCols.map((col) => {
+                        if (String(col._id) !== String(old_list_id)) return col;
+
+                        const srcIdx = col.cards.findIndex(
+                            (c) => String(c._id) === String(card_id)
+                        );
+                        if (srcIdx === -1) return col; // card không tồn tại
+
+                        const moved = col.cards[srcIdx];
+                        const without = [
+                            ...col.cards.slice(0, srcIdx),
+                            ...col.cards.slice(srcIdx + 1),
+                        ];
+
+                        const tgtIdx = Math.min(
+                            Math.max(new_card_index, 0),
+                            without.length
+                        );
+                        const reordered = [
+                            ...without.slice(0, tgtIdx),
+                            moved,
+                            ...without.slice(tgtIdx),
+                        ];
+
+                        return { ...col, cards: reordered };
+                    });
+                }
+
+                /*------------------------------------------------------------
+                 * 2. Di chuyển sang **list khác**
+                 *-----------------------------------------------------------*/
+                let cardToMove = null;
+
+                /* 2A. Gỡ thẻ khỏi list cũ */
+                const afterRemoval = prevCols.map((col) => {
+                    if (String(col._id) !== String(old_list_id)) return col;
+
+                    const idx = col.cards.findIndex(
+                        (c) => String(c._id) === String(card_id)
+                    );
+                    if (idx === -1) return col; // không tìm thấy
+
+                    cardToMove = col.cards[idx];
+                    return {
+                        ...col,
+                        cards: [...col.cards.slice(0, idx), ...col.cards.slice(idx + 1)],
+                    };
+                });
+
+                if (!cardToMove) return prevCols; // không tìm thấy card
+
+                /* 2B. Chèn vào list mới ở vị trí new_card_index */
+                const afterInsert = afterRemoval.map((col) => {
+                    if (String(col._id) !== String(new_list_id)) return col;
+
+                    const insertAt = Math.min(
+                        Math.max(new_card_index, 0),
+                        col.cards.length
+                    );
+                    return {
+                        ...col,
+                        cards: [
+                            ...col.cards.slice(0, insertAt),
+                            cardToMove,
+                            ...col.cards.slice(insertAt),
+                        ],
+                    };
+                });
+
+                return afterInsert;
+            });
+        };
+
+        socket.on("card:allmember:created", onCreated);
+        socket.on("card:allmember:move", onMoveCard);
+        socket.on("card:allmember:move:position", onMoveCardWithPosition);
+        return () => {
+            socket.off("card:allmember:created", onCreated);
+            socket.off("card:allmember:move", onMoveCard);
+            socket.off("card:allmember:move:position", onMoveCardWithPosition);
+        }
+    }, [connected, socket, columns])
+
     useEffect(() => {
         if (!boardId) return;
         fetchLists();
@@ -226,13 +378,10 @@ const Tasks = () => {
         try {
             const newCard = await createCard(boardId, columnId, cardTitle);
             if (newCard) {
-                console.log("New card created:", newCard);
 
                 setColumns((prevColumns) =>
                     prevColumns.map((column) => {
                         if (column.id === columnId) {
-                            console.log("Before update:", column.tasks);
-                            console.log("Adding task:", newCard);
                             return {
                                 ...column,
                                 tasks: [

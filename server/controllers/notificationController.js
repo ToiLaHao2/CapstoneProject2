@@ -6,13 +6,15 @@
 
 const Notification = require('../models/Notification');
 const User = require('../models/User');
+const { sendToSocket } = require('../sockets');
 const logger = require('../utils/logger');
+const { onlineUsers } = require('../utils/onlineUser');
 const { sendError, sendSuccess } = require('../utils/response');
 
 /* ---------------------------------------------------------------------------
    Internal helper: create notification + emit socket event (if `io` passed)
 --------------------------------------------------------------------------- */
-async function notify({ senderId, receiverIds, title, message, reference, io }) {
+async function notify({ senderId, receiverIds, title, message, reference }) {
     try {
         if (!Array.isArray(receiverIds) || receiverIds.length === 0) return;
 
@@ -28,14 +30,31 @@ async function notify({ senderId, receiverIds, title, message, reference, io }) 
         });
 
         // emit realtime event (optional)
-        if (io) {
-            receiverIds.forEach(uid => {
-                io.to(String(uid)).emit('newNotification', noti);
-            });
-        }
+        // lọc thông tin noti để gửi đi
+
+        const basePayload = {
+            notiId: noti._id,
+            notification_title: noti.notification_title,
+            notification_message: noti.notification_message,
+            created_at: noti.created_at
+        };
+
+        receiverIds.forEach(async uid => {
+            // kiểm tra xem người dùng có đang online không
+            if (onlineUsers.has(uid.toString())) {
+                // lấy socket của người dùng
+                const user_socket_id = onlineUsers.get(uid.toString());
+                // gửi thông báo đến người dùng
+                await sendToSocket(user_socket_id, 'notification:new', {
+                    ...basePayload,
+                    notification_receiver_id: uid,
+                    isRead: false,
+                });
+            }
+        });
 
         logger.info(`Notification ${noti._id} -> [${receiverIds.join(',')}]`);
-        return noti;
+        return "OK";
     } catch (err) {
         logger.error('notify():', err);
     }
@@ -98,7 +117,7 @@ async function MarkAllRead(req, res) {
             { $set: { 'notification_receiver_ids.$[elem].is_read': true } },
             { arrayFilters: [{ 'elem.receiver_id': user_id, 'elem.is_read': false }] }
         );
-s
+        s
         return sendSuccess(res, 200, 'All notifications marked as read');
     } catch (err) {
         logger.error('MarkAllRead:', err);
