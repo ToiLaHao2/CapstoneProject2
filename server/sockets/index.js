@@ -2,6 +2,7 @@
 const { Server } = require("socket.io");
 const { VerifiedToken } = require("../utils/authHelpers");
 const { removeSocket, addUser, onlineUsers } = require("../utils/onlineUser");
+const logger = require("../utils/logger");
 
 let io;                                // biến giữ instance toàn cục
 
@@ -54,6 +55,7 @@ function getIO() {
 async function sendToSocket(socketId, event, payload) {                      // instance đã khởi tạo
     const skt = io.sockets.sockets.get(socketId); // lấy object nếu còn online
     if (skt) skt.emit(event, payload);           // chỉ 1 client nhận
+    logger.info(`Send to ${socketId}`);
 }
 
 module.exports = { initSocket, getIO, sendToSocket, onlineUsers }; // export instance io

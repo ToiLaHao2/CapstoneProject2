@@ -362,3 +362,85 @@
 [2025-06-17 16:47:36] ERROR: Failed to notify collaborators for deleted board 6851396525429eb19415e2c8
 [2025-06-17 17:01:35] ERROR: Error verified token:  jwt expired
 [2025-06-17 17:01:54] ERROR: Error verified token:  jwt expired
+[2025-06-18 11:08:53] ERROR: sendToSocket is not defined
+[2025-06-18 11:12:35] ERROR: Failed to send notification:
+[2025-06-18 11:12:35] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:12:38] ERROR: Failed to send notification:
+[2025-06-18 11:12:38] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:12:40] ERROR: Failed to send notification:
+[2025-06-18 11:12:49] ERROR: Error checking data list_id is required.
+[2025-06-18 11:12:49] ERROR: Error checking data list_id is required.
+[2025-06-18 11:12:52] ERROR: Error checking data list_id is required.
+[2025-06-18 11:12:52] ERROR: Error checking data list_id is required.
+[2025-06-18 11:12:52] ERROR: Error checking data list_id is required.
+[2025-06-18 11:12:52] ERROR: Error checking data list_id is required.
+[2025-06-18 11:12:52] ERROR: Error checking data list_id is required.
+[2025-06-18 11:13:23] ERROR: Failed to send notification:
+[2025-06-18 11:13:23] ERROR: Failed to send notification:
+[2025-06-18 11:16:10] ERROR: Failed to send notification:
+[2025-06-18 11:16:10] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:17:42] ERROR: Failed to send notification:
+[2025-06-18 11:17:42] ERROR: Failed to send notification:
+[2025-06-18 11:20:19] ERROR: Failed to send notification:
+[2025-06-18 11:20:19] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:21:54] ERROR: Failed to send notification:
+[2025-06-18 11:21:54] ERROR: Failed to send notification:
+[2025-06-18 11:22:56] ERROR: Failed to send notification:
+[2025-06-18 11:22:56] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:23:29] ERROR: Failed to send notification:
+[2025-06-18 11:23:29] ERROR: Failed to send notification:
+[2025-06-18 11:24:46] ERROR: Failed to send notification:
+[2025-06-18 11:24:46] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:25:28] ERROR: Failed to send notification:
+[2025-06-18 11:25:28] ERROR: Failed to send notification:
+[2025-06-18 11:25:37] ERROR: Failed to send notification:
+[2025-06-18 11:25:37] ERROR: Failed to send notification:
+[2025-06-18 11:25:41] ERROR: Failed to send notification:
+[2025-06-18 11:25:41] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:26:38] ERROR: Failed to send notification:
+[2025-06-18 11:26:38] ERROR: Failed to send notification:
+[2025-06-18 11:26:44] ERROR: Failed to send notification:
+[2025-06-18 11:26:44] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:27:44] ERROR: Failed to send notification:
+[2025-06-18 11:27:44] ERROR: Failed to send notification:
+[2025-06-18 11:28:51] ERROR: notify(): Cannot read properties of undefined (reading 'map')
+[2025-06-18 11:28:51] ERROR: Failed to send notification:
+[2025-06-18 11:28:51] ERROR: notify(): Cannot read properties of undefined (reading 'map')
+[2025-06-18 11:28:51] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:32:06] ERROR: Failed to send notification:
+[2025-06-18 11:32:06] ERROR: Failed to send notification:
+[2025-06-18 11:32:17] ERROR: Failed to send notification:
+[2025-06-18 11:32:17] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:34:15] ERROR: Failed to send notification:
+[2025-06-18 11:34:15] ERROR: Failed to send notification:
+[2025-06-18 11:34:23] ERROR: Failed to send notification:
+[2025-06-18 11:34:23] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:36:47] ERROR: Failed to send notification:
+[2025-06-18 11:36:47] ERROR: Failed to send notification:
+[2025-06-18 11:36:52] ERROR: Failed to send notification:
+[2025-06-18 11:36:52] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:37:37] ERROR: Failed to send notification:
+[2025-06-18 11:37:37] ERROR: Failed to send notification:
+[2025-06-18 11:37:40] ERROR: Failed to send notification:
+[2025-06-18 11:37:40] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:39:29] ERROR: Failed to send notification:
+[2025-06-18 11:39:29] ERROR: Failed to send notification:
+[2025-06-18 11:39:36] ERROR: Failed to send notification:
+[2025-06-18 11:39:36] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:42:03] ERROR: Failed to send notification:
+[2025-06-18 11:42:03] ERROR: Failed to send notification:
+[2025-06-18 11:42:10] ERROR: Failed to send notification:
+[2025-06-18 11:42:10] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:44:21] ERROR: notify(): Notification validation failed: notification_sender_id: Path `notification_sender_id` is required.
+[2025-06-18 11:44:21] ERROR: Failed to send notification:
+[2025-06-18 11:44:21] ERROR: notify(): Notification validation failed: notification_sender_id: Path `notification_sender_id` is required.
+[2025-06-18 11:44:21] ERROR: Failed to send notification:
+[2025-06-18 11:45:40] ERROR: notify(): Notification validation failed: notification_sender_id: Path `notification_sender_id` is required.
+[2025-06-18 11:45:40] ERROR: Failed to send notification:
+[2025-06-18 11:45:40] ERROR: Failed to send notification to assignee:
+[2025-06-18 11:49:58] ERROR: Error verified token:  jwt expired
+[2025-06-18 11:49:58] ERROR: Invalid token
+[2025-06-18 11:49:58] ERROR: Error verified token:  jwt expired
+[2025-06-18 11:49:58] ERROR: Error verified token:  jwt expired
+[2025-06-18 11:50:35] ERROR: Error verified token:  jwt expired
+[2025-06-18 11:50:35] ERROR: Error verified token:  jwt expired

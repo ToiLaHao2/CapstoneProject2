@@ -2,13 +2,14 @@ const Board = require("../models/Board");
 const Card = require("../models/Card");
 const List = require("../models/List");
 const User = require("../models/User");
-const { getIO } = require("../sockets");
+const { getIO, sendToSocket } = require("../sockets");
 const { deleteList } = require("../utils/dbHelper");
+const logger = require("../utils/logger");
 const { onlineUsers } = require("../utils/onlineUser");
 const { sendError, sendSuccess } = require("../utils/response");
 
 async function CreateList(req, res) {
-    const { user_id, board_id, list_title, list_numerical_order } = req.body;
+    const { user_id, board_id, list_title } = req.body;
     try {
         const board = await Board.findById(board_id);
         if (!board) {

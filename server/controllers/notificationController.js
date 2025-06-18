@@ -21,6 +21,7 @@ async function notify({ senderId, receiverIds, title, message, reference }) {
         // build receivers array
         const receiversArr = receiverIds.map(id => ({ receiver_id: id }));
 
+
         const noti = await Notification.create({
             notification_sender_id: senderId,
             notification_receiver_ids: receiversArr,

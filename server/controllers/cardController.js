@@ -8,7 +8,7 @@ const Attachment = require("../models/Attachment.js");
 const path = require("path");
 const { deleteCard } = require("../utils/dbHelper.js");
 const upload = require("../configs/storageConfig.js").upload;
-const { getIO, onlineUsers, sendToSocket } = require("../sockets/index.js");
+const { onlineUsers, sendToSocket } = require("../sockets/index.js");
 const { notify } = require("./notificationController.js");
 const fs = require("fs");
 
@@ -61,12 +61,12 @@ async function CreateCard(req, res) {
         // gửi thông tin về card mới tạo cho người dùng trừ người tạo
         const collaborators = board.board_collaborators.filter(
             (collaborator) =>
-                collaborator.board_collaborator_id !== user_id
+                collaborator.board_collaborator_id.toString() !== user_id
         );
 
         for (let collaborator of collaborators) {
-            if (onlineUsers.has(collaborator.toString())) {
-                const socketId = onlineUsers.get(collaborator.toString());
+            if (onlineUsers.has(collaborator.board_collaborator_id.toString())) {
+                const socketId = onlineUsers.get(collaborator.board_collaborator_id.toString());
                 await sendToSocket(socketId, "card:allmember:created", {
                     card: card,
                     list_id: list_id,
@@ -224,8 +224,8 @@ async function UpdateCard(req, res) {
         );
 
         const sendNotiResult = await notify({
-            sender_id: user_id,
-            receiver_ids: cardAssignees,
+            senderId: user_id,
+            receiverIds: cardAssignees,
             title: "Card Updated",
             message: `Card "${updatedCard.card_title}" has been updated.`,
             reference: {
@@ -310,7 +310,7 @@ async function DeleteCard(req, res) {
         const assigneesAndCreator = [...assignees, board.created_by];
 
         const sendNotiResult = await notify({
-            sender_id: user_id,
+            senderId: user_id,
             receiver_ids: assigneesAndCreator,
             title: "Card Deleted",
             message: `Card "${card.card_title}" has been deleted.`,
@@ -561,11 +561,8 @@ async function AssignUserToCard(req, res) {
         // add assignees
 
         const assignees = card.card_assignees.map(
-            (assignee) => assignee.card_assignee_id
+            (collab) => collab.card_assignee_id
         );
-
-        assignees.push(board.created_by);
-
 
         card.card_assignees.push({ card_assignee_id: assign_user_id });
         await card.save();
@@ -583,10 +580,12 @@ async function AssignUserToCard(req, res) {
             }
         }
 
+        console.log(assignees);
+
         // notify các thành viên card và owner board về việc gán user vào card
         const sendNotiResult = await notify({
-            sender_id: user_id,
-            receiver_ids: assignees,
+            senderId: user_id,
+            receiverIds: assignees,
             title: "User Assigned to Card",
             message: `User "${assignee.user_full_name}" has been assigned to card "${card.card_title}".`,
             reference: "Card",
@@ -597,7 +596,7 @@ async function AssignUserToCard(req, res) {
 
         // gửi thông báo cho người dùng được thêm vào card
         const sendNotiToAssigneeResult = await notify({
-            sender_id: user_id,
+            senderId: user_id,
             receiver_ids: [assign_user_id],
             title: "You have been assigned to a Card",
             message: `You have been assigned to card "${card.card_title}" in board "${board.board_name}".`,
@@ -675,13 +674,14 @@ async function RemoveUserFromCard(req, res) {
         const assignees = card.card_assignees.map(
             (assignee) => assignee.card_assignee_id
         );
-        assignees.push(board.created_by);
+
+        const remove_user = await User.findById(remove_user_id);
 
         const sendNotiResult = await notify({
-            sender_id: user_id,
-            receiver_ids: assignees,
+            senderId: user_id,
+            receiverIds: assignees,
             title: "User Removed from Card",
-            message: `User "${remove_user_id}" has been removed from card "${card.card_title}".`,
+            message: `User "${remove_user.user_full_name}" has been removed from card "${card.card_title}".`,
             reference: "Card",
         });
         if (sendNotiResult !== "OK") {
@@ -689,8 +689,8 @@ async function RemoveUserFromCard(req, res) {
         }
         // gửi thong tin thành viên bị remove khỏi card
         const sendNotiResult2 = await notify({
-            sender_id: user_id,
-            receiver_ids: [remove_user_id],
+            senderId: user_id,
+            receiverIds: [remove_user_id],
             title: "User Removed from Card",
             message: `You have been removed from card "${card.card_title}".`,
             reference: "Card",
