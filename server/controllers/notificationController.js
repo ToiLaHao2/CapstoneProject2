@@ -37,6 +37,7 @@ async function notify({ senderId, receiverIds, title, message, reference }) {
             notiId: noti._id,
             notification_title: noti.notification_title,
             notification_message: noti.notification_message,
+            notification_isRead: false,
             created_at: noti.created_at
         };
 
@@ -66,21 +67,38 @@ async function notify({ senderId, receiverIds, title, message, reference }) {
 --------------------------------------------------------------------------- */
 async function GetNotifications(req, res) {
     try {
-        const { user_id, beforeId, limit = 20 } = req.body; // body dùng cho đồng bộ cách bạn làm
+        const { user_id, beforeId } = req.body; // body dùng cho đồng bộ cách bạn làm
 
+        const limit = 20;
         const user = await User.findById(user_id);
         if (!user) return sendError(res, 404, 'User not found');
 
-        const criteria = { 'notification_receiver_ids.receiver_id': user_id };
+        const criteria = { notification_receiver_id: user_id };  // Tìm thông báo theo receiver_id
         if (beforeId) criteria._id = { $lt: beforeId };
 
+        // Lấy thông báo theo các tiêu chí đã định sẵn
         const notis = await Notification.find(criteria)
-            .sort({ _id: -1 })
-            .limit(Number(limit))
-            .lean();
+            .sort({ _id: -1 })  // Sắp xếp theo thứ tự giảm dần (mới nhất trước)
+            .limit(Number(limit)) // Giới hạn số lượng thông báo trả về
+            .lean();  // Trả về kết quả dưới dạng plain JavaScript object
 
-        notis.reverse();
-        return sendSuccess(res, 200, 'Notifications', notis);
+        // Xử lý dữ liệu trả về (lấy những thông tin cần thiết)
+        const simplifiedNotifications = notis.map((noti) => {
+            // Tìm is_read của user_id trong mảng receiver_ids
+            const receiver = noti.notification_receiver_ids.find(
+                (receiver) => String(receiver.receiver_id) === String(user_id)
+            );
+
+            return {
+                notification_receiver_id: user_id,
+                notification_title: noti.notification_title,
+                notification_message: noti.notification_message,
+                is_read: receiver ? receiver.is_read : false, // Nếu không tìm thấy, mặc định là false
+                created_at: noti.created_at,
+            };
+        });
+
+        return sendSuccess(res, 200, 'Notifications', simplifiedNotifications); // Trả về dữ liệu đã được xử lý
     } catch (err) {
         logger.error('GetNotifications:', err);
         return sendError(res, 500, 'Internal Server Error');

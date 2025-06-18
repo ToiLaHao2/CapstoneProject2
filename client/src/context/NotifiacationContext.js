@@ -9,37 +9,64 @@ export const NotificationProvider = ({ children }) => {
     const { socket, connected } = useSocket();
     // const [unread, setUnread] = useState(0);
 
-    // useEffect(() => {
-    //     (async () => {
-    //         try {
-    //             const { data } = await privateAxios.post("/notification/unread", {
-    //                 checkMessage: "Get unread notification",
-    //             });
-    //             if (data.success) {
-    //                 setList(data.data);
-    //                 setUnread(data.data.length);
-    //             }
-    //         } catch (err) {
-    //             console.error("Fetch unread noti err", err);
-    //         }
-    //     })();
-    // }, []);
+    // Fetch notifications from the backend
+    const fetchNotifications = async (beforeId = null) => {
+        try {
+            const { data } = await privateAxios.post("/notification/getNotification", {
+                beforeId: beforeId,
+                checkMessage: "Get notification"
+            });
+            if (data.success) {
+                setNotifications((prev) => [...prev, ...data.data]);
+            }
+        } catch (err) {
+            console.error("Fetch notifications error", err);
+        }
+    };
 
+    // Mark a specific notification as read
+    const markNotificationRead = async (notificationId) => {
+        try {
+            const { data } = await privateAxios.post("/notification/markNotificatioRead", {
+                notificationId: notificationId,
+                checkMessage: "Mark notification read"
+            });
+            if (data.success) {
+                setNotifications((prev) =>
+                    prev.map((noti) =>
+                        noti.notiId === notificationId
+                            ? { ...noti, isRead: true }
+                            : noti
+                    )
+                );
+            }
+        } catch (err) {
+            console.error("Mark notification as read error", err);
+        }
+    };
+
+    // Mark all notifications as read
+    const markAllNotificationsRead = async () => {
+        try {
+            const { data } = await privateAxios.post("/notification/markAllRead", {
+                checkMessage: "Mark all notification read"
+            });
+            if (data.success) {
+                setNotifications((prev) =>
+                    prev.map((noti) => ({ ...noti, noti: true }))
+                );
+            }
+        } catch (err) {
+            console.error("Mark all notifications as read error", err);
+        }
+    };
 
     useEffect(() => {
         if (!connected) return;
 
         const handler = (payload) => {
             console.log(payload);
-            /* payload = { notiId, notification_title, notification_message, notification_receiver_id } */
-            // thêm vào đầu
             setNotifications((prev) => [payload, ...prev]);
-            // setUnread((n) => n + 1);
-
-            // ☑️ hiển thị toast (tuỳ thư viện)
-            // toast(`${payload.notification_title}`, {
-            //     description: payload.notification_message,
-            // });
         };
 
         socket.on("notification:new", handler);
@@ -49,7 +76,10 @@ export const NotificationProvider = ({ children }) => {
     return (
         <NotificationContext.Provider
             value={{
-                notifications
+                notifications,
+                fetchNotifications,
+                markNotificationRead,
+                markAllNotificationsRead,
             }}
         >
             {children}

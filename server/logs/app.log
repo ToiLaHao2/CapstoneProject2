@@ -13293,3 +13293,1771 @@
 [2025-06-18 12:05:17] INFO: Notification 6852490dafcda81fb5cb0fa5 -> [6850ca37390e6693ac6ad03b]
 [2025-06-18 12:05:17] ERROR: Failed to send notification to assignee:
 [2025-06-18 12:05:17] INFO: Successfull checking data to get cardd
+[2025-06-18 21:52:19] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 21:53:14] INFO: Successfull checking data user for login
+[2025-06-18 21:53:14] INFO: Compare hash complete
+[2025-06-18 21:53:14] INFO: Complete create token
+[2025-06-18 21:53:14] INFO: Successfull checking data user for get user profile
+[2025-06-18 21:53:14] INFO: Successfull checking data to get board by user id
+[2025-06-18 21:53:15] INFO: Successfull checking data to get all members
+[2025-06-18 21:53:16] INFO: Successfull checking data to get board by user id
+[2025-06-18 21:53:16] INFO: Successfull checking data to get board by user id
+[2025-06-18 21:53:16] INFO: Successfull checking data user for get user profile
+[2025-06-18 21:53:16] INFO: Successfull checking data user for get user profile
+[2025-06-18 21:53:16] INFO: Successfull checking data to get all members
+[2025-06-18 21:53:16] INFO: Successfull checking data to get all members
+[2025-06-18 21:53:28] INFO: Successfull checking data user for login
+[2025-06-18 21:53:28] INFO: Compare hash complete
+[2025-06-18 21:53:29] INFO: Complete create token
+[2025-06-18 21:53:29] INFO: Successfull checking data user for get user profile
+[2025-06-18 21:53:29] INFO: Successfull checking data to get board by user id
+[2025-06-18 21:53:29] INFO: Successfull checking data to get all members
+[2025-06-18 21:53:30] INFO: Successfull checking data to get board by user id
+[2025-06-18 21:53:30] INFO: Successfull checking data to get board by user id
+[2025-06-18 21:53:30] INFO: Successfull checking data user for get user profile
+[2025-06-18 21:53:30] INFO: Successfull checking data user for get user profile
+[2025-06-18 21:53:30] INFO: Successfull checking data to get all members
+[2025-06-18 21:53:30] INFO: Successfull checking data to get all members
+[2025-06-18 21:53:32] INFO: Successfull checking data to get lists in board
+[2025-06-18 21:53:32] INFO: Successfull checking data to get lists in board
+[2025-06-18 21:53:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:53:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:53:39] INFO: Successfull checking data to get board by user id
+[2025-06-18 21:53:39] INFO: Successfull checking data user for get user profile
+[2025-06-18 21:53:39] INFO: Successfull checking data to get board by user id
+[2025-06-18 21:53:39] INFO: Successfull checking data user for get user profile
+[2025-06-18 21:53:39] INFO: Successfull checking data to get all members
+[2025-06-18 21:53:39] INFO: Successfull checking data to get all members
+[2025-06-18 21:53:41] INFO: Successfull checking data to get lists in board
+[2025-06-18 21:53:41] INFO: Successfull checking data to get lists in board
+[2025-06-18 21:53:41] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:53:41] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:53:42] INFO: Successfull checking data to get lists in board
+[2025-06-18 21:53:42] INFO: Successfull checking data to get lists in board
+[2025-06-18 21:53:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:53:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:53:48] INFO: Successfull checking data to create list
+[2025-06-18 21:53:48] INFO: Send to pKoBiYlKed_YAu7BAAAD
+[2025-06-18 21:53:48] INFO: Send to vsA1a0x0izcyv2LwAAAB
+[2025-06-18 21:53:48] INFO: Successfull checking data to get lists in board
+[2025-06-18 21:53:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:53:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:54:00] INFO: Successfull checking data to move card with position
+[2025-06-18 21:54:01] INFO: Send to pKoBiYlKed_YAu7BAAAD
+[2025-06-18 21:54:01] INFO: Send to vsA1a0x0izcyv2LwAAAB
+[2025-06-18 21:54:03] INFO: Successfull checking data to get board by user id
+[2025-06-18 21:54:03] INFO: Successfull checking data user for get user profile
+[2025-06-18 21:54:03] INFO: Successfull checking data to get board by user id
+[2025-06-18 21:54:03] INFO: Successfull checking data user for get user profile
+[2025-06-18 21:54:04] INFO: Successfull checking data to get all members
+[2025-06-18 21:54:04] INFO: Successfull checking data to get all members
+[2025-06-18 21:54:05] INFO: Successfull checking data to get lists in board
+[2025-06-18 21:54:05] INFO: Successfull checking data to get lists in board
+[2025-06-18 21:54:05] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:54:05] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:54:05] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:54:05] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:54:12] INFO: Successfull checking data to move card with position
+[2025-06-18 21:54:13] INFO: Send to pKoBiYlKed_YAu7BAAAD
+[2025-06-18 21:54:13] INFO: Send to vsA1a0x0izcyv2LwAAAB
+[2025-06-18 21:56:51] INFO: Successfull checking data user for get user profile
+[2025-06-18 21:56:51] INFO: Successfull checking data user for get user profile
+[2025-06-18 21:56:56] INFO: Successfull checking data to get lists in board
+[2025-06-18 21:56:56] INFO: Successfull checking data to get lists in board
+[2025-06-18 21:56:56] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:56:56] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:56:56] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:56:56] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:58:51] INFO: Successfull checking data to get lists in board
+[2025-06-18 21:58:51] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:58:51] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:58:51] INFO: Successfull checking data to get lists in board
+[2025-06-18 21:58:51] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:58:51] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:59:02] INFO: Successfull checking data to move card with position
+[2025-06-18 21:59:02] INFO: Send to pKoBiYlKed_YAu7BAAAD
+[2025-06-18 21:59:02] INFO: Send to vsA1a0x0izcyv2LwAAAB
+[2025-06-18 21:59:06] INFO: Successfull checking data to move card with position
+[2025-06-18 21:59:09] INFO: Successfull checking data to get board by user id
+[2025-06-18 21:59:09] INFO: Successfull checking data user for get user profile
+[2025-06-18 21:59:09] INFO: Successfull checking data to get board by user id
+[2025-06-18 21:59:09] INFO: Successfull checking data user for get user profile
+[2025-06-18 21:59:09] INFO: Successfull checking data to get all members
+[2025-06-18 21:59:09] INFO: Successfull checking data to get all members
+[2025-06-18 21:59:11] INFO: Successfull checking data to get lists in board
+[2025-06-18 21:59:11] INFO: Successfull checking data to get lists in board
+[2025-06-18 21:59:11] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:59:11] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:59:11] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:59:11] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:59:13] INFO: Successfull checking data to move card with position
+[2025-06-18 21:59:13] INFO: Send to pKoBiYlKed_YAu7BAAAD
+[2025-06-18 21:59:13] INFO: Send to vsA1a0x0izcyv2LwAAAB
+[2025-06-18 21:59:14] INFO: Successfull checking data to get board by user id
+[2025-06-18 21:59:14] INFO: Successfull checking data user for get user profile
+[2025-06-18 21:59:14] INFO: Successfull checking data to get board by user id
+[2025-06-18 21:59:14] INFO: Successfull checking data user for get user profile
+[2025-06-18 21:59:14] INFO: Successfull checking data to get all members
+[2025-06-18 21:59:15] INFO: Successfull checking data to get all members
+[2025-06-18 21:59:16] INFO: Successfull checking data to get lists in board
+[2025-06-18 21:59:16] INFO: Successfull checking data to get lists in board
+[2025-06-18 21:59:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:59:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:59:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:59:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 21:59:25] INFO: Successfull checking data to move card with position
+[2025-06-18 21:59:26] INFO: Send to pKoBiYlKed_YAu7BAAAD
+[2025-06-18 21:59:26] INFO: Send to vsA1a0x0izcyv2LwAAAB
+[2025-06-18 22:03:10] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:03:11] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:03:11] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:03:11] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:03:11] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:03:11] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:03:12] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:03:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:03:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:03:12] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:03:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:03:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:03:19] INFO: Successfull checking data to move card with position
+[2025-06-18 22:03:20] INFO: Send to pKoBiYlKed_YAu7BAAAD
+[2025-06-18 22:03:20] INFO: Send to vsA1a0x0izcyv2LwAAAB
+[2025-06-18 22:03:29] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:03:29] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:03:29] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:03:29] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:03:29] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:03:29] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:03:29] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:03:29] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:03:54] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:03:54] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:03:54] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:03:54] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:03:54] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:03:54] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:03:58] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:03:58] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:03:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:03:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:03:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:03:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:07:09] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:07:09] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:07:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:07:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:07:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:07:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:07:18] INFO: Successfull checking data to move card with position
+[2025-06-18 22:07:18] INFO: Send to _gdYffIfVcRpoIFrAAAF
+[2025-06-18 22:07:18] INFO: Send to vsA1a0x0izcyv2LwAAAB
+[2025-06-18 22:07:20] INFO: Successfull checking data to move card with position
+[2025-06-18 22:07:20] INFO: Send to _gdYffIfVcRpoIFrAAAF
+[2025-06-18 22:07:20] INFO: Send to vsA1a0x0izcyv2LwAAAB
+[2025-06-18 22:07:22] INFO: Successfull checking data to move card with position
+[2025-06-18 22:07:22] INFO: Send to _gdYffIfVcRpoIFrAAAF
+[2025-06-18 22:07:22] INFO: Send to vsA1a0x0izcyv2LwAAAB
+[2025-06-18 22:08:27] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:08:27] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:08:27] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:08:27] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:08:27] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:08:27] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:08:27] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:08:27] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:08:29] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:08:29] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:08:29] INFO: Successfull checking data to get cardd
+[2025-06-18 22:08:29] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:08:29] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:08:29] INFO: Successfull checking data to get cardd
+[2025-06-18 22:08:37] INFO: Successfull checking data to update card
+[2025-06-18 22:08:37] INFO: Send to zuHDr3v4P-VDRWiAAAAH
+[2025-06-18 22:08:37] INFO: Send to vsA1a0x0izcyv2LwAAAB
+[2025-06-18 22:08:37] INFO: Successfull checking data to get cardd
+[2025-06-18 22:08:37] INFO: Send to zuHDr3v4P-VDRWiAAAAH
+[2025-06-18 22:08:37] INFO: Send to vsA1a0x0izcyv2LwAAAB
+[2025-06-18 22:08:37] INFO: Notification 6852d675b30b2806fbafbcc2 -> [6850ca37390e6693ac6ad03b,6850ca38390e6693ac6ad043]
+[2025-06-18 22:08:37] INFO: Successfull checking data to move card in list
+[2025-06-18 22:08:37] INFO: Successfull checking data to get cardd
+[2025-06-18 22:08:38] INFO: Send to zuHDr3v4P-VDRWiAAAAH
+[2025-06-18 22:08:38] INFO: Send to vsA1a0x0izcyv2LwAAAB
+[2025-06-18 22:08:38] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:08:38] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:08:38] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:08:38] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:08:38] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:08:38] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:08:53] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:08:53] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:08:53] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:08:53] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:08:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:08:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:08:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:08:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:08:55] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:08:55] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:08:55] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:08:55] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:08:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:08:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:08:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:08:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:09:58] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:09:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:09:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:09:58] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:09:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:09:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:10:07] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:10:07] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:10:07] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:10:07] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:10:07] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:10:07] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:10:10] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:10:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:10:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:10:10] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:10:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:10:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:10:22] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:10:22] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:10:22] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:10:22] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:10:22] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:10:22] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:10:24] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:10:24] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:10:24] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:10:24] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:10:24] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:10:24] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:10:37] INFO: Successfull checking data to move card with position
+[2025-06-18 22:10:38] INFO: Send to staPOl9Mvu09YcILAAAJ
+[2025-06-18 22:10:38] INFO: Send to O9jfJ873XMGoAf_hAAAL
+[2025-06-18 22:10:41] INFO: Successfull checking data to move card with position
+[2025-06-18 22:10:42] INFO: Send to staPOl9Mvu09YcILAAAJ
+[2025-06-18 22:10:42] INFO: Send to O9jfJ873XMGoAf_hAAAL
+[2025-06-18 22:10:43] INFO: Successfull checking data to move card with position
+[2025-06-18 22:10:44] INFO: Send to staPOl9Mvu09YcILAAAJ
+[2025-06-18 22:10:44] INFO: Send to O9jfJ873XMGoAf_hAAAL
+[2025-06-18 22:10:52] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:10:52] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:10:52] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:10:52] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:10:52] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:10:52] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:11:08] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:11:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:11:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:11:08] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:11:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:11:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:11:18] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:11:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:11:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:11:18] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:11:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:11:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:11:45] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:11:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:11:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:11:45] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:11:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:11:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:11:46] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:11:46] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:11:46] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:11:46] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:11:46] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:11:46] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:11:48] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:11:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:11:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:11:49] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:11:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:11:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:12:02] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:12:02] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:12:03] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:12:03] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:12:03] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:12:03] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:12:03] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:12:03] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:12:03] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:12:29] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:12:29] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:12:29] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:12:29] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:12:29] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:12:29] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:12:41] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:12:41] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:12:41] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:12:42] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:12:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:12:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:14:09] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:14:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:14:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:14:10] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:14:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:14:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:14:14] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:14:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:14:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:14:14] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:14:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:14:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:14:25] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:14:25] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:14:25] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:14:25] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:14:25] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:14:25] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:14:26] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:14:26] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:14:26] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:14:26] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:14:26] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:14:26] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:14:32] INFO: Successfull checking data to move card with position
+[2025-06-18 22:14:32] INFO: Send to staPOl9Mvu09YcILAAAJ
+[2025-06-18 22:14:32] INFO: Send to O9jfJ873XMGoAf_hAAAL
+[2025-06-18 22:14:50] INFO: Successfull checking data to move card with position
+[2025-06-18 22:14:58] INFO: Successfull checking data to move card with position
+[2025-06-18 22:14:58] INFO: Send to staPOl9Mvu09YcILAAAJ
+[2025-06-18 22:14:58] INFO: Send to O9jfJ873XMGoAf_hAAAL
+[2025-06-18 22:15:04] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:15:04] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:15:04] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:15:04] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:15:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:15:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:15:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:15:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:16] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:18:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:17] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:18:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:18] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:18:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:18] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:18:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:19] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:18:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:20] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:18:20] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:20] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:34] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:18:34] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:18:34] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:18:34] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:18:34] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:34] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:34] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:34] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:40] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:18:40] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:18:40] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:18:40] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:18:40] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:40] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:40] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:40] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:18:47] INFO: Successfull checking data to move card with position
+[2025-06-18 22:18:47] INFO: Send to 7OM3jJnqpzsVdz0JAAAP
+[2025-06-18 22:18:47] INFO: Send to ecC8gYkTCocIFz6yAAAR
+[2025-06-18 22:24:15] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:24:15] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:24:15] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:24:15] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:24:15] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:24:15] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:24:17] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:24:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:24:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:24:18] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:24:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:24:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:24:22] INFO: Successfull checking data to move card with position
+[2025-06-18 22:24:23] INFO: Send to 7OM3jJnqpzsVdz0JAAAP
+[2025-06-18 22:24:23] INFO: Send to ecC8gYkTCocIFz6yAAAR
+[2025-06-18 22:24:27] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:24:27] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:24:27] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:24:27] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:24:28] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:24:28] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:24:28] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:24:28] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:24:31] INFO: Successfull checking data to move card with position
+[2025-06-18 22:24:31] INFO: Send to 7OM3jJnqpzsVdz0JAAAP
+[2025-06-18 22:24:31] INFO: Send to alsO7U23cLSgd6JCAAAT
+[2025-06-18 22:25:13] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:25:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:25:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:25:14] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:25:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:25:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:25:17] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:25:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:25:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:25:17] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:25:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:25:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:25:19] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:25:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:25:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:25:20] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:25:20] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:25:20] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:25:27] INFO: Successfull checking data to move card with position
+[2025-06-18 22:25:27] INFO: Send to 7OM3jJnqpzsVdz0JAAAP
+[2025-06-18 22:25:27] INFO: Send to alsO7U23cLSgd6JCAAAT
+[2025-06-18 22:26:12] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:26:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:26:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:26:12] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:26:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:26:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:26:20] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:26:20] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:26:20] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:26:20] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:26:20] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:26:20] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:26:23] INFO: Successfull checking data to move card with position
+[2025-06-18 22:26:24] INFO: Send to 7OM3jJnqpzsVdz0JAAAP
+[2025-06-18 22:26:24] INFO: Send to alsO7U23cLSgd6JCAAAT
+[2025-06-18 22:30:34] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:30:34] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:30:34] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:30:34] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:30:34] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:30:34] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:30:34] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:30:34] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:30:40] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:30:40] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:30:40] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:30:40] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:30:40] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:30:40] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:30:40] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:30:40] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:30:46] INFO: Successfull checking data to move card with position
+[2025-06-18 22:30:46] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:30:46] INFO: Send to b6MZpkFxs_Smu44XAAAV
+[2025-06-18 22:31:04] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:31:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:31:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:31:04] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:31:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:31:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:31:08] INFO: Successfull checking data to move card with position
+[2025-06-18 22:31:08] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:31:08] INFO: Send to b6MZpkFxs_Smu44XAAAV
+[2025-06-18 22:31:10] INFO: Successfull checking data to move card with position
+[2025-06-18 22:31:10] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:31:10] INFO: Send to b6MZpkFxs_Smu44XAAAV
+[2025-06-18 22:31:12] INFO: Successfull checking data to move card with position
+[2025-06-18 22:31:12] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:31:12] INFO: Send to b6MZpkFxs_Smu44XAAAV
+[2025-06-18 22:31:26] INFO: Successfull checking data to create list
+[2025-06-18 22:31:26] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:31:26] INFO: Send to b6MZpkFxs_Smu44XAAAV
+[2025-06-18 22:31:26] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:31:26] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:31:26] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:31:26] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:31:54] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:31:54] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:31:54] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:31:54] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:31:54] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:31:54] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:31:54] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:31:54] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:31:59] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:31:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:31:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:31:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:31:59] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:31:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:31:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:31:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:04] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:33:04] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:33:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:16] INFO: Successfull checking data to create list
+[2025-06-18 22:33:16] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:33:16] INFO: Send to b6MZpkFxs_Smu44XAAAV
+[2025-06-18 22:33:16] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:33:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:48] INFO: Successfull checking data to get board by user id
+[2025-06-18 22:33:48] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:33:48] INFO: Successfull checking data to get board by user id
+[2025-06-18 22:33:48] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:33:48] INFO: Successfull checking data to get all members
+[2025-06-18 22:33:48] INFO: Successfull checking data to get all members
+[2025-06-18 22:33:49] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:33:49] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:33:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:50] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:50] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:50] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:50] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:50] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:50] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:52] INFO: Successfull checking data to delete list
+[2025-06-18 22:33:52] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:33:52] INFO: Send to b6MZpkFxs_Smu44XAAAV
+[2025-06-18 22:33:52] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:33:52] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:52] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:33:52] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:34:00] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:34:00] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:34:00] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:34:00] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:34:00] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:34:00] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:34:00] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:34:00] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:34:00] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:34:00] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:34:36] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:34:36] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:34:36] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:34:36] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:34:36] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:34:36] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:34:36] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:34:36] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:36:49] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:36:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:36:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:36:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:36:49] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:36:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:36:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:36:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:26] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:37:27] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:27] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:27] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:27] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:37:27] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:27] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:27] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:32] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:37:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:32] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:37:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:41] INFO: Successfull checking data to create list
+[2025-06-18 22:37:42] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:37:42] INFO: Send to w6fBgc01gIPDao_yAAAZ
+[2025-06-18 22:37:42] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:37:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:54] INFO: Successfull checking data to get cardd
+[2025-06-18 22:37:54] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:37:54] INFO: Successfull checking data to get cardd
+[2025-06-18 22:37:54] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:54] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:37:54] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:58] INFO: Successfull checking data to update card
+[2025-06-18 22:37:58] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:37:58] INFO: Send to w6fBgc01gIPDao_yAAAZ
+[2025-06-18 22:37:59] INFO: Successfull checking data to get cardd
+[2025-06-18 22:37:59] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:37:59] INFO: Send to w6fBgc01gIPDao_yAAAZ
+[2025-06-18 22:37:59] INFO: Notification 6852dd56b30b2806fbafc8e3 -> [6850ca37390e6693ac6ad03b,6850ca38390e6693ac6ad043]
+[2025-06-18 22:37:59] INFO: Successfull checking data to get cardd
+[2025-06-18 22:37:59] INFO: Successfull checking data to move card in list
+[2025-06-18 22:37:59] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:37:59] INFO: Send to w6fBgc01gIPDao_yAAAZ
+[2025-06-18 22:37:59] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:37:59] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:37:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:37:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:16] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:39:16] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:39:16] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:39:16] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:39:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:24] INFO: Successfull checking data to get cardd
+[2025-06-18 22:39:24] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:39:24] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:24] INFO: Successfull checking data to get cardd
+[2025-06-18 22:39:24] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:39:24] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:29] INFO: Successfull checking data to update card
+[2025-06-18 22:39:30] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:39:30] INFO: Send to lPLWOVPj4rYZ8q0kAAAb
+[2025-06-18 22:39:30] INFO: Successfull checking data to get cardd
+[2025-06-18 22:39:30] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:39:30] INFO: Send to lPLWOVPj4rYZ8q0kAAAb
+[2025-06-18 22:39:30] INFO: Notification 6852ddb2b30b2806fbafca30 -> [6850ca37390e6693ac6ad03b,6850ca38390e6693ac6ad043]
+[2025-06-18 22:39:30] INFO: Successfull checking data to get cardd
+[2025-06-18 22:39:30] INFO: Successfull checking data to move card in list
+[2025-06-18 22:39:30] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:39:30] INFO: Send to lPLWOVPj4rYZ8q0kAAAb
+[2025-06-18 22:39:30] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:39:30] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:39:30] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:30] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:30] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:30] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:30] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:30] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:30] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:30] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:55] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:39:55] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:39:55] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:39:55] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:39:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:55] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:39:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:56] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:39:56] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:39:56] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:56] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:56] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:56] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:56] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:56] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:56] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:39:56] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:12] INFO: Successfull checking data to get cardd
+[2025-06-18 22:40:12] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:40:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:12] INFO: Successfull checking data to get cardd
+[2025-06-18 22:40:12] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:40:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:15] INFO: Successfull checking data to update card
+[2025-06-18 22:40:15] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:40:15] INFO: Send to 0Lcne8dvFVq8hpDDAAAd
+[2025-06-18 22:40:15] INFO: Successfull checking data to get cardd
+[2025-06-18 22:40:15] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:40:15] INFO: Send to 0Lcne8dvFVq8hpDDAAAd
+[2025-06-18 22:40:15] INFO: Notification 6852dddfb30b2806fbafcc0d -> [6850ca37390e6693ac6ad03b,6850ca38390e6693ac6ad043]
+[2025-06-18 22:40:15] INFO: Successfull checking data to get cardd
+[2025-06-18 22:40:15] INFO: Successfull checking data to move card in list
+[2025-06-18 22:40:16] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:40:16] INFO: Send to 0Lcne8dvFVq8hpDDAAAd
+[2025-06-18 22:40:16] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:40:16] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:40:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:16] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:31] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:40:31] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:40:31] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:40:31] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:40:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:32] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:40:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:39] INFO: Successfull checking data to get cardd
+[2025-06-18 22:40:39] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:40:39] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:39] INFO: Successfull checking data to get cardd
+[2025-06-18 22:40:39] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:40:39] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:41] INFO: Successfull checking data to update card
+[2025-06-18 22:40:42] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:40:42] INFO: Send to QZ8jAMP8o4VjlW-uAAAf
+[2025-06-18 22:40:42] INFO: Successfull checking data to get cardd
+[2025-06-18 22:40:42] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:40:42] INFO: Send to QZ8jAMP8o4VjlW-uAAAf
+[2025-06-18 22:40:42] INFO: Notification 6852ddfab30b2806fbafcd8a -> [6850ca37390e6693ac6ad03b,6850ca38390e6693ac6ad043]
+[2025-06-18 22:40:42] INFO: Successfull checking data to get cardd
+[2025-06-18 22:40:42] INFO: Successfull checking data to move card in list
+[2025-06-18 22:40:42] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:40:42] INFO: Send to QZ8jAMP8o4VjlW-uAAAf
+[2025-06-18 22:40:42] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:40:42] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:40:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:43] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:43] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:56] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:40:56] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:56] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:56] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:56] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:56] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:40:56] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:56] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:56] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:40:56] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:12] INFO: Successfull checking data to get cardd
+[2025-06-18 22:41:12] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:41:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:12] INFO: Successfull checking data to get cardd
+[2025-06-18 22:41:12] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:41:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:17] INFO: Successfull checking data to update card
+[2025-06-18 22:41:17] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:41:17] INFO: Send to QZ8jAMP8o4VjlW-uAAAf
+[2025-06-18 22:41:17] INFO: Successfull checking data to get cardd
+[2025-06-18 22:41:18] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:41:18] INFO: Send to QZ8jAMP8o4VjlW-uAAAf
+[2025-06-18 22:41:18] INFO: Notification 6852de1db30b2806fbafced3 -> [6850ca37390e6693ac6ad03b,6850ca38390e6693ac6ad043]
+[2025-06-18 22:41:18] INFO: Successfull checking data to get cardd
+[2025-06-18 22:41:18] INFO: Successfull checking data to move card in list
+[2025-06-18 22:41:18] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:41:18] INFO: Send to QZ8jAMP8o4VjlW-uAAAf
+[2025-06-18 22:41:18] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:41:18] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:41:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:22] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:41:22] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:41:22] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:41:22] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:41:23] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:23] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:23] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:23] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:23] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:23] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:23] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:23] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:24] INFO: Successfull checking data to get cardd
+[2025-06-18 22:41:24] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:41:24] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:24] INFO: Successfull checking data to get cardd
+[2025-06-18 22:41:24] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:41:24] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:28] INFO: Successfull checking data to update card
+[2025-06-18 22:41:28] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:41:28] INFO: Send to Gb1zfv5GCf8zZVzYAAAh
+[2025-06-18 22:41:28] INFO: Successfull checking data to get cardd
+[2025-06-18 22:41:28] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:41:28] INFO: Send to Gb1zfv5GCf8zZVzYAAAh
+[2025-06-18 22:41:28] INFO: Notification 6852de28b30b2806fbafd020 -> [6850ca37390e6693ac6ad03b,6850ca38390e6693ac6ad043]
+[2025-06-18 22:41:28] INFO: Successfull checking data to move card in list
+[2025-06-18 22:41:28] INFO: Successfull checking data to get cardd
+[2025-06-18 22:41:28] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:41:28] INFO: Send to Gb1zfv5GCf8zZVzYAAAh
+[2025-06-18 22:41:28] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:41:28] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:41:29] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:29] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:29] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:29] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:29] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:29] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:29] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:29] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:40] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:41:40] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:40] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:40] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:40] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:41] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:41:41] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:41] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:41] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:41] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:45] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:41:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:45] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:41:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:45] INFO: Successfull checking data to get cardd
+[2025-06-18 22:41:45] INFO: Successfull checking data to get cardd
+[2025-06-18 22:41:47] INFO: Successfull checking data to update card
+[2025-06-18 22:41:47] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:41:47] INFO: Send to Gb1zfv5GCf8zZVzYAAAh
+[2025-06-18 22:41:47] INFO: Successfull checking data to get cardd
+[2025-06-18 22:41:47] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:41:47] INFO: Send to Gb1zfv5GCf8zZVzYAAAh
+[2025-06-18 22:41:47] INFO: Notification 6852de3bb30b2806fbafd169 -> [6850ca37390e6693ac6ad03b,6850ca38390e6693ac6ad043]
+[2025-06-18 22:41:47] INFO: Successfull checking data to move card in list
+[2025-06-18 22:41:47] INFO: Successfull checking data to get cardd
+[2025-06-18 22:41:48] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:41:48] INFO: Send to Gb1zfv5GCf8zZVzYAAAh
+[2025-06-18 22:41:48] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:41:48] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:41:48] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:48] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:48] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:48] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:48] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:48] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:48] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:41:48] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:10] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:42:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:10] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:42:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:13] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:42:13] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:13] INFO: Successfull checking data to get cardd
+[2025-06-18 22:42:13] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:42:13] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:13] INFO: Successfull checking data to get cardd
+[2025-06-18 22:42:16] INFO: Successfull checking data to update card
+[2025-06-18 22:42:16] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:42:16] INFO: Send to Gb1zfv5GCf8zZVzYAAAh
+[2025-06-18 22:42:16] INFO: Successfull checking data to get cardd
+[2025-06-18 22:42:16] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:42:16] INFO: Send to Gb1zfv5GCf8zZVzYAAAh
+[2025-06-18 22:42:16] INFO: Notification 6852de58b30b2806fbafd2b2 -> [6850ca37390e6693ac6ad03b,6850ca38390e6693ac6ad043]
+[2025-06-18 22:42:16] INFO: Successfull checking data to move card in list
+[2025-06-18 22:42:16] INFO: Successfull checking data to get cardd
+[2025-06-18 22:42:16] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:42:16] INFO: Send to Gb1zfv5GCf8zZVzYAAAh
+[2025-06-18 22:42:16] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:42:16] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:42:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:43] INFO: Successfull checking data to update list
+[2025-06-18 22:42:43] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:42:43] INFO: Send to Gb1zfv5GCf8zZVzYAAAh
+[2025-06-18 22:42:43] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:42:44] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:44] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:44] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:42:44] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:01] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:43:01] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:01] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:01] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:01] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:01] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:43:01] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:01] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:01] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:01] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:08] INFO: Successfull checking data to update list
+[2025-06-18 22:43:08] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:43:08] INFO: Send to Gb1zfv5GCf8zZVzYAAAh
+[2025-06-18 22:43:08] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:43:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:43] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:43:43] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:43:43] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:43] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:43] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:43] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:43] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:43] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:43] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:43] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:49] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:43:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:49] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:43:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:54] INFO: Successfull checking data to update list
+[2025-06-18 22:43:54] INFO: Send to tvxhGVk738Stcs0nAAAX
+[2025-06-18 22:43:54] INFO: Send to Gb1zfv5GCf8zZVzYAAAh
+[2025-06-18 22:43:54] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:43:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:43:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:39] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:49:39] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:49:39] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:49:39] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:49:39] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:39] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:39] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:39] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:39] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:39] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:39] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:39] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:45] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:49:45] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:49:45] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:49:45] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:49:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:48] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:49:48] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:48] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:49:48] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:48] INFO: Successfull checking data to get cardd
+[2025-06-18 22:49:48] INFO: Successfull checking data to get cardd
+[2025-06-18 22:49:52] INFO: Successfull checking data to update card
+[2025-06-18 22:49:52] INFO: Send to NLTaUMgyhuwy4mW3AAAl
+[2025-06-18 22:49:52] INFO: Send to RRdVtHhjNvIwcXbPAAAj
+[2025-06-18 22:49:52] INFO: Successfull checking data to get cardd
+[2025-06-18 22:49:52] INFO: Send to NLTaUMgyhuwy4mW3AAAl
+[2025-06-18 22:49:52] INFO: Send to RRdVtHhjNvIwcXbPAAAj
+[2025-06-18 22:49:52] INFO: Notification 6852e020b30b2806fbafd62b -> [6850ca37390e6693ac6ad03b,6850ca38390e6693ac6ad043]
+[2025-06-18 22:49:52] INFO: Successfull checking data to move card in list
+[2025-06-18 22:49:52] INFO: Successfull checking data to get cardd
+[2025-06-18 22:49:52] INFO: Send to NLTaUMgyhuwy4mW3AAAl
+[2025-06-18 22:49:52] INFO: Send to RRdVtHhjNvIwcXbPAAAj
+[2025-06-18 22:49:52] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:49:52] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:49:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:49:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:13] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:50:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:14] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:50:14] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:50:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:26] INFO: Successfull checking data to update list
+[2025-06-18 22:50:26] INFO: Send to NLTaUMgyhuwy4mW3AAAl
+[2025-06-18 22:50:26] INFO: Send to RRdVtHhjNvIwcXbPAAAj
+[2025-06-18 22:50:26] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:50:26] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:26] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:26] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:26] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:33] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:50:33] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:50:33] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:50:33] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:50:33] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:33] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:33] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:33] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:33] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:33] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:33] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:50:33] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:05] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:51:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:06] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:51:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:13] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:51:13] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:51:13] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:13] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:13] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:13] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:13] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:13] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:13] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:13] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:20] INFO: Successfull checking data to update list
+[2025-06-18 22:51:20] INFO: Send to oOH4X_Yb2_gA0dOhAAAn
+[2025-06-18 22:51:20] INFO: Send to RRdVtHhjNvIwcXbPAAAj
+[2025-06-18 22:51:20] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:51:21] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:21] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:21] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:21] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:44] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:51:44] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:44] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:44] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:44] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:44] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:51:44] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:44] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:44] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:44] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:52] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:51:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:53] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:51:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:51:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:52:01] INFO: Successfull checking data to update list
+[2025-06-18 22:52:01] INFO: Send to oOH4X_Yb2_gA0dOhAAAn
+[2025-06-18 22:52:01] INFO: Send to RRdVtHhjNvIwcXbPAAAj
+[2025-06-18 22:52:01] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:52:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:52:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:52:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:52:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:52:31] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 22:52:50] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:52:51] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:52:51] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:52:51] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:52:51] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:52:51] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:52:51] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:52:51] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:52:51] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:52:51] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:04] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:53:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:04] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:53:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:22] ERROR: Error verified token:  jwt expired
+[2025-06-18 22:53:22] INFO: Invalid token in get lists in board
+[2025-06-18 22:53:22] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:53:23] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:23] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:23] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:23] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:24] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:53:24] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:24] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:24] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:24] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:25] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:53:25] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:25] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:25] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:25] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:53:37] ERROR: Error verified token:  jwt expired
+[2025-06-18 22:53:37] INFO: Invalid token in get lists in board
+[2025-06-18 22:54:00] INFO: Successfull checking data user for login
+[2025-06-18 22:54:00] INFO: Compare hash complete
+[2025-06-18 22:54:00] INFO: Complete create token
+[2025-06-18 22:54:00] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:54:00] INFO: Successfull checking data to get board by user id
+[2025-06-18 22:54:00] INFO: Successfull checking data to get all members
+[2025-06-18 22:54:01] INFO: Successfull checking data to get board by user id
+[2025-06-18 22:54:01] INFO: Successfull checking data to get board by user id
+[2025-06-18 22:54:01] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:54:01] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:54:01] INFO: Successfull checking data to get all members
+[2025-06-18 22:54:01] INFO: Successfull checking data to get all members
+[2025-06-18 22:54:03] INFO: Successfull checking data user for login
+[2025-06-18 22:54:03] INFO: Compare hash complete
+[2025-06-18 22:54:03] INFO: Complete create token
+[2025-06-18 22:54:03] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:54:03] INFO: Successfull checking data to get board by user id
+[2025-06-18 22:54:03] INFO: Successfull checking data to get all members
+[2025-06-18 22:54:04] INFO: Successfull checking data to get board by user id
+[2025-06-18 22:54:04] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:54:04] INFO: Successfull checking data to get board by user id
+[2025-06-18 22:54:04] INFO: Successfull checking data user for get user profile
+[2025-06-18 22:54:04] INFO: Successfull checking data to get all members
+[2025-06-18 22:54:04] INFO: Successfull checking data to get all members
+[2025-06-18 22:54:07] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:54:07] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:54:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:54:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:54:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:54:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:54:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:54:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:54:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:54:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:54:11] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:54:11] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:54:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:54:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:54:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:54:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:54:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:54:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:54:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:54:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:54:34] INFO: Successfull checking data to update list
+[2025-06-18 22:54:34] INFO: Send to oziMvDXPlsK1F0e9AAAF
+[2025-06-18 22:54:34] INFO: Send to 1bKEfaAG-i-vnAaZAAAH
+[2025-06-18 22:54:34] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:54:34] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:54:34] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:54:34] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:54:34] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:05] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:57:06] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:57:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:06] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:57:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:06] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:10] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:57:10] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:57:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:12] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:57:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:12] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:57:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:12] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:23] INFO: Successfull checking data to update list
+[2025-06-18 22:57:23] INFO: Send to oziMvDXPlsK1F0e9AAAF
+[2025-06-18 22:57:23] INFO: Send to 1bKEfaAG-i-vnAaZAAAH
+[2025-06-18 22:57:23] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:57:23] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:23] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:23] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:57:23] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:58:36] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:58:36] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:58:36] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:58:36] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:58:36] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:58:36] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:58:36] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:58:36] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:58:36] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:58:36] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:58:37] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:58:37] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:58:37] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:58:37] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:58:37] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:58:37] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:58:37] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:58:37] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:58:37] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:58:37] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:58:51] INFO: Successfull checking data to update list
+[2025-06-18 22:58:51] INFO: Send to oziMvDXPlsK1F0e9AAAF
+[2025-06-18 22:58:51] INFO: Send to 1bKEfaAG-i-vnAaZAAAH
+[2025-06-18 22:58:51] INFO: Successfull checking data to get lists in board
+[2025-06-18 22:58:51] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:58:51] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:58:51] INFO: Successfull checking data to get cards in list
+[2025-06-18 22:58:51] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:47] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:00:47] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:00:47] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:47] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:47] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:47] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:47] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:47] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:47] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:47] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:55] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:00:55] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:00:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:55] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:59] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:00:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:59] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:00:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:00:59] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:01:08] INFO: Successfull checking data to update list
+[2025-06-18 23:01:08] INFO: Send to oziMvDXPlsK1F0e9AAAF
+[2025-06-18 23:01:08] INFO: Send to 1bKEfaAG-i-vnAaZAAAH
+[2025-06-18 23:01:08] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:01:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:01:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:01:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:01:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:07:19] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:07:20] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:07:20] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:07:20] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:07:20] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:07:20] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:07:20] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:07:20] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:07:20] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:07:20] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:07:21] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:07:21] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:07:21] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:07:21] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:07:21] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:07:21] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:07:21] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:07:21] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:07:21] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:07:21] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:07:32] INFO: Successfull checking data to update list
+[2025-06-18 23:07:32] INFO: Send to oziMvDXPlsK1F0e9AAAF
+[2025-06-18 23:07:32] INFO: Send to 1bKEfaAG-i-vnAaZAAAH
+[2025-06-18 23:07:32] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:07:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:07:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:07:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:07:32] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:08:52] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:08:52] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:08:52] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:08:52] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:08:52] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:08:52] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:08:52] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:08:52] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:08:52] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:08:52] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:08:53] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:08:53] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:08:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:08:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:08:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:08:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:08:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:08:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:08:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:08:53] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:08:59] INFO: Successfull checking data to update list
+[2025-06-18 23:08:59] INFO: Send to oziMvDXPlsK1F0e9AAAF
+[2025-06-18 23:08:59] INFO: Send to 1bKEfaAG-i-vnAaZAAAH
+[2025-06-18 23:08:59] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:09:00] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:09:00] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:09:00] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:09:00] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:10:09] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:10:09] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:10:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:10:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:10:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:10:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:10:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:10:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:10:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:10:09] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:10:10] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:10:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:10:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:10:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:10:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:10:10] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:10:11] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:10:11] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:10:11] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:10:11] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:10:17] INFO: Successfull checking data to update list
+[2025-06-18 23:10:17] INFO: Send to oziMvDXPlsK1F0e9AAAF
+[2025-06-18 23:10:17] INFO: Send to 1bKEfaAG-i-vnAaZAAAH
+[2025-06-18 23:10:17] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:10:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:10:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:10:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:10:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:13:18] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:13:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:13:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:13:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:13:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:13:18] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:13:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:13:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:13:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:13:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:13:19] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:13:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:13:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:13:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:13:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:13:19] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:13:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:13:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:13:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:13:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:13:26] INFO: Successfull checking data to update list
+[2025-06-18 23:13:26] INFO: Send to oziMvDXPlsK1F0e9AAAF
+[2025-06-18 23:13:26] INFO: Send to 1bKEfaAG-i-vnAaZAAAH
+[2025-06-18 23:13:26] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:13:26] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:13:26] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:13:26] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:13:26] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:15:19] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:15:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:15:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:15:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:15:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:15:19] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:15:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:15:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:15:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:15:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:18] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:16:18] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:16:18] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:16:18] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:16:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:19] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:25] INFO: Successfull checking data to update list
+[2025-06-18 23:16:26] INFO: Send to oziMvDXPlsK1F0e9AAAF
+[2025-06-18 23:16:26] INFO: Send to 1bKEfaAG-i-vnAaZAAAH
+[2025-06-18 23:16:26] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:16:26] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:26] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:26] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:26] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:35] INFO: Successfull checking data user for get user profile
+[2025-06-18 23:16:35] INFO: Successfull checking data user for get user profile
+[2025-06-18 23:16:35] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:16:35] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:16:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:58] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:16:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:58] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:16:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:16:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:17:01] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:17:01] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:17:01] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:17:01] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:17:01] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:17:01] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:17:01] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:17:01] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:17:01] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:17:01] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:17:04] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:17:04] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:17:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:17:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:17:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:17:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:17:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:17:04] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:17:05] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:17:05] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:18:50] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:18:50] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:18:50] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:18:50] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:18:50] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:18:50] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:18:50] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:18:50] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:18:50] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:18:50] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:18:58] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:18:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:18:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:18:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:18:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:18:58] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:18:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:18:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:18:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:18:58] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:02] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:19:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:02] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:19:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:42] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:19:42] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:19:42] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:19:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:42] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:53] INFO: Successfull checking data to update list
+[2025-06-18 23:19:53] INFO: Send to oziMvDXPlsK1F0e9AAAF
+[2025-06-18 23:19:53] INFO: Send to u2qsKwBuvwPuuoW3AAAJ
+[2025-06-18 23:19:53] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:19:54] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:54] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:54] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:19:54] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:34] INFO: Successfull checking data user for get user profile
+[2025-06-18 23:20:34] INFO: Successfull checking data user for get user profile
+[2025-06-18 23:20:35] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:20:35] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:20:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:35] INFO: Successfull checking data user for get user profile
+[2025-06-18 23:20:35] INFO: Successfull checking data user for get user profile
+[2025-06-18 23:20:35] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:20:35] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:20:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:35] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:36] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:36] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:46] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:20:47] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:47] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:47] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:47] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:47] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:20:47] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:47] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:47] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:20:47] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:22:22] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:22:22] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:22:22] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:22:22] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:22:22] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:22:22] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:22:22] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:22:22] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:22:22] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:22:22] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:22:33] INFO: Successfull checking data to update list
+[2025-06-18 23:22:34] INFO: Send to -D8WJfbPFbnkdjLaAAAN
+[2025-06-18 23:22:34] INFO: Send to y4HRa6imvQG6sYwzAAAL
+[2025-06-18 23:22:34] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:22:34] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:22:34] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:22:34] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:22:34] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:02] INFO: Successfull checking data user for get user profile
+[2025-06-18 23:23:02] INFO: Successfull checking data user for get user profile
+[2025-06-18 23:23:02] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:23:02] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:23:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:02] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:44] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:23:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:45] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:23:45] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:23:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:45] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:46] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:46] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:46] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:46] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:46] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:23:46] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:46] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:46] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:23:46] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:24:07] INFO: Successfull checking data to update list
+[2025-06-18 23:24:07] INFO: Send to rVs6fUtidsodQPYDAAAP
+[2025-06-18 23:24:07] INFO: Send to y4HRa6imvQG6sYwzAAAL
+[2025-06-18 23:24:07] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:24:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:24:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:24:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:24:08] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:25:19] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 23:25:22] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 23:25:37] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 23:25:48] INFO: Successfull checking data to update list
+[2025-06-18 23:25:49] INFO: Send to iTY_bY5EbV5ee6FuAAAD
+[2025-06-18 23:25:49] INFO: Send to Z4bJAUIiklOPU6WJAAAB
+[2025-06-18 23:25:49] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:25:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:25:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:25:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:25:49] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:26:30] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 23:26:38] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 23:26:45] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 23:26:47] INFO: Successfull checking data user for get user profile
+[2025-06-18 23:26:47] INFO: Successfull checking data user for get user profile
+[2025-06-18 23:26:47] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:26:47] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:26:48] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:26:48] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:26:48] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:26:48] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:26:48] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:26:48] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:26:48] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:26:48] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:26:52] INFO: Successfull checking data to update list
+[2025-06-18 23:26:52] INFO: Send to BNE_nrM0yp7IXnBNAAAF
+[2025-06-18 23:26:52] INFO: Send to GRtNvdY6z1Jw0ORsAAAD
+[2025-06-18 23:26:52] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:26:52] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:26:52] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:26:52] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:26:52] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:27:14] INFO: Successfull checking data user for get user profile
+[2025-06-18 23:27:14] INFO: Successfull checking data user for get user profile
+[2025-06-18 23:27:14] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:27:14] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:27:15] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:27:15] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:27:15] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:27:15] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:27:15] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:27:15] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:27:15] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:27:15] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:27:23] INFO: Successfull checking data to update list
+[2025-06-18 23:27:24] INFO: Send to BNE_nrM0yp7IXnBNAAAF
+[2025-06-18 23:27:24] INFO: Send to 4c6U_ev0qiqV9N3DAAAH
+[2025-06-18 23:27:24] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:27:24] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:27:24] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:27:24] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:27:24] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:29:08] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 23:29:14] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 23:29:31] INFO: Successfull checking data user for get user profile
+[2025-06-18 23:29:31] INFO: Successfull checking data user for get user profile
+[2025-06-18 23:29:31] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:29:31] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:29:31] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:29:31] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:29:31] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:29:31] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:29:31] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:29:31] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:29:31] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:29:31] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:29:36] INFO: Successfull checking data to update list
+[2025-06-18 23:29:36] INFO: Send to SmfHowEKMyEkVDm_AAAB
+[2025-06-18 23:29:36] INFO: Send to f3wEN1eBRXTovEnYAAAF
+[2025-06-18 23:29:36] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:29:37] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:29:37] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:29:37] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:29:37] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:29:57] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:29:57] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:29:57] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:29:57] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:29:57] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:29:57] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:29:57] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:29:57] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:29:57] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:29:57] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:30:07] INFO: Successfull checking data to update list
+[2025-06-18 23:30:07] INFO: Send to SmfHowEKMyEkVDm_AAAB
+[2025-06-18 23:30:07] INFO: Send to f3wEN1eBRXTovEnYAAAF
+[2025-06-18 23:30:07] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:30:07] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:30:07] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:30:07] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:30:07] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:30:17] INFO: Successfull checking data to delete list
+[2025-06-18 23:30:18] INFO: Send to SmfHowEKMyEkVDm_AAAB
+[2025-06-18 23:30:18] INFO: Send to f3wEN1eBRXTovEnYAAAF
+[2025-06-18 23:30:18] INFO: Successfull checking data to get lists in board
+[2025-06-18 23:30:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:30:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:30:18] INFO: Successfull checking data to get cards in list
+[2025-06-18 23:42:18] INFO: Successfull checking data to get board by user id
+[2025-06-18 23:42:18] INFO: Successfull checking data user for get user profile
+[2025-06-18 23:42:18] INFO: Successfull checking data to get board by user id
+[2025-06-18 23:42:18] INFO: Successfull checking data user for get user profile
+[2025-06-18 23:42:18] INFO: Successfull checking data to get all members
+[2025-06-18 23:42:18] INFO: Successfull checking data to get all members
+[2025-06-18 23:44:11] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 23:44:21] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 23:44:25] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 23:44:30] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 23:44:38] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 23:44:47] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 23:44:57] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 23:45:02] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 23:45:05] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 23:45:14] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 23:45:20] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 23:45:32] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 23:45:46] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 23:46:06] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 23:46:11] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 23:46:18] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 23:46:20] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 23:46:49] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-18 23:47:08] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 23:47:10] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 23:47:12] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net

@@ -18,6 +18,7 @@ const messageRouter = require("./routes/messageRoutes");
 const { VerifiedToken } = require("./utils/authHelpers");
 const { addUser, onlineUsers, removeUser } = require("./utils/onlineUser");
 const { initSocket } = require("./sockets");
+const notificationRouter = require("./routes/notificationRoutes");
 
 dotenv.config();
 
@@ -48,7 +49,7 @@ app.use("/api/list", listRouter);
 app.use("/api/card", cardRouter);
 app.use("/api/conversation", conversationRouter);
 app.use("/api/message", messageRouter);
-// app.use("/api/notification");
+app.use("/api/notification", notificationRouter);
 
 initSocket(server);
 
