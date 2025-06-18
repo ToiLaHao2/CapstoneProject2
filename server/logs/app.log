@@ -13187,3 +13187,109 @@
 [2025-06-18 11:53:07] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
 [2025-06-18 11:53:10] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
 [2025-06-18 11:53:29] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-18 12:03:46] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-18 12:04:00] INFO: Successfull checking data user for get user profile
+[2025-06-18 12:04:00] INFO: Successfull checking data user for get user profile
+[2025-06-18 12:04:09] INFO: Successfull checking data to get board by user id
+[2025-06-18 12:04:09] INFO: Successfull checking data user for get user profile
+[2025-06-18 12:04:09] INFO: Successfull checking data to get board by user id
+[2025-06-18 12:04:09] INFO: Successfull checking data user for get user profile
+[2025-06-18 12:04:09] INFO: Successfull checking data to get all members
+[2025-06-18 12:04:09] INFO: Successfull checking data to get all members
+[2025-06-18 12:04:10] INFO: Successfull checking data to get lists in board
+[2025-06-18 12:04:10] INFO: Successfull checking data to get lists in board
+[2025-06-18 12:04:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 12:04:10] INFO: Successfull checking data to get cards in list
+[2025-06-18 12:04:12] INFO: Successfull checking data to get board by user id
+[2025-06-18 12:04:12] INFO: Successfull checking data user for get user profile
+[2025-06-18 12:04:12] INFO: Successfull checking data to get board by user id
+[2025-06-18 12:04:12] INFO: Successfull checking data user for get user profile
+[2025-06-18 12:04:12] INFO: Successfull checking data to get all members
+[2025-06-18 12:04:12] INFO: Successfull checking data to get all members
+[2025-06-18 12:04:14] INFO: Successfull checking data to get lists in board
+[2025-06-18 12:04:14] INFO: Successfull checking data to get lists in board
+[2025-06-18 12:04:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 12:04:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 12:04:15] INFO: Successfull checking data to get lists in board
+[2025-06-18 12:04:15] INFO: Successfull checking data to get cards in list
+[2025-06-18 12:04:15] INFO: Successfull checking data to get cardd
+[2025-06-18 12:04:15] INFO: Successfull checking data to get lists in board
+[2025-06-18 12:04:15] INFO: Successfull checking data to get cards in list
+[2025-06-18 12:04:15] INFO: Successfull checking data to get cardd
+[2025-06-18 12:04:17] INFO: Successfull checking data to get cardd
+[2025-06-18 12:04:17] INFO: Successfull checking data to get cardd
+[2025-06-18 12:04:17] INFO: Successfull checking data to get lists in board
+[2025-06-18 12:04:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 12:04:17] INFO: Successfull checking data to get lists in board
+[2025-06-18 12:04:17] INFO: Successfull checking data to get cards in list
+[2025-06-18 12:04:18] INFO: Successfull checking data to get cardd
+[2025-06-18 12:04:18] INFO: Successfull checking data to get all members
+[2025-06-18 12:04:20] INFO: Successfull checking data to assign user to card
+[2025-06-18 12:04:20] INFO: Send to GGx2jU59EOHqO3alAAAD
+[2025-06-18 12:04:20] INFO: Send to XUVLQz2FFacyKQ10AAAB
+[2025-06-18 12:04:20] INFO: Send to GGx2jU59EOHqO3alAAAD
+[2025-06-18 12:04:20] INFO: Notification 685248d4afcda81fb5cb0e55 -> [6850ca37390e6693ac6ad03b]
+[2025-06-18 12:04:20] ERROR: Failed to send notification to assignee:
+[2025-06-18 12:04:20] INFO: Successfull checking data to get cardd
+[2025-06-18 12:04:47] INFO: Successfull checking data user for get user profile
+[2025-06-18 12:04:47] INFO: Successfull checking data user for get user profile
+[2025-06-18 12:04:47] INFO: Successfull checking data to get cardd
+[2025-06-18 12:04:47] INFO: Successfull checking data to get cardd
+[2025-06-18 12:04:47] INFO: Successfull checking data to get lists in board
+[2025-06-18 12:04:47] INFO: Successfull checking data to get cards in list
+[2025-06-18 12:04:47] INFO: Successfull checking data to get cardd
+[2025-06-18 12:04:47] INFO: Successfull checking data to get lists in board
+[2025-06-18 12:04:47] INFO: Successfull checking data to get cards in list
+[2025-06-18 12:04:47] INFO: Successfull checking data to get lists in board
+[2025-06-18 12:04:47] INFO: Successfull checking data to get cardd
+[2025-06-18 12:04:47] INFO: Successfull checking data to get lists in board
+[2025-06-18 12:04:47] INFO: Successfull checking data to get cardd
+[2025-06-18 12:04:47] INFO: Successfull checking data to get lists in board
+[2025-06-18 12:04:47] INFO: Successfull checking data to get cardd
+[2025-06-18 12:04:47] INFO: Successfull checking data to get lists in board
+[2025-06-18 12:04:50] INFO: Successfull checking data to remove user from card
+[2025-06-18 12:04:51] INFO: Send to GGx2jU59EOHqO3alAAAD
+[2025-06-18 12:04:51] INFO: Send to Ph7vZAC2L4B7Psb7AAAF
+[2025-06-18 12:04:51] INFO: Send to GGx2jU59EOHqO3alAAAD
+[2025-06-18 12:04:51] INFO: Notification 685248f3afcda81fb5cb0eeb -> [6850ca37390e6693ac6ad03b]
+[2025-06-18 12:04:51] INFO: Send to Ph7vZAC2L4B7Psb7AAAF
+[2025-06-18 12:04:51] INFO: Notification 685248f3afcda81fb5cb0eee -> [6850ca38390e6693ac6ad043]
+[2025-06-18 12:04:54] INFO: Successfull checking data to get cardd
+[2025-06-18 12:04:54] INFO: Successfull checking data to get all members
+[2025-06-18 12:04:57] INFO: Successfull checking data to assign user to card
+[2025-06-18 12:04:57] INFO: Send to GGx2jU59EOHqO3alAAAD
+[2025-06-18 12:04:57] INFO: Send to Ph7vZAC2L4B7Psb7AAAF
+[2025-06-18 12:04:57] INFO: Send to GGx2jU59EOHqO3alAAAD
+[2025-06-18 12:04:57] INFO: Notification 685248f9afcda81fb5cb0f0b -> [6850ca37390e6693ac6ad03b]
+[2025-06-18 12:04:57] ERROR: Failed to send notification to assignee:
+[2025-06-18 12:04:57] INFO: Successfull checking data to get cardd
+[2025-06-18 12:05:05] INFO: Successfull checking data to remove user from card
+[2025-06-18 12:05:05] INFO: Send to GGx2jU59EOHqO3alAAAD
+[2025-06-18 12:05:05] INFO: Send to Ph7vZAC2L4B7Psb7AAAF
+[2025-06-18 12:05:05] INFO: Send to GGx2jU59EOHqO3alAAAD
+[2025-06-18 12:05:05] INFO: Notification 68524901afcda81fb5cb0f25 -> [6850ca37390e6693ac6ad03b]
+[2025-06-18 12:05:05] INFO: Send to Ph7vZAC2L4B7Psb7AAAF
+[2025-06-18 12:05:05] INFO: Notification 68524901afcda81fb5cb0f28 -> [6850ca38390e6693ac6ad043]
+[2025-06-18 12:05:11] INFO: Successfull checking data to get board by user id
+[2025-06-18 12:05:11] INFO: Successfull checking data to get board by user id
+[2025-06-18 12:05:11] INFO: Successfull checking data to get all members
+[2025-06-18 12:05:11] INFO: Successfull checking data to get all members
+[2025-06-18 12:05:13] INFO: Successfull checking data to get lists in board
+[2025-06-18 12:05:13] INFO: Successfull checking data to get lists in board
+[2025-06-18 12:05:13] INFO: Successfull checking data to get cards in list
+[2025-06-18 12:05:13] INFO: Successfull checking data to get cards in list
+[2025-06-18 12:05:14] INFO: Successfull checking data to get lists in board
+[2025-06-18 12:05:14] INFO: Successfull checking data to get lists in board
+[2025-06-18 12:05:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 12:05:14] INFO: Successfull checking data to get cards in list
+[2025-06-18 12:05:14] INFO: Successfull checking data to get cardd
+[2025-06-18 12:05:14] INFO: Successfull checking data to get cardd
+[2025-06-18 12:05:15] INFO: Successfull checking data to get cardd
+[2025-06-18 12:05:15] INFO: Successfull checking data to get all members
+[2025-06-18 12:05:16] INFO: Successfull checking data to assign user to card
+[2025-06-18 12:05:17] INFO: Send to GGx2jU59EOHqO3alAAAD
+[2025-06-18 12:05:17] INFO: Send to Ph7vZAC2L4B7Psb7AAAF
+[2025-06-18 12:05:17] INFO: Send to GGx2jU59EOHqO3alAAAD
+[2025-06-18 12:05:17] INFO: Notification 6852490dafcda81fb5cb0fa5 -> [6850ca37390e6693ac6ad03b]
+[2025-06-18 12:05:17] ERROR: Failed to send notification to assignee:
+[2025-06-18 12:05:17] INFO: Successfull checking data to get cardd

@@ -575,12 +575,10 @@ async function AssignUserToCard(req, res) {
                     card_id: card_id,
                     list_id: list_id,
                     board_id: board_id,
-                    assign_user_email: assignee.user_email,
+                    assignee: assignee,
                 })
             }
         }
-
-        console.log(assignees);
 
         // notify các thành viên card và owner board về việc gán user vào card
         const sendNotiResult = await notify({
