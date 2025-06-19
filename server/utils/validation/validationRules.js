@@ -476,7 +476,7 @@ const validationRules = {
     //notification
     getNotification: {
         checkMessage: "Get notification",
-        requiredFields: ["user_id", "beforeId", "checkMessage"],
+        requiredFields: ["user_id", "checkMessage"],
     },
     markNotificationRead: {
         checkMessage: "Mark notification read",

@@ -16,7 +16,7 @@ const { sendError } = require('../utils/response');
 function validator(ruleName) {
     return async (req, res, next) => {
         try {
-            const token = getTokenFromHeaders(req);
+            const token = await getTokenFromHeaders(req);
             const decoded = await VerifiedToken(token);
             if (!decoded) {
                 logger.error(`[validate ${ruleName}] invalid token`);
