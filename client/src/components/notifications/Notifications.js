@@ -127,7 +127,8 @@ const Notifications = () => {
                 )}
                 {/* Hiển thị thông báo khi hết dữ liệu và không còn loading */}
                 {!hasMore && !loading && notifications.length > 0 && (
-                    <li className="no-more-notifications">Bạn đã xem hết tất cả thông báo.</li>
+                    <li className="no-more-notifications">
+                        You have viewed all notifications.</li>
                 )}
             </ul>
 
