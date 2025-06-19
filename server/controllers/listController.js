@@ -83,6 +83,8 @@ async function UpdateList(req, res) {
         if (!board) {
             return sendError(res, 404, "Board not found", "UpdateList");
         }
+
+        // Kiểm tra xem user có phải là cộng tác viên hoặc người tạo board không
         const isUserExist = board.board_collaborators.find(
             (collaborator) => collaborator.board_collaborator_id == user_id
         );
@@ -91,27 +93,39 @@ async function UpdateList(req, res) {
                 return sendError(res, 401, "User not authorized", "GetList");
             }
         }
+
+        // Kiểm tra xem list có tồn tại trong board không
         const isListInBoard = board.board_lists.find(
             (list) => list.list_id == list_id
         );
         if (!isListInBoard) {
             return sendError(res, 404, "List not found", "UpdateList");
         }
-        const list = await List.findByIdAndUpdate(list_id, {
-            list_title: list_title,
-        });
-        // notify các người dùng trong board về việc cập nhật list
-        // gửi thông tin list đã cập nhật cho tất cả người dùng trong board
+
+        // Cập nhật title của list và lấy thông tin mới nhất của list
+        const updatedList = await List.findOneAndUpdate(
+            { _id: list_id },
+            { list_title: list_title },
+            { new: true }  // Trả về bản cập nhật mới nhất của list
+        );
+
+        // Kiểm tra nếu không tìm thấy list để update
+        if (!updatedList) {
+            return sendError(res, 404, "List update failed", "UpdateList");
+        }
+
+        // Notify tất cả cộng tác viên trong board về việc cập nhật list
         for (let collaborator of board.board_collaborators) {
             if (onlineUsers.has(collaborator.board_collaborator_id.toString())) {
                 const socketId = onlineUsers.get(collaborator.board_collaborator_id.toString());
                 await sendToSocket(socketId, "list:allmember:updated", {
-                    list: list,
+                    list: updatedList,
                     board_id: board_id,
-                })
+                });
             }
         }
-        return sendSuccess(res, 200, list, "UpdateList");
+
+        return sendSuccess(res, "Update success full", updatedList);
     } catch (error) {
         logger.error(error);
         return sendError(res, 500, "Internal server error", error);

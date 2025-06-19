@@ -313,6 +313,7 @@ export const BoardProvider = ({ children }) => {
 
     //end-mei
 
+    // socket here
     useEffect(() => {
         if (!connected) return;
 
@@ -451,9 +452,9 @@ export const BoardProvider = ({ children }) => {
         socket.on("board:member:removed", onRemoveBoardFromBoards);
 
         return () => {
-            socket.off("board:created", onCreated);
-            socket.off("board:updated", onUpdated);
-            socket.off("board:deleted", onDeleted);
+            socket.off("board:allmember:created", onCreated);
+            socket.off("board:allmember:updated", onUpdated);
+            socket.off("board:allmember:deleted", onDeleted);
             socket.off("board:privacy:updated", onUpdatePrivacy);
             socket.off("board:list:moved", onMoveList);
             socket.off("board:allmember:added", onAddNewMemberToBoard);

@@ -19,7 +19,7 @@ async function notify({ senderId, receiverIds, title, message, reference }) {
         if (!Array.isArray(receiverIds) || receiverIds.length === 0) return;
 
         // build receivers array
-        const receiversArr = receiverIds.map(id => ({ receiver_id: id }));
+        const receiversArr = receiverIds.map(id => ({ receiver_id: id, is_read: false }));
 
 
         const noti = await Notification.create({
@@ -37,6 +37,7 @@ async function notify({ senderId, receiverIds, title, message, reference }) {
             notiId: noti._id,
             notification_title: noti.notification_title,
             notification_message: noti.notification_message,
+            notification_isRead: false,
             created_at: noti.created_at
         };
 
@@ -66,26 +67,54 @@ async function notify({ senderId, receiverIds, title, message, reference }) {
 --------------------------------------------------------------------------- */
 async function GetNotifications(req, res) {
     try {
-        const { user_id, beforeId, limit = 20 } = req.body; // body dùng cho đồng bộ cách bạn làm
+        const { user_id, beforeId } = req.body; // body dùng cho đồng bộ cách bạn làm
 
+        const limit = 20;
         const user = await User.findById(user_id);
         if (!user) return sendError(res, 404, 'User not found');
 
-        const criteria = { 'notification_receiver_ids.receiver_id': user_id };
-        if (beforeId) criteria._id = { $lt: beforeId };
+        const queryConditions = {
+            'notification_receiver_ids.receiver_id': user_id,
+        };
 
-        const notis = await Notification.find(criteria)
-            .sort({ _id: -1 })
-            .limit(Number(limit))
-            .lean();
+        // 5. Logic phân trang (Đã sửa)
+        // Thêm điều kiện _id cho phân trang "load more" nếu beforeId được cung cấp
+        if (beforeId) { // Kiểm tra nếu beforeId có giá trị (không null, undefined, rỗng)
+            queryConditions._id = { $lt: beforeId }; // Chỉ lấy thông báo cũ hơn beforeId
+        }
 
-        notis.reverse();
-        return sendSuccess(res, 200, 'Notifications', notis);
+        // 6. Thực thi truy vấn Mongoose
+        const notis = await Notification.find(queryConditions)
+            .sort({ created_at: -1 })   // Sắp xếp từ mới nhất đến cũ nhất
+            .limit(limit)               // Giới hạn số lượng kết quả
+            .lean();                    // Tối ưu hiệu suất
+
+        // 7. Xử lý và Đơn giản hóa dữ liệu thông báo
+        const simplifiedNotifications = notis.map((noti) => {
+            const receiver = noti.notification_receiver_ids.find(
+                (rec) => String(rec.receiver_id) === String(user_id)
+            );
+
+            return {
+                id: noti._id,
+                notification_receiver_id: user_id,
+                notification_title: noti.notification_title,
+                notification_message: noti.notification_message,
+                is_read: receiver ? receiver.is_read : true,
+                created_at: noti.created_at,
+            };
+        });
+
+        // 8. Trả về phản hồi thành công
+        console.log(simplifiedNotifications);
+        return sendSuccess(res, 'Notifications retrieved successfully', simplifiedNotifications);
     } catch (err) {
+        // 9. Xử lý lỗi
         logger.error('GetNotifications:', err);
         return sendError(res, 500, 'Internal Server Error');
     }
 }
+
 
 /* ---------------------------------------------------------------------------
    REST 2️⃣  MarkNotificationRead (single)
@@ -118,7 +147,6 @@ async function MarkAllRead(req, res) {
             { $set: { 'notification_receiver_ids.$[elem].is_read': true } },
             { arrayFilters: [{ 'elem.receiver_id': user_id, 'elem.is_read': false }] }
         );
-        s
         return sendSuccess(res, 200, 'All notifications marked as read');
     } catch (err) {
         logger.error('MarkAllRead:', err);

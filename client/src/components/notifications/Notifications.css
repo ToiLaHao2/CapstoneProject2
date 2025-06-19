@@ -4,7 +4,7 @@
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     padding: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     overflow: hidden;
     margin: auto;
 }
@@ -67,4 +67,82 @@
     text-align: center;
     padding: 20px;
     color: #777;
+}
+
+/* Trong Notifications.css */
+.spinner {
+    animation: spin 1s linear infinite; /* Tạo hiệu ứng xoay */
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-indicator,
+.no-more-notifications,
+.no-notifications {
+    text-align: center;
+    padding: 15px;
+    color: #777;
+}
+
+.mark-all-read-btn {
+    background-color: #2476ce;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    gap: 5px;
+}
+
+.mark-all-read-btn:hover:not(:disabled) {
+    background-color: #29415a;
+}
+
+.mark-all-read-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.notification-item.read {
+    background-color: #f0f0f0; /* Màu nền cho thông báo đã đọc */
+    color: #777;
+}
+
+.notification-content p {
+    margin: 0;
+}
+.notification-title {
+    font-weight: bold;
+}
+.notification-message {
+    font-size: 0.9em;
+}
+
+.notification-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8em;
+}
+.notification-time {
+    color: #888;
+}
+.mark-read {
+    cursor: pointer;
+    color: #28a745; /* Màu xanh lá cây cho icon đã đọc */
+    transition: color 0.2s;
+}
+.mark-read:hover {
+    color: #218838;
 }

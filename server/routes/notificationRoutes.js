@@ -1,13 +1,12 @@
 const express = require("express");
-const { validateLoadMessages, validateUpdateMessage, validateDeleteMessage } = require("../middleware/messageMiddleware");
-const { LoadMessages, UpdateMessage, DeleteMessage } = require("../controllers/messageController");
+const { GetNotifications, MarkNotificationRead, MarkAllRead } = require("../controllers/notificationController");
+const { validateGetNotification, validateMarkNotiRead, validateAllNotiRead } = require("../middleware/notificationMiddleware");
 
-const messageRouter = express.Router();
+const notificationRouter = express.Router();
 
-messageRouter.post("/loadMessages", validateLoadMessages, LoadMessages);
-messageRouter.post("/updateMessage", validateUpdateMessage, UpdateMessage);
-messageRouter.post("/deleteMessage", validateDeleteMessage, DeleteMessage
-);
+notificationRouter.post("/getNotification", validateGetNotification, GetNotifications);
+notificationRouter.post("/markNotificatioRead", validateMarkNotiRead, MarkNotificationRead);
+notificationRouter.post("/markAllRead", validateAllNotiRead, MarkAllRead);
 
-module.exports = messageRouter;
+module.exports = notificationRouter;
 

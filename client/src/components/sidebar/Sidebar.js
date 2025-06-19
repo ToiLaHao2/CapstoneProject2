@@ -7,10 +7,11 @@ import { IoLogOut } from "react-icons/io5";
 
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import { useNotification } from "../../context/NotifiacationContext";
 
 const Sidebar = () => {
     const [active, setActive] = useState('Dashboard');
-    const [notifications, setNotifications] = useState(3); // Số lượng thông báo chưa đọc
+    const { unread } = useNotification();
     const { logout } = useAuth();
     const navigate = useNavigate();
 
@@ -73,11 +74,10 @@ const Sidebar = () => {
                     className={active === "Notifications" ? "active notification-link" : "notification-link"}
                     onClick={() => {
                         setActive("Notifications");
-                        setNotifications(0); // Đánh dấu đã đọc
                     }}
                 >
                     <FaBell style={{ marginRight: "10px" }} /> Notifications
-                    {notifications > 0 && <span className="notification-badge">{notifications}</span>}
+                    {unread > 0 && <span className="notification-badge">{unread}</span>}
                 </Link>
             </nav>
             <button className="logout" onClick={handleLogout}>

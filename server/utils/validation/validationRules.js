@@ -470,8 +470,22 @@ const validationRules = {
     deleteMessage: {
         checkMessage: "Delete message",
         requiredFields: ["messageId", "user_id"]
+    },
+
+
+    //notification
+    getNotification: {
+        checkMessage: "Get notification",
+        requiredFields: ["user_id", "checkMessage"],
+    },
+    markNotificationRead: {
+        checkMessage: "Mark notification read",
+        requiredFields: ["notificationId", "user_id", "checkMessage"],
+    },
+    markAllRead: {
+        checkMessage: "Mark all notification read",
+        requiredFields: ["user_id", "checkMessage"],
     }
-    // 
 };
 
 module.exports = { validationRules };

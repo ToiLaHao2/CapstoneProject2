@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useState } from "react";
 import privateAxios from "../api/privateAxios";
+import { useSocket } from "./SocketContext";
+import { useEffect } from "react";
 
 const ListContext = createContext();
 
@@ -7,6 +9,7 @@ export const useList = () => useContext(ListContext);
 
 export const ListProvider = ({ children }) => {
     const [lists, setLists] = useState([]);
+    const { socket, connected } = useSocket();
 
     // Lấy danh sách lists trong board
     const fetchLists = async (boardId) => {
@@ -62,7 +65,7 @@ export const ListProvider = ({ children }) => {
         }
     };
 
-    const createList = async (boardId, listTitle, listOrder) => {
+    const createList = async (boardId, listTitle) => {
         try {
             const response = await privateAxios.post("/list/createList", {
                 checkMessage: "Create new list",
@@ -71,15 +74,9 @@ export const ListProvider = ({ children }) => {
             });
 
             const data = response.data;
-            console.log("Created list:", data);
 
             if (data.success && data.data) {
-                return {
-                    _id: data.data._id,
-                    list_title: listTitle,
-                    list_cards: [],
-                    create_at: Date.now(),
-                };
+                return data;
             } else {
                 console.error("Failed to create list:", data.message);
                 return null;
