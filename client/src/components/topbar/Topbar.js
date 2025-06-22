@@ -30,7 +30,6 @@ const Topbar = () => {
     const { createBoard } = useBoard();
     const [state, dispatch] = useReducer(formReducer, initialState);
     const { user } = useUser();
-    console.log(user);
     const { boardTitle, boardDescription, boardType } = state;
 
     const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
@@ -80,7 +79,6 @@ const Topbar = () => {
 
     const handleSubmitCreateBoard = async (e) => {
         e.preventDefault();
-        console.log(boardType);
         if (!boardTitle || !boardDescription || boardType === "") {
             alert("Please fill all the fields!");
             return;

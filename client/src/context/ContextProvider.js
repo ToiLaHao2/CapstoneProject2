@@ -32,13 +32,13 @@ const ContextProvider = ({ children }) => {
             <AuthProvider>
                 <NotificationProvider>
                     <BoardProvider>
-                        <ListProvider>
-                            <CardProvider>
-                                <ConversationProvider>
+                        <ConversationProvider>
+                            <ListProvider>
+                                <CardProvider>
                                     {children}
-                                </ConversationProvider>
-                            </CardProvider>
-                        </ListProvider>
+                                </CardProvider>
+                            </ListProvider>
+                        </ConversationProvider>
                     </BoardProvider>
                 </NotificationProvider>
             </AuthProvider>

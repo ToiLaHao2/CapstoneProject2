@@ -13,9 +13,15 @@ const ConversationSchema = new Schema(
         lastMessageId: { type: Schema.Types.ObjectId, ref: 'Message' },
         lastMessageAt: { type: Date },
 
-        avatarUrl: { type: String }
+        avatarUrl: { type: String },
+        created_at: {
+            type: Date,
+            default: Date.now
+        },
+        updated_at: {
+            type: Date,
+        }
     },
-    { timestamps: true }   // tự sinh createdAt & updatedAt
 );
 
 // index để list & tìm kiếm nhanh

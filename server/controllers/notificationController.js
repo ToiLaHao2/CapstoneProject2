@@ -41,24 +41,29 @@ async function notify({ senderId, receiverIds, title, message, reference }) {
             created_at: noti.created_at
         };
 
-        receiverIds.forEach(async uid => {
-            // kiểm tra xem người dùng có đang online không
+        const sendPromises = receiverIds.map(async uid => {
             if (onlineUsers.has(uid.toString())) {
-                // lấy socket của người dùng
                 const user_socket_id = onlineUsers.get(uid.toString());
-                // gửi thông báo đến người dùng
-                await sendToSocket(user_socket_id, 'notification:new', {
-                    ...basePayload,
-                    notification_receiver_id: uid,
-                    isRead: false,
-                });
+                try {
+                    await sendToSocket(user_socket_id, 'notification:new', {
+                        ...basePayload,
+                        notification_receiver_id: uid,
+                    });
+                } catch (socketErr) {
+                    logger.error(`notify(): Lỗi khi gửi socket đến người dùng ${uid}:`, socketErr);
+                    // Không re-throw để Promise.all vẫn hoàn thành
+                }
             }
+            return null; // Trả về null hoặc bất cứ thứ gì bạn muốn
         });
+
+        await Promise.all(sendPromises); // Chờ tất cả các promise gửi socket hoàn thành
 
         logger.info(`Notification ${noti._id} -> [${receiverIds.join(',')}]`);
         return "OK";
     } catch (err) {
-        logger.error('notify():', err);
+        logger.error('notify(): Lỗi chung:', err);
+        return "ERROR";
     }
 }
 
@@ -106,7 +111,6 @@ async function GetNotifications(req, res) {
         });
 
         // 8. Trả về phản hồi thành công
-        console.log(simplifiedNotifications);
         return sendSuccess(res, 'Notifications retrieved successfully', simplifiedNotifications);
     } catch (err) {
         // 9. Xử lý lỗi

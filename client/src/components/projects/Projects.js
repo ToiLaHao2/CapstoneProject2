@@ -14,6 +14,7 @@ import {
     faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { useUser } from "../../context/UserContext";
+import { useConversation } from "../../context/ConversationContext";
 
 const Projects = () => {
     const {
@@ -54,6 +55,8 @@ const Projects = () => {
     const [removeSuccessDialogOpen, setRemoveSuccessDialogOpen] = useState(false);
     const openRemoveSuccessDialog = () => setRemoveSuccessDialogOpen(true);
     const closeRemoveSuccessDialog = () => setRemoveSuccessDialogOpen(false);
+
+    const { createConversation } = useConversation();
 
     // search user to add to
     const handleSearchChange = async (e) => {
@@ -106,8 +109,15 @@ const Projects = () => {
         navigate("/Tasks", { state: { boardTitle, board_id } });
     };
 
-    const handleChatClick = () => {
-        navigate("/chat");
+    const handleChatClick = async (e, board) => {
+        e.stopPropagation();
+        try {
+            const result = await createConversation(board._id, board.board_title, board.board_collaborators);
+            if (result.success === true)
+                navigate("/chat");
+        } catch (error) {
+            alert("An error occured when create new conversation.");
+        }
     };
 
     //edit board title
@@ -254,12 +264,7 @@ const Projects = () => {
                         <div
                             className="project-card"
                             key={index}
-                            onClick={() =>
-                                handleProjectClick(
-                                    project.board_title,
-                                    project._id
-                                )
-                            }
+                            onClick={() => handleProjectClick(project.board_title, project._id)}
                         >
                             <div className="project-card-top">
                                 <div className="project-header">
@@ -456,7 +461,7 @@ const Projects = () => {
                                         className="chat-now-button"
                                         onClick={(e) => {
                                             e.stopPropagation();
-                                            handleChatClick();
+                                            handleChatClick(e, project);
                                         }}
                                     >
                                         Chat

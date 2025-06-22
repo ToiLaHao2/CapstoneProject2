@@ -402,8 +402,7 @@ const validationRules = {
             "boardId",
             "title",
             "participants",
-            "owner",
-            "avatarUrl",
+            "user_id",
             "checkMessage",
         ],
         fileSize: 5 * 1024 * 1024, // Giới hạn file tối đa 5MB
@@ -459,7 +458,7 @@ const validationRules = {
     // load messages
     loadMessages: {
         checkMessage: "Load messages",
-        requiredFields: ["conversationId", "user_id", "beforeId", "checkMessage"],
+        requiredFields: ["conversationId", "user_id", "checkMessage"],
     },
     // update message
     updateMessage: {

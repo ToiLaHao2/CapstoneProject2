@@ -1,160 +1,282 @@
-import React, { useState, useEffect } from "react";
-import "./Chat.css";
+import React, { useState, useEffect, useRef, useMemo, useCallback } from "react";
+import "./Chat.css"; // Import CSS file for Chat component
+import { useConversation } from "../../context/ConversationContext";
+import { useUser } from "../../context/UserContext";
 
-const Chat = () => {
-    // Initial dummy data for team chats
-    const initialTeamChats = {
-        "Group Financial": [
-            { type: "user", text: "Is this all my tasks?" },
-            { type: "response", text: "Yes, it’s both due to tomorrow." },
-        ],
-        "Capstone": [
-            { type: "user", text: "I need a new version of this previous task." },
-            { type: "response", text: "Okay, I'll prepare it for you." },
-        ],
-        "Software Planning": [
-            { type: "user", text: "I’m attending a github" },
-            { type: "response", text: "Great, let me know if you need anything." },
-        ],
-        "New Plan": [
-            { type: "user", text: "What are your best-selling accessories?" },
-            { type: "response", text: "We have various options, I can send you a catalog." },
-        ],
-        "Kathryn Murphy": [
-            { type: "user", text: "I’m looking for a new collaborary." },
-            { type: "response", text: "We can discuss some potential partners." },
-        ],
-    };
+// Helper function to format timestamp
+const formatTime = (isoString) => {
+    if (!isoString) return '';
+    const date = new Date(isoString);
+    let hours = date.getHours();
+    const minutes = date.getMinutes();
+    const ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // The hour '0' should be '12'
+    const minutesStr = minutes < 10 ? '0' + minutes : minutes;
+    return `${hours}:${minutesStr} ${ampm}`;
+};
 
-    const [teamChats, setTeamChats] = useState(initialTeamChats);
-    const [selectedTeam, setSelectedTeam] = useState("Group Financial"); // Default selected team
-    const [messages, setMessages] = useState(teamChats[selectedTeam]);
-    const [newMessage, setNewMessage] = useState("");
+// --- ConversationList Component ---
+// This component displays the list of conversations (sidebar)
+const ConversationList = ({ onConversationClick, selectedConversationId }) => {
+    const { conversations, loading, error } = useConversation();
+    const { user } = useUser(); // Get current user for participant logic
 
-    // Update messages when selectedTeam changes
-    useEffect(() => {
-        setMessages(teamChats[selectedTeam] || []);
-    }, [selectedTeam, teamChats]);
+    // Memoize the conversation data to avoid unnecessary re-renders
+    const conversationItems = useMemo(() => {
+        if (loading) return <p className="conversation-list__status">Loading conversations...</p>;
+        if (error) return <p className="conversation-list__status conversation-list__status--error">Error: {error}</p>;
+        if (conversations.length === 0) return <p className="conversation-list__status">No conversations found.</p>;
 
-    const handleSendMessage = () => {
-        if (newMessage.trim() === "") return;
+        return conversations.map((conv) => {
+            const lastMessageText = conv.lastMessageId?.content || "No messages yet.";
+            const lastMessageTime = conv.lastMessageId?.createdAt ? formatTime(conv.lastMessageId.createdAt) : '';
 
-        const updatedMessages = [...messages, { type: "user", text: newMessage }];
-        setMessages(updatedMessages);
+            // Determine conversation name and avatar
+            let conversationName = conv.title;
+            let conversationAvatar = conv.file_url; // Use file_url for group chats if available
 
-        // Update teamChats state with the new message
-        setTeamChats(prevTeamChats => ({
-            ...prevTeamChats,
-            [selectedTeam]: updatedMessages
-        }));
+            if (!conversationName) { // If no specific title, it's likely a 1-on-1 chat
+                const otherParticipant = conv.participants.find(p => String(p._id) !== String(user._id));
+                conversationName = otherParticipant ? otherParticipant.user_full_name : 'Anonymous Chat';
+                conversationAvatar = otherParticipant?.user_avatar_url || conversationName.charAt(0);
+            } else if (!conversationAvatar) { // If title exists but no file_url (for group chat without custom avatar)
+                conversationAvatar = conversationName.charAt(0);
+            }
 
-        setNewMessage("");
-
-        setTimeout(() => {
-            const botResponse = "Hi, I will reply later";
-            const messagesWithBotResponse = [
-                ...updatedMessages,
-                { type: "response", text: botResponse },
-            ];
-            setMessages(messagesWithBotResponse);
-            setTeamChats(prevTeamChats => ({
-                ...prevTeamChats,
-                [selectedTeam]: messagesWithBotResponse
-            }));
-        }, 1000);
-    };
-
-    const handleTeamClick = (teamName) => {
-        setSelectedTeam(teamName);
-    };
-
-    return (
-        <div className="chat-ui">
-            <TeamMessageList teams={Object.keys(teamChats).map(name => {
-                // Find initial team data to preserve time and unread status
-                const initialTeam = initialTeams.find(t => t.name === name);
-                return {
-                    name,
-                    message: teamChats[name][teamChats[name].length - 1]?.text || "", // Last message
-                    time: initialTeam?.time || "",
-                    avatar: initialTeam?.avatar || "",
-                    unread: initialTeam?.unread || false,
-                };
-            })} onTeamClick={handleTeamClick} selectedTeam={selectedTeam} />
-            <div className="chat-container">
-                <div className="chat-header">
-                    <div className="user-info">
-                        <div className="avatar"></div>
-                        <div className="user-details">
-                            <h4>{selectedTeam}</h4> {/* Display selected team name */}
-                        </div>
+            return (
+                <div
+                    className={`conversation-item ${String(conv._id) === String(selectedConversationId) ? "conversation-item--selected" : ""}`}
+                    key={conv._id}
+                    onClick={() => onConversationClick(conv._id)}
+                >
+                    <div className="conversation-item__avatar">
+                        {conversationAvatar && conversationAvatar.startsWith('http') ? (
+                            <img src={conversationAvatar} alt="Avatar" />
+                        ) : (
+                            <span>{conversationAvatar ? conversationAvatar.charAt(0).toUpperCase() : 'C'}</span> // Fallback to first letter
+                        )}
+                    </div>
+                    <div className="conversation-item__details">
+                        <h4 className="conversation-item__name">{conversationName}</h4>
+                        <p className="conversation-item__last-message">{lastMessageText}</p>
+                    </div>
+                    <div className="conversation-item__time">
+                        <span>{lastMessageTime}</span>
+                        {/* You'd integrate unread count/indicator here based on your backend */}
+                        {/* {conv.unreadCount > 0 && <span className="conversation-item__unread-count">{conv.unreadCount}</span>} */}
                     </div>
                 </div>
+            );
+        });
+    }, [conversations, loading, error, selectedConversationId, onConversationClick, user._id]);
 
-                <div className="chat-messages">
-                    {messages.map((message, index) => (
-                        <div
-                            key={index}
-                            className={`message ${message.type === "user" ? "user-message" : "response-message"}`}
-                        >
-                            <p>{message.text}</p>
-                        </div>
-                    ))}
-                </div>
 
-                <div className="chat-input">
-                    <input
-                        type="text"
-                        placeholder="Enter a message"
-                        value={newMessage}
-                        onChange={(e) => setNewMessage(e.target.value)}
-                    />
-                    <button onClick={handleSendMessage}>Send</button>
+    return (
+        <div className="chat-sidebar">
+            <div className="chat-sidebar__header">
+                <h3>Messages</h3>
+                <div className="chat-sidebar__search">
+                    <input type="text" placeholder="Search..." />
+                    <button><i className="fa fa-search"></i></button>
                 </div>
+            </div>
+            <div className="chat-sidebar__list">
+                {conversationItems}
             </div>
         </div>
     );
 };
 
-const initialTeams = [
-    { name: "Group Financial", message: "Do you have any new tasks?", time: "01:08 pm", avatar: "", unread: true },
-    { name: "Capstone", message: "I need a new version of this previous task.", time: "06:32 pm", avatar: "", unread: true },
-    { name: "Software Planning", message: "I’m attending a github", time: "08:20 pm", avatar: "", unread: true },
-    { name: "New Plan", message: "What are your best-selling accessories?", time: "10:32 pm", avatar: "", unread: true },
-    { name: "Kathryn Murphy", message: "I’m looking for a new collaborary.", time: "04:15 am", avatar: "", unread: true },
-];
+// --- ChatWindow Component ---
+// This component displays the messages for the selected conversation
+const ChatWindow = ({
+    selectedConversation,
+    messages,
+    loading,
+    error,
+    hasMoreMessages,
+    fetchMessages,
+    addMessageToConversation,
+    userId,
+    currentChatHeader // Pass the memoized header info
+}) => {
+    const [newMessageContent, setNewMessageContent] = useState("");
+    const messagesEndRef = useRef(null); // Ref for auto-scrolling to the latest message
+    const messagesContainerRef = useRef(null); // Ref for the scrollable message area
 
-const TeamMessageList = ({ teams, onTeamClick, selectedTeam }) => {
+    // Effect to scroll to the bottom when new messages arrive (or initial load)
+    useEffect(() => {
+        if (messagesEndRef.current) {
+            messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+    }, [messages]);
+
+    // Handle sending a new message
+    const handleSendMessage = async () => {
+        if (newMessageContent.trim() === "" || !selectedConversation) return;
+
+        const conversationId = selectedConversation._id;
+        const result = await addMessageToConversation(conversationId, newMessageContent);
+
+        if (result.success) {
+            setNewMessageContent("");
+        } else {
+            // Handle error, maybe show a toast notification
+            console.error("Failed to send message:", result.message);
+            // Optionally, display error to user
+        }
+    };
+
+    // Handle infinite scrolling for messages (load older messages)
+    const handleScroll = useCallback(() => {
+        const container = messagesContainerRef.current;
+        // Kiểm tra nếu cuộn đến đầu container, có thêm tin nhắn cũ để tải và không đang trong quá trình tải
+        if (container && container.scrollTop === 0 && hasMoreMessages && !loading) {
+            // Lấy _id của tin nhắn ĐẦU TIÊN (cũ nhất) trong danh sách hiện tại
+            const oldestMessageId = messages.length > 0 ? messages[0]._id : null;
+
+            if (selectedConversation && oldestMessageId) {
+                console.log("Fetching older messages before ID:", oldestMessageId); // Debugging
+                // Gọi fetchMessages với oldestMessageId và clearExisting = false (để nối thêm tin nhắn vào đầu mảng)
+                fetchMessages(selectedConversation._id, oldestMessageId, false);
+            }
+        }
+    }, [messages, hasMoreMessages, loading, selectedConversation, fetchMessages]);
+
+    // Attach scroll event listener
+    useEffect(() => {
+        const container = messagesContainerRef.current;
+        if (container) {
+            container.addEventListener("scroll", handleScroll);
+            return () => {
+                container.removeEventListener("scroll", handleScroll);
+            };
+        }
+    }, [handleScroll]);
+
     return (
-        <div className="team-message-list">
-            <div className="header">
-                <h3>Message</h3>
-                <div className="search-bar">
-                    <input type="text" placeholder="Search" />
-                    <button>
-                        <i className="fa fa-search"></i>
-                    </button>
+        <div className="chat-main">
+            <div className="chat-main__header">
+                <div className="user-info">
+                    <div className="user-info__avatar">
+                        {currentChatHeader.avatar && currentChatHeader.avatar.startsWith('http') ? (
+                            <img src={currentChatHeader.avatar} alt="Avatar" />
+                        ) : (
+                            <span>{currentChatHeader.avatar ? currentChatHeader.avatar.charAt(0).toUpperCase() : 'S'}</span> // Fallback for no avatar
+                        )}
+                    </div>
+                    <div className="user-info__details">
+                        <h4>{currentChatHeader.name}</h4>
+                        {/* Optional: Add active status, last seen, etc. */}
+                    </div>
                 </div>
+                {/* Optional: Add chat settings/call buttons here */}
             </div>
-            <div className="team-list">
-                {teams.map((team, index) => (
+
+            <div className="chat-main__messages-container" ref={messagesContainerRef}>
+                {/* ... các phần loading/error/no conversation */}
+
+                {messages.map((message) => (
                     <div
-                        className={`team-card ${team.name === selectedTeam ? "selected" : ""}`}
-                        key={index}
-                        onClick={() => onTeamClick(team.name)}
+                        key={message._id}
+                        // ✅ SỬA ĐỔI Ở ĐÂY: So sánh message.sender._id với userId
+                        className={`message-bubble ${String(message.senderId._id) === String(userId) ? "message-bubble--sent" : "message-bubble--received"}`}
                     >
-                        <div className="avatar">{team.avatar || team.name.charAt(0)}</div>
-                        <div className="team-details">
-                            <h4>{team.name}</h4>
-                            <p>{team.message}</p>
-                        </div>
-                        <div className="time">
-                            <span>{team.time}</span>
-                            {team.unread && <span className="unread-indicator"></span>}
-                        </div>
+                        {/* Optional: Display sender name above message for received messages in group chats */}
+                        {String(message.senderId._id) !== String(userId) && (
+                            <span className="message-bubble__sender-name">{message.senderId.user_full_name}</span>
+                        )}
+                        <p className="message-bubble__content">{message.content}</p>
+                        <span className="message-bubble__timestamp">{formatTime(message.createdAt)}</span>
                     </div>
                 ))}
+                <div ref={messagesEndRef} />
             </div>
+
+            {selectedConversation && (
+                <div className="chat-main__input-area">
+                    <input
+                        type="text"
+                        placeholder="Type a message..."
+                        value={newMessageContent}
+                        onChange={(e) => setNewMessageContent(e.target.value)}
+                        onKeyPress={(e) => {
+                            if (e.key === "Enter") {
+                                handleSendMessage();
+                            }
+                        }}
+                        disabled={loading} // Disable input while sending/loading
+                    />
+                    <button onClick={handleSendMessage} disabled={loading || newMessageContent.trim() === ""}>
+                        Send
+                    </button>
+                </div>
+            )}
+        </div>
+    );
+};
+
+
+// --- Main Chat Component ---
+// This is the parent component that combines ConversationList and ChatWindow
+const Chat = () => {
+    const {
+        selectedConversation,
+        messages,
+        loading,
+        error,
+        hasMoreMessages,
+        fetchMessages,
+        addMessageToConversation,
+        selectConversation,
+    } = useConversation();
+    const { user } = useUser();
+    const userId = user?._id; // Ensure user is not null/undefined
+
+    // Get current conversation's display name and avatar for the chat header
+    const currentChatHeader = useMemo(() => {
+        if (!selectedConversation) return { name: "Select a conversation", avatar: "" };
+
+        // Logic to determine chat name and avatar based on conversation type
+        // This is a more robust way to handle group vs. 1-on-1 chat display
+        if (selectedConversation.participants.length > 2 || selectedConversation.title) {
+            // It's a group chat (or has a specific title)
+            return {
+                name: selectedConversation.title || `Group of ${selectedConversation.participants.length}`,
+                avatar: selectedConversation.file_url || selectedConversation.title?.charAt(0) || "G"
+            };
+        } else {
+            // It's likely a 1-on-1 chat
+            const otherParticipant = selectedConversation.participants.find(p => String(p._id) !== String(userId));
+            return {
+                name: otherParticipant?.user_full_name || "Direct Chat",
+                avatar: otherParticipant?.user_avatar_url || (otherParticipant?.user_full_name ? otherParticipant.user_full_name.charAt(0) : "D")
+            };
+        }
+    }, [selectedConversation, userId]);
+
+
+    return (
+        <div className="chat-ui-wrapper">
+            {/* Conversation List Sidebar */}
+            <ConversationList
+                onConversationClick={selectConversation} // Directly use selectConversation from context
+                selectedConversationId={selectedConversation?._id}
+            />
+
+            {/* Main Chat Container */}
+            <ChatWindow
+                selectedConversation={selectedConversation}
+                messages={messages}
+                loading={loading}
+                error={error}
+                hasMoreMessages={hasMoreMessages}
+                fetchMessages={fetchMessages}
+                addMessageToConversation={addMessageToConversation}
+                userId={userId}
+                currentChatHeader={currentChatHeader}
+            />
         </div>
     );
 };

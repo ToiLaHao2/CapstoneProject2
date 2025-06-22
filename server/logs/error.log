@@ -1724,3 +1724,40 @@
 [2025-06-19 16:48:03] ERROR: Error checking data list_id is required.
 [2025-06-19 16:48:10] ERROR: Failed to send notification:
 [2025-06-19 16:48:10] ERROR: Failed to send notification to assignee:
+[2025-06-22 14:35:28] ERROR: CreateConversation: Conversation validation failed: participants.0: Cast to [ObjectId] failed for value "[ '[object Object]', '6850ca37390e6693ac6ad03b' ]" (type string) at path "participants.0" because of "CastError"
+[2025-06-22 14:48:37] ERROR: [validate getConversation] conversationId is required.
+[2025-06-22 14:48:37] ERROR: [validate getConversation] conversationId is required.
+[2025-06-22 14:48:43] ERROR: [validate getConversation] conversationId is required.
+[2025-06-22 14:48:43] ERROR: [validate getConversation] conversationId is required.
+[2025-06-22 14:48:46] ERROR: [validate getConversation] conversationId is required.
+[2025-06-22 14:48:46] ERROR: [validate getConversation] conversationId is required.
+[2025-06-22 14:49:36] ERROR: [validate getConversation] conversationId is required.
+[2025-06-22 14:49:36] ERROR: [validate getConversation] conversationId is required.
+[2025-06-22 14:49:52] ERROR: [validate getConversation] conversationId is required.
+[2025-06-22 14:49:52] ERROR: [validate getConversation] conversationId is required.
+[2025-06-22 14:50:14] ERROR: [validate getConversation] conversationId is required.
+[2025-06-22 14:50:14] ERROR: [validate getConversation] conversationId is required.
+[2025-06-22 14:51:39] ERROR: [validate getConversation] conversationId is required.
+[2025-06-22 14:52:52] ERROR: [validate getConversation] conversationId is required.
+[2025-06-22 14:54:11] ERROR: [validate loadMessages] beforeId is required.
+[2025-06-22 14:57:00] ERROR: [validate getConversation] conversationId is required.
+[2025-06-22 14:57:20] ERROR: [validate getConversation] conversationId is required.
+[2025-06-22 14:57:31] ERROR: [validate getConversation] conversationId is required.
+[2025-06-22 15:00:10] ERROR: [validate getConversation] conversationId is required.
+[2025-06-22 15:13:14] ERROR: [validate loadMessages] conversationId is required.
+[2025-06-22 15:13:51] ERROR: [validate loadMessages] checkMessage is required.
+[2025-06-22 15:15:12] ERROR: Error verified token:  jwt expired
+[2025-06-22 15:15:12] ERROR: Error verified token:  jwt expired
+[2025-06-22 15:15:12] ERROR: [validate getConversationsByUser] invalid token
+[2025-06-22 15:19:39] ERROR: CreateConversation: Failed to send notification
+[2025-06-22 15:19:43] ERROR: CreateConversation: Failed to send notification
+[2025-06-22 15:28:35] ERROR: [validate markNotificationRead] notificationId is required.
+[2025-06-22 15:56:21] ERROR: LoadMessages: Error fetching messages: Cast to ObjectId failed for value "null" (type string) at path "_id" for model "Message"
+[2025-06-22 16:20:24] ERROR: Error verified token:  jwt expired
+[2025-06-22 16:20:24] ERROR: Error verified token:  jwt expired
+[2025-06-22 16:20:24] ERROR: Error verified token:  jwt expired
+[2025-06-22 16:20:24] ERROR: [validate getConversationsByUser] invalid token
+[2025-06-22 16:20:24] ERROR: Error verified token:  jwt expired
+[2025-06-22 16:20:24] ERROR: [validate getNotification] invalid token
+[2025-06-22 16:20:24] ERROR: Error verified token:  jwt expired
+[2025-06-22 16:20:48] ERROR: Error verified token:  jwt expired
