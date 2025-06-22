@@ -1,0 +1,136 @@
+[2025-06-22 22:35:05] INFO: MongoDB connected: ac-chuuyli-shard-00-01.wrul1io.mongodb.net
+[2025-06-22 22:35:33] INFO: Successfull checking data user for login
+[2025-06-22 22:35:33] INFO: Compare hash complete
+[2025-06-22 22:35:33] INFO: Complete create token
+[2025-06-22 22:35:33] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:35:33] INFO: [validate getNotification] ok
+[2025-06-22 22:35:33] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:35:33] INFO: [validate getConversationsByUser] ok
+[2025-06-22 22:35:33] INFO: Successfull checking data to get all members
+[2025-06-22 22:35:34] INFO: Get conversations of user
+[2025-06-22 22:35:35] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:35:35] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:35:35] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:35:35] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:35:35] INFO: Successfull checking data to get all members
+[2025-06-22 22:35:35] INFO: Successfull checking data to get all members
+[2025-06-22 22:35:38] INFO: [validate getConversation] ok
+[2025-06-22 22:35:38] INFO: [validate loadMessages] ok
+[2025-06-22 22:35:38] INFO: LoadMessages: Fetching initial messages for conversation 6857beadff018ccbd0ed8a2a.
+[2025-06-22 22:35:38] INFO: Successfully loaded 11 messages for conversation 6857beadff018ccbd0ed8a2a.
+[2025-06-22 22:39:24] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:39:24] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:39:25] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:39:25] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:39:25] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:39:25] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:39:25] INFO: Successfull checking data to get all members
+[2025-06-22 22:39:25] INFO: Successfull checking data to get all members
+[2025-06-22 22:39:35] INFO: Successfull checking data to get lists in board
+[2025-06-22 22:39:35] INFO: Successfull checking data to get lists in board
+[2025-06-22 22:39:35] INFO: Successfull checking data to get cards in list
+[2025-06-22 22:39:35] INFO: Successfull checking data to get cards in list
+[2025-06-22 22:39:36] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:39:36] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:39:36] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:39:36] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:39:36] INFO: Successfull checking data to get all members
+[2025-06-22 22:39:36] INFO: Successfull checking data to get all members
+[2025-06-22 22:43:43] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:43:43] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:43:43] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:43:43] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:43:43] INFO: Successfull checking data to get all members
+[2025-06-22 22:43:43] INFO: Successfull checking data to get all members
+[2025-06-22 22:44:15] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:44:15] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:44:15] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:44:15] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:44:15] INFO: Successfull checking data to get all members
+[2025-06-22 22:44:15] INFO: Successfull checking data to get all members
+[2025-06-22 22:44:16] INFO: Successfull checking data to get lists in board
+[2025-06-22 22:44:16] INFO: Successfull checking data to get lists in board
+[2025-06-22 22:44:16] INFO: Successfull checking data to get cards in list
+[2025-06-22 22:44:16] INFO: Successfull checking data to get cards in list
+[2025-06-22 22:44:17] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:44:17] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:44:17] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:44:17] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:44:17] INFO: Successfull checking data to get all members
+[2025-06-22 22:44:17] INFO: Successfull checking data to get all members
+[2025-06-22 22:44:26] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:44:26] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:44:27] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:44:27] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:44:27] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:44:27] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:44:27] INFO: Successfull checking data to get all members
+[2025-06-22 22:44:27] INFO: Successfull checking data to get all members
+[2025-06-22 22:44:29] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:44:29] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:44:29] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:44:29] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:44:29] INFO: Successfull checking data to get all members
+[2025-06-22 22:44:29] INFO: Successfull checking data to get all members
+[2025-06-22 22:44:31] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:44:31] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:44:32] INFO: Successfull checking data to get all members
+[2025-06-22 22:44:32] INFO: Successfull checking data to get all members
+[2025-06-22 22:44:51] INFO: Successfull checking data to get lists in board
+[2025-06-22 22:44:51] INFO: Successfull checking data to get lists in board
+[2025-06-22 22:44:52] INFO: Successfull checking data to get cards in list
+[2025-06-22 22:44:52] INFO: Successfull checking data to get cards in list
+[2025-06-22 22:44:53] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:44:53] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:44:53] INFO: Successfull checking data to get all members
+[2025-06-22 22:44:53] INFO: Successfull checking data to get all members
+[2025-06-22 22:46:02] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:46:02] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:46:02] INFO: Successfull checking data to get all members
+[2025-06-22 22:46:02] INFO: Successfull checking data to get all members
+[2025-06-22 22:46:35] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:46:35] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:47:21] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:47:21] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:47:22] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:47:22] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:47:22] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:47:22] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:47:22] INFO: Successfull checking data to get all members
+[2025-06-22 22:47:22] INFO: Successfull checking data to get all members
+[2025-06-22 22:47:25] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:47:25] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:47:26] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:47:26] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:47:26] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:47:26] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:47:26] INFO: Successfull checking data to get all members
+[2025-06-22 22:47:26] INFO: Successfull checking data to get all members
+[2025-06-22 22:47:49] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:47:49] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:47:51] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:47:51] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:47:51] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:47:51] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:47:51] INFO: Successfull checking data to get all members
+[2025-06-22 22:47:51] INFO: Successfull checking data to get all members
+[2025-06-22 22:47:52] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:47:52] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:47:55] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:47:55] INFO: Successfull checking data to get board by user id
+[2025-06-22 22:47:55] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:47:55] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:47:55] INFO: Successfull checking data to get all members
+[2025-06-22 22:47:55] INFO: Successfull checking data to get all members
+[2025-06-22 22:50:11] INFO: Successfull checking data to get lists in board
+[2025-06-22 22:50:11] INFO: Successfull checking data to get lists in board
+[2025-06-22 22:50:11] INFO: Successfull checking data to get cards in list
+[2025-06-22 22:50:11] INFO: Successfull checking data to get cards in list
+[2025-06-22 22:50:12] INFO: Successfull checking data to get lists in board
+[2025-06-22 22:50:12] INFO: Successfull checking data to get cards in list
+[2025-06-22 22:50:12] INFO: Successfull checking data to get cardd
+[2025-06-22 22:50:12] INFO: Successfull checking data to get lists in board
+[2025-06-22 22:50:12] INFO: Successfull checking data to get cards in list
+[2025-06-22 22:50:12] INFO: Successfull checking data to get cardd
+[2025-06-22 22:51:00] INFO: Successfull checking data user for get user profile
+[2025-06-22 22:51:00] INFO: Successfull checking data user for get user profile
