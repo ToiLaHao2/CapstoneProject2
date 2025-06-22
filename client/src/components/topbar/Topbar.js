@@ -108,7 +108,7 @@ const Topbar = () => {
                 <input
                     type="text"
                     className="search-box"
-                    placeholder="Search Task"
+                    placeholder="Search Your Project Here..."
                 />
             </div>
             <div className="right-icons">
