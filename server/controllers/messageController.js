@@ -14,6 +14,8 @@ const { onlineUsers } = require('../utils/onlineUser');
 /* ---------------------------------------------------------------------------
    1️⃣  LoadMessages – cursor‑based paging (client cuộn lên)
 --------------------------------------------------------------------------- */
+// controllers/conversationController.js
+
 async function LoadMessages(req, res) {
     try {
         const {
@@ -22,30 +24,49 @@ async function LoadMessages(req, res) {
             beforeId,
         } = req.body;
 
-        const pageLimit = 50;
+        const pageLimit = 50; // Số lượng tin nhắn tối đa mỗi lần tải
 
-        // 1. kiểm tra conversation & quyền
+        // 1. Kiểm tra tồn tại Conversation và quyền truy cập của người dùng
         const conv = await Conversation.findById(conversationId).lean();
-        if (!conv) return sendError(res, 404, 'Conversation not found');
+        if (!conv) {
+            logger.warn(`LoadMessages: Conversation with ID ${conversationId} not found.`);
+            return sendError(res, 404, 'Conversation not found');
+        }
 
+        // Đảm bảo người dùng hiện tại là thành viên của cuộc trò chuyện
         if (!conv.participants.some(id => String(id) === String(user_id))) {
+            logger.warn(`LoadMessages: User ${user_id} not authorized for conversation ${conversationId}.`);
             return sendError(res, 401, 'User not in conversation');
         }
 
-        // 2. build query
+        // 2. Xây dựng truy vấn để lấy tin nhắn
         const criteria = { conversationId };
-        if (beforeId) criteria._id = { $lt: beforeId };
+        if (beforeId) {
+            // Nếu có beforeId, lấy các tin nhắn cũ hơn tin nhắn này
+            criteria._id = { $lt: beforeId };
+            logger.info(`LoadMessages: Fetching messages for conversation ${conversationId} before ID ${beforeId}.`);
+        } else {
+            logger.info(`LoadMessages: Fetching initial messages for conversation ${conversationId}.`);
+        }
 
+        // 3. Thực hiện truy vấn tin nhắn và POPULATE thông tin người gửi
+        // Dòng này rất quan trọng để đảm bảo frontend nhận được đối tượng 'sender' đầy đủ.
         const msgs = await Message.find(criteria)
-            .sort({ _id: -1 })  // mới -> cũ
+            .sort({ _id: -1 }) // Sắp xếp từ mới nhất đến cũ nhất (để dễ dàng lấy `beforeId` cho lần tải tiếp theo)
             .limit(pageLimit)
-            .lean();
+            .populate('senderId', '_id user_full_name user_avatar_url user_email') // <-- Đảm bảo lấy thông tin sender
+            .lean(); // Sử dụng .lean() để trả về plain JavaScript objects, tối ưu hiệu suất
 
-        msgs.reverse();       // trả về cũ -> mới cho client dễ prepend
+        // 4. Đảo ngược thứ tự mảng để tin nhắn cũ nhất nằm ở đầu
+        // Điều này giúp frontend dễ dàng thêm (prepend) các tin nhắn cũ hơn vào đầu danh sách hiện có.
+        msgs.reverse();
 
-        return sendSuccess(res, 200, 'Messages loaded', msgs);
+        logger.info(`Successfully loaded ${msgs.length} messages for conversation ${conversationId}.`);
+
+        // 5. Gửi tin nhắn đã được populate về frontend
+        return sendSuccess(res, 'Messages loaded', msgs);
     } catch (err) {
-        logger.error('LoadMessages:', err);
+        logger.error('LoadMessages: Error fetching messages:', err);
         return sendError(res, 500, 'Internal Server Error');
     }
 }

@@ -458,7 +458,7 @@ const validationRules = {
     // load messages
     loadMessages: {
         checkMessage: "Load messages",
-        requiredFields: ["conversationId", "user_id", "beforeId", "checkMessage"],
+        requiredFields: ["conversationId", "user_id", "checkMessage"],
     },
     // update message
     updateMessage: {
