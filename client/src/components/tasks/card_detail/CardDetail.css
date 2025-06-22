@@ -194,6 +194,18 @@
     cursor: pointer;
 }
 
+.icon-attachment {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 1;
+    color: #555;
+    cursor: pointer;
+}
+
 .priority-select {
     width: auto;
     padding: 8px;

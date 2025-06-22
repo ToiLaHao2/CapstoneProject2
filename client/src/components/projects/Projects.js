@@ -111,6 +111,12 @@ const Projects = () => {
 
     const handleChatClick = async (e, board) => {
         e.stopPropagation();
+
+        if (!board.board_collaborators || board.board_collaborators.length === 0) {
+            alert("You must add members to the board first!");
+            return; // Stop the function execution
+        }
+
         try {
             const result = await createConversation(board._id, board.board_title, board.board_collaborators);
             if (result.success === true)
