@@ -138,3 +138,30 @@
 [2025-06-23 21:30:00] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
 [2025-06-23 21:36:39] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
 [2025-06-23 21:36:42] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-23 21:57:08] INFO: Successfull checking data user for login
+[2025-06-23 21:57:08] INFO: Compare hash complete
+[2025-06-23 21:57:08] INFO: Complete create token
+[2025-06-23 21:57:08] INFO: Successfull checking data user for get user profile
+[2025-06-23 21:57:08] INFO: [validate getNotification] ok
+[2025-06-23 21:57:08] INFO: Successfull checking data to get board by user id
+[2025-06-23 21:57:08] INFO: [validate getConversationsByUser] ok
+[2025-06-23 21:57:08] INFO: Successfull checking data to get all members
+[2025-06-23 21:57:08] INFO: Get conversations of user
+[2025-06-23 21:57:09] INFO: Successfull checking data to get board by user id
+[2025-06-23 21:57:09] INFO: Successfull checking data user for get user profile
+[2025-06-23 21:57:09] INFO: Successfull checking data to get all members
+[2025-06-23 21:58:09] INFO: Successfull checking data user for get user profile
+[2025-06-23 21:58:09] INFO: Successfull checking data to get board by user id
+[2025-06-23 21:58:09] INFO: Successfull checking data user for get user profile
+[2025-06-23 21:58:09] INFO: [validate getConversationsByUser] ok
+[2025-06-23 21:58:09] INFO: [validate getNotification] ok
+[2025-06-23 21:58:10] INFO: Successfull checking data user for get user profile
+[2025-06-23 21:58:10] INFO: [validate getConversationsByUser] ok
+[2025-06-23 21:58:10] INFO: Successfull checking data to get all members
+[2025-06-23 21:58:10] INFO: Get conversations of user
+[2025-06-23 21:58:10] INFO: Get conversations of user
+[2025-06-23 22:09:37] INFO: Successfull checking data user for get user profile
+[2025-06-23 22:09:39] INFO: [validate getConversation] ok
+[2025-06-23 22:09:39] INFO: [validate loadMessages] ok
+[2025-06-23 22:09:39] INFO: LoadMessages: Fetching initial messages for conversation 6857beadff018ccbd0ed8a2a.
+[2025-06-23 22:09:39] INFO: Successfully loaded 11 messages for conversation 6857beadff018ccbd0ed8a2a.
