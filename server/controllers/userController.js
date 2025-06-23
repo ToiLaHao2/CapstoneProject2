@@ -11,9 +11,12 @@ async function GetUserProfile(req, res) {
     const { user_id } = req.body;
     try {
         // chỉ lấy những thông tin cần thiết của user
-        const user = await findByIdOrThrow(User, user_id, {
-            errorMessage: "User not found",
-        });
+        const user = await User.findById(user_id)
+            .select('-user_hashed_password')
+            .exec();
+        if (!user) {
+            return sendError(res, 404, 'User not found');
+        }
         return sendSuccess(res, "Get user data success", user);
     } catch (error) {
         logger.error(error);

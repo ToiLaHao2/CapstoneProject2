@@ -17,7 +17,10 @@ export const SocketProvider = ({ token, children }) => {
         if (!token) return () => { };               // chưa đăng nhập → không connect
 
         /* khởi tạo */
-        const skt = io("http://localhost:5000", {
+        const SOCKET_URL = "http://tasktaskminderstudio.3utilities.com:5000"
+        // SOCKET_URL = "http://localhost:5000"
+
+        const skt = io(SOCKET_URL, {
             auth: { token },
             transports: ["websocket"],
         });
