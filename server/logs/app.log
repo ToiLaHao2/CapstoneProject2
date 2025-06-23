@@ -134,3 +134,7 @@
 [2025-06-22 22:50:12] INFO: Successfull checking data to get cardd
 [2025-06-22 22:51:00] INFO: Successfull checking data user for get user profile
 [2025-06-22 22:51:00] INFO: Successfull checking data user for get user profile
+[2025-06-23 21:16:40] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-23 21:30:00] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
+[2025-06-23 21:36:39] INFO: MongoDB connected: ac-chuuyli-shard-00-02.wrul1io.mongodb.net
+[2025-06-23 21:36:42] INFO: MongoDB connected: ac-chuuyli-shard-00-00.wrul1io.mongodb.net
