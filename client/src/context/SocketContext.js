@@ -19,7 +19,7 @@ export const SocketProvider = ({ token, children }) => {
         /* khởi tạo */
         // const SOCKET_URL = "http://tasktaskminderstudio.3utilities.com:5000"
         // SOCKET_URL = "http://localhost:5000"
-        SOCKET_URL = "https://capstoneproject2-9mv8.onrender.com"
+        const SOCKET_URL = "https://capstoneproject2-9mv8.onrender.com"
 
         const skt = io(SOCKET_URL, {
             auth: { token },
