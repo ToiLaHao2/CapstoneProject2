@@ -11,7 +11,7 @@
 
 .notifications-header {
     background: linear-gradient(135deg, white, white);
-    color: black;
+    color: #205781;
     padding: 14px 16px;
     font-size: 18px;
     font-weight: bold;
@@ -30,6 +30,7 @@
     justify-content: space-between;
     align-items: center;
     background: #f4f6f9;
+    color: #205781;
     border-radius: 8px;
     padding: 14px;
     margin: 8px;
@@ -38,8 +39,8 @@
 }
 
 .notification-item:hover {
-    background: black;
-    color: white;
+    background: #D1E9F6;;
+    color: #205781;
     transform: scale(1.02);
 }
 
@@ -67,6 +68,10 @@
     text-align: center;
     padding: 20px;
     color: #777;
+}
+
+h2 {
+    color: #205781;
 }
 
 /* Trong Notifications.css */

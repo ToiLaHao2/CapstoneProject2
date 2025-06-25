@@ -25,6 +25,8 @@
     display: flex;
     flex-direction: column;
     gap: 15px; 
+
+    
   }
   
   .sidebar a {
@@ -59,7 +61,7 @@
     border: none;
     cursor: pointer;
     text-align: left;
-    margin-top: 300px;
+    margin-top: 330px;
     border-radius: 8px;
     transition: background-color 0.3s, color 0.3s; 
   }
