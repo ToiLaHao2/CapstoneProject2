@@ -103,7 +103,7 @@ const Notifications = ({ hideHeader = false }) => {
 
             <ul className="notifications-list">
                 {notifications.length === 0 && !loading && !hasMore ? ( // Hiển thị khi không có thông báo và đã tải xong
-                    <p className="no-notifications">Bạn đã xem hết thông báo rồi! 🎉</p>
+                    <p className="no-notifications">You have seen all the notifications.! 🎉</p>
                 ) : (
                     notifications.map(notification => (
                         <li
@@ -122,7 +122,7 @@ const Notifications = ({ hideHeader = false }) => {
                                     <FaCheckCircle
                                         className="mark-read"
                                         onClick={() => markAsRead(notification.id)}
-                                        title="Đánh dấu đã đọc"
+                                        title="Mark as read"
                                     />
                                 )}
                             </div>
