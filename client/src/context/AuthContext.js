@@ -87,8 +87,9 @@ export const AuthProvider = ({ children }) => {
             if (!data.success) {
                 throw new Error(data.message || "Change password failed");
             }
-            await logout(); // tự động đăng xuất sau khi đổi mật khẩu
-            return data.success;
+            await logout();
+            return "OK";
+            // tự động đăng xuất sau khi đổi mật khẩu
         } catch (err) {
             return err.response?.data?.message || "Change-pwd error";
         }
