@@ -128,6 +128,34 @@ export const UserProvider = ({ children }) => {
         }
     };
 
+
+    const updateUserProfile = async (userUpdateDetails) => {
+        try {
+            // Server của bạn đang tự động thêm user_id từ token, nên chúng ta chỉ cần gửi user_update_details và checkMessage
+            const payload = {
+                user_update_details: userUpdateDetails,
+                checkMessage: "Update user profile",
+            };
+
+            const response = await privateAxios.post("/user/updateProfile", payload);
+
+            const data = await response.data;
+            if (data.success) {
+                // Cập nhật state user và sessionStorage sau khi update thành công
+                setUser(data.data);
+                sessionStorage.setItem("user", JSON.stringify(data.data));
+                return { success: true, message: "User profile updated successfully" };
+            } else {
+                // Xử lý lỗi từ server (ví dụ: "No fields were updated")
+                return { success: false, message: data.message || "Failed to update user profile" };
+            }
+        } catch (error) {
+            // Xử lý lỗi mạng hoặc lỗi từ server không nằm trong data.success
+            console.error("Error updating user profile:", error.response?.data?.Error || error.message);
+            return { success: false, message: `Error updating user profile: ${error.response?.data?.Error || error.message}` };
+        }
+    };
+
     return (
         <UserContext.Provider
             value={{
@@ -136,6 +164,7 @@ export const UserProvider = ({ children }) => {
                 searchUsers,
                 getUserCardsIncoming,
                 uploadAvatar,
+                updateUserProfile,
                 colorHashMap,
             }}
         >

@@ -83,7 +83,7 @@ const Dashboard = () => {
     return (
         <div className="dashboard-container">
             <div className="tasks">
-                <div className="my-tasks" onClick={() => navigate("/my-tasks")}>
+                <div className="my-tasks">
                     <h3>My Task</h3>
                     <div className="task priority-task">
                         <h4>Priority Task</h4>

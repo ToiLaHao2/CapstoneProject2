@@ -116,6 +116,10 @@ function CardDetail() {
         console.log("Completed changed:", event.target.checked);
     };
 
+    const handleCancelClick = () => {
+        navigate(-1);
+    };
+
     const handleSave = async () => {
         try {
 
@@ -476,9 +480,9 @@ function CardDetail() {
                         onChange={(e) => setDuration(e.target.value)}
                     />
 
-                    <span className="input-icon">
+                    {/* <span className="input-icon">
                         <FiCalendar />
-                    </span>
+                    </span> */}
                 </div>
             </div>
 
@@ -512,7 +516,7 @@ function CardDetail() {
                     Save
                 </button>
 
-                <button className="button button-secondary">Cancel</button>
+                <button className="button button-secondary" onClick={handleCancelClick}>Cancel</button>
             </div>
 
             {showAddMemberForm && (

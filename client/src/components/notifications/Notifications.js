@@ -3,7 +3,7 @@ import { FaBell, FaCheckCircle, FaSpinner } from "react-icons/fa"; // Import FaS
 import { useNotification } from "../../context/NotifiacationContext";
 import { useEffect, useCallback, useRef } from "react"; // Thêm useCallback và useRef
 
-const Notifications = () => {
+const Notifications = ({ hideHeader = false }) => {
     // Lấy các state và hàm từ context đã được cải tiến
     const {
         notifications,
@@ -81,15 +81,25 @@ const Notifications = () => {
 
     return (
         <div className="notifications-container">
-            <div className="notifications-header">
+            {/* <div className="notifications-header">
                 <h2><FaBell style={{ marginRight: "10px" }} />Notification</h2>
-                {/* Nút "Đánh dấu tất cả đã đọc" */}
                 {notifications.length > 0 && (
                     <button className="mark-all-read-btn" onClick={markAllRead} disabled={loading}>
                         Mark all read <FaCheckCircle />
                     </button>
                 )}
-            </div>
+            </div> */}
+
+            {!hideHeader && (
+                <div className="notifications-header">
+                    <h2><FaBell style={{ marginRight: "10px" }} />Notification</h2>
+                    {notifications.length > 0 && (
+                        <button className="mark-all-read-btn" onClick={markAllRead} disabled={loading}>
+                            Mark all read <FaCheckCircle />
+                        </button>
+                    )}
+                </div>
+            )}
 
             <ul className="notifications-list">
                 {notifications.length === 0 && !loading && !hasMore ? ( // Hiển thị khi không có thông báo và đã tải xong

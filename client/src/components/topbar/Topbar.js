@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { useBoard } from "../../context/BoardContext";
 import { useUser } from "../../context/UserContext";
+import { useSearch } from "../../context/SearchContext";
 
 const initialState = {
     boardTitle: "",
@@ -31,6 +32,8 @@ const Topbar = () => {
     const [state, dispatch] = useReducer(formReducer, initialState);
     const { user } = useUser();
     const { boardTitle, boardDescription, boardType } = state;
+    const { searchQuery, setSearchQuery } = useSearch(); // Sử dụng useSearch
+
 
     const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
@@ -102,6 +105,10 @@ const Topbar = () => {
         }
     };
 
+    const handleSearchInputChange = (e) => {
+        setSearchQuery(e.target.value); // Cập nhật search query trong context
+    };
+
     return (
         <div className="topbar">
             <div className="search-container">
@@ -109,13 +116,15 @@ const Topbar = () => {
                     type="text"
                     className="search-box"
                     placeholder="Search Your Project Here..."
+                    value={searchQuery}
+                    onChange={handleSearchInputChange}
                 />
             </div>
             <div className="right-icons">
                 <button className="add-board-btn" onClick={handleCreateBoard}>
                     + Create New Board
                 </button>
-                <FaBell className="icon" />
+                {/* <FaBell className="icon" /> */}
                 <div
                     className="user-icon-container"
                     onClick={toggleDropdown}
@@ -132,12 +141,6 @@ const Topbar = () => {
                                 }
                             >
                                 View Profile
-                            </button>
-                            <button
-                                className="dropdown-item"
-                                onClick={() => handleNavigation("/settings")}
-                            >
-                                Settings
                             </button>
                             <button
                                 className="dropdown-item"
@@ -185,14 +188,14 @@ const Topbar = () => {
                                 <select
                                     id="boardType"
                                     name="boardType"
-                                    value={boardType} // Giá trị hiện tại từ state (dưới dạng boolean)
+                                    value={boardType}
                                     onChange={(e) =>
                                         dispatch({
                                             name: "boardType",
                                             value:
                                                 e.target.value === "true"
                                                     ? true
-                                                    : false, // Chuyển đổi thành boolean
+                                                    : false,
                                         })
                                     }
                                 >

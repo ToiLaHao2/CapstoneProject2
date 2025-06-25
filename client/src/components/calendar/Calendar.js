@@ -4,7 +4,9 @@ import "react-calendar/dist/Calendar.css";
 import "./Calendar.css";
 import "../general/MainContentContainer.css";
 import { useUser } from "../../context/UserContext";
+import { useBoard } from "../../context/BoardContext";
 import moment from "moment";
+import { useNavigate } from "react-router-dom";
 
 const Calendar = () => {
     const [selectedDate, setSelectedDate] = useState(null);
@@ -12,6 +14,7 @@ const Calendar = () => {
     const dayRefs = useRef({});
 
     const { user, getUserCardsIncoming } = useUser();
+    const { getBoardTitleById } = useBoard();
     const [events, setEvents] = useState({});
 
     useEffect(() => {
@@ -21,6 +24,7 @@ const Calendar = () => {
                     const groupedEvents = {};
 
                     cards.forEach((card) => {
+                        const boardTitle = getBoardTitleById(card.board_id);
                         const dateKey = moment(card.due_date).format(
                             "YYYY-MM-DD"
                         );
@@ -32,10 +36,12 @@ const Calendar = () => {
                         groupedEvents[dateKey].push({
                             time: card.created_at
                                 ? `${moment(card.created_at).format(
-                                      "HH:mm"
-                                  )} - ${moment(card.due_date).format("HH:mm")}`
+                                    "HH:mm"
+                                )} - ${moment(card.due_date).format("HH:mm")}`
                                 : "Due",
                             event: card.card_title,
+                            board_title: boardTitle, // Gán boardTitle đã lấy được từ context
+
                         });
                     });
 
@@ -45,7 +51,7 @@ const Calendar = () => {
                     console.error("Failed to fetch user cards:", error);
                 });
         }
-    }, [user, getUserCardsIncoming]);
+    }, [user, getUserCardsIncoming, getBoardTitleById]);
 
     const getWeekDays = (date) => {
         const startOfWeek = moment(date).startOf("isoWeek");
@@ -100,25 +106,24 @@ const Calendar = () => {
                                 const isActive =
                                     selectedDate &&
                                     day.format("YYYY-MM-DD") ===
-                                        selectedDate.format("YYYY-MM-DD");
+                                    selectedDate.format("YYYY-MM-DD");
 
                                 return (
                                     <div
                                         key={index}
                                         ref={(el) =>
-                                            (dayRefs.current[formattedDate] =
-                                                el)
+                                        (dayRefs.current[formattedDate] =
+                                            el)
                                         }
-                                        className={`day-details ${
-                                            isActive ? "active-day" : ""
-                                        }`}
+                                        className={`day-details ${isActive ? "active-day" : ""
+                                            }`}
                                         onClick={() => setSelectedDate(day)}
                                     >
                                         <h3>
                                             {day.format("dddd, MMMM Do YYYY")}
                                         </h3>
                                         <ul>
-                                            {events[formattedDate] ? (
+                                            {/* {events[formattedDate] ? (
                                                 events[formattedDate].map(
                                                     (e, idx) => (
                                                         <li key={idx}>
@@ -128,7 +133,25 @@ const Calendar = () => {
                                                 )
                                             ) : (
                                                 <li>No events</li>
+                                            )} */}
+
+                                             {events[formattedDate] ? (
+                                                events[formattedDate].map(
+                                                    (e, idx) => (
+                                                        <li key={idx}>
+                                                            {e.time}:{" "}
+                                                            {e.board_title && (
+                                                                <strong><i>[PROJECT: {e.board_title}]</i></strong>
+                                                            )}{"______"}
+                                                            {e.event}
+                                                        </li>
+                                                    )
+                                                )
+                                            ) : (
+                                                <li>No events</li>
                                             )}
+
+
                                         </ul>
                                     </div>
                                 );
