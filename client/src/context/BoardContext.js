@@ -225,6 +225,13 @@ export const BoardProvider = ({ children }) => {
         }
     };
 
+
+    // *** Thêm hàm này để lấy Board Title từ state 'boards'
+    const getBoardTitleById = (boardId) => {
+        const board = boards.find(board => board._id === boardId);
+        return board ? board.board_title : "Unknown Board";
+    };
+
     // Move list trong board
     const moveList = async (boardId, listId1, listId2) => {
         try {
@@ -477,7 +484,8 @@ export const BoardProvider = ({ children }) => {
                 addMemberToBoard,
                 removeMemberFromBoard,
                 getListsInBoard,
-                getAllMembers
+                getAllMembers,
+                getBoardTitleById
             }}
         >
             {children}

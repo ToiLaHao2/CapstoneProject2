@@ -25,6 +25,7 @@ import { ListProvider } from "./ListContext";
 import { CardProvider } from "./CardContext";
 import { ConversationProvider } from "./ConversationContext";
 import { NotificationProvider } from "./NotifiacationContext";
+import { SearchProvider } from "./SearchContext";
 
 const ContextProvider = ({ children }) => {
     return (
@@ -32,13 +33,15 @@ const ContextProvider = ({ children }) => {
             <AuthProvider>
                 <NotificationProvider>
                     <BoardProvider>
-                        <ConversationProvider>
-                            <ListProvider>
-                                <CardProvider>
-                                    {children}
-                                </CardProvider>
-                            </ListProvider>
-                        </ConversationProvider>
+                        <SearchProvider> 
+                            <ConversationProvider>
+                                <ListProvider>
+                                    <CardProvider>
+                                        {children}
+                                    </CardProvider>
+                                </ListProvider>
+                            </ConversationProvider>
+                        </SearchProvider> 
                     </BoardProvider>
                 </NotificationProvider>
             </AuthProvider>

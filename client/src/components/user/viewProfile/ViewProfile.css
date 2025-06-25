@@ -206,3 +206,194 @@
     font-size: 25px;
     font-weight: bold;
 }
+
+
+.content {
+    margin-top: 20px;
+    padding: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.content h4 {
+    color: #333;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #007bff; 
+    padding-bottom: 5px;
+    display: inline-block;
+    font-weight: 500; 
+}
+
+.schedule-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.schedule-item {
+    background-color: #f8f9fa; 
+    border-radius: 10px; 
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
+    transition: all 0.3s ease;
+}
+
+.schedule-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
+}
+
+.schedule-item p {
+    margin: 8px 0;
+    font-size: 1em;
+    color: #495057; 
+}
+
+.schedule-date {
+    font-weight: 600;
+    color: #205781; 
+    margin-right: 10px;
+}
+
+.schedule-time {
+    font-weight: 400; 
+    color: #6c757d; 
+}
+
+.schedule-details {
+    font-size: 1.1em;
+    color: #212529; 
+    margin-top: 10px;
+    font-weight: 500; 
+}
+
+.schedule-details strong {
+    color: #404142; 
+    margin-right: 5px;
+}
+
+
+/* Trong ViewProfile.css */
+
+/* Overlay Background */
+.overlay {
+    position: fixed; /* Giữ overlay cố định trên màn hình */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Nền tối mờ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Đảm bảo overlay nằm trên cùng */
+}
+
+/* Overlay Content (Form) */
+.overlay-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px; /* Bo góc mềm mại */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Đổ bóng mạnh hơn */
+    width: 90%;
+    max-width: 450px; /* Chiều rộng tối đa */
+    text-align: center;
+    animation: fadeInScale 0.3s ease-out; /* Thêm animation */
+}
+
+.overlay-content h3 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.6em;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left; /* Căn trái cho label và input */
+}
+
+.form-group label {
+    display: block; /* Đảm bảo label nằm trên input */
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.form-group input {
+    width: calc(100% - 20px); /* Điều chỉnh width để tính cả padding */
+    padding: 12px 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Hiệu ứng focus */
+    outline: none;
+}
+
+.edit-message {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #dc3545; /* Màu đỏ cho lỗi */
+    min-height: 20px; /* Giữ khoảng trống */
+}
+
+/* Màu xanh cho thông báo thành công */
+.edit-message.success {
+    color: #28a745;
+}
+
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end; /* Căn phải các nút */
+    gap: 15px; /* Khoảng cách giữa các nút */
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    min-width: 100px; /* Đảm bảo kích thước tối thiểu */
+}
+
+.save-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.save-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+.cancel-btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: #5a6268;
+    transform: translateY(-1px);
+}
+
+/* Keyframe for fade-in and scale animation */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
