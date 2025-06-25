@@ -4,6 +4,8 @@ import privateAxios from '../api/privateAxios'; // Assuming this is correctly co
 // import { useUser } from './UserContext'; // Not used in this context, but good to keep if needed elsewhere
 // import { useAuth } from './AuthContext'; // Not used in this context, but good to keep if needed elsewhere
 import { useSocket } from './SocketContext'; // Assuming this provides the `socket` instance
+
+import { useAuth } from './AuthContext';
 import { useUser } from './UserContext';
 
 const ConversationContext = createContext();
@@ -16,6 +18,7 @@ export const ConversationProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [hasMoreMessages, setHasMoreMessages] = useState(true); // New: Tracks if there are more older messages
+    const { token } = useAuth();
     const { user } = useUser();
 
     // Get the socket instance from your SocketContext
@@ -53,7 +56,7 @@ export const ConversationProvider = ({ children }) => {
         } finally {
             setLoading(false);
         }
-    }, [user]); // Dependency: userId to refetch if it changes
+    }, [token]); // Dependency: userId to refetch if it changes
 
     // 2. Fetch messages for a specific conversation with pagination
     /**
@@ -300,7 +303,7 @@ export const ConversationProvider = ({ children }) => {
         } finally {
             setLoading(false);
         }
-    }, [user, fetchMessages]); // Dependencies: userId, fetchMessages
+    }, [token, fetchMessages]); // Dependencies: userId, fetchMessages
 
     // --- Socket.IO Handlers ---
     useEffect(() => {
@@ -409,10 +412,10 @@ export const ConversationProvider = ({ children }) => {
 
     // Initial fetch of conversations when the component mounts or userId changes
     useEffect(() => {
-        if (user) {
+        if (token) {
             fetchConversations();
         }
-    }, [user]); // Dependencies for initial fetch
+    }, [token]); // Dependencies for initial fetch
 
     // The context value to be provided to consumers
     const contextValue = {
