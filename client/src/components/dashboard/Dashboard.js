@@ -10,10 +10,11 @@ const Dashboard = () => {
     const today = moment().toDate();
     const navigate = useNavigate();
     const [selectedDate, setSelectedDate] = useState(today);
-    const { boards, getAllBoardsByUserId } = useBoard();
+    const { boards, getAllBoardsByUserId, getBoardTitleById } = useBoard();
     const { user, getUserCardsIncoming } = useUser();
     const [cards, setCards] = useState([]);
     const [tasksMap, setTasksMap] = useState(new Map());
+
 
     const handleProjectClick = (boardTitle, board_id) => {
         navigate("/Tasks", { state: { boardTitle, board_id } });
@@ -42,6 +43,7 @@ const Dashboard = () => {
                         const task = {
                             date: deadline.toDate(),
                             details: {
+                                boardId: card.board_id, // <<< LƯU board_id
                                 project: card.card_title,
                                 task: card.card_description,
                                 deadline: deadline.format("DD/MM/YYYY"),
@@ -167,11 +169,13 @@ const Dashboard = () => {
                                 <div key={index} className="task-detail-item">
                                     <p>
                                         <strong>Project:</strong>{" "}
-                                        {task.details.project}
+                                        {/* {task.details.project} */}
+                                        {getBoardTitleById(task.details.boardId)}
+
                                     </p>
                                     <p>
                                         <strong>Task:</strong>{" "}
-                                        {task.details.task}
+                                        {task.details.project}
                                     </p>
                                     <p>
                                         <strong>Deadline:</strong>{" "}
