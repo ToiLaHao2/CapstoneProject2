@@ -408,7 +408,7 @@ export const ConversationProvider = ({ children }) => {
             socket.off('conversation:allmember:addmember', onMemberAdded);
             socket.off('conversation:allmember:removemember', onMemberRemoved);
         };
-    }, [socket, user, fetchConversations, currentConversationIdRef, setMessages, setConversations, setSelectedConversation, setHasMoreMessages]); // Dependencies for useEffect
+    }, [connected, socket, user, fetchConversations, currentConversationIdRef, setMessages, setConversations, setSelectedConversation, setHasMoreMessages]); // Dependencies for useEffect
 
     // Initial fetch of conversations when the component mounts or userId changes
     useEffect(() => {
